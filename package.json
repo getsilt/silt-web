@@ -1,0 +1,31 @@
+{
+  "name": "silt-web",
+  "version": "1.0.0",
+  "description": "Landing page",
+  "author": "Marc Pérez",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "^2.0.0",
+    "nuxt-i18n": "^5.12.7",
+    "v-photoswipe": "^1.0.3-1"
+  },
+  "devDependencies": {
+    "@nuxtjs/google-analytics": "^2.2.0",
+    "imports-loader": "^0.8.0",
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.18.9",
+    "nuxt-svg": "^0.1.6",
+    "postcss-hexrgba": "^1.0.2",
+    "postcss-nested": "^4.1.2",
+    "postcss-responsive-type": "^1.0.0",
+    "postcss-url": "^8.0.0",
+    "push-dir": "^0.4.1",
+    "sass-loader": "^7.1.0"
+  }
+}
