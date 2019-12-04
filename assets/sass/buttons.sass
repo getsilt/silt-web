@@ -1,0 +1,33 @@
+@import './vars.sass'
+button
+  padding: 20px 40px
+  border-radius: $radius-md
+  font-family: $font-bold
+  border: 0
+  outline: none
+  font-size: 20px
+  cursor: pointer
+  transition: 0.3s
+  background-color: $color-primary
+  color: #ffffff
+  &:hover
+    background-color: darken($color-primary, 7%)
+    transition: 0.3s
+
+  &.small
+    font-size: 13px
+    padding: 10px 20px
+
+  &.accent
+    background-color: $color-accent
+    color: $color-accent-darken
+    &:hover
+      background-color: darken($color-accent, 20%)
+
+  &.translucid
+    background-color: rgba(255,255,255,0.1)
+    color: #fff
+
+  &.rounded
+    border-radius: 50px
+    text-transform: uppercase

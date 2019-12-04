@@ -34,7 +34,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    // { src: '~/plugins/scrollmagic', ssr: false }
+    { src: '~/plugins/scrollmagic', ssr: false }
   ],
   /*
   ** Nuxt.js modules
@@ -47,11 +47,11 @@ export default {
           cookieKey: 'i18n_redirected'
         }
       }],
-    ['nuxt-svg'],
-    // ['@nuxtjs/google-analytics', {
-    //   id: 'UA-144041578-1'
-    // }]
-  ],
+      ['nuxt-svg'],
+      ['@nuxtjs/google-analytics', {
+        id: 'UA-144041578-1'
+      }]
+    ],
 
 
   /*
@@ -97,21 +97,22 @@ export default {
     extend(config, ctx) {
     },
     postcss: {
-      // Add plugin names as key and arguments as value
-      // Install them before as dependencies with npm or yarn
-      plugins: {
-        // Disable a plugin by passing false as value 
-        'postcss-url': false,
-        'postcss-nested': {},
-        'postcss-responsive-type': {},
-        'postcss-hexrgba': {}
-      },
-      preset: {
-        // Change the postcss-preset-env settings
-        autoprefixer: {
-          grid: true
-        }
+    // Add plugin names as key and arguments as value
+    // Install them before as dependencies with npm or yarn
+    plugins: {
+      // Disable a plugin by passing false as value 
+      'postcss-url': false,
+      'postcss-nested': {},
+      'postcss-responsive-type': {},
+      'postcss-hexrgba': {}
+    },
+    preset: {
+      // Change the postcss-preset-env settings
+      autoprefixer: {
+        grid: true
       }
     }
+  }
+
   }
 }

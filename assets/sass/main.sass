@@ -1,2 +1,26 @@
+@import './fonts.sass'
+@import './wrappers.sass'
+@import './buttons.sass'
+@import './vars.sass'
+
+*
+  box-sizing: border-box
+
+html
+  @media (max-width: 767px)
+    font-size: 13px
+
 body
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+  font-family: $font-body
+  background-color: #ffffff
+  color: $color-primary
+  padding: 40px
+  font-size: 16px
+  margin: 0
+  max-width: 1400px
+  margin: auto
+  padding-top: 0
+  @media (min-width: 768px)
+    padding: 40px 80px
+    padding-top: 0
+  
