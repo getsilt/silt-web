@@ -2,11 +2,11 @@
   <section>
     <div class="logo">
       <nuxt-link to="/">
-        <!-- <img src="@/assets/img/logo/silt_logo.svg" alt=""> -->
+        <img src="@/assets/img/logo/silt_blue.svg" alt="">
       </nuxt-link>
     </div>
     <nav>
-      <button class="small rounded translucid">Coming soon</button>
+      <a :href="`mailto:hello@joinsilt.com`"><button class="small">{{$t('btn_cta_contact')}}</button></a>
     </nav>
   </section>
 </template>

@@ -1,4 +1,4 @@
-
+@import './vars.sass'
 @font-face
   font-family: 'Futura-Bold'
   src: url('../fonts/Futura_Heavy.ttf')
@@ -14,9 +14,14 @@
 h1, h2, h3, h4, h5, h6
   font-family: 'Futura-Medium', 'Arial Narrow', Arial, sans-serif
   font-weight: normal
+  color: #333333
 
-h1 
+h1
   font-size: 3.75rem
+
+h2
+  font-family: 'Futura-Bold', 'Arial Narrow', Arial, sans-serif
+  font-size: 3rem
 
 h3
   font-family: 'Futura-Bold', 'Arial Narrow', Arial, sans-serif
@@ -27,5 +32,27 @@ h4
   font-size: 1.5rem
   line-height: 1.5em
 
+h5
+  font-size: 1.3rem
+  line-height: 1.3em
+
+h6
+  font-size: 1.1rem
+  line-height: 1.1em
+
 a
-  color: #ffffff
+  color: #333333
+
+.tag
+  font-family: $font-bold
+  background-color: lighten($color-primary, 35%)
+  color: $color-primary
+  border-radius: 0.5em
+  padding: 1em
+  display: flex
+  border: 0.1em
+  line-height: 1em
+  display: flex
+  align-items: center
+  height: 2em
+  margin: auto

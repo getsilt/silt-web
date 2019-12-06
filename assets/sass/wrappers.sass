@@ -5,11 +5,22 @@ section
   margin: 140px 0
   margin-top: 20px
 
+.section-headers
+  display: flex
+  flex-wrap: wrap
+  flex-direction: column
+  align-items: center
+  max-width: 550px
+  margin: auto
+  text-align: center
+  p
+    color: #999999
+
 .fw-container
   width: 100%
   height: auto
   position: relative
-  margin-left: -50vw
+  // margin-left: -50vw
   left: 50%
 
 .fw-container-absolute
@@ -17,3 +28,84 @@ section
   width: 100%
   height: auto
   left: 0
+
+
+.claim-container
+  display: flex
+  flex-wrap: wrap
+  align-items: stretch
+  @media (max-width: 767px)
+    position: relative
+  .claim-info
+    max-width: 500px
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    margin-top: 10px
+    margin-bottom: 10px
+    justify-content: center
+    &.right
+      @media (min-width: 768px)
+        align-items: flex-end
+        text-align: right
+        margin-left: auto
+    .title
+      margin: 0 0 40px 0
+    .subtitle
+      margin: 0 0 40px 0
+      max-width: 440px
+
+
+.highlights-container
+  display: flex
+  flex-wrap: wrap
+  padding: 80px 0
+  text-align: center
+  article
+    padding: 0 40px
+    flex: 1 1 100%
+    @media (min-width: 768px)
+      flex: 1 1 33.33%
+    @media (min-width: 1200px)
+      padding: 0 80px
+    .article-container
+      padding: 20px 0
+      .article-header
+        padding: 20px
+        background: lighten($color-primary, 35%)
+        color: $color-primary
+        width: 100%
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        border-radius: 10px
+        .big
+          font-size: 40px
+          margin-bottom: 10px
+        
+.features-wrapper
+  display: flex
+  flex-direction: column
+  align-items: center
+  h1
+    max-width: 900px
+  .features-container
+    display: flex
+    flex-wrap: wrap
+    .features-item
+      display: flex
+      flex-wrap: nowrap
+      width: 100%
+      margin: 40px auto
+      text-align: center
+      justify-content: center
+      @media (min-width: 768px)
+        width: 50%
+      @media (min-width: 1200px)
+        width: 33.33%
+      h3
+        margin: auto 20px
+        line-height: 1.5em
+        font-size: 1.5rem
