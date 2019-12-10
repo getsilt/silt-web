@@ -307,7 +307,7 @@ export default {
         ease: Power2.easeOut,
         scale: 0.9,
         y: 100,
-        opacity: 0
+        opacity: 0.1
       });
       new _this.$ScrollMagic.Scene({
         triggerElement: '#techfeatures',
@@ -321,7 +321,7 @@ export default {
         ease: Power2.easeOut,
         scale: 0.9,
         y: 100,
-        opacity: 0
+        opacity: 0.1
       });
       new _this.$ScrollMagic.Scene({
         triggerElement: '#differences',
@@ -330,26 +330,26 @@ export default {
         .setTween(costsManagement)
         .addTo(controller);
 
-      //costsRetargeting
-      const costsRetargeting = TweenMax.from('#pricing', 1, {
-        ease: Power2.easeOut,
-        scale: 0.9,
-        y: 100,
-        opacity: 0
-      });
-      new _this.$ScrollMagic.Scene({
-        triggerElement: '#pricing',
-        duration: '100%'
-      })
-        .setTween(costsRetargeting)
-        .addTo(controller);
+      // //costsRetargeting
+      // const costsRetargeting = TweenMax.from('#pricing', 1, {
+      //   ease: Power2.easeOut,
+      //   scale: 0.9,
+      //   y: 100,
+      //   opacity: 0.1
+      // });
+      // new _this.$ScrollMagic.Scene({
+      //   triggerElement: '#pricing',
+      //   duration: '100%'
+      // })
+      //   .setTween(costsRetargeting)
+      //   .addTo(controller);
 
       //sdk
       const sdk = TweenMax.from('#sdk', 1, {
         ease: Power2.easeOut,
         scale: 0.9,
         y: 100,
-        opacity: 0
+        opacity: 0.1
       });
       new _this.$ScrollMagic.Scene({
         triggerElement: '#sdk',
@@ -363,7 +363,7 @@ export default {
         ease: Power2.easeOut,
         scale: 0.9,
         y: 100,
-        opacity: 0
+        opacity: 0.1
       });
       new _this.$ScrollMagic.Scene({
         triggerElement: '#usecases',
@@ -401,6 +401,10 @@ export default {
 .screenshots-container
   display: flex
   perspective: 300px
+  overflow: visible
+  width: 100%
+  @media(min-width: 768px)
+    width: auto
   img.screenshot
     flex: 1 1 auto
     min-width: 120px
@@ -408,12 +412,21 @@ export default {
     box-shadow: 2px 2px 20px -6px rgba(0,0,0,0.3)
     transform: rotateY(10deg)
     transition: 0.3s
+    border-radius: 10px
     &:nth-child(1)
-      transform: rotateY(10deg) translateX(0px)
+      transform: rotateY(10deg) translateX(50px)
     &:nth-child(2)
-      transform: rotateY(10deg) translateX(-70px)
+      transform: rotateY(10deg) translateX(20px)
     &:nth-child(3)
-      transform: rotateY(10deg) translateX(-125px)
+      transform: rotateY(10deg) translateX(0px)
+    
+    @media(min-width: 768px)
+      &:nth-child(1)
+        transform: rotateY(10deg) translateX(0px)
+      &:nth-child(2)
+        transform: rotateY(10deg) translateX(-70px)
+      &:nth-child(3)
+        transform: rotateY(10deg) translateX(-125px)
     // &:hover
     //   transform: rotateY(0) scale(1.2)
     //   z-index: 1

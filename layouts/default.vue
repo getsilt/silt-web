@@ -22,3 +22,9 @@ export default {
   }
 };
 </script>
+<style lang="sass" scoped>
+.main-content
+  margin-top: 10px
+  @media(min-height: 700px)
+    margin-top: 40px
+</style>
