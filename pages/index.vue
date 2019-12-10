@@ -317,28 +317,28 @@ export default {
         .addTo(controller);
 
       //costsManagement
-      const costsManagement = TweenMax.from('#costsManagement', 1, {
+      const costsManagement = TweenMax.from('#differences', 1, {
         ease: Power2.easeOut,
         scale: 0.9,
         y: 100,
         opacity: 0
       });
       new _this.$ScrollMagic.Scene({
-        triggerElement: '#costsManagement',
+        triggerElement: '#differences',
         duration: '100%'
       })
         .setTween(costsManagement)
         .addTo(controller);
 
       //costsRetargeting
-      const costsRetargeting = TweenMax.from('#costsRetargeting', 1, {
+      const costsRetargeting = TweenMax.from('#pricing', 1, {
         ease: Power2.easeOut,
         scale: 0.9,
         y: 100,
         opacity: 0
       });
       new _this.$ScrollMagic.Scene({
-        triggerElement: '#costsRetargeting',
+        triggerElement: '#pricing',
         duration: '100%'
       })
         .setTween(costsRetargeting)
