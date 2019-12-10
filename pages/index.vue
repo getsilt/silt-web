@@ -9,10 +9,35 @@
           <button class="primary">{{$t('btn_cta_contact')}}</button>
         </a>
       </div>
-      <div class="claim-bg fw-container-absolute" id="radar">
-        <!-- <RadarSVG /> -->
+      <div class="claim-side-img screenshots-container">
+        <img class="screenshot login" src="@/assets/img/screenshots/personal-details.png" />
+        <img class="screenshot take-picture" src="@/assets/img/screenshots/take-picture.png" />
+        <img class="screenshot complete" src="@/assets/img/screenshots/complete.png" />
       </div>
     </section>
+
+    <!-- Unique advantadge -->
+    <section class="highlights-wrapper" id="differences">
+      <div class="section-headers">
+        <h6 class="tag">{{$t('business_differences_section')}}</h6>
+        <h2>{{$t('business_differences_title')}}</h2>
+      </div>
+      <div class="highlights-container">
+        <article v-for="difference in differences" :key="difference.title">
+        <div class="article-container">
+          <div class="article-img-container">
+            <!-- <span class="big">{{$t(differences.header)}}</span>
+            {{$t(differences.headerDescription)}} -->
+            <img :src="difference.img" alt />
+          </div>
+          <h3>{{$t(difference.title)}}</h3>
+          <p>{{$t(difference.content)}}</p>
+        </div>
+      </article>
+      </div>
+      <!-- <p>{{$t('business_friction_oneregister_title')}}</p> -->
+    </section>
+
 
     <!-- TECH FEATURES -->
     <section class="features-wrapper" id="techfeatures">
@@ -54,7 +79,7 @@
     <!-- Costs -->
     <section class="claim-wrapper" >
       <!-- <h5>{{$t('business_costs_title')}}</h5> -->
-      <div class="claim-container" id="costsManagement">
+      <!-- <div class="claim-container" id="costsManagement">
         <div class="claim-info">
           <h2 class="title">{{$t('business_costs_title')}}</h2>
           <h4 class="subtitle">{{$t('business_costs_manage_content')}}</h4>
@@ -63,13 +88,13 @@
           </a>
         </div>
         <div class="developers-img fw-container">
-          <!-- <img src="@/assets/img/bg/api-response.png" /> -->
+          <img src="@/assets/img/bg/api-response.png" />
         </div>
-      </div>
+      </div> -->
       
-      <div class="claim-container" id="costsRetargeting">
+      <!-- <div class="claim-container" id="costsRetargeting">
         <div class="developers-img fw-container">
-          <!-- <img src="@/assets/img/bg/api-response.png" /> -->
+          <img src="@/assets/img/bg/api-response.png" />
         </div>
         <div class="claim-info right">
           <h2 class="title">{{$t('business_costs_retargeting_title')}}</h2>
@@ -78,7 +103,7 @@
             <button class="primary">{{$t('btn_cta_contact')}}</button>
           </a>
         </div>
-      </div> 
+      </div>  -->
 
     <div class="claim-container" id="sdk">
       <div class="claim-info">
@@ -86,19 +111,19 @@
         <h4 class="subtitle">{{$t('business_benefits_sdk_content')}}</h4>
         <h6 class="subtitle">{{$t('business_benefits_integration_content')}}</h6>
         <ul>
-          <li>{{$t('business_benefits_fraud')}}</li>
-          <li>{{$t('business_benefits_gdpr')}}</li>
-          <li>{{$t('business_benefits_kyc')}}</li>
-          <li>{{$t('business_benefits_aml')}}</li>
-          <li>{{$t('business_benefits_pep')}}</li>
-          <li>{{$t('business_benefits_legal')}}</li>
+          <li><b>{{$t('business_benefits_fraud')}}</b></li>
+          <li><b>{{$t('business_benefits_kyc')}}</b></li>
+          <li><b>{{$t('business_benefits_aml')}}</b></li>
+          <li><b>{{$t('business_benefits_pep')}}</b></li>
+          <li><b>{{$t('business_benefits_gdpr')}}</b></li>
+          <li><b>{{$t('business_benefits_legal')}}</b></li>
         </ul>
         <a :href="`mailto:${email}`">
           <button class="primary">{{$t('btn_cta_contact')}}</button>
         </a>
       </div>
-      <div class="developers-img fw-container" id="benefits">
-        <!-- <img src="@/assets/img/bg/api-response.png" /> -->
+      <div class="claim-side-img" id="benefits">
+        <img src="@/assets/img/illustrations/book-imac.svg" />
       </div>
     </div>
     </section>
@@ -117,6 +142,17 @@
       </div>
       <a :href="`mailto:${email}`">
         <button class="primary">{{$t('btn_cta_contact')}}</button>
+      </a>
+    </section>
+
+    <section class="features-wrapper" id="pricing">
+      <div class="section-headers">
+        <h6 class="tag">{{$t('business_pricing_section')}}</h6>
+        <h2>{{$t('business_pricing_title')}}</h2>
+        <p>{{$t('business_pricing_content')}}</p>
+      </div>
+      <a :href="`mailto:${email}`">
+        <button class="primary">{{$t('btn_cta_start')}}</button>
       </a>
     </section>
 
@@ -150,6 +186,29 @@ export default {
   data() {
     return {
       email: 'hello@joinsilt.com',
+      differences: [
+        {
+          title: 'business_differences_oneRegister_title',
+          content: 'business_differences_oneRegister_content',
+          header: 'business_friction_oneregister_header',
+          headerDescription: 'business_friction_oneregister_headerDescription',
+          img: require('assets/img/illustrations/drinks-user.svg')
+        },
+        {
+          title: 'business_differences_technology_title',
+          content: 'business_differences_technology_content',
+          header: 'business_friction_trust_header',
+          headerDescription: 'business_friction_trust_headerDescription',
+          img: require('assets/img/illustrations/bulbrocket.svg')
+        },
+        {
+          title: 'business_differences_noManagement_title',
+          content: 'business_differences_noManagement_content',
+          header: 'business_friction_fast_header',
+          headerDescription: 'business_friction_fast_headerDescription',
+          img: require('assets/img/illustrations/meditation.svg')
+        },
+      ],
       highlights: [
         {
           title: 'business_friction_oneregister_title',
@@ -190,6 +249,10 @@ export default {
         {
           // img: require('assets/img/icons/graph-bars.svg'),
           title: 'business_highlights_biometric_title'
+        },
+        {
+          // img: require('assets/img/icons/graph-bars.svg'),
+          title: 'business_highlights_dashboard_title'
         },
       ],
       usecases: [
@@ -333,3 +396,26 @@ export default {
   }
 };
 </script>
+
+<style lang="sass" scoped>
+.screenshots-container
+  display: flex
+  perspective: 300px
+  img.screenshot
+    flex: 1 1 auto
+    min-width: 120px
+    max-width: 200px
+    box-shadow: 2px 2px 20px -6px rgba(0,0,0,0.3)
+    transform: rotateY(10deg)
+    transition: 0.3s
+    &:nth-child(1)
+      transform: rotateY(10deg) translateX(0px)
+    &:nth-child(2)
+      transform: rotateY(10deg) translateX(-70px)
+    &:nth-child(3)
+      transform: rotateY(10deg) translateX(-125px)
+    // &:hover
+    //   transform: rotateY(0) scale(1.2)
+    //   z-index: 1
+    //   transition: 0.3s
+</style>

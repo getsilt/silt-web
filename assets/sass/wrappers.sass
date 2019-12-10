@@ -23,6 +23,13 @@ section
   // margin-left: -50vw
   left: 50%
 
+.fw-container-side
+  width: 100%
+  height: auto
+  position: relative
+  margin-left: -50vw
+  left: 50%
+
 .fw-container-absolute
   position: absolute
   width: 100%
@@ -34,6 +41,7 @@ section
   display: flex
   flex-wrap: wrap
   align-items: stretch
+  position: relative
   @media (max-width: 767px)
     position: relative
   .claim-info
@@ -43,7 +51,7 @@ section
     flex-direction: column
     align-items: flex-start
     margin-top: 10px
-    margin-bottom: 10px
+    margin-bottom: 40px
     justify-content: center
     &.right
       @media (min-width: 768px)
@@ -55,12 +63,19 @@ section
     .subtitle
       margin: 0 0 40px 0
       max-width: 440px
+  .claim-side-img
+    display: flex
+    flex: 1 1 auto
+    justify-content: flex-end
+    img
+      flex: 1 1 auto
+      min-width: 300px
+      max-width: 500px
 
 
 .highlights-container
   display: flex
   flex-wrap: wrap
-  padding: 80px 0
   text-align: center
   article
     padding: 0 40px
@@ -71,6 +86,12 @@ section
       padding: 0 80px
     .article-container
       padding: 20px 0
+      display: flex
+      flex-direction: column
+      h3
+        margin-top: 0
+      .article-img-container
+        padding: 0 20px
       .article-header
         padding: 20px
         background: lighten($color-primary, 35%)
