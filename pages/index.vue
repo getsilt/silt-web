@@ -127,6 +127,20 @@
       </div>
     </div>
     </section>
+    <section class="claim-wrapper" >
+      <div class="claim-container" id="countries">
+        <div class="claim-info">
+          <h2 class="title">{{$t('business_highlights_countries_title')}}</h2>
+          <h4 class="subtitle">{{$t('business_highlights_countries_content')}}</h4>
+          <a :href="`mailto:${email}`">
+            <button class="primary">{{$t('btn_cta_contact')}}</button>
+          </a>
+        </div>
+        <div class="claim-side-img" id="benefits">
+          <img src="@/assets/img/illustrations/hand-globe.svg" />
+        </div>
+      </div>
+    </section>
 
      <section class="features-wrapper" id="usecases">
       <div class="section-headers">
@@ -287,105 +301,22 @@ export default {
       const controller = new _this.$ScrollMagic.Controller({
         globalSceneOptions: { offset: -300 }
       });
-
-      // highlights
-      const producthighlights = TweenMax.from('#producthighlights', 1, {
-        ease: Power2.easeOut,
-        scale: 0.9,
-        y: 100,
-        opacity: 0.3
-      });
-      new _this.$ScrollMagic.Scene({
-        triggerElement: '#producthighlights',
-        duration: '100%'
-      })
-        .setTween(producthighlights)
-        .addTo(controller);
-
-      //techfeatures
-      const techfeatures = TweenMax.from('#techfeatures', 1, {
-        ease: Power2.easeOut,
-        scale: 0.9,
-        y: 100,
-        opacity: 0.3
-      });
-      new _this.$ScrollMagic.Scene({
-        triggerElement: '#techfeatures',
-        duration: '100%'
-      })
-        .setTween(techfeatures)
-        .addTo(controller);
-
-      //costsManagement
-      const costsManagement = TweenMax.from('#differences', 1, {
-        ease: Power2.easeOut,
-        scale: 0.9,
-        y: 100,
-        opacity: 0.3
-      });
-      new _this.$ScrollMagic.Scene({
-        triggerElement: '#differences',
-        duration: '100%'
-      })
-        .setTween(costsManagement)
-        .addTo(controller);
-
-      // //costsRetargeting
-      // const costsRetargeting = TweenMax.from('#pricing', 1, {
-      //   ease: Power2.easeOut,
-      //   scale: 0.9,
-      //   y: 100,
-      //   opacity: 0.1
-      // });
-      // new _this.$ScrollMagic.Scene({
-      //   triggerElement: '#pricing',
-      //   duration: '100%'
-      // })
-      //   .setTween(costsRetargeting)
-      //   .addTo(controller);
-
-      //sdk
-      const sdk = TweenMax.from('#sdk', 1, {
-        ease: Power2.easeOut,
-        scale: 0.9,
-        y: 100,
-        opacity: 0.3
-      });
-      new _this.$ScrollMagic.Scene({
-        triggerElement: '#sdk',
-        duration: '100%'
-      })
-        .setTween(sdk)
-        .addTo(controller);
-
-      //usecases
-      const usecases = TweenMax.from('#usecases', 1, {
-        ease: Power2.easeOut,
-        scale: 0.9,
-        y: 100,
-        opacity: 0.3
-      });
-      new _this.$ScrollMagic.Scene({
-        triggerElement: '#usecases',
-        duration: '100%'
-      })
-        .setTween(usecases)
-        .addTo(controller);
-      // // api-response
-      // const apiresponse = TweenMax.from('#', 1, {
-      //   ease: Power2.easeOut,
-      //   scale: 1,
-      //   x: -300,
-      //   opacity: 0
-      // });
-      // const scene3 = new _this.$ScrollMagic.Scene({
-      //   triggerElement: '#api-response',
-      //   duration: '100%'
-      // })
-			// 		.setTween(apiresponse)
-      //     .addTo(controller);
-      
-      
+      const sections = ['#sdk', '#differences', '#usescases', '#techfeatures','#producthighlights' ]
+      let tm = {};
+      for(let section of sections){
+        tm[section] = (TweenMax.from(section, 1, {
+          ease: Power2.easeOut,
+          scale: 0.9,
+          y: 100,
+          opacity: 0.3
+        }));
+        new _this.$ScrollMagic.Scene({
+          triggerElement: section,
+          duration: '100%'
+        })
+          .setTween(tm[section])
+          .addTo(controller);
+      }
 
       controllerHolder = controller;
     }
