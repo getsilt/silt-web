@@ -31,7 +31,7 @@
   
   "footer_copyright": "Silt © {year}. Made in Barcelona",
   
-  "business_claim1": "Verify your users in <i>mili</i>seconds",
+  "business_claim1": "Verify your users in <b>miliseconds</b>",
   "business_claim2": "Forget about having to handle all signups and logins ID verifications. You add a few lines of code, we handle the rest.",
   
   "business_differences_section": "What makes Silt unique",
@@ -71,7 +71,7 @@
   "business_friction_title": "Less friction for the users",
   "business_friction_oneregister_header": "300%",
   "business_friction_oneregister_headerDescription": "Conversion improvement",
-  "business_friction_oneregister_title": "Greatly improve your conversion rate",
+  "business_friction_oneregister_title": "Greatly improve your conversion",
   "business_friction_oneregister_content": "With our user digital ID signups and automatic verification you will greatly improve conversion rates. This will translate in greater growth & lower retargeting costs.",
   "business_friction_trust_header": "100%",
   "business_friction_trust_headerDescription": "Trust",
@@ -100,7 +100,7 @@
   "business_benefits_legal": "Legal advice",
 
   "business_usecases_section": "Use cases",
-  "business_usecases_title": "You may not know we can fix you a problem",
+  "business_usecases_title": "We deal with your fraud and KYC, AML, PEP & GDPR compliance",
   "business_usecases_content": "Your business could certanly benefit from our platform whichever your sector is. Find out more about how Silt could help you reduce fraud & chargebacks or be KYC, AML & PEP compliant, increase your conversion rates, mass contracts...",
 
   "business_pricing_section": "Pricing",

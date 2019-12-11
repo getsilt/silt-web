@@ -293,7 +293,7 @@ export default {
         ease: Power2.easeOut,
         scale: 0.9,
         y: 100,
-        opacity: 0
+        opacity: 0.3
       });
       new _this.$ScrollMagic.Scene({
         triggerElement: '#producthighlights',
@@ -307,7 +307,7 @@ export default {
         ease: Power2.easeOut,
         scale: 0.9,
         y: 100,
-        opacity: 0.1
+        opacity: 0.3
       });
       new _this.$ScrollMagic.Scene({
         triggerElement: '#techfeatures',
@@ -321,7 +321,7 @@ export default {
         ease: Power2.easeOut,
         scale: 0.9,
         y: 100,
-        opacity: 0.1
+        opacity: 0.3
       });
       new _this.$ScrollMagic.Scene({
         triggerElement: '#differences',
@@ -349,7 +349,7 @@ export default {
         ease: Power2.easeOut,
         scale: 0.9,
         y: 100,
-        opacity: 0.1
+        opacity: 0.3
       });
       new _this.$ScrollMagic.Scene({
         triggerElement: '#sdk',
@@ -363,7 +363,7 @@ export default {
         ease: Power2.easeOut,
         scale: 0.9,
         y: 100,
-        opacity: 0.1
+        opacity: 0.3
       });
       new _this.$ScrollMagic.Scene({
         triggerElement: '#usecases',
@@ -414,19 +414,19 @@ export default {
     transition: 0.3s
     border-radius: 10px
     &:nth-child(1)
-      transform: rotateY(10deg) translateX(50px)
+      transform: rotateY(7deg) translateX(50px)
     &:nth-child(2)
-      transform: rotateY(10deg) translateX(20px)
+      transform: rotateY(7deg) translateX(20px)
     &:nth-child(3)
-      transform: rotateY(10deg) translateX(0px)
+      transform: rotateY(7deg) translateX(0px)
     
     @media(min-width: 768px)
       &:nth-child(1)
-        transform: rotateY(10deg) translateX(0px)
+        transform: rotateY(7deg) translateX(0px)
       &:nth-child(2)
-        transform: rotateY(10deg) translateX(-70px)
+        transform: rotateY(7deg) translateX(-70px)
       &:nth-child(3)
-        transform: rotateY(10deg) translateX(-125px)
+        transform: rotateY(7deg) translateX(-125px)
     // &:hover
     //   transform: rotateY(0) scale(1.2)
     //   z-index: 1
