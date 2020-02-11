@@ -29,20 +29,26 @@
   "personal_features_savings_title": "Savings",
   "personal_features_account_authentication_title": "Account Authentication",
   
+  "footer_silt_what": "Silt is a software provider that takes charge of all development and maintainment for Verified ID Signups and KYC for companies.",
+  "footer_contact": "Contact us at",
   "footer_copyright": "Silt © {year}. Made in Barcelona",
   
-  "business_claim1": "Verify your users in <b>milliseconds</b>",
-  "business_claim2": "Forget about having to handle all signups and logins ID verifications. You add a few lines of code, we handle the rest.",
+  "business_claim1": "Verify & signup users instantly",
+  "business_claim2": "Create verification signup forms without typing a line of code. Get instant <b>ID Verifications, KYC or reduce fraud </b> while improving the user signup experience. ",
+
+  "business_ask_once_title": "Why ask people the same information over and over again?",
   
   "business_differences_section": "What makes Silt unique",
   "business_differences_title": "The most convenient solution for you and your users",
 
-  "business_differences_oneRegister_title": "Users verification without ID upload",
-  "business_differences_oneRegister_content": "Verified users of the Silt platform will be able to use your service with less than a second. They won't have to go through the ID upload and verification process. By just giving permission to you to access the data we hold, they will be able to use the app right away.",
+  "business_differences_oneRegister_title": "Why ask for the same information over and over again?",
+  "business_differences_oneRegister_content": "Silt users will only need to get verified and upload their IDs once. After that they will be able to use instantly any app integrated with Silt by just granting permissions.",
+  "business_differences_oneRegister_title2": "Users verification without ID upload",
+  "business_differences_oneRegister_content2": "Verified users of the Silt platform will be able to use your service with less than a second. They won't have to go through the ID upload and verification process. By just giving permission to you to access the data we hold, they will be able to use the app right away.",
   "business_differences_technology_title": "Cutting edge proprietary tech",
   "business_differences_technology_content": "Users that are not in Silt, will go through the automated verification process. This process is performed by the most advanced algorithm at this moment, combined with a proprietary model that allows us to verify users with 98% accuracy under 60 seconds.",
-  "business_differences_noManagement_title": "No management required",
-  "business_differences_noManagement_content": "Forget about having ANYONE hired for KYC. Forget about the problems managing verifications. We will take care of the verification of every new user that wants to use your app. We will handle their privacy & data security, KYC, AML & PEP compliance, manual reviews and everything else.",
+  "business_differences_noManagement_title": "No management or development required",
+  "business_differences_noManagement_content": "Forget about having ANYONE hired for KYC. We will take care of the signup forms and verifications of every new user that wants to use your app. We will handle their <b>privacy & data security, KYC, AML & PEP compliance </b>, manual reviews and everything else.",
   "business_differences_noManagement_content2": "At Silt we provide verified signups for our customers. We handle the verifications of every new user that wants to use your app and we take care of their privacy & data security, KYC, AML & PEP compliance, manual reviews and everything else. Forget about having someone hired for this.",
 
   "business_highlights_vanguardTech_section": "Verification technology",
@@ -70,7 +76,7 @@
   "business_friction_section": "Product Benefits",
   "business_friction_title": "Less friction for the users",
   "business_friction_oneregister_header": "300%",
-  "business_friction_oneregister_headerDescription": "Conversion improvement",
+  "business_friction_oneregister_headerDescription": "Conversion rate improvement",
   "business_friction_oneregister_title": "Greatly improve your conversion",
   "business_friction_oneregister_content": "With our user digital ID signups and automatic verification, you will greatly improve conversion rates. This will translate in greater growth & lower retargeting costs.",
   "business_friction_trust_header": "100%",
@@ -87,7 +93,15 @@
   "2business_costs_manage_content": "We will take care of all signups, and approve or decline every single register. Forget about having someone hired for this task. Forget about the problems managing them.",
   "2business_costs_retargeting_title": "Decrease retargeting costs",
   "2business_costs_retargeting_content": "The verification rate will increase with the One Register and automatic verification Silt technology. This will avoid retargeting costs to make users verify.",
-  
+
+  "business_howto_section": "How to integrate with Silt",
+  "business_howto_title": "How do I integrate Silt with my company?",
+  "business_howto_content": "Getting your users verified is very easy with Silt. You only need to follow these three steps:",
+  "business_howto_content1": "Signup at Silt",
+  "business_howto_content2": "Define which ID documents and which extra info do you require from your users",
+  "business_howto_content3": "Add the code snippet with your client ID provided by Silt to your iOS, Android or Web application",
+  "business_howto_content4": "After this, you will have a button that your users need to click in order to get to the Silt signup. Once they finish with the <b>ID Document Verification</b> you will be able to access to their data in the Silt Admin Dashboard.",
+
   "business_benefits_sdk_title": "Seamless Web, iOS & Android integration",
   "business_benefits_sdk_content": "Add our Web SDK, iOS SDK or Android SDK to your service with just a few lines of code",
   "business_benefits_integration_title": "Seamless integration",
@@ -112,5 +126,15 @@
   "business_usecases_p2p": "P2P marketplaces",
   "business_usecases_gaming": "Online games",
   "business_usecases_contract": "Quick mass contracts",
-  "business_usecases_other": "other"
+  "business_usecases_other": "other",
+
+  "seo_1": "Be KYC compliant with Silt",
+  "seo_2": "Verify that all users pass PEP & AML checks",
+  "seo_3": "We pass our OCR to ID Documents, driving licenses & passports to extrat verified data",
+  "seo_4": "Silt seales and preserves users privacy by centralizing their data",
+  "seo_5": "Create signup forms without typing a line of code",
+  "seo_6": "Be legal compliant with Europe regulations",
+  "seo_7": "Forget about handling fraud",
+  "seo_8": "With Silt your conversion rates will increase while your costs will decrease.",
+  "seo_9": "You no longer need to build trust, use Silt and you will be trusted."
 }

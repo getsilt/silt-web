@@ -4,15 +4,15 @@
     <section class="claim-container">
       <div class="claim-info">
         <h1 class="title" v-html="$t('business_claim1')"></h1>
-        <h4 class="subtitle">{{$t('business_claim2')}}</h4>
-        <a :href="`mailto:${email}`">
+        <h4 class="subtitle" v-html="$t('business_claim2')">{{$t('business_claim2')}}</h4>
+        <a :href="`mailto:${getEmail()}`">
           <button class="primary">{{$t('btn_cta_contact')}}</button>
         </a>
       </div>
       <div class="claim-side-img screenshots-container">
-        <img class="screenshot login" src="@/assets/img/screenshots/personal-details.png" />
-        <img class="screenshot take-picture" src="@/assets/img/screenshots/take-picture.png" />
-        <img class="screenshot complete" src="@/assets/img/screenshots/complete.png" />
+        <img class="screenshot login" src="@/assets/img/screenshots/personal-details.png" :alt="$t('seo_2')"/>
+        <img class="screenshot take-picture" src="@/assets/img/screenshots/take-picture.png" :alt="$t('seo_3')"/>
+        <img class="screenshot complete" src="@/assets/img/screenshots/complete.png" :alt="$t('seo_4')"/>
       </div>
     </section>
 
@@ -23,15 +23,15 @@
         <h2>{{$t('business_differences_title')}}</h2>
       </div>
       <div class="highlights-container">
-        <article v-for="difference in differences" :key="difference.title">
+        <article v-for="(difference,i) in differences" :key="difference.title">
         <div class="article-container">
           <div class="article-img-container">
             <!-- <span class="big">{{$t(differences.header)}}</span>
             {{$t(differences.headerDescription)}} -->
-            <img :src="difference.img" alt />
+            <img :src="difference.img" :alt="$t('seo_' + (i + 5))"/>
           </div>
           <h3>{{$t(difference.title)}}</h3>
-          <p>{{$t(difference.content)}}</p>
+          <p v-html="$t(difference.content)">{{$t(difference.content)}}</p>
         </div>
       </article>
       </div>
@@ -77,13 +77,13 @@
     </section>
 
     <!-- Costs -->
-    <section class="claim-wrapper" >
+    
       <!-- <h5>{{$t('business_costs_title')}}</h5> -->
       <!-- <div class="claim-container" id="costsManagement">
         <div class="claim-info">
           <h2 class="title">{{$t('business_costs_title')}}</h2>
           <h4 class="subtitle">{{$t('business_costs_manage_content')}}</h4>
-          <a :href="`mailto:${email}`">
+          <a :href="`mailto:${getEmail()}`">
             <button class="primary">{{$t('btn_cta_contact')}}</button>
           </a>
         </div>
@@ -99,50 +99,96 @@
         <div class="claim-info right">
           <h2 class="title">{{$t('business_costs_retargeting_title')}}</h2>
           <h4 class="subtitle">{{$t('business_costs_retargeting_content')}}</h4>
-          <a :href="`mailto:${email}`">
+          <a :href="`mailto:${getEmail()}`">
             <button class="primary">{{$t('btn_cta_contact')}}</button>
           </a>
         </div>
       </div>  -->
 
-    <div class="claim-container" id="sdk">
-      <div class="claim-info">
-        <h2 class="title">{{$t('business_benefits_sdk_title')}}</h2>
-        <h4 class="subtitle">{{$t('business_benefits_sdk_content')}}</h4>
-        <h6 class="subtitle">{{$t('business_benefits_integration_content')}}</h6>
+    <!-- HOW TO -->
+    <!-- <section class="features-wrapper" id="howto">
+      <div class="section-headers">
+        <h6 class="tag">{{$t('business_howto_section')}}</h6>
+        <h2>{{$t('business_howto_title')}}</h2>
+        <p>{{$t('business_howto_content')}}</p>
+      </div>
+      <div class="features-container">
         <ul>
-          <li><b>{{$t('business_benefits_fraud')}}</b></li>
-          <li><b>{{$t('business_benefits_kyc')}}</b></li>
-          <li><b>{{$t('business_benefits_aml')}}</b></li>
-          <li><b>{{$t('business_benefits_pep')}}</b></li>
-          <li><b>{{$t('business_benefits_gdpr')}}</b></li>
-          <li><b>{{$t('business_benefits_legal')}}</b></li>
-        </ul>
-        <a :href="`mailto:${email}`">
-          <button class="primary">{{$t('btn_cta_contact')}}</button>
-        </a>
+            <li><b>{{$t('business_howto_content1')}}</b></li>
+            <li><b>{{$t('business_howto_content2')}}</b></li>
+            <li><b>{{$t('business_howto_content3')}}</b></li>
+          </ul>
       </div>
-      <div class="claim-side-img" id="benefits">
-        <img src="@/assets/img/illustrations/book-imac.svg" />
+      <p>{{$t('business_howto_content4')}}</p>
+      <a :href="`mailto:${getEmail()}`">
+        <button class="primary">{{$t('btn_cta_contact')}}</button>
+      </a>
+    </section> -->
+    <section class="claim-wrapper" id="howto">
+      <div class="section-headers">
+        <h6 class="tag">{{$t('business_howto_section')}}</h6>
+        <h2>{{$t('business_howto_title')}}</h2>
       </div>
-    </div>
-    </section>
-    <section class="claim-wrapper" >
-      <div class="claim-container" id="countries">
+      <div class="claim-container" >
         <div class="claim-info">
-          <h2 class="title">{{$t('business_highlights_countries_title')}}</h2>
-          <h4 class="subtitle">{{$t('business_highlights_countries_content')}}</h4>
-          <a :href="`mailto:${email}`">
+          <h4 class="subtitle">{{$t('business_howto_content')}}</h4>
+          <!-- <h6 class="subtitle">{{$t('business_benefits_integration_content')}}</h6> -->
+          <ol>
+            <li><b>{{$t('business_howto_content1')}}</b></li>
+            <li><b>{{$t('business_howto_content2')}}</b></li>
+            <li><b>{{$t('business_howto_content3')}}</b></li>
+          </ol>
+          <h6 v-html="$t('business_howto_content4')">{{$t('business_howto_content4')}}</h6>
+          <a :href="`mailto:${getEmail()}`">
             <button class="primary">{{$t('btn_cta_contact')}}</button>
           </a>
         </div>
-        <div class="claim-side-img" id="benefits">
-          <img src="@/assets/img/illustrations/hand-globe.svg" />
+        <div class="claim-side-img">
+          <img src="@/assets/img/illustrations/book-imac.svg" :alt="$t('seo_7')"/>
         </div>
       </div>
     </section>
 
-     <section class="features-wrapper" id="usecases">
+    <!-- SDK -->
+    <!-- <section class="claim-wrapper" id="sdk">
+      <div class="claim-container" >
+        <div class="claim-info">
+          <h2 class="title">asdf{{$t('business_benefits_sdk_title')}}</h2>
+          <h4 class="subtitle">{{$t('business_benefits_sdk_content')}}</h4>
+          <h6 class="subtitle">{{$t('business_benefits_integration_content')}}</h6>
+          <ul>
+            <li><b>{{$t('business_benefits_fraud')}}</b></li>
+            <li><b>{{$t('business_benefits_kyc')}}</b></li>
+            <li><b>{{$t('business_benefits_aml')}}</b></li>
+            <li><b>{{$t('business_benefits_pep')}}</b></li>
+            <li><b>{{$t('business_benefits_gdpr')}}</b></li>
+            <li><b>{{$t('business_benefits_legal')}}</b></li>
+          </ul>
+          <a :href="`mailto:${getEmail()}`">
+            <button class="primary">{{$t('btn_cta_contact')}}</button>
+          </a>
+        </div>
+        <div class="claim-side-img">
+          <img src="@/assets/img/illustrations/book-imac.svg" />
+        </div>
+      </div>
+    </section> -->
+    <section class="claim-wrapper" id="countries">
+      <div class="claim-container">
+        <div class="claim-info">
+          <h2 class="title">{{$t('business_highlights_countries_title')}}</h2>
+          <h4 class="subtitle">{{$t('business_highlights_countries_content')}}</h4>
+          <a :href="`mailto:${getEmail()}`">
+            <button class="primary">{{$t('btn_cta_contact')}}</button>
+          </a>
+        </div>
+        <div class="claim-side-img">
+          <img src="@/assets/img/illustrations/hand-globe.svg" :alt="$t('seo_8')"/>
+        </div>
+      </div>
+    </section>
+
+    <section class="features-wrapper" id="usecases">
       <div class="section-headers">
         <h6 class="tag">{{$t('business_usecases_section')}}</h6>
         <h2>{{$t('business_usecases_title')}}</h2>
@@ -154,7 +200,7 @@
           <h3>{{$t(usecase.title)}}</h3>
         </div>
       </div>
-      <a :href="`mailto:${email}`">
+      <a :href="`mailto:${getEmail()}`">
         <button class="primary">{{$t('btn_cta_contact')}}</button>
       </a>
     </section>
@@ -165,11 +211,23 @@
         <h2>{{$t('business_pricing_title')}}</h2>
         <p>{{$t('business_pricing_content')}}</p>
       </div>
-      <a :href="`mailto:${email}`">
+      <a :href="`mailto:${getEmail()}`">
         <button class="primary">{{$t('btn_cta_start')}}</button>
       </a>
     </section>
-
+    <script type="application/ld+json">
+    {
+      "@context": "https://getsilt.com",
+      "@type": "Com",
+      "url": "https://www.getsilt.com",
+      "name": "Verified ID signups, KYC, PEP, AML, Fraud control",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "hello@getsilt.com",
+        "contactType": "Customer service"
+      }
+    }
+    </script>
   </div>
 </template>
 
@@ -297,11 +355,14 @@ export default {
     this.startFirstAnimationScene(this);
   },
   methods: {
+    getEmail(){
+      return this.email
+    },
     startFirstAnimationScene: _this => {
       const controller = new _this.$ScrollMagic.Controller({
         globalSceneOptions: { offset: -300 }
       });
-      const sections = ['#sdk', '#differences', '#usescases', '#techfeatures','#producthighlights' ]
+      const sections = ['#pricing', '#usecases', '#countries', '#howto', '#differences', '#techfeatures', '#producthighlights' ]
       let tm = {};
       for(let section of sections){
         tm[section] = (TweenMax.from(section, 1, {
@@ -339,7 +400,8 @@ export default {
   img.screenshot
     flex: 1 1 auto
     min-width: 120px
-    max-width: 200px
+    max-width: 180px
+    align-self: center
     box-shadow: 2px 2px 20px -6px rgba(0,0,0,0.3)
     transform: rotateY(10deg)
     transition: 0.3s

@@ -2,7 +2,7 @@
   <section>
     <div class="logo">
       <nuxt-link to="/">
-        <img src="@/assets/img/logo/silt_blue.svg" alt="">
+        <img src="@/assets/img/logo/silt_blue.svg" :alt="$t('seo_1')">
       </nuxt-link>
     </div>
     <nav>
