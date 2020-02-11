@@ -19,7 +19,7 @@
     <!-- Unique advantadge -->
     <section class="highlights-wrapper" id="differences">
       <div class="section-headers">
-        <h6 class="tag">{{$t('business_differences_section')}}</h6>
+        <span class="tag">{{$t('business_differences_section')}}</span>
         <h2>{{$t('business_differences_title')}}</h2>
       </div>
       <div class="highlights-container">
@@ -42,7 +42,7 @@
     <!-- TECH FEATURES -->
     <section class="features-wrapper" id="techfeatures">
       <div class="section-headers">
-        <h6 class="tag">{{$t('business_highlights_vanguardTech_section')}}</h6>
+        <span class="tag">{{$t('business_highlights_vanguardTech_section')}}</span>
         <h2>{{$t('business_highlights_vanguardTech_title')}}</h2>
         <p>{{$t('business_highlights_vanguardTech_content')}}</p>
       </div>
@@ -57,7 +57,7 @@
     <!-- PRODUCT HIGHLIGHTS -->
     <section class="highlights-wrapper" id="producthighlights">
       <div class="section-headers">
-        <h6 class="tag">{{$t('business_friction_section')}}</h6>
+        <span class="tag">{{$t('business_friction_section')}}</span>
         <h2>{{$t('business_friction_title')}}</h2>
       </div>
       <div class="highlights-container">
@@ -78,7 +78,7 @@
 
     <!-- Costs -->
     
-      <!-- <h5>{{$t('business_costs_title')}}</h5> -->
+      <!-- <span>{{$t('business_costs_title')}}</span> -->
       <!-- <div class="claim-container" id="costsManagement">
         <div class="claim-info">
           <h2 class="title">{{$t('business_costs_title')}}</h2>
@@ -108,7 +108,7 @@
     <!-- HOW TO -->
     <!-- <section class="features-wrapper" id="howto">
       <div class="section-headers">
-        <h6 class="tag">{{$t('business_howto_section')}}</h6>
+        <span class="tag">{{$t('business_howto_section')}}</span>
         <h2>{{$t('business_howto_title')}}</h2>
         <p>{{$t('business_howto_content')}}</p>
       </div>
@@ -126,19 +126,19 @@
     </section> -->
     <section class="claim-wrapper" id="howto">
       <div class="section-headers">
-        <h6 class="tag">{{$t('business_howto_section')}}</h6>
+        <span class="tag">{{$t('business_howto_section')}}</span>
         <h2>{{$t('business_howto_title')}}</h2>
       </div>
       <div class="claim-container" >
         <div class="claim-info">
           <h4 class="subtitle">{{$t('business_howto_content')}}</h4>
-          <!-- <h6 class="subtitle">{{$t('business_benefits_integration_content')}}</h6> -->
+          <!-- <span class="subtitle">{{$t('business_benefits_integration_content')}}</span> -->
           <ol>
             <li>{{$t('business_howto_content1')}}</li>
             <li>{{$t('business_howto_content2')}}</li>
             <li>{{$t('business_howto_content3')}}</li>
           </ol>
-          <h6 v-html="$t('business_howto_content4')">{{$t('business_howto_content4')}}</h6>
+          <span v-html="$t('business_howto_content4')">{{$t('business_howto_content4')}}</span>
           <a :href="`mailto:${getEmail()}`" target="_blank">
             <button class="primary">{{$t('btn_cta_contact')}}</button>
           </a>
@@ -155,7 +155,7 @@
         <div class="claim-info">
           <h2 class="title">asdf{{$t('business_benefits_sdk_title')}}</h2>
           <h4 class="subtitle">{{$t('business_benefits_sdk_content')}}</h4>
-          <h6 class="subtitle">{{$t('business_benefits_integration_content')}}</h6>
+          <span class="subtitle">{{$t('business_benefits_integration_content')}}</span>
           <ul>
             <li><b>{{$t('business_benefits_fraud')}}</b></li>
             <li><b>{{$t('business_benefits_kyc')}}</b></li>
@@ -190,7 +190,7 @@
 
     <section class="features-wrapper" id="usecases">
       <div class="section-headers">
-        <h6 class="tag">{{$t('business_usecases_section')}}</h6>
+        <span class="tag">{{$t('business_usecases_section')}}</span>
         <h2>{{$t('business_usecases_title')}}</h2>
         <p>{{$t('business_usecases_content')}}</p>
       </div>
@@ -207,7 +207,7 @@
 
     <section class="features-wrapper" id="pricing">
       <div class="section-headers">
-        <h6 class="tag">{{$t('business_pricing_section')}}</h6>
+        <span class="tag">{{$t('business_pricing_section')}}</span>
         <h2>{{$t('business_pricing_title')}}</h2>
         <p>{{$t('business_pricing_content')}}</p>
       </div>
