@@ -6,7 +6,7 @@
           <p>{{$t('footer_silt_what')}}</p>
       </div>
       <div class="footer_info">
-        <h6>{{$t('footer_contact')}}</h6>
+        <span class="h6">{{$t('footer_contact')}}</span>
         <p>hello@getsilt.com</p>
         <p><a href="https://www.facebook.com/Silt-102186764702659/" target="_blank"><img height="20" src="@/assets/img/icons/social_facebook.svg" alt="Facebook Silt page"></a></p>
       </div>
