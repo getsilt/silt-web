@@ -1,6 +1,6 @@
 const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
   router: {
-    base: 'https://getsilt.com'
+    base: '/'
   }
 } : {}
 
@@ -51,7 +51,7 @@ export default {
       ['@nuxtjs/google-analytics', {
         id: 'UA-144041578-1'
       }]
-    ],
+  ],
 
 
   /*
