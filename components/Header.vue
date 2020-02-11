@@ -6,7 +6,7 @@
       </nuxt-link>
     </div>
     <nav>
-      <a :href="`mailto:hello@joinsilt.com`"><button class="small">{{$t('btn_cta_contact')}}</button></a>
+      <a :href="`mailto:hello@getsilt.com`"><button class="small">{{$t('btn_cta_contact')}}</button></a>
     </nav>
   </section>
 </template>

@@ -5,7 +5,7 @@
       <div class="claim-info">
         <h1 class="title" v-html="$t('business_claim1')"></h1>
         <h4 class="subtitle" v-html="$t('business_claim2')">{{$t('business_claim2')}}</h4>
-        <a :href="`mailto:${getEmail()}`">
+        <a :href="`mailto:${getEmail()}`" target="_blank">
           <button class="primary">{{$t('btn_cta_contact')}}</button>
         </a>
       </div>
@@ -134,12 +134,12 @@
           <h4 class="subtitle">{{$t('business_howto_content')}}</h4>
           <!-- <h6 class="subtitle">{{$t('business_benefits_integration_content')}}</h6> -->
           <ol>
-            <li><b>{{$t('business_howto_content1')}}</b></li>
-            <li><b>{{$t('business_howto_content2')}}</b></li>
-            <li><b>{{$t('business_howto_content3')}}</b></li>
+            <li>{{$t('business_howto_content1')}}</li>
+            <li>{{$t('business_howto_content2')}}</li>
+            <li>{{$t('business_howto_content3')}}</li>
           </ol>
           <h6 v-html="$t('business_howto_content4')">{{$t('business_howto_content4')}}</h6>
-          <a :href="`mailto:${getEmail()}`">
+          <a :href="`mailto:${getEmail()}`" target="_blank">
             <button class="primary">{{$t('btn_cta_contact')}}</button>
           </a>
         </div>
@@ -178,7 +178,7 @@
         <div class="claim-info">
           <h2 class="title">{{$t('business_highlights_countries_title')}}</h2>
           <h4 class="subtitle">{{$t('business_highlights_countries_content')}}</h4>
-          <a :href="`mailto:${getEmail()}`">
+          <a :href="`mailto:${getEmail()}`" target="_blank">
             <button class="primary">{{$t('btn_cta_contact')}}</button>
           </a>
         </div>
@@ -200,7 +200,7 @@
           <h3>{{$t(usecase.title)}}</h3>
         </div>
       </div>
-      <a :href="`mailto:${getEmail()}`">
+      <a :href="`mailto:${getEmail()}`" target="_blank">
         <button class="primary">{{$t('btn_cta_contact')}}</button>
       </a>
     </section>
@@ -211,7 +211,7 @@
         <h2>{{$t('business_pricing_title')}}</h2>
         <p>{{$t('business_pricing_content')}}</p>
       </div>
-      <a :href="`mailto:${getEmail()}`">
+      <a :href="`mailto:${getEmail()}`" target="_blank">
         <button class="primary">{{$t('btn_cta_start')}}</button>
       </a>
     </section>
@@ -257,7 +257,7 @@ export default {
   },
   data() {
     return {
-      email: 'hello@joinsilt.com',
+      email: 'hello@getsilt.com',
       differences: [
         {
           title: 'business_differences_oneRegister_title',
