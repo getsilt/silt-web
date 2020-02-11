@@ -219,7 +219,7 @@
     {
       "@context": "https://getsilt.com",
       "@type": "Com",
-      "url": "https://www.getsilt.com",
+      "url": "https://getsilt.com",
       "name": "Verified ID signups, KYC, PEP, AML, Fraud control",
       "contactPoint": {
         "@type": "ContactPoint",
