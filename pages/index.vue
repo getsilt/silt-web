@@ -4,52 +4,71 @@
     <section class="claim-container">
       <div class="claim-info">
         <h1 class="title" v-html="$t('business_claim1')"></h1>
-        <h4 class="subtitle" v-html="$t('business_claim2')">{{$t('business_claim2')}}</h4>
+        <h4 class="subtitle" v-html="$t('business_claim2')">
+          {{ $t("business_claim2") }}
+        </h4>
         <a :href="`mailto:${getEmail()}`" target="_blank">
-          <button class="primary">{{$t('btn_cta_contact')}}</button>
+          <button class="primary">{{ $t("btn_cta_contact") }}</button>
         </a>
       </div>
       <div class="claim-side-img screenshots-container">
-        <img class="screenshot login" src="@/assets/img/screenshots/personal-details.png" :alt="$t('seo_2')"/>
-        <img class="screenshot take-picture" src="@/assets/img/screenshots/take-picture.png" :alt="$t('seo_3')"/>
-        <img class="screenshot complete" src="@/assets/img/screenshots/complete.png" :alt="$t('seo_4')"/>
+        <img
+          class="screenshot login"
+          src="@/assets/img/screenshots/personal-details.png"
+          :alt="$t('seo_2')"
+        />
+        <img
+          class="screenshot take-picture"
+          src="@/assets/img/screenshots/take-picture.png"
+          :alt="$t('seo_3')"
+        />
+        <img
+          class="screenshot complete"
+          src="@/assets/img/screenshots/complete.png"
+          :alt="$t('seo_4')"
+        />
       </div>
     </section>
 
     <!-- Unique advantadge -->
     <section class="highlights-wrapper" id="differences">
       <div class="section-headers">
-        <span class="tag">{{$t('business_differences_section')}}</span>
-        <h2>{{$t('business_differences_title')}}</h2>
+        <span class="tag">{{ $t("business_differences_section") }}</span>
+        <h2>{{ $t("business_differences_title") }}</h2>
       </div>
       <div class="highlights-container">
-        <article v-for="(difference,i) in differences" :key="difference.title">
-        <div class="article-container">
-          <div class="article-img-container">
-            <!-- <span class="big">{{$t(differences.header)}}</span>
+        <article v-for="(difference, i) in differences" :key="difference.title">
+          <div class="article-container">
+            <div class="article-img-container">
+              <!-- <span class="big">{{$t(differences.header)}}</span>
             {{$t(differences.headerDescription)}} -->
-            <img :src="difference.img" :alt="$t('seo_' + (i + 5))"/>
+              <img :src="difference.img" :alt="$t('seo_' + (i + 5))" />
+            </div>
+            <h3>{{ $t(difference.title) }}</h3>
+            <p v-html="$t(difference.content)">{{ $t(difference.content) }}</p>
           </div>
-          <h3>{{$t(difference.title)}}</h3>
-          <p v-html="$t(difference.content)">{{$t(difference.content)}}</p>
-        </div>
-      </article>
+        </article>
       </div>
       <!-- <p>{{$t('business_friction_oneregister_title')}}</p> -->
     </section>
 
-
     <!-- TECH FEATURES -->
     <section class="features-wrapper" id="techfeatures">
       <div class="section-headers">
-        <span class="tag">{{$t('business_highlights_vanguardTech_section')}}</span>
-        <h2>{{$t('business_highlights_vanguardTech_title')}}</h2>
-        <p>{{$t('business_highlights_vanguardTech_content')}}</p>
+        <span class="tag">{{
+          $t("business_highlights_vanguardTech_section")
+        }}</span>
+        <h2>{{ $t("business_highlights_vanguardTech_title") }}</h2>
+        <p>{{ $t("business_highlights_vanguardTech_content") }}</p>
       </div>
       <div class="features-container">
-        <div class="features-item" v-for="feature in techfeatures" :key="feature.title">
+        <div
+          class="features-item"
+          v-for="feature in techfeatures"
+          :key="feature.title"
+        >
           <!-- <img :src="feature.img" /> -->
-          <h3>{{$t(feature.title)}}</h3>
+          <h3>{{ $t(feature.title) }}</h3>
         </div>
       </div>
     </section>
@@ -57,29 +76,29 @@
     <!-- PRODUCT HIGHLIGHTS -->
     <section class="highlights-wrapper" id="producthighlights">
       <div class="section-headers">
-        <span class="tag">{{$t('business_friction_section')}}</span>
-        <h2>{{$t('business_friction_title')}}</h2>
+        <span class="tag">{{ $t("business_friction_section") }}</span>
+        <h2>{{ $t("business_friction_title") }}</h2>
       </div>
       <div class="highlights-container">
         <article v-for="highlight in highlights" :key="highlight.title">
-        <div class="article-container">
-          <div class="article-header">
-            <span class="big">{{$t(highlight.header)}}</span>
-            {{$t(highlight.headerDescription)}}
-            <!-- <img src="@/assets/img/icons/rocket.svg" alt /> -->
+          <div class="article-container">
+            <div class="article-header">
+              <span class="big">{{ $t(highlight.header) }}</span>
+              {{ $t(highlight.headerDescription) }}
+              <!-- <img src="@/assets/img/icons/rocket.svg" alt /> -->
+            </div>
+            <h3>{{ $t(highlight.title) }}</h3>
+            <p>{{ $t(highlight.content) }}</p>
           </div>
-          <h3>{{$t(highlight.title)}}</h3>
-          <p>{{$t(highlight.content)}}</p>
-        </div>
-      </article>
+        </article>
       </div>
       <!-- <p>{{$t('business_friction_oneregister_title')}}</p> -->
     </section>
 
     <!-- Costs -->
-    
-      <!-- <span>{{$t('business_costs_title')}}</span> -->
-      <!-- <div class="claim-container" id="costsManagement">
+
+    <!-- <span>{{$t('business_costs_title')}}</span> -->
+    <!-- <div class="claim-container" id="costsManagement">
         <div class="claim-info">
           <h2 class="title">{{$t('business_costs_title')}}</h2>
           <h4 class="subtitle">{{$t('business_costs_manage_content')}}</h4>
@@ -91,8 +110,8 @@
           <img src="@/assets/img/bg/api-response.png" />
         </div>
       </div> -->
-      
-      <!-- <div class="claim-container" id="costsRetargeting">
+
+    <!-- <div class="claim-container" id="costsRetargeting">
         <div class="developers-img fw-container">
           <img src="@/assets/img/bg/api-response.png" />
         </div>
@@ -126,25 +145,30 @@
     </section> -->
     <section class="claim-wrapper" id="howto">
       <div class="section-headers">
-        <span class="tag">{{$t('business_howto_section')}}</span>
-        <h2>{{$t('business_howto_title')}}</h2>
+        <span class="tag">{{ $t("business_howto_section") }}</span>
+        <h2>{{ $t("business_howto_title") }}</h2>
       </div>
-      <div class="claim-container" >
+      <div class="claim-container">
         <div class="claim-info">
-          <h4 class="subtitle">{{$t('business_howto_content')}}</h4>
+          <h4 class="subtitle">{{ $t("business_howto_content") }}</h4>
           <!-- <span class="subtitle">{{$t('business_benefits_integration_content')}}</span> -->
           <ol>
-            <li>{{$t('business_howto_content1')}}</li>
-            <li>{{$t('business_howto_content2')}}</li>
-            <li>{{$t('business_howto_content3')}}</li>
+            <li>{{ $t("business_howto_content1") }}</li>
+            <li>{{ $t("business_howto_content2") }}</li>
+            <li>{{ $t("business_howto_content3") }}</li>
           </ol>
-          <span v-html="$t('business_howto_content4')">{{$t('business_howto_content4')}}</span>
+          <span v-html="$t('business_howto_content4')">{{
+            $t("business_howto_content4")
+          }}</span>
           <a :href="`mailto:${getEmail()}`" target="_blank">
-            <button class="primary">{{$t('btn_cta_contact')}}</button>
+            <button class="primary">{{ $t("btn_cta_contact") }}</button>
           </a>
         </div>
         <div class="claim-side-img">
-          <img src="@/assets/img/illustrations/book-imac.svg" :alt="$t('seo_7')"/>
+          <img
+            src="@/assets/img/illustrations/book-imac.svg"
+            :alt="$t('seo_7')"
+          />
         </div>
       </div>
     </section>
@@ -176,58 +200,54 @@
     <section class="claim-wrapper" id="countries">
       <div class="claim-container">
         <div class="claim-info">
-          <h2 class="title">{{$t('business_highlights_countries_title')}}</h2>
-          <h4 class="subtitle">{{$t('business_highlights_countries_content')}}</h4>
+          <h2 class="title">{{ $t("business_highlights_countries_title") }}</h2>
+          <h4 class="subtitle">
+            {{ $t("business_highlights_countries_content") }}
+          </h4>
           <a :href="`mailto:${getEmail()}`" target="_blank">
-            <button class="primary">{{$t('btn_cta_contact')}}</button>
+            <button class="primary">{{ $t("btn_cta_contact") }}</button>
           </a>
         </div>
         <div class="claim-side-img">
-          <img src="@/assets/img/illustrations/hand-globe.svg" :alt="$t('seo_8')"/>
+          <img
+            src="@/assets/img/illustrations/hand-globe.svg"
+            :alt="$t('seo_8')"
+          />
         </div>
       </div>
     </section>
 
     <section class="features-wrapper" id="usecases">
       <div class="section-headers">
-        <span class="tag">{{$t('business_usecases_section')}}</span>
-        <h2>{{$t('business_usecases_title')}}</h2>
-        <p>{{$t('business_usecases_content')}}</p>
+        <span class="tag">{{ $t("business_usecases_section") }}</span>
+        <h2>{{ $t("business_usecases_title") }}</h2>
+        <p>{{ $t("business_usecases_content") }}</p>
       </div>
       <div class="features-container">
-        <div class="features-item" v-for="usecase in usecases" :key="usecase.title">
+        <div
+          class="features-item"
+          v-for="usecase in usecases"
+          :key="usecase.title"
+        >
           <!-- <img :src="feature.img" /> -->
-          <h3>{{$t(usecase.title)}}</h3>
+          <h3>{{ $t(usecase.title) }}</h3>
         </div>
       </div>
       <a :href="`mailto:${getEmail()}`" target="_blank">
-        <button class="primary">{{$t('btn_cta_contact')}}</button>
+        <button class="primary">{{ $t("btn_cta_contact") }}</button>
       </a>
     </section>
 
     <section class="features-wrapper" id="pricing">
       <div class="section-headers">
-        <span class="tag">{{$t('business_pricing_section')}}</span>
-        <h2>{{$t('business_pricing_title')}}</h2>
-        <p>{{$t('business_pricing_content')}}</p>
+        <span class="tag">{{ $t("business_pricing_section") }}</span>
+        <h2>{{ $t("business_pricing_title") }}</h2>
+        <p>{{ $t("business_pricing_content") }}</p>
       </div>
       <a :href="`mailto:${getEmail()}`" target="_blank">
-        <button class="primary">{{$t('btn_cta_start')}}</button>
+        <button class="primary">{{ $t("btn_cta_start") }}</button>
       </a>
     </section>
-    <script type="application/ld+json">
-    {
-      "@context": "https://getsilt.com",
-      "@type": "Com",
-      "url": "https://getsilt.com",
-      "name": "Verified ID signups, KYC, PEP, AML, Fraud control",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "email": "hello@getsilt.com",
-        "contactType": "Customer service"
-      }
-    }
-    </script>
   </div>
 </template>
 
@@ -245,109 +265,127 @@ export default {
   },
   head() {
     return {
-      title: this.$t('business_claim1'),
+      title: this.$t("business_claim1"),
       meta: [
         {
-          hid: 'description',
-          name: 'description',
-          content: this.$t('business_claim2')
+          hid: "description",
+          name: "description",
+          content: this.$t("business_claim2")
+        }
+      ],
+      __dangerouslyDisableSanitizers: ["script"],
+      script: [
+        {
+          innerHTML: JSON.stringify(this.structuredData),
+          type: "application/ld+json"
         }
       ]
     };
   },
   data() {
     return {
-      email: 'hello@getsilt.com',
+      structuredData: {
+        "@context": "https://getsilt.com",
+        "@type": "Organization",
+        url: "https://getsilt.com",
+        name: "Verified ID signups, KYC, PEP, AML, Fraud control",
+        contactPoint: {
+          "@type": "ContactPoint",
+          email: "hello@getsilt.com",
+          contactType: "Customer service"
+        }
+      },
+      email: "hello@getsilt.com",
       differences: [
         {
-          title: 'business_differences_oneRegister_title',
-          content: 'business_differences_oneRegister_content',
-          header: 'business_friction_oneregister_header',
-          headerDescription: 'business_friction_oneregister_headerDescription',
-          img: require('assets/img/illustrations/drinks-user.svg')
+          title: "business_differences_oneRegister_title",
+          content: "business_differences_oneRegister_content",
+          header: "business_friction_oneregister_header",
+          headerDescription: "business_friction_oneregister_headerDescription",
+          img: require("assets/img/illustrations/drinks-user.svg")
         },
         {
-          title: 'business_differences_technology_title',
-          content: 'business_differences_technology_content',
-          header: 'business_friction_trust_header',
-          headerDescription: 'business_friction_trust_headerDescription',
-          img: require('assets/img/illustrations/bulbrocket.svg')
+          title: "business_differences_technology_title",
+          content: "business_differences_technology_content",
+          header: "business_friction_trust_header",
+          headerDescription: "business_friction_trust_headerDescription",
+          img: require("assets/img/illustrations/bulbrocket.svg")
         },
         {
-          title: 'business_differences_noManagement_title',
-          content: 'business_differences_noManagement_content',
-          header: 'business_friction_fast_header',
-          headerDescription: 'business_friction_fast_headerDescription',
-          img: require('assets/img/illustrations/meditation.svg')
-        },
+          title: "business_differences_noManagement_title",
+          content: "business_differences_noManagement_content",
+          header: "business_friction_fast_header",
+          headerDescription: "business_friction_fast_headerDescription",
+          img: require("assets/img/illustrations/meditation.svg")
+        }
       ],
       highlights: [
         {
-          title: 'business_friction_oneregister_title',
-          content: 'business_friction_oneregister_content',
-          header: 'business_friction_oneregister_header',
-          headerDescription: 'business_friction_oneregister_headerDescription'
+          title: "business_friction_oneregister_title",
+          content: "business_friction_oneregister_content",
+          header: "business_friction_oneregister_header",
+          headerDescription: "business_friction_oneregister_headerDescription"
         },
         {
-          title: 'business_friction_trust_title',
-          content: 'business_friction_trust_content',
-          header: 'business_friction_trust_header',
-          headerDescription: 'business_friction_trust_headerDescription'
+          title: "business_friction_trust_title",
+          content: "business_friction_trust_content",
+          header: "business_friction_trust_header",
+          headerDescription: "business_friction_trust_headerDescription"
         },
         {
-          title: 'business_friction_fast_title',
-          content: 'business_friction_fast_content',
-          header: 'business_friction_fast_header',
-          headerDescription: 'business_friction_fast_headerDescription'
-        },
+          title: "business_friction_fast_title",
+          content: "business_friction_fast_content",
+          header: "business_friction_fast_header",
+          headerDescription: "business_friction_fast_headerDescription"
+        }
       ],
       techfeatures: [
         {
           // img: require('assets/img/icons/credit-card.svg'),
-          title: 'business_highlights_faceRecognition_title'
+          title: "business_highlights_faceRecognition_title"
         },
         {
           // img: require('assets/img/icons/money-bag.svg'),
-          title: 'business_highlights_liveness_title'
+          title: "business_highlights_liveness_title"
         },
         {
           // img: require('assets/img/icons/invest.svg'),
-          title: 'business_highlights_docscan_title'
+          title: "business_highlights_docscan_title"
         },
         {
           // img: require('assets/img/icons/graph-bars.svg'),
-          title: 'business_highlights_authenticity_title'
+          title: "business_highlights_authenticity_title"
         },
         {
           // img: require('assets/img/icons/graph-bars.svg'),
-          title: 'business_highlights_biometric_title'
+          title: "business_highlights_biometric_title"
         },
         {
           // img: require('assets/img/icons/graph-bars.svg'),
-          title: 'business_highlights_dashboard_title'
-        },
+          title: "business_highlights_dashboard_title"
+        }
       ],
       usecases: [
         {
           // img: require('assets/img/icons/credit-card.svg'),
-          title: 'business_usecases_neobank'
+          title: "business_usecases_neobank"
         },
         {
           // img: require('assets/img/icons/money-bag.svg'),
-          title: 'business_usecases_sharing'
+          title: "business_usecases_sharing"
         },
         {
           // img: require('assets/img/icons/invest.svg'),
-          title: 'business_usecases_p2p'
+          title: "business_usecases_p2p"
         },
         {
           // img: require('assets/img/icons/graph-bars.svg'),
-          title: 'business_usecases_gaming'
+          title: "business_usecases_gaming"
         },
         {
           // img: require('assets/img/icons/graph-bars.svg'),
-          title: 'business_usecases_contract'
-        },
+          title: "business_usecases_contract"
+        }
       ]
     };
   },
@@ -355,25 +393,33 @@ export default {
     this.startFirstAnimationScene(this);
   },
   methods: {
-    getEmail(){
-      return this.email
+    getEmail() {
+      return this.email;
     },
     startFirstAnimationScene: _this => {
       const controller = new _this.$ScrollMagic.Controller({
         globalSceneOptions: { offset: -300 }
       });
-      const sections = ['#pricing', '#usecases', '#countries', '#howto', '#differences', '#techfeatures', '#producthighlights' ]
+      const sections = [
+        "#pricing",
+        "#usecases",
+        "#countries",
+        "#howto",
+        "#differences",
+        "#techfeatures",
+        "#producthighlights"
+      ];
       let tm = {};
-      for(let section of sections){
-        tm[section] = (TweenMax.from(section, 1, {
+      for (let section of sections) {
+        tm[section] = TweenMax.from(section, 1, {
           ease: Power2.easeOut,
           scale: 0.9,
           y: 100,
           opacity: 0.3
-        }));
+        });
         new _this.$ScrollMagic.Scene({
           triggerElement: section,
-          duration: '100%'
+          duration: "100%"
         })
           .setTween(tm[section])
           .addTo(controller);
@@ -412,7 +458,7 @@ export default {
       transform: rotateY(7deg) translateX(20px)
     &:nth-child(3)
       transform: rotateY(7deg) translateX(0px)
-    
+
     @media(min-width: 768px)
       &:nth-child(1)
         transform: rotateY(7deg) translateX(0px)
