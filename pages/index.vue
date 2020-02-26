@@ -289,11 +289,8 @@ export default {
         "@type": "Organization",
         url: "https://getsilt.com",
         name: "Verified ID signups, KYC, PEP, AML, Fraud control",
-        contactPoint: {
-          "@type": "ContactPoint",
-          email: "hello@getsilt.com",
-          contactType: "Customer service"
-        }
+        email: "hello@getsilt.com",
+        logo: "https://getsilt.com/silt_blue.svg"
       },
       email: "hello@getsilt.com",
       differences: [
