@@ -48,8 +48,8 @@
   "business_differences_technology_title": "Cutting edge proprietary tech",
   "business_differences_technology_content": "Users that are not in Silt, will go through the automated verification process. This process is performed by the most advanced algorithm at this moment, combined with a proprietary model that allows us to verify users with 98% accuracy under 60 seconds.",
   "business_differences_noManagement_title": "No management or development required",
-  "business_differences_noManagement_content": "Forget about having ANYONE hired for KYC. We will take care of the signup forms and verifications of every new user that wants to use your app. We will handle their <b>privacy & data security, KYC, AML & PEP compliance </b>, manual reviews and everything else.",
-  "business_differences_noManagement_content2": "At Silt we provide verified signups for our customers. We handle the verifications of every new user that wants to use your app and we take care of their privacy & data security, KYC, AML & PEP compliance, manual reviews and everything else. Forget about having someone hired for this.",
+  "business_differences_noManagement_content": "Forget about having ANYONE hired for KYC. Silt will take care of the signup forms and verifications of every new user that wants to use your app. Silt will handle their <b>privacy & data security, KYC, AML & PEP compliance </b>, manual reviews and everything else.",
+  "business_differences_noManagement_content2": "Silt provides verified signups for our customers. We handle the verifications of every new user that wants to use your app and let Silt take care of their privacy & data security, KYC, AML & PEP compliance, manual reviews and everything else. Forget about having someone hired for this.",
 
   "business_highlights_vanguardTech_section": "Verification technology",
   "business_highlights_vanguardTech_title": "How our vanguard verification technology works",
@@ -59,7 +59,7 @@
   "business_highlights_liveness_title": "Liveness checks",
   "business_highlights_liveness_content": "",
   "business_highlights_docscan_title": "Document scan",
-  "business_highlights_docscan_content": "We extract the information of the user through our OCR technology.",
+  "business_highlights_docscan_content": "Silt extracts the information of the user through our OCR technology.",
   "business_highlights_authenticity_title": "ID Authenticity",
   "business_highlights_authenticity_content": "We check holograms, corner detections and other parameters that allows us to detect fake ID",
   "business_highlights_biometric_title": "Biometric Login",
@@ -67,7 +67,7 @@
   "business_highlights_dashboard_title": "Dashboard",
   "business_highlights_dashboard_content": "Although we handle everything for you, you may need from time to time to check your users verified IDs. For that, we provide an admin dashboard to easily check users identity at a glance.",
 
-  "business_highlights_countries_title": "We verify identity documents from all countries",
+  "business_highlights_countries_title": "Silt verifies identity documents from all countries",
   "business_highlights_countries_content": "We currently cover automatic verification, KYC, PEP & AML for more than 150 countries. The rest we handle it manually and train our model to accept new countries.",
 
   "business_highlights_noregister_title": "200ms verified new users",
@@ -114,7 +114,7 @@
   "business_benefits_legal": "Legal advice",
 
   "business_usecases_section": "Use cases",
-  "business_usecases_title": "We deal with your fraud and KYC, AML, PEP & GDPR compliance",
+  "business_usecases_title": "Silt deals with your fraud and KYC, AML, PEP & GDPR compliance",
   "business_usecases_content": "Your business could certainly benefit from our platform whichever your sector is. Find out more about how Silt could help you reduce fraud & chargebacks or be KYC, AML & PEP compliant, increase your conversion rates, mass contracts...",
 
   "business_pricing_section": "Pricing",
