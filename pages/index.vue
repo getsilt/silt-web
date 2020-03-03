@@ -273,13 +273,13 @@ export default {
           content: this.$t("business_claim2")
         }
       ],
-      __dangerouslyDisableSanitizers: ["script"],
-      script: [
-        {
-          innerHTML: JSON.stringify(this.structuredData),
-          type: "application/ld+json"
-        }
-      ]
+      // __dangerouslyDisableSanitizers: ["script"],
+      // script: [
+      //   {
+      //     innerHTML: JSON.stringify(this.structuredData),
+      //     type: "application/ld+json"
+      //   }
+      // ]
     };
   },
   data() {
@@ -287,10 +287,10 @@ export default {
       structuredData: {
         "@context": "https://getsilt.com",
         "@type": "Organization",
-        url: "https://getsilt.com",
-        name: "Verified ID signups, KYC, PEP, AML, Fraud control",
-        email: "hello@getsilt.com",
-        logo: "https://getsilt.com/silt_blue.svg"
+        "url": "https://getsilt.com",
+        "name": "Verified ID signups, KYC, PEP, AML, Fraud control",
+        "email": "hello@getsilt.com",
+        "logo": "https://getsilt.com/silt_blue.svg"
       },
       email: "hello@getsilt.com",
       differences: [
