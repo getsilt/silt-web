@@ -263,25 +263,6 @@ export default {
   components: {
     // RadarSVG
   },
-  head() {
-    return {
-      title: this.$t("business_claim1"),
-      meta: [
-        {
-          hid: "description",
-          name: "description",
-          content: this.$t("business_claim2")
-        }
-      ],
-      // __dangerouslyDisableSanitizers: ["script"],
-      // script: [
-      //   {
-      //     innerHTML: JSON.stringify(this.structuredData),
-      //     type: "application/ld+json"
-      //   }
-      // ]
-    };
-  },
   data() {
     return {
       structuredData: {

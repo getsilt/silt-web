@@ -53,6 +53,24 @@ export default {
     [
       "nuxt-i18n",
       {
+        locales: [
+          {
+            name: "English",
+            code: "en",
+            iso: "en-US"
+          }
+        ],
+        defaultLocale: "en",
+        vueI18n: {
+          fallbackLocale: "en",
+          messages: {
+            en: require("./lang/en-US.json"),
+            es: require("./lang/es-ES.json")
+          },
+          silentTranslationWarn: false
+        },
+        seo: false,
+        baseUrl:'https://getsilt.com',
         detectBrowserLanguage: {
           useCookie: true,
           cookieKey: "i18n_redirected"
@@ -78,25 +96,6 @@ export default {
   },
   * 
   */
-
-  i18n: {
-    locales: [
-      {
-        name: "English",
-        code: "en",
-        iso: "en-US"
-      }
-    ],
-    defaultLocale: "en",
-    vueI18n: {
-      fallbackLocale: "en",
-      messages: {
-        en: require("./lang/en-US.json"),
-        es: require("./lang/es-ES.json")
-      },
-      silentTranslationWarn: false
-    }
-  },
   ...routerBase,
   generate: {
     fallback: "404.html"
