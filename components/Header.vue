@@ -24,10 +24,15 @@ section
     max-width: 50%
     display: flex
     align-items: center
+    max-height: 50px
     a
-      display: flex
+      height: 100%
     img
       max-width: 100%
+      width: auto
+      margin: auto
+      height: 100%
+      display: block
 
   nav
     flex: 0 0 auto
