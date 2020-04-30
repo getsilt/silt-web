@@ -97,6 +97,15 @@ export default {
   * 
   */
   ...routerBase,
+  router: {
+    extendRoutes (routes, resolve) {
+      routes.push({
+        name: 'index',
+        path: '/',
+        component: resolve(__dirname, 'pages/KYC-verification-business.vue')
+      })
+    }
+  },
   generate: {
     fallback: "404.html"
   },

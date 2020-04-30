@@ -14,13 +14,18 @@ body
   font-family: $font-body
   background-color: #ffffff
   color: #666666
-  padding: 40px
+  padding: 40px 0
   font-size: 16px
   margin: 0
-  max-width: 1400px
-  margin: auto
-  padding-top: 0
-  @media (min-width: 768px)
-    padding: 40px 80px
-    padding-top: 0
-  
+  // max-width: 1400px
+  // margin: auto
+  // padding-top: 0
+  // @media (min-width: 768px)
+  //   padding: 40px 80px
+  //   padding-top: 0
+
+.page-enter-active, .page-leave-active
+  transition: opacity .5s
+
+.page-enter, .page-leave-to
+  opacity: 0

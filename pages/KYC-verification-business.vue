@@ -257,11 +257,8 @@ var controllerHolder;
 if (process.client) {
   //const ScrollMagic = require('~/plugins/scrollmagic');
 }
-
-// import RadarSVG from '~/assets/img/bg/radar.svg?inline';
 export default {
   components: {
-    // RadarSVG
   },
   data() {
     return {
@@ -379,7 +376,6 @@ export default {
         globalSceneOptions: { offset: -300 }
       });
       const sections = [
-        "#pricing",
         "#usecases",
         "#countries",
         "#howto",
@@ -392,7 +388,7 @@ export default {
         tm[section] = TweenMax.from(section, 1, {
           ease: Power2.easeOut,
           scale: 0.9,
-          y: 100,
+          y: 200,
           opacity: 0.3
         });
         new _this.$ScrollMagic.Scene({
