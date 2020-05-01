@@ -31,6 +31,18 @@
   "personal_business_redirect_title": "Do you need to verify your users?",
   "personal_business_redirect_content": "If you are a business and you are looking to get the best KYC conversion rate, check out our business section.",
   "btn_cta_business": "Discover the KYC",
+  
+  "demo_claim1": "Try now the best ID Verification UX you can get",
+  "demo_claim2": "The fastest option to verify someone is to not ask for their ID.",
+  "demo_claim3": "And concerning new users, they will follow a smooth process of verification as this is our mission.",
+
+  "emailResponse_success": "Thank you! We will contact you to send you the demo.",
+  "emailResponse_error": "Something went wrong... Do you have internet connection? Try again later",
+  "emailResponse_loading": "Submitting email...",
+  
+  "btn_cta_navBar_demo": "Try it now",
+  "btn_cta_demo": "Try it now smoothly",
+  
   "footer_silt_what": "Silt is a software provider that takes charge of all development and maintainment for Verified ID Signups and KYC for companies.",
   "footer_contact": "Contact us at",
   "footer_copyright": "Silt © {year}. Made in Barcelona",

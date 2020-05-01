@@ -17,19 +17,19 @@
       </div>
       <nav :class="{ opened: openednav }">
         <div class="nav-links">
-          <nuxt-link to="/digital-identity-for-users" @click="openednav = false">
+          <nuxt-link :to="{name: 'users'}" @click="openednav = false">
             {{ $t("nav_link_users") }}
           </nuxt-link>
-          <nuxt-link to="/KYC-verification-business" @click="openednav = false">
+          <nuxt-link :to="{name: 'business'}" @click="openednav = false">
             {{ $t("nav_link_business") }}
           </nuxt-link>
           <!-- <nuxt-link to="/demo" @click="openednav = false">
             {{ $t("nav_link_demo") }}
           </nuxt-link> -->
 
-          <a :href="`mailto:hello@getsilt.com`"
-            ><button class="small">{{ $t("btn_cta_contact") }}</button></a
-          >
+          <nuxt-link to="/demo" @click="openednav = false">
+            <button class="small">{{ $t("btn_cta_navBar_demo") }}</button>
+          </nuxt-link>
         </div>
       </nav>
     </div>
@@ -180,8 +180,6 @@ section
         width: 100%
         &:hover
           color: $color-black
-      button
-        cursor: default
 
     @media (min-width: 768px)
       .nav-links

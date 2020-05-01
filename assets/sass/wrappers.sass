@@ -2,7 +2,10 @@
   padding: 20px 0
 
 section
-  margin: 100px auto
+  margin: 50px auto
+  padding: 20px
+  @media (min-width: 768px)
+    margin: 100px auto
 
 .section-headers
   display: flex
@@ -77,6 +80,7 @@ section
     .subtitle
       margin: 0 0 40px 0
       max-width: 440px
+      color: $color-grey
   .claim-side-img
     display: flex
     flex: 1 1 auto

@@ -98,11 +98,22 @@ export default {
   */
   ...routerBase,
   router: {
+    middleware: 'redirects',
     extendRoutes (routes, resolve) {
+      // routes.push({
+      //   name: 'index',
+      //   path: '/',
+      //   component: resolve(__dirname, 'pages/business.vue')
+      // }),
       routes.push({
-        name: 'index',
-        path: '/',
-        component: resolve(__dirname, 'pages/KYC-verification-business.vue')
+        name: 'usersRoute',
+        path: '/digital-identity-for-users',
+        component: resolve(__dirname, 'pages/users.vue')
+      }),
+      routes.push({
+        name: 'businessRoute',
+        path: '/KYC-ID-verification-business',
+        component: resolve(__dirname, 'pages/business.vue')
       })
     }
   },
