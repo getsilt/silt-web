@@ -258,7 +258,12 @@ if (process.client) {
   //const ScrollMagic = require('~/plugins/scrollmagic');
 }
 export default {
-  components: {
+  nuxtI18n: {
+    paths: {
+      en: '/KYC-ID-verification-business', // -> accessible at /about-us (no prefix since it's the default locale)
+      fr: '/a-propos', // -> accessible at /fr/a-propos
+      es: '/sobre'     // -> accessible at /es/sobre
+    }
   },
   data() {
     return {

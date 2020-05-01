@@ -17,17 +17,17 @@
       </div>
       <nav :class="{ opened: openednav }">
         <div class="nav-links">
-          <nuxt-link :to="{name: 'users'}" @click="openednav = false">
+          <nuxt-link :to="localePath({name: 'users'})" @click="openednav = false">
             {{ $t("nav_link_users") }}
           </nuxt-link>
-          <nuxt-link :to="{name: 'business'}" @click="openednav = false">
+          <nuxt-link :to="localePath({name: 'business'})" @click="openednav = false">
             {{ $t("nav_link_business") }}
           </nuxt-link>
           <!-- <nuxt-link to="/demo" @click="openednav = false">
             {{ $t("nav_link_demo") }}
           </nuxt-link> -->
 
-          <nuxt-link to="/demo" @click="openednav = false">
+          <nuxt-link :to="localePath({name: 'demo'})" @click="openednav = false">
             <button class="small">{{ $t("btn_cta_navBar_demo") }}</button>
           </nuxt-link>
         </div>

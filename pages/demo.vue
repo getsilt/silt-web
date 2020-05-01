@@ -52,7 +52,13 @@ if (process.client) {
   //const ScrollMagic = require('~/plugins/scrollmagic');
 }
 export default {
-  components: {},
+  nuxtI18n: {
+    paths: {
+      en: '/demo', // -> accessible at /about-us (no prefix since it's the default locale)
+      fr: '/demo', // -> accessible at /fr/a-propos
+      es: '/demo'     // -> accessible at /es/sobre
+    }
+  },
   data() {
     return {
       siltEmail: "hello@getsilt.com",

@@ -30,7 +30,7 @@ export default {
    */
 
   sitemap: {
-    hostname: 'https://getsilt.com',
+    hostname: "https://getsilt.com",
     path: "/sitemap.xml",
     cacheTime: 1000 * 60 * 60 * 2,
     trailingSlash: true,
@@ -49,10 +49,11 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [
+  buildModules: [
     [
       "nuxt-i18n",
       {
+        strategy: 'prefix_and_default',
         locales: [
           {
             name: "English",
@@ -70,15 +71,15 @@ export default {
           silentTranslationWarn: false
         },
         seo: false,
-        baseUrl:'https://getsilt.com',
+        baseUrl: "https://getsilt.com",
         detectBrowserLanguage: {
           useCookie: true,
           cookieKey: "i18n_redirected"
         }
       }
     ],
-    '@nuxtjs/sitemap',
-    ["nuxt-svg"],
+    "@nuxtjs/router-extras",
+    "@nuxtjs/sitemap",
     [
       "@nuxtjs/google-analytics",
       {
@@ -98,23 +99,13 @@ export default {
   */
   ...routerBase,
   router: {
-    middleware: 'redirects',
-    extendRoutes (routes, resolve) {
+    middleware: "redirects",
+    extendRoutes(routes, resolve) {
       // routes.push({
       //   name: 'index',
       //   path: '/',
       //   component: resolve(__dirname, 'pages/business.vue')
       // }),
-      routes.push({
-        name: 'usersRoute',
-        path: '/digital-identity-for-users',
-        component: resolve(__dirname, 'pages/users.vue')
-      }),
-      routes.push({
-        name: 'businessRoute',
-        path: '/KYC-ID-verification-business',
-        component: resolve(__dirname, 'pages/business.vue')
-      })
     }
   },
   generate: {
