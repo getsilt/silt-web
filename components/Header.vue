@@ -7,6 +7,13 @@
             <img src="@/assets/img/logo/silt_blue.svg" :alt="$t('seo_1')" />
           </nuxt-link>
         </div>
+        <nuxt-link
+          class="demo-button"
+          :to="localePath({ name: 'demo' })"
+          @click.native="closeNav()"
+        >
+          <button class="small">{{ $t("btn_cta_navBar_demo") }}</button>
+        </nuxt-link>
         <div
           class="hamburger-button"
           @click="openednav = !openednav"
@@ -17,17 +24,23 @@
       </div>
       <nav :class="{ opened: openednav }">
         <div class="nav-links">
-          <nuxt-link :to="localePath({name: 'users'})" @click="openednav = false">
+          <nuxt-link
+            :to="localePath({ name: 'users' })"
+            @click.native="closeNav()"
+          >
             {{ $t("nav_link_users") }}
           </nuxt-link>
-          <nuxt-link :to="localePath({name: 'business'})" @click="openednav = false">
+          <nuxt-link
+            :to="localePath({ name: 'business' })"
+            @click.native="closeNav()"
+          >
             {{ $t("nav_link_business") }}
           </nuxt-link>
-          <!-- <nuxt-link to="/demo" @click="openednav = false">
-            {{ $t("nav_link_demo") }}
-          </nuxt-link> -->
-
-          <nuxt-link :to="localePath({name: 'demo'})" @click="openednav = false">
+          <nuxt-link
+            class="demo-button"
+            :to="localePath({ name: 'demo' })"
+            @click.native="closeNav()"
+          >
             <button class="small">{{ $t("btn_cta_navBar_demo") }}</button>
           </nuxt-link>
         </div>
@@ -43,6 +56,11 @@ export default {
     return {
       openednav: false
     };
+  },
+  methods: {
+    closeNav() {
+      this.openednav = false;
+    }
   }
 };
 </script>
@@ -147,7 +165,7 @@ section
     text-align: right
     padding-top: 70px
     transform: translateY(calc(-100% - 70px))
-    transition: all .5s cubic-bezier(0.1,0,.58,1)
+    transition: all .5s cubic-bezier(0.1,0,.58,1) 0.3s
 
     @media (min-width: 768px)
       transform: none
@@ -214,4 +232,16 @@ section
     transform: translateY(6px)
   100%
     transform: translateY(calc(-100% - 70px))
+
+nav
+  .demo-button
+    display: none
+
+@media (min-width: 768px)
+  .header-bar
+    .demo-button
+      display: none
+  nav
+    .demo-button
+      display: inherit
 </style>

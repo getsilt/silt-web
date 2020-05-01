@@ -48,7 +48,7 @@
             {{ $t("personal_business_redirect_content") }}
           </h5>
         </div>
-        <nuxt-link to="KYC-verification-business">
+        <nuxt-link :to="localePath({name: 'business'})">
           <button class="primary">{{ $t("btn_cta_business") }}</button>
         </nuxt-link>
       </section>
