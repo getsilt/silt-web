@@ -31,7 +31,7 @@
             {{ $t("nav_link_users") }}
           </nuxt-link>
           <nuxt-link
-            :to="'/'"
+            :to="localePath({ name: 'business' })"
             @click.native="closeNav()"
           >
             {{ $t("nav_link_business") }}

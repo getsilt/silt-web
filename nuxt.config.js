@@ -100,13 +100,13 @@ export default {
   ...routerBase,
   router: {
     middleware: "redirects",
-    extendRoutes(routes, resolve) {
-      routes.push({
-        name: 'index',
-        path: '/',
-        component: resolve(__dirname, 'pages/business.vue')
-      })
-    }
+    // extendRoutes(routes, resolve) {
+    //   routes.push({
+    //     name: 'index',
+    //     path: '/',
+    //     component: resolve(__dirname, 'pages/business.vue')
+    //   })
+    // }
   },
   generate: {
     fallback: "404.html"
