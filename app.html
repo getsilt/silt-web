@@ -46,15 +46,53 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://getsilt.com" />
     <meta property="og:image" content="https://getsilt.com/silt_squared.png" />
-    <script type="application/ld+json">
+    <script type="application/ld+json">      
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "url": "https://getsilt.com",
-        "name": "Verified ID signups, KYC, PEP, AML, Fraud control",
-        "email": "hello@getsilt.com",
-        "logo": "https://getsilt.com/silt_blue.png"
+        "@graph": [{
+          "@type": "Organization",
+          "@id": "https://getsilt.com/#organization",
+          "name": "Silt",
+          "email": "hello@getsilt.com",
+          "url": "https://getsilt.com/",
+          "sameAs": ["https://www.facebook.com/getsilt"],
+          "logo": {
+            "@type": "ImageObject",
+            "@id": "https://getsilt.com/#logo",
+            "url": "https://getsilt.com/silt_blue.png",
+            "width": 504,
+            "height": 268,
+            "caption": "Silt"
+          },
+          "image": {
+            "@id": "https://getsilt.com/#logo"
+          }
+        }, {
+          "@type": "WebSite",
+          "@id": "https://getsilt.com/#website",
+          "url": "https://getsilt.com/",
+          "name": "Silt",
+          "publisher": {
+            "@id": "https://getsilt.com/#organization"
+          }
+        }, {
+          "@type": "WebPage",
+          "@id": "https://getsilt.com/#webpage",
+          "url": "https://getsilt.com/",
+          "inLanguage": "en-GB",
+          "name": "",
+          "isPartOf": {
+            "@id": "https://getsilt.com/#website"
+          },
+          "about": {
+            "@id": "https://getstilt.com/#organization"
+          },
+          "datePublished": "2020-02-15",
+          "dateModified": "2020-05-19",
+          "description": "Silt is the digital identity of the future. Verified ID signups, KYC, PEP, AML and Fraud control for the companies."
+        }]
       }
+    
     </script>
     {{ HEAD }}
   </head>
