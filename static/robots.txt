@@ -1,4 +1,1 @@
-User-agent: *
-Allow: /
-Allow: /sitemap.htm
 Sitemap: https://getsilt.com/sitemap.xml
