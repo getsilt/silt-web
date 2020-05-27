@@ -1,6 +1,7 @@
 <template>
   <section>
     <div class="header-wrapper">
+      <consent-cookies/>
       <div class="header-bar">
         <div class="logo">
           <nuxt-link to="/">
@@ -56,6 +57,9 @@ export default {
     return {
       openednav: false
     };
+  },
+  mounted() {
+    this.$consentCookies.show();
   },
   methods: {
     closeNav() {

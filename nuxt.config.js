@@ -45,7 +45,10 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: "~/plugins/scrollmagic", ssr: false }],
+  plugins: [
+    { src: "~/plugins/scrollmagic", ssr: false },
+    { src: "~/plugins/consentCookies/index.js", ssr: false }
+  ],
   /*
    ** Nuxt.js modules
    */
@@ -53,7 +56,7 @@ export default {
     [
       "nuxt-i18n",
       {
-        strategy: 'prefix_and_default',
+        strategy: "prefix_and_default",
         locales: [
           {
             name: "English",
@@ -65,7 +68,7 @@ export default {
         vueI18n: {
           fallbackLocale: "en",
           messages: {
-            en: require("./lang/en-US.json"),
+            en: require("./lang/en.json"),
             es: require("./lang/es-ES.json")
           },
           silentTranslationWarn: false
@@ -99,7 +102,7 @@ export default {
   */
   ...routerBase,
   router: {
-    middleware: "redirects",
+    middleware: "redirects"
     // extendRoutes(routes, resolve) {
     //   routes.push({
     //     name: 'index',
