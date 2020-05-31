@@ -34,7 +34,12 @@ export default {
     path: "/sitemap.xml",
     cacheTime: 1000 * 60 * 60 * 2,
     trailingSlash: true,
-    gzip: true
+    gzip: true,
+    exclude: [
+      '/cookies',
+      '/legal-notice',
+      '/privacy'
+    ],
   },
 
   loading: { color: "#fff" },

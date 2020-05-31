@@ -2,20 +2,46 @@
   <footer>
     <section class="footer__wrapper">
       <div class="footer_logo">
-          <img src="@/assets/img/logo/silt_blue.svg" height="40" :alt="$t('seo_9')">
-          <p>{{$t('footer_silt_what')}}</p>
+        <img
+          src="@/assets/img/logo/silt_blue.svg"
+          height="40"
+          :alt="$t('seo_9')"
+        />
+        <p>{{ $t("footer_silt_what") }}</p>
+      </div>
+      <div class="footer__links">
+        <p>
+          <a href="/legal-notice" rel="nofollow">{{
+            $t("global_legal_notice")
+          }}</a>
+        </p>
+        <p>
+          <a href="/privacy" rel="nofollow">{{ $t("global_legal_privacy") }}</a>
+        </p>
+        <p>
+          <a href="/cookies" rel="nofollow">{{ $t("global_legal_cookies") }}</a>
+        </p>
       </div>
       <div class="footer__info">
-        <span class="h6">{{$t('footer_contact')}}</span>
+        <span class="h6">{{ $t("footer_contact") }}</span>
         <p>hello@getsilt.com</p>
-        <p><a href="https://www.facebook.com/Silt-102186764702659/" target="_blank"><img height="20" src="@/assets/img/icons/social_facebook.svg" alt="Facebook Silt page"></a></p>
+        <p>
+          <a
+            href="https://www.facebook.com/Silt-102186764702659/"
+            target="_blank"
+            ><img
+              height="20"
+              src="@/assets/img/icons/social_facebook.svg"
+              alt="Facebook Silt page"
+          /></a>
+        </p>
       </div>
     </section>
     <p class="copyright">
-        <i18n path="footer_copyright">
-          <span slot="year">2020</span>
-        </i18n>
-      </p>
+      <i18n path="footer_copyright">
+        <span slot="year">2020</span>
+      </i18n>
+    </p>
   </footer>
 </template>
 
@@ -44,9 +70,20 @@ p.copyright
     max-width: 300px
     img
       margin-bottom: $spacing-md
-  .footer__info
+  .footer__info, .footer__links
     max-width: 300px
     display: flex
     flex-direction: column
     justify-content: flex-end
+    width: 100%
+    margin-top: $spacing-md
+    text-align: center
+    p
+      text-align: center
+    @media (min-width: 768px)
+      width: auto
+      margin-top: auto
+      text-align: left
+      p, span
+        text-align: left
 </style>
