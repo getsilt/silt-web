@@ -36,9 +36,9 @@ export default {
     trailingSlash: true,
     gzip: true,
     exclude: [
-      '/cookies',
-      '/legal-notice',
-      '/privacy'
+      '/en/cookies',
+      '/en/legal-notice',
+      '/en/privacy'
     ],
   },
 

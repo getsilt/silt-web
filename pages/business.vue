@@ -260,7 +260,7 @@ if (process.client) {
 export default {
   nuxtI18n: {
     paths: {
-      en: '/', // -> accessible at /about-us (no prefix since it's the default locale)
+      en: '/', // -> accessible at / (no prefix since it's the default locale)
       //fr: '/', // -> accessible at /fr/a-propos
       //es: '/sobre'     // -> accessible at /es/sobre
     }
