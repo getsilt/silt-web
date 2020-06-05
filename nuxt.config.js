@@ -29,22 +29,6 @@ export default {
    ** Customize the progress-bar color
    */
 
-  sitemap: {
-    hostname: "https://getsilt.com",
-    path: "/sitemap.xml",
-    cacheTime: 1000 * 60 * 60 * 2,
-    trailingSlash: true,
-    gzip: true,
-    exclude: [
-      '/en/cookies',
-      '/en/legal-notice',
-      '/en/privacy',
-      '/cookies',
-      '/legal-notice',
-      '/privacy'
-    ],
-  },
-
   loading: { color: "#fff" },
   /*
    ** Global CSS
@@ -91,6 +75,7 @@ export default {
     ],
     "@nuxtjs/router-extras",
     "@nuxtjs/sitemap",
+    "@nuxtjs/robots",
     [
       "@nuxtjs/google-analytics",
       {
@@ -108,6 +93,27 @@ export default {
   },
   * 
   */
+  sitemap: {
+    hostname: "https://getsilt.com",
+    path: "/sitemap.xml",
+    cacheTime: 1000 * 60 * 60 * 2,
+    trailingSlash: true,
+    gzip: true,
+    exclude: [
+      "/en/cookies",
+      "/en/legal-notice",
+      "/en/privacy",
+      "/cookies",
+      "/legal-notice",
+      "/privacy"
+    ]
+  },
+
+  robots: {
+    UserAgent: '*',
+    Disallow: ["/cookies", "/legal-notice", "/privacy"],
+  },
+
   ...routerBase,
   router: {
     middleware: "redirects"
