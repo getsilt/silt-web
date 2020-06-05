@@ -38,7 +38,10 @@ export default {
     exclude: [
       '/en/cookies',
       '/en/legal-notice',
-      '/en/privacy'
+      '/en/privacy',
+      '/cookies',
+      '/legal-notice',
+      '/privacy'
     ],
   },
 
