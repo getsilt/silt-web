@@ -261,7 +261,6 @@ export default {
   nuxtI18n: {
     paths: {
       en: '/', // -> accessible at / (no prefix since it's the default locale)
-      //fr: '/', // -> accessible at /fr/a-propos
       es: '/'     // -> accessible at /es/sobre
     }
   },
