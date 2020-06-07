@@ -4,7 +4,7 @@
       <consent-cookies/>
       <div class="header-bar">
         <div class="logo">
-          <nuxt-link to="/">
+          <nuxt-link :to="localePath({ name: 'business' })">
             <img src="@/assets/img/logo/silt_blue.svg" :alt="$t('seo_1')" />
           </nuxt-link>
         </div>

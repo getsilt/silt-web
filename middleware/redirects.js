@@ -3,6 +3,6 @@ export default function ({params, route, redirect}) {
     if (route.path.includes("/users")) {
         redirect('301', '/digital-identity-for-users');
     }else if (route.path.includes("/business")) {
-        redirect('301', '/KYC-ID-verification-business');
+        redirect('301', '/');
     }
 }

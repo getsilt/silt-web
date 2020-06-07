@@ -48,27 +48,38 @@ export default {
     [
       "nuxt-i18n",
       {
-        strategy: "prefix_and_default",
+        strategy: "prefix",
         locales: [
           {
             name: "English",
             code: "en",
             iso: "en-US"
+          },
+          {
+            name: "Español",
+            code: "es",
+            iso: "es-ES"
           }
         ],
-        defaultLocale: "en",
         vueI18n: {
           fallbackLocale: "en",
           messages: {
-            en: require("./lang/en.json"),
-            es: require("./lang/es-ES.json")
+            en: require("./locale/en.json"),
+            es: require("./locale/es.json")
           },
           silentTranslationWarn: false
         },
+        defaultLocale: "es",
         seo: false,
+        noPrefixDefaultLocale: false,
+        //rootRedirect: "es",
+        detectBrowserLanguage: true,
+        redirectCookieKey: "redirected",
+        useRedirectCookie: true,
         baseUrl: "https://getsilt.com",
         detectBrowserLanguage: {
           useCookie: true,
+          alwaysRedirect: true,
           cookieKey: "i18n_redirected"
         }
       }
@@ -110,20 +121,30 @@ export default {
   },
 
   robots: {
-    UserAgent: '*',
-    Disallow: ["/cookies", "/legal-notice", "/privacy"],
+    UserAgent: "*",
+    Disallow: ["/cookies", "/legal-notice", "/privacy"]
   },
 
   ...routerBase,
   router: {
-    middleware: "redirects"
-    // extendRoutes(routes, resolve) {
-    //   routes.push({
-    //     name: 'index',
-    //     path: '/',
-    //     component: resolve(__dirname, 'pages/business.vue')
-    //   })
-    // }
+    //middleware: "redirects",
+    extendRoutes(routes, resolve) {
+      // routes.push({
+      //   name: 'index',
+      //   path: '/',
+      //   component: resolve(__dirname, 'pages/business.vue')
+      // })
+      // routes.push({
+      //   name: 'users',
+      //   path: '/users',
+      //   component: resolve(__dirname, 'pages/users.vue')
+      // }),
+      // routes.push({
+      //   name: 'business',
+      //   path: '/business',
+      //   component: resolve(__dirname, 'pages/business.vue')
+      // })
+    }
   },
   generate: {
     fallback: "404.html"
