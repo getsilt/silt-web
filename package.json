@@ -10,7 +10,9 @@
     "start": "nuxt start",
     "generate": "DEPLOY_ENV=GH_PAGES nuxt generate",
     "deploy": "DEPLOY_ENV=GH_PAGES nuxt generate && push-dir --dir=dist --branch=gh-pages --cleanup",
-    "download-copies": "lokalise2 file download --format json --unzip-to ./ --original-filenames=false --token 67db21d1301153e27d4cd067b5a81512a3fe6fbd --project-id 174544095ecd2bbaa28734.73412779"
+    "download-copies": "lokalise2 file download --format json --unzip-to ./ --original-filenames=false --token 67db21d1301153e27d4cd067b5a81512a3fe6fbd --project-id 174544095ecd2bbaa28734.73412779",
+    "upload-copies-en": "lokalise2 file upload --file ./locale/en.json --lang-iso en --replace-modified --token 8886dc51bee1327315dd10346c62f1fbf0f6c744 --project-id 174544095ecd2bbaa28734.73412779",
+    "upload-copies-es": "lokalise2 file upload --file ./locale/es.json --lang-iso es --replace-modified --token 8886dc51bee1327315dd10346c62f1fbf0f6c744 --project-id 174544095ecd2bbaa28734.73412779"
   },
   "dependencies": {
     "axios": "^0.19.2",

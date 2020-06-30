@@ -35,6 +35,10 @@
               alt="Facebook Silt page"
           /></a>
         </p>
+        <p>
+          <a href="#" @click.stop="updateLocale('es')">ES</a>
+          <a href="#" @click.stop="updateLocale('en')">EN</a>
+        </p>
       </div>
     </section>
     <p class="copyright">
@@ -44,7 +48,18 @@
     </p>
   </footer>
 </template>
-
+<script>
+import {setCookie} from "../lib/cookies";
+export default {
+  methods: {
+    updateLocale(locale) {
+      setCookie('i18n_redirected', locale)
+      this.$root.$i18n.locale = locale
+      this.$router.go()
+    }
+  }
+}
+</script>
 <style lang="sass" scoped>
 @import "@/assets/sass/vars.sass"
 footer
