@@ -126,7 +126,7 @@ export default {
 
   ...routerBase,
   router: {
-    //middleware: "redirects",
+    middleware: "redirects",
     extendRoutes(routes, resolve) {
       routes.push({
         name: 'index',

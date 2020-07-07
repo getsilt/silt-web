@@ -52,27 +52,6 @@
       <!-- <p>{{$t('business_friction_oneregister_title')}}</p> -->
     </section>
 
-    <!-- TECH FEATURES -->
-    <section class="features-wrapper" id="techfeatures">
-      <div class="section-headers">
-        <span class="tag">{{
-          $t("business_highlights_vanguardTech_section")
-        }}</span>
-        <h2>{{ $t("business_highlights_vanguardTech_title") }}</h2>
-        <p>{{ $t("business_highlights_vanguardTech_content") }}</p>
-      </div>
-      <div class="features-container">
-        <div
-          class="features-item"
-          v-for="feature in techfeatures"
-          :key="feature.title"
-        >
-          <!-- <img :src="feature.img" /> -->
-          <h3>{{ $t(feature.title) }}</h3>
-        </div>
-      </div>
-    </section>
-
     <!-- PRODUCT HIGHLIGHTS -->
     <section class="highlights-wrapper" id="producthighlights">
       <div class="section-headers">
@@ -94,6 +73,29 @@
       </div>
       <!-- <p>{{$t('business_friction_oneregister_title')}}</p> -->
     </section>
+
+    <!-- TECH FEATURES -->
+    <section class="features-wrapper" id="techfeatures">
+      <div class="section-headers">
+        <span class="tag">{{
+          $t("business_highlights_vanguardTech_section")
+        }}</span>
+        <h2>{{ $t("business_highlights_vanguardTech_title") }}</h2>
+        <p>{{ $t("business_highlights_vanguardTech_content") }}</p>
+      </div>
+      <div class="features-container">
+        <div
+          class="features-item"
+          v-for="feature in techfeatures"
+          :key="feature.title"
+        >
+          <!-- <img :src="feature.img" /> -->
+          <h3>{{ $t(feature.title) }}</h3>
+        </div>
+      </div>
+    </section>
+
+
 
     <!-- Costs -->
 
@@ -254,9 +256,6 @@
 <script>
 // Animate on scroll
 var controllerHolder;
-if (process.client) {
-  //const ScrollMagic = require('~/plugins/scrollmagic');
-}
 export default {
   nuxtI18n: {
     paths: {
