@@ -68,13 +68,15 @@
         <p v-if="activeTab === 'ios' || activeTab === 'android'">
           What happens next on Native Apps integration: On-click mobile sdk will
           open a webview using the company app id. Once verified the webview
-          will close and return the <code>silt_user_id</code> and a <code>company_app_token</code>. You
-          can see more info in the examples provided in the SDK code.
+          will close and return the <code>silt_user_id</code> and a
+          <code>company_app_token</code>. You can see more info in the examples
+          provided in the SDK code.
         </p>
         <p v-if="activeTab === 'web'">
           What happens next on Website integration: On-click mobile sdk will
           open a webview using the company app id. Once verified the website
-          will return the <code>silt_user_id</code> and a <code>company_app_token</code> as query params.
+          will return the <code>silt_user_id</code> and a
+          <code>company_app_token</code> as query params.
         </p>
         <h3>3. Frontend: Send silt_user_id & company_app_token to your BE</h3>
         <p>
@@ -192,8 +194,10 @@
         </div>
 
         <p class="banner-info">
-          The production environment is: <code>https://api.siltapp.com</code>.<br />
-          The staging environment is: <code>https://api.stg.siltapp.com</code>.<br />
+          The production environment is:
+          <code>https://api.siltapp.com</code>.<br />
+          The staging environment is:
+          <code>https://api.stg.siltapp.com</code>.<br />
           Please, note that data in staging may be destroyed weekly.
         </p>
 
@@ -362,6 +366,19 @@ export default {
       fr: "/developers", // -> accessible at /fr/a-propos
       es: "/developers", // -> accessible at /es/sobre
     },
+  },
+  head() {
+    const i18nSeo = this.$nuxtI18nSeo();
+    return {
+      title: "SDK & API Integration with Silt",
+      meta: [
+        {
+          hid: "Integrate with you app in a few minutes with the SDK, or create your own KYC experience with the API.",
+          name: "Integrate with you app in a few minutes with the SDK, or create your own KYC experience with the API.",
+          content: "Integrate with you app in a few minutes with the SDK, or create your own KYC experience with the API.",
+        },
+      ],
+    };
   },
   data() {
     return {
