@@ -34,3 +34,22 @@ button
     text-transform: uppercase
   &:disabled
     opacity: 0.5
+
+
+.tabs-wrapper
+  display: flex
+  .tab
+    padding: 7px 20px
+    border-radius: 50px
+    background: white
+    color: $color-primary
+    font-weight: bold
+    cursor: pointer
+    transition: 0.3s ease-in-out
+    &:not(:last-child)
+      margin-right: 20px
+    &:hover
+      background: lighten($color-primary, 38%)
+    &.active
+      background: lighten($color-primary, 35%)
+

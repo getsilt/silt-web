@@ -155,3 +155,61 @@ section
 .claim-info, .features-wrapper
   a
     margin-top: 20px
+
+code
+  background: lighten($color-primary, 40%)
+  color: darken($color-primary, 30%)
+  padding: 5px
+  border-radius: 5px
+  display: inline-block
+  b
+    color: $color-primary
+
+pre
+  code
+    display: block
+
+.banner-info, .banner-error, .banner-warning
+  padding: 10px 20px
+  background: lighten($color-primary, 35%)
+  color: $color-primary
+  border-radius: $radius-sm
+
+.banner-error
+  background: lighten($color-error, 35%)
+  color: $color-error
+
+.banner-warning
+  background: lighten($color-warning, 45%)
+  color: $color-warning
+
+.page-side-nav
+  display: flex
+  max-width: 1200px
+  flex-wrap: wrap
+  &>div
+    max-width: 800px
+    overflow: auto
+    @media (min-width: 768px)
+      margin-left: 300px
+    &>div
+      overflow: auto
+
+  nav
+    display: flex
+    flex-direction: column
+    margin-right: 100px
+    font-size: 20px
+    @media (min-width: 768px)
+      position: fixed
+      float: left
+    a
+      padding: 10px 40px 10px 10px
+      border-radius: 0 50px 50px 0
+      transition: 0.3s ease-in-out
+      &:hover
+        background: lighten($color-primary, 37%)
+        cursor: pointer
+    a.active
+      background: lighten($color-primary, 37%)
+      color: $color-primary
