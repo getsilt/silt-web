@@ -76,7 +76,7 @@
           open a webview using the company app id. Once verified the website
           will return the <code>silt_user_id</code> and a <code>company_app_token</code> as query params.
         </p>
-        <h3>3. Frontend: Send <code>silt_user_id</code> & <code>company_app_token</code> to your BE</h3>
+        <h3>3. Frontend: Send silt_user_id & company_app_token to your BE</h3>
         <p>
           Make the POST request to your own backend described in step 4. This
           request requires as parameters <code>silt_user_id</code> &
