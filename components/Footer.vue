@@ -92,13 +92,5 @@ p.copyright
     justify-content: flex-end
     width: 100%
     margin-top: $spacing-md
-    text-align: center
-    p
-      text-align: center
-    @media (min-width: 768px)
-      width: auto
-      margin-top: auto
-      text-align: left
-      p, span
-        text-align: left
+    text-align: left
 </style>
