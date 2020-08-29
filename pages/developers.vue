@@ -62,7 +62,7 @@
         <p v-if="activeTab === 'web'">
           Web: Create a button that calls the following link:<br />
           <code>
-            https://signup-stg.getsilt.com/?redirect_url=[<b>the_url_of_your_site</b>]&company_app_id=[<b>company_app_id</b>]</code
+            https://signup-stg.getsilt.com/?redirect_url=<b>{the_url_of_your_site}</b>&company_app_id=<b>{company_app_id}</b></code
           >
         </p>
         <p v-if="activeTab === 'ios' || activeTab === 'android'">
@@ -101,7 +101,7 @@
         <p>
           GET
           <code
-            >/v1/users/[<b>silt_user_id</b>]/resources/?token=[<b>company_app_token</b>]</code
+            >/v1/users/<b>{silt_user_id}</b>/resources/?token=<b>{company_app_token}</b></code
           >
         </p>
         <p>
@@ -210,11 +210,15 @@
           the SDK integration flow.
         </p>
 
+        <p class="banner-info">
+          All requests must include a header
+          <code>X-Company-App-Id: <b>{company_app_id}</b></code> with the value we sent you.
+        </p>
+
         <h3>2. Register a user to your company at Silt</h3>
         <p>
           Register a user to your company at Silt by making a request
-          <b>POST</b> to <code>/v1/auth/register/{company_app_id}</code> with
-          the body:
+          <b>POST</b> to <code>/v1/auth/register/</code> with the body:
         </p>
         <pre><code>
         { 
@@ -230,9 +234,9 @@
             <b>access_token</b>: access token that refers to this user only.
           </li>
         </ul>
-        <p class="banner-warning">
+        <p class="banner-info">
           The following requests (steps from 3 to 6) should add an authorization
-          header with the value of access_token.
+          header with the value of access_token <code>Authorization: Bearer <b>{access_token}</b></code>.
         </p>
         <p>
           If you have any issues, check the more
@@ -373,9 +377,12 @@ export default {
       title: "SDK & API Integration with Silt",
       meta: [
         {
-          hid: "Integrate with you app in a few minutes with the SDK, or create your own KYC experience with the API.",
-          name: "Integrate with you app in a few minutes with the SDK, or create your own KYC experience with the API.",
-          content: "Integrate with you app in a few minutes with the SDK, or create your own KYC experience with the API.",
+          hid:
+            "Integrate with you app in a few minutes with the SDK, or create your own KYC experience with the API.",
+          name:
+            "Integrate with you app in a few minutes with the SDK, or create your own KYC experience with the API.",
+          content:
+            "Integrate with you app in a few minutes with the SDK, or create your own KYC experience with the API.",
         },
       ],
     };
