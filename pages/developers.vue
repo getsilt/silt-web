@@ -195,10 +195,7 @@
 
         <p class="banner-info">
           The production environment is:
-          <code>https://api.siltapp.com</code>.<br />
-          The staging environment is:
-          <code>https://api.stg.siltapp.com</code>.<br />
-          Please, note that data in staging may be destroyed weekly.
+          <code>https://api.siltapp.com</code>.
         </p>
 
         <h3>1. Email us: Get your company app Id</h3>
