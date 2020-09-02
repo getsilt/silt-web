@@ -11,6 +11,9 @@
       </div>
       <div class="footer__links">
         <p>
+          <a href="/developers">{{ $t("global_documentation") }}</a>
+        </p>
+        <p>
           <a href="/legal-notice" rel="nofollow">{{
             $t("global_legal_notice")
           }}</a>

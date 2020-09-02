@@ -54,16 +54,44 @@ if (process.client) {
 export default {
   nuxtI18n: {
     paths: {
-      en: '/demo', // -> accessible at /about-us (no prefix since it's the default locale)
-      fr: '/demo', // -> accessible at /fr/a-propos
-      es: '/demo'     // -> accessible at /es/sobre
-    }
+      en: "/demo", // -> accessible at /about-us (no prefix since it's the default locale)
+      fr: "/demo", // -> accessible at /fr/a-propos
+      es: "/demo", // -> accessible at /es/sobre
+    },
+  },
+  head() {
+    const i18nSeo = this.$nuxtI18nSeo();
+    return {
+      htmlAttrs: {
+        ...i18nSeo.htmlAttrs,
+      },
+      title: this.$t("demo_claim1"),
+      meta: [
+        {
+          hid: "og:title",
+          name: "og:title",
+          content: this.$t("demo_claim1"),
+        },
+        {
+          hid: "description",
+          name: "description",
+          content: this.$t("demo_claim2"),
+        },
+        {
+          hid: "og:description",
+          name: "og:description",
+          content: this.$t("demo_claim2"),
+        },
+        ...i18nSeo.meta,
+      ],
+      link: [...i18nSeo.link],
+    };
   },
   data() {
     return {
       siltEmail: "hello@getsilt.com",
       email: "",
-      status: "unsent"
+      status: "unsent",
     };
   },
   mounted() {},
@@ -83,14 +111,14 @@ export default {
         await EmailApi.sendEmail({
           email: this.email,
           subject: "Silt Demo request",
-          userLang
+          userLang,
         });
         this.status = "success";
       } catch (error) {
         this.status = "error";
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -136,6 +164,7 @@ form
   display: flex
   flex-wrap: wrap
   justify-content: center
+  align-self: stretch
   &>*
     flex: 1 1 auto
 

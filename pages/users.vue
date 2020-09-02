@@ -48,7 +48,7 @@
             {{ $t("personal_business_redirect_content") }}
           </h5>
         </div>
-        <nuxt-link :to="localePath({name: 'business'})">
+        <nuxt-link :to="localePath({ name: 'business' })">
           <button class="primary">{{ $t("btn_cta_business") }}</button>
         </nuxt-link>
       </section>
@@ -65,11 +65,39 @@ if (process.client) {
 export default {
   nuxtI18n: {
     paths: {
-      en: '/digital-identity-for-users',
-      es: '/identidad-digital-para-usuarios'
-    }
+      en: "/digital-identity-for-users",
+      es: "/identidad-digital-para-usuarios",
+    },
   },
   components: {},
+  head() {
+    const i18nSeo = this.$nuxtI18nSeo();
+    return {
+      htmlAttrs: {
+        ...i18nSeo.htmlAttrs,
+      },
+      title: this.$t("personal_claim1"),
+      meta: [
+        {
+          hid: "og:title",
+          name: "og:title",
+          content: this.$t("personal_claim1"),
+        },
+        {
+          hid: "description",
+          name: "description",
+          content: this.$t("personal_claim2"),
+        },
+        {
+          hid: "og:description",
+          name: "og:description",
+          content: this.$t("personal_claim2"),
+        },
+        ...i18nSeo.meta,
+      ],
+      link: [...i18nSeo.link],
+    };
+  },
   data() {
     return {
       email: "hello@getsilt.com",
@@ -77,27 +105,27 @@ export default {
         {
           title: "personal_highlights_privacy_title",
           content: "personal_highlights_privacy_content",
-          img: require("assets/img/illustrations/prisoner.svg")
+          img: require("assets/img/illustrations/prisoner.svg"),
         },
         {
           title: "personal_highlights_oneregister_title",
           content: "personal_highlights_oneregister_content",
-          img: require("assets/img/illustrations/cloud.svg")
+          img: require("assets/img/illustrations/cloud.svg"),
         },
         {
           title: "personal_highlights_security_title",
           content: "personal_highlights_security_content",
-          img: require("assets/img/illustrations/security.svg")
-        }
-      ]
+          img: require("assets/img/illustrations/security.svg"),
+        },
+      ],
     };
   },
   mounted() {},
   methods: {
     getEmail() {
       return this.email;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -112,7 +140,7 @@ export default {
     h3
       margin-bottom: 20px
     h5
-      margin-top: 0  
+      margin-top: 0
   .tag
     margin-top: -26px
 </style>
