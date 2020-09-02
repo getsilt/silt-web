@@ -72,13 +72,13 @@ export default {
         defaultLocale: "es",
         seo: false,
         noPrefixDefaultLocale: false,
-        detectBrowserLanguage: true,
+        detectBrowserLanguage: false,
         redirectCookieKey: "redirected",
         useRedirectCookie: true,
         baseUrl: "https://getsilt.com",
         detectBrowserLanguage: {
           useCookie: true,
-          alwaysRedirect: true,
+          alwaysRedirect: false,
           cookieKey: "i18n_redirected"
         }
       }
