@@ -194,7 +194,7 @@
         </div>
 
         <p class="banner-info">
-          The production environment is:
+          The production environment URI is:
           <code>https://api.siltapp.com</code>.
         </p>
 

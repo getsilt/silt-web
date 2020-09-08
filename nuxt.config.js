@@ -72,9 +72,9 @@ export default {
         defaultLocale: "es",
         seo: false,
         noPrefixDefaultLocale: false,
-        detectBrowserLanguage: true,
-        redirectCookieKey: "redirected",
-        useRedirectCookie: true,
+        // detectBrowserLanguage: true,
+        // redirectCookieKey: "redirected",
+        //useRedirectCookie: true,
         baseUrl: "https://getsilt.com",
         detectBrowserLanguage: {
           useCookie: true,
@@ -104,6 +104,11 @@ export default {
   * 
   */
   sitemap: {
+    i18n: true,
+    i18n: {
+      locales: ['en', 'es'],
+      routesNameSeparator: '___'
+    },
     hostname: "https://getsilt.com",
     path: "/sitemap.xml",
     cacheTime: 1000 * 60 * 60 * 2,

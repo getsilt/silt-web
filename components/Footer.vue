@@ -58,7 +58,7 @@ export default {
     updateLocale(locale) {
       setCookie('i18n_redirected', locale)
       this.$root.$i18n.locale = locale
-      this.$router.go()
+      this.$router.go(`/${locale}`)
     }
   }
 }
