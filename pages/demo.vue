@@ -45,12 +45,6 @@
 
 <script>
 import EmailApi from "@/lib/emailService";
-
-// Animate on scroll
-var controllerHolder;
-if (process.client) {
-  //const ScrollMagic = require('~/plugins/scrollmagic');
-}
 export default {
   nuxtI18n: {
     paths: {

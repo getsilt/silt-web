@@ -57,11 +57,6 @@
 </template>
 
 <script>
-// Animate on scroll
-var controllerHolder;
-if (process.client) {
-  //const ScrollMagic = require('~/plugins/scrollmagic');
-}
 export default {
   nuxtI18n: {
     paths: {

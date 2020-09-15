@@ -95,8 +95,6 @@
       </div>
     </section>
 
-
-
     <!-- Costs -->
 
     <!-- <span>{{$t('business_costs_title')}}</span> -->
@@ -255,23 +253,24 @@
 
 <script>
 // Animate on scroll
-var controllerHolder;
+// var controllerHolder;
+import gsap from "gsap";
 export default {
   nuxtI18n: {
     paths: {
-      en: '/', // -> accessible at / (no prefix since it's the default locale)
-      es: '/'     // -> accessible at /es/sobre
-    }
+      en: "/", // -> accessible at / (no prefix since it's the default locale)
+      es: "/", // -> accessible at /es/sobre
+    },
   },
   data() {
     return {
       structuredData: {
         "@context": "https://getsilt.com",
         "@type": "Organization",
-        "url": "https://getsilt.com",
-        "name": "Verified ID signups, KYC, PEP, AML, Fraud control",
-        "email": "hello@getsilt.com",
-        "logo": "https://getsilt.com/silt_blue.svg"
+        url: "https://getsilt.com",
+        name: "Verified ID signups, KYC, PEP, AML, Fraud control",
+        email: "hello@getsilt.com",
+        logo: "https://getsilt.com/silt_blue.svg",
       },
       email: "hello@getsilt.com",
       differences: [
@@ -280,91 +279,91 @@ export default {
           content: "business_differences_oneRegister_content",
           header: "business_friction_oneregister_header",
           headerDescription: "business_friction_oneregister_headerDescription",
-          img: require("assets/img/illustrations/drinks-user.svg")
+          img: require("assets/img/illustrations/drinks-user.svg"),
         },
         {
           title: "business_differences_technology_title",
           content: "business_differences_technology_content",
           header: "business_friction_trust_header",
           headerDescription: "business_friction_trust_headerDescription",
-          img: require("assets/img/illustrations/bulbrocket.svg")
+          img: require("assets/img/illustrations/bulbrocket.svg"),
         },
         {
           title: "business_differences_noManagement_title",
           content: "business_differences_noManagement_content",
           header: "business_friction_fast_header",
           headerDescription: "business_friction_fast_headerDescription",
-          img: require("assets/img/illustrations/meditation.svg")
-        }
+          img: require("assets/img/illustrations/meditation.svg"),
+        },
       ],
       highlights: [
         {
           title: "business_friction_oneregister_title",
           content: "business_friction_oneregister_content",
           header: "business_friction_oneregister_header",
-          headerDescription: "business_friction_oneregister_headerDescription"
+          headerDescription: "business_friction_oneregister_headerDescription",
         },
         {
           title: "business_friction_trust_title",
           content: "business_friction_trust_content",
           header: "business_friction_trust_header",
-          headerDescription: "business_friction_trust_headerDescription"
+          headerDescription: "business_friction_trust_headerDescription",
         },
         {
           title: "business_friction_fast_title",
           content: "business_friction_fast_content",
           header: "business_friction_fast_header",
-          headerDescription: "business_friction_fast_headerDescription"
-        }
+          headerDescription: "business_friction_fast_headerDescription",
+        },
       ],
       techfeatures: [
         {
           // img: require('assets/img/icons/credit-card.svg'),
-          title: "business_highlights_faceRecognition_title"
+          title: "business_highlights_faceRecognition_title",
         },
         {
           // img: require('assets/img/icons/money-bag.svg'),
-          title: "business_highlights_liveness_title"
+          title: "business_highlights_liveness_title",
         },
         {
           // img: require('assets/img/icons/invest.svg'),
-          title: "business_highlights_docscan_title"
+          title: "business_highlights_docscan_title",
         },
         {
           // img: require('assets/img/icons/graph-bars.svg'),
-          title: "business_highlights_authenticity_title"
+          title: "business_highlights_authenticity_title",
         },
         {
           // img: require('assets/img/icons/graph-bars.svg'),
-          title: "business_highlights_biometric_title"
+          title: "business_highlights_biometric_title",
         },
         {
           // img: require('assets/img/icons/graph-bars.svg'),
-          title: "business_highlights_dashboard_title"
-        }
+          title: "business_highlights_dashboard_title",
+        },
       ],
       usecases: [
         {
           // img: require('assets/img/icons/credit-card.svg'),
-          title: "business_usecases_neobank"
+          title: "business_usecases_neobank",
         },
         {
           // img: require('assets/img/icons/money-bag.svg'),
-          title: "business_usecases_sharing"
+          title: "business_usecases_sharing",
         },
         {
           // img: require('assets/img/icons/invest.svg'),
-          title: "business_usecases_p2p"
+          title: "business_usecases_p2p",
         },
         {
           // img: require('assets/img/icons/graph-bars.svg'),
-          title: "business_usecases_gaming"
+          title: "business_usecases_gaming",
         },
         {
           // img: require('assets/img/icons/graph-bars.svg'),
-          title: "business_usecases_contract"
-        }
-      ]
+          title: "business_usecases_contract",
+        },
+      ],
     };
   },
   mounted() {
@@ -374,41 +373,35 @@ export default {
     getEmail() {
       return this.email;
     },
-    startFirstAnimationScene: _this => {
-      const controller = new _this.$ScrollMagic.Controller({
-        globalSceneOptions: { offset: -300 }
-      });
+    startFirstAnimationScene: (_this) => {
       const sections = [
         "#usecases",
         "#countries",
         "#howto",
         "#differences",
         "#techfeatures",
-        "#producthighlights"
+        "#producthighlights",
       ];
       let tm = {};
       for (let section of sections) {
-        tm[section] = TweenMax.from(section, 1, {
-          ease: Power2.easeOut,
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: section,
+            start: "top bottom",
+            end: "bottom bottom",
+            scrub: true,
+            markers: false,
+          },
+        });
+        tl.from(section, {
+          duration: 1,
           scale: 0.9,
           y: 200,
-          opacity: 0.3
+          opacity: 0.3,
         });
-        new _this.$ScrollMagic.Scene({
-          triggerElement: section,
-          duration: "100%"
-        })
-          .setTween(tm[section])
-          .addTo(controller);
       }
-
-      controllerHolder = controller;
-    }
+    },
   },
-  destroyed() {
-    // Destroy ScrollMagic when our component is removed from DOM
-    controllerHolder = controllerHolder.destroy();
-  }
 };
 </script>
 

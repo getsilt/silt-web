@@ -38,7 +38,7 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: [
-    { src: "~/plugins/scrollmagic", ssr: false },
+    { src: "~/plugins/gsap", ssr: false },
     { src: "~/plugins/consentCookies/index.js", ssr: false }
   ],
   /*
@@ -71,15 +71,15 @@ export default {
         },
         defaultLocale: "es",
         seo: false,
-        noPrefixDefaultLocale: false,
+        // noPrefixDefaultLocale: false,
         // detectBrowserLanguage: true,
         // redirectCookieKey: "redirected",
         //useRedirectCookie: true,
         baseUrl: "https://getsilt.com",
         detectBrowserLanguage: {
           useCookie: true,
-          alwaysRedirect: true,
-          cookieKey: "i18n_redirected"
+          cookieKey: "i18n_redirected",
+          onlyOnRoot: true
         }
       }
     ],

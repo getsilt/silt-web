@@ -53,12 +53,14 @@
 </template>
 <script>
 import {setCookie} from "../lib/cookies";
+
 export default {
   methods: {
     updateLocale(locale) {
-      setCookie('i18n_redirected', locale)
-      this.$root.$i18n.locale = locale
-      this.$router.go(`/${locale}`)
+      this.$i18n.setLocale(locale) 
+      // ('i18n_redirected', locale)
+      // this.$root.$i18n.locale = locale
+      // this.$router.go(`/${locale}`)
     }
   }
 }
