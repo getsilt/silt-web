@@ -94,7 +94,13 @@
         access to this picture at this url)
       </li>
       <li>
-        <b>picture_validation_status</b>: Success or errors on the picture. <br /><br /> Schema of possible values for picture_validation_status: <code>SUCCESS, E_IMAGE_BLURRY, E_IMAGE_HAS_GLARE, E_IMAGE_TOO_DARK, E_NO_DOCUMENT_FOUND, E_UNKNOWN</code><br /><br >
+        <b>picture_validation_status</b>: Success or errors on the picture.
+        <br /><br />
+        Schema of possible values for picture_validation_status:
+        <code
+          >SUCCESS, E_IMAGE_BLURRY, E_IMAGE_HAS_GLARE, E_IMAGE_TOO_DARK,
+          E_NO_DOCUMENT_FOUND, E_UNKNOWN</code
+        ><br /><br />
         We suggest this localized key value pairs to give users feedback per
         each possible value of picture_validation_status:<br /><br />
         <div class="tabs-wrapper">
@@ -187,20 +193,23 @@
     <p>Make a poll request <b>GET</b> to</p>
     <code>/v1/resources/{<b>resource_id</b>}</code>
 
-    <p>Stop the polling with the following results:</p>
+    <p>
+      Stop the polling when the <code>status</code> attribute has a final value:
+    </p>
     <ul>
       <li>
-        <b>SUCCESS</b>: <i>Both</i> <code>ocr_status</code> or
-        <code>verification_status</code> are SUCCESS.
+        <b>SUCCESS</b>: The resource is successfully verified, meaning that is
+        you can proceed to step 6.
       </li>
       <li>
-        <b>ERROR</b>: <i>At least one</i> of the <code>ocr_status</code> or
-        <code>verification_status</code> are VERIFICATION_ERROR or ERROR.
+        <b>ERROR</b>: The resource is not verified and the user needs to upload
+        more photos. Additionally you can check ocr_status to know if it's the
+        document that is wrong, or verification_status to identify if the faces
+        do not match or other errors.
       </li>
       <li>
-        <b>MANUAL_REVIEW</b>: <i>At least one</i> <code>ocr_status</code> or
-        <code>verification_status</code> are MANUAL_REVIEW.
-        <b>This case will be verified manually by Silt in the following 24h.</b>
+        <b>MANUAL_REVIEW</b>: This resource requires a manual review and is not yet verified. It will be
+        manually verified by a Silt expert within 24h.
       </li>
     </ul>
     <h3>
