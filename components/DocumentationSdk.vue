@@ -4,7 +4,7 @@
     <h3>1. Email us: Get your company app Id</h3>
     <p>
       Request your <code>company_app_id</code> to the Silt Team at the email
-      address <a href="mailto:customers@getsilt.com">customers@getsilt.com</a>.
+      address <a target="_blank" href="mailto:customers@getsilt.com">customers@getsilt.com</a>.
       This Id is unique for you, and it will be the same that the one required
       in the API integration flow.
     </p>
