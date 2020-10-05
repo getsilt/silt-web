@@ -11,7 +11,7 @@
     </p>
     <p>
       If you have any issues, don't hesitate to contact us at
-      <a href="mailto:customers@getsilt.com">customers@getsilt.com</a>
+      <a target="_blank" href="mailto:customers@getsilt.com">customers@getsilt.com</a>
     </p>
 
     <div class="banner-info">
