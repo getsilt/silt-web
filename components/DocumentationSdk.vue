@@ -47,7 +47,7 @@
     <p v-if="activeTab === 'web'">
       Web: Create a button that calls the following link:<br />
       <code>
-        https://signup-stg.getsilt.com/?redirect_url=<b>{the_url_of_your_site}</b>&company_app_id=<b
+        https://signup.getsilt.com/?redirect_url=<b>{the_url_of_your_site}</b>&company_app_id=<b
           >{company_app_id}</b
         ></code
       >
