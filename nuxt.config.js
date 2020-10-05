@@ -78,9 +78,7 @@ export default {
         baseUrl: "https://getsilt.com",
         detectBrowserLanguage: {
           useCookie: true,
-          cookieKey: "i18n_redirected",
-          alwaysRedirect: true,
-          onlyOnRoot: true,
+          cookieKey: "i18n_redirected"
         }
       }
     ],
