@@ -71,14 +71,11 @@ export default {
         },
         defaultLocale: "es",
         seo: false,
-        // noPrefixDefaultLocale: false,
-        // detectBrowserLanguage: true,
-        // redirectCookieKey: "redirected",
-        //useRedirectCookie: true,
         baseUrl: "https://getsilt.com",
         detectBrowserLanguage: {
           useCookie: true,
-          cookieKey: "i18n_redirected"
+          cookieKey: "i18n_redirected",
+          onlyOnRoot: true
         }
       }
     ],
@@ -92,16 +89,6 @@ export default {
       }
     ]
   ],
-
-  /*
-  * add this to activate spanish translation
-  {
-    name: 'Español',
-    code: 'es',
-    iso: 'es-ES'
-  },
-  * 
-  */
   sitemap: {
     i18n: true,
     i18n: {
@@ -130,23 +117,13 @@ export default {
 
   ...routerBase,
   router: {
-    middleware: "redirects",
+    // middleware: "redirects",
     extendRoutes(routes, resolve) {
       routes.push({
         name: 'index',
         path: '/',
         component: resolve(__dirname, 'pages/business.vue')
       })
-      // routes.push({
-      //   name: 'users',
-      //   path: '/users',
-      //   component: resolve(__dirname, 'pages/users.vue')
-      // }),
-      // routes.push({
-      //   name: 'business',
-      //   path: '/business',
-      //   component: resolve(__dirname, 'pages/business.vue')
-      // })
     }
   },
   generate: {
