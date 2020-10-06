@@ -25,9 +25,6 @@ export default {
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
-
-  srcDir: 'src',
-  buildDir: 'functions/.nuxt',
   /*
    ** Customize the progress-bar color
    */
@@ -131,7 +128,8 @@ export default {
     }
   },
   generate: {
-    fallback: "404.html"
+    fallback: "404.html",
+    subFolders: false
   },
   /*
    ** Build configuration
@@ -140,7 +138,6 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extractCSS: true,
     extend(config, ctx) {},
     postcss: {
       // Add plugin names as key and arguments as value
