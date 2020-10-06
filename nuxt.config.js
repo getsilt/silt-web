@@ -117,6 +117,7 @@ export default {
 
   ...routerBase,
   router: {
+    trailingSlash: false,
     // middleware: "redirects",
     extendRoutes(routes, resolve) {
       routes.push({
