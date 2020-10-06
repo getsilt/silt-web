@@ -25,6 +25,9 @@ export default {
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
+
+  srcDir: 'src',
+  buildDir: 'functions/.nuxt',
   /*
    ** Customize the progress-bar color
    */
@@ -75,7 +78,7 @@ export default {
         detectBrowserLanguage: {
           useCookie: true,
           cookieKey: "i18n_redirected",
-          onlyOnRoot: true
+          onlyOnRoot: false
         }
       }
     ],
@@ -118,7 +121,7 @@ export default {
   ...routerBase,
   router: {
     trailingSlash: false,
-    // middleware: "redirects",
+    middleware: "redirects",
     extendRoutes(routes, resolve) {
       routes.push({
         name: 'index',
@@ -137,6 +140,7 @@ export default {
     /*
      ** You can extend webpack config here
      */
+    extractCSS: true,
     extend(config, ctx) {},
     postcss: {
       // Add plugin names as key and arguments as value
