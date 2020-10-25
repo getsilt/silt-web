@@ -37,12 +37,12 @@
           >
             {{ $t("nav_link_business") }}
           </nuxt-link>
-          <nuxt-link
+          <!-- <nuxt-link
             :to="localePath({ name: 'pricing' })"
             @click.native="closeNav()"
           >
             {{ $t("nav_link_pricing") }}
-          </nuxt-link>
+          </nuxt-link> -->
           <nuxt-link
             class="demo-button"
             :to="localePath({ name: 'demo' })"
