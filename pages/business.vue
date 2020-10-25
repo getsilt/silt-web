@@ -52,6 +52,46 @@
       <!-- <p>{{$t('business_friction_oneregister_title')}}</p> -->
     </section>
 
+
+    <!-- Assisted Picture Quality  -->
+    <section class="claim-wrapper" id="assistedPictureQuality">
+      <div class="claim-container left">
+        <div class="claim-side-img">
+          <img
+            v-if="$root.$i18n.locale === 'es'"
+            class="screenshot lg"
+            src="@/assets/img/screenshots/screenshot_blurry_es.jpg"
+            :alt="$t('seo_1')"
+          />
+          <img
+            v-else
+            class="screenshot lg"
+            src="@/assets/img/screenshots/screenshot_blurry_en.jpg"
+            :alt="$t('seo_1')"
+          />
+          
+        </div>
+        <div class="claim-info-wrapper">
+          <div class="claim-info">
+            <h3 class="title">
+              {{ $t("business_differences_assistedPictureQuality_title") }}
+            </h3>
+            <p>
+              {{ $t("business_differences_assistedPictureQuality_content") }}
+            </p>
+            <p
+              v-html="
+                $t('business_differences_assistedPictureQuality_content2')
+              "
+            ></p>
+            <nuxt-link :to="localePath({ name: 'demo' })">
+              <button class="primary">{{ $t("btn_cta_demo") }}</button>
+            </nuxt-link>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- PRODUCT HIGHLIGHTS -->
     <section class="highlights-wrapper" id="producthighlights">
       <div class="section-headers">
@@ -95,54 +135,7 @@
       </div>
     </section>
 
-    <!-- Costs -->
-
-    <!-- <span>{{$t('business_costs_title')}}</span> -->
-    <!-- <div class="claim-container" id="costsManagement">
-        <div class="claim-info">
-          <h2 class="title">{{$t('business_costs_title')}}</h2>
-          <h4 class="subtitle">{{$t('business_costs_manage_content')}}</h4>
-          <a :href="`mailto:${getEmail()}`">
-            <button class="primary">{{$t('btn_cta_contact')}}</button>
-          </a>
-        </div>
-        <div class="developers-img fw-container">
-          <img src="@/assets/img/bg/api-response.png" />
-        </div>
-      </div> -->
-
-    <!-- <div class="claim-container" id="costsRetargeting">
-        <div class="developers-img fw-container">
-          <img src="@/assets/img/bg/api-response.png" />
-        </div>
-        <div class="claim-info right">
-          <h2 class="title">{{$t('business_costs_retargeting_title')}}</h2>
-          <h4 class="subtitle">{{$t('business_costs_retargeting_content')}}</h4>
-          <a :href="`mailto:${getEmail()}`">
-            <button class="primary">{{$t('btn_cta_contact')}}</button>
-          </a>
-        </div>
-      </div>  -->
-
     <!-- HOW TO -->
-    <!-- <section class="features-wrapper" id="howto">
-      <div class="section-headers">
-        <span class="tag">{{$t('business_howto_section')}}</span>
-        <h2>{{$t('business_howto_title')}}</h2>
-        <p>{{$t('business_howto_content')}}</p>
-      </div>
-      <div class="features-container">
-        <ul>
-            <li><b>{{$t('business_howto_content1')}}</b></li>
-            <li><b>{{$t('business_howto_content2')}}</b></li>
-            <li><b>{{$t('business_howto_content3')}}</b></li>
-          </ul>
-      </div>
-      <p>{{$t('business_howto_content4')}}</p>
-      <a :href="`mailto:${getEmail()}`">
-        <button class="primary">{{$t('btn_cta_contact')}}</button>
-      </a>
-    </section> -->
     <section class="claim-wrapper" id="howto">
       <div class="section-headers">
         <span class="tag">{{ $t("business_howto_section") }}</span>
@@ -150,7 +143,7 @@
       </div>
       <div class="claim-container">
         <div class="claim-info">
-          <h4 class="subtitle">{{ $t("business_howto_content") }}</h4>
+          <p>{{ $t("business_howto_content") }}</p>
           <!-- <span class="subtitle">{{$t('business_benefits_integration_content')}}</span> -->
           <ol>
             <li>{{ $t("business_howto_content1") }}</li>
@@ -200,10 +193,10 @@
     <section class="claim-wrapper" id="countries">
       <div class="claim-container">
         <div class="claim-info">
-          <h2 class="title">{{ $t("business_highlights_countries_title") }}</h2>
-          <h4 class="subtitle">
+          <h3 class="title">{{ $t("business_highlights_countries_title") }}</h3>
+          <p>
             {{ $t("business_highlights_countries_content") }}
-          </h4>
+          </p>
           <a :href="`mailto:${getEmail()}`" target="_blank">
             <button class="primary">{{ $t("btn_cta_contact") }}</button>
           </a>
@@ -235,17 +228,6 @@
       </div>
       <a :href="`mailto:${getEmail()}`" target="_blank">
         <button class="primary">{{ $t("btn_cta_contact") }}</button>
-      </a>
-    </section>
-
-    <section class="features-wrapper" id="pricing">
-      <div class="section-headers">
-        <span class="tag">{{ $t("business_pricing_section") }}</span>
-        <h2>{{ $t("business_pricing_title") }}</h2>
-        <p>{{ $t("business_pricing_content") }}</p>
-      </div>
-      <a :href="`mailto:${getEmail()}`" target="_blank">
-        <button class="primary">{{ $t("btn_cta_start") }}</button>
       </a>
     </section>
   </div>
@@ -375,6 +357,7 @@ export default {
     },
     startFirstAnimationScene: (_this) => {
       const sections = [
+        "#assistedPictureQuality",
         "#usecases",
         "#countries",
         "#howto",
@@ -388,14 +371,13 @@ export default {
           scrollTrigger: {
             trigger: section,
             start: "top bottom",
-            end: "bottom bottom",
-            scrub: true,
+            scrub: false,
             markers: false,
           },
         });
         tl.from(section, {
           duration: 1,
-          scale: 0.9,
+          scale: 0.8,
           y: 200,
           opacity: 0.3,
         });
@@ -406,6 +388,16 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+img.screenshot
+  min-width: 120px
+  max-width: 180px
+  box-shadow: 2px 6px 20px -6px rgba(0,0,0,0.3)
+  border-radius: 10px
+
+  &.lg
+    min-width: 120px
+    max-width: 220px
+
 .screenshots-container
   display: flex
   perspective: 300px
@@ -415,13 +407,9 @@ export default {
     width: auto
   img.screenshot
     flex: 1 1 auto
-    min-width: 120px
-    max-width: 180px
     align-self: center
-    box-shadow: 2px 2px 20px -6px rgba(0,0,0,0.3)
     transform: rotateY(10deg)
     transition: 0.3s
-    border-radius: 10px
     &:nth-child(1)
       transform: rotateY(7deg) translateX(50px)
     &:nth-child(2)

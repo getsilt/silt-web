@@ -17,6 +17,7 @@ h1, h2, h3, h4, h5, h6, .h6
   color: #333333
 
 h1
+  font-family: 'Futura-Bold', 'Arial Narrow', Arial, sans-serif
   font-size: 3.25rem
 
 h2
@@ -62,3 +63,13 @@ li
 
 ol
   text-align: left
+
+.hint
+  color: $color-grey-lighten-1
+
+.checklist
+  list-style: none
+  li:before
+    content: '✔'
+    color: $color-primary
+    margin-right: $spacing-sm

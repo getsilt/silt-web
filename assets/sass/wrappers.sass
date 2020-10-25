@@ -1,4 +1,7 @@
 .container
+  padding: 20px
+
+.vertical-container
   padding: 20px 0
 
 section
@@ -18,8 +21,7 @@ section
   @media (min-width: 768px)
     text-align: center
   p
-    color: #999999
-
+    color: $color-grey-lighten-1
 .main-wrapper
   min-height: 100vh
   display: flex
@@ -58,6 +60,14 @@ section
   position: relative
   @media (max-width: 767px)
     position: relative
+
+  &.left
+    .claim-side-img
+      margin: $spacing-lg
+    .claim-info-wrapper
+      margin: $spacing-lg
+  .claim-info-wrapper
+    flex: 1 1 auto
   .claim-info
     max-width: 500px
     width: 100%
@@ -86,6 +96,7 @@ section
     display: flex
     flex: 1 1 auto
     justify-content: flex-end
+    align-items: center
     img
       flex: 1 1 auto
       min-width: 300px
