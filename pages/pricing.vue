@@ -6,10 +6,11 @@
       </div>
 
     <div class="pricing-plans_container">
+    <!-- FREE -->
       <div class="pricing-plan">
         <div class="pricing-plan_price">
           <span>{{$t("global_free")}}</span>
-          <p>/ {{ $t("global_verification") }}</p>
+          <p>&nbsp;</p>
         </div>
         <p class="pricing-plan_upto">
           {{ $t("business_pricing_upto", { verifications: 50 }) }}
@@ -27,6 +28,7 @@
           </div>
         </a>
       </div>
+      <!-- PAYED -->
       <div class="pricing-plan">
         <div class="pricing-plan_price">
           <span>1,5€</span>
@@ -53,58 +55,7 @@
           </div>
         </a>
       </div>
-      <div class="pricing-plan">
-        <div class="pricing-plan_price">
-          <span>1,1€</span>
-          <p>/ {{ $t("global_verification") }}</p>
-        </div>
-        <p class="pricing-plan_upto">
-          {{
-            $t("business_pricing_between", {
-              verificationsLow: "1.000",
-              verificationsUp: "5.000",
-            })
-          }}
-          <br />{{ $t("business_pricing_verificationsMonth") }}
-        </p>
-        <p>
-            <ul class="checklist">
-                <li v-for="feature of features" :key="feature.title">{{$t(feature.title)}}</li>
-            </ul>
-        </p>
-        <p class="pepaml hint">{{ $t("business_pricing_PEPAML") }}</p>
-        <a :href="`mailto:${getEmail()}`" target="_blank">
-          <div class="button__wrapper">
-            <button class="primary">{{ $t("global_contactUs") }}</button>
-          </div>
-        </a>
-      </div>
-      <div class="pricing-plan">
-        <div class="pricing-plan_price">
-          <span>0,85€</span>
-          <p>/ {{ $t("global_verification") }}</p>
-        </div>
-        <p class="pricing-plan_upto">
-          {{
-            $t("business_pricing_between", {
-              verificationsLow: "5.000",
-              verificationsUp: "10.000",
-            })
-          }}
-          <br />{{ $t("business_pricing_verificationsMonth") }}
-        </p>
-        <p>
-            <ul class="checklist">
-                <li v-for="feature of features" :key="feature.title">{{$t(feature.title)}}</li>
-            </ul>
-        </p>
-        <p class="pepaml hint">{{ $t("business_pricing_PEPAML") }}</p>
-        <a :href="`mailto:${getEmail()}`" target="_blank">
-          <div class="button__wrapper">
-            <button class="primary">{{ $t("global_contactUs") }}</button>
-          </div>
-        </a>
-      </div>
+      <!-- PREMIUM -->
       <div class="pricing-plan">
         <div class="pricing-plan_price">
           <span>{{ $t("global_contactUs") }}</span>
@@ -192,6 +143,7 @@ export default {
     max-width: 350px
     &_price
         span
+            line-height: 52px
             font-size: 48px
             font-family: $font-bold
             color: #333333
