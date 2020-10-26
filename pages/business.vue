@@ -52,26 +52,43 @@
       <!-- <p>{{$t('business_friction_oneregister_title')}}</p> -->
     </section>
 
-
     <!-- Assisted Picture Quality  -->
-    <section class="claim-wrapper" id="assistedPictureQuality">
+    <section class="claim-wrapper">
       <div class="claim-container left">
-        <div class="claim-side-img">
-          <img
-            v-if="$root.$i18n.locale === 'es'"
-            class="screenshot lg"
-            src="@/assets/img/screenshots/screenshot_blurry_es.jpg"
-            :alt="$t('seo_1')"
-          />
-          <img
-            v-else
-            class="screenshot lg"
-            src="@/assets/img/screenshots/screenshot_blurry_en.jpg"
-            :alt="$t('seo_1')"
-          />
-          
+        <div
+          class="claim-side-img screenshots-container"
+          id="assistedPictureQualityScreenshots"
+        >
+          <template v-if="$root.$i18n.locale === 'es'">
+            <img
+              id="screenshot-blurry"
+              class="screenshot lg screenshotPictureQuality"
+              src="@/assets/img/screenshots/screenshot_blurry_es.jpg"
+              :alt="$t('seo_1')"
+            />
+            <img
+              id="screenshot-mask"
+              class="screenshot lg screenshotPictureQuality"
+              src="@/assets/img/screenshots/screenshot_mask_es.jpg"
+              :alt="$t('seo_1')"
+            />
+          </template>
+          <template v-else>
+            <img
+              id="screenshot-blurry"
+              class="screenshot lg screenshotPictureQuality"
+              src="@/assets/img/screenshots/screenshot_blurry_en.jpg"
+              :alt="$t('seo_1')"
+            />
+            <img
+              id="screenshot-mask"
+              class="screenshot lg screenshotPictureQuality"
+              src="@/assets/img/screenshots/screenshot_mask_en.jpg"
+              :alt="$t('seo_1')"
+            />
+          </template>
         </div>
-        <div class="claim-info-wrapper">
+        <div class="claim-info-wrapper" id="assistedPictureQuality">
           <div class="claim-info">
             <h3 class="title">
               {{ $t("business_differences_assistedPictureQuality_title") }}
@@ -382,6 +399,52 @@ export default {
           opacity: 0.3,
         });
       }
+
+          gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: ".assistedPictureQualityScreenshots",
+                start: "top center",
+                scrub: false,
+                markers: false,
+              },
+            })
+            .from(".assistedPictureQualityScreenshots", {
+              duration: 1,
+              perspective: 0,
+              ease: "power2.out"
+            })
+            .from(".screenshotPictureQuality", {
+              duration: 1,
+              scale: 0.8,
+              x: -200,
+              rotateY: 0,
+              opacity: 0,
+              stagger: -0.2,
+              ease: "power2.out",
+            });
+      // const tl = gsap
+      //   .timeline({
+      //     scrollTrigger: {
+      //       trigger: "#screenshot-mask",
+      //       start: "top bottom",
+      //       scrub: false,
+      //       markers: false,
+      //     },
+      //   })
+      //   .from("#screenshot-mask", {
+      //     duration: 1,
+      //     scale: 0.8,
+      //     x: -200,
+      //     opacity: 0,
+      //   });
+
+      // tl.from("#screenshot-blurry", {
+      //   duration: 1,
+      //   scale: 0.8,
+      //   x: -200,
+      //   opacity: 0,
+      // });
     },
   },
 };
@@ -409,7 +472,6 @@ img.screenshot
     flex: 1 1 auto
     align-self: center
     transform: rotateY(10deg)
-    transition: 0.3s
     &:nth-child(1)
       transform: rotateY(7deg) translateX(50px)
     &:nth-child(2)

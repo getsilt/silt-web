@@ -157,6 +157,7 @@ export default {
         button
             margin: auto
             margin-top: $spacing-md
+            width: 100%
 
 .pricing-plan:last-child
     background: $color-grey-lighten-3
