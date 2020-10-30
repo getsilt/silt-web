@@ -62,7 +62,7 @@
           <p>&nbsp;</p>
         </div>
         <p class="pricing-plan_upto">
-          {{ $t("business_pricing_moreThan", { verifications: "10.000" }) }}
+          {{ $t("business_pricing_moreThan", { verifications: "1.000" }) }}
           <br />{{ $t("business_pricing_verificationsMonth") }}
         </p>
         <p>
