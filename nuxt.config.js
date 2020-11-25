@@ -111,6 +111,7 @@ export default {
   },
 
   robots: {
+    Sitemap: "https://getsilt.com/sitemap.xml",
     UserAgent: "*",
     Disallow: ["/cookies", "/legal-notice", "/privacy"]
   },
