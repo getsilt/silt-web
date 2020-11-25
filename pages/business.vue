@@ -417,13 +417,13 @@ export default {
       gsap
         .timeline({
           scrollTrigger: {
-            trigger: ".assistedPictureQualityScreenshots",
+            trigger: "#assistedPictureQualityScreenshots",
             start: "top center",
             scrub: false,
             markers: false,
           },
         })
-        .from(".assistedPictureQualityScreenshots", {
+        .from("#assistedPictureQualityScreenshots", {
           duration: 1,
           perspective: 0,
           ease: "power2.out",
@@ -485,7 +485,7 @@ img.screenshot
   .screenshot-container
     flex: 0 1 auto
     align-self: center
-    transform: rotateY(8deg)
+    transform: rotateY(deg)
     &:nth-child(1) .screenshot
       transform: translateX(30px)
     &:nth-child(2) .screenshot
