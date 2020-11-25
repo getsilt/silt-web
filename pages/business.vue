@@ -12,21 +12,27 @@
         </a>
       </div>
       <div class="claim-side-img screenshots-container">
-        <img
-          class="screenshot login"
-          src="@/assets/img/screenshots/personal-details.png"
-          :alt="$t('seo_2')"
-        />
-        <img
-          class="screenshot take-picture"
-          src="@/assets/img/screenshots/take-picture.png"
-          :alt="$t('seo_3')"
-        />
-        <img
-          class="screenshot complete"
-          src="@/assets/img/screenshots/complete.png"
-          :alt="$t('seo_4')"
-        />
+        <div class="screenshot-container">
+          <img
+            class="screenshot login"
+            src="@/assets/img/screenshots/personal-details.png"
+            :alt="$t('seo_2')"
+          />
+        </div>
+        <div class="screenshot-container">
+          <img
+            class="screenshot take-picture"
+            src="@/assets/img/screenshots/take-picture.png"
+            :alt="$t('seo_3')"
+          />
+        </div>
+        <div class="screenshot-container">
+          <img
+            class="screenshot complete"
+            src="@/assets/img/screenshots/complete.png"
+            :alt="$t('seo_4')"
+          />
+        </div>
       </div>
     </section>
 
@@ -60,32 +66,40 @@
           id="assistedPictureQualityScreenshots"
         >
           <template v-if="$root.$i18n.locale === 'es'">
-            <img
-              id="screenshot-blurry"
-              class="screenshot lg screenshotPictureQuality"
-              src="@/assets/img/screenshots/screenshot_blurry_es.jpg"
-              :alt="$t('seo_1')"
-            />
-            <img
-              id="screenshot-mask"
-              class="screenshot lg screenshotPictureQuality"
-              src="@/assets/img/screenshots/screenshot_mask_es.jpg"
-              :alt="$t('seo_1')"
-            />
+            <div class="screenshot-container">
+              <img
+                id="screenshot-blurry"
+                class="screenshot lg screenshotPictureQuality"
+                src="@/assets/img/screenshots/screenshot_blurry_es.jpg"
+                :alt="$t('seo_1')"
+              />
+            </div>
+            <div class="screenshot-container">
+              <img
+                id="screenshot-mask"
+                class="screenshot lg screenshotPictureQuality"
+                src="@/assets/img/screenshots/screenshot_mask_es.jpg"
+                :alt="$t('seo_1')"
+              />
+            </div>
           </template>
           <template v-else>
-            <img
-              id="screenshot-blurry"
-              class="screenshot lg screenshotPictureQuality"
-              src="@/assets/img/screenshots/screenshot_blurry_en.jpg"
-              :alt="$t('seo_1')"
-            />
-            <img
-              id="screenshot-mask"
-              class="screenshot lg screenshotPictureQuality"
-              src="@/assets/img/screenshots/screenshot_mask_en.jpg"
-              :alt="$t('seo_1')"
-            />
+            <div class="screenshot-container">
+              <img
+                id="screenshot-blurry"
+                class="screenshot lg screenshotPictureQuality"
+                src="@/assets/img/screenshots/screenshot_blurry_en.jpg"
+                :alt="$t('seo_1')"
+              />
+            </div>
+            <div class="screenshot-container">
+              <img
+                id="screenshot-mask"
+                class="screenshot lg screenshotPictureQuality"
+                src="@/assets/img/screenshots/screenshot_mask_en.jpg"
+                :alt="$t('seo_1')"
+              />
+            </div>
           </template>
         </div>
         <div class="claim-info-wrapper" id="assistedPictureQuality">
@@ -400,29 +414,29 @@ export default {
         });
       }
 
-          gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".assistedPictureQualityScreenshots",
-                start: "top center",
-                scrub: false,
-                markers: false,
-              },
-            })
-            .from(".assistedPictureQualityScreenshots", {
-              duration: 1,
-              perspective: 0,
-              ease: "power2.out"
-            })
-            .from(".screenshotPictureQuality", {
-              duration: 1,
-              scale: 0.8,
-              x: -200,
-              rotateY: 0,
-              opacity: 0,
-              stagger: -0.2,
-              ease: "power2.out",
-            });
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".assistedPictureQualityScreenshots",
+            start: "top center",
+            scrub: false,
+            markers: false,
+          },
+        })
+        .from(".assistedPictureQualityScreenshots", {
+          duration: 1,
+          perspective: 0,
+          ease: "power2.out",
+        })
+        .from(".screenshotPictureQuality", {
+          duration: 1,
+          scale: 0.8,
+          x: -200,
+          rotateY: 0,
+          opacity: 0,
+          stagger: -0.2,
+          ease: "power2.out",
+        });
       // const tl = gsap
       //   .timeline({
       //     scrollTrigger: {
@@ -468,24 +482,26 @@ img.screenshot
   width: 100%
   @media(min-width: 768px)
     width: auto
-  img.screenshot
-    flex: 1 1 auto
+  .screenshot-container
+    flex: 0 1 auto
     align-self: center
-    transform: rotateY(10deg)
-    &:nth-child(1)
-      transform: rotateY(7deg) translateX(50px)
-    &:nth-child(2)
-      transform: rotateY(7deg) translateX(20px)
-    &:nth-child(3)
-      transform: rotateY(7deg) translateX(0px)
+    transform: rotateY(8deg)
+    &:nth-child(1) .screenshot
+      transform: translateX(30px)
+    &:nth-child(2) .screenshot
+      transform: translateX(0px)
+    &:nth-child(3) .screenshot
+      transform: translateX(-20px)
 
     @media(min-width: 768px)
-      &:nth-child(1)
-        transform: rotateY(7deg) translateX(0px)
-      &:nth-child(2)
-        transform: rotateY(7deg) translateX(-70px)
-      &:nth-child(3)
-        transform: rotateY(7deg) translateX(-125px)
+      &:nth-child(1) .screenshot
+        transform: translateX(70px)
+      &:nth-child(2) .screenshot
+        transform: translateX(0px)
+      &:nth-child(3) .screenshot
+        transform: translateX(-55px)
+    img.screenshot
+      width: 100%
     // &:hover
     //   transform: rotateY(0) scale(1.2)
     //   z-index: 1
