@@ -90,6 +90,34 @@ export default {
       es: "/precios", // -> accessible at /es/sobre
     },
   },
+  head() {
+    const i18nSeo = this.$nuxtI18nSeo();
+    return {
+      htmlAttrs: {
+        ...i18nSeo.htmlAttrs
+      },
+      title: this.$t("business_pricing_title"),
+      meta: [
+        {
+          hid: "og:title",
+          name: "og:title",
+          content: this.$t("business_pricing_title")
+        },
+        {
+          hid: "description",
+          name: "description",
+          content: this.$t("business_pricing_content")
+        },
+        {
+          hid: "og:description",
+          name: "og:description",
+          content: this.$t("business_pricing_content")
+        },
+        ...i18nSeo.meta
+      ],
+      link: [...i18nSeo.link]
+    };
+  },
   data() {
     return {
       email: "hello@getsilt.com",
