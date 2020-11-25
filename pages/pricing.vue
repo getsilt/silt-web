@@ -96,7 +96,7 @@ export default {
       htmlAttrs: {
         ...i18nSeo.htmlAttrs
       },
-      title: this.$t("business_pricing_title"),
+      title: `${this.$t("business_pricing_title")} | Silt Digital ID & KYC`,
       meta: [
         {
           hid: "og:title",

@@ -32,6 +32,7 @@
           <a
             href="https://www.facebook.com/Silt-102186764702659/"
             target="_blank"
+            rel="noreferrer"
             ><img
               height="20"
               src="@/assets/img/icons/social_facebook.svg"

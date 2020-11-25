@@ -59,7 +59,7 @@ export default {
       htmlAttrs: {
         ...i18nSeo.htmlAttrs,
       },
-      title: this.$t("demo_claim1"),
+      title: `${this.$t("demo_claim1")} | Silt Digital ID & KYC`,
       meta: [
         {
           hid: "og:title",

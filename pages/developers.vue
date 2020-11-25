@@ -34,7 +34,7 @@ export default {
   head() {
     const i18nSeo = this.$nuxtI18nSeo();
     return {
-      title: "SDK & API Integration with Silt",
+      title: "SDK & API Integration with Silt Digital ID & KYC",
       meta: [
         {
           hid:
