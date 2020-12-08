@@ -5,7 +5,7 @@
       <div class="header-bar">
         <div class="logo">
           <nuxt-link :to="localePath({ name: 'business' })">
-            <img src="@/assets/img/logo/silt_blue.svg" :alt="$t('seo_1')" />
+            <img src="@/assets/img/logo/silt_blue.svg" :alt="$t('silt_name')" />
           </nuxt-link>
         </div>
         <nuxt-link

@@ -265,14 +265,12 @@
 </template>
 
 <script>
-// Animate on scroll
-// var controllerHolder;
 import gsap from "gsap";
 export default {
   nuxtI18n: {
     paths: {
       en: "/", // -> accessible at / (no prefix since it's the default locale)
-      es: "/", // -> accessible at /es/sobre
+      es: "/",
     },
   },
   data() {
@@ -281,7 +279,7 @@ export default {
         "@context": "https://getsilt.com",
         "@type": "Organization",
         url: "https://getsilt.com",
-        name: "Verified ID signups, KYC, PEP, AML, Fraud control",
+        name: this.$t("silt_name"),
         email: "hello@getsilt.com",
         logo: "https://getsilt.com/silt_blue.svg",
       },
@@ -485,7 +483,7 @@ img.screenshot
   .screenshot-container
     flex: 0 1 auto
     align-self: center
-    transform: rotateY(deg)
+    transform: rotateY(7deg)
     &:nth-child(1) .screenshot
       transform: translateX(30px)
     &:nth-child(2) .screenshot
