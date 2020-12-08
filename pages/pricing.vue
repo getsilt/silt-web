@@ -1,7 +1,7 @@
 <template>
   <div class="fw-container container" id="pricing">
       <div class="section-headers">
-        <h2>{{ $t("business_pricing_title") }}</h2>
+        <h1 class="h2">{{ $t("business_pricing_title") }}</h1>
         <p>{{ $t("business_pricing_content") }}</p>
       </div>
 
@@ -94,28 +94,28 @@ export default {
     const i18nSeo = this.$nuxtI18nSeo();
     return {
       htmlAttrs: {
-        ...i18nSeo.htmlAttrs
+        ...i18nSeo.htmlAttrs,
       },
       title: `${this.$t("business_pricing_title")} | Silt Digital ID & KYC`,
       meta: [
         {
           hid: "og:title",
           name: "og:title",
-          content: this.$t("business_pricing_title")
+          content: this.$t("business_pricing_title"),
         },
         {
           hid: "description",
           name: "description",
-          content: this.$t("business_pricing_content")
+          content: this.$t("business_pricing_content"),
         },
         {
           hid: "og:description",
           name: "og:description",
-          content: this.$t("business_pricing_content")
+          content: this.$t("business_pricing_content"),
         },
-        ...i18nSeo.meta
+        ...i18nSeo.meta,
       ],
-      link: [...i18nSeo.link]
+      link: [...i18nSeo.link],
     };
   },
   data() {
@@ -146,7 +146,7 @@ export default {
         {
           title: "business_highlights_noManagement_title",
         },
-      ]
+      ],
     };
   },
   methods: {
@@ -159,45 +159,46 @@ export default {
 <style lang="sass" scoped>
 @import '@/assets/sass/vars.sass'
 .pricing-plans_container
-    display: flex
-    justify-content: center
-    flex-wrap: wrap
-    width: 100%
-.pricing-plan
+  display: flex
+  justify-content: center
+  flex-wrap: wrap
+  width: 100%
+  .pricing-plan
     flex: 0 1 auto
     border-radius: 10px
     padding: $spacing-lg
     margin: 2%
     max-width: 350px
+    
     &_price
-        span
-            line-height: 52px
-            font-size: 48px
-            font-family: $font-bold
-            color: #333333
-
-        p
-            color: $color-grey-lighten-1
-            margin: 0 0 $spacing-md 0
-            text-align: left
-    .button__wrapper
+      span
+        line-height: 52px
+        font-size: 48px
+        font-family: $font-bold
+        color: #333333
+      p
+        color: $color-grey-lighten-1
+        margin: 0 0 $spacing-md 0
         text-align: left
-        button
-            margin: auto
-            margin-top: $spacing-md
-            width: 100%
+    .button__wrapper
+      text-align: left
+      button
+        margin: auto
+        margin-top: $spacing-md
+        width: 100%
 
-.pricing-plan:last-child
-    background: $color-grey-lighten-3
-    .pricing-plan_price
-        span
-            font-size: 32px
+.pricing-plan:last-child, 
+  background: $color-grey-lighten-3
+.pricing-plan:last-child, .pricing-plan:first-child  
+  .pricing-plan_price
+    span
+      font-size: 36px
 .pepaml, .checklist,
-    max-width: 500px
-    text-align: left
-    font-size: 13px
-    color: $color-grey-lighten-1
+  max-width: 500px
+  text-align: left
+  font-size: 13px
+  color: $color-grey-lighten-1
 
 .checklist
-    padding-left: 0
+  padding-left: 0
 </style>
