@@ -109,6 +109,8 @@ section
     z-index: 90
     height: 70px
     flex: 1 1 auto
+    &>*:not(:last-child)
+      margin-right: $spacing-sm
     .logo
       font-size: 60px
       flex: 0 0 auto
@@ -117,6 +119,7 @@ section
       align-items: stretch
       max-height: 30px
       a
+        height: 30px
         flex: 1 1 auto
       img
         max-width: 100%
@@ -129,6 +132,7 @@ section
       position: relative
       height: 20px
       width: 24px
+      flex: 0 0 auto
       @media (min-width: 768px)
         display: none
 
