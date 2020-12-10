@@ -15,22 +15,25 @@
         <div class="screenshot-container">
           <img
             class="screenshot login"
-            src="@/assets/img/screenshots/personal-details.png"
+            src="@/assets/img/screenshots/screenshot_documentSelect_es.jpg"
             :alt="$t('seo_2')"
+            width="180" height="353"
           />
         </div>
         <div class="screenshot-container">
           <img
             class="screenshot take-picture"
-            src="@/assets/img/screenshots/take-picture.png"
+            src="@/assets/img/screenshots/screenshot_selfie_es.jpg"
             :alt="$t('seo_3')"
+            width="180" height="353"
           />
         </div>
         <div class="screenshot-container">
           <img
             class="screenshot complete"
-            src="@/assets/img/screenshots/complete.png"
+            src="@/assets/img/screenshots/screenshot_finish_es.jpg"
             :alt="$t('seo_4')"
+            width="180" height="353"
           />
         </div>
       </div>
@@ -48,7 +51,7 @@
             <div class="article-img-container">
               <!-- <span class="big">{{$t(differences.header)}}</span>
             {{$t(differences.headerDescription)}} -->
-              <img :src="difference.img" :alt="$t('seo_' + (i + 5))" />
+              <img :src="difference.img" :alt="$t('seo_' + (i + 5))" width="213" height="239"/>
             </div>
             <h3>{{ $t(difference.title) }}</h3>
             <p v-html="$t(difference.content)">{{ $t(difference.content) }}</p>
@@ -72,6 +75,7 @@
                 class="screenshot lg screenshotPictureQuality"
                 src="@/assets/img/screenshots/screenshot_blurry_es.jpg"
                 :alt="$t('seo_1')"
+                width="220" height="432"
               />
             </div>
             <div class="screenshot-container">
@@ -80,6 +84,7 @@
                 class="screenshot lg screenshotPictureQuality"
                 src="@/assets/img/screenshots/screenshot_mask_es.jpg"
                 :alt="$t('seo_1')"
+                width="220" height="432"
               />
             </div>
           </template>
@@ -90,6 +95,7 @@
                 class="screenshot lg screenshotPictureQuality"
                 src="@/assets/img/screenshots/screenshot_blurry_en.jpg"
                 :alt="$t('seo_1')"
+                width="220" height="432"
               />
             </div>
             <div class="screenshot-container">
@@ -98,6 +104,7 @@
                 class="screenshot lg screenshotPictureQuality"
                 src="@/assets/img/screenshots/screenshot_mask_en.jpg"
                 :alt="$t('seo_1')"
+                width="220" height="432"
               />
             </div>
           </template>
@@ -467,7 +474,7 @@ img.screenshot
   min-width: 120px
   max-width: 180px
   box-shadow: 2px 6px 20px -6px rgba(0,0,0,0.3)
-  border-radius: 10px
+  border-radius: 15px
 
   &.lg
     min-width: 120px
