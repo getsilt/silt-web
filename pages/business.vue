@@ -406,7 +406,7 @@ export default {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: section,
-            start: "top bottom",
+            start: "center bottom",
             scrub: false,
             markers: false,
           },
@@ -415,7 +415,7 @@ export default {
           duration: 1,
           scale: 0.8,
           y: 200,
-          opacity: 0.3,
+          opacity: 0,
         });
       }
 
@@ -423,7 +423,7 @@ export default {
         .timeline({
           scrollTrigger: {
             trigger: "#assistedPictureQualityScreenshots",
-            start: "top center",
+            start: "center bottom",
             scrub: false,
             markers: false,
           },
