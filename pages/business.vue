@@ -413,8 +413,8 @@ export default {
         });
         tl.from(section, {
           duration: 1,
-          scale: 0.8,
-          y: 200,
+          scale: 1,
+          y: 100,
           opacity: 0,
         });
       }
@@ -429,14 +429,14 @@ export default {
           },
         })
         .from("#assistedPictureQualityScreenshots", {
-          duration: 1,
+          duration: 0.5,
           perspective: 0,
           ease: "power2.out",
         })
         .from(".screenshotPictureQuality", {
           duration: 1,
-          scale: 0.8,
-          x: -200,
+          scale: 1,
+          x: -100,
           rotateY: 0,
           opacity: 0,
           stagger: -0.2,
