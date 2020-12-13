@@ -4,6 +4,7 @@
       <div class="footer_logo">
         <img
           src="@/assets/img/logo/silt_blue.svg"
+          width="75"
           height="40"
           :alt="$t('seo_9')"
         />
@@ -34,6 +35,7 @@
             target="_blank"
             rel="noreferrer"
             ><img
+              width="20"
               height="20"
               src="@/assets/img/icons/social_facebook.svg"
               alt="Facebook Silt page"

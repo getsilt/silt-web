@@ -197,6 +197,7 @@
         </div>
         <div class="claim-side-img">
           <img
+            width="500" height="500"  
             src="@/assets/img/illustrations/book-imac.svg"
             :alt="$t('seo_7')"
           />
@@ -241,6 +242,7 @@
         </div>
         <div class="claim-side-img">
           <img
+            width="500" height="500"
             src="@/assets/img/illustrations/hand-globe.svg"
             :alt="$t('seo_8')"
           />
