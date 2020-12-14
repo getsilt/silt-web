@@ -49,8 +49,6 @@
         <article v-for="(difference, i) in differences" :key="difference.title">
           <div class="article-container">
             <div class="article-img-container">
-              <!-- <span class="big">{{$t(differences.header)}}</span>
-            {{$t(differences.headerDescription)}} -->
               <img :src="difference.img" :alt="$t('seo_' + (i + 5))" width="213" height="239"/>
             </div>
             <h3>{{ $t(difference.title) }}</h3>
@@ -58,7 +56,6 @@
           </div>
         </article>
       </div>
-      <!-- <p>{{$t('business_friction_oneregister_title')}}</p> -->
     </section>
 
     <!-- Assisted Picture Quality  -->
@@ -136,20 +133,18 @@
         <span class="tag">{{ $t("business_friction_section") }}</span>
         <h2>{{ $t("business_friction_title") }}</h2>
       </div>
-      <div class="highlights-container">
+      <div class="highlights-container pins">
         <article v-for="highlight in highlights" :key="highlight.title">
           <div class="article-container">
             <div class="article-header">
               <span class="big">{{ $t(highlight.header) }}</span>
               {{ $t(highlight.headerDescription) }}
-              <!-- <img src="@/assets/img/icons/rocket.svg" alt /> -->
             </div>
             <h3>{{ $t(highlight.title) }}</h3>
             <p>{{ $t(highlight.content) }}</p>
           </div>
         </article>
       </div>
-      <!-- <p>{{$t('business_friction_oneregister_title')}}</p> -->
     </section>
 
     <!-- TECH FEATURES -->
@@ -167,7 +162,6 @@
           v-for="feature in techfeatures"
           :key="feature.title"
         >
-          <!-- <img :src="feature.img" /> -->
           <h3>{{ $t(feature.title) }}</h3>
         </div>
       </div>
@@ -182,7 +176,6 @@
       <div class="claim-container">
         <div class="claim-info">
           <p>{{ $t("business_howto_content") }}</p>
-          <!-- <span class="subtitle">{{$t('business_benefits_integration_content')}}</span> -->
           <ol>
             <li>{{ $t("business_howto_content1") }}</li>
             <li>{{ $t("business_howto_content2") }}</li>
@@ -262,7 +255,6 @@
           v-for="usecase in usecases"
           :key="usecase.title"
         >
-          <!-- <img :src="feature.img" /> -->
           <h3>{{ $t(usecase.title) }}</h3>
         </div>
       </div>
@@ -290,7 +282,7 @@ export default {
         url: "https://getsilt.com",
         name: this.$t("silt_name"),
         email: "hello@getsilt.com",
-        logo: "https://getsilt.com/silt_blue.svg",
+        logo: "https://getsilt.com/silt_blue.png",
       },
       email: "hello@getsilt.com",
       differences: [
@@ -318,10 +310,10 @@ export default {
       ],
       highlights: [
         {
-          title: "business_friction_oneregister_title",
-          content: "business_friction_oneregister_content",
-          header: "business_friction_oneregister_header",
-          headerDescription: "business_friction_oneregister_headerDescription",
+          title: "business_friction_automatic_title",
+          content: "business_friction_automatic_content",
+          header: "business_friction_automatic_header",
+          headerDescription: "business_friction_automatic_headerDescription",
         },
         {
           title: "business_friction_trust_title",
