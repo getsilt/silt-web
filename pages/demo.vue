@@ -3,7 +3,7 @@
     <!-- CLAIMS -->
     <section class="claim-container">
       <div class="claim-info">
-        <h1 class="title" v-html="$t('demo_claim1')"></h1>
+        <h1 class="title" >{{$t('demo_claim1')}}</h1>
         <h4 class="subtitle">{{ $t("demo_claim2") }}</h4>
         <h4 class="subtitle">{{ $t("demo_claim3") }}</h4>
         <form id="form" @submit.prevent="submitForm($event)">
@@ -18,26 +18,35 @@
             {{ $t("btn_cta_demo") }}
           </button>
         </form>
-        <span class="email-response" :class="status">{{
+        <span v-if="status !== 'unsent'" class="email-response" :class="status">{{
           $t(`emailResponse_${status}`)
         }}</span>
       </div>
       <div class="claim-side-img screenshots-container">
-        <img
-          class="screenshot login"
-          src="@/assets/img/screenshots/personal-details.png"
-          :alt="$t('seo_2')"
-        />
-        <img
-          class="screenshot take-picture"
-          src="@/assets/img/screenshots/take-picture.png"
-          :alt="$t('seo_3')"
-        />
-        <img
-          class="screenshot complete"
-          src="@/assets/img/screenshots/complete.png"
-          :alt="$t('seo_4')"
-        />
+        <div class="screenshot-container">
+          <img
+            class="screenshot login"
+            src="@/assets/img/screenshots/screenshot_documentSelect_es.jpg"
+            :alt="$t('seo_2')"
+            width="180" height="353"
+          />
+        </div>
+        <div class="screenshot-container">
+          <img
+            class="screenshot take-picture"
+            src="@/assets/img/screenshots/screenshot_selfie_es.jpg"
+            :alt="$t('seo_3')"
+            width="180" height="353"
+          />
+        </div>
+        <div class="screenshot-container">
+          <img
+            class="screenshot complete"
+            src="@/assets/img/screenshots/screenshot_finish_es.jpg"
+            :alt="$t('seo_4')"
+            width="180" height="353"
+          />
+        </div>
       </div>
     </section>
   </div>
@@ -118,40 +127,6 @@ export default {
 
 <style lang="sass" scoped>
 @import "@/assets/sass/vars.sass"
-.screenshots-container
-  display: flex
-  perspective: 300px
-  overflow: visible
-  width: 100%
-  @media(min-width: 768px)
-    width: auto
-  img.screenshot
-    flex: 1 1 auto
-    min-width: 120px
-    max-width: 180px
-    align-self: center
-    box-shadow: 2px 2px 20px -6px rgba(0,0,0,0.3)
-    transform: rotateY(10deg)
-    transition: 0.3s
-    border-radius: 10px
-    &:nth-child(1)
-      transform: rotateY(7deg) translateX(50px)
-    &:nth-child(2)
-      transform: rotateY(7deg) translateX(20px)
-    &:nth-child(3)
-      transform: rotateY(7deg) translateX(0px)
-
-    @media(min-width: 768px)
-      &:nth-child(1)
-        transform: rotateY(7deg) translateX(0px)
-      &:nth-child(2)
-        transform: rotateY(7deg) translateX(-70px)
-      &:nth-child(3)
-        transform: rotateY(7deg) translateX(-125px)
-    // &:hover
-    //   transform: rotateY(0) scale(1.2)
-    //   z-index: 1
-    //   transition: 0.3s
 
 form
   margin-top: $spacing-md
