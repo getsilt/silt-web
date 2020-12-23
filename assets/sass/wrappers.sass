@@ -64,6 +64,7 @@ section
   &.left
     .claim-side-img
       margin: $spacing-lg
+      order: -1
     .claim-info-wrapper
       margin: $spacing-lg
   .claim-info-wrapper
@@ -83,7 +84,7 @@ section
       text-align: left
     &.right
       @media (min-width: 768px)
-        align-items: flex-end
+        align-items: center
         text-align: right
         margin-left: auto
     .title
@@ -99,13 +100,15 @@ section
   .claim-side-img
     display: flex
     flex: 1 1 auto
-    justify-content: flex-end
+    justify-content: center
     align-items: center
     max-width: 100%
     &>img
       flex: 1 1 auto
       min-width: 300px
-      max-width: 500px
+      max-width: 400px
+      height: auto
+      max-height: 400px
 
 .highlights-container
   display: flex
@@ -145,6 +148,7 @@ section
       align-items: center
       border-radius: 10px
       margin-bottom: 20px
+      font-weight: 500
       .big
         font-size: 40px
         margin-bottom: 10px

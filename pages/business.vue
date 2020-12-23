@@ -123,7 +123,9 @@
             <h3 class="title">
               {{ $t("business_differences_assistedPictureQuality_title") }}
             </h3>
-            <p>
+            <p
+              v-html="$t('business_differences_assistedPictureQuality_content')"
+            >
               {{ $t("business_differences_assistedPictureQuality_content") }}
             </p>
             <p
@@ -203,8 +205,8 @@
         </div>
         <div class="claim-side-img">
           <img
-            width="500"
-            height="500"
+            width="400"
+            height="400"
             src="@/assets/img/illustrations/book-imac.svg"
             :alt="$t('seo_7')"
           />
@@ -237,20 +239,24 @@
       </div>
     </section> -->
     <section class="claim-wrapper" id="countries">
-      <div class="claim-container">
-        <div class="claim-info">
-          <h3 class="title">{{ $t("business_highlights_countries_title") }}</h3>
-          <p>
-            {{ $t("business_highlights_countries_content") }}
-          </p>
-          <a :href="`mailto:${getEmail()}`" target="_blank">
-            <button class="primary">{{ $t("btn_cta_contact") }}</button>
-          </a>
+      <div class="claim-container left">
+        <div class="claim-info-wrapper">
+          <div class="claim-info">
+            <h3 class="title">
+              {{ $t("business_highlights_countries_title") }}
+            </h3>
+            <p>
+              {{ $t("business_highlights_countries_content") }}
+            </p>
+            <a :href="`mailto:${getEmail()}`" target="_blank">
+              <button class="primary">{{ $t("btn_cta_contact") }}</button>
+            </a>
+          </div>
         </div>
         <div class="claim-side-img">
           <img
-            width="500"
-            height="500"
+            width="400"
+            height="400"
             src="@/assets/img/illustrations/hand-globe.svg"
             :alt="$t('seo_8')"
           />
@@ -427,7 +433,7 @@ export default {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: section,
-            start: "center bottom",
+            start: "top center",
             scrub: false,
             markers: false,
           },
@@ -443,8 +449,8 @@ export default {
       gsap
         .timeline({
           scrollTrigger: {
-            trigger: "#techfeatures",
-            start: "bottom bottom",
+            trigger: "#techfeatures .features-container",
+            start: "top bottom",
             scrub: false,
             markers: false,
           },
@@ -462,8 +468,8 @@ export default {
       gsap
         .timeline({
           scrollTrigger: {
-            trigger: "#usecases",
-            start: "bottom bottom",
+            trigger: "#usecases .features-container",
+            start: "top bottom",
             scrub: false,
             markers: false,
           },
@@ -482,7 +488,7 @@ export default {
         .timeline({
           scrollTrigger: {
             trigger: "#assistedPictureQualityScreenshots",
-            start: "center bottom",
+            start: "top center",
             scrub: false,
             markers: false,
           },
@@ -501,28 +507,6 @@ export default {
           stagger: -0.2,
           ease: "power2.out",
         });
-      // const tl = gsap
-      //   .timeline({
-      //     scrollTrigger: {
-      //       trigger: "#screenshot-mask",
-      //       start: "top bottom",
-      //       scrub: false,
-      //       markers: false,
-      //     },
-      //   })
-      //   .from("#screenshot-mask", {
-      //     duration: 1,
-      //     scale: 0.8,
-      //     x: -200,
-      //     opacity: 0,
-      //   });
-
-      // tl.from("#screenshot-blurry", {
-      //   duration: 1,
-      //   scale: 0.8,
-      //   x: -200,
-      //   opacity: 0,
-      // });
     },
   },
 };
@@ -531,21 +515,6 @@ export default {
 <style lang="sass" scoped>
 .scan-icon
   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%232963FFFF' stroke-width='7' stroke-dasharray='50%25%2c 50%25' stroke-dashoffset='14' stroke-linecap='butt'/%3e%3c/svg%3e")
-  //background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='%232963FFFF' stroke-width='15' stroke-dasharray='50%25%2c 50%25' stroke-dashoffset='50' stroke-linecap='butt'/%3e%3c/svg%3e");
   padding: 10px
   font-size: 25px
-// img.screenshot
-//   min-width: 120px
-//   max-width: 180px
-//   box-shadow: 2px 6px 20px -6px rgba(0,0,0,0.3)
-//   border-radius: 15px
-
-//   &.lg
-//     min-width: 120px
-//     max-width: 220px
-
-    // &:hover
-    //   transform: rotateY(0) scale(1.2)
-    //   z-index: 1
-    //   transition: 0.3s
 </style>

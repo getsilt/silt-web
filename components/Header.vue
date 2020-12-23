@@ -88,6 +88,7 @@ section
   z-index: 100
   display: flex
   justify-content: center
+  font-family: $font-bold
 .header-wrapper
   margin: 0
   padding: 0

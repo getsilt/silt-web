@@ -72,12 +72,21 @@ export default {
 @import "@/assets/sass/vars.sass"
 footer
   margin-top: auto
+  background: darken($color-primary, 40%)
+  color: #ffffff77
+  padding: $spacing-lg
+  a
+    text-decoration: none 
+    color: #ffffffcc
+    &:hover
+      color: #ffffffee
+  .h6
+    color: #ffffffcc
 p
   margin: 10px 0
 p.copyright
   font-size: 14px
   text-align: center
-  color: #b2b2b2
 .footer__wrapper
   display: flex
   justify-content: space-between

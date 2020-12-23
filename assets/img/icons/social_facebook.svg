@@ -1,1 +1,11 @@
-<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg enable-background="new 0 0 500 500" height="500px" id="Layer_1" version="1.1" viewBox="0 0 500 500" width="500px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path clip-rule="evenodd" d="M31.949,431.711c0,20.078,16.264,36.34,36.34,36.34h363.421  c20.078,0,36.34-16.262,36.34-36.34V68.29c0-20.077-16.262-36.34-36.34-36.34H68.29c-20.077,0-36.34,16.264-36.34,36.34V431.711z   M259.086,413.538V268.172h-36.342v-54.514h36.342c0-93.671,3.993-99.939,118.112-99.939v54.513  c-60.149,0-54.514,3.362-54.514,45.427h54.514v54.514h-54.514v145.366H259.086z" fill="#010101" fill-rule="evenodd"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="438px" height="438px" viewBox="0 0 438 438" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.9">
+        <g id="social_facebook" fill="#FFFFFF">
+            <path d="M0.949,400.711 C0.949,420.789 17.213,437.051 37.289,437.051 L400.71,437.051 C420.788,437.051 437.05,420.789 437.05,400.711 L437.05,37.29 C437.05,17.213 420.788,0.95 400.71,0.95 L37.29,0.95 C17.213,0.95 0.95,17.214 0.95,37.29 L0.95,400.711 L0.949,400.711 Z M228.086,382.538 L228.086,237.172 L191.744,237.172 L191.744,182.658 L228.086,182.658 C228.086,88.987 232.079,82.719 346.198,82.719 L346.198,137.232 C286.049,137.232 291.684,140.594 291.684,182.659 L346.198,182.659 L346.198,237.173 L291.684,237.173 L291.684,382.539 L228.086,382.539 L228.086,382.538 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>
