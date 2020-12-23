@@ -58,8 +58,8 @@
       <!-- PREMIUM -->
       <div class="pricing-plan">
         <div class="pricing-plan_price">
-          <span>{{ $t("global_contactUs") }}</span>
-          <p>&nbsp;</p>
+          <span>{{ $t("business_pricing_startingFrom") }}</span>
+          <p>/ {{ $t("global_verification") }}</p>
         </div>
         <p class="pricing-plan_upto">
           {{ $t("business_pricing_moreThan", { verifications: "1.000" }) }}
@@ -178,7 +178,7 @@ export default {
         color: #333333
       p
         color: $color-grey-lighten-1
-        margin: 0 0 $spacing-md 0
+        margin: $spacing-sm 0 $spacing-md 0
         text-align: left
     .button__wrapper
       text-align: left

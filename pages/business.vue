@@ -51,7 +51,7 @@
             <div class="article-img-container">
               <img :src="difference.img" :alt="$t('seo_' + (i + 5))" width="213" height="239"/>
             </div>
-            <h3>{{ $t(difference.title) }}</h3>
+            <h4>{{ $t(difference.title) }}</h4>
             <p v-html="$t(difference.content)">{{ $t(difference.content) }}</p>
           </div>
         </article>
@@ -140,7 +140,7 @@
               <span class="big">{{ $t(highlight.header) }}</span>
               {{ $t(highlight.headerDescription) }}
             </div>
-            <h3>{{ $t(highlight.title) }}</h3>
+            <h4>{{ $t(highlight.title) }}</h4>
             <p>{{ $t(highlight.content) }}</p>
           </div>
         </article>
@@ -162,7 +162,7 @@
           v-for="feature in techfeatures"
           :key="feature.title"
         >
-          <h3>{{ $t(feature.title) }}</h3>
+          <h4>{{ $t(feature.title) }}</h4>
         </div>
       </div>
     </section>
@@ -255,7 +255,7 @@
           v-for="usecase in usecases"
           :key="usecase.title"
         >
-          <h3>{{ $t(usecase.title) }}</h3>
+          <h4>{{ $t(usecase.title) }}</h4>
         </div>
       </div>
       <a :href="`mailto:${getEmail()}`" target="_blank">
