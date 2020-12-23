@@ -17,7 +17,8 @@
             class="screenshot login"
             src="@/assets/img/screenshots/screenshot_documentSelect_es.jpg"
             :alt="$t('seo_2')"
-            width="180" height="353"
+            width="180"
+            height="353"
           />
         </div>
         <div class="screenshot-container">
@@ -25,7 +26,8 @@
             class="screenshot take-picture"
             src="@/assets/img/screenshots/screenshot_selfie_es.jpg"
             :alt="$t('seo_3')"
-            width="180" height="353"
+            width="180"
+            height="353"
           />
         </div>
         <div class="screenshot-container">
@@ -33,7 +35,8 @@
             class="screenshot complete"
             src="@/assets/img/screenshots/screenshot_finish_es.jpg"
             :alt="$t('seo_4')"
-            width="180" height="353"
+            width="180"
+            height="353"
           />
         </div>
       </div>
@@ -49,7 +52,12 @@
         <article v-for="(difference, i) in differences" :key="difference.title">
           <div class="article-container">
             <div class="article-img-container">
-              <img :src="difference.img" :alt="$t('seo_' + (i + 5))" width="213" height="239"/>
+              <img
+                :src="difference.img"
+                :alt="$t('seo_' + (i + 5))"
+                width="213"
+                height="239"
+              />
             </div>
             <h4>{{ $t(difference.title) }}</h4>
             <p v-html="$t(difference.content)">{{ $t(difference.content) }}</p>
@@ -72,7 +80,8 @@
                 class="screenshot lg screenshotPictureQuality"
                 src="@/assets/img/screenshots/screenshot_blurry_es.jpg"
                 :alt="$t('seo_1')"
-                width="220" height="432"
+                width="220"
+                height="432"
               />
             </div>
             <div class="screenshot-container">
@@ -81,7 +90,8 @@
                 class="screenshot lg screenshotPictureQuality"
                 src="@/assets/img/screenshots/screenshot_mask_es.jpg"
                 :alt="$t('seo_1')"
-                width="220" height="432"
+                width="220"
+                height="432"
               />
             </div>
           </template>
@@ -92,7 +102,8 @@
                 class="screenshot lg screenshotPictureQuality"
                 src="@/assets/img/screenshots/screenshot_blurry_en.jpg"
                 :alt="$t('seo_1')"
-                width="220" height="432"
+                width="220"
+                height="432"
               />
             </div>
             <div class="screenshot-container">
@@ -101,7 +112,8 @@
                 class="screenshot lg screenshotPictureQuality"
                 src="@/assets/img/screenshots/screenshot_mask_en.jpg"
                 :alt="$t('seo_1')"
-                width="220" height="432"
+                width="220"
+                height="432"
               />
             </div>
           </template>
@@ -162,6 +174,7 @@
           v-for="feature in techfeatures"
           :key="feature.title"
         >
+          <i class="fad fa-2x" :class="feature.icon"></i>
           <h4>{{ $t(feature.title) }}</h4>
         </div>
       </div>
@@ -190,7 +203,8 @@
         </div>
         <div class="claim-side-img">
           <img
-            width="500" height="500"  
+            width="500"
+            height="500"
             src="@/assets/img/illustrations/book-imac.svg"
             :alt="$t('seo_7')"
           />
@@ -235,7 +249,8 @@
         </div>
         <div class="claim-side-img">
           <img
-            width="500" height="500"
+            width="500"
+            height="500"
             src="@/assets/img/illustrations/hand-globe.svg"
             :alt="$t('seo_8')"
           />
@@ -255,6 +270,7 @@
           v-for="usecase in usecases"
           :key="usecase.title"
         >
+          <i class="fad fa-2x" :class="usecase.icon"></i>
           <h4>{{ $t(usecase.title) }}</h4>
         </div>
       </div>
@@ -330,48 +346,59 @@ export default {
       ],
       techfeatures: [
         {
+          icon: "fa-head-side scan-icon",
           // img: require('assets/img/icons/credit-card.svg'),
           title: "business_highlights_faceRecognition_title",
         },
         {
+          icon: "fa-heartbeat",
           // img: require('assets/img/icons/money-bag.svg'),
           title: "business_highlights_liveness_title",
         },
         {
+          icon: "fa-id-card scan-icon",
           // img: require('assets/img/icons/invest.svg'),
           title: "business_highlights_docscan_title",
         },
         {
+          icon: "fa-badge-check",
           // img: require('assets/img/icons/graph-bars.svg'),
           title: "business_highlights_authenticity_title",
         },
         {
+          icon: "fa-user-check",
           // img: require('assets/img/icons/graph-bars.svg'),
           title: "business_highlights_biometric_title",
         },
-        {
-          // img: require('assets/img/icons/graph-bars.svg'),
-          title: "business_highlights_dashboard_title",
-        },
+        // {
+        //   icon: "",
+        //   // img: require('assets/img/icons/graph-bars.svg'),
+        //   title: "business_highlights_dashboard_title",
+        // },
       ],
       usecases: [
         {
-          // img: require('assets/img/icons/credit-card.svg'),
+          //img: require('assets/img/icons/credit-card.svg'),
+          icon: "fa-university",
           title: "business_usecases_neobank",
         },
         {
+          icon: "fa-expand-arrows", //fa-recycle
           // img: require('assets/img/icons/money-bag.svg'),
           title: "business_usecases_sharing",
         },
         {
+          icon: "fa-comments-alt-dollar",
           // img: require('assets/img/icons/invest.svg'),
           title: "business_usecases_p2p",
         },
         {
+          icon: "fa-dice",
           // img: require('assets/img/icons/graph-bars.svg'),
           title: "business_usecases_gaming",
         },
         {
+          icon: "fa-arrows", //fa-chart-network fa-rocket
           // img: require('assets/img/icons/graph-bars.svg'),
           title: "business_usecases_contract",
         },
@@ -412,6 +439,44 @@ export default {
           opacity: 0,
         });
       }
+
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: "#techfeatures",
+            start: "bottom bottom",
+            scrub: false,
+            markers: false,
+          },
+        })
+        .from("#techfeatures .features-item", {
+          duration: 1,
+          scale: 1,
+          y: 100,
+          rotateY: 0,
+          opacity: 0,
+          stagger: 0.2,
+          ease: "power2.out",
+        });
+
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: "#usecases",
+            start: "bottom bottom",
+            scrub: false,
+            markers: false,
+          },
+        })
+        .from("#usecases .features-item", {
+          duration: 1,
+          scale: 1,
+          y: 100,
+          rotateY: 0,
+          opacity: 0,
+          stagger: 0.2,
+          ease: "power2.out",
+        });
 
       gsap
         .timeline({
@@ -464,6 +529,11 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+.scan-icon
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%232963FFFF' stroke-width='7' stroke-dasharray='50%25%2c 50%25' stroke-dashoffset='14' stroke-linecap='butt'/%3e%3c/svg%3e")
+  //background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='%232963FFFF' stroke-width='15' stroke-dasharray='50%25%2c 50%25' stroke-dashoffset='50' stroke-linecap='butt'/%3e%3c/svg%3e");
+  padding: 10px
+  font-size: 25px
 // img.screenshot
 //   min-width: 120px
 //   max-width: 180px
@@ -473,7 +543,6 @@ export default {
 //   &.lg
 //     min-width: 120px
 //     max-width: 220px
-
 
     // &:hover
     //   transform: rotateY(0) scale(1.2)
