@@ -267,6 +267,7 @@ pre
   display: flex
   max-width: 1200px
   flex-wrap: wrap
+  z-index: -1
   &>div
     max-width: 800px
     overflow: auto
@@ -284,12 +285,16 @@ pre
       position: fixed
       float: left
     a
-      padding: 10px 40px 10px 10px
-      border-radius: 0 50px 50px 0
+      padding: 10px 20px 10px 20px
+      border-radius: 50px 50px
       transition: 0.3s ease-in-out
+      margin-bottom: 10px
       &:hover
         background: lighten($color-primary, 37%)
         cursor: pointer
     a.active
       background: lighten($color-primary, 37%)
       color: $color-primary
+
+nav
+  font-family: 'Futura-Bold', sans-serif

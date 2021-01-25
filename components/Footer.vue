@@ -75,6 +75,7 @@ footer
   background: darken($color-primary, 40%)
   color: #ffffff77
   padding: $spacing-lg
+  z-index: 1
   a
     text-decoration: none 
     color: #ffffffcc
