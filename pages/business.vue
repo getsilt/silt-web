@@ -65,7 +65,26 @@
         </article>
       </div>
     </section>
-
+    <!-- TECH FEATURES -->
+    <section class="features-wrapper" id="techfeatures">
+      <div class="section-headers">
+        <span class="tag">{{
+          $t("business_highlights_vanguardTech_section")
+        }}</span>
+        <h2>{{ $t("business_highlights_vanguardTech_title") }}</h2>
+        <p>{{ $t("business_highlights_vanguardTech_content") }}</p>
+      </div>
+      <div class="features-container">
+        <div
+          class="features-item"
+          v-for="feature in techfeatures"
+          :key="feature.title"
+        >
+          <i class="fad fa-2x" :class="feature.icon"></i>
+          <h4>{{ $t(feature.title) }}</h4>
+        </div>
+      </div>
+    </section>
     <!-- Assisted Picture Quality  -->
     <section class="claim-wrapper">
       <div class="claim-container left">
@@ -161,26 +180,7 @@
       </div>
     </section>
 
-    <!-- TECH FEATURES -->
-    <section class="features-wrapper" id="techfeatures">
-      <div class="section-headers">
-        <span class="tag">{{
-          $t("business_highlights_vanguardTech_section")
-        }}</span>
-        <h2>{{ $t("business_highlights_vanguardTech_title") }}</h2>
-        <p>{{ $t("business_highlights_vanguardTech_content") }}</p>
-      </div>
-      <div class="features-container">
-        <div
-          class="features-item"
-          v-for="feature in techfeatures"
-          :key="feature.title"
-        >
-          <i class="fad fa-2x" :class="feature.icon"></i>
-          <h4>{{ $t(feature.title) }}</h4>
-        </div>
-      </div>
-    </section>
+    
 
     <!-- HOW TO -->
     <section class="claim-wrapper" id="howto">
