@@ -71,11 +71,11 @@ export default {
         },
         defaultLocale: "es",
         seo: false,
-        onlyOnNoPrefix: true,
         baseUrl: "https://getsilt.com",
         detectBrowserLanguage: {
           useCookie: true,
           cookieKey: "i18n_redirected",
+          onlyOnNoPrefix: true,
         }
       }
     ],
