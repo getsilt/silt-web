@@ -190,18 +190,18 @@
       </div>
       <div class="claim-container">
         <div class="claim-info">
-          <p>{{ $t("business_howto_content") }}</p>
+          <p v-html="$t('business_howto_content')">{{ $t("business_howto_content") }}</p>
           <ol>
-            <li>{{ $t("business_howto_content1") }}</li>
-            <li>{{ $t("business_howto_content2") }}</li>
-            <li>{{ $t("business_howto_content3") }}</li>
+            <li v-html="$t('business_howto_content1')">{{ $t("business_howto_content1") }}</li>
+            <li v-html="$t('business_howto_content2')">{{ $t("business_howto_content2") }}</li>
+            <li v-html="$t('business_howto_content3')">{{ $t("business_howto_content3") }}</li>
           </ol>
           <span v-html="$t('business_howto_content4')">{{
             $t("business_howto_content4")
           }}</span>
-          <a :href="`mailto:${getEmail()}`" target="_blank">
+          <!-- <a :href="`mailto:${getEmail()}`" target="_blank">
             <button class="primary">{{ $t("btn_cta_contact") }}</button>
-          </a>
+          </a> -->
         </div>
         <div class="claim-side-img">
           <img
