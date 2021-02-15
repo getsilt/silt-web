@@ -3,10 +3,10 @@
     <!-- CLAIMS -->
     <section class="claim-container">
       <div class="claim-info">
-        <h1 class="title" >{{$t('demo_claim1')}}</h1>
+        <h1 class="title">{{ $t("demo_claim1") }}</h1>
         <h4 class="subtitle">{{ $t("demo_claim2") }}</h4>
         <h4 class="subtitle">{{ $t("demo_claim3") }}</h4>
-        <form id="form" @submit.prevent="submitForm($event)">
+        <form id="form" @submit.prevent>
           <input
             class="large"
             placeholder="Email"
@@ -14,13 +14,17 @@
             name="email"
             v-model="email"
           />
-          <button class="primary" :disabled="status === 'loading'">
+          <!-- <button class="primary" :disabled="status === 'loading'">
             {{ $t("btn_cta_demo") }}
-          </button>
+          </button> -->
+          <button @click="onSubmit($event)">Submit</button>
         </form>
-        <span v-if="status !== 'unsent'" class="email-response" :class="status">{{
-          $t(`emailResponse_${status}`)
-        }}</span>
+        <span
+          v-if="status !== 'unsent'"
+          class="email-response"
+          :class="status"
+          >{{ $t(`emailResponse_${status}`) }}</span
+        >
       </div>
       <div class="claim-side-img screenshots-container">
         <div class="screenshot-container">
@@ -28,7 +32,8 @@
             class="screenshot login"
             src="@/assets/img/screenshots/screenshot_documentSelect_es.jpg"
             :alt="$t('seo_2')"
-            width="180" height="353"
+            width="180"
+            height="353"
           />
         </div>
         <div class="screenshot-container">
@@ -36,7 +41,8 @@
             class="screenshot take-picture"
             src="@/assets/img/screenshots/screenshot_selfie_es.jpg"
             :alt="$t('seo_3')"
-            width="180" height="353"
+            width="180"
+            height="353"
           />
         </div>
         <div class="screenshot-container">
@@ -44,7 +50,8 @@
             class="screenshot complete"
             src="@/assets/img/screenshots/screenshot_finish_es.jpg"
             :alt="$t('seo_4')"
-            width="180" height="353"
+            width="180"
+            height="353"
           />
         </div>
       </div>
@@ -102,7 +109,16 @@ export default {
     getEmail() {
       return this.siltEmail;
     },
-    async submitForm(e) {
+    onSubmit(e) {
+      e.preventDefault();
+      grecaptcha.ready(() => {
+        grecaptcha.execute("6Lfx2FgaAAAAAPiGduuGdvK9Ea2u5wonpACVBwEx", {action: "submit",}).then((token) => {
+            this.submitForm(e, token);
+          });
+      });
+    },
+    async submitForm(e, token) {
+      //6Lfx2FgaAAAAAPiGduuGdvK9Ea2u5wonpACVBwEx
       // const formElem = document.querySelector('form');
       // const formData = new FormData()
       // console.log(e.formData)
@@ -115,6 +131,7 @@ export default {
           email: this.email,
           subject: "Silt Demo request",
           userLang,
+          token: token,
         });
         this.status = "success";
       } catch (error) {
