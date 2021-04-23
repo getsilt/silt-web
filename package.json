@@ -15,10 +15,10 @@
     "upload-copies-es": "lokalise2 file upload --file ./locale/es.json --lang-iso es --replace-modified --token 8886dc51bee1327315dd10346c62f1fbf0f6c744 --project-id 174544095ecd2bbaa28734.73412779"
   },
   "dependencies": {
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "gsap": "^3.5.1",
-    "nuxt": "^2.14.11",
-    "nuxt-i18n": "^6.18.0"
+    "nuxt": "^2.15.4",
+    "nuxt-i18n": "^6.26.0"
   },
   "devDependencies": {
     "@nuxtjs/google-analytics": "^2.4.0",
