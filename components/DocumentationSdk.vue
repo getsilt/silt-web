@@ -65,6 +65,12 @@
       the <code>silt_user_id</code> and a <code>company_app_token</code> as
       query params.
     </p>
+
+    <p class="banner-info">
+      To improve user experience, you can provide the user email through the parameter: <code>user_email</code>.<br />
+      This will prefill the email field, and remind them that they can skip the process if they have already verified in Silt.
+    </p>
+
     <h3>3. Frontend: Send silt_user_id & company_app_token to your BE</h3>
     <p>
       Make the POST request to your own backend described in step 4. This

@@ -27,6 +27,9 @@
     </div>
 
     <p class="banner-info">
+      The sandbox environment URI is:
+      <code>https://api-sandbox.siltapp.com</code>.
+      
       The production environment URI is:
       <code>https://api.siltapp.com</code>.
     </p>
