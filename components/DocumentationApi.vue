@@ -211,12 +211,40 @@
         do not match or other errors.
       </li>
       <li>
-        <b>MANUAL_REVIEW</b>: This resource requires a manual review and is not yet verified. It will be
-        manually verified by a Silt expert within 24h.
+        <b>MANUAL_REVIEW</b>: This resource requires a manual review and is not yet verified. 
+        You can manually verify it at <a href="https://dashboard.getsilt.com">dashboard.getsilt.com</a>.
       </li>
     </ul>
     <h3>
-      6. (Optional, for better UX) Backend: Webhook to get notifications after
+      6. (Optional, only if needed) Frontend/Backend: Get resource files temporary
+      URLs
+    </h3>
+    <p>
+      This endpoint will return temporary accessible urls to retrieve the
+      pictures and videos of the resource.
+    </p>
+    <p>
+      Use <code>company_app_token</code> and <code>resource_id</code>(retrieved in the response of
+      step 5) <br /> against Silt's backend endpoint:<br /> 
+    </p>
+    <p>
+      <b>GET</b>
+      <code
+        >/v1/resources/<b>{resource_id}</b>/files/`?token=<b
+          >{company_app_token}</b
+        ></code
+      >
+    </p>
+    <p><b>200 Response:</b></p>
+    <pre><code>
+      {
+        file_front: https://...,
+        file_back: https://...,
+        file_verification: https://... (this could be a video if you are using video verification)
+      }
+    </code></pre>
+    <h3>
+      7. (Optional, for better UX) Backend: Webhook to get notifications after
       manual reviews
     </h3>
     <p>

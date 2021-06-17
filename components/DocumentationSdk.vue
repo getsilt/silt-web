@@ -4,9 +4,11 @@
     <h3>1. Email us: Get your company app Id</h3>
     <p>
       Request your <code>company_app_id</code> to the Silt Team at the email
-      address <a target="_blank" href="mailto:customers@getsilt.com">customers@getsilt.com</a>.
-      This Id is unique for you, and it will be the same that the one required
-      in the API integration flow.
+      address
+      <a target="_blank" href="mailto:customers@getsilt.com"
+        >customers@getsilt.com</a
+      >. This Id is unique for you, and it will be the same that the one
+      required in the API integration flow.
     </p>
     <h3>2. Frontend: Add SDK on mobile with company app id</h3>
     <div class="tabs-wrapper">
@@ -67,8 +69,10 @@
     </p>
 
     <p class="banner-info">
-      To improve user experience, you can provide the user email through the parameter: <code>user_email</code>.<br />
-      This will prefill the email field, and remind them that they can skip the process if they have already verified in Silt.
+      To improve user experience, you can provide the user email through the
+      parameter: <code>user_email</code>.<br />
+      This will prefill the email field, and remind them that they can skip the
+      process if they have already verified in Silt.
     </p>
 
     <h3>3. Frontend: Send silt_user_id & company_app_token to your BE</h3>
@@ -88,9 +92,12 @@
       described in step 5.
     </p>
     <h3>5. Backend: Check user's verification status to Silt</h3>
-    <p>Use company_app_token against Silt's backend to the endpoint<br /></p>
     <p>
-      GET
+      Use <code>company_app_token</code> against Silt's backend to the
+      endpoint<br />
+    </p>
+    <p>
+      <b>GET</b>
       <code
         >/v1/users/<b>{silt_user_id}</b>/resources/?token=<b
           >{company_app_token}</b
@@ -101,7 +108,7 @@
       to check if a user has verified resources, and get the data extracted from
       them.
     </p>
-    <p>An exmaple of a successful response would be like this:</p>
+    <p><b>200 Response:</b></p>
     <pre><code>
       { 
         address: "Plaça catalunya, 1"
@@ -112,15 +119,12 @@
         errors: [] 
         expiration_date: "2022-08-01"
         first_name: "MARC"
-        id: 86
+        id (resource_id): 86
         issue_date: null
         last_name: "PEREZ MARTI"
         license_type: null
         nationality: "ESP"
         owner: "marc@getsilt.com"
-        picture_back: null //private, you can’t access this
-        picture_front: "https://..." //private, you can’t access this 
-        picture_verification: "https://..." //private, you can’t access this 
         resource_number: null 
         resource_type: "PASSPORT" 
         verification_status: "SUCCESS" 
@@ -134,7 +138,35 @@
       can always get this data from us.
     </p>
     <h3>
-      6. (Optional, for better UX) Backend: Webhook to get notifications after
+      6. (Optional, only if needed) Frontend/Backend: Get resource files temporary
+      URLs
+    </h3>
+    <p>
+      This endpoint will return temporary accessible urls to retrieve the
+      pictures and videos of the resource.
+    </p>
+    <p>
+      Use <code>company_app_token</code> and <code>resource_id</code>(retrieved in the response of
+      step 5) <br /> against Silt's backend endpoint:<br /> 
+    </p>
+    <p>
+      <b>GET</b>
+      <code
+        >/v1/resources/<b>{resource_id}</b>/files/`?token=<b
+          >{company_app_token}</b
+        ></code
+      >
+    </p>
+    <p><b>200 Response:</b></p>
+    <pre><code>
+      {
+        file_front: https://...,
+        file_back: https://...,
+        file_verification: https://... (this could be a video if you are using video verification)
+      }
+    </code></pre>
+    <h3>
+      7. (Optional, for better UX) Backend: Webhook to get notifications after
       manual reviews
     </h3>
     <p>
