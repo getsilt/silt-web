@@ -138,8 +138,8 @@
       can always get this data from us.
     </p>
     <h3>
-      6. (Optional, only if needed) Frontend/Backend: Retrieve picture temporary
-      URL
+      6. (Optional, only if needed) Frontend/Backend: Get resource files temporary
+      URLs
     </h3>
     <p>
       This endpoint will return temporary accessible urls to retrieve the
