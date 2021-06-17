@@ -42,8 +42,24 @@
       </div>
     </section>
 
+    <!-- PRODUCT BENEFITS -->
+    <section class="highlights-wrapper" id="benefits">
+      <div class="section-headers">
+        <span class="tag">{{ $t("business_benefits") }}</span>
+        <h2>{{ $t("business_benefits_title") }}</h2>
+      </div>
+      <div class="highlights-container pins">
+        <article v-for="benefit in benefits" :key="benefit.title">
+          <div class="article-container">
+            <h4>{{ $t(benefit.title) }}</h4>
+            <p>{{ $t(benefit.content) }}</p>
+          </div>
+        </article>
+      </div>
+    </section>
+    
     <!-- Unique advantadge -->
-    <section class="highlights-wrapper" id="differences">
+    <!-- <section class="highlights-wrapper" id="differences">
       <div class="section-headers">
         <span class="tag">{{ $t("business_differences_section") }}</span>
         <h2>{{ $t("business_differences_title") }}</h2>
@@ -64,7 +80,7 @@
           </div>
         </article>
       </div>
-    </section>
+    </section> -->
     <!-- TECH FEATURES -->
     <section class="features-wrapper" id="techfeatures">
       <div class="section-headers">
@@ -159,28 +175,6 @@
         </div>
       </div>
     </section>
-
-    <!-- PRODUCT HIGHLIGHTS -->
-    <section class="highlights-wrapper" id="producthighlights">
-      <div class="section-headers">
-        <span class="tag">{{ $t("business_friction_section") }}</span>
-        <h2>{{ $t("business_friction_title") }}</h2>
-      </div>
-      <div class="highlights-container pins">
-        <article v-for="highlight in highlights" :key="highlight.title">
-          <div class="article-container">
-            <div class="article-header">
-              <span class="big">{{ $t(highlight.header) }}</span>
-              {{ $t(highlight.headerDescription) }}
-            </div>
-            <h4>{{ $t(highlight.title) }}</h4>
-            <p>{{ $t(highlight.content) }}</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    
 
     <!-- HOW TO -->
     <section class="claim-wrapper" id="howto">
@@ -292,8 +286,8 @@ import gsap from "gsap";
 export default {
   nuxtI18n: {
     paths: {
-      en: "/", // -> accessible at / (no prefix since it's the default locale)
-      es: "/",
+      en: "/en", // -> accessible at / (no prefix since it's the default locale)
+      es: "/es",
     },
   },
   data() {
@@ -328,6 +322,20 @@ export default {
           header: "business_friction_fast_header",
           headerDescription: "business_friction_fast_headerDescription",
           img: require("assets/img/illustrations/meditation.svg"),
+        },
+      ],
+      benefits: [
+        {
+          title: "business_benefits_cac_title",
+          content: "business_benefits_cac_content",
+        },
+        {
+          title: "business_benefits_time_title",
+          content: "business_benefits_time_content",
+        },
+        {
+          title: "business_benefits_costs_title",
+          content: "business_benefits_costs_content",
         },
       ],
       highlights: [
@@ -421,6 +429,7 @@ export default {
     startFirstAnimationScene: (_this) => {
       const sections = [
         "#assistedPictureQuality",
+        "#benefits",
         "#usecases",
         "#countries",
         "#howto",
