@@ -43,8 +43,8 @@
     </section>
 
     <!-- PRODUCT BENEFITS -->
-    <div class="fw-container">
-      <section class="highlights-wrapper" id="benefits">
+    <div class="fw-container" id="benefits">
+      <section class="highlights-wrapper">
         <div class="section-headers">
           <span class="tag">{{ $t("business_benefits_section") }}</span>
           <h2>{{ $t("business_benefits_title") }}</h2>
