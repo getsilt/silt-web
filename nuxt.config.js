@@ -51,14 +51,14 @@ export default {
         strategy: "prefix",
         locales: [
           {
-            name: "English",
-            code: "en",
-            iso: "en-US"
-          },
-          {
             name: "Español",
             code: "es",
             iso: "es-ES"
+          },
+          {
+            name: "English",
+            code: "en",
+            iso: "en-US"
           }
         ],
         vueI18n: {

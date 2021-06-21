@@ -17,7 +17,7 @@
           <!-- <button class="primary" :disabled="status === 'loading'">
             {{ $t("btn_cta_demo") }}
           </button> -->
-          <button @click="onSubmit($event)">Submit</button>
+          <button @click="onSubmit($event)">{{ $t(`email_send`) }}</button>
         </form>
         <span
           v-if="status !== 'unsent'"

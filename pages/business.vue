@@ -43,44 +43,67 @@
     </section>
 
     <!-- PRODUCT BENEFITS -->
-    <section class="highlights-wrapper" id="benefits">
-      <div class="section-headers">
-        <span class="tag">{{ $t("business_benefits") }}</span>
-        <h2>{{ $t("business_benefits_title") }}</h2>
-      </div>
-      <div class="highlights-container pins">
-        <article v-for="benefit in benefits" :key="benefit.title">
-          <div class="article-container">
-            <h4>{{ $t(benefit.title) }}</h4>
-            <p>{{ $t(benefit.content) }}</p>
+    <div class="fw-container">
+      <section class="highlights-wrapper" id="benefits">
+        <div class="section-headers">
+          <span class="tag">{{ $t("business_benefits_section") }}</span>
+          <h2>{{ $t("business_benefits_title") }}</h2>
+        </div>
+        <div class="highlights-container pins">
+          <article v-for="benefit in benefits" :key="benefit.title">
+            <div class="article-container">
+              <div class="article-icon-container">
+                <i class="fad" :class="benefit.icon"></i>
+              </div>
+              <h4>{{ $t(benefit.title) }}</h4>
+              <p>{{ $t(benefit.content) }}</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <!-- Unique advantage  -->
+    <section class="claim-wrapper" id="differences">
+      <div class="claim-container left">
+        <div class="claim-side-img diagram" id="diagram">
+          <template v-if="$root.$i18n.locale === 'es'">
+            <img
+              class=""
+              src="@/assets/img/illustrations/user_flow_diagram_es.svg"
+              :alt="$t('seo_3')"
+              width="709"
+              height="843"
+            />
+          </template>
+          <template v-else>
+            <img
+              class=""
+              src="@/assets/img/illustrations/user_flow_diagram_en.svg"
+              :alt="$t('seo_3')"
+              width="709"
+              height="843"
+            />
+          </template>
+        </div>
+        <div class="claim-info-wrapper differences">
+          <div class="claim-info">
+            <h3 class="title">
+              {{ $t("business_differences_title") }}
+            </h3>
+            <p v-html="$t('business_differences_oneRegister_content')">
+              {{ $t("business_differences_oneRegister_content") }}
+            </p>
+            <!-- <p v-html="$t('business_differences_technology_content')">
+               {{ $t("business_differences_technology_content") }}
+            </p> -->
+            <nuxt-link :to="localePath({ name: 'demo' })">
+              <button class="primary">{{ $t("btn_cta_demo") }}</button>
+            </nuxt-link>
           </div>
-        </article>
+        </div>
       </div>
     </section>
-    
-    <!-- Unique advantadge -->
-    <!-- <section class="highlights-wrapper" id="differences">
-      <div class="section-headers">
-        <span class="tag">{{ $t("business_differences_section") }}</span>
-        <h2>{{ $t("business_differences_title") }}</h2>
-      </div>
-      <div class="highlights-container">
-        <article v-for="(difference, i) in differences" :key="difference.title">
-          <div class="article-container">
-            <div class="article-img-container">
-              <img
-                :src="difference.img"
-                :alt="$t('seo_' + (i + 5))"
-                width="213"
-                height="239"
-              />
-            </div>
-            <h4>{{ $t(difference.title) }}</h4>
-            <p v-html="$t(difference.content)">{{ $t(difference.content) }}</p>
-          </div>
-        </article>
-      </div>
-    </section> -->
     <!-- TECH FEATURES -->
     <section class="features-wrapper" id="techfeatures">
       <div class="section-headers">
@@ -102,79 +125,83 @@
       </div>
     </section>
     <!-- Assisted Picture Quality  -->
-    <section class="claim-wrapper">
-      <div class="claim-container left">
-        <div
-          class="claim-side-img screenshots-container"
-          id="assistedPictureQualityScreenshots"
-        >
-          <template v-if="$root.$i18n.locale === 'es'">
-            <div class="screenshot-container">
-              <img
-                id="screenshot-blurry"
-                class="screenshot lg screenshotPictureQuality"
-                src="@/assets/img/screenshots/screenshot_blurry_es.jpg"
-                :alt="$t('seo_1')"
-                width="220"
-                height="432"
-              />
+    <div class="fw-container">
+      <section class="claim-wrapper">
+        <div class="claim-container left">
+          <div
+            class="claim-side-img screenshots-container"
+            id="assistedPictureQualityScreenshots"
+          >
+            <template v-if="$root.$i18n.locale === 'es'">
+              <div class="screenshot-container">
+                <img
+                  id="screenshot-blurry"
+                  class="screenshot lg screenshotPictureQuality"
+                  src="@/assets/img/screenshots/screenshot_blurry_es.jpg"
+                  :alt="$t('seo_1')"
+                  width="220"
+                  height="432"
+                />
+              </div>
+              <div class="screenshot-container">
+                <img
+                  id="screenshot-mask"
+                  class="screenshot lg screenshotPictureQuality"
+                  src="@/assets/img/screenshots/screenshot_mask_es.jpg"
+                  :alt="$t('seo_1')"
+                  width="220"
+                  height="432"
+                />
+              </div>
+            </template>
+            <template v-else>
+              <div class="screenshot-container">
+                <img
+                  id="screenshot-blurry"
+                  class="screenshot lg screenshotPictureQuality"
+                  src="@/assets/img/screenshots/screenshot_blurry_en.jpg"
+                  :alt="$t('seo_1')"
+                  width="220"
+                  height="432"
+                />
+              </div>
+              <div class="screenshot-container">
+                <img
+                  id="screenshot-mask"
+                  class="screenshot lg screenshotPictureQuality"
+                  src="@/assets/img/screenshots/screenshot_mask_en.jpg"
+                  :alt="$t('seo_1')"
+                  width="220"
+                  height="432"
+                />
+              </div>
+            </template>
+          </div>
+          <div class="claim-info-wrapper" id="assistedPictureQuality">
+            <div class="claim-info">
+              <h3 class="title">
+                {{ $t("business_differences_assistedPictureQuality_title") }}
+              </h3>
+              <p
+                v-html="
+                  $t('business_differences_assistedPictureQuality_content')
+                "
+              >
+                {{ $t("business_differences_assistedPictureQuality_content") }}
+              </p>
+              <p
+                v-html="
+                  $t('business_differences_assistedPictureQuality_content2')
+                "
+              ></p>
+              <nuxt-link :to="localePath({ name: 'demo' })">
+                <button class="primary">{{ $t("btn_cta_demo") }}</button>
+              </nuxt-link>
             </div>
-            <div class="screenshot-container">
-              <img
-                id="screenshot-mask"
-                class="screenshot lg screenshotPictureQuality"
-                src="@/assets/img/screenshots/screenshot_mask_es.jpg"
-                :alt="$t('seo_1')"
-                width="220"
-                height="432"
-              />
-            </div>
-          </template>
-          <template v-else>
-            <div class="screenshot-container">
-              <img
-                id="screenshot-blurry"
-                class="screenshot lg screenshotPictureQuality"
-                src="@/assets/img/screenshots/screenshot_blurry_en.jpg"
-                :alt="$t('seo_1')"
-                width="220"
-                height="432"
-              />
-            </div>
-            <div class="screenshot-container">
-              <img
-                id="screenshot-mask"
-                class="screenshot lg screenshotPictureQuality"
-                src="@/assets/img/screenshots/screenshot_mask_en.jpg"
-                :alt="$t('seo_1')"
-                width="220"
-                height="432"
-              />
-            </div>
-          </template>
-        </div>
-        <div class="claim-info-wrapper" id="assistedPictureQuality">
-          <div class="claim-info">
-            <h3 class="title">
-              {{ $t("business_differences_assistedPictureQuality_title") }}
-            </h3>
-            <p
-              v-html="$t('business_differences_assistedPictureQuality_content')"
-            >
-              {{ $t("business_differences_assistedPictureQuality_content") }}
-            </p>
-            <p
-              v-html="
-                $t('business_differences_assistedPictureQuality_content2')
-              "
-            ></p>
-            <nuxt-link :to="localePath({ name: 'demo' })">
-              <button class="primary">{{ $t("btn_cta_demo") }}</button>
-            </nuxt-link>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
     <!-- HOW TO -->
     <section class="claim-wrapper" id="howto">
@@ -184,11 +211,19 @@
       </div>
       <div class="claim-container">
         <div class="claim-info">
-          <p v-html="$t('business_howto_content')">{{ $t("business_howto_content") }}</p>
+          <p v-html="$t('business_howto_content')">
+            {{ $t("business_howto_content") }}
+          </p>
           <ol>
-            <li v-html="$t('business_howto_content1')">{{ $t("business_howto_content1") }}</li>
-            <li v-html="$t('business_howto_content2')">{{ $t("business_howto_content2") }}</li>
-            <li v-html="$t('business_howto_content3')">{{ $t("business_howto_content3") }}</li>
+            <li v-html="$t('business_howto_content1')">
+              {{ $t("business_howto_content1") }}
+            </li>
+            <li v-html="$t('business_howto_content2')">
+              {{ $t("business_howto_content2") }}
+            </li>
+            <li v-html="$t('business_howto_content3')">
+              {{ $t("business_howto_content3") }}
+            </li>
           </ol>
           <span v-html="$t('business_howto_content4')">{{
             $t("business_howto_content4")
@@ -286,8 +321,8 @@ import gsap from "gsap";
 export default {
   nuxtI18n: {
     paths: {
-      en: "/en", // -> accessible at / (no prefix since it's the default locale)
-      es: "/es",
+      en: "/", // -> accessible at / (no prefix since it's the default locale)
+      es: "/",
     },
   },
   data() {
@@ -326,14 +361,17 @@ export default {
       ],
       benefits: [
         {
+          icon: "fa-funnel-dollar fa-2x",
           title: "business_benefits_cac_title",
           content: "business_benefits_cac_content",
         },
         {
+          icon: "fa-rabbit-fast fa-3x",
           title: "business_benefits_time_title",
           content: "business_benefits_time_content",
         },
         {
+          icon: "fa-sack-dollar fa-3x",
           title: "business_benefits_costs_title",
           content: "business_benefits_costs_content",
         },
@@ -442,7 +480,7 @@ export default {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: section,
-            start: "top center",
+            start: "center bottom",
             scrub: false,
             markers: false,
           },
@@ -459,7 +497,7 @@ export default {
         .timeline({
           scrollTrigger: {
             trigger: "#techfeatures .features-container",
-            start: "top bottom",
+            start: "center bottom",
             scrub: false,
             markers: false,
           },
@@ -478,7 +516,7 @@ export default {
         .timeline({
           scrollTrigger: {
             trigger: "#usecases .features-container",
-            start: "top bottom",
+            start: "center bottom",
             scrub: false,
             markers: false,
           },
@@ -497,7 +535,7 @@ export default {
         .timeline({
           scrollTrigger: {
             trigger: "#assistedPictureQualityScreenshots",
-            start: "top center",
+            start: "center bottom",
             scrub: false,
             markers: false,
           },
@@ -526,4 +564,24 @@ export default {
   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%232963FFFF' stroke-width='7' stroke-dasharray='50%25%2c 50%25' stroke-dashoffset='14' stroke-linecap='butt'/%3e%3c/svg%3e")
   padding: 10px
   font-size: 25px
+
+.claim-container .claim-side-img.diagram
+  margin: 0
+  padding: 0
+  & > img
+    min-width: 300px
+    max-width: 700px
+
+.claim-info-wrapper.differences
+  display: flex
+  align-items: center
+
+.fw-container
+  background: #fafafa
+  padding: 30px
+  margin: -20px
+  width: calc(100% + 40px)
+  section
+    padding: 20px
+    margin: auto
 </style>

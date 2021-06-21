@@ -26,7 +26,7 @@ section
   min-height: 100vh
   display: flex
   flex-direction: column
-  
+
 .main-content
   padding: 0 20px
 //   margin-top: 40px
@@ -67,7 +67,7 @@ section
     .claim-side-img
       order: -1
     .claim-info-wrapper
-      margin: $spacing-lg
+      padding: $spacing-lg
   .claim-info-wrapper
     flex: 1 1 auto
   .claim-info
@@ -105,18 +105,17 @@ section
     justify-content: center
     align-items: center
     max-width: 100%
-    margin: $spacing-lg
+    padding: $spacing-lg
     &>img
       flex: 1 1 auto
       min-width: 200px
-      max-width: 400px
+      max-width: 300px
       height: auto
       width: 100%
 
   @media (max-width:767px)
     .claim-side-img:not(.screenshots-container)
       order: -1
-      
 
 .highlights-container
   display: flex
@@ -142,8 +141,14 @@ section
     h4
       margin-top: 0
       margin-bottom: 0
+    .article-icon-container
+      padding: 20px
+      height: 100px
+      display: flex
+      align-items: center
+      justify-content: center
     .article-img-container
-      padding: 0 20px
+      padding: 20px
       img
         width: 100%
     .article-header

@@ -3,7 +3,11 @@
     <section class="trust__wrapper">
       <h3>{{ $t("footer_trust") }}</h3>
       <div class="trust__logos">
-        <img src="@/assets/img/logo/bcn_tech_city.png" alt="" style="height: 80px" />
+        <img
+          src="@/assets/img/logo/bcn_tech_city.png"
+          alt=""
+          style="height: 80px"
+        />
         <img src="@/assets/img/logo/accio.png" alt="" />
       </div>
     </section>
@@ -86,6 +90,9 @@ export default {
 
 .trust__wrapper
   text-align: center
+  background: #fafafa
+  padding: 30px
+  margin: 0
   .trust__logos
     display: flex
     justify-content: center
@@ -94,6 +101,7 @@ export default {
       margin: 40px
       height: 70px
       width: auto
+
 footer
   margin-top: auto
   background: darken($color-primary, 40%)
