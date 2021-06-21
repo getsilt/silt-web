@@ -70,7 +70,7 @@
           <template v-if="$root.$i18n.locale === 'es'">
             <img
               class=""
-              src="@/assets/img/illustrations/user_flow_diagram_es.svg"
+              src="@/assets/img/illustrations/user_flow_diagram_es.png"
               :alt="$t('seo_3')"
               width="709"
               height="843"
@@ -79,7 +79,7 @@
           <template v-else>
             <img
               class=""
-              src="@/assets/img/illustrations/user_flow_diagram_en.svg"
+              src="@/assets/img/illustrations/user_flow_diagram_en.png"
               :alt="$t('seo_3')"
               width="709"
               height="843"
