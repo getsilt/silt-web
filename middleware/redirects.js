@@ -1,5 +1,8 @@
 export default function({ app, params, route, redirect }) {
   // hypothetical set of all supported locales
+  if (route.path=== "/terms") {
+    redirect("301", "/legal-notice");
+  }
   if (route.path=== "/users") {
     if (app.i18n.locale === 'es')
         redirect('301', '/identidad-digital-para-usuarios');
