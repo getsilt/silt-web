@@ -8,7 +8,7 @@ const routerBase =
     : {};
 
 export default {
-  target: 'static',
+  target: 'server',
   /*
    ** Headers of the page
    */
@@ -85,7 +85,7 @@ export default {
     [
       "@nuxtjs/google-analytics",
       {
-        id: "UA-160379082-1"
+        id: "G-GWZBSHCZTK"
       }
     ]
   ],
