@@ -113,7 +113,7 @@ export default {
   robots: {
     Sitemap: "https://getsilt.com/sitemap.xml",
     UserAgent: "*",
-    Disallow: ["/cookies", "/legal-notice", "/privacy","/en/cookies", "/en/legal-notice", "/en/privacy", "/developers", "/en/developers"]
+    Disallow: ["/cookies", "/legal-notice", "/privacy","/en/cookies", "/en/legal-notice", "/en/privacy"]
   },
 
   ...routerBase,
