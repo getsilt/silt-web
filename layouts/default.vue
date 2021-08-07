@@ -21,10 +21,10 @@ export default {
     Footer
   },
   head() {
-    const i18nSeo = this.$nuxtI18nSeo();
+    const i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true })
     return {
       htmlAttrs: {
-        ...i18nSeo.htmlAttrs
+        ...i18nHead.htmlAttrs
       },
       title: `Silt Digital ID & KYC | ${this.$t("business_claim1")}`,
       meta: [
@@ -43,9 +43,9 @@ export default {
           name: "og:description",
           content: this.$t("business_claim2")
         },
-        ...i18nSeo.meta
+        ...i18nHead.meta
       ],
-      link: [...i18nSeo.link]
+      link: [...i18nHead.link]
     };
   }
 };

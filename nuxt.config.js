@@ -8,7 +8,7 @@ const routerBase =
     : {};
 
 export default {
-  target: 'server',
+  target: 'static',
   /*
    ** Headers of the page
    */
@@ -48,7 +48,7 @@ export default {
     [
       "nuxt-i18n",
       {
-        strategy: "prefix_and_default",
+        strategy: "prefix",
         locales: [
           {
             name: "Español",
