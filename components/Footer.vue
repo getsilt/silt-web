@@ -97,6 +97,7 @@ export default {
     display: flex
     justify-content: center
     align-items: center
+    flex-wrap: wrap
     img
       margin: 40px
       height: 70px

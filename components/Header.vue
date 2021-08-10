@@ -102,7 +102,7 @@ section
     padding: 0 40px
   .header-bar
     position: relative
-    padding: 20px 30px
+    padding: 20px 40px
     background: #fff
     display: flex
     justify-content: space-between
