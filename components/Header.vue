@@ -102,7 +102,7 @@ section
     padding: 0 40px
   .header-bar
     position: relative
-    padding: 20px 30px 20px 0
+    padding: 20px 30px
     background: #fff
     display: flex
     justify-content: space-between
@@ -110,6 +110,8 @@ section
     z-index: 90
     height: 70px
     flex: 1 1 auto
+    @media (min-width: 768px)
+      margin-left: -30px
     &>*:not(:last-child)
       margin-right: $spacing-sm
     .logo
