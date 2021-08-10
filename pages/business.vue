@@ -203,70 +203,46 @@
       </section>
     </div>
 
-    <!-- HOW TO -->
-    <section class="claim-wrapper" id="howto">
+    <!-- DEVELOPERS -->
+    <section class="highlights-wrapper" id="howto">
       <div class="section-headers">
         <span class="tag">{{ $t("business_howto_section") }}</span>
         <h2>{{ $t("business_howto_title") }}</h2>
       </div>
-      <div class="claim-container">
-        <div class="claim-info">
-          <p v-html="$t('business_howto_content')">
-            {{ $t("business_howto_content") }}
-          </p>
-          <ol>
-            <li v-html="$t('business_howto_content1')">
-              {{ $t("business_howto_content1") }}
-            </li>
-            <li v-html="$t('business_howto_content2')">
-              {{ $t("business_howto_content2") }}
-            </li>
-            <li v-html="$t('business_howto_content3')">
-              {{ $t("business_howto_content3") }}
-            </li>
-          </ol>
-          <span v-html="$t('business_howto_content4')">{{
-            $t("business_howto_content4")
-          }}</span>
-          <!-- <a :href="`mailto:${getEmail()}`" target="_blank">
-            <button class="primary">{{ $t("btn_cta_contact") }}</button>
-          </a> -->
-        </div>
-        <div class="claim-side-img">
-          <img
-            width="400"
-            height="400"
-            src="@/assets/img/illustrations/book-imac.svg"
-            :alt="$t('seo_7')"
-          />
-        </div>
+      <div class="highlights-container">
+        <article>
+          <div class="article-container">
+            <div class="article-icon-container">
+              <i class="fad fa-link fa-2x"></i>
+            </div>
+            <h4>Link</h4>
+            <p>{{ $t("business_howto_content1") }}</p>
+          </div>
+        </article>
+        <article>
+          <div class="article-container">
+            <div class="article-icon-container">
+              <i class="fad fa-cogs fa-2x"></i>
+            </div>
+            <h4>SDK</h4>
+            <p>{{ $t("business_howto_content2") }}</p>
+          </div>
+        </article>
+        <article>
+          <div class="article-container">
+            <div class="article-icon-container">
+              <i class="fad fa-network-wired fa-2x"></i>
+            </div>
+            <h4>API</h4>
+            <p>{{ $t("business_howto_content3") }}</p>
+          </div>
+        </article>
       </div>
+      <p class="centered-block"><a href="/developers" class="bold-link">{{
+        $t("business_howto_content4")
+      }}</a></p>
     </section>
 
-    <!-- SDK -->
-    <!-- <section class="claim-wrapper" id="sdk">
-      <div class="claim-container" >
-        <div class="claim-info">
-          <h2 class="title">asdf{{$t('business_benefits_sdk_title')}}</h2>
-          <h4 class="subtitle">{{$t('business_benefits_sdk_content')}}</h4>
-          <span class="subtitle">{{$t('business_benefits_integration_content')}}</span>
-          <ul>
-            <li><b>{{$t('business_benefits_fraud')}}</b></li>
-            <li><b>{{$t('business_benefits_kyc')}}</b></li>
-            <li><b>{{$t('business_benefits_aml')}}</b></li>
-            <li><b>{{$t('business_benefits_pep')}}</b></li>
-            <li><b>{{$t('business_benefits_gdpr')}}</b></li>
-            <li><b>{{$t('business_benefits_legal')}}</b></li>
-          </ul>
-          <a :href="`mailto:${getEmail()}`">
-            <button class="primary">{{$t('btn_cta_contact')}}</button>
-          </a>
-        </div>
-        <div class="claim-side-img">
-          <img src="@/assets/img/illustrations/book-imac.svg" />
-        </div>
-      </div>
-    </section> -->
     <section class="claim-wrapper" id="countries">
       <div class="claim-container left">
         <div class="claim-info-wrapper">

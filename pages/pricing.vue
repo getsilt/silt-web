@@ -31,7 +31,7 @@
       <!-- PAYED -->
       <div class="pricing-plan">
         <div class="pricing-plan_price">
-          <span>1,5€</span>
+          <span>1€</span>
           <p>/ {{ $t("global_verification") }}</p>
         </div>
         <p class="pricing-plan_upto">
@@ -142,9 +142,6 @@ export default {
         },
         {
           title: "business_highlights_liveness_title",
-        },
-        {
-          title: "business_highlights_noManagement_title",
         },
       ],
     };

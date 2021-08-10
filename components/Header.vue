@@ -88,7 +88,7 @@ section
   z-index: 100
   display: flex
   justify-content: center
-  font-family: $font-bold
+  font-family: $font-primary
 .header-wrapper
   margin: 0
   padding: 0
@@ -99,10 +99,10 @@ section
   padding: 0
   width: 100%
   @media (min-width: 768px)
-    padding: 0 50px
+    padding: 0 40px
   .header-bar
     position: relative
-    padding: 20px 30px
+    padding: 20px 30px 20px 0
     background: #fff
     display: flex
     justify-content: space-between
