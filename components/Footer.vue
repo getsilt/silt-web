@@ -9,7 +9,7 @@
           style="height: 80px"
         />
         <img src="@/assets/img/logo/accio.png" alt="" />
-        <img src="@/assets/img/logo/aefi.png" alt="" />
+        <img style="height: 60px" src="@/assets/img/logo/aefi.png" alt="" />
       </div>
     </section>
     <footer>
