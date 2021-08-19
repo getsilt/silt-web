@@ -15,13 +15,13 @@
     "upload-copies-es": "lokalise2 file upload --file ./locale/es.json --lang-iso es --replace-modified --token 8886dc51bee1327315dd10346c62f1fbf0f6c744 --project-id 174544095ecd2bbaa28734.73412779"
   },
   "dependencies": {
+    "@vue/shared": "^3.2.4",
     "axios": "^0.21.1",
     "gsap": "^3.5.1",
-    "nuxt": "^2.15.4",
+    "nuxt": "^2.15.8",
     "nuxt-i18n": "^6.28.1"
   },
   "devDependencies": {
-    "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/robots": "^2.4.2",
     "@nuxtjs/router-extras": "^1.1.1",
     "@nuxtjs/sitemap": "^2.4.0",
@@ -34,6 +34,7 @@
     "postcss-responsive-type": "^1.0.0",
     "postcss-url": "^8.0.0",
     "push-dir": "^0.4.1",
-    "sass-loader": "^10.1.0"
+    "sass-loader": "^10.1.0",
+    "vue-gtag": "^1.0"
   }
 }

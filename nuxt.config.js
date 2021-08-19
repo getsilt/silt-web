@@ -38,6 +38,7 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: [
+    { src: "@/plugins/gtag", ssr: false },
     { src: "~/plugins/gsap", ssr: false },
     { src: "~/plugins/consentCookies/index.js", ssr: false }
   ],
@@ -82,12 +83,6 @@ export default {
     "@nuxtjs/router-extras",
     "@nuxtjs/sitemap",
     "@nuxtjs/robots",
-    [
-      "@nuxtjs/google-analytics",
-      {
-        id: "G-GWZBSHCZTK"
-      }
-    ]
   ],
   sitemap: {
     i18n: true,
