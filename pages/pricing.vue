@@ -123,6 +123,9 @@ export default {
       email: "hello@getsilt.com",
       features: [
         {
+          title: "business_highlights_autoverification_title",
+        },
+        {
           title: "business_highlights_digitalIdentity_title",
         },
         {
@@ -142,6 +145,12 @@ export default {
         },
         {
           title: "business_highlights_liveness_title",
+        },
+        {
+          title: "business_highlights_siltlist_title",
+        },
+        {
+          title: "business_highlights_updated_title",
         },
       ],
     };
@@ -166,7 +175,7 @@ export default {
     padding: $spacing-lg
     margin: 2%
     max-width: 350px
-    
+
     &_price
       span
         line-height: 52px
@@ -184,9 +193,9 @@ export default {
         margin-top: $spacing-md
         width: 100%
 
-.pricing-plan:last-child, 
+.pricing-plan:last-child,
   background: $color-grey-lighten-3
-.pricing-plan:last-child, .pricing-plan:first-child  
+.pricing-plan:last-child, .pricing-plan:first-child
   .pricing-plan_price
     span
       font-size: 36px

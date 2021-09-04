@@ -104,6 +104,28 @@
         </div>
       </div>
     </section>
+
+    <!-- Silt's Fraud List & Up to date docs -->
+    <div class="fw-container" id="unique-benefits">
+      <section class="highlights-wrapper">
+        <div class="section-headers">
+          <span class="tag">{{ $t("business_unique_benefits_section") }}</span>
+          <h2>{{ $t("business_unique_benefits_title") }}</h2>
+        </div>
+        <div class="highlights-container pins two-cols">
+          <article v-for="benefit in uniqueBenefits" :key="benefit.title">
+            <div class="article-container">
+              <div class="article-icon-container">
+                <i class="fad" :class="benefit.icon"></i>
+              </div>
+              <h4>{{ $t(benefit.title) }}</h4>
+              <p>{{ $t(benefit.content) }}</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+
     <!-- TECH FEATURES -->
     <section class="features-wrapper" id="techfeatures">
       <div class="section-headers">
@@ -352,6 +374,18 @@ export default {
           content: "business_benefits_costs_content",
         },
       ],
+      uniqueBenefits: [
+        {
+          icon: "fa-calendar-exclamation fa-3x",
+          title: "business_benefits_updatedDocs_title",
+          content: "business_benefits_updatedDocs_content",
+        },
+        {
+          icon: "fa-badge-sheriff fa-3x",
+          title: "business_benefits_list_title",
+          content: "business_benefits_list_content",
+        },
+      ],
       highlights: [
         {
           title: "business_friction_automatic_title",
@@ -444,6 +478,7 @@ export default {
       const sections = [
         "#assistedPictureQuality",
         "#benefits",
+        "#unique-benefits",
         "#usecases",
         "#countries",
         "#howto",
@@ -554,9 +589,11 @@ export default {
 
 .fw-container
   background: #fafafa
-  padding: 30px
-  margin: -20px
-  width: calc(100% + 40px)
+  padding: 0px
+  @media (min-width: 768px)
+    padding: 40px
+    margin: -20px
+    width: calc(100% + 40px)
   section
     padding: 20px
     margin: auto
