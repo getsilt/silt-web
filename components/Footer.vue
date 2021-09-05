@@ -99,6 +99,7 @@ export default {
     justify-content: center
     align-items: center
     flex-wrap: wrap
+    padding: 20px
     img
       margin: 40px
       height: 70px

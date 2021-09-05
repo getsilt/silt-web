@@ -17,7 +17,7 @@
     "business_benefits_kyc": "KYC compliance",
     "business_benefits_legal": "Legal advice",
     "business_benefits_list_content": "When a user commits fraud in our network, we notify all our customers about the delinquency of that user. We work similar to the public AML lists, like the CIA, FBI, Europol (that we also integrate) but in a much more efficient way, being faster, more localized and notifying you any type of misconduct.",
-    "business_benefits_list_title": "We anticipate fraud attempts like no one does.",
+    "business_benefits_list_title": "We anticipate fraud attempts like no one does",
     "business_benefits_pep": "PEP compliance",
     "business_benefits_sdk_content": "Add our Web SDK, iOS SDK or Android SDK to your service with just a few lines of code.",
     "business_benefits_sdk_title": "Seamless Web, iOS & Android integration",
