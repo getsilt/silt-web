@@ -47,7 +47,7 @@ export default {
    */
   buildModules: [
     [
-      "nuxt-i18n",
+      "@nuxtjs/i18n",
       {
         strategy: "prefix",
         locales: [
@@ -71,13 +71,7 @@ export default {
           silentTranslationWarn: false
         },
         defaultLocale: "es",
-        seo: false,
         baseUrl: "https://getsilt.com",
-        detectBrowserLanguage: {
-          useCookie: true,
-          cookieKey: "i18n_redirected",
-          onlyOnRoot: true,
-        }
       }
     ],
     "@nuxtjs/router-extras",

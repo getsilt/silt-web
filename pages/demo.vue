@@ -70,7 +70,7 @@ export default {
     },
   },
   head() {
-    const i18nSeo = this.$nuxtI18nSeo();
+    const i18nSeo = this.$nuxtI18nHead();
     return {
       htmlAttrs: {
         ...i18nSeo.htmlAttrs,
