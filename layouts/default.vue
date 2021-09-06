@@ -21,7 +21,6 @@ export default {
     Footer
   },
   head() {
-    $nuxtI18nHead({ addDirAttribute: true, addSeoAttributes: true })
     const i18nHead = this.$nuxtI18nHead({ addDirAttribute: true, addSeoAttributes: true })
     return {
       htmlAttrs: {
