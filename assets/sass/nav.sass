@@ -1,0 +1,95 @@
+@import "~vue-stripe-menu/src/scss/index"
+
+// >>> CSS style <<<
+// @import 'vue-stripe-menu/dist/vue-stripe-menu.css';
+
+\:root
+    --primary: #{$color-grey-darken-1}
+    --secondary: #{$color-grey-lighten-3}
+    --link: #{$color-grey}
+
+// For override styles uses .scss (see documentation)
+
+.vsm-menu
+    margin: 10px 0
+    width: 100%
+    ul
+        margin: 0 auto
+
+.vsm-root
+    display: flex
+    align-items: center
+    justify-content: center
+
+.logo
+    flex: 1 1 auto
+
+.vsm-link-container
+    display: flex
+    flex: 1 1 auto
+    justify-content: center
+
+.vsm-section_menu > *
+    padding: 0 25px
+    font-weight: 500
+    font-family: inherit
+
+.vsm-link
+    position: relative
+    color: var(--link)
+    text-decoration: none
+    &:hover
+        color: var(--link)
+
+.vsm-background
+    border-radius: $spacing-md !important
+
+.content,
+.content--secondary,
+.mobile-content
+    padding: 30px
+    border-radius: $spacing-md !important
+.content--secondary
+    padding-top: 10px
+    padding-bottom: 10px
+
+.dropdown--section_title
+    font-size: 14px
+    font-weight: 600
+    text-transform: uppercase
+    margin-bottom: 20px
+    &:not(:first-child)
+        margin-top: 20px
+
+.dropdown-wrap__content
+    display: flex
+    align-items: center
+    color: var(--primary)
+    text-decoration: none
+    padding: 10px 5px 10px 0
+    &:not(:last-child)
+        margin-bottom: 5px
+
+    &.type1
+        span
+            margin-left: 10px
+
+    &.type2
+        align-items: flex-start
+        & > div
+            margin-left: 10px
+
+        .content--bottom
+            color: var(--secondary)
+
+.feature-dropdown
+    min-width: 250px
+
+.enterprise-dropdown
+    width: 400px
+
+// MOBILE
+
+.vsm-mob-content__wrap
+    border-radius: $spacing-md
+    padding: $spacing-md
