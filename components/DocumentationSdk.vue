@@ -138,7 +138,8 @@
             "id": document id uuid typed,
             "updated_at": "2021-10-08T14:05:31.623141+00:00",
             "sex": "M",
-            "license_types": null
+            "license_types": null,
+            "processing_attempt_id": uuid processing attempt
         },
         "driving_license": null,
         "passport": null,
@@ -158,14 +159,14 @@
       pictures and videos of the document.
     </p>
     <p>
-      Use <code>company_app_token</code> and <code>document id</code>(retrieved
+      Use <code>company_app_token</code> and <code>processing_attempt_id</code>(retrieved
       in the response of step 5) <br />
       against Silt's backend endpoint:<br />
     </p>
     <p>
       <b>GET</b>
       <code
-        >/v1/documents/<b>{document_id}</b>/files/`?token=<b
+        >/v1/processing-attempts/<b>{processing_attempt_id}</b>/files/`?token=<b
           >{company_app_token}</b
         ></code
       >
@@ -173,9 +174,12 @@
     <p><b>200 Response:</b></p>
     <pre><code>
       {
-        file_front: https://...,
-        file_back: https://...,
-        file_verification: https://... (this could be a video if you are using video verification)
+        files: [
+          {
+            type: "VERIFICATION_SELFIE" | "VERIFICATION_VIDEO" | "NATIONAL_ID_BACK" | "NATIONAL_ID_FRONT" | "DRIVING_LICENSE_FRONT" ...,
+            url: "https://..." (this could be a video if you are using video verification)
+          }
+        ]
       }
     </code></pre>
     <h3>
