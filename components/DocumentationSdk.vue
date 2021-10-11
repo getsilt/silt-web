@@ -75,6 +75,12 @@
       process if they have already verified in Silt.
     </p>
 
+    <p>
+      You can also provide through the object meta: <code>meta={"abc":"123"}</code>.
+      Thiss will be stored in our servers and we will provide it back to you so you can
+      reference it when is needed. It can be for example your internal user id.
+    </p>
+
     <h3>3. Frontend: Send silt_user_id & company_app_token to your BE</h3>
     <p>
       Make the POST request to your own backend described in step 4. This
@@ -184,23 +190,90 @@
     </code></pre>
     <h3>
       7. (Optional, for better UX) Backend: Webhook to get notifications after
-      manual reviews
+      user status update
     </h3>
+    <p>
+      When the status of a document of a user is created or updated, we can notify 
+      you to your Backend with a webhook pointing to the endpoint you provide us.
+    </p>
     <p>
       Some cases (less than 5%) require a manual verification. For obvious
       reasons, we cannot verify users instantly this way. We inform the user by
       email once we have finished the verification verification, but you can
-      also be notified once this happens. When an expert in Silt has changed the
-      status of a document of a user from Manual review PENDING to ERROR or
-      SUCCESS we could make a POST request to the endpoint you provide us. You
-      will only need to create a POST endpoint that our backend will call with
+      also be notified once this happens. When you have changed the
+      status of a document we could make a POST request to the endpoint you provide us. 
+      You will only need to create a POST endpoint that our backend will call with
       this body:
     </p>
     <pre><code>
-      { 
-        "token": tmp_token.token, 
-        "user_id": obj.owner_id,
-        "manual_review_status": obj.manual_review_status 
+      {
+        "processing_attempt": {
+          "owner_company_app_id": "1",
+          "status": "SUCCESS",
+          "created_at": "2021-10-08T14:05:27.021579+00:00",
+          "updated_at": "2021-10-08T14:05:31.137874+00:00",
+          "manual_review_status": null,
+          "owner_user": {
+            "city": null,
+            "national_id_id": null,
+            "driving_license_id": null,
+            "nationality": null,
+            "birth_date": null,
+            "passport_id": null,
+            "email": "4af265ab-af27-43e8-b936-95e27dc377eb@siltapp.com",
+            "first_name": null,
+            "last_name": null,
+            "id": "c30fd54c-1e1f-40a5-9fcb-5a7446242dc9",
+            "sex": null,
+            "country": null,
+            "address": null
+          },
+          "core_module_executions": [
+            {
+              "status": "SUCCESS",
+              "errors": [],
+              "output": {
+                "sex": "M",
+                "city": "BARCELONA",
+                "name": "MARC",
+                "number": "44556677A",
+                "address": "PLAZA CATALUÑA 1",
+                "country": "ESP",
+                "surname": "PEREZ MARTI",
+                "birth_date": "1970-09-18",
+                "issue_date": null,
+                "nationality": "ESP",
+                "license_types": null,
+                "expiration_date": "2025-12-25"
+              },
+              "type": "OCR"
+            },
+            {
+              "status": "SUCCESS",
+              "errors": [],
+              "output": null,
+              "type": "FACE_MATCHER"
+            }
+          ],
+          "document_type": "NATIONAL_ID",
+          "id": "ba36b6c0-41ce-45c6-8015-4cc69c069de0",
+          "type": "USER_DOCUMENT_VERIFICATION"
+        },
+        "files": [
+          {
+            "type": "VERIFICATION_SELFIE",
+            "url": "https://pro-silt-resources.s3.amazonaws.com/resource-files/1a2b3c3d-7ea4-4243-9e71-7a883629e303.jpg?AWSAccessKeyId=AKIAY...&Signature=TRB43...&Expires=1633702231"
+          },
+          {
+            "type": "NATIONAL_ID_BACK",
+            "url": "https://pro-silt-resources.s3.amazonaws.com/resource-files/1a2b3c3d-a7ec-472f-9136-86d6a47ce4e6.jpg?AWSAccessKeyId=AKIAYU...&Signature=5J3xuCZm...&Expires=1633702231"
+          },
+          {
+            "type": "NATIONAL_ID_FRONT",
+            "url": "https://pro-silt-resources.s3.amazonaws.com/resource-files/1a2b3c3d-57b6-4d7c-a372-41be6c5df33a.jpg?AWSAccessKeyId=AKIAYUXN...&Signature=Zu8lquS5Y...&Expires=1633702231"
+          }
+        ],
+        "user_meta": {"abc":"123"}
       }
       </code></pre>
   </div>
