@@ -2,55 +2,6 @@
   <section>
     <div class="header-wrapper">
       <consent-cookies />
-      <!--  <div class="logo">
-          <nuxt-link :to="localePath({ name: 'business' })">
-            <img
-              src="@/assets/img/logo/silt_blue.svg"
-              :alt="$t('silt_name')"
-              height="30"
-              width="56"
-            />
-          </nuxt-link>
-        </div>
-        
-        <div
-          class="hamburger-button"
-          @click="openednav = !openednav"
-          :class="{ opened: openednav }"
-        >
-          <span></span>
-        </div>
-      </div>
-      <nav :class="{ opened: openednav }">
-        <div class="nav-links">
-          <nuxt-link
-            :to="localePath({ name: 'users' })"
-            @click.native="closeNav()"
-          >
-            {{ $t("nav_link_users") }}
-          </nuxt-link>
-          <nuxt-link
-            :to="localePath({ name: 'business' })"
-            @click.native="closeNav()"
-          >
-            {{ $t("nav_link_business") }}
-          </nuxt-link>
-          <nuxt-link
-            :to="localePath({ name: 'pricing' })"
-            @click.native="closeNav()"
-          >
-            {{ $t("nav_link_pricing") }}
-          </nuxt-link>
-          <nuxt-link
-            class="demo-button"
-            :to="localePath({ name: 'demo' })"
-            @click.native="closeNav()"
-          >
-            <button class="small">{{ $t("btn_cta_navBar_demo") }}</button>
-          </nuxt-link>
-        </div>
-      </nav>
-    </div> -->
       <vsm-menu :menu="menu">
         <template #default="data">
           <component :is="data.item.content" class="content" />
@@ -98,7 +49,7 @@ export default {
       openednav: false,
       menu: [
         {
-          title: "Features",
+          title: this.$t("nav_link_features"),
           dropdown: "features",
           content: "featuresDropdown",
         },
@@ -114,6 +65,11 @@ export default {
   },
   mounted() {
     this.$consentCookies.show();
+    console.log(this.$listeners);
+    // this.$listeners.$((e)=> {
+    //   console.log("close nav event")
+    //   this.closeNav()
+    // })
   },
   methods: {
     closeNav() {
@@ -141,7 +97,7 @@ section
   background: #fff
   margin: 0
   padding: 0
-  z-index: 100
+  z-index: 9999999999
   display: flex
   justify-content: center
   font-family: $font-primary

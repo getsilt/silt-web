@@ -43,7 +43,7 @@
     </section>
 
     <!-- PRODUCT BENEFITS -->
-    <div class="fw-container" id="benefits">
+    <div class="fw-container--light" id="benefits">
       <section class="highlights-wrapper">
         <div class="section-headers">
           <span class="tag">{{ $t("business_benefits_section") }}</span>
@@ -106,7 +106,7 @@
     </section>
 
     <!-- Silt's Fraud List & Up to date docs -->
-    <div class="fw-container" id="unique-benefits">
+    <div class="fw-container--light" id="unique-benefits">
       <section class="highlights-wrapper">
         <div class="section-headers">
           <span class="tag">{{ $t("business_unique_benefits_section") }}</span>
@@ -147,7 +147,7 @@
       </div>
     </section>
     <!-- Assisted Picture Quality  -->
-    <div class="fw-container">
+    <div class="fw-container--light">
       <section class="claim-wrapper">
         <div class="claim-container left">
           <div
@@ -325,14 +325,6 @@ export default {
   },
   data() {
     return {
-      structuredData: {
-        "@context": "https://getsilt.com",
-        "@type": "Organization",
-        url: "https://getsilt.com",
-        name: this.$t("silt_name"),
-        email: "hello@getsilt.com",
-        logo: "https://getsilt.com/silt_blue.png",
-      },
       email: "hello@getsilt.com",
       differences: [
         {
@@ -587,14 +579,4 @@ export default {
   display: flex
   align-items: center
 
-.fw-container
-  background: #fafafa
-  padding: 0px
-  @media (min-width: 768px)
-    padding: 40px
-    margin: -20px
-    width: calc(100% + 40px)
-  section
-    padding: 20px
-    margin: auto
 </style>
