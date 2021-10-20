@@ -40,6 +40,7 @@ export default {
   plugins: [
     { src: "@/plugins/gtag", ssr: false },
     { src: "~/plugins/gsap", ssr: false },
+    { src: "@/plugins/stripe-menu"},
     { src: "~/plugins/consentCookies/index.js", ssr: false }
   ],
   /*

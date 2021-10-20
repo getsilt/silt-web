@@ -1,0 +1,143 @@
+@import "~vue-stripe-menu/src/scss/index"
+
+// >>> CSS style <<<
+// @import 'vue-stripe-menu/dist/vue-stripe-menu.css';
+
+\:root
+    --primary: #{$color-grey-darken-1}
+    --secondary: #{$color-grey-lighten-3}
+    --link: #{$color-grey}
+
+// For override styles uses .scss (see documentation)
+
+.vsm-menu
+    margin: 10px 0
+    width: 100%
+    ul
+        margin: 0 auto
+
+.vsm-root
+    display: flex
+    align-items: center
+    justify-content: center
+
+.logo
+    flex: 1 1 auto
+
+.vsm-link-container
+    display: flex
+    flex: 1 1 auto
+    justify-content: center
+
+.vsm-section_menu > *
+    padding: 0 25px
+    font-weight: 500
+    font-family: inherit
+
+.vsm-link
+    position: relative
+    color: var(--link)
+    text-decoration: none
+    &:hover
+        color: var(--link)
+
+.content,
+.content--secondary,
+.mobile-content
+    padding: 30px
+    border-radius: $spacing-md !important
+.content--secondary
+    padding-top: 10px
+    padding-bottom: 10px
+
+.dropdown--section_title
+    font-size: 14px
+    font-weight: 600
+    text-transform: uppercase
+    margin-bottom: 20px
+    color: $color-grey-lighten-1
+    &:not(:first-child)
+        margin-top: 20px
+
+.dropdown-wrap__content
+    display: flex
+    align-items: flex-start
+    flex-direction: column
+    color: var(--primary)
+    text-decoration: none
+    padding: 10px 5px 10px 0
+    &:not(:last-child)
+        margin-bottom: 5px
+    
+    & > *
+        margin-bottom: 10px
+
+    &.type1
+        span
+            margin-left: 10px
+
+    &.type2
+        align-items: flex-start
+        & > div
+            margin-left: 10px
+
+        .content--bottom
+            color: var(--secondary)
+
+.feature-dropdown
+    display: flex
+    &>*
+        min-width: 250px
+    &>*:not(:last-child)
+        margin-right: $spacing-lg
+
+.enterprise-dropdown
+    width: 400px
+
+.vsm-menu
+    margin: 10px 20px
+
+.vsm-background
+    border-radius: 0 !important
+    background: transparent !important
+    box-shadow: none
+
+.vsm-mob-line
+    border-radius: 10px
+    background: var(--primary)
+
+.vsm-arrow
+    z-index: 1
+
+.deactivated
+    opacity: 0.4
+
+.vsm-dropdown-container
+    border-radius: 20px
+    background: white
+    box-shadow: 0 50px 100px -20px #32325d40, 0 30px 60px -30px #0000004d, 0 -18px 60px -10px #00000008
+
+// MOBILE
+.vsm-mob-content__wrap
+    border-radius: $spacing-md
+    padding: $spacing-md
+    white-space: initial
+    line-height: 1.2em
+
+    .dropdown-wrap__content
+        flex-direction: row
+        align-items: center
+        i
+            width: 20px
+            margin: 0
+            margin-right: 2*$spacing-md
+
+    .other-sections
+        padding: $spacing-md
+        background: $color-grey-lighten-3
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        margin: 20px -20px -20px -20px
+        a
+            text-decoration: none

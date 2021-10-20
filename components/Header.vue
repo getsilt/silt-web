@@ -1,48 +1,26 @@
 <template>
   <section>
     <div class="header-wrapper">
-      <consent-cookies/>
-      <div class="header-bar">
-        <div class="logo">
+      <consent-cookies />
+      <vsm-menu :menu="menu">
+        <template #default="data">
+          <component :is="data.item.content" class="content" />
+          <component
+            :is="data.item.secondaryContent"
+            class="content--secondary"
+          />
+        </template>
+        <li slot="before-nav" class="logo vsm-section vsm-mob-full">
           <nuxt-link :to="localePath({ name: 'business' })">
-            <img src="@/assets/img/logo/silt_blue.svg" :alt="$t('silt_name')" height="30" width="56"/>
+            <img
+              src="@/assets/img/logo/silt_blue.svg"
+              :alt="$t('silt_name')"
+              height="30"
+              width="56"
+            />
           </nuxt-link>
-        </div>
-        <nuxt-link
-          class="demo-button"
-          :to="localePath({ name: 'demo' })"
-          @click.native="closeNav()"
-        >
-          <button class="small">{{ $t("btn_cta_navBar_demo") }}</button>
-        </nuxt-link>
-        <div
-          class="hamburger-button"
-          @click="openednav = !openednav"
-          :class="{ opened: openednav }"
-        >
-          <span></span>
-        </div>
-      </div>
-      <nav :class="{ opened: openednav }">
-        <div class="nav-links">
-          <nuxt-link
-            :to="localePath({ name: 'users' })"
-            @click.native="closeNav()"
-          >
-            {{ $t("nav_link_users") }}
-          </nuxt-link>
-          <nuxt-link
-            :to="localePath({ name: 'business' })"
-            @click.native="closeNav()"
-          >
-            {{ $t("nav_link_business") }}
-          </nuxt-link>
-          <nuxt-link
-            :to="localePath({ name: 'pricing' })"
-            @click.native="closeNav()"
-          >
-            {{ $t("nav_link_pricing") }}
-          </nuxt-link>
+        </li>
+        <template slot="after-nav">
           <nuxt-link
             class="demo-button"
             :to="localePath({ name: 'demo' })"
@@ -50,33 +28,67 @@
           >
             <button class="small">{{ $t("btn_cta_navBar_demo") }}</button>
           </nuxt-link>
-        </div>
-      </nav>
+          <!--Display mobile menu-->
+          <vsm-mob>
+            <mobile-nav />
+          </vsm-mob>
+        </template>
+      </vsm-menu>
     </div>
   </section>
 </template>
 
 <script>
+import featuresDropdown from "./FeaturesDropdown.vue";
+import mobileNav from "./MobileNav.vue";
+
 export default {
-  components: {},
+  components: { featuresDropdown, mobileNav },
   data() {
     return {
-      openednav: false
+      openednav: false,
+      menu: [
+        {
+          title: this.$t("nav_link_features"),
+          dropdown: "features",
+          content: "featuresDropdown",
+        },
+        {
+          title: this.$t("nav_link_pricing"),
+          element: "router-link",
+          attributes: {
+            to: { name: "pricing" },
+          },
+        },
+      ],
     };
   },
   mounted() {
     this.$consentCookies.show();
+    console.log(this.$listeners);
+    // this.$listeners.$((e)=> {
+    //   console.log("close nav event")
+    //   this.closeNav()
+    // })
   },
   methods: {
     closeNav() {
       this.openednav = false;
-    }
-  }
+    },
+    onOpenDropdown() {
+      console.log("onOpenDropdown");
+    },
+    onCloseDropdown() {
+      console.log("onCloseDropdown");
+    },
+  },
 };
 </script>
 
 <style lang="sass" scoped>
 @import "@/assets/sass/vars.sass"
+header
+  z-index: 999
 section
   position: fixed
   top: 0
@@ -85,7 +97,7 @@ section
   background: #fff
   margin: 0
   padding: 0
-  z-index: 100
+  z-index: 9999999999
   display: flex
   justify-content: center
   font-family: $font-primary
@@ -254,6 +266,10 @@ section
 nav
   .demo-button
     display: none
+.demo-button
+  margin-bottom: 10px
+  text-decoration: none
+  margin-left: $spacing-lg
 
 @media (min-width: 768px)
   .header-bar

@@ -171,7 +171,7 @@ export default {
   width: 100%
   .pricing-plan
     flex: 0 1 auto
-    border-radius: 10px
+    border-radius: $radius-md
     padding: $spacing-lg
     margin: 2%
     max-width: 350px

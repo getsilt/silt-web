@@ -1,5 +1,5 @@
 @import './vars.sass'
-button
+button, .button
   padding: 12px 25px
   border-radius: $radius-md
   font-family: $font-primary
@@ -11,13 +11,14 @@ button
   background-color: $color-primary
   color: #ffffff
   white-space: nowrap
+  text-decoration: none
   &:hover
     background-color: darken($color-primary, 7%)
     transition: 0.3s
 
   &.small
-    font-size: 13px
-    padding: 10px 20px
+    font-size: inherit
+    padding: 0.5em 1.2em
 
   &.accent
     background-color: $color-accent

@@ -37,7 +37,7 @@
     </section>
 
     <!-- Silt For Business -->
-    <div class="fw-container">
+    <div class="fw-container--light">
       <section class="">
         <div class="section-headers">
           <span class="tag">{{ $t("personal_business_section") }}</span>
@@ -125,8 +125,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.fw-container
-  background: #dce6ff
+.fw-container--light
   section
     max-width: 1000px
     display: flex
