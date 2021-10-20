@@ -6,7 +6,7 @@
         <nuxt-link
           class="dropdown-wrap__content type1"
           :to="localePath({ name: 'users' })"
-          @click.native="$emit('closeNav')"
+          @click.native="$emit('onCloseNav')"
         >
           <i class="fad fa-lg fa-bolt scan-icon" />
           {{ $t("nav_feature_digital_id") }}
@@ -14,7 +14,7 @@
         <nuxt-link
           class="dropdown-wrap__content type1"
           :to="localePath({ name: 'business' })"
-          @click.native="$emit('closeNav')"
+          @click.native="$emit('onCloseNav')"
         >
           <i class="fad fa-lg fa-id-card scan-icon" />
           {{ $t("nav_feature_kyc") }}
@@ -27,7 +27,7 @@
         <nuxt-link
           class="dropdown-wrap__content type1"
           :to="localePath({ name: 'biocheck' })"
-          @click.native="$emit('closeNav')"
+          @click.native="$emit('onCloseNav')"
         >
           <i class="fad fa-lg fa-head-side scan-icon" />
           {{ $t("nav_feature_biocheck") }}
@@ -35,7 +35,7 @@
         <nuxt-link
           class="dropdown-wrap__content type1 deactivated"
           :to="localePath({ name: 'business' })"
-          @click.native="$emit('closeNav')"
+          @click.native="$emit('onCloseNav')"
         >
           <i class="fad fa-lg fa-university scan-icon" />
           {{ $t("nav_feature_kyb") }}
@@ -43,7 +43,7 @@
         <nuxt-link
           class="dropdown-wrap__content type1 deactivated"
           :to="localePath({ name: 'business' })"
-          @click.native="$emit('closeNav')"
+          @click.native="$emit('onCloseNav')"
         >
           <i class="fad fa-lg fa-house scan-icon" />
           {{ $t("nav_feature_por") }}

@@ -2,7 +2,7 @@
   <section>
     <div class="header-wrapper">
       <consent-cookies />
-      <vsm-menu :menu="menu">
+      <vsm-menu ref="menu" :menu="menu">
         <template #default="data">
           <component :is="data.item.content" class="content" />
           <component
@@ -29,8 +29,8 @@
             <button class="small">{{ $t("btn_cta_navBar_demo") }}</button>
           </nuxt-link>
           <!--Display mobile menu-->
-          <vsm-mob>
-            <mobile-nav />
+          <vsm-mob ref="menumov">
+            <mobile-nav @onCloseNav="closeNav()"/>
           </vsm-mob>
         </template>
       </vsm-menu>
@@ -65,21 +65,10 @@ export default {
   },
   mounted() {
     this.$consentCookies.show();
-    console.log(this.$listeners);
-    // this.$listeners.$((e)=> {
-    //   console.log("close nav event")
-    //   this.closeNav()
-    // })
   },
   methods: {
     closeNav() {
-      this.openednav = false;
-    },
-    onOpenDropdown() {
-      console.log("onOpenDropdown");
-    },
-    onCloseDropdown() {
-      console.log("onCloseDropdown");
+      this.$refs["menumov"].closeDropdown()
     },
   },
 };

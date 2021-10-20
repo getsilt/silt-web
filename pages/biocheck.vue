@@ -86,7 +86,6 @@ export default {
     },
     startFirstAnimationScene: (_this) => {
       const sections = [
-        "#assistedPictureQuality",
         "#problem",
         "#solution",
       ];
@@ -107,68 +106,6 @@ export default {
           opacity: 0,
         });
       }
-
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: "#techfeatures .features-container",
-            start: "top 80%",
-            scrub: false,
-            markers: false,
-          },
-        })
-        .from("#techfeatures .features-item", {
-          duration: 1,
-          scale: 1,
-          y: 100,
-          rotateY: 0,
-          opacity: 0,
-          stagger: 0.2,
-          ease: "power2.out",
-        });
-
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: "#usecases .features-container",
-            start: "top 80%",
-            scrub: false,
-            markers: false,
-          },
-        })
-        .from("#usecases .features-item", {
-          duration: 1,
-          scale: 1,
-          y: 100,
-          rotateY: 0,
-          opacity: 0,
-          stagger: 0.2,
-          ease: "power2.out",
-        });
-
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: "#assistedPictureQualityScreenshots",
-            start: "top 80%",
-            scrub: false,
-            markers: false,
-          },
-        })
-        .from("#assistedPictureQualityScreenshots", {
-          duration: 0.5,
-          perspective: 0,
-          ease: "power2.out",
-        })
-        .from(".screenshotPictureQuality", {
-          duration: 1,
-          scale: 1,
-          x: -100,
-          rotateY: 0,
-          opacity: 0,
-          stagger: -0.2,
-          ease: "power2.out",
-        });
     },
   },
 };

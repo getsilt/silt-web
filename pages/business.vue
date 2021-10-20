@@ -476,7 +476,6 @@ export default {
         "#howto",
         "#differences",
         "#techfeatures",
-        "#producthighlights",
       ];
       let tm = {};
       for (let section of sections) {
