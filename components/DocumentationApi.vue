@@ -48,21 +48,19 @@
       sent you.
     </p>
 
-    <h3>2. Register a user to your company at Silt</h3>
+    <h3>2. Register a user to Silt</h3>
     <p>
-      Register a user to your company at Silt by making a request
+      Register a user by making a request
       <b>POST</b> to <code>/v1/auth/register/</code> with the body:
     </p>
     <pre><code>
         { 
           email: the email associated to that user 
-          company_app_id: the company app id received in the step 1
         }
         </code></pre>
 
     <p>The 200 response will return:</p>
     <ul>
-      <li><b>user_id</b>: as a company you can ignore this endpoint</li>
       <li><b>access_token</b>: access token that refers to this user only.</li>
     </ul>
     <p class="banner-info">
@@ -71,6 +69,27 @@
       <code>Authorization: Bearer <b>{access_token}</b></code
       >.
     </p>
+    <h3>3. Register an existing user to your company at Silt</h3>
+    <p>
+      Get the identifier of the user in Silt's database, 
+      <code>user_id</code>, by querying <b>GET</b> to <code>/v1/users/self/</code> 
+      with the header <code>Authorization: Bearer <b>{access_token}</b></code>
+    </p>
+    <p>
+      Register a user to your company at Silt by making a request
+      <b>POST</b> to <code>/v1/company-apps/{company_app_id}/</code> with the body:
+    </p>
+    <pre><code>
+        { 
+          user_id: {user_id},
+          meta: {"key": "value"} // useful to be a reference for your database, you can put whatever you want here in JSON format
+        }
+    </code></pre>
+
+    <p>The 200 response will return:</p>
+    <ul>
+      <li><b>token</b>: your <code>company_app_token</code>, a temporary token that identifies this user with your company, so that you can request its status and other info in step 7.</li>
+    </ul>
     <p>
       If you have any issues, check the more
       <a :href="`${apiDocUrl}/#/auth/createUserToCompany`"
@@ -78,14 +97,14 @@
       >
       for this endpoint.
     </p>
-    <h3>3. Send the pictures individually</h3>
+    <h3>4. Send the pictures individually</h3>
     <p>
-      Make a POST to <code>/v1/pictures/</code> for each picture of the doc
+      Make a POST to <code>/v1/files/</code> for each file of the doc
       providing the body:
     </p>
     <pre><code>
       {
-        type: "FRONT" || "BACK" || "VERIFICATION" as String
+        type: "PASSPORT_FRONT" || "NATIONAL_ID_FRONT" || "NATIONAL_ID_BACK" || "DRIVING_LICENSE_FRONT" || "DRIVING_LICENSE_BACK" || "VERIFICATION_SELFIE" || "VERIFICATION_VIDEO" as String
         file: the  binary of the file as Binary
       }
       </code></pre>
@@ -160,41 +179,46 @@
       for this endpoint.
     </p>
 
-    <h3>4. Send the resource with the final pictures</h3>
+    <h3>5. Send the document with the final pictures</h3>
     <p>
-      Send the resource to Silt for verification with the final pictures.<br />
+      Create a processing attempt to Silt for verification with the final pictures.<br />
       For that you need to make a <b>POST</b> to
-      <code>/v1/resources</code> providing the body:
+      <code>/v1/processing-attempts</code> providing the body:
     </p>
     <pre><code>
         {
-          picture_front_id: final picture id response of step 2
-          picture_back_id: final picture id response of step 2
-          selfie_picture_id: final picture id response of step 2
-          type: "PASSPORT" or "DRIVING_LICENSE" or "NATIONAL_ID"
+          // files order is not taken into account
+          files: [
+            front_file_id,
+            back_file_id, //not required for passports
+            selfie_file_id
+          ],
+          type: "USER_DOCUMENT_VERIFICATION",
+          document_type: "PASSPORT" | "NATIONAL_ID" | "DRIVING_LICENSE"
         }
         </code></pre>
+
     <p>The 200 response will return:</p>
     <pre><code>
         {  
-          resource_id: required in step 5
+          processing_attempt_id: required in step 6
         }
         </code></pre>
     <p>
       If you have any issues, check the more
-      <a :href="`${apiDocUrl}/#/resources/addUserResource`"
+      <a :href="`${apiDocUrl}/#/processing-attempts`"
         >detailed documentation</a
       >
       for this endpoint.
     </p>
 
-    <h3>5. Check the verified resources of the user</h3>
+    <h3>6. Check the status of a processing attempt of the user</h3>
     <p>
       After posting the resource with the pictures, you will need to poll the
       Silt's backend to get a response of the final result of the verification.
     </p>
     <p>Make a poll request <b>GET</b> to</p>
-    <code>/v1/resources/{<b>resource_id</b>}</code>
+    <code>/v1/processing-attempts/{<b>processing_attempt_id</b>}</code>
 
     <p>
       Stop the polling when the <code>status</code> attribute has a final value:
@@ -215,22 +239,102 @@
         You can manually verify it at <a href="https://dashboard.getsilt.com">dashboard.getsilt.com</a>.
       </li>
     </ul>
-    <h3>
-      6. (Optional, only if needed) Frontend/Backend: Get resource files temporary
-      URLs
-    </h3>
+    <h3>7. Backend: Check user's verification status</h3>
     <p>
-      This endpoint will return temporary accessible urls to retrieve the
-      pictures and videos of the resource.
-    </p>
-    <p>
-      Use <code>company_app_token</code> and <code>resource_id</code>(retrieved in the response of
-      step 5) <br /> against Silt's backend endpoint:<br /> 
+      Use <code>company_app_token</code> against Silt's backend to the
+      endpoint<br />
     </p>
     <p>
       <b>GET</b>
       <code
-        >/v1/resources/<b>{resource_id}</b>/files/`?token=<b
+        >/v1/users/<b>{silt_user_id}</b>/status/?token=<b
+          >{company_app_token}</b
+        ></code
+      >
+    </p>
+    <p>
+      Check <code>status: SUCCESS | MANUAL_REVIEW | PENDING | ERROR</code> to know if a user is verified or not.
+      Use the <code>national_id | passport | driving_license</code> objects to retreive the data extracted from
+      the documents.
+    </p>
+    <p><b>200 Response:</b></p>
+    <pre><code>
+    {
+      "country": "ESP",
+      "city": "BARCELONA",
+      "email": "8d481b57-37b3-4553-9797-40e845a19b92@siltapp.com",
+      "id": "08cb1e24-25df-456e-b07b-db7f2fb929fe",
+      "nationality": "ESP",
+      "last_name": "PEREZ MARTI",
+      "sex": "M",
+      "first_name": "MARC",
+      "address": "PLAZA CATALUÑA 1 ENT 04",
+      "birth_date": "1988-12-25",
+      "company_app_meta": null,
+      "selfie": {
+          "picture_validation_status": "SUCCESS",
+          "created_at": "2021-10-25T08:00:16.986789+00:00",
+          "file_url": "https://pro-silt-resources.s3.amazonaws.com/resource-files/1a1a1a1a-11b3-47c1-a6b8-f04be025a500.jpg?AWSAccessKeyId=AKIAYUXNO2AH56LUSVWR&Signature=dNpBcWeru8hwVrnVbwOvN0CThOg%3D&Expires=1635149204",
+          "file_type": "VERIFICATION_SELFIE"
+      },
+      "national_id": {
+          "country": "ESP",
+          "city": "BARCELONA",
+          "created_at": "2021-10-25T08:00:22.614666+00:00",
+          "id": "b1d3a4cd-6752-4f61-8b50-c1046295b447",
+          "document_number": "11223344A",
+          "expiration_date": "2023-08-02",
+          "nationality": "ESP",
+          "issue_date": null,
+          "last_name": "PEREZ MARTI",
+          "license_types": null,
+          "sex": "M",
+          "first_name": "MARC",
+          "address": "PLAZA CATALUÑA 1 ENT 04",
+          "updated_at": "2021-10-25T08:00:22.712704+00:00",
+          "birth_date": "1988-12-25",
+          "files": [
+              {
+                  "picture_validation_status": "SUCCESS",
+                  "created_at": "2021-10-25T08:00:05.878820+00:00",
+                  "file_url": "https://pro-silt-resources.s3.amazonaws.com/resource-files/1a1a1a1a-f96b-48f6-a115-1bc2447ca798.jpg?AWSAccessKeyId=AKIAYUXNO2AH56LUSVWR&Signature=DPXnGrPjivqmfG1niOdyE%2FCGhiQ%3D&Expires=1635149204",
+                  "file_type": "NATIONAL_ID_BACK"
+              },
+              {
+                  "picture_validation_status": "SUCCESS",
+                  "created_at": "2021-10-25T07:59:39.698263+00:00",
+                  "file_url": "https://pro-silt-resources.s3.amazonaws.com/resource-files/1a1a1a1a-192c-43b3-9f01-d82e784a3ac7.jpg?AWSAccessKeyId=AKIAYUXNO2AH56LUSVWR&Signature=fsznyQILyUJduOQwM6%2F7cP1v3X8%3D&Expires=1635149204",
+                  "file_type": "NATIONAL_ID_FRONT"
+              }
+          ]
+      },
+      "driving_license": null,
+      "passport": null,
+      "missing_verified_documents": [],
+      "status": "SUCCESS"
+    }  
+    </code></pre>
+    <p>
+      You are not required to store any of these, just what suits you best.
+    </p>
+    <h3>
+      8. (Optional, only if needed) Frontend/Backend: Get document files
+      temporary URLs
+    </h3>
+    <p>
+      This endpoint will return temporary accessible urls to retrieve the
+      pictures and videos of the document, you should have had access to them in step 7 though. 
+      We provide this endpoint for rare edge cases.
+    </p>
+    <p>
+      Use <code>company_app_token</code> and <code>processing_attempt_id</code>(retrieved
+      in the response of step 5) <br />
+      against Silt's backend endpoint:<br />
+    </p>
+    <p>
+      <b>GET</b>
+      <code
+        >/v1/processing-attempts/<b>{processing_attempt_id}</b>/files/`?token=<b
           >{company_app_token}</b
         ></code
       >
@@ -238,30 +342,100 @@
     <p><b>200 Response:</b></p>
     <pre><code>
       {
-        file_front: https://...,
-        file_back: https://...,
-        file_verification: https://... (this could be a video if you are using video verification)
+        files: [
+          {
+            type: "VERIFICATION_SELFIE" | "VERIFICATION_VIDEO" | "NATIONAL_ID_BACK" | "NATIONAL_ID_FRONT" | "DRIVING_LICENSE_FRONT" ...,
+            url: "https://..." (this could be a video if you are using video verification)
+          }
+        ]
       }
     </code></pre>
     <h3>
-      7. (Optional, for better UX) Backend: Webhook to get notifications after
-      manual reviews
+      9. (Optional, for better UX) Backend: Webhook to get notifications after
+      user status update
     </h3>
+    <p>
+      When the status of a document of a user is created or updated, we can notify 
+      you to your Backend with a webhook pointing to the endpoint you provide us.
+    </p>
     <p>
       Some cases (less than 5%) require a manual verification. For obvious
       reasons, we cannot verify users instantly this way. We inform the user by
       email once we have finished the verification verification, but you can
-      also be notified once this happens. When an expert in Silt has changed the
-      status of a document of a user from Manual review PENDING to ERROR or
-      SUCCESS we could make a POST request to the endpoint you provide us. You
-      will only need to create a POST endpoint that our backend will call with
+      also be notified once this happens. When you have changed the
+      status of a document we could make a POST request to the endpoint you provide us. 
+      You will only need to create a POST endpoint that our backend will call with
       this body:
     </p>
     <pre><code>
-      { 
-        "token": tmp_token.token, 
-        "user_id": obj.owner_id,
-        "manual_review_status": obj.manual_review_status 
+      {
+        "processing_attempt": {
+          "owner_company_app_id": "1",
+          "status": "SUCCESS",
+          "created_at": "2021-10-08T14:05:27.021579+00:00",
+          "updated_at": "2021-10-08T14:05:31.137874+00:00",
+          "manual_review_status": null,
+          "owner_user": {
+            "city": null,
+            "national_id_id": null,
+            "driving_license_id": null,
+            "nationality": null,
+            "birth_date": null,
+            "passport_id": null,
+            "email": "4af265ab-af27-43e8-b936-95e27dc377eb@siltapp.com",
+            "first_name": null,
+            "last_name": null,
+            "id": "c30fd54c-1e1f-40a5-9fcb-5a7446242dc9",
+            "sex": null,
+            "country": null,
+            "address": null
+          },
+          "core_module_executions": [
+            {
+              "status": "SUCCESS",
+              "errors": [],
+              "output": {
+                "sex": "M",
+                "city": "BARCELONA",
+                "name": "MARC",
+                "number": "44556677A",
+                "address": "PLAZA CATALUÑA 1",
+                "country": "ESP",
+                "surname": "PEREZ MARTI",
+                "birth_date": "1970-09-18",
+                "issue_date": null,
+                "nationality": "ESP",
+                "license_types": null,
+                "expiration_date": "2025-12-25"
+              },
+              "type": "OCR"
+            },
+            {
+              "status": "SUCCESS",
+              "errors": [],
+              "output": null,
+              "type": "FACE_MATCHER"
+            }
+          ],
+          "document_type": "NATIONAL_ID",
+          "id": "ba36b6c0-41ce-45c6-8015-4cc69c069de0",
+          "type": "USER_DOCUMENT_VERIFICATION"
+        },
+        "files": [
+          {
+            "type": "VERIFICATION_SELFIE",
+            "url": "https://pro-silt-resources.s3.amazonaws.com/resource-files/1a1a1a1a-7ea4-4243-9e71-7a883629e303.jpg?AWSAccessKeyId=AKIAY...&Signature=TRB43...&Expires=1633702231"
+          },
+          {
+            "type": "NATIONAL_ID_BACK",
+            "url": "https://pro-silt-resources.s3.amazonaws.com/resource-files/1a1a1a1a-a7ec-472f-9136-86d6a47ce4e6.jpg?AWSAccessKeyId=AKIAYU...&Signature=5J3xuCZm...&Expires=1633702231"
+          },
+          {
+            "type": "NATIONAL_ID_FRONT",
+            "url": "https://pro-silt-resources.s3.amazonaws.com/resource-files/1a1a1a1a1a-57b6-4d7c-a372-41be6c5df33a.jpg?AWSAccessKeyId=AKIAYUXN...&Signature=Zu8lquS5Y...&Expires=1633702231"
+          }
+        ],
+        "user_meta": {"abc":"123"}
       }
       </code></pre>
   </div>

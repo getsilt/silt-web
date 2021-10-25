@@ -117,79 +117,66 @@
     </p>
     <p><b>200 Response:</b></p>
     <pre><code>
-      {
-        "address": "PLAÇA CATALUNYA 1",
-        "birth_date": "1988-09-18",
-        "city": "BARCELONA",
-        "last_name": "PEREZ MARTI",
-        "nationality": "ESP",
-        "email": "4af265ab-af27-43e8-b936-95e27dc377eb@siltapp.com",
-        "first_name": "MARC",
-        "country": "ESP",
-        "id": user id uuid typed,
-        "sex": "M",
-        "company_app_meta": null,
-        "national_id": {
-            "country": "ESP",
-            "birth_date": "1992-09-18",
-            "address": "C. ESCIPION 22BIS ENT 04",
-            "document_number": "44556677A",
-            "city": "BARCELONA",
-            "expiration_date": "2023-08-02",
-            "last_name": "PEREZ MARTI",
-            "nationality": "ESP",
-            "created_at": "2021-10-08T14:05:31.610165+00:00",
-            "first_name": "MARC",
-            "issue_date": null,
-            "id": document id uuid typed,
-            "updated_at": "2021-10-08T14:05:31.623141+00:00",
-            "sex": "M",
-            "license_types": null,
-            "processing_attempt_id": uuid processing attempt
-        },
-        "driving_license": null,
-        "passport": null,
-        "missing_verified_documents": [],
-        "status": "SUCCESS"
-      }
-        </code></pre>
+    {
+      "country": "ESP",
+      "city": "BARCELONA",
+      "email": "8d481b57-37b3-4553-9797-40e845a19b92@siltapp.com",
+      "id": "08cb1e24-25df-456e-b07b-db7f2fb929fe",
+      "nationality": "ESP",
+      "last_name": "PEREZ MARTI",
+      "sex": "M",
+      "first_name": "MARC",
+      "address": "C. ESCIPION 22BIS ENT 04",
+      "birth_date": "1992-09-18",
+      "company_app_meta": null,
+      "selfie": {
+          "picture_validation_status": "SUCCESS",
+          "created_at": "2021-10-25T08:00:16.986789+00:00",
+          "file_url": "https://pro-silt-resources.s3.amazonaws.com/resource-files/d5e1a040-11b3-47c1-a6b8-f04be025a500.jpg?AWSAccessKeyId=AKIAYUXNO2AH56LUSVWR&Signature=dNpBcWeru8hwVrnVbwOvN0CThOg%3D&Expires=1635149204",
+          "file_type": "VERIFICATION_SELFIE"
+      },
+      "national_id": {
+          "country": "ESP",
+          "city": "BARCELONA",
+          "created_at": "2021-10-25T08:00:22.614666+00:00",
+          "id": "b1d3a4cd-6752-4f61-8b50-c1046295b447",
+          "document_number": "47924637C",
+          "expiration_date": "2023-08-02",
+          "nationality": "ESP",
+          "issue_date": null,
+          "last_name": "PEREZ MARTI",
+          "license_types": null,
+          "sex": "M",
+          "first_name": "MARC",
+          "address": "C. ESCIPION 22BIS ENT 04",
+          "updated_at": "2021-10-25T08:00:22.712704+00:00",
+          "birth_date": "1992-09-18",
+          "files": [
+              {
+                  "picture_validation_status": "SUCCESS",
+                  "created_at": "2021-10-25T08:00:05.878820+00:00",
+                  "file_url": "https://pro-silt-resources.s3.amazonaws.com/resource-files/ff24ad96-f96b-48f6-a115-1bc2447ca798.jpg?AWSAccessKeyId=AKIAYUXNO2AH56LUSVWR&Signature=DPXnGrPjivqmfG1niOdyE%2FCGhiQ%3D&Expires=1635149204",
+                  "file_type": "NATIONAL_ID_BACK"
+              },
+              {
+                  "picture_validation_status": "SUCCESS",
+                  "created_at": "2021-10-25T07:59:39.698263+00:00",
+                  "file_url": "https://pro-silt-resources.s3.amazonaws.com/resource-files/7834c0e8-192c-43b3-9f01-d82e784a3ac7.jpg?AWSAccessKeyId=AKIAYUXNO2AH56LUSVWR&Signature=fsznyQILyUJduOQwM6%2F7cP1v3X8%3D&Expires=1635149204",
+                  "file_type": "NATIONAL_ID_FRONT"
+              }
+          ]
+      },
+      "driving_license": null,
+      "passport": null,
+      "missing_verified_documents": [],
+      "status": "SUCCESS"
+    }  
+    </code></pre>
     <p>
       You are not required to store any of these, just what suits you best.
     </p>
     <h3>
-      6. (Optional, only if needed) Frontend/Backend: Get document files
-      temporary URLs
-    </h3>
-    <p>
-      This endpoint will return temporary accessible urls to retrieve the
-      pictures and videos of the document.
-    </p>
-    <p>
-      Use <code>company_app_token</code> and <code>processing_attempt_id</code>(retrieved
-      in the response of step 5) <br />
-      against Silt's backend endpoint:<br />
-    </p>
-    <p>
-      <b>GET</b>
-      <code
-        >/v1/processing-attempts/<b>{processing_attempt_id}</b>/files/`?token=<b
-          >{company_app_token}</b
-        ></code
-      >
-    </p>
-    <p><b>200 Response:</b></p>
-    <pre><code>
-      {
-        files: [
-          {
-            type: "VERIFICATION_SELFIE" | "VERIFICATION_VIDEO" | "NATIONAL_ID_BACK" | "NATIONAL_ID_FRONT" | "DRIVING_LICENSE_FRONT" ...,
-            url: "https://..." (this could be a video if you are using video verification)
-          }
-        ]
-      }
-    </code></pre>
-    <h3>
-      7. (Optional, for better UX) Backend: Webhook to get notifications after
+      6. (Optional, for better UX) Backend: Webhook to get notifications after
       user status update
     </h3>
     <p>
