@@ -104,11 +104,9 @@
     </p>
     <p>
       <b>GET</b>
-      <code
-        >/v1/users/<b>{silt_user_id}</b>/status/?token=<b
-          >{company_app_token}</b
-        ></code
-      >
+      <code>/v1/users/<b>{silt_user_id}</b>/status/</code>
+      <b>Auth Header</b>
+      <code>X-Company-App-Temporary-Token: <b>{company_app_token}</b></code>
     </p>
     <p>
       Check <code>status: SUCCESS | MANUAL_REVIEW | PENDING | ERROR</code> to know if a user is verified or not.
@@ -271,7 +269,7 @@ export default {
     return {
       siltEmail: "hello@getsilt.com",
       activeTab: "ios",
-      apiDocUrl: "https://app.swaggerhub.com/apis-docs/Silt/Silt-API/1.0.1",
+      apiDocUrl: "https://app.swaggerhub.com/apis-docs/Silt/Silt-API",
     };
   },
   methods: {

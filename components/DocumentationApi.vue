@@ -11,7 +11,9 @@
     </p>
     <p>
       If you have any issues, don't hesitate to contact us at
-      <a target="_blank" href="mailto:customers@getsilt.com">customers@getsilt.com</a>
+      <a target="_blank" href="mailto:customers@getsilt.com"
+        >customers@getsilt.com</a
+      >
     </p>
 
     <div class="banner-info">
@@ -28,10 +30,8 @@
 
     <p class="banner-info">
       The sandbox environment URI is:
-      <code>https://api-sandbox.siltapp.com</code>.
-      
-      The production environment URI is:
-      <code>https://api.siltapp.com</code>.
+      <code>https://api-sandbox.siltapp.com</code>. The production environment
+      URI is: <code>https://api.siltapp.com</code>.
     </p>
 
     <h3>1. Email us: Get your company app Id</h3>
@@ -73,7 +73,8 @@
     <h3>3. Register an existing user to your company at Silt</h3>
     <p>
       Register a user to your company at Silt by making a request
-      <b>POST</b> to <code>/v1/company-apps/{company_app_id}/</code> with the body:
+      <b>POST</b> to <code>/v1/company-apps/{company_app_id}/</code> with the
+      body:
     </p>
     <pre><code>
         { 
@@ -84,7 +85,11 @@
 
     <p>The 200 response will return:</p>
     <ul>
-      <li><b>token</b>: your <code>company_app_token</code>, a temporary token that identifies this user with your company, so that you can request its status and other info in step 7.</li>
+      <li>
+        <b>token</b>: your <code>company_app_token</code>, a temporary token
+        that identifies this user with your company, so that you can request its
+        status and other info in step 7.
+      </li>
     </ul>
     <p>
       If you have any issues, check the more
@@ -95,8 +100,8 @@
     </p>
     <h3>4. Send the pictures individually</h3>
     <p>
-      Make a POST to <code>/v1/files/</code> for each file of the doc
-      providing the body:
+      Make a POST to <code>/v1/files/</code> for each file of the doc providing
+      the body:
     </p>
     <pre><code>
       {
@@ -177,7 +182,8 @@
 
     <h3>5. Send the document with the final pictures</h3>
     <p>
-      Create a processing attempt to Silt for verification with the final pictures.<br />
+      Create a processing attempt to Silt for verification with the final
+      pictures.<br />
       For that you need to make a <b>POST</b> to
       <code>/v1/processing-attempts</code> providing the body:
     </p>
@@ -202,9 +208,7 @@
         </code></pre>
     <p>
       If you have any issues, check the more
-      <a :href="`${apiDocUrl}/#/processing-attempts`"
-        >detailed documentation</a
-      >
+      <a :href="`${apiDocUrl}/#/processing-attempts`">detailed documentation</a>
       for this endpoint.
     </p>
 
@@ -231,8 +235,9 @@
         do not match or other errors.
       </li>
       <li>
-        <b>MANUAL_REVIEW</b>: This resource requires a manual review and is not yet verified. 
-        You can manually verify it at <a href="https://dashboard.getsilt.com">dashboard.getsilt.com</a>.
+        <b>MANUAL_REVIEW</b>: This resource requires a manual review and is not
+        yet verified. You can manually verify it at
+        <a href="https://dashboard.getsilt.com">dashboard.getsilt.com</a>.
       </li>
     </ul>
     <h3>7. Backend: Check user's verification status</h3>
@@ -242,16 +247,20 @@
     </p>
     <p>
       <b>GET</b>
-      <code
-        >/v1/users/<b>{silt_user_id}</b>/status/?token=<b
-          >{company_app_token}</b
-        ></code
-      >
+      <code>/v1/users/<b>{silt_user_id}</b>/status/</code>
+    </p>
+    <p><b>Auth Header</b>
+      <br />Use a Bearer Header:
+      <br /><code>Authorization: Bearer <b>{access_token}</b></code>
+      <br />or Temporary-Token Header:
+      <br /><code>X-Company-App-Temporary-Token: <b>{company_app_token}</b></code>.
+      <br />Don't forget that you should still use the X-Company-App-Id Header.
     </p>
     <p>
-      Check <code>status: SUCCESS | MANUAL_REVIEW | PENDING | ERROR</code> to know if a user is verified or not.
-      Use the <code>national_id | passport | driving_license</code> objects to retreive the data extracted from
-      the documents.
+      Check <code>status: SUCCESS | MANUAL_REVIEW | PENDING | ERROR</code> to
+      know if a user is verified or not. Use the
+      <code>national_id | passport | driving_license</code> objects to retreive
+      the data extracted from the documents.
     </p>
     <p><b>200 Response:</b></p>
     <pre><code>
@@ -310,21 +319,20 @@
       "status": "SUCCESS"
     }  
     </code></pre>
-    <p>
-      You are not required to store any of these, just what suits you best.
-    </p>
+    <p>You are not required to store any of these, just what suits you best.</p>
     <h3>
       8. (Optional, only if needed) Frontend/Backend: Get document files
       temporary URLs
     </h3>
     <p>
       This endpoint will return temporary accessible urls to retrieve the
-      pictures and videos of the document, you should have had access to them in step 7 though. 
-      We provide this endpoint for rare edge cases.
+      pictures and videos of the document, you should have had access to them in
+      step 7 though. We provide this endpoint for rare edge cases.
     </p>
     <p>
-      Use <code>company_app_token</code> and <code>processing_attempt_id</code>(retrieved
-      in the response of step 5) <br />
+      Use <code>company_app_token</code> and
+      <code>processing_attempt_id</code>(retrieved in the response of step 5)
+      <br />
       against Silt's backend endpoint:<br />
     </p>
     <p>
@@ -351,16 +359,17 @@
       user status update
     </h3>
     <p>
-      When the status of a document of a user is created or updated, we can notify 
-      you to your Backend with a webhook pointing to the endpoint you provide us.
+      When the status of a document of a user is created or updated, we can
+      notify you to your Backend with a webhook pointing to the endpoint you
+      provide us.
     </p>
     <p>
       Some cases (less than 5%) require a manual verification. For obvious
       reasons, we cannot verify users instantly this way. We inform the user by
       email once we have finished the verification verification, but you can
-      also be notified once this happens. When you have changed the
-      status of a document we could make a POST request to the endpoint you provide us. 
-      You will only need to create a POST endpoint that our backend will call with
+      also be notified once this happens. When you have changed the status of a
+      document we could make a POST request to the endpoint you provide us. You
+      will only need to create a POST endpoint that our backend will call with
       this body:
     </p>
     <pre><code>
@@ -443,7 +452,7 @@ export default {
       siltEmail: "hello@getsilt.com",
       activeTab: "ios",
       languageTab: "en",
-      apiDocUrl: "https://app.swaggerhub.com/apis-docs/Silt/Silt-API/1.0.1",
+      apiDocUrl: "https://app.swaggerhub.com/apis-docs/Silt/Silt-API/",
     };
   },
   methods: {
