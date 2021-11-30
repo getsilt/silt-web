@@ -9,17 +9,20 @@
     <!-- FREE -->
       <div class="pricing-plan">
         <div class="pricing-plan_price">
-          <span>{{$t("global_free")}}</span>
-          <p>&nbsp;</p>
+          <h2>{{$t("global_free")}}</h2>
+          <h6>&nbsp;</h6>
         </div>
         <p class="pricing-plan_upto">
-          {{ $t("business_pricing_upto", { verifications: 50 }) }}
-          <br />{{ $t("business_pricing_verificationsMonth") }}
+          {{ $t("business_pricing_upto", { amount: 50 }) }}
+          {{ $t("business_pricing_verificationsMonth") }}
         </p>
         <p>
             <ul class="checklist">
                 <li v-for="feature of features" :key="feature.title">{{$t(feature.title)}}</li>
             </ul>
+        </p>
+        <p class="pricing-plan_upto">
+          {{ $t("business_pricing_minimum", { amount: "0€" }) }}
         </p>
         <p class="pepaml hint">{{ $t("business_pricing_PEPAML") }}</p>
         <a :href="`mailto:${getEmail()}`" target="_blank">
@@ -31,22 +34,25 @@
       <!-- PAYED -->
       <div class="pricing-plan">
         <div class="pricing-plan_price">
-          <span>1€</span>
-          <p>/ {{ $t("global_verification") }}</p>
+          <h2>0,5€</h2>
+          <h6>/ {{ $t("global_verification") }}</h6>
         </div>
         <p class="pricing-plan_upto">
           {{
             $t("business_pricing_between", {
-              verificationsLow: "50",
-              verificationsUp: "1.000",
+              amountLow: "50",
+              amountUp: "1.000",
             })
           }}
-          <br />{{ $t("business_pricing_verificationsMonth") }}
+          {{ $t("business_pricing_verificationsMonth") }}
         </p>
         <p>
             <ul class="checklist">
                 <li v-for="feature of features" :key="feature.title">{{$t(feature.title)}}</li>
             </ul>
+        </p>
+        <p class="pricing-plan_upto">
+          {{ $t("business_pricing_minimum", { amount: "70€" }) }}
         </p>
         <p class="pepaml hint">{{ $t("business_pricing_PEPAML") }}</p>
         <a :href="`mailto:${getEmail()}`" target="_blank">
@@ -54,21 +60,25 @@
             <button class="primary">{{ $t("global_contactUs") }}</button>
           </div>
         </a>
+        
       </div>
       <!-- PREMIUM -->
       <div class="pricing-plan">
         <div class="pricing-plan_price">
-          <span>{{ $t("business_pricing_startingFrom") }}</span>
-          <p>/ {{ $t("global_verification") }}</p>
+          <h2>{{ $t("business_pricing_startingFrom", { amount: "0,2€" }) }}</h2>
+          <h6>/ {{ $t("global_verification") }}</h6>
         </div>
         <p class="pricing-plan_upto">
-          {{ $t("business_pricing_moreThan", { verifications: "1.000" }) }}
-          <br />{{ $t("business_pricing_verificationsMonth") }}
+          {{ $t("business_pricing_moreThan", { amount: "1.000" }) }}
+          {{ $t("business_pricing_verificationsMonth") }}
         </p>
         <p>
             <ul class="checklist">
                 <li v-for="feature of features" :key="feature.title">{{$t(feature.title)}}</li>
             </ul>
+        </p>
+        <p class="pricing-plan_upto">
+          {{ $t("business_pricing_minimum", { amount: "500€" }) }}
         </p>
         <p class="pepaml hint">{{ $t("business_pricing_PEPAML") }}</p>
         <a :href="`mailto:${getEmail()}`" target="_blank">
@@ -164,6 +174,11 @@ export default {
 </script>
 <style lang="sass" scoped>
 @import '@/assets/sass/vars.sass'
+
+@media (max-width: 768px)
+  .section-headers
+    padding: $spacing-lg
+
 .pricing-plans_container
   display: flex
   justify-content: center
@@ -175,11 +190,15 @@ export default {
     padding: $spacing-lg
     margin: 2%
     max-width: 350px
-
+    h2,h3,h4,h5,h6
+      margin-top: 1rem
+      margin-bottom: 0.5rem
     &_price
+      h6
+        margin-top: 0
       span
+        font-size: 36px
         line-height: 52px
-        font-size: 48px
         font-family: $font-bold
         color: #333333
       p
@@ -195,10 +214,6 @@ export default {
 
 .pricing-plan:last-child,
   background: $color-grey-lighten-3
-.pricing-plan:last-child, .pricing-plan:first-child
-  .pricing-plan_price
-    span
-      font-size: 36px
 .pepaml, .checklist,
   max-width: 500px
   text-align: left
