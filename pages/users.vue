@@ -49,7 +49,7 @@
           </h5>
         </div>
         <nuxt-link :to="localePath({ name: 'business' })">
-          <button class="primary">{{ $t("btn_cta_business") }}</button>
+          <button>{{ $t("btn_cta_business") }}</button>
         </nuxt-link>
       </section>
     </div>

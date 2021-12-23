@@ -27,7 +27,7 @@
         <p class="pepaml hint">{{ $t("business_pricing_PEPAML") }}</p>
         <a :href="`mailto:${getEmail()}`" target="_blank">
           <div class="button__wrapper">
-            <button class="primary medium">{{ $t("global_contactUs") }}</button>
+            <button class="medium">{{ $t("global_contactUs") }}</button>
           </div>
         </a>
       </div>
@@ -57,7 +57,7 @@
         <p class="pepaml hint">{{ $t("business_pricing_PEPAML") }}</p>
         <a :href="`mailto:${getEmail()}`" target="_blank">
           <div class="button__wrapper">
-            <button class="primary">{{ $t("global_contactUs") }}</button>
+            <button>{{ $t("global_contactUs") }}</button>
           </div>
         </a>
         
@@ -83,7 +83,7 @@
         <p class="pepaml hint">{{ $t("business_pricing_PEPAML") }}</p>
         <a :href="`mailto:${getEmail()}`" target="_blank">
           <div class="button__wrapper">
-            <button class="primary">{{ $t("global_contactUs") }}</button>
+            <button>{{ $t("global_contactUs") }}</button>
           </div>
         </a>
       </div>

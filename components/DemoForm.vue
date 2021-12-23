@@ -8,10 +8,10 @@
         name="email"
         v-model="email"
       />
-      <!-- <button class="primary" :disabled="status === 'loading'">
+      <!-- <button :disabled="status === 'loading'">
             {{ $t("btn_cta_demo") }}
           </button> -->
-      <button @click="onSubmit($event)">{{ $t(`email_send`) }}</button>
+      <button :disabled="status === 'loading'" @click="onSubmit($event)">{{ $t(`email_send`) }}</button>
     </form>
     <span v-if="status !== 'unsent'" class="email-response" :class="status">{{
       $t(`emailResponse_${status}`)
@@ -97,7 +97,7 @@ form
   transition: 0.3s
   font-size: 18px
   padding: $spacing-sm
-  background: rgba($color-primary, 0.2)
+  background: rgba($color-primary, 0.15)
   border-radius: $radius-md
   margin-top: $spacing-md
   flex: 0 0 auto
@@ -111,6 +111,6 @@ form
     color: $color-primary
 
   &.error
-    background: rgba($color-error, 0.2)
+    background: rgba($color-error, 0.15)
     color: $color-error
 </style>

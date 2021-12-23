@@ -33,8 +33,8 @@
           {{ $t("nav_feature_biocheck") }}
         </nuxt-link>
         <nuxt-link
-          class="dropdown-wrap__content type1 deactivated"
-          :to="localePath({ name: 'business' })"
+          class="dropdown-wrap__content type1"
+          :to="localePath({ name: 'kyb' })"
           @click.native="$emit('onCloseNav')"
         >
           <i class="fad fa-lg fa-university scan-icon" />

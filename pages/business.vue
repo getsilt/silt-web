@@ -3,12 +3,15 @@
     <!-- CLAIMS -->
     <section class="claim-container">
       <div class="claim-info">
-        <h1 class="title">{{$t('business_claim_scale')}}&nbsp;{{$t('business_claim1')}}</h1>
+        <h1 class="title">
+          <span class="primary">{{ $t("business_claim_scale") }}</span
+          ><br />{{ $t("business_claim1") }}
+        </h1>
         <h4 class="subtitle" v-html="$t('business_claim2')">
           {{ $t("business_claim2") }}
         </h4>
         <nuxt-link :to="localePath({ name: 'demo' })">
-          <button class="primary">{{ $t("btn_cta_demo") }}</button>
+          <button>{{ $t("btn_cta_demo") }}</button>
         </nuxt-link>
       </div>
       <div class="claim-side-img screenshots-container">
@@ -98,7 +101,7 @@
                {{ $t("business_differences_technology_content") }}
             </p> -->
             <nuxt-link :to="localePath({ name: 'demo' })">
-              <button class="primary">{{ $t("btn_cta_demo") }}</button>
+              <button>{{ $t("btn_cta_demo") }}</button>
             </nuxt-link>
           </div>
         </div>
@@ -110,7 +113,6 @@
       <section class="highlights-wrapper">
         <div class="section-headers">
           <span class="tag">{{ $t("business_unique_benefits_section") }}</span>
-          <h2>{{ $t("business_unique_benefits_title") }}</h2>
         </div>
         <div class="highlights-container pins two-cols">
           <article v-for="benefit in uniqueBenefits" :key="benefit.title">
@@ -217,7 +219,7 @@
                 "
               ></p>
               <nuxt-link :to="localePath({ name: 'demo' })">
-                <button class="primary">{{ $t("btn_cta_demo") }}</button>
+                <button>{{ $t("btn_cta_demo") }}</button>
               </nuxt-link>
             </div>
           </div>
@@ -260,9 +262,11 @@
           </div>
         </article>
       </div>
-      <p class="centered-block"><a href="/developers" class="bold-link">{{
-        $t("business_howto_content4")
-      }}</a></p>
+      <p class="centered-block">
+        <a href="/developers" class="bold-link">{{
+          $t("business_howto_content4")
+        }}</a>
+      </p>
     </section>
 
     <section class="claim-wrapper" id="countries">
@@ -275,9 +279,9 @@
             <p>
               {{ $t("business_highlights_countries_content") }}
             </p>
-            <a :href="`mailto:${getEmail()}`" target="_blank">
-              <button class="primary">{{ $t("btn_cta_contact") }}</button>
-            </a>
+            <nuxt-link :to="localePath({ name: 'demo' })">
+              <button>{{ $t("btn_cta_demo") }}</button>
+            </nuxt-link>
           </div>
         </div>
         <div class="claim-side-img">
@@ -307,9 +311,9 @@
           <h4>{{ $t(usecase.title) }}</h4>
         </div>
       </div>
-      <a :href="`mailto:${getEmail()}`" target="_blank">
-        <button class="primary">{{ $t("btn_cta_contact") }}</button>
-      </a>
+      <nuxt-link :to="localePath({ name: 'demo' })">
+        <button>{{ $t("btn_cta_demo") }}</button>
+      </nuxt-link>
     </section>
   </div>
 </template>
@@ -490,8 +494,8 @@ export default {
         tl.from(section, {
           duration: 1,
           scale: 1,
-          y: 100,
-          opacity: 0,
+          y: 75,
+          opacity: 0.1,
         });
       }
 
@@ -507,7 +511,7 @@ export default {
         .from("#techfeatures .features-item", {
           duration: 1,
           scale: 1,
-          y: 100,
+          y: 75,
           rotateY: 0,
           opacity: 0,
           stagger: 0.2,
@@ -526,7 +530,7 @@ export default {
         .from("#usecases .features-item", {
           duration: 1,
           scale: 1,
-          y: 100,
+          y: 75,
           rotateY: 0,
           opacity: 0,
           stagger: 0.2,
@@ -577,5 +581,4 @@ export default {
 .claim-info-wrapper.differences
   display: flex
   align-items: center
-
 </style>

@@ -24,7 +24,7 @@
     <div class="fw-container--dark" id="problem">
       <section class="highlights-wrapper">
         <div class="section-headers">
-          <span class="tag">{{ $t("biocheck_problem_section") }}</span>
+          <span class="tag">{{ $t("problem_section") }}</span>
           <h4>{{ $t("biocheck_problem_title") }}</h4>
         </div>
       </section>

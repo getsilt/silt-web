@@ -12,10 +12,11 @@
       <div class="claim-side-img screenshots-container">
         <div class="">
           <img
-            class="screenshot take-picture"
-            src="@/assets/img/screenshots/screenshot_selfie_es.jpg"
-            :alt="$t('seo_3')"
-          />
+              class=""
+              src="@/assets/img/illustrations/kyb_flow_es.png"
+              :alt="$t('seo_3')"
+              width="300"
+            />
         </div>
       </div>
     </section>
@@ -26,6 +27,25 @@
         <div class="section-headers">
           <span class="tag">{{ $t("kyb_problem_section") }}</span>
           <h4>{{ $t("kyb_problem_title") }}</h4>
+        </div>
+      </section>
+    </div>
+    <!-- KYB Benefits -->
+    <div class="fw-container--light" id="benefits">
+      <section class="highlights-wrapper">
+        <div class="section-headers">
+          <span class="tag">{{ $t("business_benefits_section") }}</span>
+        </div>
+        <div class="highlights-container pins two-cols">
+          <article v-for="benefit in benefits" :key="benefit.title">
+            <div class="article-container">
+              <div class="article-icon-container">
+                <i class="fad" :class="benefit.icon"></i>
+              </div>
+              <h4>{{ $t(benefit.title) }}</h4>
+              <p>{{ $t(benefit.content) }}</p>
+            </div>
+          </article>
         </div>
       </section>
     </div>
@@ -43,20 +63,19 @@
           <template v-else>
             <img
               class=""
-              src="@/assets/img/illustrations/silt-workflow-biocheck_en.png"
+              src="@/assets/img/illustrations/kyb_flow_es.png"
               :alt="$t('seo_3')"
-              width="350"
-              height="393"
+              width="300"
             />
           </template>
         </div>
         <div class="claim-info-wrapper differences">
           <div class="claim-info">
             <h3 class="title">
-              {{ $t("biocheck_solution_title") }}
+              {{ $t("kyb_solution_title") }}
             </h3>
-            <p v-html="$t('biocheck_solution_content')">
-              {{ $t("biocheck_solution_content") }}
+            <p v-html="$t('kyb_solution_content')">
+              {{ $t("kyb_solution_content") }}
             </p>
             <demo-form />
           </div>
@@ -70,11 +89,29 @@
 import gsap from "gsap";
 import DemoForm from '../components/DemoForm.vue';
 export default {
+  nuxtI18n: {
+    paths: {
+      en: "/en/kyb-company-and-freelancer-verification",
+      es: "/es/kyb-verificacion-de-empresas-y-autonomos",
+    },
+  },
   components: { DemoForm },
   data() {
     return {
       email: "hello@getsilt.com",
-    };
+      benefits: [
+        {
+          icon: "fa-lightbulb-dollar fa-3x",
+          title: "kyb_benefit_scale_title",
+          content: "kyb_benefit_scale_content",
+        },
+        {
+          icon: "fa-sack-dollar fa-3x",
+          title: "kyb_benefit_income_title",
+          content: "kyb_benefit_income_content",
+        },
+      ]
+    }
   },
   mounted() {
     this.startFirstAnimationScene(this);
@@ -87,6 +124,7 @@ export default {
       const sections = [
         "#problem",
         "#solution",
+        "#unique-benefits",
       ];
       let tm = {};
       for (let section of sections) {
