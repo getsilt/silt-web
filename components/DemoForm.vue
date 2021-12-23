@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="form-wrapper">
     <form id="form" @submit.prevent>
       <input
         class="large"
@@ -72,13 +72,18 @@ export default {
 
 <style lang="sass" scoped>
 @import "@/assets/sass/vars.sass"
-
-form
+.form-wrapper
+  display: flex
+  flex-direction: column
   margin-top: $spacing-md
+  width: 100%
+  max-width: 500px
+form
   display: flex
   flex-wrap: wrap
   justify-content: center
   align-self: stretch
+
   &>*
     flex: 1 1 auto
 
@@ -91,6 +96,11 @@ form
   margin-top: $spacing-md
   transition: 0.3s
   font-size: 18px
+  padding: $spacing-sm
+  background: rgba($color-primary, 0.2)
+  border-radius: $radius-md
+  margin-top: $spacing-md
+  flex: 0 0 auto
   &.unsent
     opacity: 0
 
@@ -98,8 +108,9 @@ form
     opacity: 1
 
   &.success
-    color: $color-accent
+    color: $color-primary
 
   &.error
+    background: rgba($color-error, 0.2)
     color: $color-error
 </style>

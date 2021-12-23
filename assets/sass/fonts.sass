@@ -1,41 +1,36 @@
 @import './vars.sass'
 @font-face
   font-family: 'Futura-Bold'
-  src: url('../fonts/Futura_Heavy.ttf')
+  src: url('../fonts/SofiaPro_SemiBold.otf')
 
 @font-face
   font-family: 'Futura-Book'
-  src: url('../fonts/Futura_Book.ttf')
-
-
-@font-face
-  font-family: 'Futura-Medium'
-  src: url('../fonts/Futura_Medium.ttf')
+  src: url('../fonts/SofiaPro_Light.otf')
 
 // @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-//@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 h1, h2, h3, h4, h5, h6, .h6
-  font-family: 'Futura-Medium', sans-serif
+  font-family: $font-bold
   font-weight: normal
   color: #333333
   line-height: 1.2
 
 h1, .h1
-  font-family: 'Futura-Bold', sans-serif
-  font-size: 2.8rem
+  font-family: $font-bold
+  font-size: 3.2rem
 
 h2, .h2
-  font-family: 'Futura-Bold', sans-serif
-  font-size: 2.4rem
+  font-family: $font-bold
+  font-size: 2.8rem
 
 h3, .h3
-  font-family: 'Futura-Bold', sans-serif
+  font-family: $font-bold
   font-size: 1.8rem
   line-height: 1.5em
 
 h4, .h4
-  font-family: 'Futura-Bold', 'Arial Narrow', Arial, sans-serif
+  font-family: $font-bold
   font-size: 1.5rem
 
 h5, .h5
@@ -49,7 +44,7 @@ a
 
 .tag
   font-family: $font-bold
-  background-color: rgba($color-primary, 0.25)
+  background-color: rgba($color-primary, 0.15)
   color: $color-primary
   border-radius: 0.5em
   padding: 1em
@@ -60,6 +55,9 @@ a
   align-items: center
   height: 2em
   margin: auto
+
+b
+  font-family: $font-bold
 
 li
   margin-bottom: 10px

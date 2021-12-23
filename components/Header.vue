@@ -89,7 +89,7 @@ section
   z-index: 9999999999
   display: flex
   justify-content: center
-  font-family: $font-primary
+  font-family: $font-body
 .header-wrapper
   margin: 0
   padding: 0

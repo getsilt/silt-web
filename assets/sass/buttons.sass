@@ -1,24 +1,23 @@
 @import './vars.sass'
 button, .button
-  padding: 12px 25px
+  padding: 0.75em 1.2em 0.7em 1.2em
   border-radius: $radius-md
-  font-family: $font-primary
+  font-family: $font-bold
   border: 0
   outline: none
-  font-size: 18px
+  font-size: 1.2rem
   cursor: pointer
   transition: 0.3s
-  background-color: $color-primary
+  background-color: $color-black
   color: #ffffff
   white-space: nowrap
   text-decoration: none
   &:hover
-    background-color: darken($color-primary, 7%)
+    background-color: darken($color-primary, 30%)
     transition: 0.3s
 
   &.small
-    font-size: inherit
-    padding: 0.5em 1.2em
+    font-size: 1rem
 
   &.accent
     background-color: $color-accent
@@ -58,3 +57,7 @@ button, .button
   color: $color-primary
   font-weight: 800
   text-decoration: none
+  border-bottom: 2px solid transparent
+  &:hover
+    transition: 0.3s
+    border-color: inherit

@@ -3,13 +3,13 @@
     <!-- CLAIMS -->
     <section class="claim-container">
       <div class="claim-info">
-        <h1 class="title" v-html="$t('business_claim1')"></h1>
+        <h1 class="title">{{$t('business_claim_scale')}}&nbsp;{{$t('business_claim1')}}</h1>
         <h4 class="subtitle" v-html="$t('business_claim2')">
           {{ $t("business_claim2") }}
         </h4>
-        <a :href="`mailto:${getEmail()}`" target="_blank">
-          <button class="primary">{{ $t("btn_cta_contact") }}</button>
-        </a>
+        <nuxt-link :to="localePath({ name: 'demo' })">
+          <button class="primary">{{ $t("btn_cta_demo") }}</button>
+        </nuxt-link>
       </div>
       <div class="claim-side-img screenshots-container">
         <div class="screenshot-container">

@@ -189,7 +189,7 @@ export default {
     border-radius: $radius-md
     padding: $spacing-lg
     margin: 2%
-    max-width: 350px
+    max-width: 380px
     h2,h3,h4,h5,h6
       margin-top: 1rem
       margin-bottom: 0.5rem
@@ -217,7 +217,7 @@ export default {
 .pepaml, .checklist,
   max-width: 500px
   text-align: left
-  font-size: 13px
+  font-size: 0.9rem
   color: $color-grey-lighten-1
 
 .checklist
