@@ -1,16 +1,8 @@
 <template>
   <div class="feature-dropdown">
     <div>
-      <div class="dropdown--section_title">{{$t("nav_features_kyc")}}</div>
+      <div class="dropdown--section_title">{{ $t("nav_features_kyc") }}</div>
       <div class="dropdown-wrap">
-        <nuxt-link
-          class="dropdown-wrap__content type1"
-          :to="localePath({ name: 'users' })"
-          @click.native="$emit('onCloseNav')"
-        >
-          <i class="fad fa-lg fa-bolt scan-icon" />
-          {{ $t("nav_feature_digital_id") }}
-        </nuxt-link>
         <nuxt-link
           class="dropdown-wrap__content type1"
           :to="localePath({ name: 'business' })"
@@ -19,10 +11,18 @@
           <i class="fad fa-lg fa-id-card scan-icon" />
           {{ $t("nav_feature_kyc") }}
         </nuxt-link>
+        <nuxt-link
+          class="dropdown-wrap__content type1"
+          :to="localePath({ name: 'users' })"
+          @click.native="$emit('onCloseNav')"
+        >
+          <i class="fad fa-lg fa-bolt scan-icon" />
+          {{ $t("nav_feature_digital_id") }}
+        </nuxt-link>
       </div>
     </div>
     <div>
-      <div class="dropdown--section_title">{{$t("nav_features_other")}}</div>
+      <div class="dropdown--section_title">{{ $t("nav_features_other") }}</div>
       <div class="dropdown-wrap">
         <nuxt-link
           class="dropdown-wrap__content type1"

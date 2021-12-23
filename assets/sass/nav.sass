@@ -4,9 +4,9 @@
 // @import 'vue-stripe-menu/dist/vue-stripe-menu.css';
 
 \:root
-    --primary: #{$color-grey-darken-2}
+    --primary: #{$color-grey-darken-3}
     --secondary: #{$color-grey-lighten-3}
-    --link: #{$color-grey-darken-2}
+    --link: #{$color-grey-darken-3}
 
 // For override styles uses .scss (see documentation)
 
@@ -64,16 +64,22 @@
 .dropdown-wrap__content
     display: flex
     align-items: flex-start
-    flex-direction: column
+    flex-direction: row
     color: var(--primary)
     text-decoration: none
     padding: 10px 5px 10px 0
     font-family: $font-bold
+
+    & > *
+        margin-left: 10px
+
+    i
+        margin: 0
+        flex: 0 0 50px
+        margin-top: 5px
+
     &:not(:last-child)
         margin-bottom: 5px
-    
-    & > *
-        margin-bottom: 10px
 
     &.type1
         span
@@ -83,19 +89,18 @@
         align-items: flex-start
         & > div
             margin-left: 10px
-
         .content--bottom
             color: var(--secondary)
 
 .feature-dropdown
     display: flex
     &>*
-        min-width: 250px
+        min-width: 270px
     &>*:not(:last-child)
         margin-right: $spacing-lg
 
 .enterprise-dropdown
-    width: 400px
+    width: 500px
 
 .vsm-menu
     margin: 10px 20px
@@ -108,6 +113,10 @@
 .vsm-mob-line
     border-radius: 10px
     background: var(--primary)
+    height: 4px
+    &:nth-child(2)
+        margin-top: 3px
+        margin-bottom: 3px
 
 .vsm-arrow
     z-index: 1
@@ -129,11 +138,11 @@
 
     .dropdown-wrap__content
         flex-direction: row
-        align-items: center
+        align-items: flex-start
         i
+            flex: 0 0 30px
             width: 20px
-            margin: 0
-            margin-right: 2*$spacing-md
+            margin-right: $spacing-sm
 
     .other-sections
         padding: $spacing-md

@@ -74,8 +74,14 @@
             <h3 class="title">
               {{ $t("kyb_solution_title") }}
             </h3>
-            <p v-html="$t('kyb_solution_content')">
-              {{ $t("kyb_solution_content") }}
+            <p>
+              {{ $t("kyb_solution_content1") }}
+            </p>
+            <p>
+              {{ $t("kyb_solution_content2") }}
+            </p>
+            <p>
+              <b>{{ $t("kyb_solution_compliant") }}</b>
             </p>
             <demo-form />
           </div>
