@@ -66,7 +66,7 @@
       </section>
       <p class="copyright">
         <i18n path="footer_copyright">
-          <span slot="year">2021</span>
+          <span slot="year">2022</span>
         </i18n>
       </p>
     </footer>

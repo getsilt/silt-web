@@ -5,7 +5,8 @@
 
 \:root
     --primary: #{$color-grey-darken-3}
-    --secondary: #{$color-grey-lighten-3}
+    --secondary: #{$color-grey-lighten-1}
+    --terciary: #{$color-grey-darken-1}
     --link: #{$color-grey-darken-3}
 
 // For override styles uses .scss (see documentation)
@@ -65,10 +66,16 @@
     display: flex
     align-items: flex-start
     flex-direction: row
-    color: var(--primary)
+    color: var(--terciary)
     text-decoration: none
     padding: 10px 5px 10px 0
     font-family: $font-bold
+    font-size: 0.9em
+    transition: 0.3s ease-in-out
+
+    &:not(.deactivated):hover
+        color: var(--link)
+        transition: 0.3s ease-in-out
 
     & > *
         margin-left: 10px
