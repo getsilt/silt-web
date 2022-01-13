@@ -339,7 +339,7 @@
     }  
     </code></pre>
     <p>You are not required to store any of these, just what suits you best.</p>
-    <h3>
+    <!-- <h3>
       9. (Optional, only if needed) Frontend/Backend: Get document files
       temporary URLs
     </h3>
@@ -372,9 +372,9 @@
           }
         ]
       }
-    </code></pre>
+    </code></pre> -->
     <h3>
-      10. (Optional, for better UX) Backend: Webhook to get notifications after
+      9. (Optional, for better UX) Backend: Webhook to get notifications after
       user status update
     </h3>
     <p>
@@ -462,6 +462,13 @@
         "user_meta": {"abc":"123"}
       }
       </code></pre>
+
+    <h3>
+      10. (Optional) Documentation for extra functionalities
+    </h3>
+    <p>
+      You can check our detailed <a :href="apiDocUrl" target="_blank">API's Documentation page</a> to know how to make other queries and access other funcitonalities, such as retrieving the pictures of a user at any time.
+    </p>
   </div>
 </template>
 <script>
