@@ -70,41 +70,44 @@
 
     <p class="banner-info">
       To improve user experience, you can provide the user email through the
-      parameter: <code>user_email</code>.<br />
+      parameter: <code>?user_email=test@getsilt.com</code>.<br />
       This will prefill the email field, and remind them that they can skip the
       process if they have already verified in Silt.
     </p>
 
     <p>
-      You can also provide through the object meta: <code>meta={"abc":"123"}</code>.
-      Thiss will be stored in our servers and we will provide it back to you so you can
+      You can also provide meta info through the object meta: <code>?meta={"abc":"123"}</code>.
+      This will be stored in our servers and we will provide it back to you so you can
       reference it when is needed. It can be for example your internal user id.
     </p>
 
-    <h3>3. Frontend: Send silt_user_id & company_app_token to your BE</h3>
+    <h3>3.1. Frontend: Send silt_user_id & company_app_token to your BE</h3>
     <p>
       Make the POST request to your own backend described in step 4. This
       request requires as parameters <code>silt_user_id</code> &
       <code>company_app_token</code>.
     </p>
     <h3>
-      4. Backend: Create an endpoint to receive silt_user_id & company_app_token
+      3.2. Backend: Create an endpoint to receive silt_user_id & company_app_token
       from your FE
     </h3>
     <p>
       Create a backend endpoint to receive the silt_user_id and
       company_app_token (as described in step 3). After receiving this, you have
       the data required to ask the info of that user to Silt's backend as
-      described in step 5.
+      described in step 4.
     </p>
-    <h3>5. Backend: Check user's verification status to Silt</h3>
+    <p>
+      Store <code>silt_user_id</code> to your database so you can easily reference the verification status at any time.
+    </p>
+    <h3>4. Backend: Check user's verification status to Silt</h3>
     <p>
       Use <code>company_app_token</code> against Silt's backend to the
       endpoint<br />
     </p>
     <p>
       <b>GET</b>
-      <code>/v1/users/<b>{silt_user_id}</b>/status/</code>
+      <code>/v1/users/<b>{silt_user_id}</b>/status/</code><br />
       <b>Auth Header</b>
       <code>X-Company-App-Temporary-Token: <b>{company_app_token}</b></code>
     </p>
@@ -174,7 +177,7 @@
       You are not required to store any of these, just what suits you best.
     </p>
     <h3>
-      6. (Optional, for better UX) Backend: Webhook to get notifications after
+      5. (Optional, for better UX) Backend: Webhook to get notifications after
       user status update
     </h3>
     <p>

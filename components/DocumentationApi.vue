@@ -78,7 +78,7 @@
     </p>
     <pre><code>
         { 
-          user_id: {user_id},
+          user_id: {silt_user_id},
           meta: {"key": "value"} // useful to be a reference for your database, you can put whatever you want here in JSON format
         }
     </code></pre>
@@ -98,7 +98,26 @@
       >
       for this endpoint.
     </p>
-    <h3>4. Send the pictures individually</h3>
+    <h3>4.1. Frontend: Send silt_user_id & company_app_token to your BE</h3>
+    <p>
+      Make the POST request to your own backend described in step 4. This
+      request requires as parameters <code>silt_user_id</code> &
+      <code>company_app_token</code>.
+    </p>
+    <h3>
+      4.2. Backend: Create an endpoint to receive silt_user_id & company_app_token
+      from your FE
+    </h3>
+    <p>
+      Create a backend endpoint to receive the silt_user_id and
+      company_app_token (as described in step 3). After receiving this, you have
+      the data required to ask the info of that user to Silt's backend as
+      described in step 5.
+    </p>
+    <p>
+      Store <code>silt_user_id</code> to your database so you can easily reference the verification status at any time.
+    </p>
+    <h3>5. Send the pictures individually</h3>
     <p>
       Make a POST to <code>/v1/files/</code> for each file of the doc providing
       the body:
@@ -180,7 +199,7 @@
       for this endpoint.
     </p>
 
-    <h3>5. Send the document with the final pictures</h3>
+    <h3>6. Send the final pictures to verify a user</h3>
     <p>
       Create a processing attempt to Silt for verification with the final
       pictures.<br />
@@ -212,7 +231,7 @@
       for this endpoint.
     </p>
 
-    <h3>6. Check the status of a processing attempt of the user</h3>
+    <h3>7. Check the status of a processing attempt of the user</h3>
     <p>
       After posting the resource with the pictures, you will need to poll the
       Silt's backend to get a response of the final result of the verification.
@@ -240,7 +259,7 @@
         <a href="https://dashboard.getsilt.com">dashboard.getsilt.com</a>.
       </li>
     </ul>
-    <h3>7. Backend: Check user's verification status</h3>
+    <h3>8. Backend: Check user's verification status</h3>
     <p>
       Use <code>company_app_token</code> against Silt's backend to the
       endpoint<br />
@@ -321,7 +340,7 @@
     </code></pre>
     <p>You are not required to store any of these, just what suits you best.</p>
     <h3>
-      8. (Optional, only if needed) Frontend/Backend: Get document files
+      9. (Optional, only if needed) Frontend/Backend: Get document files
       temporary URLs
     </h3>
     <p>
@@ -338,7 +357,7 @@
     <p>
       <b>GET</b>
       <code
-        >/v1/processing-attempts/<b>{processing_attempt_id}</b>/files/`?token=<b
+        >/v1/processing-attempts/<b>{processing_attempt_id}</b>/files/?token=<b
           >{company_app_token}</b
         ></code
       >
@@ -355,7 +374,7 @@
       }
     </code></pre>
     <h3>
-      9. (Optional, for better UX) Backend: Webhook to get notifications after
+      10. (Optional, for better UX) Backend: Webhook to get notifications after
       user status update
     </h3>
     <p>
