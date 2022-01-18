@@ -62,7 +62,7 @@
     <p>The 200 response will return:</p>
     <ul>
       <li><b>access_token</b>: access token that refers to this user only.</li>
-      <li><b>user_id</b>: The user id reference of Silt's database.</li>
+      <li><b>user_id</b>: The user id reference of Silt's database. Useful to execute requests like in the following steps, silt_user_id.</li>
     </ul>
     <p class="banner-info">
       The following requests (steps from 3 to 6) should add an authorization
@@ -73,7 +73,7 @@
     <h3>3. Register an existing user to your company at Silt</h3>
     <p>
       Register a user to your company at Silt by making a request
-      <b>POST</b> to <code>/v1/company-apps/{company_app_id}/</code> with the
+      <b>POST</b> to <code>/v1/company-apps/{company_app_id}/users/</code> with the
       body:
     </p>
     <pre><code>
@@ -93,7 +93,7 @@
     </ul>
     <p>
       If you have any issues, check the more
-      <a :href="`${apiDocUrl}/#/auth/createUserToCompany`"
+      <a :href="`${apiDocUrl}`"
         >detailed documentation</a
       >
       for this endpoint.

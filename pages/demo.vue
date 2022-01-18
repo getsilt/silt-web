@@ -17,7 +17,7 @@
           <!-- <button class="primary" :disabled="status === 'loading'">
             {{ $t("btn_cta_demo") }}
           </button> -->
-          <button @click="onSubmit($event)">{{ $t(`email_send`) }}</button>
+          <button :disabled="status==='loading'" @click="onSubmit($event)">{{ $t(`email_send`) }}</button>
         </form>
         <span
           v-if="status !== 'unsent'"
@@ -110,6 +110,7 @@ export default {
       return this.siltEmail;
     },
     onSubmit(e) {
+      if(this.status === "loading") return;
       e.preventDefault();
       grecaptcha.ready(() => {
         grecaptcha.execute("6Lfx2FgaAAAAAPiGduuGdvK9Ea2u5wonpACVBwEx", {action: "submit",}).then((token) => {
