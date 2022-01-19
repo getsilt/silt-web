@@ -222,7 +222,7 @@
     <p>The 200 response will return:</p>
     <pre><code>
         {  
-          processing_attempt_id: required in step 6
+          processing_attempt_id: required in step 7.a
         }
         </code></pre>
     <p>
@@ -230,8 +230,13 @@
       <a :href="`${apiDocUrl}/#/processing-attempts`">detailed documentation</a>
       for this endpoint.
     </p>
-
-    <h3>7. Check the status of a processing attempt of the user</h3>
+    <h3>7 Check verification status</h3>
+    <p>
+      Depending on your UI flow, now you should check the processing attempt status (step 7.a) or the user status (step 7.b).
+      You could also check both of them, but usually using 7.a or 7.b is enough.
+      We think that 7.b is less complex and a more complete solution, but 7.a may be necessary for some cases.
+    </p>
+    <h4>7.a Check the status of a processing attempt of the user</h4>
     <p>
       After posting the resource with the pictures, you will need to poll the
       Silt's backend to get a response of the final result of the verification.
@@ -259,7 +264,7 @@
         <a href="https://dashboard.getsilt.com">dashboard.getsilt.com</a>.
       </li>
     </ul>
-    <h3>8. Backend: Check user's verification status</h3>
+    <h4>7.b Backend: Check user's verification status</h4>
     <p>
       Use <code>company_app_token</code> against Silt's backend to the
       endpoint<br />
@@ -339,6 +344,11 @@
     }  
     </code></pre>
     <p>You are not required to store any of these, just what suits you best.</p>
+    <div class="banner-info">
+      <p>
+        You may need to do a polling request if you skip step 7.a while <code>status == 'PENDING'</code>
+      </p>
+    </div>
     <!-- <h3>
       9. (Optional, only if needed) Frontend/Backend: Get document files
       temporary URLs
@@ -374,7 +384,7 @@
       }
     </code></pre> -->
     <h3>
-      9. (Optional, for better UX) Backend: Webhook to get notifications after
+      8. (Optional, for better UX) Backend: Webhook to get notifications after
       user status update
     </h3>
     <p>
@@ -464,7 +474,7 @@
       </code></pre>
 
     <h3>
-      10. (Optional) Documentation for extra functionalities
+      9. (Optional) Documentation for extra functionalities
     </h3>
     <p>
       You can check our detailed <a :href="apiDocUrl" target="_blank">API's Documentation page</a> to know how to make other queries and access other funcitonalities, such as retrieving the pictures of a user at any time.
