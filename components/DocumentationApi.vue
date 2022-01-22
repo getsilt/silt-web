@@ -36,7 +36,7 @@
 
     <h3>1. Email us: Get your company app Id</h3>
     <p>
-      Request your <code>company_app_id</code> to the Silt Team at the email
+      Request your <code>company_app_id</code> and <b>X-Company-App-API-Token</b> to the Silt Team at the email
       address <a href="mailto:customers@getsilt.com">customers@getsilt.com</a>.
       This Id is unique for you, and it will be the same that the one required
       in the SDK integration flow.
@@ -120,14 +120,15 @@
     <h3>5. Send the pictures individually</h3>
     <p>
       Make a POST to <code>/v1/files/</code> for each file of the doc providing
-      the body:
+      the following body:
     </p>
     <pre><code>
       {
         type: "PASSPORT_FRONT" || "NATIONAL_ID_FRONT" || "NATIONAL_ID_BACK" || "DRIVING_LICENSE_FRONT" || "DRIVING_LICENSE_BACK" || "VERIFICATION_SELFIE" || "VERIFICATION_VIDEO" as String
-        file: the  binary of the file as Binary
+        file: the  binary of the file as Binary Base 64
       }
       </code></pre>
+    <p><b>Please, note that the body must be sent in the format <code>form-data</code> with the header content-type <code>"Content-type": "application/x-www-form-urlencoded"</code></b></p>
     <p>The 200 response will return:</p>
     <ul>
       <li><b>id</b>: needed for post resource</li>
@@ -277,8 +278,10 @@
       <br />Use a Bearer Header:
       <br /><code>Authorization: Bearer <b>{access_token}</b></code>
       <br />or Temporary-Token Header:
-      <br /><code>X-Company-App-Temporary-Token: <b>{company_app_token}</b></code>.
-      <br />Don't forget that you should still use the X-Company-App-Id Header.
+      <br /><code>X-Company-App-Temporary-Token: <b>{company_app_token}</b></code>
+      <br />or X-Company-App-API-Token Header:
+      <br /><code>X-Company-App-API-Token: <b>{company_app_api_token}</b></code>
+      <br />Don't forget that you should still use the <code>X-Company-App-Id</code> Header.
     </p>
     <p>
       Check <code>status: SUCCESS | MANUAL_REVIEW | PENDING | ERROR</code> to
