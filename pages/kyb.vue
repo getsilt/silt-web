@@ -97,8 +97,8 @@ import DemoForm from '../components/DemoForm.vue';
 export default {
   nuxtI18n: {
     paths: {
-      en: "/en/kyb-company-and-freelancer-verification",
-      es: "/es/kyb-verificacion-de-empresas-y-autonomos",
+      en: "/kyb-company-and-freelancer-verification",
+      es: "/kyb-verificacion-de-empresas-y-autonomos",
     },
   },
   components: { DemoForm },

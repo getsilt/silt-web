@@ -63,6 +63,10 @@ export default {
             iso: "en-US"
           }
         ],
+        detectBrowserLanguage: {
+          useCookie: true,
+          alwaysRedirect: false
+        },
         vueI18n: {
           fallbackLocale: "en",
           messages: {

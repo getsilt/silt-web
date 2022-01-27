@@ -15,7 +15,7 @@
     "upload-copies-es": "lokalise2 file upload --file ./locale/es.json --lang-iso es --replace-modified --token 8886dc51bee1327315dd10346c62f1fbf0f6c744 --project-id 174544095ecd2bbaa28734.73412779"
   },
   "dependencies": {
-    "@nuxtjs/i18n": "^7.0.3",
+    "@nuxtjs/i18n": "^7.2.0",
     "@vue/shared": "^3.2.4",
     "axios": "^0.21.1",
     "gsap": "^3.5.1",

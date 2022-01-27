@@ -194,7 +194,7 @@
     </ul>
     <p>
       If you have any issues, check the more
-      <a :href="`${apiDocUrl}/#/pictures/uploadPictures`"
+      <a :href="`${apiDocUrl}#/pictures/uploadPictures`"
         >detailed documentation</a
       >
       for this endpoint.
