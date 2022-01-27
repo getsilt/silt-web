@@ -102,6 +102,38 @@ export default {
     },
   },
   components: { DemoForm },
+  head() {
+    const i18nSeo = this.$nuxtI18nHead();
+    return {
+      title: this.$t("nav_feature_kyb"),
+      meta: [
+        {
+          hid:
+            "description",
+          name:
+            "description",
+          content:
+            this.$t("kyb_claim2"),
+        },
+        {
+          hid:
+            "og:title",
+          name:
+            "og:title",
+          content:
+            this.$t("nav_feature_kyb"),
+        },
+        {
+          hid:
+            "og:description",
+          name:
+            "og:description",
+          content:
+            this.$t("kyb_claim2"),
+        },
+      ],
+    };
+  },
   data() {
     return {
       email: "hello@getsilt.com",

@@ -327,6 +327,38 @@ export default {
       es: "/",
     },
   },
+  head() {
+    const i18nSeo = this.$nuxtI18nHead();
+    return {
+      title: this.$t("nav_feature_kyc"),
+      meta: [
+        {
+          hid:
+            "description",
+          name:
+            "description",
+          content:
+            this.$t("business_claim2"),
+        },
+        {
+          hid:
+            "og:description",
+          name:
+            "og:description",
+          content:
+            this.$t("business_claim2"),
+        },
+        {
+          hid:
+            "og:title",
+          name:
+            "og:title",
+          content:
+            this.$t("nav_feature_kyc"),
+        },
+      ],
+    };
+  },
   data() {
     return {
       email: "hello@getsilt.com",

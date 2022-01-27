@@ -58,11 +58,12 @@ export default {
   color: #666
   text-align: center
   border-radius: 0px
-  padding: 16px
+  padding: 10px
   position: fixed
   z-index: 1
   left: 0px
   bottom: 0px
+  font-size: 14px
 
   .button
     margin-left: 10px

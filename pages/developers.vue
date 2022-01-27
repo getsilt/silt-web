@@ -38,9 +38,17 @@ export default {
       meta: [
         {
           hid:
-            "Integrate with you app in a few minutes with the SDK, or create your own KYC experience with the API.",
+            "description",
           name:
+            "description",
+          content:
             "Integrate with you app in a few minutes with the SDK, or create your own KYC experience with the API.",
+        },
+        {
+          hid:
+            "og:title",
+          name:
+            "og:title",
           content:
             "Integrate with you app in a few minutes with the SDK, or create your own KYC experience with the API.",
         },
