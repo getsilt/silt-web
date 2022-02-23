@@ -69,7 +69,7 @@
           <h6>/ {{ $t("global_verification") }}</h6>
         </div>
         <p class="pricing-plan_upto">
-          {{ $t("business_pricing_moreThan", { amount: "1.000" }) }}
+          {{ $t("business_pricing_moreThan", { amount: "10.000" }) }}
           {{ $t("business_pricing_verificationsMonth") }}
         </p>
         <p>
