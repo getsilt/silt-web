@@ -76,9 +76,10 @@
     </p>
 
     <p>
-      You can also provide meta info through the object meta: <code>?meta={"abc":"123"}</code>.
-      This will be stored in our servers and we will provide it back to you so you can
-      reference it when is needed. It can be for example your internal user id.
+      You can also provide meta info through the object meta:
+      <code>?meta={"abc":"123"}</code>. This will be stored in our servers and
+      we will provide it back to you so you can reference it when is needed. It
+      can be for example your internal user id.
     </p>
 
     <h3>3.1. Frontend: Send silt_user_id & company_app_token to your BE</h3>
@@ -88,8 +89,8 @@
       <code>company_app_token</code>.
     </p>
     <h3>
-      3.2. Backend: Create an endpoint to receive silt_user_id & company_app_token
-      from your FE
+      3.2. Backend: Create an endpoint to receive silt_user_id &
+      company_app_token from your FE
     </h3>
     <p>
       Create a backend endpoint to receive the silt_user_id and
@@ -98,7 +99,8 @@
       described in step 4.
     </p>
     <p>
-      Store <code>silt_user_id</code> to your database so you can easily reference the verification status at any time.
+      Store <code>silt_user_id</code> to your database so you can easily
+      reference the verification status at any time.
     </p>
     <h3>4. Backend: Check user's verification status to Silt</h3>
     <p>
@@ -112,12 +114,23 @@
       <code>X-Company-App-Temporary-Token: <b>{company_app_token}</b></code>
     </p>
     <p>
-      Check <code>status: SUCCESS | MANUAL_REVIEW | PENDING | ERROR</code> to know if a user is verified or not.
-      Use the <code>national_id | passport | driving_license</code> objects to retreive the data extracted from
-      the documents.
+      Check <code>status: SUCCESS | MANUAL_REVIEW | PENDING | ERROR</code> to
+      know if a user is verified or not. Use the
+      <code>national_id | passport | driving_license</code> objects to retreive
+      the data extracted from the documents.
     </p>
-    <p><b>200 Response:</b></p>
-    <pre><code>
+    <div
+      class="accordion__wrapper"
+      :class="{ active: user_status_accordion.active }"
+    >
+      <div
+        class="accordion__title"
+        @click="user_status_accordion.active = !user_status_accordion.active"
+      >
+        <b>200 Response:</b>
+      </div>
+      <div class="accordion__content">
+        <pre><code>
     {
       "country": "ESP",
       "city": "BARCELONA",
@@ -173,27 +186,36 @@
       "status": "SUCCESS"
     }  
     </code></pre>
-    <p>
-      You are not required to store any of these, just what suits you best.
-    </p>
+      </div>
+    </div>
+    <p>You are not required to store any of these, just what suits you best.</p>
     <h3>
       5. (Optional, for better UX) Backend: Webhook to get notifications after
       user status update
     </h3>
     <p>
-      When the status of a document of a user is created or updated, we can notify 
-      you to your Backend with a webhook pointing to the endpoint you provide us.
+      When the status of a document of a user is created or updated, we can
+      notify you to your Backend with a webhook pointing to the endpoint you
+      provide us.
     </p>
     <p>
       Some cases (less than 5%) require a manual verification. For obvious
       reasons, we cannot verify users instantly this way. We inform the user by
       email once we have finished the verification verification, but you can
-      also be notified once this happens. When you have changed the
-      status of a document we could make a POST request to the endpoint you provide us. 
-      You will only need to create a POST endpoint that our backend will call with
+      also be notified once this happens. When you have changed the status of a
+      document we could make a POST request to the endpoint you provide us. You
+      will only need to create a POST endpoint that our backend will call with
       this body:
     </p>
-    <pre><code>
+    <div class="accordion__wrapper" :class="{ active: pa_webhook.active }">
+      <div
+        class="accordion__title"
+        @click="pa_webhook.active = !pa_webhook.active"
+      >
+        <b>Body:</b>
+      </div>
+      <div class="accordion__content">
+        <pre><code>
       {
         "processing_attempt": {
           "owner_company_app_id": "1",
@@ -264,6 +286,8 @@
         "user_meta": {"abc":"123"}
       }
       </code></pre>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -273,6 +297,8 @@ export default {
       siltEmail: "hello@getsilt.com",
       activeTab: "ios",
       apiDocUrl: "https://app.swaggerhub.com/apis-docs/Silt/Silt-API",
+      user_status_accordion: { active: false },
+      pa_webhook: { active: false },
     };
   },
   methods: {

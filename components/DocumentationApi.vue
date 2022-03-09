@@ -36,10 +36,11 @@
 
     <h3>1. Email us: Get your company app Id</h3>
     <p>
-      Request your <code>company_app_id</code> and <b>X-Company-App-API-Token</b> to the Silt Team at the email
-      address <a href="mailto:customers@getsilt.com">customers@getsilt.com</a>.
-      This Id is unique for you, and it will be the same that the one required
-      in the SDK integration flow.
+      Request your <code>company_app_id</code> and
+      <b>X-Company-App-API-Token</b> to the Silt Team at the email address
+      <a href="mailto:customers@getsilt.com">customers@getsilt.com</a>. This Id
+      is unique for you, and it will be the same that the one required in the
+      SDK integration flow.
     </p>
 
     <p class="banner-info">
@@ -62,7 +63,10 @@
     <p>The 200 response will return:</p>
     <ul>
       <li><b>access_token</b>: access token that refers to this user only.</li>
-      <li><b>user_id</b>: The user id reference of Silt's database. Useful to execute requests like in the following steps, silt_user_id.</li>
+      <li>
+        <b>user_id</b>: The user id reference of Silt's database. Useful to
+        execute requests like in the following steps, silt_user_id.
+      </li>
     </ul>
     <p class="banner-info">
       The following requests (steps from 3 to 6) should add an authorization
@@ -73,8 +77,8 @@
     <h3>3. Register an existing user to your company at Silt</h3>
     <p>
       Register a user to your company at Silt by making a request
-      <b>POST</b> to <code>/v1/company-apps/{company_app_id}/users/</code> with the
-      body:
+      <b>POST</b> to <code>/v1/company-apps/{company_app_id}/users/</code> with
+      the body:
     </p>
     <pre><code>
         { 
@@ -93,9 +97,7 @@
     </ul>
     <p>
       If you have any issues, check the more
-      <a :href="`${apiDocUrl}`"
-        >detailed documentation</a
-      >
+      <a :href="`${apiDocUrl}`">detailed documentation</a>
       for this endpoint.
     </p>
     <h3>4.1. Frontend: Send silt_user_id & company_app_token to your BE</h3>
@@ -105,8 +107,8 @@
       <code>company_app_token</code>.
     </p>
     <h3>
-      4.2. Backend: Create an endpoint to receive silt_user_id & company_app_token
-      from your FE
+      4.2. Backend: Create an endpoint to receive silt_user_id &
+      company_app_token from your FE
     </h3>
     <p>
       Create a backend endpoint to receive the silt_user_id and
@@ -115,7 +117,8 @@
       described in step 5.
     </p>
     <p>
-      Store <code>silt_user_id</code> to your database so you can easily reference the verification status at any time.
+      Store <code>silt_user_id</code> to your database so you can easily
+      reference the verification status at any time.
     </p>
     <h3>5. Send the pictures individually</h3>
     <p>
@@ -128,7 +131,13 @@
         file: the  binary of the file as Binary Base 64
       }
       </code></pre>
-    <p><b>Please, note that the body must be sent in the format <code>form-data</code> with the header content-type <code>"Content-type": "application/x-www-form-urlencoded"</code></b></p>
+    <p>
+      <b
+        >Please, note that the body must be sent in the format
+        <code>form-data</code> with the header content-type
+        <code>"Content-type": "application/x-www-form-urlencoded"</code></b
+      >
+    </p>
     <p>The 200 response will return:</p>
     <ul>
       <li><b>id</b>: needed for post resource</li>
@@ -233,9 +242,11 @@
     </p>
     <h3>7 Check verification status</h3>
     <p>
-      Depending on your UI flow, now you should check the processing attempt status (step 7.a) or the user status (step 7.b).
-      You could also check both of them, but usually using 7.a or 7.b is enough.
-      We think that 7.b is less complex and a more complete solution, but 7.a may be necessary for some cases.
+      Depending on your UI flow, now you should check the processing attempt
+      status (step 7.a) or the user status (step 7.b). You could also check both
+      of them, but usually using 7.a or 7.b is enough. We think that 7.b is less
+      complex and a more complete solution, but 7.a may be necessary for some
+      cases.
     </p>
     <h4>7.a Check the status of a processing attempt of the user</h4>
     <p>
@@ -274,14 +285,18 @@
       <b>GET</b>
       <code>/v1/users/<b>{silt_user_id}</b>/status/</code>
     </p>
-    <p><b>Auth Header</b>
-      <br />Use a Bearer Header:
-      <br /><code>Authorization: Bearer <b>{access_token}</b></code>
-      <br />or Temporary-Token Header:
-      <br /><code>X-Company-App-Temporary-Token: <b>{company_app_token}</b></code>
-      <br />or X-Company-App-API-Token Header:
-      <br /><code>X-Company-App-API-Token: <b>{company_app_api_token}</b></code>
-      <br />Don't forget that you should still use the <code>X-Company-App-Id</code> Header.
+    <p>
+      <b>Auth Header</b> <br />Use a Bearer Header: <br /><code
+        >Authorization: Bearer <b>{access_token}</b></code
+      >
+      <br />or Temporary-Token Header: <br /><code
+        >X-Company-App-Temporary-Token: <b>{company_app_token}</b></code
+      >
+      <br />or X-Company-App-API-Token Header: <br /><code
+        >X-Company-App-API-Token: <b>{company_app_api_token}</b></code
+      >
+      <br />Don't forget that you should still use the
+      <code>X-Company-App-Id</code> Header.
     </p>
     <p>
       Check <code>status: SUCCESS | MANUAL_REVIEW | PENDING | ERROR</code> to
@@ -289,8 +304,18 @@
       <code>national_id | passport | driving_license</code> objects to retreive
       the data extracted from the documents.
     </p>
-    <p><b>200 Response:</b></p>
-    <pre><code>
+    <div
+      class="accordion__wrapper"
+      :class="{ active: user_status_accordion.active }"
+    >
+      <div
+        class="accordion__title"
+        @click="user_status_accordion.active = !user_status_accordion.active"
+      >
+        <b>200 Response:</b>
+      </div>
+      <div class="accordion__content">
+        <pre><code>
     {
       "country": "ESP",
       "city": "BARCELONA",
@@ -346,10 +371,13 @@
       "status": "SUCCESS"
     }  
     </code></pre>
+      </div>
+    </div>
     <p>You are not required to store any of these, just what suits you best.</p>
     <div class="banner-info">
       <p>
-        You may need to do a polling request if you skip step 7.a while <code>status == 'PENDING'</code>
+        You may need to do a polling request if you skip step 7.a while
+        <code>status == 'PENDING'</code>
       </p>
     </div>
     <!-- <h3>
@@ -404,7 +432,15 @@
       will only need to create a POST endpoint that our backend will call with
       this body:
     </p>
-    <pre><code>
+    <div class="accordion__wrapper" :class="{ active: pa_webhook.active }">
+      <div
+        class="accordion__title"
+        @click="pa_webhook.active = !pa_webhook.active"
+      >
+        <b>200 Response:</b>
+      </div>
+      <div class="accordion__content">
+        <pre><code>
       {
         "processing_attempt": {
           "owner_company_app_id": "1",
@@ -475,12 +511,15 @@
         "user_meta": {"abc":"123"}
       }
       </code></pre>
+      </div>
+    </div>
 
-    <h3>
-      9. (Optional) Documentation for extra functionalities
-    </h3>
+    <h3>9. (Optional) Documentation for extra functionalities</h3>
     <p>
-      You can check our detailed <a :href="apiDocUrl" target="_blank">API's Documentation page</a> to know how to make other queries and access other funcitonalities, such as retrieving the pictures of a user at any time.
+      You can check our detailed
+      <a :href="apiDocUrl" target="_blank">API's Documentation page</a> to know
+      how to make other queries and access other funcitonalities, such as
+      retrieving the pictures of a user at any time.
     </p>
   </div>
 </template>
@@ -492,6 +531,8 @@ export default {
       activeTab: "ios",
       languageTab: "en",
       apiDocUrl: "https://app.swaggerhub.com/apis-docs/Silt/Silt-API/",
+      user_status_accordion: { active: false },
+      pa_webhook: { active: false },
     };
   },
   methods: {

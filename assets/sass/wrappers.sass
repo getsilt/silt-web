@@ -335,3 +335,25 @@ nav
 
 .centered-block
   text-align: center
+
+.accordion__wrapper
+  border-radius: $spacing-md
+  overflow: hidden
+  & > *
+    background: lighten($color-primary, 40%)
+    color: darken($color-primary, 30%)
+    padding: $spacing-md $spacing-md
+  .accordion__title
+    font-family: $font-bold
+    cursor: pointer
+  .accordion__content
+    max-height: 0
+    transition: 0.5s ease-in-out
+    padding: 0 $spacing-md
+    overflow: auto
+
+  &.active
+    .accordion__content
+      padding: $spacing-md
+      transition: 0.5s ease-in-out
+      max-height: 500px
