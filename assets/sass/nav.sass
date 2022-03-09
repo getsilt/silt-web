@@ -53,7 +53,7 @@
     padding-bottom: 10px
 
 .dropdown--section_title
-    font-size: 16px
+    font-size: 14px
     font-weight: 600
     text-transform: uppercase
     margin-bottom: 20px
@@ -66,16 +66,34 @@
     display: flex
     align-items: flex-start
     flex-direction: row
-    color: var(--terciary)
+    color: var(--link)
     text-decoration: none
     padding: 10px 5px 10px 0
     font-family: $font-bold
-    font-size: 0.9em
+    font-size: 16px
     transition: 0.3s ease-in-out
-
+    position: relative
+    padding-right: $spacing-md
+    &:after, &:before
+        transition: 0.2s ease-in-out
+        opacity: 0
+        transform: translateX(-50%)
+        position: absolute
+        right: 0
+        font-family: 'Font Awesome 5 Duotone'
+    &:after
+        content: '\f061'
+        color: $color-primary
+    &:before
+        content: '\10f061'
+        color: rgba($color-primary, 0.5)
     &:not(.deactivated):hover
         color: var(--link)
         transition: 0.3s ease-in-out
+        &:after, &:before
+            transition: 0.2s ease-in-out
+            opacity: 1
+            transform: translateX(0%)
 
     & > *
         margin-left: 10px
