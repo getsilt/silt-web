@@ -295,7 +295,7 @@
       <br />or X-Company-App-API-Token Header: <br /><code
         >X-Company-App-API-Token: <b>{company_app_api_token}</b></code
       >
-      <br />Don't forget that you should still use the
+      <br /><br />Don't forget that you should still use the
       <code>X-Company-App-Id</code> Header.
     </p>
     <p>

@@ -109,9 +109,20 @@
     </p>
     <p>
       <b>GET</b>
-      <code>/v1/users/<b>{silt_user_id}</b>/status/</code><br />
-      <b>Auth Header</b>
-      <code>X-Company-App-Temporary-Token: <b>{company_app_token}</b></code>
+      <code>/v1/users/<b>{silt_user_id}</b>/status/</code>
+    </p>
+    <p>
+      <b>Auth Header</b> <br />Use a Bearer Header: <br /><code
+        >Authorization: Bearer <b>{access_token}</b></code
+      >
+      <br />or Temporary-Token Header: <br /><code
+        >X-Company-App-Temporary-Token: <b>{company_app_token}</b></code
+      >
+      <br />or X-Company-App-API-Token Header: <br /><code
+        >X-Company-App-API-Token: <b>{company_app_api_token}</b></code
+      >
+      <br /><br />Don't forget that you should still use the
+      <code>X-Company-App-Id</code> Header.
     </p>
     <p>
       Check <code>status: SUCCESS | MANUAL_REVIEW | PENDING | ERROR</code> to
