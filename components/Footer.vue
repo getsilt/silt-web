@@ -4,9 +4,9 @@
       <h3>{{ $t("footer_trust") }}</h3>
       <div class="trust__logos">
         <img
-          src="@/assets/img/logo/bcn_tech_city.png"
+          src="@/assets/img/logo/tech_bcn.png"
           alt=""
-          style="height: 80px"
+          style="height: 60px"
         />
         <img src="@/assets/img/logo/accio.png" alt="" />
         <img style="height: 60px" src="@/assets/img/logo/aefi.png" alt="" />
