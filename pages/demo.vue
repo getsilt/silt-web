@@ -9,7 +9,7 @@
         <form id="form" @submit.prevent>
           <input
             class="large"
-            placeholder="Email"
+            :placeholder="$t('demo_email_company_placeholder')"
             type="email"
             name="email"
             v-model="email"
@@ -17,7 +17,9 @@
           <!-- <button class="primary" :disabled="status === 'loading'">
             {{ $t("btn_cta_demo") }}
           </button> -->
-          <button :disabled="status==='loading'" @click="onSubmit($event)">{{ $t(`email_send`) }}</button>
+          <button :disabled="status === 'loading'" @click="onSubmit($event)">
+            {{ $t(`email_send`) }}
+          </button>
         </form>
         <span
           v-if="status !== 'unsent'"
@@ -25,8 +27,14 @@
           :class="status"
           >{{ $t(`emailResponse_${status}`) }}</span
         >
+        <span
+          v-if="emailErrors && this.email"
+          class="email-response error"
+        >
+          {{ $t(this.emailErrors) }}
+        </span>
       </div>
-      <div class="claim-side-img screenshots-container">
+      <div class="claim-side-img screenshots-container align-top">
         <div class="screenshot-container">
           <img
             class="screenshot login"
@@ -97,6 +105,11 @@ export default {
       link: [...i18nSeo.link],
     };
   },
+  computed: {
+    emailErrors() {
+      return this.emailHasErrors(this.email);
+    },
+  },
   data() {
     return {
       siltEmail: "hello@getsilt.com",
@@ -106,14 +119,29 @@ export default {
   },
   mounted() {},
   methods: {
+    emailHasErrors(email) {
+      if (
+        /^[a-zA-Z0-9_.+-]+@(?!(gmail|yahoo|hotmail|outlook|getsilt|siltapp|asdf))[a-zA-Z]{2,6}.*\.[a-zA-Z]{2,6}$/.test(
+          email
+        )
+      ) {
+        return false;
+      }
+      return "demo_email_error_company";
+    },
     getEmail() {
       return this.siltEmail;
     },
     onSubmit(e) {
-      if(this.status === "loading") return;
+      if (this.emailHasErrors(this.email)) return;
+      if (this.status === "loading") return;
       e.preventDefault();
       grecaptcha.ready(() => {
-        grecaptcha.execute("6Lfx2FgaAAAAAPiGduuGdvK9Ea2u5wonpACVBwEx", {action: "submit",}).then((token) => {
+        grecaptcha
+          .execute("6Lfx2FgaAAAAAPiGduuGdvK9Ea2u5wonpACVBwEx", {
+            action: "submit",
+          })
+          .then((token) => {
             this.submitForm(e, token);
           });
       });

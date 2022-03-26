@@ -123,6 +123,8 @@
     "demo_claim1": "Prueba ahora la mejor experiencia de usuario en Verificación de identidades",
     "demo_claim2": "La opción más rápida para verificar a alguien es no tener que pedirle su ID.",
     "demo_claim3": "En cuanto a los nuevos usuarios, seguirán un proceso de verificación automática ágil y rapidísima.",
+    "demo_email_company_placeholder": "Email de empresa (Ej: hello@getsilt.com)",
+    "demo_email_error_company": "Debes introducir un email válido y con el dominio de tu empresa.",
     "emailResponse_error": "Algo fue mal... Verifica que tienes conexión a internet e inténtalo de nuevo más tarde.",
     "emailResponse_loading": "Enviando email...",
     "emailResponse_success": "¡Gracias! Contactaremos contigo para enviarte la demo.",
