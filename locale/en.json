@@ -127,7 +127,7 @@
     "demo_email_error_company": "You must enter a valid email and with your companies domain.",
     "emailResponse_error": "Something went wrong... Do you have internet connection? Try again later.",
     "emailResponse_loading": "Submitting email...",
-    "emailResponse_success": "Thank you! We will contact you to send you the demo.",
+    "emailResponse_success": "Thank you! We will contact you to send you the demo. If you have not received the email in a couple of days, please check also the spam folder.",
     "email_send": "Request demo",
     "footer_contact": "Contact us at",
     "footer_copyright": "Silt © {year}. Made in Barcelona",
