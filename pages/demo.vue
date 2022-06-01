@@ -133,9 +133,9 @@ export default {
       return this.siltEmail;
     },
     onSubmit(e) {
+      e.preventDefault();
       if (this.emailHasErrors(this.email)) return;
       if (this.status === "loading") return;
-      e.preventDefault();
       grecaptcha.ready(() => {
         grecaptcha
           .execute("6Lfx2FgaAAAAAPiGduuGdvK9Ea2u5wonpACVBwEx", {
