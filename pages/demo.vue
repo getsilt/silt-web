@@ -3,64 +3,63 @@
     <!-- CLAIMS -->
     <section class="claim-container">
       <div class="claim-info">
-        <h1 class="title">{{ $t("demo_claim1") }}</h1>
-        <h4 class="subtitle">{{ $t("demo_claim2") }}</h4>
-        <h4 class="subtitle">{{ $t("demo_claim3") }}</h4>
-        <form id="form" @submit.prevent>
-          <input
-            class="large"
-            :placeholder="$t('demo_email_company_placeholder')"
-            type="email"
-            name="email"
-            v-model="email"
-          />
-          <!-- <button class="primary" :disabled="status === 'loading'">
-            {{ $t("btn_cta_demo") }}
-          </button> -->
-          <button :disabled="status === 'loading'" @click="onSubmit($event)">
-            {{ $t(`email_send`) }}
-          </button>
-        </form>
-        <span
-          v-if="status !== 'unsent'"
-          class="email-response"
-          :class="status"
-          >{{ $t(`emailResponse_${status}`) }}</span
-        >
-        <span
-          v-if="emailErrors && this.email"
-          class="email-response error"
-        >
-          {{ $t(this.emailErrors) }}
-        </span>
+        <h2 class="">{{ $t("demo_claim1") }}</h2>
+        <div class="bullet-wrapper"><i class="primary medium bg fad fa-camera"></i><h4 class="subtitle">{{ $t("demo_claim2") }}</h4></div>
+        <div class="bullet-wrapper"><i class="primary medium bg fad fa-bolt"></i><h4 class="subtitle">{{ $t("demo_claim3") }}</h4></div>
       </div>
-      <div class="claim-side-img screenshots-container align-top">
-        <div class="screenshot-container">
-          <img
-            class="screenshot login"
-            src="@/assets/img/screenshots/screenshot_documentSelect_es.jpg"
-            :alt="$t('seo_2')"
-            width="180"
-            height="353"
-          />
-        </div>
-        <div class="screenshot-container">
-          <img
-            class="screenshot take-picture"
-            src="@/assets/img/screenshots/screenshot_selfie_es.jpg"
-            :alt="$t('seo_3')"
-            width="180"
-            height="353"
-          />
-        </div>
-        <div class="screenshot-container">
-          <img
-            class="screenshot complete"
-            src="@/assets/img/screenshots/screenshot_finish_es.jpg"
-            :alt="$t('seo_4')"
-            width="180"
-            height="353"
-          />
+      <div class="claim-info right">
+        <div class="card card--w-md">
+          <h4>{{ $t("demo_form_title") }}</h4>
+          <form id="form" ref="demoForm" @submit.prevent class="form--vertical">
+            <label for="company_name">{{
+              $t("demo_form_companyName_label")
+            }}</label>
+            <input
+              :placeholder="$t('demo_form_companyName_placeholder')"
+              type="text"
+              name="company_name"
+              required
+              v-model="company_name"
+            />
+            <label for="country">{{ $t("demo_form_country_label") }}</label>
+            <input
+              :placeholder="$t('demo_form_country_placeholder')"
+              type="text"
+              name="country"
+              required
+              v-model="country"
+            />
+            <label for="email">{{ $t("demo_form_email_label") }}</label>
+            <input
+              :placeholder="$t('demo_email_company_placeholder')"
+              type="email"
+              name="email"
+              required
+              v-model="email"
+            />
+            <span
+              :class="{ hidden: !(emailErrors && email) }"
+              class="validation-error error"
+            >
+              {{ $t("demo_email_error_company") }}
+            </span>
+            <button
+              :disabled="
+                status === 'loading' || !country || !email || !company_name
+              "
+              @click="onSubmit($event)"
+              class="submit"
+            >
+              {{ $t(`demo_form_submit`) }}
+              <i class="arrow"></i>
+            </button>
+            <span
+              v-if="status !== 'unsent'"
+              class="email-response"
+              :class="status"
+              >{{ $t(`emailResponse_${status}`) }}</span
+            >
+          </form>
         </div>
       </div>
     </section>
@@ -114,6 +113,8 @@ export default {
     return {
       siltEmail: "hello@getsilt.com",
       email: "",
+      country: "",
+      company_name: "",
       status: "unsent",
     };
   },
@@ -158,7 +159,9 @@ export default {
       try {
         await EmailApi.sendEmail({
           email: this.email,
-          subject: "Silt Demo request",
+          company_name: this.company_name,
+          country: this.country,
+          subject: `Silt Demo request <> ${this.company_name}` ,
           userLang,
           token: token,
         });
@@ -188,10 +191,9 @@ form
     button
       flex: 0 0 auto
 
-.email-response
-  margin-top: $spacing-md
+.email-response, .validation-error
+  margin: $spacing-sm 0
   transition: 0.3s
-  font-size: 18px
   &.unsent
     opacity: 0
 
@@ -203,4 +205,39 @@ form
 
   &.error
     color: $color-error
+
+.validation-error
+  margin-top: -$spacing-md
+
+button.submit
+  .arrow
+    font-style: normal
+    position: relative
+    width: 16px
+    height: 16px
+    margin-left: $spacing-sm
+    &:after, &:before
+      transition: 0.2s ease-in-out
+      opacity: 1
+      transform: translateX(0%)
+      right: 0
+      position: absolute
+      font-family: 'Font Awesome 5 Duotone'
+    &:after
+      content: '\f061'
+      color: #ffffff
+    &:before
+      content: '\10f061'
+      color: rgba(#ffffff, 0.5)
+    &:not(.deactivated):hover
+      color: #ffffff
+      transition: 0.3s ease-in-out
+      &:after, &:before
+        transition: 0.2s ease-in-out
+        opacity: 1
+        transform: translateX(0%)
+  &:not(:disabled):hover
+    .arrow
+      &:after, &:before
+        transform: translateX(50%)
 </style>

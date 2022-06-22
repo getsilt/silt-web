@@ -361,3 +361,31 @@ nav
       padding: $spacing-md
       transition: 0.5s ease-in-out
       max-height: 500px
+
+.card
+  padding: $spacing-xlg
+  border-radius: $radius-lg
+  box-shadow: $box-shadow-1
+  text-align: left
+  &>:first-child
+    margin-top: 0
+
+  &--w-md
+    max-width: 500px
+    width: 100%
+
+
+.bullet-wrapper
+  display: flex
+  align-items: flex-start
+  i
+    font-size: 30px
+    margin-right: $spacing-md
+  i.bg
+    background: rgba($color-primary,0.1)
+    border-radius: 100px
+    width: 2.5em
+    height: 2.5em
+    display: flex
+    align-items: center
+    justify-content: center

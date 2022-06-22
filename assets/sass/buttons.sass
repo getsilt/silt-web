@@ -1,6 +1,6 @@
 @import './vars.sass'
 button, .button
-  padding: 0.75em 1.2em 0.65em 1.2em
+  padding: $padding-4-md
   border-radius: $radius-md
   font-family: $font-bold
   border: 0
@@ -12,11 +12,15 @@ button, .button
   color: #ffffff
   white-space: nowrap
   text-decoration: none
-  &:hover
+  display: flex
+  align-items: center
+  justify-content: center
+  &:hover:not(.vsm-link):not(:disabled)
     background-color: $color-black
     transition: 0.3s
 
   &.small
+    padding: 0.75em 1.2em 0.65em 1.2em
     font-size: 1rem
 
   &.accent
@@ -33,7 +37,8 @@ button, .button
     border-radius: 50px
     text-transform: uppercase
   &:disabled
-    opacity: 0.5
+    opacity: 0.3
+    cursor: default
 
 
 .tabs-wrapper
