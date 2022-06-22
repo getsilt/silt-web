@@ -21,7 +21,24 @@
   </div>
 </template>
 
+<!-- Event snippet for Formulario Demo conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
 <script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    console.log("submitted gtag")
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  console.log("submitting gtag")
+  gtag('event', 'conversion', {
+      'send_to': 'AW-352683225/78NdCOjLjcgDENmJlqgB',
+      'event_callback': callback
+  });
+  return false;
+}
+
 import EmailApi from "@/lib/emailService";
 export default {
   data() {
@@ -63,6 +80,7 @@ export default {
           userLang,
           token: token,
         });
+        gtag_report_conversion()
         this.status = "success";
       } catch (error) {
         this.status = "error";

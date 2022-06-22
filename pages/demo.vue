@@ -67,6 +67,20 @@
 </template>
 
 <script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    console.log("submitted gtag")
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  console.log("submitting gtag")
+  gtag('event', 'conversion', {
+      'send_to': 'AW-352683225/78NdCOjLjcgDENmJlqgB',
+      'event_callback': callback
+  });
+  return false;
+}
 import EmailApi from "@/lib/emailService";
 export default {
   nuxtI18n: {
@@ -165,6 +179,7 @@ export default {
           userLang,
           token: token,
         });
+        gtag_report_conversion()
         this.status = "success";
       } catch (error) {
         this.status = "error";
