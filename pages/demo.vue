@@ -4,8 +4,14 @@
     <section class="claim-container">
       <div class="claim-info">
         <h2 class="">{{ $t("demo_claim1") }}</h2>
-        <div class="bullet-wrapper"><i class="primary medium bg fad fa-camera"></i><h4 class="subtitle">{{ $t("demo_claim2") }}</h4></div>
-        <div class="bullet-wrapper"><i class="primary medium bg fad fa-bolt"></i><h4 class="subtitle">{{ $t("demo_claim3") }}</h4></div>
+        <div class="bullet-wrapper">
+          <i class="primary medium bg fad fa-camera"></i>
+          <h4 class="subtitle">{{ $t("demo_claim2") }}</h4>
+        </div>
+        <div class="bullet-wrapper">
+          <i class="primary medium bg fad fa-bolt"></i>
+          <h4 class="subtitle">{{ $t("demo_claim3") }}</h4>
+        </div>
       </div>
       <div class="claim-info right">
         <div class="card card--w-md">
@@ -47,12 +53,20 @@
               :disabled="
                 status === 'loading' || !country || !email || !company_name
               "
-              @click="onSubmit($event)"
-              class="submit"
+              class="submit h-captcha"
+              data-sitekey="4118226d-2c43-4d3b-be2e-857befb9038d"
+              data-callback="onSubmit"
             >
               {{ $t(`demo_form_submit`) }}
               <i class="arrow"></i>
             </button>
+            <div
+              class="h-captcha"
+              data-sitekey="4118226d-2c43-4d3b-be2e-857befb9038d"
+              data-theme="dark"
+              data-error-callback="onError"
+              data-size="invisible"
+            ></div>
             <span
               v-if="status !== 'unsent'"
               class="email-response"
@@ -61,6 +75,11 @@
             >
           </form>
         </div>
+        <p style="font-size: 0.8rem">
+            This site is protected by hCaptcha and its
+            <a href="https://www.hcaptcha.com/privacy">Privacy Policy</a> and
+            <a href="https://www.hcaptcha.com/terms">Terms of Service</a> apply.
+          </p>
       </div>
     </section>
   </div>
@@ -69,15 +88,15 @@
 <script>
 function gtag_report_conversion(url) {
   var callback = function () {
-    console.log("submitted gtag")
-    if (typeof(url) != 'undefined') {
+    console.log("submitted gtag");
+    if (typeof url != "undefined") {
       window.location = url;
     }
   };
-  console.log("submitting gtag")
-  gtag('event', 'conversion', {
-      'send_to': 'AW-352683225/78NdCOjLjcgDENmJlqgB',
-      'event_callback': callback
+  console.log("submitting gtag");
+  gtag("event", "conversion", {
+    send_to: "AW-352683225/78NdCOjLjcgDENmJlqgB",
+    event_callback: callback,
   });
   return false;
 }
@@ -175,11 +194,11 @@ export default {
           email: this.email,
           company_name: this.company_name,
           country: this.country,
-          subject: `Silt Demo request <> ${this.company_name}` ,
+          subject: `Silt Demo request <> ${this.company_name}`,
           userLang,
           token: token,
         });
-        gtag_report_conversion()
+        gtag_report_conversion();
         this.status = "success";
       } catch (error) {
         this.status = "error";
