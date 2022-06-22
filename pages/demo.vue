@@ -55,8 +55,9 @@
               "
               class="submit h-captcha"
               data-sitekey="4118226d-2c43-4d3b-be2e-857befb9038d"
-              data-callback="onSubmit"
+              @click="onSubmit($event)"
             >
+            <!-- data-callback="onSubmit" -->
               {{ $t(`demo_form_submit`) }}
               <i class="arrow"></i>
             </button>
