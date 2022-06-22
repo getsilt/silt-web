@@ -53,21 +53,13 @@
               :disabled="
                 status === 'loading' || !country || !email || !company_name
               "
-              class="submit h-captcha"
-              data-sitekey="4118226d-2c43-4d3b-be2e-857befb9038d"
-              @click="onSubmit($event)"
+              class="submit g-recaptcha"
+              @click="onSubmitClick($event)"
             >
-            <!-- data-callback="onSubmit" -->
               {{ $t(`demo_form_submit`) }}
               <i class="arrow"></i>
             </button>
-            <div
-              class="h-captcha"
-              data-sitekey="4118226d-2c43-4d3b-be2e-857befb9038d"
-              data-theme="dark"
-              data-error-callback="onError"
-              data-size="invisible"
-            ></div>
+            <div id="recaptcha-container"></div>
             <span
               v-if="status !== 'unsent'"
               class="email-response"
@@ -76,11 +68,6 @@
             >
           </form>
         </div>
-        <p style="font-size: 0.8rem">
-            This site is protected by hCaptcha and its
-            <a href="https://www.hcaptcha.com/privacy">Privacy Policy</a> and
-            <a href="https://www.hcaptcha.com/terms">Terms of Service</a> apply.
-          </p>
       </div>
     </section>
   </div>
@@ -89,12 +76,10 @@
 <script>
 function gtag_report_conversion(url) {
   var callback = function () {
-    console.log("submitted gtag");
     if (typeof url != "undefined") {
       window.location = url;
     }
   };
-  console.log("submitting gtag");
   gtag("event", "conversion", {
     send_to: "AW-352683225/78NdCOjLjcgDENmJlqgB",
     event_callback: callback,
@@ -152,7 +137,16 @@ export default {
       status: "unsent",
     };
   },
-  mounted() {},
+  mounted() {
+    grecaptcha.ready(() => {
+      grecaptcha.render("recaptcha-container", {
+        sitekey: "6LfOjR8eAAAAAFchy9AAxyeS2STWAlWnz_v9ewRX",
+        size: "invisible",
+        callback: this.onSubmit,
+        "error-callback":  this.onSubmit,
+      });
+    });
+  },
   methods: {
     emailHasErrors(email) {
       if (
@@ -167,8 +161,13 @@ export default {
     getEmail() {
       return this.siltEmail;
     },
+    onSubmitClick(e) {
+      console.log("onSubmitClick");
+      grecaptcha.execute();
+    },
     onSubmit(e) {
-      e.preventDefault();
+      console.log("onSubmit");
+      //e.preventDefault();
       if (this.emailHasErrors(this.email)) return;
       if (this.status === "loading") return;
       grecaptcha.ready(() => {
@@ -177,11 +176,11 @@ export default {
             action: "submit",
           })
           .then((token) => {
-            this.submitForm(e, token);
+            this.submitForm(e);
           });
       });
     },
-    async submitForm(e, token) {
+    async submitForm(token) {
       //6Lfx2FgaAAAAAPiGduuGdvK9Ea2u5wonpACVBwEx
       // const formElem = document.querySelector('form');
       // const formData = new FormData()
