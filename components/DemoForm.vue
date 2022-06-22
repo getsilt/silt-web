@@ -11,7 +11,9 @@
       <!-- <button :disabled="status === 'loading'">
             {{ $t("btn_cta_demo") }}
           </button> -->
-      <button :disabled="status === 'loading'" @click="onSubmit($event)">{{ $t(`email_send`) }}</button>
+      <button :disabled="status === 'loading'" @click="onSubmit($event)">
+        {{ $t(`email_send`) }}
+      </button>
     </form>
     <span v-if="status !== 'unsent'" class="email-response" :class="status">{{
       $t(`emailResponse_${status}`)
@@ -83,6 +85,7 @@ form
   flex-wrap: wrap
   justify-content: center
   align-self: stretch
+  align-items: flex-start
 
   &>*
     flex: 1 1 auto
