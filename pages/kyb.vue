@@ -3,20 +3,22 @@
     <!-- CLAIMS -->
     <section class="claim-container">
       <div class="claim-info">
-        <h1 class="title" v-html="$t('kyb_claim1')">{{$t("kyb_claim1")}}</h1>
+        <h1 class="title" v-html="$t('kyb_claim1')">{{ $t("kyb_claim1") }}</h1>
         <h4 class="subtitle" v-html="$t('kyb_claim2')">
           {{ $t("kyb_claim2") }}
         </h4>
-        <demo-form />
+        <nuxt-link :to="localePath({ name: 'demo' })">
+          <button>{{ $t("btn_cta_demo") }}</button>
+        </nuxt-link>
       </div>
       <div class="claim-side-img screenshots-container">
         <div class="">
           <img
-              class=""
-              src="@/assets/img/illustrations/kyb_flow_es.png"
-              :alt="$t('seo_3')"
-              width="300"
-            />
+            class=""
+            src="@/assets/img/illustrations/kyb_flow_es.png"
+            :alt="$t('seo_3')"
+            width="300"
+          />
         </div>
       </div>
     </section>
@@ -83,7 +85,9 @@
             <p>
               <b>{{ $t("kyb_solution_compliant") }}</b>
             </p>
-            <demo-form />
+            <nuxt-link :to="localePath({ name: 'demo' })">
+              <button>{{ $t("btn_cta_demo") }}</button>
+            </nuxt-link>
           </div>
         </div>
       </div>
@@ -93,7 +97,6 @@
 
 <script>
 import gsap from "gsap";
-import DemoForm from '../components/DemoForm.vue';
 export default {
   nuxtI18n: {
     paths: {
@@ -101,35 +104,25 @@ export default {
       es: "/kyb-verificacion-de-empresas-y-autonomos",
     },
   },
-  components: { DemoForm },
   head() {
     const i18nSeo = this.$nuxtI18nHead();
     return {
       title: this.$t("nav_feature_kyb"),
       meta: [
         {
-          hid:
-            "description",
-          name:
-            "description",
-          content:
-            this.$t("kyb_claim2"),
+          hid: "description",
+          name: "description",
+          content: this.$t("kyb_claim2"),
         },
         {
-          hid:
-            "og:title",
-          name:
-            "og:title",
-          content:
-            this.$t("nav_feature_kyb"),
+          hid: "og:title",
+          name: "og:title",
+          content: this.$t("nav_feature_kyb"),
         },
         {
-          hid:
-            "og:description",
-          name:
-            "og:description",
-          content:
-            this.$t("kyb_claim2"),
+          hid: "og:description",
+          name: "og:description",
+          content: this.$t("kyb_claim2"),
         },
       ],
     };
@@ -148,8 +141,8 @@ export default {
           title: "kyb_benefit_income_title",
           content: "kyb_benefit_income_content",
         },
-      ]
-    }
+      ],
+    };
   },
   mounted() {
     this.startFirstAnimationScene(this);
@@ -159,11 +152,7 @@ export default {
       return this.email;
     },
     startFirstAnimationScene: (_this) => {
-      const sections = [
-        "#problem",
-        "#solution",
-        "#unique-benefits",
-      ];
+      const sections = ["#problem", "#solution", "#unique-benefits"];
       let tm = {};
       for (let section of sections) {
         const tl = gsap.timeline({
@@ -207,5 +196,4 @@ export default {
 .claim-info-wrapper.differences
   display: flex
   align-items: center
-
 </style>

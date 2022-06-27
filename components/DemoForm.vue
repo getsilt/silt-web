@@ -26,12 +26,10 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 <script>
 function gtag_report_conversion(url) {
   var callback = function () {
-    console.log("submitted gtag")
     if (typeof(url) != 'undefined') {
       window.location = url;
     }
   };
-  console.log("submitting gtag")
   gtag('event', 'conversion', {
       'send_to': 'AW-352683225/78NdCOjLjcgDENmJlqgB',
       'event_callback': callback

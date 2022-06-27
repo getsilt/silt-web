@@ -7,7 +7,9 @@
         <h4 class="subtitle" v-html="$t('biocheck_claim2')">
           {{ $t("biocheck_claim2") }}
         </h4>
-        <demo-form />
+         <nuxt-link :to="localePath({ name: 'demo' })">
+          <button>{{ $t("btn_cta_demo") }}</button>
+        </nuxt-link>
       </div>
       <div class="claim-side-img screenshots-container">
         <div class="">
@@ -24,7 +26,7 @@
     <div class="fw-container--dark" id="problem">
       <section class="highlights-wrapper">
         <div class="section-headers">
-          <span class="tag">{{ $t("problem_section") }}</span>
+          <span class="tag">{{ $t("biocheck_problem_section") }}</span>
           <h4>{{ $t("biocheck_problem_title") }}</h4>
         </div>
       </section>
@@ -58,8 +60,10 @@
             </h3>
             <p v-html="$t('biocheck_solution_content')">
               {{ $t("biocheck_solution_content") }}
-            </p>
-            <demo-form />
+            </p> 
+            <nuxt-link :to="localePath({ name: 'demo' })">
+          <button>{{ $t("btn_cta_demo") }}</button>
+        </nuxt-link>
           </div>
         </div>
       </div>
@@ -69,9 +73,7 @@
 
 <script>
 import gsap from "gsap";
-import DemoForm from '../components/DemoForm.vue';
 export default {
-  components: { DemoForm },
   data() {
     return {
       email: "hello@getsilt.com",
