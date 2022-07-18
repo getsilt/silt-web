@@ -19,7 +19,8 @@
     "@vue/shared": "^3.2.4",
     "axios": "^0.21.1",
     "gsap": "^3.5.1",
-    "nuxt": "^2.15.8"
+    "nuxt": "^2.15.8",
+    "vue-json-tree-view": "^2.1.6"
   },
   "devDependencies": {
     "@nuxtjs/robots": "^2.4.2",

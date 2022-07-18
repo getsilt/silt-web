@@ -130,75 +130,12 @@
       <code>national_id | passport | driving_license</code> objects to retreive
       the data extracted from the documents.
     </p>
-    <div
-      class="accordion__wrapper"
-      :class="{ active: user_status_accordion.active }"
-    >
-      <div
-        class="accordion__title"
-        @click="user_status_accordion.active = !user_status_accordion.active"
-      >
-        <b>200 Response:</b>
-      </div>
-      <div class="accordion__content">
-        <pre><code>
-    {
-      "country": "ESP",
-      "city": "BARCELONA",
-      "email": "8d481b57-37b3-4553-9797-40e845a19b92@siltapp.com",
-      "id": "08cb1e24-25df-456e-b07b-db7f2fb929fe",
-      "nationality": "ESP",
-      "last_name": "PEREZ MARTI",
-      "sex": "M",
-      "first_name": "MARC",
-      "address": "C. ESCIPION 22BIS ENT 04",
-      "birth_date": "1992-09-18",
-      "company_app_meta": null,
-      "selfie": {
-          "picture_validation_status": "SUCCESS",
-          "created_at": "2021-10-25T08:00:16.986789+00:00",
-          "file_url": "https://pro-silt-resources.s3.amazonaws.com/resource-files/d5e1a040-11b3-47c1-a6b8-f04be025a500.jpg?AWSAccessKeyId=AKIAYUXNO2AH56LUSVWR&Signature=dNpBcWeru8hwVrnVbwOvN0CThOg%3D&Expires=1635149204",
-          "file_type": "VERIFICATION_SELFIE"
-      },
-      "national_id": {
-          "country": "ESP",
-          "city": "BARCELONA",
-          "created_at": "2021-10-25T08:00:22.614666+00:00",
-          "id": "b1d3a4cd-6752-4f61-8b50-c1046295b447",
-          "document_number": "47924637C",
-          "expiration_date": "2023-08-02",
-          "nationality": "ESP",
-          "issue_date": null,
-          "last_name": "PEREZ MARTI",
-          "license_types": null,
-          "sex": "M",
-          "first_name": "MARC",
-          "address": "C. ESCIPION 22BIS ENT 04",
-          "updated_at": "2021-10-25T08:00:22.712704+00:00",
-          "birth_date": "1992-09-18",
-          "files": [
-              {
-                  "picture_validation_status": "SUCCESS",
-                  "created_at": "2021-10-25T08:00:05.878820+00:00",
-                  "file_url": "https://pro-silt-resources.s3.amazonaws.com/resource-files/ff24ad96-f96b-48f6-a115-1bc2447ca798.jpg?AWSAccessKeyId=AKIAYUXNO2AH56LUSVWR&Signature=DPXnGrPjivqmfG1niOdyE%2FCGhiQ%3D&Expires=1635149204",
-                  "file_type": "NATIONAL_ID_BACK"
-              },
-              {
-                  "picture_validation_status": "SUCCESS",
-                  "created_at": "2021-10-25T07:59:39.698263+00:00",
-                  "file_url": "https://pro-silt-resources.s3.amazonaws.com/resource-files/7834c0e8-192c-43b3-9f01-d82e784a3ac7.jpg?AWSAccessKeyId=AKIAYUXNO2AH56LUSVWR&Signature=fsznyQILyUJduOQwM6%2F7cP1v3X8%3D&Expires=1635149204",
-                  "file_type": "NATIONAL_ID_FRONT"
-              }
-          ]
-      },
-      "driving_license": null,
-      "passport": null,
-      "missing_verified_documents": [],
-      "status": "SUCCESS"
-    }  
-    </code></pre>
-      </div>
-    </div>
+    <code>
+      <tree-view
+        :data="status_response"
+        :options="{ maxDepth: 1, rootObjectKey: 'response' }"
+      ></tree-view>
+    </code>
     <p>You are not required to store any of these, just what suits you best.</p>
     <h3>
       5. (Optional, for better UX) Backend: Webhook to get notifications after
@@ -218,87 +155,10 @@
       will only need to create a POST endpoint that our backend will call with
       this body:
     </p>
-    <div class="accordion__wrapper" :class="{ active: pa_webhook.active }">
-      <div
-        class="accordion__title"
-        @click="pa_webhook.active = !pa_webhook.active"
-      >
-        <b>Body:</b>
-      </div>
-      <div class="accordion__content">
-        <pre><code>
-      {
-        "processing_attempt": {
-          "owner_company_app_id": "1",
-          "status": "SUCCESS",
-          "created_at": "2021-10-08T14:05:27.021579+00:00",
-          "updated_at": "2021-10-08T14:05:31.137874+00:00",
-          "manual_review_status": null,
-          "owner_user": {
-            "city": null,
-            "national_id_id": null,
-            "driving_license_id": null,
-            "nationality": null,
-            "birth_date": null,
-            "passport_id": null,
-            "email": "4af265ab-af27-43e8-b936-95e27dc377eb@siltapp.com",
-            "first_name": null,
-            "last_name": null,
-            "id": "c30fd54c-1e1f-40a5-9fcb-5a7446242dc9",
-            "sex": null,
-            "country": null,
-            "address": null
-          },
-          "core_module_executions": [
-            {
-              "status": "SUCCESS",
-              "errors": [],
-              "output": {
-                "sex": "M",
-                "city": "BARCELONA",
-                "name": "MARC",
-                "number": "44556677A",
-                "address": "PLAZA CATALUÑA 1",
-                "country": "ESP",
-                "surname": "PEREZ MARTI",
-                "birth_date": "1970-09-18",
-                "issue_date": null,
-                "nationality": "ESP",
-                "license_types": null,
-                "expiration_date": "2025-12-25"
-              },
-              "type": "OCR"
-            },
-            {
-              "status": "SUCCESS",
-              "errors": [],
-              "output": null,
-              "type": "FACE_MATCHER"
-            }
-          ],
-          "document_type": "NATIONAL_ID",
-          "id": "ba36b6c0-41ce-45c6-8015-4cc69c069de0",
-          "type": "USER_DOCUMENT_VERIFICATION"
-        },
-        "files": [
-          {
-            "type": "VERIFICATION_SELFIE",
-            "url": "https://pro-silt-resources.s3.amazonaws.com/resource-files/1a2b3c3d-7ea4-4243-9e71-7a883629e303.jpg?AWSAccessKeyId=AKIAY...&Signature=TRB43...&Expires=1633702231"
-          },
-          {
-            "type": "NATIONAL_ID_BACK",
-            "url": "https://pro-silt-resources.s3.amazonaws.com/resource-files/1a2b3c3d-a7ec-472f-9136-86d6a47ce4e6.jpg?AWSAccessKeyId=AKIAYU...&Signature=5J3xuCZm...&Expires=1633702231"
-          },
-          {
-            "type": "NATIONAL_ID_FRONT",
-            "url": "https://pro-silt-resources.s3.amazonaws.com/resource-files/1a2b3c3d-57b6-4d7c-a372-41be6c5df33a.jpg?AWSAccessKeyId=AKIAYUXN...&Signature=Zu8lquS5Y...&Expires=1633702231"
-          }
-        ],
-        "user_meta": {"abc":"123"}
-      }
-      </code></pre>
-      </div>
-    </div>
+    <code><tree-view
+      :data="webhook_response"
+      :options="{ maxDepth: 1, rootObjectKey: 'response' }"
+    ></tree-view></code>
   </div>
 </template>
 <script>
@@ -310,6 +170,208 @@ export default {
       apiDocUrl: "https://app.swaggerhub.com/apis-docs/Silt/Silt-API",
       user_status_accordion: { active: false },
       pa_webhook: { active: false },
+      status_response: {
+        country: "ESP",
+        city: "BARCELONA",
+        email: "8d481b57-37b3-4553-9797-40e845a19b92@siltapp.com",
+        id: "08cb1e24-25df-456e-b07b-db7f2fb929fe",
+        nationality: "ESP",
+        last_name: "PEREZ MARTI",
+        sex: "M",
+        first_name: "MARC",
+        address: "C. BALMES 123 ENT 04",
+        birth_date: "1982-09-18",
+        company_app_meta: { ibm_user_id: "123xxx" },
+        selfie: {
+          picture_validation_status: "SUCCESS",
+          created_at: "2021-10-25T08:00:16.986789+00:00",
+          file_url:
+            "https://...",
+          file_type: "VERIFICATION_SELFIE",
+        },
+        national_id: {
+          country: "ESP",
+          city: "BARCELONA",
+          created_at: "2021-10-25T08:00:22.614666+00:00",
+          id: "b1d3a4cd-6752-4f61-8b50-c1046295b447",
+          document_number: "47924635A",
+          expiration_date: "2023-08-02",
+          nationality: "ESP",
+          issue_date: null,
+          last_name: "PEREZ MARTI",
+          license_types: null,
+          sex: "M",
+          first_name: "MARC",
+          address: "C. BALMES 123 ENT 04",
+          updated_at: "2021-10-25T08:00:22.712704+00:00",
+          birth_date: "1982-09-18",
+          files: [
+            {
+              picture_validation_status: "SUCCESS",
+              created_at: "2021-10-25T08:00:05.878820+00:00",
+              file_url:
+                "https://...",
+              file_type: "NATIONAL_ID_BACK",
+            },
+            {
+              picture_validation_status: "SUCCESS",
+              created_at: "2021-10-25T07:59:39.698263+00:00",
+              file_url:
+                "https://...",
+              file_type: "NATIONAL_ID_FRONT",
+            },
+          ],
+        },
+        driving_license: null,
+        passport: null,
+        missing_verified_documents: [],
+        status: "SUCCESS",
+      },
+      webhook_response: {
+        user_meta: { ibm_user_id: "123xxx" },
+        user: {
+          id: "d79458d5-fa86-48e1-ae7c-19096d841e62",
+          sex: "M",
+          national_id: {
+            id: "ef61b392-846c-4b24-bf98-1537edfaf3c4",
+            updated_at: "2022-07-15T07:54:38.067665+00:00",
+            city: "BARCELONA",
+            last_name: "PEREZ MARTI",
+            issue_date: null,
+            nationality: "ESP",
+            sex: "M",
+            birth_date: "1982-09-18",
+            address: "C. BALMES 123 ENT 04",
+            license_types: null,
+            expiration_date: "2023-08-02",
+            document_number: "47924635A",
+            created_at: "2022-07-15T07:54:38.056249+00:00",
+            country: "ESP",
+            first_name: "MARC",
+            files: [
+              {
+                file_type: "NATIONAL_ID_BACK",
+                file_url:
+                  "https://...",
+                source: "USER",
+                picture_validation_status: "SUCCESS",
+                created_at: "2022-07-15T07:54:24.212803+00:00",
+              },
+              {
+                file_type: "NATIONAL_ID_FRONT",
+                file_url:
+                  "https://...",
+                source: "USER",
+                picture_validation_status: "SUCCESS",
+                created_at: "2022-07-15T07:54:16.028320+00:00",
+              },
+            ],
+          },
+          birth_date: "1982-09-18",
+          missing_verified_documents: [],
+          aml_info_updated_at: null,
+          first_name: "MARC",
+          pep_info_updated_at: null,
+          city: "BARCELONA",
+          passport: null,
+          status: "SUCCESS",
+          address: "C. BALMES 123 ENT 04",
+          freelance_documents: [],
+          selfie: {
+            file_type: "VERIFICATION_SELFIE",
+            file_url:
+              "https://...",
+            source: "USER",
+            picture_validation_status: "SUCCESS",
+            created_at: "2022-07-15T07:54:31.433336+00:00",
+          },
+          country: "ESP",
+          driving_license: null,
+          aml_info: null,
+          last_name: "PEREZ MARTI",
+          nationality: "ESP",
+          pep_info: null,
+          email: "a47f8b1b-6a2c-455f-b54d-cbc70d61e80c@siltapp.com",
+          company_app_meta: { ibm_user_id: "123xxx" },
+          permissions: ["NATIONAL_ID"],
+        },
+        status: "SUCCESS",
+        processing_attempt: {
+          id: "0dc5c39a-8963-4190-b1c4-cee86b19a756",
+          updated_at: "2022-07-15T07:54:38.074626+00:00",
+          status: "SUCCESS",
+          core_module_executions: [
+            {
+              output: null,
+              status: "SUCCESS",
+              type: "FACE_MATCHER",
+              errors: [],
+            },
+            {
+              output: {
+                sex: "M",
+                city: "BARCELONA",
+                name: "MARC",
+                number: "47924635A",
+                address: "C. BALMES 123 ENT 04",
+                country: "ESP",
+                surname: "PEREZ MARTI",
+                province: "9H8",
+                birth_date: "1982-09-18",
+                issue_date: "2018-08-02",
+                nationality: "ESP",
+                license_types: null,
+                expiration_date: "2023-08-02",
+              },
+              status: "SUCCESS",
+              type: "OCR",
+              errors: [],
+            },
+          ],
+          type: "USER_DOCUMENT_VERIFICATION",
+          permission_type: "NATIONAL_ID",
+          document_type: "NATIONAL_ID",
+          owner_company_app_id: "1",
+          manual_review_status: null,
+          created_at: "2022-07-15T07:54:32.720065+00:00",
+          owner_user: {
+            id: "d72454d5-fa86-48e1-ae7c-19096d841e62",
+            city: "BARCELONA",
+            last_name: "PEREZ MARTI",
+            driving_license_id: null,
+            passport_id: null,
+            nationality: "ESP",
+            sex: "M",
+            aml_info: null,
+            birth_date: "1982-09-18",
+            address: "C. BALMES 123 ENT 04",
+            pep_info: null,
+            aml_info_updated_at: null,
+            email: "a47f8b1b-6a2c-455f-b54d-cbc70d61e80c@siltapp.com",
+            national_id_id: "ef61b392-846c-4b24-bf98-1247fdfaa3c4",
+            country: "ESP",
+            first_name: "MARC",
+            pep_info_updated_at: null,
+          },
+        },
+        manual_review_status: null,
+        token: "53435829-cf79-43df-as9f-b4ca994e30de",
+        files: [
+          {
+            type: "VERIFICATION_SELFIE",
+            url: "https://...",
+          },
+          {
+            type: "NATIONAL_ID_BACK",
+            url: "https://...",
+          },
+          {
+            type: "NATIONAL_ID_FRONT",
+            url: "https://...",
+          },
+        ],
+        user_id: "d79458d5-fa86-48e1-ae7c-42196f841a43",
+      },
     };
   },
   methods: {
@@ -319,3 +381,14 @@ export default {
   },
 };
 </script>
+<style>
+.tree-view-item-value-number {
+  color: green;
+}
+.tree-view-item-value-string {
+  color: blue;
+}
+.tree-view-item-value-boolean {
+  color: violet;
+}
+</style>
