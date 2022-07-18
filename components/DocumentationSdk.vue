@@ -130,7 +130,7 @@
       <code>national_id | passport | driving_license</code> objects to retreive
       the data extracted from the documents.
     </p>
-    <code>
+    <code class="code-block">
       <tree-view
         :data="status_response"
         :options="{ maxDepth: 1, rootObjectKey: 'response' }"
@@ -155,7 +155,7 @@
       will only need to create a POST endpoint that our backend will call with
       this body:
     </p>
-    <code><tree-view
+    <code class="code-block"><tree-view
       :data="webhook_response"
       :options="{ maxDepth: 1, rootObjectKey: 'response' }"
     ></tree-view></code>
