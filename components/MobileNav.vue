@@ -56,6 +56,14 @@
       >
         {{ $t("nav_link_pricing") }}
       </nuxt-link>
+       <a
+        target="blank"
+        class="dropdown-wrap__content"
+        href="https://blog.getsilt.com"
+        @click.native="onCloseNav()"
+      >
+        Blog
+      </a>
       <nuxt-link
         class="dropdown-wrap__content demo-button"
         :to="localePath({ name: 'demo' })"

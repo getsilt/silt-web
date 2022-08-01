@@ -21,6 +21,14 @@
           </nuxt-link>
         </li>
         <template slot="after-nav">
+          <li class="vsm-section vsm-section_menu vsm-mob-hide">
+            <a
+              target="blank"
+              href="https://blog.getsilt.com"
+              @click.native="onCloseNav()"
+              ><button class="vsm-link">Blog</button>
+            </a>
+          </li>
           <nuxt-link
             class="demo-button"
             :to="localePath({ name: 'demo' })"
@@ -30,7 +38,7 @@
           </nuxt-link>
           <!--Display mobile menu-->
           <vsm-mob ref="menumov">
-            <mobile-nav @onCloseNav="closeNav()"/>
+            <mobile-nav @onCloseNav="closeNav()" />
           </vsm-mob>
         </template>
       </vsm-menu>
@@ -68,7 +76,7 @@ export default {
   },
   methods: {
     closeNav() {
-      this.$refs["menumov"].closeDropdown()
+      this.$refs["menumov"].closeDropdown();
     },
   },
 };
