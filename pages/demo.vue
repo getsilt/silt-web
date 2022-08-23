@@ -150,7 +150,7 @@ export default {
   methods: {
     emailHasErrors(email) {
       if (
-        /^[a-zA-Z0-9_.+-]+@(?!(gmail|yahoo|hotmail|outlook|getsilt|siltapp|asdf))[a-zA-Z]{2,6}.*\.[a-zA-Z]{2,6}$/.test(
+        /^[a-zA-Z0-9_.+-]+@(?!(gmail|yahoo|hotmail|outlook|getsilt|siltapp|asdf))[a-zA-Z]{2,6}.*\.[a-zA-Z]{2,9}$/.test(
           email
         )
       ) {
