@@ -60,14 +60,14 @@
         target="blank"
         class="dropdown-wrap__content"
         href="https://blog.getsilt.com"
-        @click.native="onCloseNav()"
+        @click="onCloseNav()"
       >
         Blog
       </a>
       <nuxt-link
         class="dropdown-wrap__content demo-button"
         :to="localePath({ name: 'demo' })"
-        @click.native="onCloseNav()"
+        @click="onCloseNav()"
       >
         <button class="small">{{ $t("btn_cta_navBar_demo") }}</button>
       </nuxt-link>

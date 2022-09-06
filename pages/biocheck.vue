@@ -3,13 +3,13 @@
     <!-- CLAIMS -->
     <section class="claim-container">
       <div class="claim-info">
-        <h1 class="title" v-html="$t('biocheck_claim1')">{{$t("biocheck_claim1")}}</h1>
+        <h1 class="title" v-html="$t('biocheck_claim1')">
+          {{ $t("biocheck_claim1") }}
+        </h1>
         <h4 class="subtitle" v-html="$t('biocheck_claim2')">
           {{ $t("biocheck_claim2") }}
         </h4>
-         <nuxt-link :to="localePath({ name: 'demo' })">
-          <button>{{ $t("btn_cta_demo") }}</button>
-        </nuxt-link>
+        <demo-buttons />
       </div>
       <div class="claim-side-img screenshots-container">
         <div class="">
@@ -60,10 +60,8 @@
             </h3>
             <p v-html="$t('biocheck_solution_content')">
               {{ $t("biocheck_solution_content") }}
-            </p> 
-            <nuxt-link :to="localePath({ name: 'demo' })">
-          <button>{{ $t("btn_cta_demo") }}</button>
-        </nuxt-link>
+            </p>
+            <demo-buttons />
           </div>
         </div>
       </div>
@@ -73,7 +71,9 @@
 
 <script>
 import gsap from "gsap";
+import DemoButtons from "../components/DemoButtons.vue";
 export default {
+  components: { DemoButtons },
   data() {
     return {
       email: "hello@getsilt.com",
@@ -87,10 +87,7 @@ export default {
       return this.email;
     },
     startFirstAnimationScene: (_this) => {
-      const sections = [
-        "#problem",
-        "#solution",
-      ];
+      const sections = ["#problem", "#solution"];
       let tm = {};
       for (let section of sections) {
         const tl = gsap.timeline({
@@ -134,5 +131,4 @@ export default {
 .claim-info-wrapper.differences
   display: flex
   align-items: center
-
 </style>

@@ -25,7 +25,7 @@
             <a
               target="blank"
               href="https://blog.getsilt.com"
-              @click.native="onCloseNav()"
+              @click="onCloseNav()"
               ><button class="vsm-link">Blog</button>
             </a>
           </li>

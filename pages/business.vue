@@ -10,9 +10,7 @@
         <h4 class="subtitle" v-html="$t('business_claim2')">
           {{ $t("business_claim2") }}
         </h4>
-        <nuxt-link :to="localePath({ name: 'demo' })">
-          <button>{{ $t("btn_cta_demo") }}</button>
-        </nuxt-link>
+        <demo-buttons />
       </div>
       <div class="claim-side-img screenshots-container">
         <div class="screenshot-container">
@@ -100,9 +98,7 @@
             <!-- <p v-html="$t('business_differences_technology_content')">
                {{ $t("business_differences_technology_content") }}
             </p> -->
-            <nuxt-link :to="localePath({ name: 'demo' })">
-              <button>{{ $t("btn_cta_demo") }}</button>
-            </nuxt-link>
+            <demo-buttons />
           </div>
         </div>
       </div>
@@ -218,9 +214,7 @@
                   $t('business_differences_assistedPictureQuality_content2')
                 "
               ></p>
-              <nuxt-link :to="localePath({ name: 'demo' })">
-                <button>{{ $t("btn_cta_demo") }}</button>
-              </nuxt-link>
+              <demo-buttons />
             </div>
           </div>
         </div>
@@ -279,9 +273,7 @@
             <p>
               {{ $t("business_highlights_countries_content") }}
             </p>
-            <nuxt-link :to="localePath({ name: 'demo' })">
-              <button>{{ $t("btn_cta_demo") }}</button>
-            </nuxt-link>
+            <demo-buttons />
           </div>
         </div>
         <div class="claim-side-img">
@@ -311,15 +303,15 @@
           <h4>{{ $t(usecase.title) }}</h4>
         </div>
       </div>
-      <nuxt-link :to="localePath({ name: 'demo' })">
-        <button>{{ $t("btn_cta_demo") }}</button>
-      </nuxt-link>
+      <demo-buttons />
     </section>
   </div>
 </template>
 
 <script>
+
 import gsap from "gsap";
+import DemoButtons from '../components/DemoButtons.vue';
 export default {
   nuxtI18n: {
     paths: {
@@ -327,34 +319,26 @@ export default {
       es: "/",
     },
   },
+  components: {DemoButtons},
   head() {
     const i18nSeo = this.$nuxtI18nHead();
     return {
       title: this.$t("nav_feature_kyc"),
       meta: [
         {
-          hid:
-            "description",
-          name:
-            "description",
-          content:
-            this.$t("business_claim2"),
+          hid: "description",
+          name: "description",
+          content: this.$t("business_claim2"),
         },
         {
-          hid:
-            "og:description",
-          name:
-            "og:description",
-          content:
-            this.$t("business_claim2"),
+          hid: "og:description",
+          name: "og:description",
+          content: this.$t("business_claim2"),
         },
         {
-          hid:
-            "og:title",
-          name:
-            "og:title",
-          content:
-            this.$t("nav_feature_kyc"),
+          hid: "og:title",
+          name: "og:title",
+          content: this.$t("nav_feature_kyc"),
         },
       ],
     };
@@ -613,4 +597,5 @@ export default {
 .claim-info-wrapper.differences
   display: flex
   align-items: center
+
 </style>

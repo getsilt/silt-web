@@ -7,9 +7,7 @@
         <h4 class="subtitle" v-html="$t('kyb_claim2')">
           {{ $t("kyb_claim2") }}
         </h4>
-        <nuxt-link :to="localePath({ name: 'demo' })">
-          <button>{{ $t("btn_cta_demo") }}</button>
-        </nuxt-link>
+        <demo-buttons />
       </div>
       <div class="claim-side-img screenshots-container">
         <div class="">
@@ -85,9 +83,7 @@
             <p>
               <b>{{ $t("kyb_solution_compliant") }}</b>
             </p>
-            <nuxt-link :to="localePath({ name: 'demo' })">
-              <button>{{ $t("btn_cta_demo") }}</button>
-            </nuxt-link>
+            <demo-buttons />
           </div>
         </div>
       </div>
@@ -96,8 +92,10 @@
 </template>
 
 <script>
+import DemoButtons from "../components/DemoButtons.vue";
 import gsap from "gsap";
 export default {
+  components: {DemoButtons},
   nuxtI18n: {
     paths: {
       en: "/kyb-company-and-freelancer-verification",
