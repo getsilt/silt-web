@@ -29,6 +29,14 @@
               ><button class="vsm-link">Blog</button>
             </a>
           </li>
+          <li class="vsm-section vsm-section_menu vsm-mob-hide">
+            <nuxt-link
+              :to="localePath({ name: 'developers' })"
+              @click.native="closeNav()"
+            >
+              Developers
+            </nuxt-link>
+          </li>
           <nuxt-link
             class="demo-button"
             :to="localePath({ name: 'demo' })"

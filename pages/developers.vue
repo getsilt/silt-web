@@ -1,5 +1,5 @@
 <template>
-  <section class="page-side-nav">
+  <section class="developers page-side-nav">
     <nav>
       <a
         @click="activeSection = 'sdk'"
@@ -22,7 +22,7 @@ import DocumentationSdk from "~/components/DocumentationSdk.vue";
 export default {
   components: {
     DocumentationApi,
-    DocumentationSdk
+    DocumentationSdk,
   },
   nuxtI18n: {
     paths: {
@@ -37,18 +37,14 @@ export default {
       title: "SDK & API Integration with Silt Digital ID & KYC",
       meta: [
         {
-          hid:
-            "description",
-          name:
-            "description",
+          hid: "description",
+          name: "description",
           content:
             "Integrate with you app in a few minutes with the SDK, or create your own KYC experience with the API.",
         },
         {
-          hid:
-            "og:title",
-          name:
-            "og:title",
+          hid: "og:title",
+          name: "og:title",
           content:
             "Integrate with you app in a few minutes with the SDK, or create your own KYC experience with the API.",
         },
@@ -70,3 +66,22 @@ export default {
   },
 };
 </script>
+
+<style lang="sass" >
+@import "@/assets/sass/vars.sass"
+.developers
+  font-size: 1rem
+
+  td
+    padding: $spacing-sm
+    padding-bottom: $spacing-md
+
+  tr
+    &>*:not(first-child)
+      padding-left: $spacing-sm
+      vertical-align: baseline
+  th
+    text-align: left
+    color: #333
+    font-family: $font-bold
+</style>

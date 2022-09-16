@@ -68,19 +68,98 @@
       query params.
     </p>
 
-    <p class="banner-info">
-      To improve user experience, you can provide the user email through the
-      parameter: <code>?user_email=test@getsilt.com</code>.<br />
-      This will prefill the email field, and remind them that they can skip the
-      process if they have already verified in Silt.
-    </p>
-
     <p>
-      You can also provide meta info through the object meta:
-      <code>?meta={"abc":"123"}</code>. This will be stored in our servers and
-      we will provide it back to you so you can reference it when is needed. It
-      can be for example your internal user id.
+      Here you can see a list of available query parameters.
     </p>
+    <table>
+    <thead>
+      <tr>
+        <th>
+          Query param key
+        </th>
+        <th>
+          Value type
+        </th>
+        <th>
+          Description
+        </th>
+      </tr>
+    </thead>
+    <tr>
+      <th>
+       <code>company_app_id</code>
+      </th>
+      <td>
+        String (Required)
+      </td>
+      <td>
+        Mandatory field to get the configuration of the company app. Create your company app now from the dashboard.getsilt.com.
+        <br />Ex: <code>&company_app_id=c11d1782-bcdc-4854-b5c9-32fd160fba8b</code>
+      </td>
+    </tr>
+     <tr>
+      <th>
+       <code>customer_user_id</code>
+      </th>
+      <td>
+        String (Optional) 
+      </td>
+      <td>
+        This can be your internal user id, the one in your database. This field can be useful to track which user got verified when you receive a webhook.
+        You can also search by this field in the dashboard.getsilt.com.
+        <br />Ex: <code>&customer_user_id=172345</code>
+      </td>
+    </tr>
+    <tr>
+      <th>
+       <code>user_email</code>
+      </th>
+      <td>
+        String (Optional) 
+      </td>
+      <td>
+        Used to prefill the email field in the signup screens. If the user already has a Silt account, he will be prompt to be able to skip taking pictures of the Id we already have.
+        <br />Ex: <code>&user_email=steve@apple.com</code>
+      </td>
+    </tr>
+    <tr>
+      <th>
+       <code>meta</code>
+      </th>
+      <td>
+        JSON (Optional) 
+      </td>
+      <td>
+        You can use this field to store information a silt user that you will receive whenever a webhook is sent or in GET /status. Similar to customer_user_id, but without search option.
+        <br />Ex: <code>&meta={"abc":"123", "grumpy_cat": "miao"}</code>
+        There is no need to encode the url. 
+      </td>
+    </tr>
+    <tr>
+      <th>
+       <code>hide_redirect_button</code>
+      </th>
+      <td>
+        Boolean (Optional) 
+      </td>
+      <td>
+        Used to hide the button of the success screen. Some customers use it in the iframe integration.
+        <br />Ex: <code>&hide_redirect_button=true</code>
+      </td>
+    </tr>
+    <tr>
+      <th>
+       <code>hide_manual_review</code>
+      </th>
+      <td>
+        Boolean (Optional) 
+      </td>
+      <td>
+        Not recomended. This option hides the option of sending a document to manual review.
+        <br />Ex: <code>&hide_manual_review=true</code>
+      </td>
+    </tr>
+    </table>
 
     <h3>3.1. Frontend: Send silt_user_id & company_app_token to your BE</h3>
     <p>
