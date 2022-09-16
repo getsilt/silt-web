@@ -100,16 +100,17 @@
       <a :href="`${apiDocUrl}`">detailed documentation</a>
       for this endpoint.
     </p>
-    <h3>4.1. Frontend: Send silt_user_id & company_app_token to your BE</h3>
+    <h3>3. Store silt_user_id</h3>
+    <h4>4.1. Frontend: Send silt_user_id & company_app_token to your BE</h4>
     <p>
       Make the POST request to your own backend described in step 4. This
       request requires as parameters <code>silt_user_id</code> &
       <code>company_app_token</code>.
     </p>
-    <h3>
+    <h4>
       4.2. Backend: Create an endpoint to receive silt_user_id &
       company_app_token from your FE
-    </h3>
+    </h4>
     <p>
       Create a backend endpoint to receive the silt_user_id and
       company_app_token (as described in step 3). After receiving this, you have
@@ -120,7 +121,7 @@
       Store <code>silt_user_id</code> to your database so you can easily
       reference the verification status at any time.
     </p>
-    <h3>5. Send the pictures individually</h3>
+    <h3>5. Send the pictures</h3>
     <p>
       Make a POST to <code>/v1/files/</code> for each file of the doc providing
       the following body:
@@ -415,8 +416,7 @@
       }
     </code></pre> -->
     <h3>
-      8. (Optional, for better UX) Backend: Webhook to get notifications after
-      user status update
+      8. (Optional) Backend: Webhook to get user status updates
     </h3>
     <p>
       When the status of a document of a user is created or updated, we can

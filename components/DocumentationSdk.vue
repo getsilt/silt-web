@@ -160,17 +160,16 @@
       </td>
     </tr>
     </table>
-
-    <h3>3.1. Frontend: Send silt_user_id & company_app_token to your BE</h3>
+    <h3>3. Store silt_user_id</h3>
+    <h4>3.1. Frontend: Send silt_user_id to your BE</h4>
     <p>
       Make the POST request to your own backend described in step 4. This
       request requires as parameters <code>silt_user_id</code> &
       <code>company_app_token</code>.
     </p>
-    <h3>
-      3.2. Backend: Create an endpoint to receive silt_user_id &
-      company_app_token from your FE
-    </h3>
+    <h4>
+      3.2. Backend: Create an endpoint to receive silt_user_id from your FE
+    </h4>
     <p>
       Create a backend endpoint to receive the silt_user_id and
       company_app_token (as described in step 3). After receiving this, you have
