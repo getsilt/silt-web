@@ -176,50 +176,50 @@ export default {
 @import '@/assets/sass/vars.sass'
 
 @media (max-width: 768px)
-  .section-headers
-    padding: $spacing-lg
+	.section-headers
+		padding: $spacing-lg
 
 .pricing-plans_container
-  display: flex
-  justify-content: center
-  flex-wrap: wrap
-  width: 100%
-  .pricing-plan
-    flex: 0 1 auto
-    border-radius: $radius-md
-    padding: $spacing-lg
-    margin: 2%
-    max-width: 380px
-    h2,h3,h4,h5,h6
-      margin-top: 1rem
-      margin-bottom: 0.5rem
-    &_price
-      h6
-        margin-top: 0
-      span
-        font-size: 36px
-        line-height: 52px
-        font-family: $font-bold
-        color: #333333
-      p
-        color: $color-grey-lighten-1
-        margin: $spacing-sm 0 $spacing-md 0
-        text-align: left
-    .button__wrapper
-      text-align: left
-      button
-        margin: auto
-        margin-top: $spacing-md
-        width: 100%
+	display: flex
+	justify-content: center
+	flex-wrap: wrap
+	width: 100%
+	.pricing-plan
+		flex: 0 1 auto
+		border-radius: $radius-md
+		padding: $spacing-lg
+		margin: 2%
+		max-width: 380px
+		h2,h3,h4,h5,h6
+			margin-top: 1rem
+			margin-bottom: 0.5rem
+			&_price
+				h6
+					margin-top: 0
+				span
+					font-size: 36px
+					line-height: 52px
+					font-family: $font-bold
+					color: #333333
+				p
+					color: $color-grey-lighten-1
+					margin: $spacing-sm 0 $spacing-md 0
+					text-align: left
+			.button__wrapper
+				text-align: left
+			button
+				margin: auto
+				margin-top: $spacing-md
+				width: 100%
 
-.pricing-plan:last-child,
-  background: $color-grey-lighten-3
-.pepaml, .checklist,
-  max-width: 500px
-  text-align: left
-  font-size: 0.9rem
-  color: $color-grey-lighten-1
+.pricing-plan:last-child
+	background: $color-grey-lighten-3
+.pepaml, .checklist
+	max-width: 500px
+	text-align: left
+	font-size: 0.9rem
+	color: $color-grey-lighten-1
 
 .checklist
-  padding-left: 0
+	padding-left: 0
 </style>
