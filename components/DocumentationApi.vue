@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>API INTEGRATION</h2>
+    <h2>API Integration</h2>
     <p>
       This flow explains the basic integration with Silt's API. It guides you
       through a step by step of the endpoints you need to verify a user. You can

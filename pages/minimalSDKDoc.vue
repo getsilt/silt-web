@@ -1,33 +1,19 @@
 <template>
-  <section class="developers page-side-nav">
-    <nav>
-      <a
-        @click="activeSection = 'sdk'"
-        :class="{ active: activeSection === 'sdk' }"
-        >SDK Integration</a
-      >
-      <a
-        @click="activeSection = 'api'"
-        :class="{ active: activeSection === 'api' }"
-        >API Integration</a
-      >
-    </nav>
-    <DocumentationSdk v-if="activeSection === 'sdk'" />
-    <DocumentationApi v-if="activeSection === 'api'" />
+  <section class="developers-minimal">
+    <DocumentationSdk />
   </section>
 </template>
 <script>
-import DocumentationApi from "~/components/DocumentationApi.vue";
 import DocumentationSdk from "~/components/DocumentationSdk.vue";
 export default {
   components: {
-    DocumentationApi,
     DocumentationSdk,
   },
+  layout: 'minimalDoc',
   nuxtI18n: {
     paths: {
-      en: "/developers", // -> accessible at /about-us (no prefix since it's the default locale)
-      es: "/developers", // -> accessible at /es/sobre
+      en: "/minimal-sdk-documentation", // -> accessible at /about-us (no prefix since it's the default locale)
+      es: "/minimal-sdk-documentation", // -> accessible at /es/sobre
     },
   },
   head() {
@@ -53,25 +39,16 @@ export default {
   data() {
     return {
       siltEmail: "hello@getsilt.com",
-      activeSection: "sdk",
       activeTab: "ios",
       apiDocUrl: "https://app.swaggerhub.com/apis-docs/Silt/Silt-API/1.0.1",
     };
   },
-  methods: {
-    activateTab(tab) {
-      this.activeTab = tab;
-    },
-  },
-  created() {
-    if(this.$router.currentRoute.query.minimal === true) this.minimal = true;
-  }
 };
 </script>
 
 <style lang="sass" >
 @import "@/assets/sass/vars.sass"
-.developers
+section.developers-minimal
   font-size: 1rem
 
   td

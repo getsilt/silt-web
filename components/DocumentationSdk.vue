@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>SDK INTEGRATION</h2>
+    <h2>SDK Integration</h2>
     <h3>1. Email us: Get your company app Id</h3>
     <p>
       Request your <code>company_app_id</code> to the Silt Team at the email
