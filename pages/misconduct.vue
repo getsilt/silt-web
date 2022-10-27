@@ -75,10 +75,6 @@ export default {
 
 <style lang="sass" scoped>
 @import "@/assets/sass/vars.sass"
-.scan-icon
-  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%232963FFFF' stroke-width='7' stroke-dasharray='50%25%2c 50%25' stroke-dashoffset='14' stroke-linecap='butt'/%3e%3c/svg%3e")
-  padding: 10px
-  font-size: 25px
 
 .claim-container .claim-side-img.diagram
   margin: 0
@@ -91,7 +87,4 @@ export default {
   min-width: 120px
   max-width: 240px
   box-shadow: $box-shadow-1
-.claim-info-wrapper.differences
-  display: flex
-  align-items: center
 </style>
