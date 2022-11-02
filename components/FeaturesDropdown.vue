@@ -19,6 +19,14 @@
           <i class="fad fa-lg fa-bolt scan-icon" />
           {{ $t("nav_feature_digital_id") }}
         </nuxt-link>
+         <nuxt-link
+          class="dropdown-wrap__content type1"
+          :to="localePath({ name: 'misconduct' })"
+          @click.native="$emit('onCloseNav')"
+        >
+          <i class="fad fa-lg fa-badge-sheriff scan-icon" />
+          {{ $t("nav_feature_misconduct") }}
+        </nuxt-link>
       </div>
     </div>
     <div>
@@ -31,14 +39,6 @@
         >
           <i class="fad fa-lg fa-head-side scan-icon" />
           {{ $t("nav_feature_biocheck") }}
-        </nuxt-link>
-        <nuxt-link
-          class="dropdown-wrap__content type1"
-          :to="localePath({ name: 'misconduct' })"
-          @click.native="$emit('onCloseNav')"
-        >
-          <i class="fad fa-lg fa-badge-sheriff scan-icon" />
-          {{ $t("nav_feature_misconduct") }}
         </nuxt-link>
         <nuxt-link
           class="dropdown-wrap__content type1"
