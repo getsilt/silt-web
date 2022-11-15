@@ -1,6 +1,6 @@
 <template>
   <div class="demo_cta__wrapper">
-    <a href="https://dashboard.getsilt.com/welcome">
+    <a target="_blank" href="https://dashboard.getsilt.com/welcome">
       <button>{{ $t("btn_cta_demo") }}</button>
     </a>
     <a
