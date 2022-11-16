@@ -20,59 +20,12 @@
         >
       </div>
       <div class="claim-info right">
-        <div class="card card--w-md">
-          <h4>{{ $t("demo_form_title") }}</h4>
-          <form id="form" ref="demoForm" @submit.prevent class="form--vertical">
-            <label for="company_name">{{
-              $t("demo_form_companyName_label")
-            }}</label>
-            <input
-              :placeholder="$t('demo_form_companyName_placeholder')"
-              type="text"
-              name="company_name"
-              required
-              v-model="company_name"
-            />
-            <label for="country">{{ $t("demo_form_country_label") }}</label>
-            <input
-              :placeholder="$t('demo_form_country_placeholder')"
-              type="text"
-              name="country"
-              required
-              v-model="country"
-            />
-            <label for="email">{{ $t("demo_form_email_label") }}</label>
-            <input
-              :placeholder="$t('demo_email_company_placeholder')"
-              type="email"
-              name="email"
-              required
-              v-model="email"
-            />
-            <span
-              :class="{ hidden: !(emailErrors && email) }"
-              class="validation-error error"
-            >
-              {{ $t("demo_email_error_company") }}
-            </span>
-            <button
-              :disabled="
-                status === 'loading' || !country || !email || !company_name
-              "
-              class="submit g-recaptcha"
-              @click="onSubmitClick($event)"
-            >
-              {{ $t(`demo_form_submit`) }}
-              <i class="arrow"></i>
-            </button>
-            <div id="recaptcha-container"></div>
-            <span
-              v-if="status !== 'unsent'"
-              class="email-response"
-              :class="status"
-              >{{ $t(`emailResponse_${status}`) }}</span
-            >
-          </form>
+        <div id="meetzy-engine">
+          <component
+            :is="'script'"
+            src="https://engine.meetzy.io/meetzy.js"
+            token="3dfd0d2hgymu"
+          ></component>
         </div>
       </div>
     </section>
@@ -133,15 +86,6 @@ export default {
     emailErrors() {
       return this.emailHasErrors(this.email);
     },
-  },
-  data() {
-    return {
-      siltEmail: "hello@getsilt.com",
-      email: "",
-      country: "",
-      company_name: "",
-      status: "unsent",
-    };
   },
   mounted() {
     grecaptcha.ready(() => {

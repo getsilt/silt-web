@@ -25,11 +25,7 @@
           {{ $t("business_pricing_minimum", { amount: "0€" }) }}
         </p>
         <p class="pepaml hint">{{ $t("business_pricing_PEPAML") }}</p>
-        <a :href="`mailto:${getEmail()}`" target="_blank">
-          <div class="button__wrapper">
-            <button class="medium">{{ $t("global_contactUs") }}</button>
-          </div>
-        </a>
+        <demo-buttons class="vertical"/>
       </div>
       <!-- PAYED -->
       <div class="pricing-plan">
@@ -55,12 +51,7 @@
           {{ $t("business_pricing_minimum", { amount: "70€" }) }}
         </p>
         <p class="pepaml hint">{{ $t("business_pricing_PEPAML") }}</p>
-        <a :href="`mailto:${getEmail()}`" target="_blank">
-          <div class="button__wrapper">
-            <button>{{ $t("global_contactUs") }}</button>
-          </div>
-        </a>
-        
+        <demo-buttons class="vertical"/>
       </div>
       <!-- PREMIUM -->
       <div class="pricing-plan">
@@ -81,19 +72,28 @@
           {{ $t("business_pricing_minimum", { amount: "500€" }) }}
         </p>
         <p class="pepaml hint">{{ $t("business_pricing_PEPAML") }}</p>
-        <a :href="`mailto:${getEmail()}`" target="_blank">
-          <div class="button__wrapper">
+        <div class="demo_cta__wrapper vertical">
+          <a :href="`mailto:${getEmail()}`" target="_blank">
             <button>{{ $t("global_contactUs") }}</button>
-          </div>
-        </a>
+          </a>
+          <a
+            target="_blank"
+            class="bold-link demo-link"
+            href="https://app.meetzy.io/preview/3dfd0d2hgymu"
+            >
+            {{ $t("btn_cta_book_demo") }}
+          </a>
+        </div>
       </div>
     </div>
   </div>
 </template>
 <script>
+import DemoButtons from "../components/DemoButtons.vue";
 // Animate on scroll
 // var controllerHolder;
 export default {
+  components: { DemoButtons },
   nuxtI18n: {
     paths: {
       en: "/pricing", // -> accessible at / (no prefix since it's the default locale)
