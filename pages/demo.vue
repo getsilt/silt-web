@@ -12,12 +12,6 @@
           <i class="primary medium bg fad fa-bolt"></i>
           <h4 class="subtitle">{{ $t("demo_claim3") }}</h4>
         </div>
-        <a
-          target="_blank"
-          class="bold-link demo-link"
-          href="https://app.meetzy.io/preview/3dfd0d2hgymu"
-          >{{ $t("btn_cta_book_demo") }}</a
-        >
       </div>
       <div class="claim-info right">
         <div id="meetzy-engine">
