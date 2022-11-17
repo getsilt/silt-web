@@ -25,7 +25,7 @@
             :is="'script'"
             src="https://engine.meetzy.io/meetzy.js"
             token="3dfd0d2hgymu"
-          ></component>
+          />
         </div>
       </div>
     </section>
@@ -45,7 +45,6 @@ function gtag_report_conversion(url) {
   });
   return false;
 }
-import EmailApi from "@/lib/emailService";
 export default {
   nuxtI18n: {
     paths: {
@@ -82,126 +81,7 @@ export default {
       link: [...i18nSeo.link],
     };
   },
-  computed: {
-    emailErrors() {
-      return this.emailHasErrors(this.email);
-    },
-  },
-  methods: {
-    emailHasErrors(email) {
-      if (
-        /^[a-zA-Z0-9_.+-]+@(?!(gmail|yahoo|hotmail|outlook|getsilt|siltapp|asdf))[a-zA-Z]{2,6}.*\.[a-zA-Z]{2,9}$/.test(
-          email
-        )
-      ) {
-        return false;
-      }
-      return "demo_email_error_company";
-    },
-    getEmail() {
-      return this.siltEmail;
-    },
-    onSubmitClick(e) {
-      console.log("onSubmitClick");
-    },
-    onSubmit(e) {
-      console.log("onSubmit");
-      //e.preventDefault();
-      if (this.emailHasErrors(this.email)) return;
-      if (this.status === "loading") return;
-    },
-    async submitForm(token) {
-      //6Lfx2FgaAAAAAPiGduuGdvK9Ea2u5wonpACVBwEx
-      // const formElem = document.querySelector('form');
-      // const formData = new FormData()
-      // console.log(e.formData)
-      // console.dir(formElem)
-      // console.log(formData)
-      var userLang = navigator.language || navigator.userLanguage;
-      this.status = "loading";
-      try {
-        await EmailApi.sendEmail({
-          email: this.email,
-          company_name: this.company_name,
-          country: this.country,
-          subject: `Silt Demo request <> ${this.company_name}`,
-          userLang,
-          token: token,
-        });
-        gtag_report_conversion();
-        this.status = "success";
-      } catch (error) {
-        this.status = "error";
-      }
-    },
-  },
 };
 </script>
 
-<style lang="sass" scoped>
-@import "@/assets/sass/vars.sass"
-
-form
-  margin-top: $spacing-md
-  display: flex
-  flex-wrap: wrap
-  justify-content: center
-  align-self: stretch
-  &>*
-    flex: 1 1 auto
-
-  @media (min-width: 768px)
-    flex-wrap: nowrap
-    button
-      flex: 0 0 auto
-
-.email-response, .validation-error
-  margin: $spacing-sm 0
-  transition: 0.3s
-  &.unsent
-    opacity: 0
-
-  &.loading, &.error, &.success
-    opacity: 1
-
-  &.success
-    color: $color-accent
-
-  &.error
-    color: $color-error
-
-.validation-error
-  margin-top: -$spacing-md
-
-button.submit
-  .arrow
-    font-style: normal
-    position: relative
-    width: 16px
-    height: 16px
-    margin-left: $spacing-sm
-    &:after, &:before
-      transition: 0.2s ease-in-out
-      opacity: 1
-      transform: translateX(0%)
-      right: 0
-      position: absolute
-      font-family: 'Font Awesome 5 Duotone'
-    &:after
-      content: '\f061'
-      color: #ffffff
-    &:before
-      content: '\10f061'
-      color: rgba(#ffffff, 0.5)
-    &:not(.deactivated):hover
-      color: #ffffff
-      transition: 0.3s ease-in-out
-      &:after, &:before
-        transition: 0.2s ease-in-out
-        opacity: 1
-        transform: translateX(0%)
-  &:not(:disabled):hover
-    .arrow
-      &:after, &:before
-        transform: translateX(50%)
-</style>
+<style lang="sass" scoped></style>
