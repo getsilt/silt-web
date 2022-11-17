@@ -37,13 +37,11 @@
               Developers
             </nuxt-link>
           </li>
-          <nuxt-link
-            class="demo-button"
-            :to="localePath({ name: 'demo' })"
-            @click.native="closeNav()"
-          >
-            <button class="small">{{ $t("btn_cta_navBar_demo") }}</button>
-          </nuxt-link>
+          <a href="https://dashboard.getsilt.com/welcome">
+            <button class="demo-button small">
+              {{ $t("btn_cta_navBar_demo") }}
+            </button>
+          </a>
           <!--Display mobile menu-->
           <vsm-mob ref="menumov">
             <mobile-nav @onCloseNav="closeNav()" />
