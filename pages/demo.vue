@@ -87,16 +87,6 @@ export default {
       return this.emailHasErrors(this.email);
     },
   },
-  mounted() {
-    grecaptcha.ready(() => {
-      grecaptcha.render("recaptcha-container", {
-        sitekey: "6LfOjR8eAAAAAFchy9AAxyeS2STWAlWnz_v9ewRX",
-        size: "invisible",
-        callback: this.onSubmit,
-        "error-callback": this.onSubmit,
-      });
-    });
-  },
   methods: {
     emailHasErrors(email) {
       if (
@@ -113,22 +103,12 @@ export default {
     },
     onSubmitClick(e) {
       console.log("onSubmitClick");
-      grecaptcha.execute();
     },
     onSubmit(e) {
       console.log("onSubmit");
       //e.preventDefault();
       if (this.emailHasErrors(this.email)) return;
       if (this.status === "loading") return;
-      grecaptcha.ready(() => {
-        grecaptcha
-          .execute("6Lfx2FgaAAAAAPiGduuGdvK9Ea2u5wonpACVBwEx", {
-            action: "submit",
-          })
-          .then((token) => {
-            this.submitForm(e);
-          });
-      });
     },
     async submitForm(token) {
       //6Lfx2FgaAAAAAPiGduuGdvK9Ea2u5wonpACVBwEx
