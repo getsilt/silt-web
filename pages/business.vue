@@ -1,5 +1,14 @@
 <template>
   <div>
+    <div class="bg-shadow__wrapper">
+      <img
+        class="bg-shadow"
+        src="@/assets/img/illustrations/shadow.svg"
+        :alt="$t('seo_1')"
+        width="700"
+        height="500"
+      />
+    </div>
     <!-- CLAIMS -->
     <section class="claim-container">
       <div class="claim-info">
@@ -10,6 +19,7 @@
         <h4 class="subtitle" v-html="$t('business_claim2')">
           {{ $t("business_claim2") }}
         </h4>
+
         <demo-buttons />
       </div>
       <div class="claim-side-img screenshots-container">
@@ -309,9 +319,8 @@
 </template>
 
 <script>
-
 import gsap from "gsap";
-import DemoButtons from '../components/DemoButtons.vue';
+import DemoButtons from "../components/DemoButtons.vue";
 export default {
   nuxtI18n: {
     paths: {
@@ -319,7 +328,7 @@ export default {
       es: "/",
     },
   },
-  components: {DemoButtons},
+  components: { DemoButtons },
   head() {
     const i18nSeo = this.$nuxtI18nHead();
     return {
@@ -598,4 +607,15 @@ export default {
   display: flex
   align-items: center
 
+.bg-shadow__wrapper
+  position: absolute
+  z-index: -1
+  top: 0
+  right: 0
+
+  .bg-shadow
+    position: relative
+    width: 60vw
+    height: auto
+    margin: 0px
 </style>

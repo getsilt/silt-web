@@ -15,8 +15,7 @@
             <img
               src="@/assets/img/logo/silt_blue.svg"
               :alt="$t('silt_name')"
-              height="30"
-              width="56"
+              height="50"
             />
           </nuxt-link>
         </li>
@@ -95,17 +94,18 @@ export default {
 header
 	z-index: 999
 section
-	position: fixed
 	top: 0
 	left: 0
 	width: 100%
-	background: #fff
+	background: transparent
 	margin: 0
 	padding: 0
 	z-index: 9999999999
 	display: flex
 	justify-content: center
 	font-family: $font-body
+	margin-top: -40px
+
 .header-wrapper
 	margin: 0
 	padding: 0
