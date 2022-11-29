@@ -39,6 +39,7 @@ function gtag_report_conversion(url) {
   });
   return false;
 }
+
 export default {
   nuxtI18n: {
     paths: {
@@ -75,7 +76,15 @@ export default {
       link: [...i18nSeo.link],
     };
   },
+  created() {
+    this.addEventListener(
+      "meetzy-meeting-submitted",
+      (e) => {
+        console.log("Testing onSubmitMeetzyTwo", e.detail);
+        gtag_report_conversion();
+      },
+      false
+    );
+  },
 };
 </script>
-
-<style lang="sass" scoped></style>
