@@ -1,8 +1,8 @@
 <template>
   <div class="demo_cta__wrapper">
-    <nuxt-link :to="localePath({ name: 'demo' })">
+    <a target="_blank" href="https://dashboard.getsilt.com/welcome">
       <button>{{ $t("btn_cta_demo") }}</button>
-    </nuxt-link>
+    </a>
     <a
       target="_blank"
       class="bold-link demo-link"
@@ -16,5 +16,4 @@
 export default {};
 </script>
 
-<style>
-</style>
+<style></style>
