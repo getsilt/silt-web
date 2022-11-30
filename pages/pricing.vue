@@ -48,7 +48,7 @@
             </ul>
         </p>
         <p class="pricing-plan_upto">
-          {{ $t("business_pricing_minimum", { amount: "70€" }) }}
+          {{ $t("business_pricing_minimum", { amount: "49€" }) }}
         </p>
         <p class="pepaml hint">{{ $t("business_pricing_PEPAML") }}</p>
         <demo-buttons class="vertical"/>
