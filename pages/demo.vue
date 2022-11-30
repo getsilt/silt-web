@@ -76,15 +76,17 @@ export default {
       link: [...i18nSeo.link],
     };
   },
-  created() {
-    this.addEventListener(
-      "meetzy-meeting-submitted",
-      (e) => {
-        console.log("Testing onSubmitMeetzyTwo", e.detail);
-        gtag_report_conversion();
-      },
-      false
-    );
-  },
+
+  // TODO: Waiting for Meetzy
+  // created() {
+  //   this.addEventListener(
+  //     "meetzy-meeting-submitted",
+  //     (e) => {
+  //       console.log("Testing onSubmitMeetzyTwo", e.detail);
+  //       gtag_report_conversion();
+  //     },
+  //     false
+  //   );
+  // },
 };
 </script>
