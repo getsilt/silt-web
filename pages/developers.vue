@@ -14,7 +14,6 @@
 import DocumentationSdk from "~/components/DocumentationSdk.vue";
 export default {
   components: {
-    DocumentationApi,
     DocumentationSdk,
   },
   nuxtI18n: {
