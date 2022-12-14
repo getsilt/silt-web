@@ -12,7 +12,7 @@
               min="0"
               max="360"
               v-model="h"
-              @change="$emit('onChange', { h, s: '80%', l: '99%' })"
+              @change="$emit('onChange', { h, s: '90%', l: '50%' })"
             />
           </div>
         </div>
