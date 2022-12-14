@@ -305,13 +305,85 @@
       </div>
       <demo-buttons />
     </section>
+
+    <div class="fw-container--light">
+      <section class="claim-container">
+        <div class="section-headers">
+          <span class="tag">{{ $t("business_usecases_section") }}</span>
+          <h2>{{ $t("customization_guide_title") }}</h2>
+          <p>{{ $t("customization_guide_subtitle") }}</p>
+          <p>{{ $t("customization_guide_description") }}</p>
+        </div>
+        <div
+          class="section-information-wrapper customize-verification-flow-wrapper"
+        >
+          <div class="customize-verification-flow-wrapper__options">
+            <color-picker-slider @onChange="updateColor($event)" />
+            <div class="tabs-wrapper-bussiness vertical">
+              <h5 class="typography-heading">
+                {{ $t("customization_guide_font") }}
+              </h5>
+              <v-tab
+                activeTabName="roboto-slab"
+                @onActiveTabChange="activeTabName = $event"
+                :isSelected="activeTabName"
+                class="roboto-slab"
+              >
+                <p>Roboto Slab</p>
+              </v-tab>
+              <v-tab
+                activeTabName="comfortaa"
+                @onActiveTabChange="activeTabName = $event"
+                :isSelected="activeTabName"
+                class="comfortaa"
+              >
+                <p>Comfortaa</p>
+              </v-tab>
+              <v-tab
+                activeTabName="your-font"
+                @onActiveTabChange="activeTabName = $event"
+                :isSelected="activeTabName"
+                class="your-font"
+              >
+                <p>Your font</p>
+              </v-tab>
+            </div>
+          </div>
+          <div
+            v-show="activeTabName === 'roboto-slab'"
+            class="claim-side-img right screenshots-container"
+          >
+            <document-select
+              :color="`color: ${color}`"
+              :buttonStyle="`background-color: ${color}; font-family: Roboto`"
+              typography="font-family: Roboto"
+              :background="`background-color: ${backgroundColor}`"
+            />
+          </div>
+          <div
+            v-show="activeTabName === 'comfortaa'"
+            class="claim-side-img right screenshots-container"
+          >
+            <document-select
+              :color="`color: ${color}`"
+              :buttonStyle="`background-color: ${color}; font-family: Comfortaa`"
+              :background="`background-color: ${backgroundColor}`"
+              typography="font-family: Comfortaa"
+            />
+          </div>
+        </div>
+      </section>
+    </div>
   </div>
 </template>
 
 <script>
-
 import gsap from "gsap";
-import DemoButtons from '../components/DemoButtons.vue';
+import DemoButtons from "../components/DemoButtons.vue";
+import VTab from "../components/VTab.vue";
+import DocumentSelect from "../components/DocumentSelect.vue";
+import ColorPickerSlider from "../components/ColorPickerSlider.vue";
+
 export default {
   nuxtI18n: {
     paths: {
@@ -319,7 +391,7 @@ export default {
       es: "/",
     },
   },
-  components: {DemoButtons},
+  components: { DemoButtons, VTab, DocumentSelect, ColorPickerSlider },
   head() {
     const i18nSeo = this.$nuxtI18nHead();
     return {
@@ -477,6 +549,9 @@ export default {
           title: "business_usecases_contract",
         },
       ],
+      activeTabName: "roboto-slab",
+      color: "#2963ff",
+      backgroundColor: "#2963ff",
     };
   },
   mounted() {
@@ -485,6 +560,10 @@ export default {
   methods: {
     getEmail() {
       return this.email;
+    },
+    updateColor(event) {
+      this.color = `hsl(${event.h}, ${event.s}, ${event.l})`;
+      this.backgroundColor = `hsla(${event.h}, ${event.s}, ${event.l})`;
     },
     startFirstAnimationScene: (_this) => {
       const sections = [
@@ -582,6 +661,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+@import "@/assets/sass/vars.sass"
 .scan-icon
   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%232963FFFF' stroke-width='7' stroke-dasharray='50%25%2c 50%25' stroke-dashoffset='14' stroke-linecap='butt'/%3e%3c/svg%3e")
   padding: 10px
@@ -598,4 +678,32 @@ export default {
   display: flex
   align-items: center
 
+.typography-heading
+  margin-bottom: $spacing-md
+  text-align: center
+
+.right
+  flex: 0.4
+.section-information-wrapper
+  width: 1400px
+
+.customize-verification-flow-wrapper
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  .customize-verification-flow-wrapper__options
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    padding: 60px
+
+.roboto-slab
+  font-family: "Roboto"
+.comfortaa
+  font-family: "Comfortaa", sans-serif
+
+.your-font
+  pointer-events: none
+  color: $color-grey-darken-1
 </style>
