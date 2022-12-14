@@ -7,7 +7,7 @@
           <span class="primary">{{ $t("business_claim_scale") }}</span
           ><br />{{ $t("business_claim1") }}
         </h1>
-        <h4 class="subtitle">
+        <h4 class="subtitle" v-html="$t('business_claim2')">
           {{ $t("business_claim2") }}
         </h4>
         <demo-buttons />
@@ -92,7 +92,7 @@
             <h3 class="title">
               {{ $t("business_differences_title") }}
             </h3>
-            <p>
+            <p v-html="$t('business_differences_oneRegister_content')">
               {{ $t("business_differences_oneRegister_content") }}
             </p>
             <!-- <p v-html="$t('business_differences_technology_content')">
@@ -202,7 +202,11 @@
               <h3 class="title">
                 {{ $t("business_differences_assistedPictureQuality_title") }}
               </h3>
-              <p>
+              <p
+                v-html="
+                  $t('business_differences_assistedPictureQuality_content')
+                "
+              >
                 {{ $t("business_differences_assistedPictureQuality_content") }}
               </p>
               <p

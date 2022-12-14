@@ -3,8 +3,8 @@
     <!-- CLAIMS -->
     <section class="claim-container">
       <div class="claim-info">
-        <h1 class="title">{{ $t("kyb_claim1") }}</h1>
-        <h4 class="subtitle">
+        <h1 class="title" v-html="$t('kyb_claim1')">{{ $t("kyb_claim1") }}</h1>
+        <h4 class="subtitle" v-html="$t('kyb_claim2')">
           {{ $t("kyb_claim2") }}
         </h4>
         <demo-buttons />

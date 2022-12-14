@@ -3,7 +3,7 @@
     <transition name="page">
       <div v-if="show" :class="['consent-cookies']">
         <slot
-          ><span>{{ options.text }}</span></slot
+          ><span v-html="options.text">{{ options.text }}</span></slot
         >
         <button
           class="button small"

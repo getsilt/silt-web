@@ -4,7 +4,7 @@
     <section class="claim-container">
       <div class="claim-info">
         <h1 class="title" v-html="$t('personal_claim1')"></h1>
-        <h4 class="subtitle">
+        <h4 class="subtitle" v-html="$t('personal_claim2')">
           {{ $t("personal_claim2") }}
         </h4>
       </div>
