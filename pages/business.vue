@@ -352,7 +352,7 @@
             >
               <document-select
                 :color="`color: ${color}`"
-                :buttonBackground="`background-color: ${color}`"
+                :buttonStyle="`background-color: ${color}; font-family: Roboto`"
                 typography="font-family: Roboto"
               />
             </div>
@@ -362,7 +362,7 @@
             >
               <document-select
                 :color="`color: ${color}`"
-                :buttonBackground="`background-color: ${color}`"
+                :buttonStyle="`background-color: ${color}; font-family: Comfortaa`"
                 typography="font-family: Comfortaa"
               />
             </div>
