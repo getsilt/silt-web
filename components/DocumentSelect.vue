@@ -1,9 +1,11 @@
 <template>
   <div class="step__container">
     <template>
-      <div :style="typography" class="form-grid step__footer">
+      <div class="form-grid step__footer">
         <div class="step__title">
-          <h4 :style="color">{{ $t("customization_screenshot_title") }}</h4>
+          <h4 :style="typography">
+            {{ $t("customization_screenshot_title") }}
+          </h4>
           <span class="step__subtitle">
             {{ $t("customization_screenshot_subtitle") }}
           </span>
@@ -44,7 +46,7 @@
           </ul>
         </div>
 
-        <v-button large class="full-width disabled" :style="buttonBackground">
+        <v-button large class="full-width disabled" :style="buttonStyle">
           {{ $t("customization_screenshot_finish_verification") }}
         </v-button>
       </div>
@@ -62,7 +64,7 @@ export default Vue.extend({
   props: {
     color: { required: true },
     typography: { require: true },
-    buttonBackground: { required: true },
+    buttonStyle: { required: true },
   },
 });
 </script>
