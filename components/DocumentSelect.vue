@@ -1,6 +1,10 @@
 <template>
   <div class="step__container">
     <template>
+      <div class="v-steps__progress">
+        <div class="v-steps__progress-bar-rail" :style="background"></div>
+        <div class="v-steps__progress-bar" :style="background"></div>
+      </div>
       <div class="form-grid step__footer">
         <div class="step__title">
           <h4 :style="typography">
@@ -10,7 +14,7 @@
             {{ $t("customization_screenshot_subtitle") }}
           </span>
         </div>
-        <div :style="background" class="instructions">
+        <div class="instructions">
           <div class="instructions-wrapper">
             <template>
               <h6
@@ -23,27 +27,36 @@
           </div>
           <ul class="v-list">
             <li class="v-list__item">
-              <div class="v-list__item__icon">
+              <div class="v-list__item__icon-left">
                 <i class="fad fa-id-card large" :style="color" />
               </div>
               <div class="v-list__item__content">
                 {{ $t("customization_screenshot_ID") }}
               </div>
+              <div class="v-list__item__icon-right">
+                <i class="fad fa-chevron-right large" :style="color" />
+              </div>
             </li>
             <li class="v-list__item">
-              <div class="v-list__item__icon">
+              <div class="v-list__item__icon-left">
                 <i class="fad fa-passport large" :style="color" />
               </div>
               <div class="v-list__item__content">
                 {{ $t("customization_screenshot_passport") }}
               </div>
+              <div class="v-list__item__icon-right">
+                <i class="fad fa-chevron-right large" :style="color" />
+              </div>
             </li>
             <li class="v-list__item">
-              <div class="v-list__item__icon">
+              <div class="v-list__item__icon-left">
                 <i class="fad fa-id-card large" :style="color" />
               </div>
               <div class="v-list__item__content">
                 {{ $t("customization_screenshot_DL") }}
+              </div>
+              <div class="v-list__item__icon-right">
+                <i class="fad fa-chevron-right large" :style="color" />
               </div>
             </li>
           </ul>
@@ -98,9 +111,32 @@ export default Vue.extend({
     h4, h5, h6
       margin-bottom: 1rem
 
+  .v-steps__progress
+    width: 30%
+    height: 5px
+    position: relative
+    margin: auto
+
+    .v-steps__progress-bar-rail
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      opacity: 0.2
+      border-radius: 5px
+
+    .v-steps__progress-bar
+      float: left
+      width: 40%
+      height: 100%
+      border-radius: 5px
+      box-shadow: 0px 0px 1px 0px
+
 .instructions
   border-radius: $radius-lg
-  padding-left: 15px
+  padding: 0 $spacing-md
+  background-color: rgba($color-grey-lighten-2, 0.2)
 .instructions-wrapper
   .instructions-wrapper__title
     margin-bottom: $spacing-lg
@@ -122,23 +158,30 @@ export default Vue.extend({
 .v-list
   list-style: none
   padding: 0
-  margin: 0 -20px
   display: flex
   flex-direction: column
   flex: 1 1 auto
 
   .v-list__item
     display: flex
-    padding: 0 20px
 
     &:active, &:hover
       .v-list__item__arrow
         transition: 0.1s ease-in-out
         transform: translateX(5px)
 
-    .v-list__item__icon
-      flex: 0 0 50px
+    .v-list__item__icon-left
+      flex: start
       padding: $spacing-sm $spacing-md $spacing-sm 0
+
+      &.large
+        flex: 0 0 60px
+
+      &.small
+        flex: 0 0 20px
+    .v-list__item__icon-right
+      flex: end
+      padding: $spacing-sm 0 $spacing-sm $spacing-md
 
       &.large
         flex: 0 0 60px
