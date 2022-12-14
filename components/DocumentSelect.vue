@@ -17,10 +17,7 @@
         <div class="instructions">
           <div class="instructions-wrapper">
             <template>
-              <h6
-                :style="`${color}; ${typography}`"
-                class="instructions-wrapper__title"
-              >
+              <h6 :style="typography" class="instructions-wrapper__title">
                 {{ $t("customization_screenshot_document_type") }}
               </h6>
             </template>
@@ -34,7 +31,7 @@
                 {{ $t("customization_screenshot_ID") }}
               </div>
               <div class="v-list__item__icon-right">
-                <i class="fad fa-chevron-right large" :style="color" />
+                <i class="fad fa-chevron-right" :style="color" />
               </div>
             </li>
             <li class="v-list__item">
@@ -45,7 +42,7 @@
                 {{ $t("customization_screenshot_passport") }}
               </div>
               <div class="v-list__item__icon-right">
-                <i class="fad fa-chevron-right large" :style="color" />
+                <i class="fad fa-chevron-right" :style="color" />
               </div>
             </li>
             <li class="v-list__item">
@@ -56,7 +53,7 @@
                 {{ $t("customization_screenshot_DL") }}
               </div>
               <div class="v-list__item__icon-right">
-                <i class="fad fa-chevron-right large" :style="color" />
+                <i class="fad fa-chevron-right" :style="color" />
               </div>
             </li>
           </ul>
