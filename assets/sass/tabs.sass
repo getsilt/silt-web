@@ -18,7 +18,7 @@
 
 .tabs-wrapper-bussiness
   display: flex
-  margin-bottom: $spacing-md
+  margin-bottom: $spacing-sm
   width: 240px
   &.vertical
     flex-direction: column
@@ -27,7 +27,7 @@
     justify-content: center
 
     .tab
-      margin-bottom: $spacing-md
+      margin-bottom: $spacing-sm
 
       &:not(:last-child)
         margin-right: 0px
@@ -35,7 +35,7 @@
   .tab
     text-align: center
     width: 240px
-    padding: 0px $spacing-md
+    padding: 0px $spacing-sm
     border-radius: $radius-sm
     color: $color-primary
     font-weight: bold
@@ -43,6 +43,10 @@
     transition: 0.3s ease-in-out
     line-height: initial
     border: 2px solid transparent
+    p
+      margin-top: $spacing-sm
+      margin-bottom: $spacing-sm
+      font-size: 1rem
     &:not(:last-child)
       margin-right: $spacing-md
     &:hover
