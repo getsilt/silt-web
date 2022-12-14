@@ -10,7 +10,7 @@
             {{ $t("customization_screenshot_subtitle") }}
           </span>
         </div>
-        <div>
+        <div :style="background" class="instructions">
           <div class="instructions-wrapper">
             <template>
               <h6
@@ -67,7 +67,10 @@ export default Vue.extend({
   props: {
     color: { required: true },
     typography: { require: true },
-    buttonStyle: { required: true },
+    buttonStyle: {
+      required: true,
+    },
+    background: { required: true },
   },
 });
 </script>
@@ -77,9 +80,11 @@ export default Vue.extend({
 
 .disabled
   pointer-events: none
+  margin-top: $spacing-sm
 
 .step__container
-  max-width: 400px
+  max-width: 350px
+  order: 2
   box-shadow: $box-shadow-1
   border-radius: $radius-lg
   padding: $spacing-lg
@@ -93,6 +98,9 @@ export default Vue.extend({
     h4, h5, h6
       margin-bottom: 1rem
 
+.instructions
+  border-radius: $radius-lg
+  padding-left: 15px
 .instructions-wrapper
   .instructions-wrapper__title
     margin-bottom: $spacing-lg
