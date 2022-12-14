@@ -13,7 +13,10 @@
         <div>
           <div class="instructions-wrapper">
             <template>
-              <h6 :style="color">
+              <h6
+                :style="`${color}; ${typography}`"
+                class="instructions-wrapper__title"
+              >
                 {{ $t("customization_screenshot_document_type") }}
               </h6>
             </template>
@@ -89,6 +92,11 @@ export default Vue.extend({
 
     h4, h5, h6
       margin-bottom: 1rem
+
+.instructions-wrapper
+  .instructions-wrapper__title
+    margin-bottom: $spacing-lg
+    margin-top: $spacing-md
 
   .step__footer
     margin-top: auto
