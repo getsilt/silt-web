@@ -318,33 +318,35 @@
           <div class="claim-side-img screenshots-container">
             <div class="tabs-wrapper-bussiness vertical">
               <color-picker-slider @onChange="updateColor($event)" />
-              <h5 class="typography-heading">
-                {{ $t("customization_guide_font") }}
-              </h5>
-              <v-tab
-                activeTabName="roboto-slab"
-                @onActiveTabChange="activeTabName = $event"
-                :isSelected="activeTabName"
-                class="roboto-slab"
-              >
-                <p>Roboto Slab</p>
-              </v-tab>
-              <v-tab
-                activeTabName="comfortaa"
-                @onActiveTabChange="activeTabName = $event"
-                :isSelected="activeTabName"
-                class="comfortaa"
-              >
-                <p>Comfortaa</p>
-              </v-tab>
-              <v-tab
-                activeTabName="your-font"
-                @onActiveTabChange="activeTabName = $event"
-                :isSelected="activeTabName"
-                class="your-font"
-              >
-                <p>Your font</p>
-              </v-tab>
+              <div>
+                <h5 class="typography-heading">
+                  {{ $t("customization_guide_font") }}
+                </h5>
+                <v-tab
+                  activeTabName="roboto-slab"
+                  @onActiveTabChange="activeTabName = $event"
+                  :isSelected="activeTabName"
+                  class="roboto-slab"
+                >
+                  <p>Roboto Slab</p>
+                </v-tab>
+                <v-tab
+                  activeTabName="comfortaa"
+                  @onActiveTabChange="activeTabName = $event"
+                  :isSelected="activeTabName"
+                  class="comfortaa"
+                >
+                  <p>Comfortaa</p>
+                </v-tab>
+                <v-tab
+                  activeTabName="your-font"
+                  @onActiveTabChange="activeTabName = $event"
+                  :isSelected="activeTabName"
+                  class="your-font"
+                >
+                  <p>Your font</p>
+                </v-tab>
+              </div>
             </div>
             <div
               v-show="activeTabName === 'roboto-slab'"
@@ -674,6 +676,7 @@ export default {
 
 .typography-heading
   margin-bottom: $spacing-md
+  text-align: center
 
 .right
   flex: 0.5 1 calc(50% - 60px)
