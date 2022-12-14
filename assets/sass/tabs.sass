@@ -1,0 +1,55 @@
+.tabs-wrapper
+  display: flex
+  .tab
+    padding: 7px 20px
+    border-radius: 50px
+    background: white
+    color: $color-primary
+    font-weight: bold
+    cursor: pointer
+    transition: 0.3s ease-in-out
+    line-height: initial
+    &:not(:last-child)
+      margin-right: 20px
+    &:hover
+      background: lighten($color-primary, 38%)
+    &.active
+      background: lighten($color-primary, 35%)
+
+.tabs-wrapper-bussiness
+  display: flex
+  margin-bottom: $spacing-md
+  width: 240px
+  &.vertical
+    flex-direction: column
+    min-width: 400px
+    align-items: end
+    justify-content: center
+
+    .tab
+      margin-bottom: $spacing-md
+
+      &:not(:last-child)
+        margin-right: 0px
+      
+  .tab
+    text-align: center
+    width: 240px
+    padding: 0px $spacing-md
+    border-radius: $radius-sm
+    color: $color-primary
+    font-weight: bold
+    cursor: pointer
+    transition: 0.3s ease-in-out
+    line-height: initial
+    border: 2px solid transparent
+    &:not(:last-child)
+      margin-right: $spacing-md
+    &:hover
+      background: rgba($color-primary, 0.1)
+    &.active
+      background: rgba($color-primary, 0.1)
+      border: 2px solid $color-primary
+
+.tabs-content-wrapper
+  padding: 0 $spacing-lg $spacing-md $spacing-lg

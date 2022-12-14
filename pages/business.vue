@@ -7,7 +7,7 @@
           <span class="primary">{{ $t("business_claim_scale") }}</span
           ><br />{{ $t("business_claim1") }}
         </h1>
-        <h4 class="subtitle" v-html="$t('business_claim2')">
+        <h4 class="subtitle">
           {{ $t("business_claim2") }}
         </h4>
         <demo-buttons />
@@ -92,7 +92,7 @@
             <h3 class="title">
               {{ $t("business_differences_title") }}
             </h3>
-            <p v-html="$t('business_differences_oneRegister_content')">
+            <p>
               {{ $t("business_differences_oneRegister_content") }}
             </p>
             <!-- <p v-html="$t('business_differences_technology_content')">
@@ -202,11 +202,7 @@
               <h3 class="title">
                 {{ $t("business_differences_assistedPictureQuality_title") }}
               </h3>
-              <p
-                v-html="
-                  $t('business_differences_assistedPictureQuality_content')
-                "
-              >
+              <p>
                 {{ $t("business_differences_assistedPictureQuality_content") }}
               </p>
               <p
@@ -305,13 +301,81 @@
       </div>
       <demo-buttons />
     </section>
+
+    <div class="fw-container--light">
+      <section class="claim-container">
+        <div class="section-headers">
+          <span class="tag">{{ $t("business_usecases_section") }}</span>
+          <h2>{{ $t("customization_guide_title") }}</h2>
+          <p>{{ $t("customization_guide_subtitle") }}</p>
+          <p>{{ $t("customization_guide_description") }}</p>
+        </div>
+        <div class="section-information-wrapper">
+          <div class="claim-side-img screenshots-container">
+            <div class="tabs-wrapper-bussiness vertical">
+              <color-picker-slider @onChange="updateColor($event)" />
+              <h5 class="typography-heading">
+                {{ $t("customization_guide_font") }}
+              </h5>
+              <v-tab
+                activeTabName="roboto-slab"
+                @onActiveTabChange="activeTabName = $event"
+                :isSelected="activeTabName"
+                class="roboto-slab"
+              >
+                <p>Roboto Slab</p>
+              </v-tab>
+              <v-tab
+                activeTabName="comfortaa"
+                @onActiveTabChange="activeTabName = $event"
+                :isSelected="activeTabName"
+                class="comfortaa"
+              >
+                <p>Comfortaa</p>
+              </v-tab>
+              <v-tab
+                activeTabName="your-font"
+                @onActiveTabChange="activeTabName = $event"
+                :isSelected="activeTabName"
+                class="your-font"
+              >
+                <p>Your font</p>
+              </v-tab>
+            </div>
+            <div
+              v-show="activeTabName === 'roboto-slab'"
+              class="claim-side-img right"
+            >
+              <document-select
+                :color="`color: ${color}`"
+                :buttonBackground="`background-color: ${color}`"
+                typography="font-family: Roboto"
+              />
+            </div>
+            <div
+              v-show="activeTabName === 'comfortaa'"
+              class="claim-side-img right"
+            >
+              <document-select
+                :color="`color: ${color}`"
+                :buttonBackground="`background-color: ${color}`"
+                typography="font-family: Comfortaa"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   </div>
 </template>
 
 <script>
-
 import gsap from "gsap";
-import DemoButtons from '../components/DemoButtons.vue';
+import DemoButtons from "../components/DemoButtons.vue";
+import VTab from "../components/VTab.vue";
+import DocumentSelect from "../components/DocumentSelect.vue";
+import ColorPickerSlider from "../components/ColorPickerSlider.vue";
+
 export default {
   nuxtI18n: {
     paths: {
@@ -319,7 +383,7 @@ export default {
       es: "/",
     },
   },
-  components: {DemoButtons},
+  components: { DemoButtons, VTab, DocumentSelect, ColorPickerSlider },
   head() {
     const i18nSeo = this.$nuxtI18nHead();
     return {
@@ -477,6 +541,8 @@ export default {
           title: "business_usecases_contract",
         },
       ],
+      activeTabName: "roboto-slab",
+      color: "",
     };
   },
   mounted() {
@@ -485,6 +551,9 @@ export default {
   methods: {
     getEmail() {
       return this.email;
+    },
+    updateColor(event) {
+      this.color = `hsl(${event.h}, ${event.s}, ${event.l})`;
     },
     startFirstAnimationScene: (_this) => {
       const sections = [
@@ -582,6 +651,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+@import "@/assets/sass/vars.sass"
 .scan-icon
   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%232963FFFF' stroke-width='7' stroke-dasharray='50%25%2c 50%25' stroke-dashoffset='14' stroke-linecap='butt'/%3e%3c/svg%3e")
   padding: 10px
@@ -598,4 +668,20 @@ export default {
   display: flex
   align-items: center
 
+.typography-heading
+  margin-bottom: $spacing-md
+
+.right
+  flex: 0.5 1 calc(50% - 60px)
+.section-information-wrapper
+  width: 1400px
+
+.roboto-slab
+  font-family: "Roboto"
+.comfortaa
+  font-family: "Comfortaa", sans-serif
+
+.your-font
+  pointer-events: none
+  color: $color-grey-darken-1
 </style>

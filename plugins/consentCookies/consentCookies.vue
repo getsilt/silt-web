@@ -2,7 +2,9 @@
   <div>
     <transition name="page">
       <div v-if="show" :class="['consent-cookies']">
-        <slot><span v-html="options.text">{{ options.text }}</span></slot>
+        <slot
+          ><span>{{ options.text }}</span></slot
+        >
         <button
           class="button small"
           v-if="options.type === 'accept'"
@@ -17,21 +19,21 @@
 
 <script>
 import consentCookies from "~/plugins/consentCookies/consentCookies";
-import {getCookie, setCookie} from '~/lib/cookies.js';
+import { getCookie, setCookie } from "~/lib/cookies.js";
 export default {
   data() {
     return {
       options: {
         text: this.$t("legal_consentCookies"),
-        type: "accept"
+        type: "accept",
       },
       show: false,
-      timer: 0
+      timer: 0,
     };
   },
   beforeMount() {
     consentCookies.event.$on("show", () => {
-      if(!getCookie('consentCookies')) this.show = true;
+      if (!getCookie("consentCookies")) this.show = true;
     });
     consentCookies.event.$on("reboke", () => {
       this.rebokeConsent();
@@ -40,13 +42,13 @@ export default {
   methods: {
     close() {
       this.show = false;
-      setCookie('consentCookies', 'true', 100)
+      setCookie("consentCookies", "true", 100);
     },
     rebokeConsent() {
-      setCookie('consentCookies', '', 0)
+      setCookie("consentCookies", "", 0);
       this.show = true;
-    }
-  }
+    },
+  },
 };
 </script>
 
