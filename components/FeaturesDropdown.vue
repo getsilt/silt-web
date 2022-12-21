@@ -9,15 +9,24 @@
           @click.native="$emit('onCloseNav')"
         >
           <i class="fad fa-lg fa-id-card scan-icon" />
-          {{ $t("nav_feature_kyc") }}
+          <div>
+            {{ $t("nav_feature_kyc") }}
+            <p class="subtitle_menu">{{ $t("product_subtitle_kyc") }}</p>
+          </div>
         </nuxt-link>
+
         <nuxt-link
           class="dropdown-wrap__content type1"
           :to="localePath({ name: 'users' })"
           @click.native="$emit('onCloseNav')"
         >
           <i class="fad fa-lg fa-bolt scan-icon" />
-          {{ $t("nav_feature_digital_id") }}
+          <div>
+            {{ $t("nav_feature_digital_id") }}
+            <p class="subtitle_menu">
+              {{ $t("product_subtitile_digital_identity") }}
+            </p>
+          </div>
         </nuxt-link>
       </div>
     </div>
@@ -30,24 +39,40 @@
           @click.native="$emit('onCloseNav')"
         >
           <i class="fad fa-lg fa-head-side scan-icon" />
-          {{ $t("nav_feature_biocheck") }}
+          <div>
+            {{ $t("nav_feature_biocheck") }}
+            <p class="subtitle_menu">
+              {{ $t("product_subtitle_biometric_check") }}
+            </p>
+          </div>
         </nuxt-link>
+
         <nuxt-link
           class="dropdown-wrap__content type1"
           :to="localePath({ name: 'misconduct' })"
           @click.native="$emit('onCloseNav')"
         >
           <i class="fad fa-lg fa-badge-sheriff scan-icon" />
-          {{ $t("nav_feature_misconduct") }}
+          <div>
+            {{ $t("nav_feature_misconduct") }}
+            <p class="subtitle_menu">
+              {{ $t("product_subtitle_misconduct_list") }}
+            </p>
+          </div>
         </nuxt-link>
+
         <nuxt-link
           class="dropdown-wrap__content type1"
           :to="localePath({ name: 'kyb' })"
           @click.native="$emit('onCloseNav')"
         >
           <i class="fad fa-lg fa-university scan-icon" />
-          {{ $t("nav_feature_kyb") }}
+          <div>
+            {{ $t("nav_feature_kyb") }}
+            <p class="subtitle_menu">{{ $t("product_subtitle_kyb") }}</p>
+          </div>
         </nuxt-link>
+
         <nuxt-link
           class="dropdown-wrap__content type1 deactivated"
           :to="localePath({ name: 'business' })"
