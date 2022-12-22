@@ -10,7 +10,7 @@
         >
           <i class="fad fa-lg fa-id-card scan-icon" />
           <div>
-            {{ $t("nav_feature_kyc") }}
+            <h6 class="title_menu">{{ $t("nav_feature_kyc") }}</h6>
             <p class="subtitle_menu">{{ $t("product_subtitle_kyc") }}</p>
           </div>
         </nuxt-link>
@@ -22,7 +22,7 @@
         >
           <i class="fad fa-lg fa-bolt scan-icon" />
           <div>
-            {{ $t("nav_feature_digital_id") }}
+            <h6 class="title_menu">{{ $t("nav_feature_digital_id") }}</h6>
             <p class="subtitle_menu">
               {{ $t("product_subtitile_digital_identity") }}
             </p>
@@ -40,7 +40,7 @@
         >
           <i class="fad fa-lg fa-head-side scan-icon" />
           <div>
-            {{ $t("nav_feature_biocheck") }}
+            <h6 class="title_menu">{{ $t("nav_feature_biocheck") }}</h6>
             <p class="subtitle_menu">
               {{ $t("product_subtitle_biometric_check") }}
             </p>
@@ -54,7 +54,7 @@
         >
           <i class="fad fa-lg fa-badge-sheriff scan-icon" />
           <div>
-            {{ $t("nav_feature_misconduct") }}
+            <h6 class="title_menu">{{ $t("nav_feature_misconduct") }}</h6>
             <p class="subtitle_menu">
               {{ $t("product_subtitle_misconduct_list") }}
             </p>
@@ -68,7 +68,7 @@
         >
           <i class="fad fa-lg fa-university scan-icon" />
           <div>
-            {{ $t("nav_feature_kyb") }}
+            <h6 class="title_menu">{{ $t("nav_feature_kyb") }}</h6>
             <p class="subtitle_menu">{{ $t("product_subtitle_kyb") }}</p>
           </div>
         </nuxt-link>
@@ -79,7 +79,9 @@
           @click.native="$emit('onCloseNav')"
         >
           <i class="fad fa-lg fa-house scan-icon" />
-          {{ $t("nav_feature_por") }}
+          <div>
+            <h6 class="title_menu">{{ $t("nav_feature_por") }}</h6>
+          </div>
         </nuxt-link>
       </div>
     </div>
