@@ -94,6 +94,8 @@
             transition: 0.2s ease-in-out
             opacity: 1
             transform: translateX(0%)
+    .title_menu
+        margin: 0
 
     & > *
         margin-left: 10px
@@ -101,7 +103,6 @@
     i
         margin: 0
         flex: 0 0 30px
-        margin-top: 5px
 
     &:not(:last-child)
         margin-bottom: 5px
@@ -118,7 +119,9 @@
             color: var(--secondary)
     .subtitle_menu
         color: $color-grey
-        font-size: 0.8rem
+        font-family: $font-body
+        font-weight: 100
+        margin-top: 5px
 
 .feature-dropdown
     display: flex
