@@ -137,13 +137,25 @@
     </tr>
     <tr>
       <th>
+       <code>redirect_url</code>
+      </th>
+      <td>
+        String (Optional) 
+      </td>
+      <td>
+        Url that will point the button in the verification complete screen.
+        <br />Ex: <code>&redirect_url=https://YOURURL.com</code>
+      </td>
+    </tr>
+    <tr>
+      <th>
        <code>hide_redirect_button</code>
       </th>
       <td>
         Boolean (Optional) 
       </td>
       <td>
-        Used to hide the button of the success screen. Some customers use it in the iframe integration.
+        Used to hide the button of redirect in the verification complete screen. Some customers use it in the iframe integration.
         <br />Ex: <code>&hide_redirect_button=true</code>
       </td>
     </tr>
