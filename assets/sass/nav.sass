@@ -94,14 +94,15 @@
             transition: 0.2s ease-in-out
             opacity: 1
             transform: translateX(0%)
+    .title_menu
+        margin: 0
 
     & > *
         margin-left: 10px
 
     i
         margin: 0
-        flex: 0 0 50px
-        margin-top: 5px
+        flex: 0 0 30px
 
     &:not(:last-child)
         margin-bottom: 5px
@@ -116,11 +117,16 @@
             margin-left: 10px
         .content--bottom
             color: var(--secondary)
+    .subtitle_menu
+        color: $color-grey
+        font-family: $font-body
+        font-weight: 100
+        margin-top: 5px
 
 .feature-dropdown
     display: flex
     &>*
-        min-width: 270px
+        min-width: 350px
     &>*:not(:last-child)
         margin-right: $spacing-lg
 
@@ -164,10 +170,14 @@
     .dropdown-wrap__content
         flex-direction: row
         align-items: flex-start
+        padding: 5px
+        
         i
             flex: 0 0 30px
             width: 20px
             margin-right: $spacing-sm
+        .subtitle_menu
+            font-size: 1rem
 
     .other-sections
         padding: $spacing-md
