@@ -28,6 +28,14 @@
             </p>
           </div>
         </nuxt-link>
+         <nuxt-link
+          class="dropdown-wrap__content type1"
+          :to="localePath({ name: 'misconduct' })"
+          @click.native="$emit('onCloseNav')"
+        >
+          <i class="fad fa-lg fa-badge-sheriff scan-icon" />
+          {{ $t("nav_feature_misconduct") }}
+        </nuxt-link>
       </div>
     </div>
     <div>
