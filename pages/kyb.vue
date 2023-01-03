@@ -150,7 +150,7 @@ export default {
       return this.email;
     },
     startFirstAnimationScene: (_this) => {
-      const sections = ["#problem", "#solution", "#unique-benefits"];
+      const sections = ["#problem", "#solution", "#benefits"];
       let tm = {};
       for (let section of sections) {
         const tl = gsap.timeline({
