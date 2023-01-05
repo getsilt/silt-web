@@ -34,7 +34,7 @@ section
 //   margin-top: 40px
 //   @media (min-width: 768px)
 //     margin-top: 100px
-.main-content section, footer section
+.main-content section:not(.fw-container), footer section
   max-width: 1400px
   @media (min-width: 768px)
     padding: 40px
@@ -366,17 +366,35 @@ nav
       transition: 0.5s ease-in-out
       max-height: 500px
 
+.list-wrapper
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  & > * 
+    margin: $spacing-md
+    flex: 1 1
+
+
 .card
-  padding: $spacing-xlg
+  padding: $spacing-lg
   border-radius: $radius-lg
-  box-shadow: $box-shadow-1
-  text-align: left
+  text-align: center
+  background: rgba($color-grey-darken-3, 0.3)
   &>:first-child
     margin-top: 0
+
+  &--w-sm
+    max-width: 300px
+    width: 100%
 
   &--w-md
     max-width: 500px
     width: 100%
+
+.light .card, .card.light
+  background: rgba($color-grey-lighten-2,0.3)
+  color: $color-grey-darken-3
+
 
 .bullet-wrapper
   display: flex

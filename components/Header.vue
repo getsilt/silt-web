@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="dark">
     <div class="header-wrapper">
       <consent-cookies />
       <vsm-menu ref="menu" :menu="menu">
@@ -13,7 +13,7 @@
         <li slot="before-nav" class="logo vsm-section vsm-mob-full">
           <nuxt-link :to="localePath({ name: 'business' })">
             <img
-              src="@/assets/img/logo/silt_blue.svg"
+              src="@/assets/img/logo/silt_logo_white.svg"
               :alt="$t('silt_name')"
               height="50"
             />
@@ -97,7 +97,6 @@ section
 	top: 0
 	left: 0
 	width: 100%
-	background: transparent
 	margin: 0
 	padding: 0
 	z-index: 9999999999
@@ -117,6 +116,7 @@ section
 	width: 100%
 	@media (min-width: 768px)
 		padding: 0 40px
+
 	.header-bar
 		position: relative
 		padding: 20px
