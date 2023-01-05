@@ -6,22 +6,14 @@
         :class="{ active: activeSection === 'sdk' }"
         >SDK Integration</a
       >
-      <a
-        @click="activeSection = 'api'"
-        :class="{ active: activeSection === 'api' }"
-        >API Integration</a
-      >
     </nav>
     <DocumentationSdk v-if="activeSection === 'sdk'" />
-    <DocumentationApi v-if="activeSection === 'api'" />
   </section>
 </template>
 <script>
-import DocumentationApi from "~/components/DocumentationApi.vue";
 import DocumentationSdk from "~/components/DocumentationSdk.vue";
 export default {
   components: {
-    DocumentationApi,
     DocumentationSdk,
   },
   nuxtI18n: {
@@ -33,19 +25,17 @@ export default {
   head() {
     const i18nSeo = this.$nuxtI18nHead();
     return {
-      title: "SDK & API Integration with Silt Digital ID & KYC",
+      title: "SDK Integration with Silt Digital ID & KYC",
       meta: [
         {
           hid: "description",
           name: "description",
-          content:
-            "Integrate with you app in a few minutes with the SDK, or create your own KYC experience with the API.",
+          content: "Integrate with you app in a few minutes with the SDK.",
         },
         {
           hid: "og:title",
           name: "og:title",
-          content:
-            "Integrate with you app in a few minutes with the SDK, or create your own KYC experience with the API.",
+          content: "Integrate with you app in a few minutes with the SDK.",
         },
       ],
     };
@@ -64,12 +54,12 @@ export default {
     },
   },
   created() {
-    if(this.$router.currentRoute.query.minimal === true) this.minimal = true;
-  }
+    if (this.$router.currentRoute.query.minimal === true) this.minimal = true;
+  },
 };
 </script>
 
-<style lang="sass" >
+<style lang="sass">
 @import "@/assets/sass/vars.sass"
 .developers
   font-size: 1rem

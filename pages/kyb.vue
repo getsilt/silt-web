@@ -95,7 +95,7 @@
 import DemoButtons from "../components/DemoButtons.vue";
 import gsap from "gsap";
 export default {
-  components: {DemoButtons},
+  components: { DemoButtons },
   nuxtI18n: {
     paths: {
       en: "/kyb-company-and-freelancer-verification",

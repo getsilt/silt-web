@@ -68,97 +68,97 @@
       query params.
     </p>
 
-    <p>
-      Here you can see a list of available query parameters.
-    </p>
+    <p>Here you can see a list of available query parameters.</p>
     <table>
-    <thead>
+      <thead>
+        <tr>
+          <th>Query param key</th>
+          <th>Value type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
       <tr>
         <th>
-          Query param key
+          <code>company_app_id</code>
         </th>
-        <th>
-          Value type
-        </th>
-        <th>
-          Description
-        </th>
+        <td>String (Required)</td>
+        <td>
+          Mandatory field to get the configuration of the company app. Create
+          your company app now from the dashboard.getsilt.com.
+          <br />Ex:
+          <code>&company_app_id=c11d1782-bcdc-4854-b5c9-32fd160fba8b</code>
+        </td>
       </tr>
-    </thead>
-    <tr>
-      <th>
-       <code>company_app_id</code>
-      </th>
-      <td>
-        String (Required)
-      </td>
-      <td>
-        Mandatory field to get the configuration of the company app. Create your company app now from the dashboard.getsilt.com.
-        <br />Ex: <code>&company_app_id=c11d1782-bcdc-4854-b5c9-32fd160fba8b</code>
-      </td>
-    </tr>
-     <tr>
-      <th>
-       <code>customer_user_id</code>
-      </th>
-      <td>
-        String (Optional) 
-      </td>
-      <td>
-        This can be your internal user id, the one in your database. This field can be useful to track which user got verified when you receive a webhook.
-        You can also search by this field in the dashboard.getsilt.com.
-        <br />Ex: <code>&customer_user_id=172345</code>
-      </td>
-    </tr>
-    <tr>
-      <th>
-       <code>user_email</code>
-      </th>
-      <td>
-        String (Optional) 
-      </td>
-      <td>
-        Used to prefill the email field in the signup screens. If the user already has a Silt account, he will be prompt to be able to skip taking pictures of the Id we already have.
-        <br />Ex: <code>&user_email=steve@apple.com</code>
-      </td>
-    </tr>
-    <tr>
-      <th>
-       <code>meta</code>
-      </th>
-      <td>
-        JSON (Optional) 
-      </td>
-      <td>
-        You can use this field to store information a silt user that you will receive whenever a webhook is sent or in GET /status. Similar to customer_user_id, but without search option.
-        <br />Ex: <code>&meta={"abc":"123", "grumpy_cat": "miao"}</code>
-        There is no need to encode the url. 
-      </td>
-    </tr>
-    <tr>
-      <th>
-       <code>hide_redirect_button</code>
-      </th>
-      <td>
-        Boolean (Optional) 
-      </td>
-      <td>
-        Used to hide the button of the success screen. Some customers use it in the iframe integration.
-        <br />Ex: <code>&hide_redirect_button=true</code>
-      </td>
-    </tr>
-    <tr>
-      <th>
-       <code>hide_manual_review</code>
-      </th>
-      <td>
-        Boolean (Optional) 
-      </td>
-      <td>
-        Not recomended. This option hides the option of sending a document to manual review.
-        <br />Ex: <code>&hide_manual_review=true</code>
-      </td>
-    </tr>
+      <tr>
+        <th>
+          <code>customer_user_id</code>
+        </th>
+        <td>String (Optional)</td>
+        <td>
+          This can be your internal user id, the one in your database. This
+          field can be useful to track which user got verified when you receive
+          a webhook. You can also search by this field in the
+          dashboard.getsilt.com.
+          <br />Ex: <code>&customer_user_id=172345</code>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <code>user_email</code>
+        </th>
+        <td>String (Optional)</td>
+        <td>
+          Used to prefill the email field in the signup screens. If the user
+          already has a Silt account, he will be prompt to be able to skip
+          taking pictures of the Id we already have.
+          <br />Ex: <code>&user_email=steve@apple.com</code>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <code>meta</code>
+        </th>
+        <td>JSON (Optional)</td>
+        <td>
+          You can use this field to store information a silt user that you will
+          receive whenever a webhook is sent or in GET /status. Similar to
+          customer_user_id, but without search option.
+          <br />Ex: <code>&meta={"abc":"123", "grumpy_cat": "miao"}</code>
+          There is no need to encode the url.
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <code>redirect_url</code>
+        </th>
+        <td>String (Optional)</td>
+        <td>
+          Url that will point the button in the verification complete screen.
+          <br />Ex: <code>&redirect_url=https://YOURURL.com</code>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <code>hide_redirect_button</code>
+        </th>
+        <td>Boolean (Optional)</td>
+        <td>
+          Used to hide the button of redirect in the verification complete
+          screen. Some customers use it in the iframe integration.
+          <br />Ex: <code>&hide_redirect_button=true</code>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <code>hide_manual_review</code>
+        </th>
+        <td>Boolean (Optional)</td>
+        <td>
+          Not recomended. This option hides the option of sending a document to
+          manual review.
+          <br />Ex: <code>&hide_manual_review=true</code>
+        </td>
+      </tr>
     </table>
     <h3>3. Store silt_user_id</h3>
     <h4>3.1. Frontend: Send silt_user_id to your BE</h4>
@@ -229,14 +229,15 @@
       reasons, we cannot verify users instantly this way. We inform the user by
       email once we have finished the verification verification, but you can
       also be notified once this happens. When you have changed the status of a
-      document we could make a POST request to the endpoint you provide us. You
-      will only need to create a POST endpoint that our backend will call with
-      this body:
+      document we will make a POST request to the endpoint you provide us. The
+      response will return the same response as /status request under <code>user</code> field, the <code>processing_attempt</code> that triggered the webhook, its <code>status</code>.
     </p>
-    <code class="code-block"><tree-view
-      :data="webhook_response"
-      :options="{ maxDepth: 1, rootObjectKey: 'response' }"
-    ></tree-view></code>
+    <code class="code-block"
+      ><tree-view
+        :data="webhook_response"
+        :options="{ maxDepth: 1, rootObjectKey: 'response' }"
+      ></tree-view
+    ></code>
   </div>
 </template>
 <script>
@@ -249,191 +250,221 @@ export default {
       user_status_accordion: { active: false },
       pa_webhook: { active: false },
       status_response: {
-        country: "ESP",
-        city: "BARCELONA",
-        email: "8d481b57-37b3-4553-9797-40e845a19b92@siltapp.com",
-        id: "08cb1e24-25df-456e-b07b-db7f2fb929fe",
-        nationality: "ESP",
-        last_name: "PEREZ MARTI",
-        sex: "M",
-        first_name: "MARC",
-        address: "C. BALMES 123 ENT 04",
-        birth_date: "1982-09-18",
-        company_app_meta: { ibm_user_id: "123xxx" },
-        selfie: {
-          picture_validation_status: "SUCCESS",
-          created_at: "2021-10-25T08:00:16.986789+00:00",
-          file_url:
-            "https://...",
-          file_type: "VERIFICATION_SELFIE",
-        },
+        id: "...",
         national_id: {
-          country: "ESP",
-          city: "BARCELONA",
-          created_at: "2021-10-25T08:00:22.614666+00:00",
-          id: "b1d3a4cd-6752-4f61-8b50-c1046295b447",
-          document_number: "47924635A",
           expiration_date: "2023-08-02",
           nationality: "ESP",
-          issue_date: null,
-          last_name: "PEREZ MARTI",
-          license_types: null,
-          sex: "M",
+          country: "ESP",
+          created_at: "2022-12-23T13:26:48.458160+00:00",
+          id: "...",
           first_name: "MARC",
-          address: "C. BALMES 123 ENT 04",
-          updated_at: "2021-10-25T08:00:22.712704+00:00",
+          issue_date: null,
+          document_number: "47924637C",
+          sex: "M",
+          last_name: "PEREZ MARTI",
           birth_date: "1982-09-18",
+          city: "",
+          updated_at: "2022-12-23T13:26:48.470899+00:00",
+          address: "",
+          license_types: null,
           files: [
             {
+              created_at: "2022-12-23T12:14:34.577939+00:00",
               picture_validation_status: "SUCCESS",
-              created_at: "2021-10-25T08:00:05.878820+00:00",
-              file_url:
-                "https://...",
+              source: "USER",
               file_type: "NATIONAL_ID_BACK",
+              file_url: "https://...",
             },
             {
+              created_at: "2022-12-23T12:14:19.182439+00:00",
               picture_validation_status: "SUCCESS",
-              created_at: "2021-10-25T07:59:39.698263+00:00",
-              file_url:
-                "https://...",
+              source: "USER",
               file_type: "NATIONAL_ID_FRONT",
+              file_url: "https://...",
             },
           ],
         },
+        sex: "M",
+        city: null,
         driving_license: null,
+        verifications: [
+          {
+            processing_attempt_id: "...",
+            verification_type: "NATIONAL_ID",
+            verification_date: "2022-12-23T12:14:46.436478+00:00",
+            approval: "AUTO",
+            data: {
+              sex: "M",
+              city: "",
+              name: "MARC",
+              number: "XXXXXXXXC",
+              address: "",
+              country: "ESP",
+              surname: "PEREZ MARTI",
+              province: "",
+              birth_date: "1982-09-18",
+              issue_date: "None",
+              patronimic: null,
+              nationality: "ESP",
+              license_types: null,
+              place_of_birth: null,
+              expiration_date: "2023-08-02",
+            },
+          },
+        ],
+        company_app_meta: null,
+        missing_verifications: [],
         passport: null,
-        missing_verified_documents: [],
+        last_name: "PEREZ MARTI",
+        selfie: {
+          created_at: "2022-12-23T12:14:43.926792+00:00",
+          picture_validation_status: "SUCCESS",
+          source: "USER",
+          file_type: "VERIFICATION_SELFIE",
+          file_url: "https://...",
+        },
+        certificate: {
+          created_at: "2022-12-23 13:26:48",
+          id: "...",
+          emitter: { cif: "B01740703", name: "Silt Digital Id SL" },
+          reference: "CERT/2022-55",
+          file_url: "https://...",
+          requester: { cif: null, name: "Test Company" },
+        },
+        nationality: "ESP",
+        country: "ESP",
         status: "SUCCESS",
+        birth_date: "1982-09-18",
+        address: null,
+        first_name: "MARC",
+        email: "ee82890f-ec9f-4477-b0ec-b7099de4b929@siltapp.com",
       },
       webhook_response: {
-        user_meta: { ibm_user_id: "123xxx" },
-        user: {
-          id: "d79458d5-fa86-48e1-ae7c-19096d841e62",
-          sex: "M",
-          national_id: {
-            id: "ef61b392-846c-4b24-bf98-1537edfaf3c4",
-            updated_at: "2022-07-15T07:54:38.067665+00:00",
-            city: "BARCELONA",
+        processing_attempt: {
+          document_type: "NATIONAL_ID",
+          type: "USER_DOCUMENT_VERIFICATION",
+          created_at: "2022-12-23T12:14:46.436478+00:00",
+          permission_type: "NATIONAL_ID",
+          updated_at: "2022-12-23T21:58:54.816132+00:00",
+          manual_review_status: null,
+          owner_user: {
+            address: null,
+            city: null,
             last_name: "PEREZ MARTI",
-            issue_date: null,
             nationality: "ESP",
             sex: "M",
+            national_id_id: "...",
             birth_date: "1982-09-18",
-            address: "C. BALMES 123 ENT 04",
-            license_types: null,
-            expiration_date: "2023-08-02",
-            document_number: "47924635A",
-            created_at: "2022-07-15T07:54:38.056249+00:00",
+            verifications: [],
             country: "ESP",
             first_name: "MARC",
-            files: [
-              {
-                file_type: "NATIONAL_ID_BACK",
-                file_url:
-                  "https://...",
-                source: "USER",
-                picture_validation_status: "SUCCESS",
-                created_at: "2022-07-15T07:54:24.212803+00:00",
-              },
-              {
-                file_type: "NATIONAL_ID_FRONT",
-                file_url:
-                  "https://...",
-                source: "USER",
-                picture_validation_status: "SUCCESS",
-                created_at: "2022-07-15T07:54:16.028320+00:00",
-              },
-            ],
+            email: "ee82890f-ec9f-4477-b0ec-b7099de4b929@siltapp.com",
+            passport_id: null,
+            driving_license_id: null,
+            id: "...",
           },
-          birth_date: "1982-09-18",
-          missing_verified_documents: [],
-          aml_info_updated_at: null,
-          first_name: "MARC",
-          pep_info_updated_at: null,
-          city: "BARCELONA",
-          passport: null,
-          status: "SUCCESS",
-          address: "C. BALMES 123 ENT 04",
-          freelance_documents: [],
-          selfie: {
-            file_type: "VERIFICATION_SELFIE",
-            file_url:
-              "https://...",
-            source: "USER",
-            picture_validation_status: "SUCCESS",
-            created_at: "2022-07-15T07:54:31.433336+00:00",
+          status: "RUNNING",
+          owner_company_app_id: "...",
+          identity_document: {
+            address: "",
+            license_types: null,
+            created_at: "2022-12-23T13:26:48.458160+00:00",
+            document_number: "XXXXXXXXC",
+            city: "",
+            updated_at: "2022-12-23T13:26:48.470899+00:00",
+            last_name: "PEREZ MARTI",
+            nationality: "ESP",
+            sex: "M",
+            expiration_date: "2023-08-02",
+            birth_date: "1982-09-18",
+            country: "ESP",
+            first_name: "MARC",
+            issue_date: null,
+            id: "...",
           },
-          country: "ESP",
-          driving_license: null,
-          aml_info: null,
-          last_name: "PEREZ MARTI",
-          nationality: "ESP",
-          pep_info: null,
-          email: "a47f8b1b-6a2c-455f-b54d-cbc70d61e80c@siltapp.com",
-          company_app_meta: { ibm_user_id: "123xxx" },
-          permissions: ["NATIONAL_ID"],
-        },
-        status: "SUCCESS",
-        processing_attempt: {
-          id: "0dc5c39a-8963-4190-b1c4-cee86b19a756",
-          updated_at: "2022-07-15T07:54:38.074626+00:00",
-          status: "SUCCESS",
+          request_data: null,
           core_module_executions: [
             {
-              output: null,
-              status: "SUCCESS",
-              type: "FACE_MATCHER",
+              type: "PICTURE_VALIDATION",
               errors: [],
+              raw: null,
+              status: "RUNNING",
+              output: {
+                side: "FRONT",
+                is_nie: false,
+                country: "ESP",
+                doc_type: "ID",
+                is_paper: false,
+                bounding_box: [205, 504, 1243, 1110],
+                rotation_angle: -5,
+                is_pinkpaper_dl: false,
+              },
             },
             {
+              type: "PICTURE_VALIDATION",
+              errors: [],
+              raw: null,
+              status: "PENDING",
               output: {
-                sex: "M",
-                city: "BARCELONA",
-                name: "MARC",
-                number: "47924635A",
-                address: "C. BALMES 123 ENT 04",
+                side: "BACK",
+                is_nie: false,
                 country: "ESP",
-                surname: "PEREZ MARTI",
-                province: "9H8",
-                birth_date: "1982-09-18",
-                issue_date: "2018-08-02",
-                nationality: "ESP",
-                license_types: null,
-                expiration_date: "2023-08-02",
+                doc_type: "ID",
+                is_paper: false,
+                bounding_box: [165, 665, 968, 1055],
+                rotation_angle: -359,
+                is_pinkpaper_dl: false,
               },
+            },
+            {
+              type: "PICTURE_VALIDATION",
+              errors: [],
+              raw: null,
+              status: "PENDING",
+              output: {
+                side: null,
+                is_nie: null,
+                country: null,
+                doc_type: null,
+                is_paper: null,
+                bounding_box: null,
+                rotation_angle: null,
+                is_pinkpaper_dl: null,
+              },
+            },
+            {
+              type: "FACE_MATCHER",
+              errors: [],
+              raw: null,
               status: "SUCCESS",
+              output: null,
+            },
+            {
               type: "OCR",
               errors: [],
+              raw: null,
+              status: "SUCCESS",
+              output: {
+                sex: "M",
+                city: "",
+                name: "MARC",
+                number: "XXXXXXXXC",
+                address: "",
+                country: "ESP",
+                surname: "PEREZ MARTI",
+                province: "",
+                birth_date: "1982-09-18",
+                issue_date: "None",
+                patronimic: null,
+                nationality: "ESP",
+                license_types: null,
+                place_of_birth: null,
+                expiration_date: "2023-08-02",
+              },
             },
           ],
-          type: "USER_DOCUMENT_VERIFICATION",
-          permission_type: "NATIONAL_ID",
-          document_type: "NATIONAL_ID",
-          owner_company_app_id: "1",
-          manual_review_status: null,
-          created_at: "2022-07-15T07:54:32.720065+00:00",
-          owner_user: {
-            id: "d72454d5-fa86-48e1-ae7c-19096d841e62",
-            city: "BARCELONA",
-            last_name: "PEREZ MARTI",
-            driving_license_id: null,
-            passport_id: null,
-            nationality: "ESP",
-            sex: "M",
-            aml_info: null,
-            birth_date: "1982-09-18",
-            address: "C. BALMES 123 ENT 04",
-            pep_info: null,
-            aml_info_updated_at: null,
-            email: "a47f8b1b-6a2c-455f-b54d-cbc70d61e80c@siltapp.com",
-            national_id_id: "ef61b392-846c-4b24-bf98-1247fdfaa3c4",
-            country: "ESP",
-            first_name: "MARC",
-            pep_info_updated_at: null,
-          },
+          id: "...",
         },
-        manual_review_status: null,
-        token: "53435829-cf79-43df-as9f-b4ca994e30de",
         files: [
           {
             type: "VERIFICATION_SELFIE",
@@ -448,7 +479,87 @@ export default {
             url: "https://...",
           },
         ],
-        user_id: "d79458d5-fa86-48e1-ae7c-42196f841a43",
+        manual_review_status: null,
+        user: {
+          city: null,
+          company_app_meta: null,
+          verifications: [],
+          first_name: "MARC",
+          certificate: {
+            file_url:
+              "https://...",
+            created_at: "2022-12-23 13:26:48",
+            emitter: {
+              cif: "B01740703",
+              name: "Silt Digital Id SL",
+            },
+            requester: {
+              cif: null,
+              name: "Test Company",
+            },
+            reference: "CERT/2022-55",
+            id: "...",
+          },
+          last_name: "PEREZ MARTI",
+          nationality: "ESP",
+          email: "ee82890f-ec9f-4477-b0ec-b7099de4b929@siltapp.com",
+          address: null,
+          missing_verifications: [],
+          passport: null,
+          national_id: {
+            address: "",
+            license_types: null,
+            created_at: "2022-12-23T13:26:48.458160+00:00",
+            document_number: "XXXXXXXXC",
+            city: "",
+            updated_at: "2022-12-23T13:26:48.470899+00:00",
+            last_name: "PEREZ MARTI",
+            nationality: "ESP",
+            sex: "M",
+            expiration_date: "2023-08-02",
+            birth_date: "1982-09-18",
+            country: "ESP",
+            first_name: "MARC",
+            issue_date: null,
+            id: "...",
+            files: [
+              {
+                file_url:
+                  "https://...",
+                created_at: "2022-12-23T12:14:34.577939+00:00",
+                source: "USER",
+                picture_validation_status: "SUCCESS",
+                file_type: "NATIONAL_ID_BACK",
+              },
+              {
+                file_url:
+                  "https://...",
+                created_at: "2022-12-23T12:14:19.182439+00:00",
+                source: "USER",
+                picture_validation_status: "SUCCESS",
+                file_type: "NATIONAL_ID_FRONT",
+              },
+            ],
+          },
+          driving_license: null,
+          id: "...",
+          sex: "M",
+          status: "SUCCESS",
+          birth_date: "1992-09-18",
+          country: "ESP",
+          selfie: {
+            file_url:
+              "https://...",
+            created_at: "2022-12-23T12:14:43.926792+00:00",
+            source: "USER",
+            picture_validation_status: "SUCCESS",
+            file_type: "VERIFICATION_SELFIE",
+          },
+        },
+        token: "...",
+        status: "RUNNING",
+        user_id: "...",
+        user_meta: null,
       },
     };
   },
