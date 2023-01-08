@@ -4,6 +4,10 @@
   src: url('../fonts/SofiaPro_Bold.otf')
 
 @font-face
+  font-family: 'Futura-Black'
+  src: url('../fonts/SofiaPro_Black.otf')  
+
+@font-face
   font-family: 'Futura-Book'
   src: url('../fonts/SofiaPro_Light.otf')
 
@@ -13,8 +17,9 @@
 h1, h2, h3, h4, h5, h6, .h6
   font-family: $font-bold
   font-weight: normal
-  color: #333333
+  color: $color-black
   line-height: 1.2
+  margin-top: 0
 
 h1, .h1
   font-family: $font-bold
@@ -41,13 +46,21 @@ h6, .h6
   font-size: 1.1rem
 
 a
-  color: #333333
+  font-family: $font-bold
+  color: $color-grey-darken-3
+  transition: 0.3s ease-in-out
+  &:hover
+    color: $color-primary
+    transition: 0.3s ease-in-out
+
+.title-bold
+  font-family: $font-black
 
 .tag
-  font-family: $font-bold
+  font-family: $font-black
   text-transform: uppercase
-  letter-spacing: 0.3em
-  color: $color-primary
+  letter-spacing: 0.2em
+  color: $color-accent
   border-radius: 0.5em
   padding: 1em
   display: flex

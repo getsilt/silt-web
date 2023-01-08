@@ -1,7 +1,38 @@
 <template>
-  <section class="claim-container">
+  <div class="fw-container--dark">
     <!-- TECH FEATURES -->
-    <section class="features-wrapper" id="techfeatures">
+    <section class="tech-features_wrapper" id="techfeatures">
+      <div class="claim-info">
+        <h3 class="title">
+          {{ $t("business_differences_title") }}
+        </h3>
+      </div>
+
+      <div class="tech-features_list">
+        <div class="flex-col">
+          <expandable
+            :key="`techfeature-${i}`"
+            v-for="(feature, i) of secTechfeatures"
+            class="techfeatures_item"
+          >
+            <h5 slot="title">{{ $t(feature.title) }}</h5>
+            <div slot="body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quis est non sunt expedita tenetur voluptatibus iste. Fuga itaque quae veniam numquam voluptatum at. Officia fugiat quo accusamus praesentium tenetur.</div> 
+          </expandable>
+        </div>
+        <div class="flex-col">
+          <expandable
+            :key="`uxfeature-${i}`"
+            v-for="(feature, i) of uxTechfeatures"
+            class="techfeatures_item"
+          >
+            <h5 slot="title">{{ $t(feature.title) }}</h5>
+            <div slot="body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quis est non sunt expedita tenetur voluptatibus iste. Fuga itaque quae veniam numquam voluptatum at. Officia fugiat quo accusamus praesentium tenetur.</div> 
+          </expandable>
+        </div>
+      </div>
+    </section>
+    <!-- TECH FEATURES -->
+    <!-- <section class="cards-wrapper_flex" id="techfeatures">
       <div class="section-headers">
         <span class="tag">{{
           $t("business_highlights_vanguardTech_section")
@@ -19,93 +50,91 @@
           <h4>{{ $t(feature.title) }}</h4>
         </div>
       </div>
-    </section>
+    </section> -->
     <!-- Assisted Picture Quality  -->
-    <div class="fw-container--light">
-      <section class="claim-wrapper">
-        <div class="claim-container left">
-          <div
-            class="claim-side-img screenshots-container"
-            id="assistedPictureQualityScreenshots"
-          >
-            <template v-if="$root.$i18n.locale === 'es'">
-              <div class="screenshot-container">
-                <img
-                  id="screenshot-blurry"
-                  class="screenshot lg screenshotPictureQuality"
-                  src="@/assets/img/screenshots/screenshot_blurry_es.jpg"
-                  :alt="$t('seo_1')"
-                  width="220"
-                  height="432"
-                />
-              </div>
-              <div class="screenshot-container">
-                <img
-                  id="screenshot-mask"
-                  class="screenshot lg screenshotPictureQuality"
-                  src="@/assets/img/screenshots/screenshot_mask_es.jpg"
-                  :alt="$t('seo_1')"
-                  width="220"
-                  height="432"
-                />
-              </div>
-            </template>
-            <template v-else>
-              <div class="screenshot-container">
-                <img
-                  id="screenshot-blurry"
-                  class="screenshot lg screenshotPictureQuality"
-                  src="@/assets/img/screenshots/screenshot_blurry_en.jpg"
-                  :alt="$t('seo_1')"
-                  width="220"
-                  height="432"
-                />
-              </div>
-              <div class="screenshot-container">
-                <img
-                  id="screenshot-mask"
-                  class="screenshot lg screenshotPictureQuality"
-                  src="@/assets/img/screenshots/screenshot_mask_en.jpg"
-                  :alt="$t('seo_1')"
-                  width="220"
-                  height="432"
-                />
-              </div>
-            </template>
-          </div>
-          <div class="claim-info-wrapper" id="assistedPictureQuality">
-            <div class="claim-info">
-              <h3 class="title">
-                {{ $t("business_differences_assistedPictureQuality_title") }}
-              </h3>
-              <p
-                v-html="
-                  $t('business_differences_assistedPictureQuality_content')
-                "
-              >
-                {{ $t("business_differences_assistedPictureQuality_content") }}
-              </p>
-              <p
-                v-html="
-                  $t('business_differences_assistedPictureQuality_content2')
-                "
-              ></p>
-              <demo-buttons />
+    <!-- <section>
+      <div class="claim-container left">
+        <div
+          class="claim-side-img screenshots-container"
+          id="assistedPictureQualityScreenshots"
+        >
+          <template v-if="$root.$i18n.locale === 'es'">
+            <div class="screenshot-container">
+              <img
+                id="screenshot-blurry"
+                class="screenshot lg screenshotPictureQuality"
+                src="@/assets/img/screenshots/screenshot_blurry_es.jpg"
+                :alt="$t('seo_1')"
+                width="220"
+                height="432"
+              />
             </div>
+            <div class="screenshot-container">
+              <img
+                id="screenshot-mask"
+                class="screenshot lg screenshotPictureQuality"
+                src="@/assets/img/screenshots/screenshot_mask_es.jpg"
+                :alt="$t('seo_1')"
+                width="220"
+                height="432"
+              />
+            </div>
+          </template>
+          <template v-else>
+            <div class="screenshot-container">
+              <img
+                id="screenshot-blurry"
+                class="screenshot lg screenshotPictureQuality"
+                src="@/assets/img/screenshots/screenshot_blurry_en.jpg"
+                :alt="$t('seo_1')"
+                width="220"
+                height="432"
+              />
+            </div>
+            <div class="screenshot-container">
+              <img
+                id="screenshot-mask"
+                class="screenshot lg screenshotPictureQuality"
+                src="@/assets/img/screenshots/screenshot_mask_en.jpg"
+                :alt="$t('seo_1')"
+                width="220"
+                height="432"
+              />
+            </div>
+          </template>
+        </div>
+        <div class="claim-info-wrapper" id="assistedPictureQuality">
+          <div class="claim-info">
+            <h3 class="title">
+              {{ $t("business_differences_assistedPictureQuality_title") }}
+            </h3>
+            <p
+              v-html="$t('business_differences_assistedPictureQuality_content')"
+            >
+              {{ $t("business_differences_assistedPictureQuality_content") }}
+            </p>
+            <p
+              v-html="
+                $t('business_differences_assistedPictureQuality_content2')
+              "
+            ></p>
+            <demo-buttons />
           </div>
         </div>
-      </section>
-    </div>
-  </section>
+      </div>
+    </section> -->
+  </div>
 </template>
 
 <script>
 import gsap from "gsap";
+import Expandable from "@/components/Expandable.vue";
 export default {
+  components: {Expandable},
   data() {
     return {
       email: "hello@getsilt.com",
-      techfeatures: [
+      secTechfeatures: [
         {
           icon: "fa-head-side scan-icon",
           // img: require('assets/img/icons/credit-card.svg'),
@@ -116,6 +145,18 @@ export default {
           // img: require('assets/img/icons/money-bag.svg'),
           title: "business_highlights_liveness_title",
         },
+        {
+          icon: "fa-badge-check",
+          // img: require('assets/img/icons/graph-bars.svg'),
+          title: "business_highlights_authenticity_title",
+        },
+        {
+          icon: "fa-user-check",
+          // img: require('assets/img/icons/graph-bars.svg'),
+          title: "business_highlights_biometric_title",
+        },
+      ],
+      uxTechfeatures: [
         {
           icon: "fa-id-card scan-icon",
           // img: require('assets/img/icons/invest.svg'),
@@ -150,13 +191,13 @@ export default {
       gsap
         .timeline({
           scrollTrigger: {
-            trigger: "#techfeatures .features-container",
+            trigger: "#techfeatures .tech-features_list",
             start: "top 80%",
             scrub: false,
             markers: false,
           },
         })
-        .from("#techfeatures .features-item", {
+        .from("#techfeatures .techfeatures_item", {
           duration: 1,
           scale: 1,
           y: 75,
@@ -195,4 +236,17 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+@import "@/assets/sass/vars.sass"
+section.tech-features_wrapper
+  max-width: 1200px
+  display: flex
+  flex-direction: column
+  .tech-features_list
+    display: flex
+    & > *
+      flex: 1 1 auto
+      & > *
+        margin-bottom: $spacing-md
+      &:not(:last-child)
+        margin-right: $spacing-md
 </style>

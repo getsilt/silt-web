@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <div v-if="$slots.image"><slot name="image"></slot></div>
+    <div v-if="$slots.image" class="card__icon"><slot name="image"></slot></div>
     <div v-if="$slots.title"><slot name="title"></slot></div>
     <div v-if="$slots.body"><slot name="body"></slot></div>
     <div v-if="$slots.footer"><slot name="title"></slot></div>
@@ -11,4 +11,8 @@
 export default {};
 </script>
 
-<style></style>
+<style scoped lang="sass">
+@import "@/assets/sass/vars.sass"
+.card__icon
+  margin-bottom: $spacing-sm
+</style>

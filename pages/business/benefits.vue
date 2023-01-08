@@ -1,5 +1,5 @@
 <template>
-  <section class="fw-container fw-container--light light" >
+  <section class="fw-container light" >
     <!-- PRODUCT BENEFITS -->
     <div id="benefits">
       <div class="highlights-wrapper">
@@ -13,7 +13,7 @@
               <div class="article-icon-container">
                 <i class="fad" :class="benefit.icon"></i>
               </div>
-              <h4>{{ $t(benefit.title) }}</h4>
+              <h5>{{ $t(benefit.title) }}</h5>
               <p>{{ $t(benefit.content) }}</p>
             </div>
           </card>

@@ -1,11 +1,11 @@
 .tabs-wrapper
   display: flex
+  align-items: flex-end
   .tab
     padding: 7px 20px
     border-radius: 50px
-    background: white
     color: $color-primary
-    font-weight: bold
+    font-family: $font-bold
     cursor: pointer
     transition: 0.3s ease-in-out
     line-height: initial
@@ -16,42 +16,75 @@
     &.active
       background: lighten($color-primary, 35%)
 
-.tabs-wrapper-bussiness
-  display: flex
-  margin-bottom: $spacing-sm
-  width: 240px
+  &.tab-md
+    .tab
+      padding: $spacing-sm $spacing-md
+  &.tab-squared
+    .tab
+      border-radius: $radius-md
+
   &.vertical
     flex-direction: column
     justify-content: center
-
+    align-items: stretch
+    width: 240px
     .tab
       margin-bottom: $spacing-sm
-
+      text-align: center
+      width: 240px
+      padding: 0px $spacing-sm
+      border-radius: $radius-sm
+      color: $color-primary
+      cursor: pointer
+      transition: 0.3s ease-in-out
+      line-height: initial
+      border: 2px solid transparent
+      p
+        margin-top: $spacing-sm
+        margin-bottom: $spacing-sm
+        font-size: 1rem
+      &:not(:last-child)
+        margin-right: $spacing-md
       &:not(:last-child)
         margin-right: 0px
-      
+
+// .tabs-wrapper-bussiness
+//   display: flex
+//   margin-bottom: $spacing-sm
+//   width: 240px
+  // .tab
+  //   text-align: center
+  //   width: 240px
+  //   padding: 0px $spacing-sm
+  //   border-radius: $radius-sm
+  //   color: $color-primary
+  //   cursor: pointer
+  //   transition: 0.3s ease-in-out
+  //   line-height: initial
+  //   border: 2px solid transparent
+    
+
+.tabs-wrapper.dark, .dark .tabs-wrapper.dark
+  background: transparent
   .tab
-    text-align: center
-    width: 240px
-    padding: 0px $spacing-sm
-    border-radius: $radius-sm
-    color: $color-primary
-    font-weight: bold
-    cursor: pointer
-    transition: 0.3s ease-in-out
-    line-height: initial
+    color: $color-grey-lighten-2
     border: 2px solid transparent
-    p
-      margin-top: $spacing-sm
-      margin-bottom: $spacing-sm
-      font-size: 1rem
-    &:not(:last-child)
-      margin-right: $spacing-md
     &:hover
-      background: rgba($color-primary, 0.1)
+      background: rgba(#fff, 0.1)
     &.active
-      background: rgba($color-primary, 0.1)
-      border: 2px solid $color-primary
+      background: rgba(#fff, 0.8)
+      color: $color-grey-darken-3
 
 .tabs-content-wrapper
   padding: 0 $spacing-lg $spacing-md $spacing-lg
+
+.dark .tabs-wrapper, .fw-container--dark .tabs-wrapper
+  .tab
+    color: $color-grey-lighten-2
+
+  .tab:hover
+    background: $bg-dark-lighten-1
+
+  .tab.active
+    background: $color-primary
+    color: #fff

@@ -87,61 +87,56 @@ function hsb2hsl(h, s, b) {
   return hsl;
 }
 </script>
-<style scoped>
-.color-picker__flyout {
-  width: 240px;
-}
+<style scoped lang="sass">
+@import "@/assets/sass/vars.sass"
 
-.color-picker__inner {
-  padding: 1.5rem 0;
-}
+.color-picker__flyout
+  width: 240px
 
-.control {
-  width: 100%;
-  height: 12px;
-  border-radius: 12px;
-}
+.control
+  width: 100%
+  height: 12px
+  border-radius: 12px
 
-.control + .control {
-  margin-top: 1rem;
-}
 
-.control input {
-  width: 100%;
-  margin: 0;
-}
+  & + .control
+    margin-top: 1rem
 
-.color-picker-text {
-  text-align: center;
-  margin-bottom: 20px;
-}
 
-.control input[type="range"] {
-  -webkit-appearance: none;
-  width: 100%;
-  background: transparent;
-}
+  & input
+    width: 100%
+    margin: 0
 
-.control input[type="range"]:focus {
-  outline: none;
-}
+.color-picker-text
+  text-align: center
+  margin: 0
+  margin-bottom: $spacing-sm
 
-.control input[type="range"]::-ms-track {
-  width: 100%;
-  cursor: pointer;
-  background: transparent;
-  border-color: transparent;
-  color: transparent;
-}
+.control input[type="range"]
+  -webkit-appearance: none
+  width: 100%
+  background: transparent
 
-.control input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  height: 20px;
-  width: 20px;
-  border-radius: 50px;
-  background: #fff;
-  cursor: pointer;
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.12);
-  margin-top: -18px;
-}
+
+  &:focus
+    outline: none
+
+
+  &::-ms-track
+    width: 100%
+    cursor: pointer
+    background: transparent
+    border-color: transparent
+    color: transparent
+
+
+  &::-webkit-slider-thumb
+    -webkit-appearance: none
+    height: 20px
+    width: 20px
+    border-radius: 50px
+    background: #fff
+    cursor: pointer
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.12)
+    margin-top: -18px
 </style>

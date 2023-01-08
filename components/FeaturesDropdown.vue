@@ -28,13 +28,18 @@
             </p>
           </div>
         </nuxt-link>
-         <nuxt-link
+        <nuxt-link
           class="dropdown-wrap__content type1"
           :to="localePath({ name: 'misconduct' })"
           @click.native="$emit('onCloseNav')"
         >
           <i class="fad fa-lg fa-badge-sheriff scan-icon" />
-          {{ $t("nav_feature_misconduct") }}
+          <div>
+            <h6 class="title_menu">{{ $t("nav_feature_misconduct") }}</h6>
+            <p class="subtitle_menu">
+              {{ $t("product_subtitle_misconduct_list") }}
+            </p>
+          </div>
         </nuxt-link>
       </div>
     </div>
@@ -55,19 +60,7 @@
           </div>
         </nuxt-link>
 
-        <nuxt-link
-          class="dropdown-wrap__content type1"
-          :to="localePath({ name: 'misconduct' })"
-          @click.native="$emit('onCloseNav')"
-        >
-          <i class="fad fa-lg fa-badge-sheriff scan-icon" />
-          <div>
-            <h6 class="title_menu">{{ $t("nav_feature_misconduct") }}</h6>
-            <p class="subtitle_menu">
-              {{ $t("product_subtitle_misconduct_list") }}
-            </p>
-          </div>
-        </nuxt-link>
+        
 
         <nuxt-link
           class="dropdown-wrap__content type1"

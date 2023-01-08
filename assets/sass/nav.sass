@@ -11,6 +11,15 @@
 
 // For override styles uses .scss (see documentation)
 
+\:root.dark
+    --primary: #{$color-grey-darken-3}
+    --secondary: #{$color-grey-lighten-1}
+    --terciary: #{$color-grey-darken-1}
+    --link: #{$color-grey-lighten-3}
+    --link-hover: #{$color-grey-lighten-2}
+    --link-inverted: #{$color-grey-darken-2}
+    --link-inverted-hover: #000
+
 .vsm-menu
     margin: 10px 0
     width: 100%
@@ -40,10 +49,12 @@
 .vsm-link
     font-size: 1.2rem
     position: relative
-    color: var(--link)
+    color: var(--link-inverted)
     text-decoration: none
-    &:hover
-        color: var(--link)
+    a, a:visited
+        color: var(--link-inverted)
+    &:hover, &.nuxt-link-active, a.nuxt-link-active
+        color: var(--link-inverted-hover)
 
 .content,
 .content--secondary,
@@ -97,6 +108,7 @@
             opacity: 1
             transform: translateX(0%)
     .title_menu
+        color: var(--link)
         margin: 0
 
     & > *
@@ -134,9 +146,6 @@
 
 .enterprise-dropdown
     width: 500px
-
-.vsm-menu
-    margin: 10px 20px
 
 .vsm-background
     border-radius: 0 !important

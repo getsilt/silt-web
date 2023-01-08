@@ -1,5 +1,5 @@
 <template>
-  <section class="dark">
+  <section>
     <div class="header-wrapper">
       <consent-cookies />
       <vsm-menu ref="menu" :menu="menu">
@@ -16,6 +16,12 @@
               src="@/assets/img/logo/silt_logo_white.svg"
               :alt="$t('silt_name')"
               height="50"
+              style="display: none"
+            />
+            <img
+              src="@/assets/img/logo/silt_logo_black.svg"
+              :alt="$t('silt_name')"
+              height="50"
             />
           </nuxt-link>
         </li>
@@ -28,7 +34,7 @@
               ><button class="vsm-link">Blog</button>
             </a>
           </li>
-          <li class="vsm-section vsm-section_menu vsm-mob-hide">
+          <li class="vsm-section vsm-section_menu vsm-mob-hide vsm-link">
             <nuxt-link
               :to="localePath({ name: 'developers' })"
               @click.native="closeNav()"
@@ -36,6 +42,12 @@
               Developers
             </nuxt-link>
           </li>
+          <a
+            target="_blank"
+            class="bold-link demo-link"
+            href="https://app.meetzy.io/preview/3dfd0d2hgymu"
+            >{{ $t("btn_cta_book_demo") }}</a
+          >
           <a href="https://dashboard.getsilt.com/welcome">
             <button class="demo-button small">
               {{ $t("btn_cta_navBar_demo") }}
@@ -101,12 +113,13 @@ section
 	display: flex
 	justify-content: center
 	font-family: $font-body
-	margin-top: -40px
+	background: #fff
+	position: fixed
+	top: 0
 
 .header-wrapper
 	margin: 0
 	padding: 0
-	position: relative
 	z-index: 100
 	display: flex
 	max-width: 1400px

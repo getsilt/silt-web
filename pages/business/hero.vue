@@ -12,7 +12,7 @@
     <!-- CLAIMS -->
     <div class="claim-info">
       <h1 class="title">
-        <span class="primary">{{ $t("business_claim_scale") }}</span
+        <span class="text-gradient-1 title-bold">{{ $t("business_claim_scale") }}</span
         ><br />{{ $t("business_claim1") }}
       </h1>
       <h4 class="subtitle" v-html="$t('business_claim2')">
@@ -91,8 +91,10 @@ export default {
 .bg-shadow__wrapper
   position: absolute
   z-index: -1
-  top: 0
+  top: -150px
   right: 0
+  filter: blur(10px)
+  opacity: 0.5
 
   .bg-shadow
     position: relative

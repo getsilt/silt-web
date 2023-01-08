@@ -16,7 +16,7 @@
       <section class="footer__wrapper">
         <div class="footer_logo">
           <img
-            src="@/assets/img/logo/silt_blue.svg"
+            src="@/assets/img/logo/silt_logo_white.svg"
             width="75"
             height="40"
             :alt="$t('seo_9')"
@@ -107,7 +107,7 @@ export default {
 
 footer
   margin-top: auto
-  background: darken($color-primary, 40%)
+  background: $color-black
   color: #ffffff77
   padding: $spacing-lg
   z-index: 1
