@@ -122,7 +122,7 @@ section
 	padding: 0
 	z-index: 100
 	display: flex
-	max-width: 1400px
+	max-width: 1600px
 	padding: 0
 	width: 100%
 	@media (min-width: 768px)

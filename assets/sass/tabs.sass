@@ -27,12 +27,12 @@
     flex-direction: column
     justify-content: center
     align-items: stretch
-    width: 240px
+    max-width: 240px
     .tab
       margin-bottom: $spacing-sm
       text-align: center
-      width: 240px
-      padding: 0px $spacing-sm
+      max-width: 240px
+      padding: $spacing-sm $spacing-md
       border-radius: $radius-sm
       color: $color-primary
       cursor: pointer
@@ -47,7 +47,9 @@
         margin-right: $spacing-md
       &:not(:last-child)
         margin-right: 0px
-
+  &.text-left
+    .tab
+      text-align: left
 // .tabs-wrapper-bussiness
 //   display: flex
 //   margin-bottom: $spacing-sm

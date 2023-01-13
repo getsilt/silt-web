@@ -238,7 +238,8 @@ export default {
 <style lang="sass" scoped>
 @import "@/assets/sass/vars.sass"
 section.tech-features_wrapper
-  max-width: 1200px
+  padding: $spacing-lg
+  max-width: 1600px
   display: flex
   flex-direction: column
   .tech-features_list
