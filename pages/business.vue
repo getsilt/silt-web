@@ -309,7 +309,6 @@
     <div class="fw-container--light">
       <section class="claim-container">
         <div class="section-headers">
-          <span class="tag">{{ $t("business_usecases_section") }}</span>
           <h2>{{ $t("customization_guide_title") }}</h2>
           <p>{{ $t("customization_guide_subtitle") }}</p>
           <p>{{ $t("customization_guide_description") }}</p>
@@ -516,11 +515,6 @@ export default {
           // img: require('assets/img/icons/graph-bars.svg'),
           title: "business_highlights_biometric_title",
         },
-        // {
-        //   icon: "",
-        //   // img: require('assets/img/icons/graph-bars.svg'),
-        //   title: "business_highlights_dashboard_title",
-        // },
       ],
       usecases: [
         {
