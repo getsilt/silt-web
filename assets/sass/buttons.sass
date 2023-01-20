@@ -3,7 +3,7 @@ button, .button
   padding: $padding-4-md
   border-radius: $radius-md
   font-family: $font-bold
-  border: 0
+  border: 2px solid $color-grey-darken-3
   outline: none
   font-size: 1.2rem
   cursor: pointer
@@ -16,9 +16,12 @@ button, .button
   align-items: center
   justify-content: center
   text-decoration: none
-  &:hover:not(.vsm-link):not(:disabled)
-    background-color: $color-black
+
+  &:hover
     transition: 0.3s
+
+  &:hover:not(.vsm-link):not(:disabled):not(.secondary)
+    background-color: $color-black
 
   &.demo-button
     color: #ffffff
@@ -45,6 +48,13 @@ button, .button
   &:disabled
     opacity: 0.3
     cursor: default
+
+button.secondary
+  background: rgba(#000, 0.03)
+  color:#000
+  border-color: rgba(#000, 0.07)
+  &:hover
+    background: rgba(#000, 0.07)
 
 a
   text-decoration: none
