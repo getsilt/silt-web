@@ -8,6 +8,9 @@
       href="https://app.meetzy.io/preview/3dfd0d2hgymu"
       ><button class="secondary">{{ $t("btn_cta_book_demo") }}</button></a
     >
+    <router-link :to="{name: 'demo'}"> 
+      DEMO
+    </router-link>
   </div>
 </template>
 
