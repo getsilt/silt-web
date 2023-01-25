@@ -455,7 +455,8 @@ export default {
     width: 100%
     max-width: 450px
     height: auto
-
+.claim-info-wrapper.differences
+  padding-bottom: 0
 .tabs-wrapper--carousel
   margin-bottom: $spacing-md
   .tab.active
