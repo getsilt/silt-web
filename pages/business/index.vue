@@ -3,7 +3,6 @@
     <hero />
     <benefits />
     <solution />
-    <tech-features />
     <integration />
     <usecases />
   </div>
