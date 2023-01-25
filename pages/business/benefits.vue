@@ -1,14 +1,25 @@
 <template>
-  <section class="fw-container light" >
+  <section class="fw-container light">
     <!-- PRODUCT BENEFITS -->
     <div id="benefits">
       <div class="highlights-wrapper">
         <div class="section-headers">
+          <!-- TODO: Change copies and icons -->
           <span class="tag">{{ $t("business_benefits_section") }}</span>
           <h2>{{ $t("business_benefits_title") }}</h2>
+          <p
+            class="subtitle"
+            v-html="$t('business_highlights_vanguardTech_content')"
+          >
+            {{ $t("business_highlights_vanguardTech_content") }}
+          </p>
         </div>
         <div class="list-wrapper pins">
-          <card v-for="benefit in benefits" :key="benefit.title" class="card--w-sm">
+          <card
+            v-for="benefit in benefits"
+            :key="benefit.title"
+            class="card--w-sm"
+          >
             <div class="article-container" slot="body">
               <div class="article-icon-container">
                 <i class="fad" :class="benefit.icon"></i>
@@ -25,10 +36,10 @@
 
 <script>
 import gsap from "gsap";
-import Card from "@/components/Card.vue"
+import Card from "@/components/Card.vue";
 
 export default {
-  components: {Card},
+  components: { Card },
   data() {
     return {
       email: "hello@getsilt.com",
@@ -42,6 +53,11 @@ export default {
           icon: "fa-rabbit-fast fa-2x",
           title: "business_benefits_time_title",
           content: "business_benefits_time_content",
+        },
+        {
+          icon: "fa-sack-dollar fa-2x",
+          title: "business_benefits_costs_title",
+          content: "business_benefits_costs_content",
         },
         {
           icon: "fa-sack-dollar fa-2x",
@@ -83,5 +99,8 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-
+@import "@/assets/sass/vars.sass"
+.article-icon-container
+  margin-top: $spacing-sm
+  margin-bottom: $spacing-lg
 </style>
