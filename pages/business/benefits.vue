@@ -4,14 +4,10 @@
     <div id="benefits">
       <div class="highlights-wrapper">
         <div class="section-headers">
-          <!-- TODO: Change copies and icons -->
           <span class="tag">{{ $t("business_benefits_section") }}</span>
           <h2>{{ $t("business_benefits_title") }}</h2>
-          <p
-            class="subtitle"
-            v-html="$t('business_highlights_vanguardTech_content')"
-          >
-            {{ $t("business_highlights_vanguardTech_content") }}
+          <p class="subtitle" v-html="$t('business_solution_landing_subtitle')">
+            {{ $t("business_solution_landing_subtitle") }}
           </p>
         </div>
         <div class="list-wrapper pins">
@@ -47,12 +43,12 @@ export default {
         {
           icon: "fa-funnel-dollar fa-2x",
           title: "business_benefits_cac_title",
-          content: "business_benefits_cac_content",
+          content: "business_benefits_cac_body",
         },
         {
           icon: "fa-rabbit-fast fa-2x",
-          title: "business_benefits_time_title",
-          content: "business_benefits_time_content",
+          title: "business_benefits_onboarding_title",
+          content: "business_benefits_onboarding_body",
         },
         {
           icon: "fa-sack-dollar fa-2x",
@@ -60,9 +56,9 @@ export default {
           content: "business_benefits_costs_content",
         },
         {
-          icon: "fa-sack-dollar fa-2x",
-          title: "business_benefits_costs_title",
-          content: "business_benefits_costs_content",
+          icon: "fa-user-secret fa-2x",
+          title: "business_benefits_fraud_title",
+          content: "business_benefits_fraud_body",
         },
       ],
     };
