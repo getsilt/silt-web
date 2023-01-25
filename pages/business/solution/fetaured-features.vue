@@ -49,17 +49,7 @@
     <!-- Carrousel Content-->
     <div class="cards-carroussel">
       <!-- Slide Digital ID-->
-      <div
-        v-if="featuredTab == 'digitalID'"
-        class="card"
-        :class="{
-          'bg-gradient-1': featuredTab == 'digitalID',
-          'bg-gradient-2': featuredTab == 'list',
-          'bg-gradient-3': featuredTab == 'kyb',
-          'bg-gradient-4': featuredTab == 'customize',
-          'bg-gradient-5': featuredTab == 'biocheck',
-        }"
-      >
+      <div v-if="featuredTab == 'digitalID'" class="card bg-gradient-1">
         <div class="claim-wrapper" id="differences">
           <div class="claim-container left">
             <div class="claim-side-img diagram" id="diagram">
@@ -103,17 +93,7 @@
       <!-- END Slide Digital ID-->
 
       <!-- Slide Fraud-->
-      <div
-        v-if="featuredTab == 'list'"
-        class="card"
-        :class="{
-          'bg-gradient-1': featuredTab == 'digitalID',
-          'bg-gradient-2': featuredTab == 'list',
-          'bg-gradient-3': featuredTab == 'kyb',
-          'bg-gradient-4': featuredTab == 'customize',
-          'bg-gradient-5': featuredTab == 'biocheck',
-        }"
-      >
+      <div v-if="featuredTab == 'list'" class="card bg-gradient-2">
         <div class="claim-wrapper" id="differences">
           <div class="claim-container left">
             <div class="claim-side-img diagram" id="diagram">
@@ -250,89 +230,41 @@
 
       <!-- Slide KYB-->
       <div v-if="featuredTab == 'kyb'" class="card bg-gradient-3">
-        <div class="claim-wrapper">
+        <div class="claim-wrapper" id="differences">
           <div class="claim-container left">
-            <div
-              class="claim-side-img section-information-wrapper customize-verification-flow-wrapper"
-            >
-              <div
-                v-show="activeCustomizeTab === 'default'"
-                class="claim-side-img right screenshots-container"
-              >
-                <document-select
-                  :color="`color: ${color}`"
-                  :buttonStyle="`background-color: ${color}; font-family: Futura-Bold`"
-                  :background="`background-color: ${backgroundColor}`"
-                  typography="font-family: Futura-Bold"
+            <div class="claim-side-img diagram" id="diagram">
+              <template v-if="$root.$i18n.locale === 'es'">
+                <img
+                  class=""
+                  src="@/assets/img/illustrations/kyb_flow_es.png"
+                  :alt="$t('seo_3')"
+                  width="709"
+                  height="843"
                 />
-              </div>
-              <div
-                v-show="activeCustomizeTab === 'roboto'"
-                class="claim-side-img right screenshots-container"
-              >
-                <document-select
-                  :color="`color: ${color}`"
-                  :buttonStyle="`background-color: ${color}; font-family: Roboto`"
-                  typography="font-family: Roboto"
-                  :background="`background-color: ${backgroundColor}`"
+              </template>
+              <template v-else>
+                <img
+                  class=""
+                  src="@/assets/img/illustrations/kyb_flow_es.png"
+                  :alt="$t('seo_3')"
+                  width="709"
+                  height="843"
                 />
-              </div>
-              <div
-                v-show="activeCustomizeTab === 'comfortaa'"
-                class="claim-side-img right screenshots-container"
-              >
-                <document-select
-                  :color="`color: ${color}`"
-                  :buttonStyle="`background-color: ${color}; font-family: Comfortaa`"
-                  :background="`background-color: ${backgroundColor}`"
-                  typography="font-family: Comfortaa"
-                />
-              </div>
+              </template>
             </div>
             <div class="claim-info-wrapper differences">
               <div class="claim-info">
-                <h3>{{ $t("customization_guide_title") }}</h3>
-                <p>{{ $t("customization_guide_subtitle") }}</p>
-                <!-- <p>{{ $t("customization_guide_description") }}</p> -->
-                <div class="customize-verification-flow-wrapper__options">
-                  <color-picker-slider @onChange="updateColor($event)" />
-                  <div class="tabs-wrapper vertical dark">
-                    <h5 class="typography-heading">
-                      {{ $t("customization_guide_font") }}
-                    </h5>
-                    <v-tab
-                      activeTabName="default"
-                      @onActiveTabChange="activeCustomizeTab = $event"
-                      :isSelected="activeCustomizeTab"
-                    >
-                      <p>Default</p>
-                    </v-tab>
-                    <v-tab
-                      activeTabName="roboto"
-                      @onActiveTabChange="activeCustomizeTab = $event"
-                      :isSelected="activeCustomizeTab"
-                      class="roboto"
-                    >
-                      <p>Roboto</p>
-                    </v-tab>
-                    <v-tab
-                      activeTabName="comfortaa"
-                      @onActiveTabChange="activeCustomizeTab = $event"
-                      :isSelected="activeCustomizeTab"
-                      class="comfortaa"
-                    >
-                      <p>Comfortaa</p>
-                    </v-tab>
-                    <v-tab
-                      activeTabName="your-font"
-                      @onActiveTabChange="activeCustomizeTab = $event"
-                      :isSelected="activeCustomizeTab"
-                      class="your-font"
-                    >
-                      <p>Your font</p>
-                    </v-tab>
-                  </div>
-                </div>
+                <h3 class="title">
+                  {{ $t("business_differences_title") }}
+                </h3>
+                <p v-html="$t('business_differences_oneRegister_content')">
+                  {{ $t("business_differences_oneRegister_content") }}
+                </p>
+                <p>
+                  <a href="/developers" class="bold-link link-with-arrow">
+                    {{ $t("business_solution_card_kyb_link") }}
+                  </a>
+                </p>
               </div>
             </div>
           </div>
@@ -463,7 +395,6 @@ export default {
 <style lang="sass" scoped>
 @import "@/assets/sass/vars.sass"
 .typography-heading
-  margin-bottom: $spacing-md
   text-align: center
 
 .bold-link
@@ -496,15 +427,15 @@ export default {
   display: flex
   flex-direction: row
   flex-wrap: wrap
-  align-items: flex-start
-  justify-content: space-between
+  align-items: center
+  justify-content: space-around
   width: 100%
   &>*
     margin: $spacing-sm
 
   h5
     margin: 0
-    margin-bottom: $spacing-sm
+    margin-bottom: $spacing-lg
 
   .roboto
     font-family: "Roboto"
