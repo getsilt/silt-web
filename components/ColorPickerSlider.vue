@@ -110,7 +110,7 @@ function hsb2hsl(h, s, b) {
 .color-picker-text
   text-align: center
   margin: 0
-  margin-bottom: $spacing-sm
+  margin-bottom: $spacing-lg
 
 .control input[type="range"]
   -webkit-appearance: none
