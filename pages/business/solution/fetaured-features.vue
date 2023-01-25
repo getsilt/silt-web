@@ -278,89 +278,36 @@
 
       <!-- Slide Biocheck-->
       <div v-if="featuredTab == 'biocheck'" class="card bg-gradient-5">
-        <div class="claim-wrapper">
+        <div class="claim-wrapper" id="differences">
           <div class="claim-container left">
-            <div
-              class="claim-side-img section-information-wrapper customize-verification-flow-wrapper"
-            >
-              <div
-                v-show="activeCustomizeTab === 'default'"
-                class="claim-side-img right screenshots-container"
-              >
-                <document-select
-                  :color="`color: ${color}`"
-                  :buttonStyle="`background-color: ${color}; font-family: Futura-Bold`"
-                  :background="`background-color: ${backgroundColor}`"
-                  typography="font-family: Futura-Bold"
+            <div class="claim-side-img diagram" id="diagram">
+              <template v-if="$root.$i18n.locale === 'es'">
+                <img
+                  class=""
+                  src="@/assets/img/illustrations/user_flow_diagram_es.png"
+                  :alt="$t('seo_3')"
+                  width="709"
+                  height="843"
                 />
-              </div>
-              <div
-                v-show="activeCustomizeTab === 'roboto'"
-                class="claim-side-img right screenshots-container"
-              >
-                <document-select
-                  :color="`color: ${color}`"
-                  :buttonStyle="`background-color: ${color}; font-family: Roboto`"
-                  typography="font-family: Roboto"
-                  :background="`background-color: ${backgroundColor}`"
+              </template>
+              <template v-else>
+                <img
+                  class=""
+                  src="@/assets/img/illustrations/user_flow_diagram_en.png"
+                  :alt="$t('seo_3')"
+                  width="709"
+                  height="843"
                 />
-              </div>
-              <div
-                v-show="activeCustomizeTab === 'comfortaa'"
-                class="claim-side-img right screenshots-container"
-              >
-                <document-select
-                  :color="`color: ${color}`"
-                  :buttonStyle="`background-color: ${color}; font-family: Comfortaa`"
-                  :background="`background-color: ${backgroundColor}`"
-                  typography="font-family: Comfortaa"
-                />
-              </div>
+              </template>
             </div>
             <div class="claim-info-wrapper differences">
               <div class="claim-info">
-                <h3>{{ $t("customization_guide_title") }}</h3>
-                <p>{{ $t("customization_guide_subtitle") }}</p>
-                <!-- <p>{{ $t("customization_guide_description") }}</p> -->
-                <div class="customize-verification-flow-wrapper__options">
-                  <color-picker-slider @onChange="updateColor($event)" />
-                  <div class="tabs-wrapper vertical dark">
-                    <h5 class="typography-heading">
-                      {{ $t("customization_guide_font") }}
-                    </h5>
-                    <v-tab
-                      activeTabName="default"
-                      @onActiveTabChange="activeCustomizeTab = $event"
-                      :isSelected="activeCustomizeTab"
-                    >
-                      <p>Default</p>
-                    </v-tab>
-                    <v-tab
-                      activeTabName="roboto"
-                      @onActiveTabChange="activeCustomizeTab = $event"
-                      :isSelected="activeCustomizeTab"
-                      class="roboto"
-                    >
-                      <p>Roboto</p>
-                    </v-tab>
-                    <v-tab
-                      activeTabName="comfortaa"
-                      @onActiveTabChange="activeCustomizeTab = $event"
-                      :isSelected="activeCustomizeTab"
-                      class="comfortaa"
-                    >
-                      <p>Comfortaa</p>
-                    </v-tab>
-                    <v-tab
-                      activeTabName="your-font"
-                      @onActiveTabChange="activeCustomizeTab = $event"
-                      :isSelected="activeCustomizeTab"
-                      class="your-font"
-                    >
-                      <p>Your font</p>
-                    </v-tab>
-                  </div>
-                </div>
+                <h3 class="title">
+                  {{ $t("biocheck_claim1") }}
+                </h3>
+                <p v-html="$t('biocheck_claim2')">
+                  {{ $t("biocheck_claim2") }}
+                </p>
               </div>
             </div>
           </div>
