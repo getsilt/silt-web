@@ -90,10 +90,11 @@
                 <p v-html="$t('business_differences_oneRegister_content')">
                   {{ $t("business_differences_oneRegister_content") }}
                 </p>
-                <!-- <p v-html="$t('business_differences_technology_content')">
-                 {{ $t("business_differences_technology_content") }}
-              </p> -->
-                <demo-buttons class="colored" />
+                <p>
+                  <a href="/developers" class="bold-link link-with-arrow">
+                    {{ $t("business_solution_card_kyc_link") }}
+                  </a>
+                </p>
               </div>
             </div>
           </div>
@@ -472,6 +473,25 @@ export default {
 .typography-heading
   margin-bottom: $spacing-md
   text-align: center
+
+.bold-link
+  color: #fff
+
+.link-with-arrow
+    position: relative
+    &:after, &:before
+      transition: 0.2s ease-in-out
+      opacity: 0
+      transform: translateX(0%)
+      position: absolute
+      right: 0
+      font-family: "Font Awesome 5 Duotone"
+      content: "\f061"
+      color: #fff
+    &:hover:after
+      transition: 0.2s ease-in-out
+      opacity: 1
+      transform: translateX(100%)
 
 .tabs-wrapper.vertical
   margin-right: $spacing-md
