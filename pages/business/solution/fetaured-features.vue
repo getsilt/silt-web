@@ -2,12 +2,7 @@
   <!-- Carrousel Tabs-->
   <div class="cards-wrapper_flex" id="features">
     <div
-      class="
-        tabs-wrapper tabs-wrapper--carousel
-        tab-md tab-squared
-        vertical
-        text-left
-      "
+      class="tabs-wrapper tabs-wrapper--carousel tab-md tab-squared vertical text-left"
     >
       <v-tab
         activeTabName="digitalID"
@@ -15,23 +10,7 @@
         :isSelected="featuredTab"
         :class="{ 'text-gradient-1-child': featuredTab == 'digitalID' }"
       >
-        <span>{{ $t("business_differences_oneRegister_title") }}</span>
-      </v-tab>
-      <v-tab
-        activeTabName="list"
-        @onActiveTabChange="featuredTab = $event"
-        :isSelected="featuredTab"
-        :class="{ 'text-gradient-2-child': featuredTab == 'list' }"
-      >
-        <span>{{ $t("business_benefits_list_title") }}</span>
-      </v-tab>
-      <v-tab
-        activeTabName="updated"
-        @onActiveTabChange="featuredTab = $event"
-        :isSelected="featuredTab"
-        :class="{ 'text-gradient-3-child': featuredTab == 'updated' }"
-      >
-        <span>{{ $t("business_benefits_updatedDocs_title") }}</span>
+        <span>{{ $t("business_solution_carrousel_kyc") }}</span>
       </v-tab>
       <v-tab
         activeTabName="customize"
@@ -39,7 +18,31 @@
         :isSelected="featuredTab"
         :class="{ 'text-gradient-4-child': featuredTab == 'customize' }"
       >
-        <span>{{ $t("customization_guide_title") }}</span>
+        <span>{{ $t("business_solution_carrousel_customization") }}</span>
+      </v-tab>
+      <v-tab
+        activeTabName="list"
+        @onActiveTabChange="featuredTab = $event"
+        :isSelected="featuredTab"
+        :class="{ 'text-gradient-2-child': featuredTab == 'list' }"
+      >
+        <span>{{ $t("business_solution_carrousel_fraud") }}</span>
+      </v-tab>
+      <v-tab
+        activeTabName="kyb"
+        @onActiveTabChange="featuredTab = $event"
+        :isSelected="featuredTab"
+        :class="{ 'text-gradient-3-child': featuredTab == 'kyb' }"
+      >
+        <span>{{ $t("nav_feature_kyb") }}</span>
+      </v-tab>
+      <v-tab
+        activeTabName="biocheck"
+        @onActiveTabChange="featuredTab = $event"
+        :isSelected="featuredTab"
+        :class="{ 'text-gradient-5-child': featuredTab == 'biocheck' }"
+      >
+        <span>{{ $t("business_solution_carrousel_biocheck") }}</span>
       </v-tab>
     </div>
 
@@ -52,8 +55,9 @@
         :class="{
           'bg-gradient-1': featuredTab == 'digitalID',
           'bg-gradient-2': featuredTab == 'list',
-          'bg-gradient-3': featuredTab == 'updated',
+          'bg-gradient-3': featuredTab == 'kyb',
           'bg-gradient-4': featuredTab == 'customize',
+          'bg-gradient-5': featuredTab == 'biocheck',
         }"
       >
         <div class="claim-wrapper" id="differences">
@@ -104,8 +108,9 @@
         :class="{
           'bg-gradient-1': featuredTab == 'digitalID',
           'bg-gradient-2': featuredTab == 'list',
-          'bg-gradient-3': featuredTab == 'updated',
+          'bg-gradient-3': featuredTab == 'kyb',
           'bg-gradient-4': featuredTab == 'customize',
+          'bg-gradient-5': featuredTab == 'biocheck',
         }"
       >
         <div class="claim-wrapper" id="differences">
@@ -163,11 +168,7 @@
         <div class="claim-wrapper">
           <div class="claim-container left">
             <div
-              class="
-                claim-side-img
-                section-information-wrapper
-                customize-verification-flow-wrapper
-              "
+              class="claim-side-img section-information-wrapper customize-verification-flow-wrapper"
             >
               <div
                 v-show="activeCustomizeTab === 'default'"
@@ -253,6 +254,190 @@
         </div>
       </div>
       <!-- END Slide Customize-->
+
+      <!-- Slide KYB-->
+      <div v-if="featuredTab == 'kyb'" class="card bg-gradient-3">
+        <div class="claim-wrapper">
+          <div class="claim-container left">
+            <div
+              class="claim-side-img section-information-wrapper customize-verification-flow-wrapper"
+            >
+              <div
+                v-show="activeCustomizeTab === 'default'"
+                class="claim-side-img right screenshots-container"
+              >
+                <document-select
+                  :color="`color: ${color}`"
+                  :buttonStyle="`background-color: ${color}; font-family: Futura-Bold`"
+                  :background="`background-color: ${backgroundColor}`"
+                  typography="font-family: Futura-Bold"
+                />
+              </div>
+              <div
+                v-show="activeCustomizeTab === 'roboto'"
+                class="claim-side-img right screenshots-container"
+              >
+                <document-select
+                  :color="`color: ${color}`"
+                  :buttonStyle="`background-color: ${color}; font-family: Roboto`"
+                  typography="font-family: Roboto"
+                  :background="`background-color: ${backgroundColor}`"
+                />
+              </div>
+              <div
+                v-show="activeCustomizeTab === 'comfortaa'"
+                class="claim-side-img right screenshots-container"
+              >
+                <document-select
+                  :color="`color: ${color}`"
+                  :buttonStyle="`background-color: ${color}; font-family: Comfortaa`"
+                  :background="`background-color: ${backgroundColor}`"
+                  typography="font-family: Comfortaa"
+                />
+              </div>
+            </div>
+            <div class="claim-info-wrapper differences">
+              <div class="claim-info">
+                <h3>{{ $t("customization_guide_title") }}</h3>
+                <p>{{ $t("customization_guide_subtitle") }}</p>
+                <!-- <p>{{ $t("customization_guide_description") }}</p> -->
+                <div class="customize-verification-flow-wrapper__options">
+                  <color-picker-slider @onChange="updateColor($event)" />
+                  <div class="tabs-wrapper vertical dark">
+                    <h5 class="typography-heading">
+                      {{ $t("customization_guide_font") }}
+                    </h5>
+                    <v-tab
+                      activeTabName="default"
+                      @onActiveTabChange="activeCustomizeTab = $event"
+                      :isSelected="activeCustomizeTab"
+                    >
+                      <p>Default</p>
+                    </v-tab>
+                    <v-tab
+                      activeTabName="roboto"
+                      @onActiveTabChange="activeCustomizeTab = $event"
+                      :isSelected="activeCustomizeTab"
+                      class="roboto"
+                    >
+                      <p>Roboto</p>
+                    </v-tab>
+                    <v-tab
+                      activeTabName="comfortaa"
+                      @onActiveTabChange="activeCustomizeTab = $event"
+                      :isSelected="activeCustomizeTab"
+                      class="comfortaa"
+                    >
+                      <p>Comfortaa</p>
+                    </v-tab>
+                    <v-tab
+                      activeTabName="your-font"
+                      @onActiveTabChange="activeCustomizeTab = $event"
+                      :isSelected="activeCustomizeTab"
+                      class="your-font"
+                    >
+                      <p>Your font</p>
+                    </v-tab>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END Slide KYB-->
+
+      <!-- Slide Biocheck-->
+      <div v-if="featuredTab == 'biocheck'" class="card bg-gradient-5">
+        <div class="claim-wrapper">
+          <div class="claim-container left">
+            <div
+              class="claim-side-img section-information-wrapper customize-verification-flow-wrapper"
+            >
+              <div
+                v-show="activeCustomizeTab === 'default'"
+                class="claim-side-img right screenshots-container"
+              >
+                <document-select
+                  :color="`color: ${color}`"
+                  :buttonStyle="`background-color: ${color}; font-family: Futura-Bold`"
+                  :background="`background-color: ${backgroundColor}`"
+                  typography="font-family: Futura-Bold"
+                />
+              </div>
+              <div
+                v-show="activeCustomizeTab === 'roboto'"
+                class="claim-side-img right screenshots-container"
+              >
+                <document-select
+                  :color="`color: ${color}`"
+                  :buttonStyle="`background-color: ${color}; font-family: Roboto`"
+                  typography="font-family: Roboto"
+                  :background="`background-color: ${backgroundColor}`"
+                />
+              </div>
+              <div
+                v-show="activeCustomizeTab === 'comfortaa'"
+                class="claim-side-img right screenshots-container"
+              >
+                <document-select
+                  :color="`color: ${color}`"
+                  :buttonStyle="`background-color: ${color}; font-family: Comfortaa`"
+                  :background="`background-color: ${backgroundColor}`"
+                  typography="font-family: Comfortaa"
+                />
+              </div>
+            </div>
+            <div class="claim-info-wrapper differences">
+              <div class="claim-info">
+                <h3>{{ $t("customization_guide_title") }}</h3>
+                <p>{{ $t("customization_guide_subtitle") }}</p>
+                <!-- <p>{{ $t("customization_guide_description") }}</p> -->
+                <div class="customize-verification-flow-wrapper__options">
+                  <color-picker-slider @onChange="updateColor($event)" />
+                  <div class="tabs-wrapper vertical dark">
+                    <h5 class="typography-heading">
+                      {{ $t("customization_guide_font") }}
+                    </h5>
+                    <v-tab
+                      activeTabName="default"
+                      @onActiveTabChange="activeCustomizeTab = $event"
+                      :isSelected="activeCustomizeTab"
+                    >
+                      <p>Default</p>
+                    </v-tab>
+                    <v-tab
+                      activeTabName="roboto"
+                      @onActiveTabChange="activeCustomizeTab = $event"
+                      :isSelected="activeCustomizeTab"
+                      class="roboto"
+                    >
+                      <p>Roboto</p>
+                    </v-tab>
+                    <v-tab
+                      activeTabName="comfortaa"
+                      @onActiveTabChange="activeCustomizeTab = $event"
+                      :isSelected="activeCustomizeTab"
+                      class="comfortaa"
+                    >
+                      <p>Comfortaa</p>
+                    </v-tab>
+                    <v-tab
+                      activeTabName="your-font"
+                      @onActiveTabChange="activeCustomizeTab = $event"
+                      :isSelected="activeCustomizeTab"
+                      class="your-font"
+                    >
+                      <p>Your font</p>
+                    </v-tab>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END Slide Biocheck-->
     </div>
   </div>
 </template>
