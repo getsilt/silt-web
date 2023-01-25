@@ -233,6 +233,7 @@
         <div class="claim-wrapper" id="differences">
           <div class="claim-container left">
             <div class="claim-side-img diagram" id="diagram">
+              <!-- TODO: Update kyb_flow_es.png and kyb_flow_en.png -->
               <template v-if="$root.$i18n.locale === 'es'">
                 <img
                   class=""
@@ -255,10 +256,13 @@
             <div class="claim-info-wrapper differences">
               <div class="claim-info">
                 <h3 class="title">
-                  {{ $t("business_differences_title") }}
+                  {{ $t("kyb_claim1") }}
                 </h3>
                 <p v-html="$t('business_differences_oneRegister_content')">
-                  {{ $t("business_differences_oneRegister_content") }}
+                  {{ $t("kyb_solution_content1") }}
+                </p>
+                <p v-html="$t('business_differences_oneRegister_content')">
+                  {{ $t("kyb_solution_content2") }}
                 </p>
                 <p>
                   <a href="/developers" class="bold-link link-with-arrow">
