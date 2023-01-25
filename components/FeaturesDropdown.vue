@@ -14,17 +14,16 @@
             <p class="subtitle_menu">{{ $t("product_subtitle_kyc") }}</p>
           </div>
         </nuxt-link>
-
         <nuxt-link
           class="dropdown-wrap__content type1"
-          :to="localePath({ name: 'users' })"
+          :to="localePath({ name: 'rules' })"
           @click.native="$emit('onCloseNav')"
         >
-          <i class="fad fa-lg fa-bolt scan-icon" />
+          <i class="fad fa-lg fa-pencil-ruler scan-icon" />
           <div>
-            <h6 class="title_menu">{{ $t("nav_feature_digital_id") }}</h6>
+            <h6 class="title_menu">{{ $t("nav_feature_rules") }}</h6>
             <p class="subtitle_menu">
-              {{ $t("product_subtitile_digital_identity") }}
+              {{ $t("product_subtitle_rules") }}
             </p>
           </div>
         </nuxt-link>
@@ -59,9 +58,6 @@
             </p>
           </div>
         </nuxt-link>
-
-        
-
         <nuxt-link
           class="dropdown-wrap__content type1"
           :to="localePath({ name: 'kyb' })"
@@ -73,7 +69,19 @@
             <p class="subtitle_menu">{{ $t("product_subtitle_kyb") }}</p>
           </div>
         </nuxt-link>
-
+        <nuxt-link
+          class="dropdown-wrap__content type1"
+          :to="localePath({ name: 'aml' })"
+          @click.native="$emit('onCloseNav')"
+        >
+          <i class="fad fa-lg fa-address-book scan-icon" />
+          <div>
+            <h6 class="title_menu">{{ $t("nav_feature_aml") }}</h6>
+            <p class="subtitle_menu">
+              {{ $t("product_subtitle_aml") }}
+            </p>
+          </div>
+        </nuxt-link>
         <nuxt-link
           class="dropdown-wrap__content type1 deactivated"
           :to="localePath({ name: 'business' })"
@@ -81,7 +89,9 @@
         >
           <i class="fad fa-lg fa-house scan-icon" />
           <div>
-            <h6 class="title_menu">{{ $t("nav_feature_por") }}</h6>
+            <h6 class="title_menu">
+              {{ $t("nav_feature_por") }} ({{ $t("global_contactUs") }})
+            </h6>
           </div>
         </nuxt-link>
       </div>
