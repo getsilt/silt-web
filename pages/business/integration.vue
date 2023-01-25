@@ -26,10 +26,10 @@
           </div>
         </article>
       </div>
-      <p class="centered-block">
-        <a href="/developers" class="bold-link link-with-arrow">{{
-          $t("business_howto_content4")
-        }}</a>
+      <p class="centered-block integration-link">
+        <a href="/developers" class="bold-link link-with-arrow">
+          {{ $t("business_howto_content4") }}
+        </a>
       </p>
     </section>
   </div>
@@ -101,22 +101,21 @@ export default {
   &>*:last-child
     margin-right: 0
 
-.link-with-arrow
-  position: relative
-  &:after, &:before
-    transition: 0.2s ease-in-out
-    opacity: 0
-    transform: translateX(0%)
-    position: absolute
-    right: 0
-    font-family: "Font Awesome 5 Duotone"
-    content: "\f061"
-    color: #2963ff
-  &:before
-    content: "\10f061"
-    color: rgba(41, 99, 255, 0.5)
-  &:hover:after, &:hover:before
-    transition: 0.2s ease-in-out
-    opacity: 1
-    transform: translateX(100%)
+.integration-link
+    margin-top: $spacing-xlg
+    .link-with-arrow
+      position: relative
+      &:after, &:before
+        transition: 0.2s ease-in-out
+        opacity: 0
+        transform: translateX(0%)
+        position: absolute
+        right: 0
+        font-family: "Font Awesome 5 Duotone"
+        content: "\f061"
+        color: #2963ff
+      &:hover:after
+        transition: 0.2s ease-in-out
+        opacity: 1
+        transform: translateX(100%)
 </style>
