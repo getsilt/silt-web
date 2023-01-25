@@ -139,24 +139,16 @@
             <div class="claim-info-wrapper differences">
               <div class="claim-info">
                 <h3 class="title">
-                  {{ $t("business_benefits_list_title") }}
+                  {{ $t("business_differences_title") }}
                 </h3>
-                <h3 class="title">
-                  {{ $t("business_highlights_authenticity_title") }}
-                </h3>
-                <h3 class="title">
-                  {{ $t("business_highlights_rules_title") }}
-                </h3>
-                <h3 class="title">
-                  {{ $t("business_benefits_updatedDocs_title") }}
-                </h3>
-                <!-- <p v-html="$t('business_differences_oneRegister_content')">
+                <p v-html="$t('business_differences_oneRegister_content')">
                   {{ $t("business_differences_oneRegister_content") }}
-                </p> -->
-                <!-- <p v-html="$t('business_differences_technology_content')">
-                 {{ $t("business_differences_technology_content") }}
-              </p> -->
-                <demo-buttons class="colored" />
+                </p>
+                <p>
+                  <a href="/developers" class="bold-link link-with-arrow">
+                    {{ $t("business_solution_card_kyc_link") }}
+                  </a>
+                </p>
               </div>
             </div>
           </div>
@@ -524,13 +516,14 @@ export default {
 
 .cards-carroussel
   flex: 1 1
-.claim-side-img .diagram
+  width: -webkit-fill-available
+.claim-container .claim-side-img.diagram
+  margin: 0
   padding: 0
-.claim-container .claim-side-img > img
-  min-height: 200px
-  max-height: 600px
-  height: 100%
-  width: auto
+  & > img
+    width: 100%
+    max-width: 450px
+    height: auto
 
 .tabs-wrapper--carousel
   margin-bottom: $spacing-md
