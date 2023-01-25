@@ -42,12 +42,12 @@
               Developers
             </nuxt-link>
           </li>
-          <a
-            target="_blank"
-            class="bold-link demo-link"
-            href="https://app.meetzy.io/preview/3dfd0d2hgymu"
-            >{{ $t("btn_cta_book_demo") }}</a
-          >
+          <!-- TODO: Update using new copies -->
+          <a href="https://dashboard.getsilt.com/welcome">
+            <button class="demo-button small login-button">
+              {{ $t("btn_cta_navBar_demo") }}
+            </button>
+          </a>
           <a href="https://dashboard.getsilt.com/welcome">
             <button class="demo-button small">
               {{ $t("btn_cta_navBar_demo") }}
@@ -282,9 +282,12 @@ nav
 	.demo-button
 		display: none
 	.demo-button
-		margin-bottom: 10px
-		text-decoration: none
 		margin-left: $spacing-lg
+	.login-button
+		background-color: $color-black
+		color: #fff
+	.login-button:hover
+		background-color: $color-salmon
 
 @media (min-width: 768px)
 .header-bar
