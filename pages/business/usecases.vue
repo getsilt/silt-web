@@ -3,10 +3,9 @@
     <div class="section-headers">
       <span class="tag">{{ $t("business_usecases_section") }}</span>
       <h2>{{ $t("business_usecases_title") }}</h2>
-      <!-- <p>{{ $t("business_usecases_content") }}</p> -->
     </div>
-
-    <div class="flex-row">
+    <!-- TODO: Update with new copies and check responsive with copies -->
+    <div class="flex-row usecase-wrapper">
       <div class="usecase-titles">
         <h2
           v-for="usecase in usecases"
@@ -38,16 +37,6 @@
         </div>
       </template>
     </div>
-    <!-- <div class="features-container">
-      <div
-        class="features-item"
-        v-for="usecase in usecases"
-        :key="usecase.title"
-      >
-        <i class="fad fa-2x" :class="usecase.icon"></i>
-        <h4>{{ $t(usecase.title) }}</h4>
-      </div>
-    </div> -->
   </section>
 </template>
 
@@ -158,9 +147,13 @@ export default {
       transition: 0.3s ease-in-out
   & > *.active
     color: $color-black
+.usecase-wrapper
+  flex-wrap: wrap
+  justify-content: center
 .usecase-body
   flex: 1 1 50%
   padding: $spacing-lg
+  max-width: -webkit-fill-available
   .demo_cta__wrapper
     margin-top: $spacing-xlg
   .usecase-body_feature-tags
