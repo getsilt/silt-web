@@ -5,7 +5,7 @@
       <div class="claim-info">
         <h1 class="title">
           <span class="primary">{{ $t("business_claim_scale") }}</span
-          ><br />{{ $t("business_claim1") }}
+          ><br /><span v-html="$t('business_claim1')">{{ $t("business_claim1") }}</span>
         </h1>
         <h4 class="subtitle" v-html="$t('business_claim2')">
           {{ $t("business_claim2") }}
