@@ -1,7 +1,5 @@
 <template>
   <div>
-    <!-- TODO: Update hero -->
-    <hero />
     <benefits />
     <solution />
     <tech-features />
