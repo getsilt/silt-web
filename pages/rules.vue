@@ -4,25 +4,20 @@
     <hero />
     <benefits />
     <solution />
-    <tech-features />
-    <integration />
   </div>
 </template>
 
 <script>
 import DemoButtons from "../components/DemoButtons.vue";
 import Hero from "./business/hero.vue";
-import Benefits from "./business/benefits.vue";
-import Solution from "./business/solution/index.vue";
-import Integration from "./business/integration.vue";
-import TechFeatures from "./business/tech-features.vue";
-import Usecases from "./business/usecases.vue";
+import Benefits from "./rules/benefits.vue";
+import Solution from "./rules/solution.vue";
 
 export default {
   nuxtI18n: {
     paths: {
-      en: "/kyc", // -> accessible at / (no prefix since it's the default locale)
-      es: "/kyc",
+      en: "/rules", // -> accessible at / (no prefix since it's the default locale)
+      es: "/rules",
     },
   },
   components: {
@@ -30,14 +25,11 @@ export default {
     Hero,
     Benefits,
     Solution,
-    Integration,
-    TechFeatures,
-    Usecases,
   },
   head() {
     const i18nSeo = this.$nuxtI18nHead();
     return {
-      title: this.$t("nav_feature_kyc"),
+      title: this.$t("nav_feature_rules"),
       meta: [
         {
           hid: "description",
@@ -52,7 +44,7 @@ export default {
         {
           hid: "og:title",
           name: "og:title",
-          content: this.$t("nav_feature_kyc"),
+          content: this.$t("nav_feature_rules"),
         },
       ],
     };
