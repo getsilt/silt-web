@@ -1,13 +1,13 @@
 <template>
   <div class="fw-container--dark">
+    <div class="section-headers">
+      <span class="tag">{{ $t("features_title") }}</span>
+      <h2 v-html="$t('features_subtitle')" class="features_subtitle">
+        {{ $t("features_subtitle") }}
+      </h2>
+    </div>
     <!-- TECH FEATURES -->
     <section class="tech-features_wrapper" id="techfeatures">
-      <div class="claim-info">
-        <h3 class="title">
-          {{ $t("business_differences_title") }}
-        </h3>
-      </div>
-
       <div class="tech-features_list">
         <div class="flex-col">
           <expandable
@@ -15,12 +15,15 @@
             v-for="(feature, i) of secTechfeatures"
             class="techfeatures_item"
           >
-            <h5 slot="title">{{ $t(feature.title) }}</h5>
+            <h5
+              v-html="$t(feature.title)"
+              slot="title"
+              class="feature_security_title"
+            >
+              {{ $t(feature.title) }}
+            </h5>
             <div slot="body">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni,
-              quis est non sunt expedita tenetur voluptatibus iste. Fuga itaque
-              quae veniam numquam voluptatum at. Officia fugiat quo accusamus
-              praesentium tenetur.
+              {{ $t(feature.body) }}
             </div>
           </expandable>
         </div>
@@ -30,12 +33,15 @@
             v-for="(feature, i) of uxTechfeatures"
             class="techfeatures_item"
           >
-            <h5 slot="title">{{ $t(feature.title) }}</h5>
+            <h5
+              v-html="$t(feature.title)"
+              slot="title"
+              class="feature_ux_title"
+            >
+              {{ $t(feature.title) }}
+            </h5>
             <div slot="body">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni,
-              quis est non sunt expedita tenetur voluptatibus iste. Fuga itaque
-              quae veniam numquam voluptatum at. Officia fugiat quo accusamus
-              praesentium tenetur.
+              {{ $t(feature.body) }}
             </div>
           </expandable>
         </div>
@@ -55,33 +61,75 @@ export default {
       secTechfeatures: [
         {
           icon: "fa-head-side scan-icon",
-          title: "business_highlights_faceRecognition_title",
+          title: "features_security_video_selfie_liveness_detection_title",
+          body: "features_security_video_selfie_liveness_detection_body",
         },
         {
           icon: "fa-heartbeat",
-          title: "business_highlights_liveness_title",
-        },
-        {
-          icon: "fa-badge-check",
-          title: "business_highlights_authenticity_title",
+          title: "features_security_selfie_forgery_title",
+          body: "features_security_selfie_forgery_detector_body",
         },
         {
           icon: "fa-user-check",
-          title: "business_highlights_biometric_title",
+          title: "features_security_expired_documents_title",
+          body: "features_security_expired_documents_body",
+        },
+        {
+          icon: "fa-badge-check",
+          title: "features_security_document_forgery_detector_title",
+          body: "features_security_document_forgery_detector_body",
+        },
+        {
+          icon: "fa-badge-check",
+          title: "features_security_biometric_verification_title",
+          body: "features_security_biometric_verification_body",
+        },
+        {
+          icon: "fa-badge-check",
+          title: "features_security_misconduct_list_title",
+          body: "features_security_misconduct_list_body",
+        },
+        {
+          icon: "fa-badge-check",
+          title: "features_security_rules_title",
+          body: "features_security_rules_body",
         },
       ],
       uxTechfeatures: [
         {
           icon: "fa-id-card scan-icon",
-          title: "business_highlights_docscan_title",
+          title: "features_ux_digital_identity_title",
+          body: "features_ux_digital_identity_body",
         },
         {
           icon: "fa-badge-check",
-          title: "business_highlights_authenticity_title",
+          title: "features_ux_document_photos_native_camera_title",
+          body: "features_ux_document_photos_native_camera_body",
+        },
+        {
+          icon: "fa-badge-check",
+          title: "features_ux_image_quality_feedback_title",
+          body: "features_ux_image_quality_feedback_body",
         },
         {
           icon: "fa-user-check",
-          title: "business_highlights_biometric_title",
+          title: "features_ux_document_verification_title",
+          body: "features_ux_document_verification_body",
+        },
+        {
+          icon: "fa-user-check",
+          title: "features_ux_accepted_documents_title",
+          body: "features_ux_accepted_documents_body",
+        },
+        {
+          icon: "fa-user-check",
+          title: "features_ux_customization_title",
+          body: "features_ux_customization_body",
+        },
+        {
+          icon: "fa-user-check",
+          title: "features_ux_customization_title",
+          body: "features_ux_passive_liveness_selfie_body",
         },
       ],
     };
