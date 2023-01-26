@@ -1,13 +1,12 @@
 <template>
   <section class="fw-container light">
-    <!-- PRODUCT BENEFITS -->
     <div id="benefits">
       <div class="highlights-wrapper">
         <div class="section-headers">
           <span class="tag">{{ $t("business_benefits_section") }}</span>
-          <h2>{{ $t("business_benefits_title") }}</h2>
-          <p class="subtitle" v-html="$t('business_benefits_landing_subtitle')">
-            {{ $t("business_benefits_landing_subtitle") }}
+          <h2>{{ $t("business_benefits_rules_title") }}</h2>
+          <p class="subtitle" v-html="$t('business_benefits_rules_subtitle')">
+            {{ $t("business_benefits_rules_subtitle") }}
           </p>
         </div>
         <div class="list-wrapper pins">
@@ -41,9 +40,9 @@ export default {
       email: "hello@getsilt.com",
       benefits: [
         {
-          icon: "fa-receipt fa-2x",
-          title: "business_benefits_compliance_title",
-          content: "business_benefits_compliance_body",
+          icon: "fa-piggy-bank fa-2x",
+          title: "business_benefits_costs_title",
+          content: "business_benefits_costs_content",
         },
         {
           icon: "fa-badge-check fa-2x",
