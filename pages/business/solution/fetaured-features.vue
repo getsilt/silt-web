@@ -96,7 +96,7 @@
       <div v-if="featuredTab == 'list'" class="card bg-gradient-2">
         <div class="claim-wrapper" id="differences">
           <div class="claim-container left">
-            <div class="claim-side-img diagram-fraud" id="diagram">
+            <div class="claim-side-img diagram-small" id="diagram">
               <template v-if="$root.$i18n.locale === 'es'">
                 <img
                   class=""
@@ -248,7 +248,7 @@
       <div v-if="featuredTab == 'kyb'" class="card bg-gradient-3">
         <div class="claim-wrapper" id="differences">
           <div class="claim-container left">
-            <div class="claim-side-img diagram" id="diagram">
+            <div class="claim-side-img diagram-small" id="diagram">
               <!-- TODO: Update kyb_flow_es.png and kyb_flow_en.png -->
               <template v-if="$root.$i18n.locale === 'es'">
                 <img
@@ -422,7 +422,7 @@ export default {
     width: 100%
     max-width: 450px
     height: auto
-.claim-side-img.diagram-fraud
+.claim-side-img.diagram-small
   padding-right: $spacing-lg
   padding-left: $spacing-lg
   & > img
