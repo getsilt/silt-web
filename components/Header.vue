@@ -44,11 +44,6 @@
           </li>
           <!-- TODO: Update using new copies -->
           <a href="https://dashboard.getsilt.com/welcome">
-            <button class="demo-button small login-button">
-              {{ $t("btn_cta_navBar_demo") }}
-            </button>
-          </a>
-          <a href="https://dashboard.getsilt.com/welcome">
             <button class="demo-button small">
               {{ $t("btn_cta_navBar_demo") }}
             </button>

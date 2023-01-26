@@ -96,11 +96,11 @@
       <div v-if="featuredTab == 'list'" class="card bg-gradient-2">
         <div class="claim-wrapper" id="differences">
           <div class="claim-container left">
-            <div class="claim-side-img diagram" id="diagram">
+            <div class="claim-side-img diagram-fraud" id="diagram">
               <template v-if="$root.$i18n.locale === 'es'">
                 <img
                   class=""
-                  src="@/assets/img/illustrations/user_flow_diagram_es.png"
+                  src="@/assets/img/illustrations/watch_list_diagram_flow.png"
                   :alt="$t('seo_3')"
                   width="709"
                   height="843"
@@ -421,6 +421,13 @@ export default {
   & > img
     width: 100%
     max-width: 450px
+    height: auto
+.claim-side-img.diagram-fraud
+  padding-right: $spacing-lg
+  padding-left: $spacing-lg
+  & > img
+    width: 100%
+    max-width: 350px
     height: auto
 .claim-info-wrapper.differences
   padding-bottom: 0
