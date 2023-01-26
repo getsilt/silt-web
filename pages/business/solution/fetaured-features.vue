@@ -119,15 +119,27 @@
             <div class="claim-info-wrapper differences">
               <div class="claim-info">
                 <h3 class="title">
-                  {{ $t("business_differences_title") }}
+                  {{ $t("business_benefits_list_title") }}
                 </h3>
-                <p v-html="$t('business_differences_oneRegister_content')">
-                  {{ $t("business_differences_oneRegister_content") }}
+                <p
+                  v-html="$t('features_security_expired_documents_title')"
+                  class="remove_color_salmon"
+                >
+                  {{ $t("features_security_expired_documents_title") }}
+                </p>
+                <p
+                  v-html="
+                    $t('features_security_document_forgery_detector_title')
+                  "
+                  class="remove_color_salmon"
+                >
+                  {{ $t("features_security_document_forgery_detector_title") }}
                 </p>
                 <p>
-                  <a href="/developers" class="bold-link link-with-arrow">
-                    {{ $t("business_solution_card_kyc_link") }}
-                  </a>
+                  {{ $t("nav_feature_misconduct") }}
+                </p>
+                <p>
+                  {{ $t("business_highlights_rules_title") }}
                 </p>
               </div>
             </div>
