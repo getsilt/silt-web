@@ -121,26 +121,30 @@
                 <h3 class="title">
                   {{ $t("business_benefits_list_title") }}
                 </h3>
-                <p
-                  v-html="$t('features_security_expired_documents_title')"
-                  class="remove_color_salmon"
-                >
-                  {{ $t("features_security_expired_documents_title") }}
-                </p>
-                <p
-                  v-html="
-                    $t('features_security_document_forgery_detector_title')
-                  "
-                  class="remove_color_salmon"
-                >
-                  {{ $t("features_security_document_forgery_detector_title") }}
-                </p>
-                <p>
-                  {{ $t("nav_feature_misconduct") }}
-                </p>
-                <p>
-                  {{ $t("business_highlights_rules_title") }}
-                </p>
+                <ul class="checklist">
+                  <li
+                    v-html="$t('features_security_expired_documents_title')"
+                    class="remove_color_salmon"
+                  >
+                    {{ $t("features_security_expired_documents_title") }}
+                  </li>
+                  <li
+                    v-html="
+                      $t('features_security_document_forgery_detector_title')
+                    "
+                    class="remove_color_salmon"
+                  >
+                    {{
+                      $t("features_security_document_forgery_detector_title")
+                    }}
+                  </li>
+                  <li>
+                    {{ $t("nav_feature_misconduct") }}
+                  </li>
+                  <li>
+                    {{ $t("business_highlights_rules_title") }}
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
