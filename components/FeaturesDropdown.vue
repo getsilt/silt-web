@@ -5,7 +5,7 @@
       <div class="dropdown-wrap">
         <nuxt-link
           class="dropdown-wrap__content type1"
-          :to="localePath({ name: 'business' })"
+          :to="localePath({ name: 'kyc' })"
           @click.native="$emit('onCloseNav')"
         >
           <i class="fad fa-lg fa-id-card scan-icon" />
