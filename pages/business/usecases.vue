@@ -4,7 +4,6 @@
       <span class="tag">{{ $t("business_usecases_section") }}</span>
       <h2>{{ $t("business_usecases_title") }}</h2>
     </div>
-    <!-- TODO: Update with new copies and check responsive with copies -->
     <div class="flex-row usecase-wrapper">
       <div class="usecase-titles">
         <h2
@@ -33,7 +32,6 @@
               >
             </template>
           </div>
-          <demo-buttons />
         </div>
       </template>
     </div>
@@ -48,7 +46,7 @@ export default {
   data() {
     return {
       email: "hello@getsilt.com",
-      activeUsecase: "business_usecases_neobank",
+      activeUsecase: "business_usecases_fintech_section",
       featureTags: {
         KYC: { title: this.$t("nav_feature_kyc"), route: "business" },
         KYB: { title: "KYB", route: "kyb" },
@@ -62,42 +60,37 @@ export default {
       usecases: [
         {
           icon: "fa-university",
-          title: "business_usecases_neobank",
-          subtitle: "business_usecases_neobank_subtitle",
-          content: "business_usecases_neobank_content",
-          body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quis est non sunt expedita tenetur voluptatibus iste. Fuga itaque quae veniam numquam voluptatum at. Officia fugiat quo accusamus praesentium tenetur.",
+          title: "business_usecases_fintech_section",
+          subtitle: "business_usecases_fintech_title",
+          content: "business_usecases_fintech_body",
           tags: ["KYC", "KYB", "Biocheck", "Misconduct", "AML"],
         },
         {
           icon: "fa-expand-arrows", //fa-recycle
-          title: "business_usecases_sharing",
-          subtitle: "business_usecases_sharing_subtitle",
-          content: "business_usecases_sharing_content",
-          body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quis est non sunt expedita tenetur voluptatibus iste. Fuga itaque quae veniam numquam voluptatum at. Officia fugiat quo accusamus praesentium tenetur.",
+          title: "business_usecases_mobility_section",
+          subtitle: "business_usecases_mobility_title",
+          content: "business_usecases_mobility_body",
           tags: ["KYC", "Misconduct", "Biocheck"],
         },
         {
           icon: "fa-comments-alt-dollar",
-          title: "business_usecases_p2p",
-          subtitle: "business_usecases_p2p_subtitle",
-          content: "business_usecases_p2p_content",
-          body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quis est non sunt expedita tenetur voluptatibus iste. Fuga itaque quae veniam numquam voluptatum at. Officia fugiat quo accusamus praesentium tenetur.",
+          title: "business_usecases_marketplaces_section",
+          subtitle: "business_usecases_marketplaces_title",
+          content: "business_usecases_marketplaces_body",
           tags: ["KYC", "Misconduct", "Biocheck"],
         },
         {
           icon: "fa-dice",
-          title: "business_usecases_gaming",
-          subtitle: "business_usecases_gaming_subtitle",
-          content: "business_usecases_gaming_content",
-          body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quis est non sunt expedita tenetur voluptatibus iste. Fuga itaque quae veniam numquam voluptatum at. Officia fugiat quo accusamus praesentium tenetur.",
+          title: "business_usecases_gaming_section",
+          subtitle: "business_usecases_gaming_title",
+          content: "business_usecases_gaming_body",
           tags: ["KYC", "Misconduct", "AML", "Biocheck"],
         },
         {
-          icon: "fa-arrows", //fa-chart-network fa-rocket
-          title: "business_usecases_contract",
-          subtitle: "business_usecases_contract_subtitle",
-          content: "business_usecases_contract_content",
-          body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quis est non sunt expedita tenetur voluptatibus iste. Fuga itaque quae veniam numquam voluptatum at. Officia fugiat quo accusamus praesentium tenetur.",
+          icon: "fa-arrows",
+          title: "business_usecases_massive_hires_section",
+          subtitle: "business_usecases_massive_hires_title",
+          content: "business_usecases_massive_hires_body",
           tags: ["KYC", "KYB", "Misconduct", "Biocheck"],
         },
       ],
@@ -153,6 +146,7 @@ export default {
 .usecase-body
   flex: 1 1 50%
   padding: $spacing-lg
+  padding-top: 0
   max-width: -webkit-fill-available
   .demo_cta__wrapper
     margin-top: $spacing-xlg
