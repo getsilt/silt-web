@@ -17,10 +17,9 @@
             class="card--w-sm"
           >
             <div class="article-container" slot="body">
-              <div class="article-icon-container">
-                <i class="fad" :class="benefit.icon"></i>
-              </div>
-              <h5>{{ $t(benefit.title) }}</h5>
+              <h5 v-html="$t(`${benefit.title}`)" class="color_blue_text">
+                {{ $t(benefit.title) }}
+              </h5>
               <p>{{ $t(benefit.content) }}</p>
             </div>
           </card>
@@ -41,22 +40,18 @@ export default {
       email: "hello@getsilt.com",
       benefits: [
         {
-          icon: "fa-funnel-dollar fa-2x",
           title: "business_benefits_cac_title",
           content: "business_benefits_cac_body",
         },
         {
-          icon: "fa-rabbit-fast fa-2x",
           title: "business_benefits_onboarding_title",
           content: "business_benefits_onboarding_body",
         },
         {
-          icon: "fa-sack-dollar fa-2x",
           title: "business_benefits_costs_title",
           content: "business_benefits_costs_content",
         },
         {
-          icon: "fa-user-secret fa-2x",
           title: "business_benefits_fraud_title",
           content: "business_benefits_fraud_body",
         },
