@@ -19,7 +19,7 @@
               <div class="article-icon-container">
                 <i class="fad" :class="benefit.icon"></i>
               </div>
-              <h5>{{ $t(benefit.title) }}</h5>
+              <h5 v-html="$t(benefit.title)">{{ $t(benefit.title) }}</h5>
               <p>{{ $t(benefit.content) }}</p>
             </div>
           </card>
