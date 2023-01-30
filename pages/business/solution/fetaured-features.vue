@@ -99,19 +99,10 @@
         <div class="claim-wrapper" id="differences">
           <div class="claim-container left">
             <div class="claim-side-img diagram-small" id="diagram">
-              <template v-if="$root.$i18n.locale === 'es'">
+              <template>
                 <img
                   class=""
-                  src="@/assets/img/illustrations/watch_list_diagram_flow.png"
-                  :alt="$t('seo_3')"
-                  width="709"
-                  height="843"
-                />
-              </template>
-              <template v-else>
-                <img
-                  class=""
-                  src="@/assets/img/illustrations/watch_list_diagram_flow.png"
+                  src="@/assets/img/illustrations/watch_list_diagram_flow.svg"
                   :alt="$t('seo_3')"
                   width="709"
                   height="843"

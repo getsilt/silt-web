@@ -14,7 +14,7 @@
         <div class="">
           <img
             class=""
-            src="@/assets/img/illustrations/watch_list_diagram_flow.png"
+            src="@/assets/img/illustrations/watch_list_diagram_flow.svg"
             :alt="$t('seo_3')"
             width="300"
           />
