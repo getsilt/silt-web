@@ -282,7 +282,7 @@ nav
 		background-color: $color-black
 		color: #fff
 	.login-button:hover
-		background-color: $color-salmon
+		background-color: $color-accent
 
 @media (min-width: 768px)
 .header-bar
