@@ -16,7 +16,7 @@
         activeTabName="customize"
         @onActiveTabChange="featuredTab = $event"
         :isSelected="featuredTab"
-        :class="{ 'text-gradient-4-child': featuredTab == 'customize' }"
+        :class="{ 'text-gradient-1-child': featuredTab == 'customize' }"
       >
         <span>{{ $t("business_solution_carrousel_customization") }}</span>
       </v-tab>
@@ -24,7 +24,7 @@
         activeTabName="list"
         @onActiveTabChange="featuredTab = $event"
         :isSelected="featuredTab"
-        :class="{ 'text-gradient-2-child': featuredTab == 'list' }"
+        :class="{ 'text-gradient-1-child': featuredTab == 'list' }"
       >
         <span>{{ $t("business_solution_carrousel_fraud") }}</span>
       </v-tab>
@@ -32,7 +32,7 @@
         activeTabName="kyb"
         @onActiveTabChange="featuredTab = $event"
         :isSelected="featuredTab"
-        :class="{ 'text-gradient-3-child': featuredTab == 'kyb' }"
+        :class="{ 'text-gradient-1-child': featuredTab == 'kyb' }"
       >
         <span>{{ $t("nav_feature_kyb") }}</span>
       </v-tab>
@@ -40,7 +40,7 @@
         activeTabName="biocheck"
         @onActiveTabChange="featuredTab = $event"
         :isSelected="featuredTab"
-        :class="{ 'text-gradient-5-child': featuredTab == 'biocheck' }"
+        :class="{ 'text-gradient-1-child': featuredTab == 'biocheck' }"
       >
         <span>{{ $t("business_solution_carrousel_biocheck") }}</span>
       </v-tab>
@@ -49,7 +49,7 @@
     <!-- Carrousel Content-->
     <div class="cards-carroussel">
       <!-- Slide Digital ID-->
-      <div v-if="featuredTab == 'digitalID'" class="card bg-gradient-1">
+      <div v-if="featuredTab == 'digitalID'" class="card">
         <div class="claim-wrapper" id="differences">
           <div class="claim-container left">
             <div class="claim-side-img diagram" id="diagram">
@@ -93,7 +93,7 @@
       <!-- END Slide Digital ID-->
 
       <!-- Slide Fraud-->
-      <div v-if="featuredTab == 'list'" class="card bg-gradient-2">
+      <div v-if="featuredTab == 'list'" class="card">
         <div class="claim-wrapper" id="differences">
           <div class="claim-container left">
             <div class="claim-side-img diagram-small" id="diagram">
@@ -153,7 +153,7 @@
       <!-- END Fraud-->
 
       <!-- Slide Customize-->
-      <div v-if="featuredTab == 'customize'" class="card bg-gradient-4">
+      <div v-if="featuredTab == 'customize'" class="card">
         <div class="claim-wrapper">
           <div class="claim-container left">
             <div
@@ -245,7 +245,7 @@
       <!-- END Slide Customize-->
 
       <!-- Slide KYB-->
-      <div v-if="featuredTab == 'kyb'" class="card bg-gradient-3">
+      <div v-if="featuredTab == 'kyb'" class="card">
         <div class="claim-wrapper" id="differences">
           <div class="claim-container left">
             <div class="claim-side-img diagram-small" id="diagram">
@@ -293,7 +293,7 @@
       <!-- END Slide KYB-->
 
       <!-- Slide Biocheck-->
-      <div v-if="featuredTab == 'biocheck'" class="card bg-gradient-5">
+      <div v-if="featuredTab == 'biocheck'" class="card">
         <div class="claim-wrapper" id="differences">
           <div class="claim-container left">
             <div class="claim-side-img diagram" id="diagram">
