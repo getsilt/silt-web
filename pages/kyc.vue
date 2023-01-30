@@ -1,7 +1,7 @@
 <template>
   <div>
     <benefits />
-    <solution />
+    <solution hidden-tab="kyb" />
     <tech-features />
     <integration />
   </div>
