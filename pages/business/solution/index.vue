@@ -9,7 +9,7 @@
       <p>{{ $t("business_highlights_vanguardTech_content") }}</p>
     </div>
     <section class="">
-      <featured-features />
+      <featured-features :hidden-tab="hiddenTab" />
     </section>
   </div>
 </template>
@@ -47,6 +47,11 @@ export default {
   },
   mounted() {
     this.startFirstAnimationScene(this);
+  },
+  props: {
+    hiddenTab: {
+      required: false,
+    },
   },
   methods: {
     getEmail() {
