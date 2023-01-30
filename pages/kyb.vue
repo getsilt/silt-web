@@ -10,10 +10,18 @@
         <demo-buttons />
       </div>
       <div class="claim-side-img screenshots-container">
-        <div class="">
+        <div v-if="$root.$i18n.locale === 'es'">
           <img
             class=""
-            src="@/assets/img/illustrations/kyb_flow_es.png"
+            src="@/assets/img/illustrations/kyb_flow_es_light.svg"
+            :alt="$t('seo_3')"
+            width="300"
+          />
+        </div>
+        <div v-else>
+          <img
+            class=""
+            src="@/assets/img/illustrations/kyb_flow_en_light.svg"
             :alt="$t('seo_3')"
             width="300"
           />
@@ -55,7 +63,7 @@
           <template v-if="$root.$i18n.locale === 'es'">
             <img
               class=""
-              src="@/assets/img/illustrations/kyb_flow_es.png"
+              src="@/assets/img/illustrations/kyb_flow_es_light.svg"
               :alt="$t('seo_3')"
               width="300"
             />
@@ -63,7 +71,7 @@
           <template v-else>
             <img
               class=""
-              src="@/assets/img/illustrations/kyb_flow_es.png"
+              src="@/assets/img/illustrations/kyb_flow_en_light.svg"
               :alt="$t('seo_3')"
               width="300"
             />
