@@ -3,10 +3,8 @@
     <!-- CLAIMS -->
     <section class="claim-container">
       <div class="claim-info">
-        <h1 class="title" v-html="$t('personal_claim1')"></h1>
-        <h4 class="subtitle" v-html="$t('personal_claim2')">
-          {{ $t("personal_claim2") }}
-        </h4>
+        <h1 class="title" v-html="$t('personal_claim1')" />
+        <h4 class="subtitle" v-html="$t('personal_claim2')" />
       </div>
       <div class="claim-side-img screenshots-container">
         <img

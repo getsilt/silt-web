@@ -16,11 +16,9 @@
           {{ $t("business_claim_scale") }}
         </span>
         <br />
-        <span v-html="$t('business_claim1')">{{ $t("business_claim1") }}</span>
+        <span v-html="$t('business_claim1')" />
       </h1>
-      <h4 class="subtitle" v-html="$t('business_claim2')">
-        {{ $t("business_claim2") }}
-      </h4>
+      <h4 class="subtitle" v-html="$t('business_claim2')" />
 
       <demo-buttons />
     </div>

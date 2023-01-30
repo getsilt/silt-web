@@ -2,9 +2,7 @@
   <div class="fw-container--dark">
     <div class="section-headers">
       <span class="tag">{{ $t("features_title") }}</span>
-      <h2 v-html="$t('features_subtitle')" class="features_subtitle">
-        {{ $t("features_subtitle") }}
-      </h2>
+      <h2 v-html="$t('features_subtitle')" class="features_subtitle" />
     </div>
     <!-- TECH FEATURES -->
     <section class="tech-features_wrapper" id="techfeatures">
@@ -19,9 +17,7 @@
               v-html="$t(feature.title)"
               slot="title"
               class="feature_security_title color_accent_text"
-            >
-              {{ $t(feature.title) }}
-            </h5>
+            />
             <div slot="body">
               {{ $t(feature.body) }}
             </div>
@@ -37,9 +33,7 @@
               v-html="$t(feature.title)"
               slot="title"
               class="feature_ux_title color_blue_text"
-            >
-              {{ $t(feature.title) }}
-            </h5>
+            />
             <div slot="body">
               {{ $t(feature.body) }}
             </div>

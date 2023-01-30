@@ -5,9 +5,7 @@
         <div class="section-headers">
           <span class="tag">{{ $t("business_benefits_section") }}</span>
           <h2>{{ $t("business_benefits_rules_title") }}</h2>
-          <p class="subtitle" v-html="$t('business_benefits_rules_subtitle')">
-            {{ $t("business_benefits_rules_subtitle") }}
-          </p>
+          <p class="subtitle" v-html="$t('business_benefits_rules_subtitle')" />
         </div>
         <div class="list-wrapper pins">
           <card
@@ -16,9 +14,7 @@
             class="card--w-sm"
           >
             <div class="article-container" slot="body">
-              <h5 v-html="$t(`${benefit.title}`)" class="color_blue_text">
-                {{ $t(benefit.title) }}
-              </h5>
+              <h5 v-html="$t(`${benefit.title}`)" class="color_blue_text" />
               <p>{{ $t(benefit.content) }}</p>
             </div>
           </card>

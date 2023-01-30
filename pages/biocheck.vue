@@ -3,12 +3,8 @@
     <!-- CLAIMS -->
     <section class="claim-container">
       <div class="claim-info">
-        <h1 class="title" v-html="$t('biocheck_claim1')">
-          {{ $t("biocheck_claim1") }}
-        </h1>
-        <h4 class="subtitle" v-html="$t('biocheck_claim2')">
-          {{ $t("biocheck_claim2") }}
-        </h4>
+        <h1 class="title" v-html="$t('biocheck_claim1')" />
+        <h4 class="subtitle" v-html="$t('biocheck_claim2')" />
         <demo-buttons />
       </div>
       <div class="claim-side-img screenshots-container">
@@ -58,9 +54,7 @@
             <h3 class="title">
               {{ $t("biocheck_solution_title") }}
             </h3>
-            <p v-html="$t('biocheck_solution_content')">
-              {{ $t("biocheck_solution_content") }}
-            </p>
+            <p v-html="$t('biocheck_solution_content')" />
             <demo-buttons />
           </div>
         </div>

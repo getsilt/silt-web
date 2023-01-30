@@ -79,9 +79,7 @@
                 <h3 class="title">
                   {{ $t("business_differences_title") }}
                 </h3>
-                <p v-html="$t('business_differences_oneRegister_content')">
-                  {{ $t("business_differences_oneRegister_content") }}
-                </p>
+                <p v-html="$t('business_differences_oneRegister_content')" />
                 <p>
                   <a href="/developers" class="bold-link link-with-arrow">
                     {{ $t("business_solution_card_kyc_link") }}
@@ -115,18 +113,14 @@
                   {{ $t("business_benefits_list_title") }}
                 </h3>
                 <ul class="checklist">
-                  <li v-html="$t('features_security_expired_documents_title')">
-                    {{ $t("features_security_expired_documents_title") }}
-                  </li>
+                  <li
+                    v-html="$t('features_security_expired_documents_title')"
+                  />
                   <li
                     v-html="
                       $t('features_security_document_forgery_detector_title')
                     "
-                  >
-                    {{
-                      $t("features_security_document_forgery_detector_title")
-                    }}
-                  </li>
+                  />
                   <li>
                     {{ $t("nav_feature_misconduct") }}
                   </li>
@@ -263,12 +257,8 @@
                 <h3 class="title">
                   {{ $t("kyb_claim1") }}
                 </h3>
-                <p v-html="$t('business_differences_oneRegister_content')">
-                  {{ $t("kyb_solution_content1") }}
-                </p>
-                <p v-html="$t('business_differences_oneRegister_content')">
-                  {{ $t("kyb_solution_content2") }}
-                </p>
+                <p v-html="$t('business_differences_oneRegister_content')" />
+                <p v-html="$t('business_differences_oneRegister_content')" />
                 <p>
                   <a href="/developers" class="bold-link link-with-arrow">
                     {{ $t("business_solution_card_kyb_link") }}
@@ -310,9 +300,7 @@
                 <h3 class="title">
                   {{ $t("biocheck_claim1") }}
                 </h3>
-                <p v-html="$t('biocheck_claim2')">
-                  {{ $t("biocheck_claim2") }}
-                </p>
+                <p v-html="$t('biocheck_claim2')" />
               </div>
             </div>
           </div>
