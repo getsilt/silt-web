@@ -75,15 +75,21 @@ a
 b
   font-family: $font-bold
 
-span.color_salmon_text
-  color: $color-salmon
+.color_salmon_text
+  b
+    color: $color-salmon
 
-.remove_color_salmon
-  span.color_salmon_text
-    color: #fff
-
-span.color_blue_text
-  color: $color-primary
+.color_blue_text
+  b
+    transition: 0.3s ease-in-out
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    -moz-background-clip: text
+    -moz-text-fill-color: transparent
+    background-size: 300%
+    background-position: 100%
+    background-repeat: repeat
+    background-image: linear-gradient(45deg, rgba(48,50,205,1) 0%, rgba(48,104,255,1) 70%, rgba(108,176,255,1) 100%)
 
 li
   margin-bottom: 10px
