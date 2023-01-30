@@ -18,7 +18,7 @@
             <h5
               v-html="$t(feature.title)"
               slot="title"
-              class="feature_security_title color_salmon_text"
+              class="feature_security_title color_accent_text"
             >
               {{ $t(feature.title) }}
             </h5>
