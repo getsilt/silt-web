@@ -13,6 +13,7 @@
         <span>{{ $t("business_solution_carrousel_kyc") }}</span>
       </v-tab>
       <v-tab
+        v-if="hiddenTab !== 'customize'"
         activeTabName="customize"
         @onActiveTabChange="featuredTab = $event"
         :isSelected="featuredTab"
@@ -29,6 +30,7 @@
         <span>{{ $t("business_solution_carrousel_fraud") }}</span>
       </v-tab>
       <v-tab
+        v-if="hiddenTab !== 'kyb'"
         activeTabName="kyb"
         @onActiveTabChange="featuredTab = $event"
         :isSelected="featuredTab"
@@ -354,6 +356,11 @@ export default {
     updateColor(event) {
       this.color = `hsl(${event.h}, ${event.s}, ${event.l})`;
       this.backgroundColor = `hsla(${event.h}, ${event.s}, ${event.l})`;
+    },
+  },
+  props: {
+    hiddenTab: {
+      required: false,
     },
   },
 };
