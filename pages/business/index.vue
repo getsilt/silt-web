@@ -2,7 +2,7 @@
   <div>
     <hero />
     <benefits />
-    <solution />
+    <solution hidden-tab="customize" />
     <integration />
     <usecases />
   </div>
