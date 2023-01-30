@@ -124,17 +124,13 @@
                   {{ $t("business_benefits_list_title") }}
                 </h3>
                 <ul class="checklist">
-                  <li
-                    v-html="$t('features_security_expired_documents_title')"
-                    class="remove_color_salmon"
-                  >
+                  <li v-html="$t('features_security_expired_documents_title')">
                     {{ $t("features_security_expired_documents_title") }}
                   </li>
                   <li
                     v-html="
                       $t('features_security_document_forgery_detector_title')
                     "
-                    class="remove_color_salmon"
                   >
                     {{
                       $t("features_security_document_forgery_detector_title")
