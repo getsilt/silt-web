@@ -41,23 +41,6 @@ export default {
   data() {
     return {
       email: "hello@getsilt.com",
-      benefits: [
-        {
-          icon: "fa-funnel-dollar fa-2x",
-          title: "business_benefits_cac_title",
-          content: "business_benefits_cac_content",
-        },
-        {
-          icon: "fa-rabbit-fast fa-3x",
-          title: "business_benefits_time_title",
-          content: "business_benefits_time_content",
-        },
-        {
-          icon: "fa-sack-dollar fa-3x",
-          title: "business_benefits_costs_title",
-          content: "business_benefits_costs_content",
-        },
-      ],
     };
   },
   mounted() {
