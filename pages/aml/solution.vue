@@ -4,14 +4,12 @@
       <div class="section-headers">
         <span class="tag">{{ $t("business_solution_section") }}</span>
         <h2>{{ $t("business_solution_aml_page_title") }}</h2>
-        <p>{{ $t("business_solution_aml_page_subtitle") }}</p>
       </div>
       <div class="integration-container">
         <div class="card">
           <!-- TODO: Add New schema -->
           <div class="article-container">
-            <h4>{{ $t("business_solution_aml_page_content1") }}</h4>
-            <p>{{ $t("business_solution_aml_page_content2") }}</p>
+            <p>{{ $t("business_solution_aml_page_content") }}</p>
           </div>
         </div>
       </div>
