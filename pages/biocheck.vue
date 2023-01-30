@@ -37,7 +37,7 @@
           <template v-if="$root.$i18n.locale === 'es'">
             <img
               class=""
-              src="@/assets/img/illustrations/silt-workflow-biocheck_es.png"
+              src="@/assets/img/illustrations/silt-workflow-biocheck_es.svg"
               :alt="$t('seo_3')"
               width="450"
               height="393"
@@ -46,7 +46,7 @@
           <template v-else>
             <img
               class=""
-              src="@/assets/img/illustrations/silt-workflow-biocheck_en.png"
+              src="@/assets/img/illustrations/silt-workflow-biocheck_en.svg"
               :alt="$t('seo_3')"
               width="350"
               height="393"
