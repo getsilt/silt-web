@@ -1,5 +1,6 @@
 <template>
   <div>
+    <hero />
     <benefits />
     <solution hidden-tab="kyb" />
     <tech-features />
@@ -9,7 +10,7 @@
 
 <script>
 import DemoButtons from "../components/DemoButtons.vue";
-import Hero from "./business/hero.vue";
+import Hero from "./kyc/hero.vue";
 import Benefits from "./business/benefits.vue";
 import Solution from "./business/solution/index.vue";
 import Integration from "./business/integration.vue";
