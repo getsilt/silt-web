@@ -4,7 +4,6 @@
       <div class="section-headers">
         <span class="tag">{{ $t("business_solution_section") }}</span>
         <h2>{{ $t("kyb_solution_title") }}</h2>
-        <p>{{ $t("kyb_solution_content1") }}</p>
       </div>
       <div class="card">
         <div class="article-container claim-container">
@@ -25,6 +24,7 @@
             </template>
           </div>
           <div class="claim-info top-claim-info">
+            <p>{{ $t("kyb_solution_content1") }}</p>
             <p>{{ $t("kyb_solution_content2") }}</p>
             <p>
               <b>{{ $t("kyb_solution_compliant") }}</b>
