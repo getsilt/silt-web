@@ -1,5 +1,6 @@
 <template>
   <div>
+    <hero />
     <benefits />
     <solution />
   </div>
@@ -7,6 +8,7 @@
 
 <script>
 import DemoButtons from "../components/DemoButtons.vue";
+import Hero from "./rules/hero.vue";
 import Benefits from "./rules/benefits.vue";
 import Solution from "./rules/solution.vue";
 
@@ -19,6 +21,7 @@ export default {
   },
   components: {
     DemoButtons,
+    Hero,
     Benefits,
     Solution,
   },
