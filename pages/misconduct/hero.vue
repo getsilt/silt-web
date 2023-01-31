@@ -1,6 +1,5 @@
 <template>
   <section class="claim-container">
-    <!-- CLAIMS -->
     <div class="claim-info">
       <h1 class="title">
         {{ $t("business_benefits_list_title") }}
@@ -13,7 +12,6 @@
     </div>
     <div class="claim-side-img screenshots-container">
       <img
-        class=""
         src="@/assets/img/illustrations/watch_list_diagram_flow.svg"
         :alt="$t('seo_3')"
         width="300"
