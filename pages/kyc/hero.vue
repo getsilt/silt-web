@@ -6,11 +6,33 @@
       <demo-buttons />
     </div>
     <div class="claim-side-img screenshots-container">
-      <img
-        class="screenshot take-picture"
-        src="@/assets/img/screenshots/screenshot_selfie_es.jpg"
-        :alt="$t('seo_3')"
-      />
+      <div class="screenshot-container">
+        <img
+          class="screenshot login"
+          src="@/assets/img/screenshots/screenshot_documentSelect_es.jpg"
+          :alt="$t('seo_2')"
+          width="180"
+          height="353"
+        />
+      </div>
+      <div class="screenshot-container">
+        <img
+          class="screenshot take-picture"
+          src="@/assets/img/screenshots/screenshot_selfie_es.jpg"
+          :alt="$t('seo_3')"
+          width="180"
+          height="353"
+        />
+      </div>
+      <div class="screenshot-container">
+        <img
+          class="screenshot complete"
+          src="@/assets/img/screenshots/screenshot_finish_es.jpg"
+          :alt="$t('seo_4')"
+          width="180"
+          height="353"
+        />
+      </div>
     </div>
   </section>
 </template>
