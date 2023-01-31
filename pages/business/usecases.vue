@@ -48,9 +48,9 @@ export default {
       email: "hello@getsilt.com",
       activeUsecase: "business_usecases_fintech_section",
       featureTags: {
-        KYC: { title: this.$t("nav_feature_kyc"), route: "business" },
+        KYC: { title: this.$t("nav_feature_kyc"), route: "kyc" },
         KYB: { title: "KYB", route: "kyb" },
-        AML: { title: "AML/PEP", route: "business" },
+        AML: { title: "AML/PEP", route: "aml" },
         Biocheck: { title: this.$t("nav_feature_biocheck"), route: "biocheck" },
         Misconduct: {
           title: this.$t("nav_feature_misconduct"),
