@@ -1,22 +1,20 @@
 <template>
   <section class="fw-container light">
-    <div id="benefits">
-      <div class="highlights-wrapper">
-        <div class="section-headers">
-          <span class="tag">{{ $t("business_benefits_section") }}</span>
-        </div>
-        <div class="list-wrapper pins">
-          <card
-            v-for="benefit in benefits"
-            :key="benefit.title"
-            class="card--w-sm"
-          >
-            <div class="article-container" slot="body">
-              <h5 v-html="$t(`${benefit.title}`)" />
-              <p>{{ $t(benefit.content) }}</p>
-            </div>
-          </card>
-        </div>
+    <div class="highlights-wrapper">
+      <div class="section-headers">
+        <span class="tag">{{ $t("business_benefits_section") }}</span>
+      </div>
+      <div class="list-wrapper pins">
+        <card
+          v-for="benefit in benefits"
+          :key="benefit.title"
+          class="card--w-sm"
+        >
+          <div class="article-container" slot="body">
+            <h5 v-html="$t(`${benefit.title}`)" />
+            <p>{{ $t(benefit.content) }}</p>
+          </div>
+        </card>
       </div>
     </div>
   </section>
