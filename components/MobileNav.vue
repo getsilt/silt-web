@@ -80,18 +80,6 @@
             </p>
           </div>
         </nuxt-link>
-        <nuxt-link
-          class="dropdown-wrap__content type1 deactivated"
-          :to="localePath({ name: 'business' })"
-          @click.native="$emit('onCloseNav')"
-        >
-          <i class="fad fa-lg fa-house scan-icon" />
-          <div>
-            <h6 class="title_menu">
-              {{ $t("nav_feature_por") }} ({{ $t("global_contactUs") }})
-            </h6>
-          </div>
-        </nuxt-link>
       </div>
     </div>
     <div class="dropdown-wrap other-sections">
