@@ -5,10 +5,28 @@
         <span class="tag">{{ $t("business_solution_section") }}</span>
         <h2>{{ $t("business_solution_rules_page_title") }}</h2>
       </div>
-      <div class="integration-container">
-        <div class="card">
-          <div class="article-container">
+      <div class="card">
+        <div class="article-container claim-container">
+          <div class="claim-side-img screenshots-container">
+            <template>
+              <img
+                src="@/assets/img/illustrations/rules_flow.svg"
+                :alt="$t('seo_3')"
+                width="300"
+              />
+            </template>
+          </div>
+          <div class="claim-info top-claim-info">
             <p>{{ $t("business_solution_rules_page_content") }}</p>
+            <p class="centered-block integration-link">
+              <a
+                target="_blank"
+                href="https://dashboard.getsilt.com/welcome"
+                class="bold-link link-with-arrow"
+              >
+                {{ $t("btn_cta_demo") }}
+              </a>
+            </p>
           </div>
         </div>
       </div>
