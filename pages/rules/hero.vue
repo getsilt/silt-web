@@ -7,9 +7,9 @@
     </div>
     <div class="claim-side-img screenshots-container">
       <img
-        class="screenshot take-picture"
-        src="@/assets/img/screenshots/screenshot_selfie_es.jpg"
+        src="@/assets/img/illustrations/rules_flow.svg"
         :alt="$t('seo_3')"
+        width="370"
       />
     </div>
   </section>
