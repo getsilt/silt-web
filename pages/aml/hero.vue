@@ -5,11 +5,21 @@
       <h4 class="subtitle" v-html="$t('business_hero_aml_subtitle')" />
       <demo-buttons />
     </div>
-    <div class="claim-side-img screenshots-container">
+    <div
+      v-if="$root.$i18n.locale === 'es'"
+      class="claim-side-img screenshots-container"
+    >
       <img
-        class="screenshot take-picture"
-        src="@/assets/img/screenshots/screenshot_selfie_es.jpg"
+        src="@/assets/img/illustrations/aml_flow_es.svg"
         :alt="$t('seo_3')"
+        width="300"
+      />
+    </div>
+    <div v-else class="claim-side-img screenshots-container">
+      <img
+        src="@/assets/img/illustrations/aml_flow_en.svg"
+        :alt="$t('seo_3')"
+        width="300"
       />
     </div>
   </section>
