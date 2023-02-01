@@ -5,11 +5,35 @@
         <span class="tag">{{ $t("business_solution_section") }}</span>
         <h2>{{ $t("business_solution_aml_page_title") }}</h2>
       </div>
-      <div class="integration-container">
-        <div class="card">
-          <!-- TODO: Add New schema -->
-          <div class="article-container">
+      <div class="card">
+        <div class="article-container claim-container">
+          <div class="claim-side-img screenshots-container">
+            <template v-if="$root.$i18n.locale === 'es'">
+              <img
+                src="@/assets/img/illustrations/aml_flow_es.svg"
+                :alt="$t('seo_3')"
+                width="300"
+              />
+            </template>
+            <template v-else>
+              <img
+                src="@/assets/img/illustrations/aml_flow_en.svg"
+                :alt="$t('seo_3')"
+                width="300"
+              />
+            </template>
+          </div>
+          <div class="claim-info top-claim-info">
             <p>{{ $t("business_solution_aml_page_content") }}</p>
+            <p class="centered-block integration-link">
+              <a
+                target="_blank"
+                href="https://dashboard.getsilt.com/welcome"
+                class="bold-link link-with-arrow"
+              >
+                {{ $t("btn_cta_demo") }}
+              </a>
+            </p>
           </div>
         </div>
       </div>
