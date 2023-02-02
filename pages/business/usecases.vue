@@ -28,8 +28,9 @@
               <router-link
                 :key="`feature-tags-${tag}`"
                 :to="{ name: featureTags[tag].route }"
-                >{{ $t(featureTags[tag].title) }}</router-link
+                v-html="$t(`${featureTags[tag].title}`)"
               >
+              </router-link>
             </template>
           </div>
         </div>

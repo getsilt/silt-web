@@ -34,7 +34,7 @@
         >
           <i class="fad fa-lg fa-badge-sheriff scan-icon" />
           <div>
-            <h6 class="title_menu">{{ $t("nav_feature_misconduct") }}</h6>
+            <h6 class="title_menu" v-html="$t('nav_feature_misconduct')" />
             <p class="subtitle_menu">
               {{ $t("product_subtitle_misconduct_list") }}
             </p>
