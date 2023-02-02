@@ -18,4 +18,7 @@ export default {};
 .demo_cta__wrapper
   a:first-child
     margin-right: $spacing-md
+.vertical
+  a:first-child
+    margin-right: 0
 </style>
