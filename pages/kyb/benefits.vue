@@ -11,7 +11,7 @@
           class="card--w-sm"
         >
           <div class="article-container" slot="body">
-            <h5 v-html="$t(`${benefit.title}`)" />
+            <h5 v-html="$t(`${benefit.title}`)" class="color_blue_text" />
             <p>{{ $t(benefit.content) }}</p>
           </div>
         </card>
