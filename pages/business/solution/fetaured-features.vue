@@ -79,7 +79,7 @@
                 <h3 class="title">
                   {{ $t("business_differences_title") }}
                 </h3>
-                <p v-html="$t('business_differences_oneRegister_content')" />
+                <p v-html="$t('business_solution_kyc_page_content2')" />
                 <p>
                   <a href="/kyc" class="bold-link link-with-arrow">
                     {{ $t("business_solution_card_kyc_link") }}
