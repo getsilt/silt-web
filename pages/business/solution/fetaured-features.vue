@@ -121,12 +121,8 @@
                       $t('features_security_document_forgery_detector_title')
                     "
                   />
-                  <li>
-                    {{ $t("nav_feature_misconduct") }}
-                  </li>
-                  <li>
-                    {{ $t("business_highlights_rules_title") }}
-                  </li>
+                  <li v-html="$t('nav_feature_misconduct')" />
+                  <li v-html="$t('business_highlights_rules_title')" />
                 </ul>
               </div>
             </div>
@@ -256,8 +252,8 @@
                 <h3 class="title">
                   {{ $t("kyb_claim1") }}
                 </h3>
-                <p v-html="$t('business_differences_oneRegister_content')" />
-                <p v-html="$t('business_differences_oneRegister_content')" />
+                <p>{{ $t("kyb_solution_content1") }}</p>
+                <p>{{ $t("kyb_solution_content2") }}</p>
                 <p>
                   <a href="/kyb" class="bold-link link-with-arrow">
                     {{ $t("business_solution_card_kyb_link") }}
