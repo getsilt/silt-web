@@ -81,7 +81,7 @@
                 </h3>
                 <p v-html="$t('business_differences_oneRegister_content')" />
                 <p>
-                  <a href="/developers" class="bold-link link-with-arrow">
+                  <a href="/kyc" class="bold-link link-with-arrow">
                     {{ $t("business_solution_card_kyc_link") }}
                   </a>
                 </p>
@@ -180,7 +180,6 @@
               <div class="claim-info">
                 <h3>{{ $t("customization_guide_title") }}</h3>
                 <p>{{ $t("customization_guide_subtitle") }}</p>
-                <!-- <p>{{ $t("customization_guide_description") }}</p> -->
                 <div class="customize-verification-flow-wrapper__options">
                   <color-picker-slider @onChange="updateColor($event)" />
                   <div class="tabs-wrapper vertical dark">
@@ -260,7 +259,7 @@
                 <p v-html="$t('business_differences_oneRegister_content')" />
                 <p v-html="$t('business_differences_oneRegister_content')" />
                 <p>
-                  <a href="/developers" class="bold-link link-with-arrow">
+                  <a href="/kyb" class="bold-link link-with-arrow">
                     {{ $t("business_solution_card_kyb_link") }}
                   </a>
                 </p>
@@ -301,6 +300,11 @@
                   {{ $t("biocheck_claim1") }}
                 </h3>
                 <p v-html="$t('biocheck_claim2')" />
+                <p>
+                  <a href="/biocheck" class="bold-link link-with-arrow">
+                    {{ $t("business_solution_card_biocheck_link") }}
+                  </a>
+                </p>
               </div>
             </div>
           </div>
