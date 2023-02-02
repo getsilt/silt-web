@@ -270,23 +270,17 @@
       <div v-if="featuredTab == 'biocheck'" class="card">
         <div class="claim-wrapper" id="differences">
           <div class="claim-container left">
-            <div class="claim-side-img diagram" id="diagram">
+            <div class="claim-side-img diagram-small" id="diagram">
               <template v-if="$root.$i18n.locale === 'es'">
                 <img
-                  class=""
                   src="@/assets/img/illustrations/silt-workflow-biocheck_es.svg"
                   :alt="$t('seo_3')"
-                  width="709"
-                  height="843"
                 />
               </template>
               <template v-else>
                 <img
-                  class=""
                   src="@/assets/img/illustrations/silt-workflow-biocheck_en.svg"
                   :alt="$t('seo_3')"
-                  width="709"
-                  height="843"
                 />
               </template>
             </div>
