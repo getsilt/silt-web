@@ -6,14 +6,14 @@
     </div>
     <div class="flex-row usecase-wrapper">
       <div class="usecase-titles">
-        <h2
+        <h3
           v-for="usecase in usecases"
           :key="`usecase-title-${usecase.title}`"
           :class="{ active: usecase.title == activeUsecase }"
           @click="activeUsecase = usecase.title"
         >
           {{ $t(usecase.title) }}
-        </h2>
+        </h3>
       </div>
       <template v-for="usecase in usecases">
         <div
