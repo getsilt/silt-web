@@ -95,37 +95,17 @@
       <!-- Slide Fraud-->
       <div v-if="featuredTab == 'list'" class="card">
         <div class="claim-wrapper" id="differences">
-          <div class="claim-container left">
-            <div class="claim-side-img diagram-small" id="diagram">
-              <template>
-                <img
-                  class=""
-                  src="@/assets/img/illustrations/watch_list_diagram_flow.svg"
-                  :alt="$t('seo_3')"
-                  width="709"
-                  height="843"
-                />
-              </template>
-            </div>
-            <div class="claim-info-wrapper differences">
-              <div class="claim-info">
-                <h3 class="title">
-                  {{ $t("business_benefits_list_title") }}
-                </h3>
-                <ul class="checklist">
-                  <li
-                    v-html="$t('features_security_expired_documents_title')"
-                  />
-                  <li
-                    v-html="
-                      $t('features_security_document_forgery_detector_title')
-                    "
-                  />
-                  <li v-html="$t('nav_feature_misconduct')" />
-                  <li v-html="$t('business_highlights_rules_title')" />
-                </ul>
+          <div class="list-wrapper pins fraud-grid">
+            <card
+              v-for="fraud in frauds"
+              :key="fraud.title"
+              :class="fraud.class"
+            >
+              <div class="article-container" slot="body">
+                <h5 v-html="$t(`${fraud.title}`)" class="color_blue_text" />
+                <p>{{ $t(fraud.content) }}</p>
               </div>
-            </div>
+            </card>
           </div>
         </div>
       </div>
@@ -310,15 +290,43 @@ import VTab from "@/components/VTab.vue";
 import DocumentSelect from "@/components/DocumentSelect.vue";
 import ColorPickerSlider from "@/components/ColorPickerSlider.vue";
 import DemoButtons from "@/components/DemoButtons.vue";
+import Card from "@/components/Card.vue";
 
 export default {
-  components: { VTab, DocumentSelect, ColorPickerSlider, DemoButtons },
+  components: { VTab, DocumentSelect, ColorPickerSlider, DemoButtons, Card },
   data() {
     return {
       featuredTab: "digitalID",
       color: "#2963ff",
       backgroundColor: "#2963ff",
       activeCustomizeTab: "default",
+      frauds: [
+        {
+          title: "business_solution_carousel_rules_title",
+          class: "fraud-card-1",
+          content: "business_solution_carousel_rules_subtitle",
+        },
+        {
+          title: "business_solution_carousel_phone_verification_title",
+          class: "fraud-card-2",
+          content: "business_solution_carousel_phone_verification_subtitle",
+        },
+        {
+          title: "business_solution_carousel_misconduct_title",
+          class: "fraud-card-3",
+          content: "business_solution_carousel_misconduct_subtitle",
+        },
+        {
+          title: "features_security_expired_documents_title",
+          class: "fraud-card-4",
+          content: "business_solution_carousel_expired_documents_subtitle",
+        },
+        {
+          title: "business_solution_carousel_aml_pep_title",
+          class: "fraud-card-5",
+          content: "business_solution_carousel_aml_pep_subtitle",
+        },
+      ],
     };
   },
   methods: {
@@ -358,6 +366,28 @@ export default {
       transition: 0.2s ease-in-out
       opacity: 1
       transform: translateX(100%)
+
+.fraud-grid
+  display: grid
+  .fraud-card-1
+    grid-column: 1
+    grid-row: 1
+  .fraud-card-2
+    grid-column: 1
+    grid-row: 2
+  .fraud-card-3
+    grid-column: 2
+    grid-row: 1 / 2
+  .fraud-card-4
+    grid-column: 3
+    grid-row: 1
+  .fraud-card-5
+    grid-column: 3
+    grid-row: 2
+
+@media (max-width: 768px)
+  .fraud-grid
+    display: flex
 
 .tabs-wrapper.vertical
   margin-right: $spacing-md
