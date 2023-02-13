@@ -120,11 +120,6 @@ export default {
           title: "features_ux_customization_title",
           body: "features_ux_customization_body",
         },
-        {
-          icon: "fa-user-check",
-          title: "features_ux_customization_title",
-          body: "features_ux_passive_liveness_selfie_body",
-        },
       ],
     };
   },
