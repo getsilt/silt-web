@@ -9,7 +9,7 @@
       <img
         src="@/assets/img/illustrations/rules_flow.svg"
         :alt="$t('seo_3')"
-        width="370"
+        class="rules-hero-img"
       />
     </div>
   </section>
@@ -33,11 +33,13 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+@import "@/assets/sass/vars.sass"
 
-.claim-container .claim-side-img.diagram
-  margin: 0
-  padding: 0
-  & > img
-    min-width: 300px
-    max-width: 700px
+.rules-hero-img
+  width: 600px
+
+@media (max-width: 768px)
+  .rules-hero-img
+    margin-top: $spacing-lg
+    width: 370px
 </style>
