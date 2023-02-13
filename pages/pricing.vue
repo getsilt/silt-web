@@ -74,14 +74,13 @@
         <p class="pepaml hint">{{ $t("business_pricing_PEPAML") }}</p>
         <div class="demo_cta__wrapper vertical">
           <a :href="`mailto:${getEmail()}`" target="_blank">
-            <button>{{ $t("global_contactUs") }}</button>
+            <button class="accent">{{ $t("global_contactUs") }}</button>
           </a>
           <a
             target="_blank"
-            class="bold-link demo-link"
             href="https://app.meetzy.io/preview/3dfd0d2hgymu"
             >
-            {{ $t("btn_cta_book_demo") }}
+            <button class="secondary">{{ $t("btn_cta_book_demo") }}</button>
           </a>
         </div>
       </div>
