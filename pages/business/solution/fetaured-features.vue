@@ -93,7 +93,7 @@
       <!-- END Slide Digital ID-->
 
       <!-- Slide Fraud-->
-      <div v-if="featuredTab == 'list'" class="card">
+      <div v-if="featuredTab == 'list'">
         <div class="claim-wrapper" id="differences">
           <div class="list-wrapper pins fraud-grid">
             <card
