@@ -3,11 +3,7 @@
     <section class="trust__wrapper">
       <h3>{{ $t("footer_trust") }}</h3>
       <div class="trust__logos">
-        <img
-          src="@/assets/img/logo/tech_bcn.png"
-          alt=""
-          style="height: 60px"
-        />
+        <img src="@/assets/img/logo/tech_bcn.png" alt="" style="height: 60px" />
         <img src="@/assets/img/logo/accio.png" alt="" />
         <img style="height: 60px" src="@/assets/img/logo/aefi.png" alt="" />
       </div>
@@ -22,6 +18,26 @@
             :alt="$t('seo_9')"
           />
           <p>{{ $t("footer_silt_what") }}</p>
+        </div>
+        <div class="footer__links">
+          <p>
+            <a href="/kyc">{{ $t("nav_feature_kyc") }}</a>
+          </p>
+          <p>
+            <a href="/kyb">{{ $t("nav_feature_kyb") }}</a>
+          </p>
+          <p>
+            <a href="/biocheck">{{ $t("nav_feature_biocheck") }}</a>
+          </p>
+          <p>
+            <a href="/rules">{{ $t("nav_feature_rules") }}</a>
+          </p>
+          <p>
+            <a href="/misconduct" v-html="$t('nav_feature_misconduct')" />
+          </p>
+          <p>
+            <a href="/aml">{{ $t("nav_feature_aml") }}</a>
+          </p>
         </div>
         <div class="footer__links">
           <p>
@@ -57,6 +73,18 @@
                 src="@/assets/img/icons/social_facebook.svg"
                 alt="Facebook Silt page"
             /></a>
+            <a
+              href="https://linkedin.com/company/silt-verifications"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                width="20"
+                height="20"
+                src="@/assets/img/icons/social_linkedin.svg"
+                alt="LinkedIn Silt page"
+              />
+            </a>
           </p>
           <p>
             <a href="#" @click.stop="updateLocale('es')">ES</a>
@@ -129,6 +157,7 @@ p.copyright
   flex-wrap: wrap
   margin-top: 20px
   margin-bottom: 20px
+  align-items: flex-start
   h6
     margin: 10px 0
   p
