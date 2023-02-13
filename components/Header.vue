@@ -44,7 +44,7 @@
           </li>
           <!-- TODO: Update using new copies -->
           <a href="https://dashboard.getsilt.com/welcome">
-            <button class="demo-button small">
+            <button class="demo-button small accent">
               {{ $t("btn_cta_navBar_demo") }}
             </button>
           </a>
