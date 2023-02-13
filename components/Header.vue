@@ -278,6 +278,7 @@ nav
 		display: none
 	.demo-button
 		margin-left: $spacing-lg
+		color: #fff
 	.login-button
 		background-color: $color-black
 		color: #fff
