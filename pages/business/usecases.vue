@@ -131,7 +131,7 @@ export default {
 <style lang="sass" scoped>
 @import "@/assets/sass/vars.sass"
 .usecase-titles
-  flex: 0 1 40%
+  flex: 1 1 40%
   & > *
     color: $color-grey-darken-1
     cursor: pointer

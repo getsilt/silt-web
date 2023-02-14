@@ -19,7 +19,7 @@ button, .button
   &:hover
     transition: 0.3s
     color: #fff
-  &:hover:not(.vsm-link):not(:disabled):not(.accent)
+  &:hover:not(.vsm-link):not(:disabled):not(.accent):not(.translucid):not(.secondary)
     background-color: $color-black
 
   &.demo-button
@@ -30,6 +30,7 @@ button, .button
   &.small
     padding: 0.75em 1.2em 0.65em 1.2em
     font-size: 1rem
+    border-radius: 5rem
 
   &.accent
     background-color: $color-accent
@@ -40,6 +41,8 @@ button, .button
   &.translucid
     background-color: rgba(255,255,255,0.1)
     color: #fff
+    &:hover
+      background-color: rgba(255,255,255,0.2)
 
   &.rounded
     border-radius: 50px
@@ -55,7 +58,6 @@ button.secondary
   border-color: rgba(#000, 0.07)
   &:hover
     background: rgba(#000, 0.07)
-    color: #fff
 
 a
   text-decoration: none
