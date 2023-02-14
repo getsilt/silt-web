@@ -78,15 +78,4 @@ export default {
   display: flex
   align-items: center
 
-.bg-shadow__wrapper
-  position: absolute
-  z-index: -1
-  top: 0
-  right: 0
-
-  .bg-shadow
-    position: relative
-    width: 60vw
-    height: auto
-    margin: 0px
 </style>

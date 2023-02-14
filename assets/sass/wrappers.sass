@@ -465,3 +465,70 @@ nav
 .flex-col
   display: flex
   flex-direction: column
+
+  
+.bg-shadow__wrapper
+  position: absolute
+  z-index: -10
+  bottom: 50px
+  right: 0
+  left: 0
+  overflow: hidden
+  width: 120%
+  height: 120%
+  margin: -400px -10%
+  .bg-shadow__container
+    position: absolute
+    bottom: 400px
+    right: -3500px
+    left: -3500px
+    margin: auto
+    opacity: 1
+    width: 3500px
+    height: 3500px
+
+    &:after
+      content: ''
+      border-radius: 200%
+      position: absolute
+      bottom: -100px
+      right: -0px
+      background: #fff
+      width: 100%
+      height: 100%
+      margin: auto
+      display: block
+      z-index: -1
+
+    .bg-shadow
+      bottom: 0px
+      right: 0%
+      left: 0%
+      margin: auto
+      position: absolute
+      width: 30%
+      height: auto
+      margin-top: 0px
+      animation: rotation 10s ease-in infinite
+      filter: blur(100px)
+      z-index: -2
+      opacity: 0.5
+      transform-origin: center
+
+      &:first-child
+        opacity: 0.7
+        transform: rotate(180deg)
+        filter: hue-rotate(-45deg) blur(75px)
+        animation: rotation2 15s ease-out infinite
+
+@keyframes rotation
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(360deg)
+
+@keyframes rotation2
+  from
+    transform: rotate(180deg)
+  to
+    transform: rotate(-180deg)

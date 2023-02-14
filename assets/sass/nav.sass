@@ -81,18 +81,20 @@
     flex-direction: row
     color: var(--link)
     text-decoration: none
-    padding: 10px 5px 10px 0
+    padding: 15px 15px
+    margin: 0px 0px 0 -15px
     font-family: $font-bold
     font-size: 16px
     transition: 0.3s ease-in-out
     position: relative
     padding-right: $spacing-md
+    border-radius: 20px
     &:after, &:before
         transition: 0.2s ease-in-out
         opacity: 0
         transform: translateX(-50%)
         position: absolute
-        right: 0
+        right: 20px
         font-family: 'Font Awesome 5 Duotone'
     &:after
         content: '\f061'
@@ -101,6 +103,7 @@
         content: '\10f061'
         color: rgba($color-primary, 0.5)
     &:not(.deactivated):hover
+        background: $color-grey-lighten-3
         color: var(--link)
         transition: 0.3s ease-in-out
         &:after, &:before
@@ -116,6 +119,7 @@
 
     i
         margin: 0
+        margin-top: 3px
         flex: 0 0 30px
 
     &:not(:last-child)

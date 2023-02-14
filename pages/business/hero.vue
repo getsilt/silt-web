@@ -1,13 +1,22 @@
 <template>
   <section class="claim-container">
     <div class="bg-shadow__wrapper">
-      <img
-        class="bg-shadow"
-        src="@/assets/img/illustrations/shadow.svg"
-        :alt="$t('seo_1')"
-        width="700"
-        height="500"
-      />
+      <div class="bg-shadow__container">
+        <img
+          class="bg-shadow"
+          src="@/assets/img/illustrations/shadow.svg"
+          :alt="$t('seo_1')"
+          width="700"
+          height="500"
+        />
+        <img
+          class="bg-shadow"
+          src="@/assets/img/illustrations/shadow.svg"
+          :alt="$t('seo_1')"
+          width="700"
+          height="500"
+        />
+      </div>
     </div>
     <!-- CLAIMS -->
     <div class="claim-info">
@@ -89,18 +98,4 @@ export default {
 .claim-info-wrapper.differences
   display: flex
   align-items: center
-
-.bg-shadow__wrapper
-  position: absolute
-  z-index: -1
-  top: -150px
-  right: 0
-  filter: blur(10px)
-  opacity: 0.5
-
-  .bg-shadow
-    position: relative
-    width: 60vw
-    height: auto
-    margin: 0px
 </style>
