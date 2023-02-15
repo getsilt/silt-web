@@ -5,7 +5,7 @@
 
 @font-face
   font-family: 'Futura-Black'
-  src: url('../fonts/SofiaPro_Black.otf')  
+  src: url('../fonts/SofiaPro_Black.otf')
 
 @font-face
   font-family: 'Futura-Book'
@@ -23,7 +23,7 @@ i.fad
 h1, h2, h3, h4, h5, h6, .h6
   font-family: $font-bold
   font-weight: normal
-  color: $color-black
+  color: var(--text-primary)
   line-height: 1.2
   margin-top: 0
 
@@ -53,7 +53,7 @@ h6, .h6
 
 a
   font-family: $font-bold
-  color: $color-grey-darken-3
+  color: var(--text-primary)
   transition: 0.3s ease-in-out
   &:hover
     color: $color-primary
@@ -77,7 +77,7 @@ a
   height: 2em
   margin: auto
   margin-bottom: $spacing-md
-  // @extend .text-gradient-2
+  @extend .text-gradient-2
 
 b
   font-family: $font-bold
@@ -134,6 +134,9 @@ li
 ol
   text-align: left
 
+b
+  color: var(--text-primary)
+
 .hint
   color: $color-grey-lighten-1
 
@@ -144,5 +147,21 @@ ol
     color: $color-primary
     margin-right: $spacing-sm
 
-.primary
+.color-primary
   color: $color-primary
+
+.with-arrow
+  position: relative
+  &:after, &:before
+    transition: 0.2s ease-in-out
+    opacity: 0
+    transform: translateX(0%)
+    position: absolute
+    right: 0
+    font-family: "Font Awesome 5 Duotone"
+    content: "\f061"
+    color: #fff
+    &:hover:after
+      transition: 0.2s ease-in-out
+      opacity: 1
+      transform: translateX(100%)

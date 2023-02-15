@@ -1,5 +1,5 @@
 <template>
-  <div class="fw-container--dark">
+  <div class="fw-container">
     <section class="container-md">
       <div class="section-headers">
         <span class="tag">{{ $t("business_solution_section") }}</span>
@@ -7,25 +7,19 @@
       </div>
       <div class="card">
         <div class="article-container claim-container">
-          <div class="claim-side-img screenshots-container">
+          <div class="claim-side-img">
             <template>
               <img
                 src="@/assets/img/illustrations/rules_flow.svg"
                 :alt="$t('seo_3')"
-                width="300"
+                width="500"
               />
             </template>
           </div>
           <div class="claim-info top-claim-info">
             <p>{{ $t("business_solution_rules_page_content") }}</p>
             <p class="centered-block integration-link">
-              <a
-                target="_blank"
-                href="https://dashboard.getsilt.com/welcome"
-                class="bold-link link-with-arrow"
-              >
-                {{ $t("btn_cta_demo") }}
-              </a>
+              <demo-buttons />
             </p>
           </div>
         </div>
@@ -36,7 +30,9 @@
 
 <script>
 import gsap from "gsap";
+import DemoButtons from "../../components/DemoButtons.vue";
 export default {
+  components: { DemoButtons },
   data() {
     return {
       email: "hello@getsilt.com",
@@ -85,7 +81,7 @@ export default {
 
 .integration-link
     margin-top: $spacing-xlg
-    .link-with-arrow
+    .with-arrow
       position: relative
       &:after, &:before
         transition: 0.2s ease-in-out

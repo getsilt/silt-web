@@ -1,6 +1,6 @@
 <template>
   <!-- DEVELOPERS -->
-  <div class="fw-container--dark">
+  <div class="fw-container">
     <section class="container-md" id="howto">
       <div class="section-headers">
         <span class="tag">{{ $t("business_howto_section") }}</span>
@@ -27,7 +27,7 @@
         </article>
       </div>
       <p class="centered-block integration-link">
-        <a href="/developers" class="bold-link link-with-arrow">
+        <a href="/developers" class="bold-link with-arrow">
           {{ $t("business_howto_content4") }}
         </a>
       </p>
@@ -86,7 +86,7 @@ export default {
 
 .integration-link
     margin-top: $spacing-xlg
-    .link-with-arrow
+    .with-arrow
       position: relative
       &:after, &:before
         transition: 0.2s ease-in-out

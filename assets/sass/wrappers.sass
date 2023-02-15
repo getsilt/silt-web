@@ -27,7 +27,7 @@ section
   @media (min-width: 768px)
     text-align: center
   p
-    color: $color-grey
+    color: var(--text-secondary)
 .main-wrapper
   min-height: 100vh
   display: flex
@@ -78,6 +78,12 @@ section
   width: 100%
   height: auto
   left: 0
+
+.card
+  .claim-container
+    .claim-side-img
+      margin: auto
+      margin-right: $spacing-lg
 
 .claim-container
   display: flex
@@ -524,14 +530,8 @@ nav
         filter: hue-rotate(-45deg) blur(75px)
         animation: rotation2 15s ease-out infinite
 
-@keyframes rotation
-  from
-    transform: rotate(0deg)
-  to
-    transform: rotate(360deg)
-
-@keyframes rotation2
-  from
-    transform: rotate(180deg)
-  to
-    transform: rotate(-180deg)
+body.dark
+  .bg-shadow__wrapper
+    .bg-shadow__container
+      &:after
+        background: $bg-dark

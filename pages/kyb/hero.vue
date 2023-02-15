@@ -1,25 +1,43 @@
 <template>
   <section class="claim-container">
+    <div class="bg-shadow__wrapper">
+      <div class="bg-shadow__container">
+        <img
+          class="bg-shadow"
+          src="@/assets/img/illustrations/shadow.svg"
+          :alt="$t('seo_1')"
+          width="700"
+          height="500"
+        />
+        <img
+          class="bg-shadow"
+          src="@/assets/img/illustrations/shadow.svg"
+          :alt="$t('seo_1')"
+          width="700"
+          height="500"
+        />
+      </div>
+    </div>
     <div class="claim-info">
       <h1 class="title" v-html="$t('kyb_claim1')" />
       <h4 class="subtitle" v-html="$t('kyb_claim2')" />
       <demo-buttons />
     </div>
-    <div class="claim-side-img screenshots-container">
-      <div v-if="$root.$i18n.locale === 'es'">
+    <div class="claim-side-img">
+      <template v-if="$root.$i18n.locale === 'es'">
         <img
-          src="@/assets/img/illustrations/kyb_flow_es_light.svg"
+          src="@/assets/img/illustrations/kyb_flow_es.svg"
           :alt="$t('seo_3')"
           width="300"
         />
-      </div>
-      <div v-else>
+      </template>
+      <template v-else>
         <img
-          src="@/assets/img/illustrations/kyb_flow_en_light.svg"
+          src="@/assets/img/illustrations/kyb_flow_en.svg"
           :alt="$t('seo_3')"
           width="300"
         />
-      </div>
+      </template>
     </div>
   </section>
 </template>

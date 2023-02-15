@@ -1,5 +1,5 @@
 <template>
-  <section class="fw-container light">
+  <section class="fw-container">
     <div class="highlights-wrapper">
       <div class="section-headers">
         <span class="tag">{{ $t("business_benefits_section") }}</span>

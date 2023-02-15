@@ -1,12 +1,14 @@
+@import "./animations.sass"
+@import './vars.sass'
 @import './buttons.sass'
 @import './fonts.sass'
 @import "./forms.sass"
 @import './nav.sass'
-@import './vars.sass'
 @import './wrappers.sass'
 @import "./fa-scss/fontawesome.scss"
 @import "./fa-scss/duotone.scss"
 @import "./tabs.sass"
+
 *
   box-sizing: border-box
 
@@ -17,7 +19,7 @@ html
 body
   font-family: $font-body
   background-color: #fff
-  color: $color-grey-darken-3
+  color: var(--text-secondary)
   padding-top: 40px
   font-size: 1.2rem
   margin: 0
@@ -25,8 +27,8 @@ body
   line-height: 1.4
 
 body.dark, section.dark
-  background: #000
-  color: $color-grey-lighten-3
+  background: $bg-dark
+  color: var(--text-secondary)
 
 .page-enter-active, .page-leave-active
   transition: opacity .5s
@@ -56,6 +58,11 @@ body.dark, section.dark
   background-repeat: repeat
   background-image: linear-gradient(45deg, rgba(48,50,205,1) 0%, rgba(48,104,255,1) 70%, rgba(108,176,255,1) 100%)
 
+.bg-gradient-2
+  transition: 0.3s ease-in-out
+  background: rgb(3,44,157)
+  background: linear-gradient(45deg, rgba(48,50,205,1) 0%, rgba(48,104,255,1) 60%, rgb(255, 102, 102) 100%)
 
-// .text-gradient-2, .text-gradient-2-child > *,
-//   background-image: linear-gradient(45deg, rgba(48,50,205,1) 0%, rgba(48,104,255,1) 70%, #ff6666 100%)
+.text-gradient-2, .text-gradient-2-child > *
+  background-image: linear-gradient(45deg, rgba(48,50,205,1) 0%, rgba(48,104,255,1) 60%, rgb(255, 102, 102) 100%)
+

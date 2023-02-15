@@ -17,7 +17,8 @@
 // #0943ff
 // #2963ff
 // #3ddc97
-// #ff5b4a        
+// #ff5b4a
+// #8E9AA5
 $color-primary: #2963ff
 $color-warning: #ffbb00
 $color-accent: #FF6666
@@ -26,15 +27,17 @@ $color-accent-darken: #1c7a49
 $color-grey-lighten-1: #b4b4b4
 $color-grey-lighten-2: #d8d8d8
 $color-grey-lighten-3: #f3f4f5
-$color-grey: #6f7881
-$color-grey-darken-1: #7a7a7a
+
+$color-grey-darken-1: #8E9AA5
+$color-grey: $color-grey-darken-1
 $color-grey-darken-2: #666
-$color-grey-darken-3: #333
-$color-grey-darken-3: #1d1d1f
+$color-grey-darken-3: #22262f
 $color-black: #000
 $color-error: #fa00b1
-$bg-dark-lighten-1: #121828
-$bg-dark-lighten-2: #252D4B
+
+$bg-dark: #000    
+$bg-dark-lighten-1: #0e121e
+$bg-dark-lighten-2: #121828
 
 // END COLORS
 
@@ -56,11 +59,41 @@ $spacing-xlg: 40px
 
 // RADIUS
 $radius-sm: 10px
-$radius-md: 13px
+$radius-md: 16px
 $radius-lg: 20px
 
-$padding-4-md: 1em 1.4em 0.9em 1.4em
+$padding-4-md: 0.75em 1.4em 0.7em 1.4em
 // END RADIUS
 
 // SHADOW
 $box-shadow-1: 2px 6px 20px -6px rgba(0, 0, 0, 0.3)
+
+
+\:root
+    --primary: #{$color-primary}
+    --text-primary: $color-grey-darken-3
+    --text-primary-inverted: #{$color-grey-lighten-3}
+    --bg-primary: #{$color-grey-lighten-3}
+    --bg-primary-inverted: #{$color-grey-darken-3}
+    --bg-secondary: #{$color-grey-lighten-1}
+    --bg-terciary: #{$color-grey-darken-1}
+    --secondary: #{$color-grey-darken-1}
+    --terciary: #{$color-grey-lighten-1}
+    --link: #{$color-grey-lighten-3}
+
+\:root.dark
+    --primary: #{$color-primary}
+    --text-primary: #fff
+    --text-primary-inverted: #{$color-grey-darken-3}
+    --text-secondary: #{$color-grey-darken-1}
+    --text-secondary-inverted: #{$color-grey-darken-3}
+    --bg-primary: #{$color-grey-lighten-3}
+    --bg-primary-inverted: #{$color-grey-darken-3}
+    --bg-secondary: #{$bg-dark-lighten-1}
+    --bg-terciary: #{$bg-dark-lighten-2}
+    --secondary: #{$color-grey-lighten-1}
+    --terciary: #{$color-grey-darken-1}
+    --link: #{$color-grey-lighten-3}
+    --link-secondary: #fff
+    --link-inverted: #{$color-grey-darken-2}
+    --link-inverted-hover: #000

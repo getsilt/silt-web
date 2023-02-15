@@ -3,9 +3,9 @@
     <section class="trust__wrapper">
       <h3>{{ $t("footer_trust") }}</h3>
       <div class="trust__logos">
-        <img src="@/assets/img/logo/tech_bcn.png" alt="" style="height: 60px" />
+        <img src="@/assets/img/logo/tech_bcn.png" alt="" style="height: 100px" />
         <img src="@/assets/img/logo/accio.png" alt="" />
-        <img style="height: 60px" src="@/assets/img/logo/aefi.png" alt="" />
+        <img style="height: 100px" src="@/assets/img/logo/aefi.png" alt="" />
       </div>
     </section>
     <footer>
@@ -119,7 +119,7 @@ export default {
 
 .trust__wrapper
   text-align: center
-  background: #fafafa
+  background: var(--bg-secondary)
   padding: 30px
   margin: 0
   .trust__logos
@@ -129,14 +129,24 @@ export default {
     flex-wrap: wrap
     padding: 20px
     img
-      margin: 40px
-      height: 70px
+      margin: 10px
+      height: 80px
+      max-height: 80px
       width: auto
+      background: $color-grey-lighten-3
+      padding: 20px
+      border-radius: $radius-lg
+@media (min-width: 768px)
+  .trust__wrapper
+    .trust__logos
+      padding: 20px
+      img
+        max-height: 200px
+        margin: 40px
 
 footer
   margin-top: auto
   background: $color-black
-  color: #ffffff77
   padding: $spacing-lg
   z-index: 1
   a

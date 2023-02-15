@@ -1,5 +1,5 @@
 <template>
-  <section class="fw-container light">
+  <section class="fw-container">
     <div id="benefits">
       <div class="highlights-wrapper">
         <div class="section-headers">

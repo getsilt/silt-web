@@ -1,5 +1,5 @@
 <template>
-  <div class="fw-container--dark">
+  <div class="fw-container">
     <div class="section-headers">
       <span class="tag">{{ $t("features_title") }}</span>
       <h2 v-html="$t('features_subtitle')" class="features_subtitle" />

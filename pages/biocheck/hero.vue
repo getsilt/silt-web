@@ -1,5 +1,23 @@
 <template>
   <section class="claim-container">
+    <div class="bg-shadow__wrapper">
+      <div class="bg-shadow__container">
+        <img
+          class="bg-shadow"
+          src="@/assets/img/illustrations/shadow.svg"
+          :alt="$t('seo_1')"
+          width="700"
+          height="500"
+        />
+        <img
+          class="bg-shadow"
+          src="@/assets/img/illustrations/shadow.svg"
+          :alt="$t('seo_1')"
+          width="700"
+          height="500"
+        />
+      </div>
+    </div>
     <!-- CLAIMS -->
     <div class="claim-info">
       <h1 class="title" v-html="$t('biocheck_claim1')" />

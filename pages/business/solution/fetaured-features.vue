@@ -81,7 +81,7 @@
                 </h3>
                 <p v-html="$t('business_solution_kyc_page_content2')" />
                 <p>
-                  <a href="/kyc" class="bold-link link-with-arrow">
+                  <a href="/kyc" class="bold-link with-arrow">
                     {{ $t("business_solution_card_kyc_link") }}
                   </a>
                 </p>
@@ -235,7 +235,7 @@
                 <p>{{ $t("kyb_solution_content1") }}</p>
                 <p>{{ $t("kyb_solution_content2") }}</p>
                 <p>
-                  <a href="/kyb" class="bold-link link-with-arrow">
+                  <a href="/kyb" class="bold-link with-arrow">
                     {{ $t("business_solution_card_kyb_link") }}
                   </a>
                 </p>
@@ -271,7 +271,7 @@
                 </h3>
                 <p v-html="$t('biocheck_claim2')" />
                 <p>
-                  <a href="/biocheck" class="bold-link link-with-arrow">
+                  <a href="/biocheck" class="bold-link with-arrow">
                     {{ $t("business_solution_card_biocheck_link") }}
                   </a>
                 </p>
@@ -350,22 +350,6 @@ export default {
 
 .bold-link
   color: #fff
-
-.link-with-arrow
-    position: relative
-    &:after, &:before
-      transition: 0.2s ease-in-out
-      opacity: 0
-      transform: translateX(0%)
-      position: absolute
-      right: 0
-      font-family: "Font Awesome 5 Duotone"
-      content: "\f061"
-      color: #fff
-    &:hover:after
-      transition: 0.2s ease-in-out
-      opacity: 1
-      transform: translateX(100%)
 
 .fraud-grid
   display: grid

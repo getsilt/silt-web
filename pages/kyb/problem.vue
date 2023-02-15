@@ -1,5 +1,5 @@
 <template>
-  <div class="fw-container--dark">
+  <div class="fw-container">
     <section class="container-md">
       <div class="section-headers">
         <span class="tag">{{ $t("kyb_problem_section") }}</span>

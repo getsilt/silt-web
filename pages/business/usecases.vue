@@ -137,10 +137,10 @@ export default {
     cursor: pointer
     transition: 0.3s ease-in-out
     &:hover
-      color: $color-grey-darken-3
+      color: var(--text-secondary)
       transition: 0.3s ease-in-out
   & > *.active
-    color: $color-black
+    color: var(--text-primary)
 .usecase-wrapper
   flex-wrap: wrap
   justify-content: center

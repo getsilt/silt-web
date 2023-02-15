@@ -2,7 +2,7 @@
   <div class="demo__wrapper">
     <div class="demo_cta__wrapper">
       <a target="_blank" href="https://dashboard.getsilt.com/welcome">
-        <button class="accent">{{ $t("btn_cta_demo") }}</button>
+        <button class="primary icon">{{ $t("btn_cta_demo") }}<i class="simple-arrow"></i></button>
       </a>
       <a target="_blank" href="https://app.meetzy.io/preview/3dfd0d2hgymu">
         <button class="secondary">{{ $t("btn_cta_book_demo") }}</button>

@@ -5,11 +5,11 @@
       <div class="claim-info">
         <h2 class="">{{ $t("demo_claim1") }}</h2>
         <div class="bullet-wrapper">
-          <i class="primary medium bg fad fa-camera"></i>
+          <i class="color-primary medium bg fad fa-camera"></i>
           <h4 class="subtitle">{{ $t("demo_claim2") }}</h4>
         </div>
         <div class="bullet-wrapper">
-          <i class="primary medium bg fad fa-bolt"></i>
+          <i class="color-primary medium bg fad fa-bolt"></i>
           <h4 class="subtitle">{{ $t("demo_claim3") }}</h4>
         </div>
       </div>

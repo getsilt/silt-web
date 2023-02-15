@@ -1,8 +1,8 @@
 <template>
   <section>
-    <div class="header-wrapper">
+    <div class="header-wrapper dark">
       <consent-cookies />
-      <vsm-menu ref="menu" :menu="menu">
+      <vsm-menu ref="menu" :menu="menu" class="dark">
         <template #default="data">
           <component :is="data.item.content" class="content" />
           <component
@@ -16,12 +16,13 @@
               src="@/assets/img/logo/silt_logo_white.svg"
               :alt="$t('silt_name')"
               height="50"
-              style="display: none"
+              class="logo_dark"
             />
             <img
               src="@/assets/img/logo/silt_logo_black.svg"
               :alt="$t('silt_name')"
               height="50"
+			  class="logo_light"
             />
           </nuxt-link>
         </li>
@@ -44,8 +45,8 @@
           </li>
           <!-- TODO: Update using new copies -->
           <a href="https://dashboard.getsilt.com/welcome">
-            <button class="demo-button small accent">
-              {{ $t("btn_cta_navBar_demo") }}
+            <button class="demo-button small secondary icon">
+              {{ $t("btn_cta_navBar_demo") }}<i class="simple-arrow"></i>
             </button>
           </a>
           <!--Display mobile menu-->
@@ -111,6 +112,7 @@ section
 	background: #fff
 	position: fixed
 	top: 0
+	
 
 .header-wrapper
 	margin: 0
@@ -244,6 +246,15 @@ section
 				&>*, &>a
 					width: auto
 					padding: $spacing-sm $spacing-md
+
+.header-wrapper.dark
+	background: $bg-dark
+	.header-bar
+		color: #fff
+
+	nav
+		background: $bg-dark
+
 
 @keyframes opennav
 	0%

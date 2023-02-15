@@ -428,8 +428,6 @@ export default {
       margin-top: $spacing-md
       width: 100%
 
-// .pricing-plan:last-child
-//   background: $color-grey-lighten-3
 .pepaml, .checklist
   max-width: 500px
   text-align: left
@@ -449,10 +447,9 @@ export default {
   align-items: center
   .pricing_table__container
     padding: $spacing-lg
-    background: $color-grey-lighten-3
+    background: var(--bg-secondary)
     border-radius: $radius-lg
     margin: auto
-
 
   h6
     margin-bottom: $spacing-sm
@@ -464,4 +461,7 @@ export default {
       padding-top: $spacing-xlg
     td
       padding: $spacing-xsm $spacing-md
+
+    .hint
+      text-transform: lowercase
 </style>

@@ -92,6 +92,8 @@ export default Vue.extend({
   pointer-events: none
   margin-top: $spacing-sm
 
+
+
 .step__container
   max-width: 350px
   order: 2
@@ -107,6 +109,9 @@ export default Vue.extend({
   align-self: flex-start
   h1, h2, h3, h4, h5, h6
     color: $color-black
+
+  button
+    color: #fff
 
   .step__title
     color: $color-grey
