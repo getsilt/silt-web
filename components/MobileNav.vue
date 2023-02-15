@@ -58,6 +58,17 @@
       <div class="dropdown-wrap">
         <nuxt-link
           class="dropdown-wrap__content type1"
+          :to="localePath({ name: 'kyb' })"
+          @click.native="$emit('onCloseNav')"
+        >
+          <i class="fad fa-lg fa-university scan-icon" />
+          <div>
+            <h6 class="title_menu">{{ $t("nav_feature_kyb") }}</h6>
+            <p class="subtitle_menu">{{ $t("product_subtitle_kyb") }}</p>
+          </div>
+        </nuxt-link>
+        <nuxt-link
+          class="dropdown-wrap__content type1"
           :to="localePath({ name: 'biocheck' })"
           @click.native="$emit('onCloseNav')"
         >
@@ -67,17 +78,6 @@
             <p class="subtitle_menu">
               {{ $t("product_subtitle_biometric_check") }}
             </p>
-          </div>
-        </nuxt-link>
-        <nuxt-link
-          class="dropdown-wrap__content type1"
-          :to="localePath({ name: 'kyb' })"
-          @click.native="$emit('onCloseNav')"
-        >
-          <i class="fad fa-lg fa-university scan-icon" />
-          <div>
-            <h6 class="title_menu">{{ $t("nav_feature_kyb") }}</h6>
-            <p class="subtitle_menu">{{ $t("product_subtitle_kyb") }}</p>
           </div>
         </nuxt-link>
       </div>
