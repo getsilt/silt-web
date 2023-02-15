@@ -55,17 +55,22 @@ export default {
 <style lang="sass" scoped>
 .consent-cookies
   width: calc(100%)
-  background-color: rgba(250, 250, 250, 0.8)
+  background-color: rgba(0, 0, 0, 0.7)
   backdrop-filter: blur(5px)
   color: #666
   text-align: center
-  border-radius: 0px
-  padding: 10px
+  border-radius: 20px 20px 0 0
+  padding: 20px 20px 0px 20px
   position: fixed
   z-index: 1
-  left: 0px
-  bottom: 0px
+  left: 0
+  right: 0
+  bottom: 0
+  margin: auto
+  align-items: center
+  display: flex
   font-size: 14px
+  max-width: 600px
 
   .button
     margin-left: 10px
