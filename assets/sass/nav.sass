@@ -8,12 +8,6 @@
 .logo_light
     display: black
 
-.dark
-    .logo_dark
-        display: block
-    .logo_light
-        display: none
-
 .vsm-menu
     margin: 10px 0
     width: 100%
@@ -43,12 +37,12 @@
 .vsm-link
     font-size: 1.2rem
     position: relative
-    color: var(--link)
+    color: $color-grey-darken-3
     text-decoration: none
     a, a:visited
-        color: var(--link)
+        color: $color-grey-darken-3
     &:hover, &.nuxt-link-active, a.nuxt-link-active, &.vsm-active
-        color: var(--link-secondary)
+        color: #000
 
 .content,
 .content--secondary,
@@ -64,7 +58,7 @@
     font-weight: 600
     text-transform: uppercase
     margin-bottom: 20px
-    color: $color-grey-lighten-1
+    color: $color-grey-darken-1
     font-family: $font-bold
     &:not(:first-child)
         margin-top: 20px
@@ -73,7 +67,7 @@
     display: flex
     align-items: flex-start
     flex-direction: row
-    color: var(--link)
+    color: $color-grey-darken-3
     text-decoration: none
     padding: 15px 15px
     margin: 0px 0px 0 -15px
@@ -97,15 +91,15 @@
         content: '\10f061'
         color: rgba($color-primary, 0.5)
     &:not(.deactivated):hover
-        background: var(--bg-terciary)
-        color: var(--link)
+        background: $color-grey-lighten-3
+        color: $color-grey-lighten-3
         transition: 0.3s ease-in-out
         &:after, &:before
             transition: 0.2s ease-in-out
             opacity: 1
             transform: translateX(0%)
     .title_menu
-        color: var(--link)
+        color: $color-grey-darken-3
         margin: 0
 
     & > *
@@ -128,7 +122,7 @@
         & > div
             margin-left: 10px
         .content--bottom
-            color: var(--secondary)
+            color: $color-grey-lighten-3
     .subtitle_menu
         color: $color-grey
         font-family: $font-body
@@ -138,7 +132,7 @@
 
 .feature-dropdown
     display: flex
-    background: var(--bg-secondary)
+    background: #fff
     &>*
         min-width: 350px
     &>*:not(:last-child)
@@ -154,15 +148,17 @@
 
 .vsm-mob-line
     border-radius: 10px
-    background: var(--bg-secondary)
     height: 4px
     &:nth-child(2)
         margin-top: 3px
         margin-bottom: 3px
 
+.vsm-mob-line,.vsm-mob-close:before, .vsm-mob-close:after
+    background: $bg-dark-lighten-1
+
 .vsm-arrow
     z-index: 1
-    background: var(--bg-secondary)
+    background: #fff
 
 .deactivated
     opacity: 0.4
@@ -177,7 +173,7 @@
     padding: $spacing-md
     white-space: initial
     line-height: 1.2em
-    background: var(--bg-secondary)
+    background: #fff
     border: 2px solid var(--terciary)
     max-height: 90vh
     overflow: auto
@@ -197,10 +193,72 @@
 
     .other-sections
         padding: $spacing-md
-        background: var(--bg-terciary)
+        background: $color-grey-lighten-3
         display: flex
         flex-direction: column
         align-items: center
         margin: 20px -20px -20px -20px
         a
             text-decoration: none
+
+nav
+    .demo-button
+        display: none
+    .demo-button
+        margin-left: $spacing-lg
+        color: #000
+    .login-button
+        background-color: $color-black
+        color: #fff
+    .login-button:hover
+        background-color: $color-accent
+
+.vsm-menu.dark
+    .logo_dark
+        display: block
+    .logo_light
+        display: none
+
+    .vsm-link
+        color: $color-grey-lighten-3
+        a, a:visited
+            color: $color-grey-lighten-3
+        &:hover, &.nuxt-link-active, a.nuxt-link-active, &.vsm-active
+            color: #fff
+
+    .dropdown--section_title
+        color: $color-grey-lighten-1
+
+    .dropdown-wrap__content
+        color: $color-grey-lighten-3
+        &:not(.deactivated):hover
+            background: $bg-dark-lighten-2
+            color: $color-grey-lighten-3
+        .title_menu
+            color: $color-grey-lighten-3
+        &.type2
+            .content--bottom
+                color: $color-grey-lighten-1
+        .subtitle_menu
+            color: $color-grey
+    .feature-dropdown
+        background: $bg-dark-lighten-1
+
+    .vsm-arrow
+        z-index: 1
+        background: $bg-dark-lighten-1
+
+    nav
+        .demo-button
+            border-color: $bg-dark-lighten-1
+            color: $color-grey-lighten-3
+            background: $color-grey-darken-3
+
+    .other-sections
+        background: $bg-dark-lighten-2
+
+    .vsm-mob-content__wrap
+        background: $bg-dark-lighten-1
+
+    .vsm-mob-line,.vsm-mob-close:before, .vsm-mob-close:after
+        background: $color-grey-lighten-1

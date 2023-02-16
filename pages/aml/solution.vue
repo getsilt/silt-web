@@ -1,5 +1,5 @@
 <template>
-  <div class="fw-container">
+  <div class="fw-container--dark">
     <section class="container-md">
       <div class="section-headers">
         <span class="tag">{{ $t("business_solution_section") }}</span>
@@ -26,7 +26,7 @@
           <div class="claim-info top-claim-info">
             <p>{{ $t("business_solution_aml_page_content") }}</p>
             <p class="centered-block integration-link">
-              <demo-buttons />
+              <demo-buttons class="dark"/>
             </p>
           </div>
         </div>

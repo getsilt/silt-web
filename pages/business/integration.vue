@@ -1,6 +1,6 @@
 <template>
   <!-- DEVELOPERS -->
-  <div class="fw-container">
+  <div class="fw-container--dark">
     <section class="container-md" id="howto">
       <div class="section-headers">
         <span class="tag">{{ $t("business_howto_section") }}</span>

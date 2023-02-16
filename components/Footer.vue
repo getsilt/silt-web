@@ -119,19 +119,21 @@ export default {
 
 .trust__wrapper
   text-align: center
-  background: var(--bg-secondary)
+  background: $bg-dark
   padding: 30px
   margin: 0
+  h3
+    color: $color-grey-lighten-3
   .trust__logos
     display: flex
     justify-content: center
     align-items: center
     flex-wrap: wrap
-    padding: 20px
+    padding: 0px
     img
       margin: 10px
       height: 80px
-      max-height: 80px
+      max-height: 100px
       width: auto
       background: $color-grey-lighten-3
       padding: 20px
@@ -139,8 +141,8 @@ export default {
 @media (min-width: 768px)
   .trust__wrapper
     .trust__logos
-      padding: 20px
       img
+        height: 100px
         max-height: 200px
         margin: 40px
 
@@ -149,7 +151,8 @@ footer
   background: $color-black
   padding: $spacing-lg
   z-index: 1
-  a
+  color: $color-grey-darken-1
+  a, b
     text-decoration: none
     color: #ffffffcc
     &:hover
@@ -185,4 +188,8 @@ p.copyright
     width: 100%
     margin-top: $spacing-md
     text-align: left
+
+.footer__links
+  a, b, a b
+    color: #fff !important
 </style>

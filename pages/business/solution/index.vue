@@ -1,6 +1,6 @@
 <template>
   <!-- Unique advantage  -->
-  <div class="fw-container">
+  <div class="fw-container--dark">
     <div class="section-headers">
       <span class="tag">{{
         $t("business_highlights_vanguardTech_section")

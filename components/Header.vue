@@ -1,8 +1,8 @@
 <template>
   <section>
-    <div class="header-wrapper dark">
+    <div id="header-wrapper" class="header-wrapper">
       <consent-cookies />
-      <vsm-menu ref="menu" :menu="menu" class="dark">
+      <vsm-menu id="main-menu" ref="menu" :menu="menu">
         <template #default="data">
           <component :is="data.item.content" class="content" />
           <component
@@ -283,18 +283,6 @@ section
 		transform: translateY(6px)
 	100%
 		transform: translateY(calc(-100% - 70px))
-
-nav
-	.demo-button
-		display: none
-	.demo-button
-		margin-left: $spacing-lg
-		color: #fff
-	.login-button
-		background-color: $color-black
-		color: #fff
-	.login-button:hover
-		background-color: $color-accent
 
 @media (min-width: 768px)
 .header-bar

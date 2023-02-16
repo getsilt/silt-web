@@ -70,18 +70,24 @@ $box-shadow-1: 2px 6px 20px -6px rgba(0, 0, 0, 0.3)
 
 
 \:root
+    --bg-main: #fff
     --primary: #{$color-primary}
-    --text-primary: $color-grey-darken-3
+    --text-primary: #{$color-grey-darken-3}
     --text-primary-inverted: #{$color-grey-lighten-3}
-    --bg-primary: #{$color-grey-lighten-3}
-    --bg-primary-inverted: #{$color-grey-darken-3}
-    --bg-secondary: #{$color-grey-lighten-1}
-    --bg-terciary: #{$color-grey-darken-1}
+    --bg-primary: #{$color-grey-darken-3}
+    --bg-primary-inverted: #{$color-grey-lighten-3}
+    --bg-secondary: #{$color-grey-lighten-3}
+    --bg-terciary: #{$color-grey-lighten-2}
     --secondary: #{$color-grey-darken-1}
-    --terciary: #{$color-grey-lighten-1}
+    --terciary: #{$color-grey-lighten-2}
     --link: #{$color-grey-lighten-3}
+    --link: #{$color-grey-lighten-3}
+    --link-secondary: #fff
+    --link-inverted: #{$color-grey-darken-2}
+    --link-inverted-hover: #000
 
 \:root.dark
+    --bg-main: #{$bg-dark}
     --primary: #{$color-primary}
     --text-primary: #fff
     --text-primary-inverted: #{$color-grey-darken-3}

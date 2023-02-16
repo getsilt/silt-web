@@ -1,5 +1,5 @@
 <template>
-  <div class="fw-container">
+  <div class="fw-container--dark">
     <div class="section-headers">
       <span class="tag">{{ $t("features_title") }}</span>
       <h2 v-html="$t('features_subtitle')" class="features_subtitle" />
@@ -187,8 +187,13 @@ section.tech-features_wrapper
   flex-direction: column
   .tech-features_list
     display: flex
+    @media (max-width: 767px)
+      flex-wrap: wrap
+
     & > *
-      flex: 1 1 auto
+      flex: 1 1 50%
+      @media (max-width: 767px)
+        margin-right: 0 !important
       & > *
         margin-bottom: $spacing-md
       &:not(:last-child)

@@ -28,7 +28,7 @@
 
       <demo-buttons />
     </div>
-    <div class="claim-side-img">
+    <div class="claim-side-img diagram">
       <img
         src="@/assets/img/illustrations/watch_list_diagram_flow.svg"
         :alt="$t('seo_3')"
@@ -58,9 +58,10 @@ export default {
 <style lang="sass" scoped>
 
 .claim-container .claim-side-img.diagram
-  margin: 0
+  margin: auto
   padding: 0
   & > img
+    width: 100%
     min-width: 300px
-    max-width: 700px
+    max-width: 600px
 </style>

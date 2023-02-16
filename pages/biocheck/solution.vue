@@ -1,4 +1,5 @@
 <template>
+<div class="fw-container--dark">
   <section class="container-md">
     <div class="section-headers">
       <span class="tag">{{ $t("business_solution_section") }}</span>
@@ -25,12 +26,13 @@
           <h4>{{ $t("biocheck_solution_title") }}</h4>
           <p v-html="$t('biocheck_solution_content')" />
           <p class="centered-block integration-link">
-            <demo-buttons />
+            <demo-buttons class="dark"/>
           </p>
         </div>
       </div>
     </div>
   </section>
+</div>
 </template>
 
 <script>

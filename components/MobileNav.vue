@@ -99,7 +99,7 @@
         Blog
       </a>
       <nuxt-link
-        class="dropdown-wrap__content demo-button"
+        class="dropdown-wrap__content"
         :to="localePath({ name: 'demo' })"
         @click="onCloseNav()"
       >

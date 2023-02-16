@@ -13,7 +13,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    dark: {
+      default: false
+    }
+  }
+};
 </script>
 
 <style lang="sass" scoped>
@@ -36,4 +42,15 @@ export default {};
   i
     color: $color-grey-darken-1
     margin-right: $spacing-sm
+.demo__wrapper.dark
+  button:not(.secondary)
+    background: var(--bg-primary-inverted)
+    color: var(--bg-primary)
+    &:hover:not(.vsm-link):not(:disabled):not(.accent):not(.translucid):not(.secondary)
+      background: var(--bg-primary-inverted)
+
+  button.secondary
+    border-color: transparent
+    background: var(--bg-primary)
+
 </style>
