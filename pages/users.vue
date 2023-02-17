@@ -3,16 +3,14 @@
     <!-- CLAIMS -->
     <section class="claim-container">
       <div class="claim-info">
-        <h1 class="title" v-html="$t('personal_claim1')"></h1>
-        <h4 class="subtitle" v-html="$t('personal_claim2')">
-          {{ $t("personal_claim2") }}
-        </h4>
+        <h1 class="title" v-html="$t('personal_claim1')" />
+        <h4 class="subtitle" v-html="$t('personal_claim2')" />
       </div>
       <div class="claim-side-img screenshots-container">
         <img
           class=""
           src="@/assets/img/illustrations/silt-workflow-v.svg"
-          :alt="$t('seo_2')"
+          :alt="$t('seo_conversionrates_costs')"
         />
       </div>
     </section>
@@ -29,7 +27,7 @@
             <div class="article-img-container">
               <img :src="highlight.img" :alt="$t('seo_' + (i + 5))" />
             </div>
-            <h3>{{ $t(highlight.title) }}</h3>
+            <h4>{{ $t(highlight.title) }}</h4>
             <p>{{ $t(highlight.content) }}</p>
           </div>
         </article>

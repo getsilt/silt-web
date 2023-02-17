@@ -3,19 +3,18 @@
 // >>> CSS style <<<
 // @import 'vue-stripe-menu/dist/vue-stripe-menu.css';
 
-\:root
-    --primary: #{$color-grey-darken-3}
-    --secondary: #{$color-grey-lighten-1}
-    --terciary: #{$color-grey-darken-1}
-    --link: #{$color-grey-darken-3}
-
-// For override styles uses .scss (see documentation)
+.logo_dark
+    display: none
+.logo_light
+    display: block
 
 .vsm-menu
     margin: 10px 0
     width: 100%
     ul
         margin: 0 auto
+    li
+        margin-bottom: 0 !important
 
 .vsm-root
     display: flex
@@ -38,10 +37,12 @@
 .vsm-link
     font-size: 1.2rem
     position: relative
-    color: var(--link)
+    color: $color-grey-darken-3
     text-decoration: none
-    &:hover
-        color: var(--link)
+    a, a:visited
+        color: $color-grey-darken-3
+    &:hover, &.nuxt-link-active, a.nuxt-link-active, &.vsm-active
+        color: #000
 
 .content,
 .content--secondary,
@@ -57,7 +58,7 @@
     font-weight: 600
     text-transform: uppercase
     margin-bottom: 20px
-    color: $color-grey-lighten-1
+    color: $color-grey-darken-1
     font-family: $font-bold
     &:not(:first-child)
         margin-top: 20px
@@ -66,20 +67,22 @@
     display: flex
     align-items: flex-start
     flex-direction: row
-    color: var(--link)
+    color: $color-grey-darken-3
     text-decoration: none
-    padding: 10px 5px 10px 0
+    padding: 15px 15px
+    margin: 0px 0px 0 -15px
     font-family: $font-bold
     font-size: 16px
     transition: 0.3s ease-in-out
     position: relative
     padding-right: $spacing-md
+    border-radius: 20px
     &:after, &:before
         transition: 0.2s ease-in-out
         opacity: 0
         transform: translateX(-50%)
         position: absolute
-        right: 0
+        right: 20px
         font-family: 'Font Awesome 5 Duotone'
     &:after
         content: '\f061'
@@ -88,13 +91,15 @@
         content: '\10f061'
         color: rgba($color-primary, 0.5)
     &:not(.deactivated):hover
-        color: var(--link)
+        background: $color-grey-lighten-3
+        color: $color-grey-lighten-3
         transition: 0.3s ease-in-out
         &:after, &:before
             transition: 0.2s ease-in-out
             opacity: 1
             transform: translateX(0%)
     .title_menu
+        color: $color-grey-darken-3
         margin: 0
 
     & > *
@@ -102,6 +107,7 @@
 
     i
         margin: 0
+        margin-top: 3px
         flex: 0 0 30px
 
     &:not(:last-child)
@@ -116,15 +122,17 @@
         & > div
             margin-left: 10px
         .content--bottom
-            color: var(--secondary)
+            color: $color-grey-lighten-3
     .subtitle_menu
         color: $color-grey
         font-family: $font-body
         font-weight: 100
         margin-top: 5px
+        margin-bottom: 0
 
 .feature-dropdown
     display: flex
+    background: #fff
     &>*
         min-width: 350px
     &>*:not(:last-child)
@@ -133,9 +141,6 @@
 .enterprise-dropdown
     width: 500px
 
-.vsm-menu
-    margin: 10px 20px
-
 .vsm-background
     border-radius: 0 !important
     background: transparent !important
@@ -143,39 +148,49 @@
 
 .vsm-mob-line
     border-radius: 10px
-    background: var(--primary)
     height: 4px
     &:nth-child(2)
         margin-top: 3px
         margin-bottom: 3px
 
+.vsm-mob-line,.vsm-mob-close:before, .vsm-mob-close:after
+    background: $bg-dark-lighten-1
+
 .vsm-arrow
     z-index: 1
+    background: #fff
 
 .deactivated
     opacity: 0.4
 
 .vsm-dropdown-container
     border-radius: 20px
-    background: white
     box-shadow: 0 50px 100px -20px #32325d40, 0 30px 60px -30px #0000004d, 0 -18px 60px -10px #00000008
 
 // MOBILE
+.vsm-mob-full.logo
+    margin-left: $spacing-md
+
 .vsm-mob-content__wrap
     border-radius: $spacing-md
     padding: $spacing-md
     white-space: initial
     line-height: 1.2em
+    background: #fff
+    border: 2px solid var(--terciary)
+    max-height: 90vh
+    overflow: auto
 
     .dropdown-wrap__content
         flex-direction: row
         align-items: flex-start
-        padding: 5px
-        
+        padding: 10px
+
         i
             flex: 0 0 30px
             width: 20px
             margin-right: $spacing-sm
+            margin-left: $spacing-sm
         .subtitle_menu
             font-size: 1rem
 
@@ -184,7 +199,69 @@
         background: $color-grey-lighten-3
         display: flex
         flex-direction: column
-        align-items: flex-start
+        align-items: center
         margin: 20px -20px -20px -20px
         a
             text-decoration: none
+
+nav
+    .demo-button
+        display: none
+    .demo-button
+        margin-left: $spacing-lg
+        color: #000
+    .login-button
+        background-color: $color-black
+        color: #fff
+    .login-button:hover
+        background-color: $color-accent
+
+.vsm-menu.dark
+    .logo_dark
+        display: block
+    .logo_light
+        display: none
+
+    .vsm-link
+        color: $color-grey-lighten-3
+        a, a:visited
+            color: $color-grey-lighten-3
+        &:hover, &.nuxt-link-active, a.nuxt-link-active, &.vsm-active
+            color: #fff
+
+    .dropdown--section_title
+        color: $color-grey-lighten-1
+
+    .dropdown-wrap__content
+        color: $color-grey-lighten-3
+        &:not(.deactivated):hover
+            background: $bg-dark-lighten-2
+            color: $color-grey-lighten-3
+        .title_menu
+            color: $color-grey-lighten-3
+        &.type2
+            .content--bottom
+                color: $color-grey-lighten-1
+        .subtitle_menu
+            color: $color-grey
+    .feature-dropdown
+        background: $bg-dark-lighten-1
+
+    .vsm-arrow
+        z-index: 1
+        background: $bg-dark-lighten-1
+
+    nav
+        .demo-button
+            border-color: $bg-dark-lighten-1
+            color: $color-grey-lighten-3
+            background: $color-grey-darken-3
+
+    .other-sections
+        background: $bg-dark-lighten-2
+
+    .vsm-mob-content__wrap
+        background: $bg-dark-lighten-1
+
+    .vsm-mob-line,.vsm-mob-close:before, .vsm-mob-close:after
+        background: $color-grey-lighten-1

@@ -5,7 +5,7 @@
       <div class="dropdown-wrap">
         <nuxt-link
           class="dropdown-wrap__content type1"
-          :to="localePath({ name: 'business' })"
+          :to="localePath({ name: 'kyc' })"
           @click.native="$emit('onCloseNav')"
         >
           <i class="fad fa-lg fa-id-card scan-icon" />
@@ -16,30 +16,14 @@
         </nuxt-link>
         <nuxt-link
           class="dropdown-wrap__content type1"
-          :to="localePath({ name: 'users' })"
-          @click.native="$emit('ononCloseNav')"
-        >
-          <i class="fad fa-lg fa-bolt scan-icon" />
-          <div>
-            <h6 class="title_menu">{{ $t("nav_feature_digital_id") }}</h6>
-            <p class="subtitle_menu">
-              {{ $t("product_subtitile_digital_identity") }}
-            </p>
-          </div>
-        </nuxt-link>
-      </div>
-      <div class="dropdown--section_title">{{ $t("nav_features_other") }}</div>
-      <div class="dropdown-wrap">
-        <nuxt-link
-          class="dropdown-wrap__content type1"
-          :to="localePath({ name: 'biocheck' })"
+          :to="localePath({ name: 'rules' })"
           @click.native="$emit('onCloseNav')"
         >
-          <i class="fad fa-lg fa-head-side scan-icon" />
+          <i class="fad fa-lg fa-pencil-ruler scan-icon" />
           <div>
-            <h6 class="title_menu">{{ $t("nav_feature_biocheck") }}</h6>
+            <h6 class="title_menu">{{ $t("nav_feature_rules") }}</h6>
             <p class="subtitle_menu">
-              {{ $t("product_subtitle_biometric_check") }}
+              {{ $t("product_subtitle_rules") }}
             </p>
           </div>
         </nuxt-link>
@@ -50,12 +34,28 @@
         >
           <i class="fad fa-lg fa-badge-sheriff scan-icon" />
           <div>
-            <h6 class="title_menu">{{ $t("nav_feature_misconduct") }}</h6>
+            <h6 class="title_menu" v-html="$t('nav_feature_misconduct')" />
             <p class="subtitle_menu">
               {{ $t("product_subtitle_misconduct_list") }}
             </p>
           </div>
         </nuxt-link>
+        <nuxt-link
+          class="dropdown-wrap__content type1"
+          :to="localePath({ name: 'aml' })"
+          @click.native="$emit('onCloseNav')"
+        >
+          <i class="fad fa-lg fa-address-book scan-icon" />
+          <div>
+            <h6 class="title_menu">{{ $t("nav_feature_aml") }}</h6>
+            <p class="subtitle_menu">
+              {{ $t("product_subtitle_aml") }}
+            </p>
+          </div>
+        </nuxt-link>
+      </div>
+      <div class="dropdown--section_title">{{ $t("nav_features_other") }}</div>
+      <div class="dropdown-wrap">
         <nuxt-link
           class="dropdown-wrap__content type1"
           :to="localePath({ name: 'kyb' })"
@@ -68,12 +68,17 @@
           </div>
         </nuxt-link>
         <nuxt-link
-          class="dropdown-wrap__content type1 deactivated"
-          :to="localePath({ name: 'business' })"
+          class="dropdown-wrap__content type1"
+          :to="localePath({ name: 'biocheck' })"
           @click.native="$emit('onCloseNav')"
         >
-          <i class="fad fa-lg fa-house scan-icon" />
-          <h6 class="title_menu">{{ $t("nav_feature_por") }}</h6>
+          <i class="fad fa-lg fa-head-side scan-icon" />
+          <div>
+            <h6 class="title_menu">{{ $t("nav_feature_biocheck") }}</h6>
+            <p class="subtitle_menu">
+              {{ $t("product_subtitle_biometric_check") }}
+            </p>
+          </div>
         </nuxt-link>
       </div>
     </div>
@@ -94,7 +99,7 @@
         Blog
       </a>
       <nuxt-link
-        class="dropdown-wrap__content demo-button"
+        class="dropdown-wrap__content"
         :to="localePath({ name: 'demo' })"
         @click="onCloseNav()"
       >

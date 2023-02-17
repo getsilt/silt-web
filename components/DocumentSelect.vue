@@ -92,18 +92,32 @@ export default Vue.extend({
   pointer-events: none
   margin-top: $spacing-sm
 
+
+
 .step__container
   max-width: 350px
   order: 2
+  background: #fff
+  color: $color-grey-darken-3
   box-shadow: $box-shadow-1
   border-radius: $radius-lg
   padding: $spacing-lg
   display: flex
   flex-direction: column
   flex: 1 1 auto
+  text-align: left
+  align-self: flex-start
+  h1, h2, h3, h4, h5, h6
+    color: $color-black
+
+  button
+    color: #fff
+
   .step__title
     color: $color-grey
     padding-bottom: 20px
+    text-align: left
+    margin-top: $spacing-sm
 
     h4, h5, h6
       margin-bottom: 1rem
@@ -134,6 +148,8 @@ export default Vue.extend({
   border-radius: $radius-lg
   padding: 0 $spacing-md
   background-color: rgba($color-grey-lighten-2, 0.2)
+  h6
+    color: $color-grey-darken-3
 .instructions-wrapper
   .instructions-wrapper__title
     margin-bottom: $spacing-lg
@@ -168,8 +184,8 @@ export default Vue.extend({
         transform: translateX(5px)
 
     .v-list__item__icon-left
-      flex: start
-      padding: $spacing-sm $spacing-md $spacing-sm 0
+      font-size: 1.3rem
+      padding: $spacing-sm $spacing-sm $spacing-sm 0
 
       &.large
         flex: 0 0 60px
@@ -190,6 +206,7 @@ export default Vue.extend({
       flex: 1 1 auto
       display: flex
       align-items: center
+      font-size: 1rem
 
     .v-list__item__arrow
       display: none

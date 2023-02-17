@@ -1,8 +1,8 @@
 <template>
   <section>
-    <div class="header-wrapper">
+    <div id="header-wrapper" class="header-wrapper">
       <consent-cookies />
-      <vsm-menu ref="menu" :menu="menu">
+      <vsm-menu id="main-menu" ref="menu" :menu="menu">
         <template #default="data">
           <component :is="data.item.content" class="content" />
           <component
@@ -13,10 +13,16 @@
         <li slot="before-nav" class="logo vsm-section vsm-mob-full">
           <nuxt-link :to="localePath({ name: 'business' })">
             <img
-              src="@/assets/img/logo/silt_blue.svg"
+              src="@/assets/img/logo/silt_logo_white.svg"
               :alt="$t('silt_name')"
               height="30"
-              width="56"
+              class="logo_dark"
+            />
+            <img
+              src="@/assets/img/logo/silt_logo_black.svg"
+              :alt="$t('silt_name')"
+              height="30"
+			  class="logo_light"
             />
           </nuxt-link>
         </li>
@@ -29,7 +35,7 @@
               ><button class="vsm-link">Blog</button>
             </a>
           </li>
-          <li class="vsm-section vsm-section_menu vsm-mob-hide">
+          <li class="vsm-section vsm-section_menu vsm-mob-hide vsm-link">
             <nuxt-link
               :to="localePath({ name: 'developers' })"
               @click.native="closeNav()"
@@ -37,9 +43,10 @@
               Developers
             </nuxt-link>
           </li>
+          <!-- TODO: Update using new copies -->
           <a href="https://dashboard.getsilt.com/welcome">
-            <button class="demo-button small">
-              {{ $t("btn_cta_navBar_demo") }}
+            <button class="demo-button small secondary icon">
+              {{ $t("btn_cta_navBar_demo") }}<i class="simple-arrow"></i>
             </button>
           </a>
           <!--Display mobile menu-->
@@ -93,28 +100,32 @@ export default {
 header
 	z-index: 999
 section
-	position: fixed
 	top: 0
 	left: 0
 	width: 100%
-	background: #fff
 	margin: 0
 	padding: 0
 	z-index: 9999999999
 	display: flex
 	justify-content: center
 	font-family: $font-body
+	background: #fff
+	position: fixed
+	top: 0
+	
+
 .header-wrapper
 	margin: 0
 	padding: 0
-	position: relative
 	z-index: 100
 	display: flex
-	max-width: 1400px
+	max-width: 1600px
 	padding: 0
 	width: 100%
+	transition: 0.3s ease-in-out
 	@media (min-width: 768px)
 		padding: 0 40px
+
 	.header-bar
 		position: relative
 		padding: 20px
@@ -125,6 +136,7 @@ section
 		z-index: 90
 		height: 70px
 		flex: 1 1 auto
+		transition: 0.3s ease-in-out
 		@media (min-width: 768px)
 			margin-left: -30px
 			padding: 20px 40px
@@ -237,6 +249,17 @@ section
 					width: auto
 					padding: $spacing-sm $spacing-md
 
+.header-wrapper.dark
+	background: $bg-dark
+	transition: 0.3s ease-in-out
+	.header-bar
+		color: #fff
+		transition: 0.3s ease-in-out
+	nav
+		background: $bg-dark
+		transition: 0.3s ease-in-out
+
+
 @keyframes opennav
 	0%
 		transform: translateY(calc(-100% - 70px))
@@ -264,14 +287,6 @@ section
 		transform: translateY(6px)
 	100%
 		transform: translateY(calc(-100% - 70px))
-
-nav
-	.demo-button
-		display: none
-	.demo-button
-		margin-bottom: 10px
-		text-decoration: none
-		margin-left: $spacing-lg
 
 @media (min-width: 768px)
 .header-bar

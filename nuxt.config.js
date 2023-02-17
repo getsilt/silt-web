@@ -101,27 +101,30 @@ export default {
       "/en/privacy",
       "/cookies",
       "/legal-notice",
-      "/privacy"
+      "/privacy",
+      "/demo",
+      "/en/demo",
+      "/es/demo"
     ]
   },
 
   robots: {
     Sitemap: "https://getsilt.com/sitemap.xml",
     UserAgent: "*",
-    Disallow: ["/cookies", "/legal-notice", "/privacy","/en/cookies", "/en/legal-notice", "/en/privacy"]
+    Disallow: ["/cookies", "/legal-notice", "/privacy","/en/cookies", "/en/legal-notice", "/en/privacy", "/demo", "/es/demo", "/en/demo"]
   },
 
   ...routerBase,
   router: {
     trailingSlash: false,
     middleware: "redirects",
-    extendRoutes(routes, resolve) {
-      routes.push({
-        name: 'index',
-        path: '/',
-        component: resolve(__dirname, 'pages/business.vue')
-      })
-    }
+    // extendRoutes(routes, resolve) {
+    //   routes.push({
+    //     name: 'index',
+    //     path: '/',
+    //     component: resolve(__dirname, 'pages/businessbusiness.vue')
+    //   })
+    // }
   },
   generate: {
     fallback: "404.html",
