@@ -5,14 +5,14 @@
         <img
           class="bg-shadow"
           src="@/assets/img/illustrations/shadow.svg"
-          :alt="$t('seo_1')"
+          :alt="$t('seo_kyc')"
           width="700"
           height="500"
         />
         <img
           class="bg-shadow"
           src="@/assets/img/illustrations/shadow.svg"
-          :alt="$t('seo_1')"
+          :alt="$t('seo_kyc')"
           width="700"
           height="500"
         />
@@ -28,7 +28,7 @@
       <img
         class="screenshot take-picture"
         src="@/assets/img/screenshots/screenshot_selfie_es.jpg"
-        :alt="$t('seo_3')"
+        :alt="$t('seo_document_scan')"
       />
     </div>
   </section>

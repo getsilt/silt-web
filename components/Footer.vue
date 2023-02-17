@@ -15,7 +15,7 @@
             src="@/assets/img/logo/silt_logo_white.svg"
             width="75"
             height="40"
-            :alt="$t('seo_9')"
+            :alt="$t('seo_document_scan')"
           />
           <p>{{ $t("footer_silt_what") }}</p>
         </div>

@@ -5,14 +5,14 @@
         <img
           class="bg-shadow"
           src="@/assets/img/illustrations/shadow.svg"
-          :alt="$t('seo_1')"
+          :alt="$t('seo_kyc')"
           width="700"
           height="500"
         />
         <img
           class="bg-shadow"
           src="@/assets/img/illustrations/shadow.svg"
-          :alt="$t('seo_1')"
+          :alt="$t('seo_kyc')"
           width="700"
           height="500"
         />
@@ -37,7 +37,7 @@
         <img
           class="screenshot login"
           src="@/assets/img/screenshots/screenshot_documentSelect_es.jpg"
-          :alt="$t('seo_2')"
+          :alt="$t('seo_conversionrates_costs')"
           width="180"
           height="353"
         />
@@ -46,7 +46,7 @@
         <img
           class="screenshot take-picture"
           src="@/assets/img/screenshots/screenshot_selfie_es.jpg"
-          :alt="$t('seo_3')"
+          :alt="$t('seo_document_scan')"
           width="180"
           height="353"
         />
@@ -55,7 +55,7 @@
         <img
           class="screenshot complete"
           src="@/assets/img/screenshots/screenshot_finish_es.jpg"
-          :alt="$t('seo_4')"
+          :alt="$t('seo_kyc')"
           width="180"
           height="353"
         />

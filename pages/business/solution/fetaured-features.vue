@@ -59,7 +59,7 @@
                 <img
                   class=""
                   src="@/assets/img/illustrations/user_flow_diagram_es.svg"
-                  :alt="$t('seo_3')"
+                  :alt="$t('seo_document_scan')"
                   width="709"
                   height="843"
                 />
@@ -68,7 +68,7 @@
                 <img
                   class=""
                   src="@/assets/img/illustrations/user_flow_diagram_en.svg"
-                  :alt="$t('seo_3')"
+                  :alt="$t('seo_document_scan')"
                   width="709"
                   height="843"
                 />
@@ -76,9 +76,9 @@
             </div>
             <div class="claim-info-wrapper differences">
               <div class="claim-info">
-                <h3 class="title">
+                <h4 class="title">
                   {{ $t("business_differences_title") }}
-                </h3>
+                </h4>
                 <p v-html="$t('business_solution_kyc_page_content2')" />
                 <p>
                   <a href="/kyc" class="bold-link with-arrow">
@@ -154,8 +154,8 @@
             </div>
             <div class="claim-info-wrapper differences">
               <div class="claim-info">
-                <h3>{{ $t("customization_guide_title") }}</h3>
-                <p>{{ $t("customization_guide_subtitle") }}</p>
+                <h4>{{ $t("customization_guide_title") }}</h4>
+                <p>{{ $t("customization_guide_description") }}</p>
                 <div class="customize-verification-flow-wrapper__options">
                   <color-picker-slider @onChange="updateColor($event)" />
                   <div class="tabs-wrapper vertical dark">
@@ -212,7 +212,7 @@
                 <img
                   class=""
                   src="@/assets/img/illustrations/kyb_flow_es.svg"
-                  :alt="$t('seo_3')"
+                  :alt="$t('seo_document_scan')"
                   width="709"
                   height="843"
                 />
@@ -221,7 +221,7 @@
                 <img
                   class=""
                   src="@/assets/img/illustrations/kyb_flow_en.svg"
-                  :alt="$t('seo_3')"
+                  :alt="$t('seo_document_scan')"
                   width="709"
                   height="843"
                 />
@@ -229,9 +229,9 @@
             </div>
             <div class="claim-info-wrapper differences">
               <div class="claim-info">
-                <h3 class="title">
+                <h4 class="title">
                   {{ $t("kyb_claim1") }}
-                </h3>
+                </h4>
                 <p>{{ $t("kyb_solution_content1") }}</p>
                 <p>{{ $t("kyb_solution_content2") }}</p>
                 <p>
@@ -254,21 +254,21 @@
               <template v-if="$root.$i18n.locale === 'es'">
                 <img
                   src="@/assets/img/illustrations/silt-workflow-biocheck_es.svg"
-                  :alt="$t('seo_3')"
+                  :alt="$t('seo_document_scan')"
                 />
               </template>
               <template v-else>
                 <img
                   src="@/assets/img/illustrations/silt-workflow-biocheck_en.svg"
-                  :alt="$t('seo_3')"
+                  :alt="$t('seo_document_scan')"
                 />
               </template>
             </div>
             <div class="claim-info-wrapper differences">
               <div class="claim-info">
-                <h3 class="title">
+                <h4 class="title">
                   {{ $t("biocheck_claim1") }}
-                </h3>
+                </h4>
                 <p v-html="$t('biocheck_claim2')" />
                 <p>
                   <a href="/biocheck" class="bold-link with-arrow">

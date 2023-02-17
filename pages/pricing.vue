@@ -43,43 +43,8 @@
             {{ $t(feature.title) }}
           </li>
         </ul>
-        <!-- <p class="pricing-plan_upto">
-          {{ $t("business_pricing_minimum", { amount: "99€" }) }}
-        </p> -->
-        <!-- <p class="pepaml hint">{{ $t("business_pricing_PEPAML") }}</p> -->
         <demo-buttons class="vertical" />
       </div>
-      <!-- PREMIUM -->
-      <!-- <div class="pricing-plan">
-        <div class="pricing-plan_price">
-          <h2>{{ $t("business_pricing_startingFrom", { amount: "0,2€" }) }}</h2>
-          <h6>/ {{ $t("global_verification") }}</h6>
-        </div>
-        <p class="pricing-plan_upto">
-          {{ $t("business_pricing_moreThan", { amount: "10.000" }) }}
-          {{ $t("business_pricing_verificationsMonth") }}
-        </p>
-        <p>
-            <ul class="checklist">
-                <li v-for="feature of features" :key="feature.title">{{$t(feature.title)}}</li>
-            </ul>
-        </p>
-        <p class="pricing-plan_upto">
-          {{ $t("business_pricing_minimum", { amount: "500€" }) }}
-        </p>
-        <p class="pepaml hint">{{ $t("business_pricing_PEPAML") }}</p>
-        <div class="demo_cta__wrapper vertical">
-          <a :href="`mailto:${getEmail()}`" target="_blank">
-            <button class="accent">{{ $t("global_contactUs") }}</button>
-          </a>
-          <a
-            target="_blank"
-            href="https://app.meetzy.io/preview/3dfd0d2hgymu"
-            >
-            <button class="secondary">{{ $t("btn_cta_book_demo") }}</button>
-          </a>
-        </div>
-      </div> -->
     </div>
     <div class="pricing_table__wrapper">
       <div class="pricing_table__container">

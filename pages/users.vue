@@ -10,7 +10,7 @@
         <img
           class=""
           src="@/assets/img/illustrations/silt-workflow-v.svg"
-          :alt="$t('seo_2')"
+          :alt="$t('seo_conversionrates_costs')"
         />
       </div>
     </section>
@@ -27,7 +27,7 @@
             <div class="article-img-container">
               <img :src="highlight.img" :alt="$t('seo_' + (i + 5))" />
             </div>
-            <h3>{{ $t(highlight.title) }}</h3>
+            <h4>{{ $t(highlight.title) }}</h4>
             <p>{{ $t(highlight.content) }}</p>
           </div>
         </article>

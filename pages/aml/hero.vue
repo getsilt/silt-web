@@ -5,14 +5,14 @@
         <img
           class="bg-shadow"
           src="@/assets/img/illustrations/shadow.svg"
-          :alt="$t('seo_1')"
+          :alt="$t('seo_kyc')"
           width="700"
           height="500"
         />
         <img
           class="bg-shadow"
           src="@/assets/img/illustrations/shadow.svg"
-          :alt="$t('seo_1')"
+          :alt="$t('seo_kyc')"
           width="700"
           height="500"
         />
@@ -29,14 +29,14 @@
     >
       <img
         src="@/assets/img/illustrations/aml_flow_es.svg"
-        :alt="$t('seo_3')"
+        :alt="$t('seo_document_scan')"
         width="300"
       />
     </div>
     <div v-else class="claim-side-img">
       <img
         src="@/assets/img/illustrations/aml_flow_en.svg"
-        :alt="$t('seo_3')"
+        :alt="$t('seo_document_scan')"
         width="300"
       />
     </div>

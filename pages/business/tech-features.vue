@@ -13,7 +13,7 @@
             v-for="(feature, i) of secTechfeatures"
             class="techfeatures_item"
           >
-            <h5
+            <h6
               v-html="$t(feature.title)"
               slot="title"
               class="feature_security_title color_accent_text"
@@ -29,7 +29,7 @@
             v-for="(feature, i) of uxTechfeatures"
             class="techfeatures_item"
           >
-            <h5
+            <h6
               v-html="$t(feature.title)"
               slot="title"
               class="feature_ux_title color_blue_text"

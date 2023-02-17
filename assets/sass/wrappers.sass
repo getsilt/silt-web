@@ -239,7 +239,7 @@ section
       //   width: 50%
       // @media (min-width: 1200px)
       //   width: 33.33%
-      
+
       h4
         margin: $spacing-md
         line-height: 1.5em
@@ -295,9 +295,13 @@ img.screenshot
   a
     margin-top: 20px
 
+html.dark
+  code
+    color: lighten($color-primary, 40%)
+  
 code
   background: var(--bg-secondary)
-  color: lighten($color-primary, 40%)
+  color: lighten($color-primary, 10%)
   padding: 0 5px
   border-radius: 5px
   display: inline-block
@@ -359,7 +363,7 @@ code
         cursor: pointer
     a.active
       background: $color-primary
-      color: var(--text-primary)
+      color: #fff
 
 nav
   font-family: $font-bold
@@ -421,7 +425,7 @@ nav
 body.dark, .fw-container--dark
   .card
     background: $bg-dark-lighten-1
-  
+
 .light .card, .card.light
   background: rgba($color-grey-lighten-2,0.3)
   color: $color-grey-darken-3
@@ -480,7 +484,6 @@ body.dark, .fw-container--dark
   display: flex
   flex-direction: column
 
-  
 .bg-shadow__wrapper
   position: absolute
   z-index: -10
@@ -514,6 +517,7 @@ body.dark, .fw-container--dark
       margin: auto
       display: block
       z-index: -1
+      transition: 0.3s ease-in-out
 
     .bg-shadow
       bottom: 0px
@@ -536,8 +540,19 @@ body.dark, .fw-container--dark
         filter: hue-rotate(-45deg) blur(75px)
         animation: rotation2 15s ease-out infinite
 
+.dark-illustration
+  display: none
+
+.light-illustration
+  display: block
+
 body.dark
+  .dark-illustration
+    display: block
+  .light-illustration
+    display: none
   .bg-shadow__wrapper
     .bg-shadow__container
       &:after
+        transition: 0.3s ease-in-out
         background: $bg-dark

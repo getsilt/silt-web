@@ -101,14 +101,17 @@ export default {
       "/en/privacy",
       "/cookies",
       "/legal-notice",
-      "/privacy"
+      "/privacy",
+      "/demo",
+      "/en/demo",
+      "/es/demo"
     ]
   },
 
   robots: {
     Sitemap: "https://getsilt.com/sitemap.xml",
     UserAgent: "*",
-    Disallow: ["/cookies", "/legal-notice", "/privacy","/en/cookies", "/en/legal-notice", "/en/privacy"]
+    Disallow: ["/cookies", "/legal-notice", "/privacy","/en/cookies", "/en/legal-notice", "/en/privacy", "/demo", "/es/demo", "/en/demo"]
   },
 
   ...routerBase,

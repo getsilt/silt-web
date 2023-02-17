@@ -5,14 +5,14 @@
         <img
           class="bg-shadow"
           src="@/assets/img/illustrations/shadow.svg"
-          :alt="$t('seo_1')"
+          :alt="$t('seo_kyc')"
           width="700"
           height="500"
         />
         <img
           class="bg-shadow"
           src="@/assets/img/illustrations/shadow.svg"
-          :alt="$t('seo_1')"
+          :alt="$t('seo_kyc')"
           width="700"
           height="500"
         />
@@ -24,20 +24,38 @@
       <demo-buttons />
     </div>
     <div class="claim-side-img">
-      <template v-if="$root.$i18n.locale === 'es'">
-        <img
-          src="@/assets/img/illustrations/kyb_flow_es.svg"
-          :alt="$t('seo_3')"
-          width="300"
-        />
-      </template>
-      <template v-else>
-        <img
-          src="@/assets/img/illustrations/kyb_flow_en.svg"
-          :alt="$t('seo_3')"
-          width="300"
-        />
-      </template>
+      <div class="dark-illustration">
+        <template v-if="$root.$i18n.locale === 'es'">
+          <img
+            src="@/assets/img/illustrations/kyb_flow_es.svg"
+            :alt="$t('seo_document_scan')"
+            width="300"
+          />
+        </template>
+        <template v-else>
+          <img
+            src="@/assets/img/illustrations/kyb_flow_en.svg"
+            :alt="$t('seo_document_scan')"
+            width="300"
+          />
+        </template>
+      </div>
+      <div class="light-illustration">
+        <template v-if="$root.$i18n.locale === 'es'">
+          <img
+            src="@/assets/img/illustrations/kyb_flow_es_light.svg"
+            :alt="$t('seo_document_scan')"
+            width="300"
+          />
+        </template>
+        <template v-else>
+          <img
+            src="@/assets/img/illustrations/kyb_flow_en_light.svg"
+            :alt="$t('seo_document_scan')"
+            width="300"
+          />
+        </template>
+      </div>
     </div>
   </section>
 </template>

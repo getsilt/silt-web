@@ -5,14 +5,14 @@
         <img
           class="bg-shadow"
           src="@/assets/img/illustrations/shadow.svg"
-          :alt="$t('seo_1')"
+          :alt="$t('seo_kyc')"
           width="700"
           height="500"
         />
         <img
           class="bg-shadow"
           src="@/assets/img/illustrations/shadow.svg"
-          :alt="$t('seo_1')"
+          :alt="$t('seo_kyc')"
           width="700"
           height="500"
         />
@@ -31,7 +31,7 @@
     <div class="claim-side-img diagram">
       <img
         src="@/assets/img/illustrations/watch_list_diagram_flow.svg"
-        :alt="$t('seo_3')"
+        :alt="$t('seo_document_scan')"
         width="300"
       />
     </div>

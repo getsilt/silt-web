@@ -11,7 +11,7 @@
             <template>
               <img
                 src="@/assets/img/illustrations/rules_flow.svg"
-                :alt="$t('seo_3')"
+                :alt="$t('seo_document_scan')"
                 width="500"
               />
             </template>

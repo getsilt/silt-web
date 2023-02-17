@@ -10,14 +10,14 @@
           <template v-if="$root.$i18n.locale === 'es'">
             <img
               src="@/assets/img/illustrations/silt-workflow-biocheck_es.svg"
-              :alt="$t('seo_3')"
+              :alt="$t('seo_document_scan')"
               width="270"
             />
           </template>
           <template v-else>
             <img
               src="@/assets/img/illustrations/silt-workflow-biocheck_en.svg"
-              :alt="$t('seo_3')"
+              :alt="$t('seo_document_scan')"
               width="270"
             />
           </template>

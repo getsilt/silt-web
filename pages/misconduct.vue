@@ -12,6 +12,29 @@ import Hero from "./misconduct/hero.vue";
 import Solution from "./misconduct/solution.vue";
 export default {
   components: { DemoButtons, Hero, Solution },
+  head() {
+    const i18nSeo = this.$nuxtI18nHead();
+    return {
+      title: this.$t("seo_misconduct_title"),
+      meta: [
+        {
+          hid: "og:title",
+          name: "og:title",
+          content: this.$t("seo_misconduct_title"),
+        },
+        {
+          hid: "description",
+          name: "description",
+          content: this.$t("seo_misconduct_metadescription"),
+        },
+        {
+          hid: "og:description",
+          name: "og:description",
+          content: this.$t("seo_misdconduct_metadescription"),
+        },
+      ],
+    };
+  },
   data() {
     return {
       email: "hello@getsilt.com",

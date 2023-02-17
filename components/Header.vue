@@ -15,13 +15,13 @@
             <img
               src="@/assets/img/logo/silt_logo_white.svg"
               :alt="$t('silt_name')"
-              height="50"
+              height="30"
               class="logo_dark"
             />
             <img
               src="@/assets/img/logo/silt_logo_black.svg"
               :alt="$t('silt_name')"
-              height="50"
+              height="30"
 			  class="logo_light"
             />
           </nuxt-link>
@@ -122,6 +122,7 @@ section
 	max-width: 1600px
 	padding: 0
 	width: 100%
+	transition: 0.3s ease-in-out
 	@media (min-width: 768px)
 		padding: 0 40px
 
@@ -135,6 +136,7 @@ section
 		z-index: 90
 		height: 70px
 		flex: 1 1 auto
+		transition: 0.3s ease-in-out
 		@media (min-width: 768px)
 			margin-left: -30px
 			padding: 20px 40px
@@ -249,11 +251,13 @@ section
 
 .header-wrapper.dark
 	background: $bg-dark
+	transition: 0.3s ease-in-out
 	.header-bar
 		color: #fff
-
+		transition: 0.3s ease-in-out
 	nav
 		background: $bg-dark
+		transition: 0.3s ease-in-out
 
 
 @keyframes opennav

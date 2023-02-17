@@ -2,13 +2,17 @@
   <div class="demo__wrapper">
     <div class="demo_cta__wrapper">
       <a target="_blank" href="https://dashboard.getsilt.com/welcome">
-        <button class="primary icon">{{ $t("btn_cta_demo") }}<i class="simple-arrow"></i></button>
+        <button class="primary icon">
+          {{ $t("btn_cta_demo") }}<i class="simple-arrow"></i>
+        </button>
       </a>
       <a target="_blank" href="https://app.meetzy.io/preview/3dfd0d2hgymu">
         <button class="secondary">{{ $t("btn_cta_book_demo") }}</button>
       </a>
     </div>
-    <div class="hint_benefit"><i class="fad fa-check-circle"></i>{{$t("global_hint_benefits")}}</div>
+    <div class="hint_benefit">
+      <i class="fad fa-check-circle"></i>{{ $t("global_hint_benefits") }}
+    </div>
   </div>
 </template>
 
@@ -16,16 +20,16 @@
 export default {
   props: {
     dark: {
-      default: false
-    }
-  }
+      default: false,
+    },
+  },
 };
 </script>
 
 <style lang="sass" scoped>
 @import "@/assets/sass/vars.sass"
 .demo__wrapper
-  display:flex
+  display: flex
   flex-direction: column
   justify-content: center
 
@@ -44,13 +48,16 @@ export default {
     margin-right: $spacing-sm
 .demo__wrapper.dark
   button:not(.secondary)
-    background: var(--bg-primary-inverted)
-    color: var(--bg-primary)
+    background: $color-grey-lighten-3
+    color: $color-grey-darken-3
+    border-color: $color-grey-lighten-3
     &:hover:not(.vsm-link):not(:disabled):not(.accent):not(.translucid):not(.secondary)
-      background: var(--bg-primary-inverted)
+      background: #fff
 
   button.secondary
-    border-color: transparent
-    background: var(--bg-primary)
-
+    border-color: $bg-dark-lighten-2
+    background: $bg-dark-lighten-2
+    color: #fff
+    &:hover
+      background: rgba($bg-dark-lighten-2, 0.9)
 </style>

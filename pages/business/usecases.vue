@@ -21,7 +21,7 @@
           :key="`usecase-body-${usecase.title}`"
           class="usecase-body"
         >
-          <h3>{{ $t(usecase.subtitle) }}</h3>
+          <h4>{{ $t(usecase.subtitle) }}</h4>
           <p>{{ $t(usecase.content) }}</p>
           <div class="usecase-body_feature-tags">
             <template v-for="tag in usecase.tags">

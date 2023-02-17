@@ -14,6 +14,29 @@ import Problem from "./biocheck/problem.vue";
 import Solution from "./biocheck/solution.vue";
 export default {
   components: { DemoButtons, Hero, Problem, Solution },
+  head() {
+    const i18nSeo = this.$nuxtI18nHead();
+    return {
+      title: this.$t("seo_biocheck_title"),
+      meta: [
+        {
+          hid: "og:title",
+          name: "og:title",
+          content: this.$t("seo_biocheck_title"),
+        },
+        {
+          hid: "description",
+          name: "description",
+          content: this.$t("seo_biocheck_metadescription"),
+        },
+        {
+          hid: "og:description",
+          name: "og:description",
+          content: this.$t("seo_mbiocheck_metadescription"),
+        },
+      ],
+    };
+  },
   data() {
     return {
       email: "hello@getsilt.com",

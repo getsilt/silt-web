@@ -11,14 +11,14 @@
             <template v-if="$root.$i18n.locale === 'es'">
               <img
                 src="@/assets/img/illustrations/kyb_flow_es.svg"
-                :alt="$t('seo_3')"
+                :alt="$t('seo_document_scan')"
                 width="300"
               />
             </template>
             <template v-else>
               <img
                 src="@/assets/img/illustrations/kyb_flow_en.svg"
-                :alt="$t('seo_3')"
+                :alt="$t('seo_document_scan')"
                 width="300"
               />
             </template>
