@@ -22,7 +22,7 @@
               src="@/assets/img/logo/silt_logo_black.svg"
               :alt="$t('silt_name')"
               height="30"
-			  class="logo_light"
+              class="logo_light"
             />
           </nuxt-link>
         </li>
@@ -38,13 +38,17 @@
           <li class="vsm-section vsm-section_menu vsm-mob-hide vsm-link">
             <nuxt-link
               :to="localePath({ name: 'developers' })"
-              @click.native="closeNav()"
+              @click.native="$emit('onCloseNav')"
             >
               Developers
             </nuxt-link>
           </li>
           <!-- TODO: Update using new copies -->
-          <a href="https://dashboard.getsilt.com/welcome" rel="nofollow" target="_blank">
+          <a
+            href="https://dashboard.getsilt.com/welcome"
+            rel="nofollow"
+            target="_blank"
+          >
             <button class="demo-button small secondary icon">
               {{ $t("btn_cta_navBar_demo") }}<i class="simple-arrow"></i>
             </button>
@@ -86,10 +90,13 @@ export default {
   },
   mounted() {
     this.$consentCookies.show();
+    window.addEventListener("onCloseNav", this.closeNav);
   },
+
   methods: {
     closeNav() {
       this.$refs["menumov"].closeDropdown();
+	  this.$refs["menu"].closeDropdown()
     },
   },
 };
@@ -112,7 +119,7 @@ section
 	background: #fff
 	position: fixed
 	top: 0
-	
+
 
 .header-wrapper
 	margin: 0

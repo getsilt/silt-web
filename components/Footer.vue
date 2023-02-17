@@ -133,17 +133,18 @@ export default {
     img
       margin: 10px
       height: 80px
-      max-height: 100px
+      max-height: 60px
       width: auto
       background: $color-grey-lighten-3
-      padding: 20px
+      padding: 15px
       border-radius: $radius-lg
 @media (min-width: 768px)
   .trust__wrapper
     .trust__logos
       img
-        height: 100px
-        max-height: 200px
+        padding: 20px
+        height: 80px
+        max-height: 80px
         margin: 40px
 
 footer

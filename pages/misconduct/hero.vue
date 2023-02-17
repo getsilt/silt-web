@@ -32,7 +32,7 @@
       <img
         src="@/assets/img/illustrations/watch_list_diagram_flow.svg"
         :alt="$t('seo_document_scan')"
-        width="300"
+        width="250"
       />
     </div>
   </section>
@@ -54,14 +54,3 @@ export default {
   },
 };
 </script>
-
-<style lang="sass" scoped>
-
-.claim-container .claim-side-img.diagram
-  margin: auto
-  padding: 0
-  & > img
-    width: 100%
-    min-width: 300px
-    max-width: 600px
-</style>

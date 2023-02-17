@@ -75,13 +75,6 @@ export default {
   padding: 10px
   font-size: 25px
 
-.claim-container .claim-side-img.diagram
-  margin: 0
-  padding: 0
-  & > img
-    min-width: 300px
-    max-width: 700px
-
 .claim-info-wrapper.differences
   display: flex
   align-items: center

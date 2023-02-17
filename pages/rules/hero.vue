@@ -54,10 +54,10 @@ export default {
 @import "@/assets/sass/vars.sass"
 
 .rules-hero-img
-  width: 600px
+  max-width: 100%
+  margin: auto
 
-@media (max-width: 768px)
+@media (min-width: 768px)
   .rules-hero-img
-    margin-top: $spacing-lg
-    width: 370px
+    max-width: 570px
 </style>

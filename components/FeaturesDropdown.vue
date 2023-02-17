@@ -6,7 +6,7 @@
         <nuxt-link
           class="dropdown-wrap__content type1"
           :to="localePath({ name: 'kyc' })"
-          @click.native="$emit('onCloseNav')"
+          @click.native="closeNav()"
         >
           <i class="fad fa-lg fa-id-card scan-icon" />
           <div>
@@ -17,7 +17,7 @@
         <nuxt-link
           class="dropdown-wrap__content type1"
           :to="localePath({ name: 'rules' })"
-          @click.native="$emit('onCloseNav')"
+          @click.native="closeNav()"
         >
           <i class="fad fa-lg fa-pencil-ruler scan-icon" />
           <div>
@@ -30,7 +30,7 @@
         <nuxt-link
           class="dropdown-wrap__content type1"
           :to="localePath({ name: 'misconduct' })"
-          @click.native="$emit('onCloseNav')"
+          @click.native="closeNav()"
         >
           <i class="fad fa-lg fa-badge-sheriff scan-icon" />
           <div>
@@ -43,7 +43,7 @@
         <nuxt-link
           class="dropdown-wrap__content type1"
           :to="localePath({ name: 'aml' })"
-          @click.native="$emit('onCloseNav')"
+          @click.native="closeNav()"
         >
           <i class="fad fa-lg fa-address-book scan-icon" />
           <div>
@@ -61,7 +61,7 @@
         <nuxt-link
           class="dropdown-wrap__content type1"
           :to="localePath({ name: 'kyb' })"
-          @click.native="$emit('onCloseNav')"
+          @click.native="closeNav()"
         >
           <i class="fad fa-lg fa-university scan-icon" />
           <div>
@@ -72,7 +72,7 @@
         <nuxt-link
           class="dropdown-wrap__content type1"
           :to="localePath({ name: 'biocheck' })"
-          @click.native="$emit('onCloseNav')"
+          @click.native="closeNav()"
         >
           <i class="fad fa-lg fa-head-side scan-icon" />
           <div>
@@ -86,3 +86,13 @@
     </div>
   </div>
 </template>
+<script lang="ts">
+import Vue from "vue";
+export default Vue.extend({
+  methods: {
+    closeNav() {
+      window.dispatchEvent(new Event("onCloseNav"));
+    },
+  },
+});
+</script>

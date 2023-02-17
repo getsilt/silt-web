@@ -149,30 +149,6 @@ export default {
           stagger: 0.2,
           ease: "power2.out",
         });
-
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: "#assistedPictureQualityScreenshots",
-            start: "top 80%",
-            scrub: false,
-            markers: false,
-          },
-        })
-        .from("#assistedPictureQualityScreenshots", {
-          duration: 0.5,
-          perspective: 0,
-          ease: "power2.out",
-        })
-        .from(".screenshotPictureQuality", {
-          duration: 1,
-          scale: 1,
-          x: -100,
-          rotateY: 0,
-          opacity: 0,
-          stagger: -0.2,
-          ease: "power2.out",
-        });
     },
   },
 };
@@ -192,6 +168,7 @@ section.tech-features_wrapper
 
     & > *
       flex: 1 1 50%
+      min-width: 200px
       @media (max-width: 767px)
         margin-right: 0 !important
       & > *
