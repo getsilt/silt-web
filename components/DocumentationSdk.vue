@@ -187,7 +187,7 @@
     </p>
     <p>
       <b>GET</b>
-      <code>/v1/users/<b>{silt_user_id}</b>/status/</code>
+      <code>https://api.siltapp.com/v1/users/<b>{silt_user_id}</b>/status/</code>
     </p>
     <p>
       <b>Auth Header</b> <br />Use a Bearer Header: <br /><code
