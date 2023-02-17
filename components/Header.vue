@@ -44,7 +44,7 @@
             </nuxt-link>
           </li>
           <!-- TODO: Update using new copies -->
-          <a href="https://dashboard.getsilt.com/welcome">
+          <a href="https://dashboard.getsilt.com/welcome" rel="nofollow" target="_blank">
             <button class="demo-button small secondary icon">
               {{ $t("btn_cta_navBar_demo") }}<i class="simple-arrow"></i>
             </button>
