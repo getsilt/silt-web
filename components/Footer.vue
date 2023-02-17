@@ -21,27 +21,27 @@
         </div>
         <div class="footer__links">
           <p>
-            <a href="/kyc">{{ $t("nav_feature_kyc") }}</a>
+            <nuxt-link :to="localePath({ name: 'kyc' })">{{ $t("nav_feature_kyc") }}</nuxt-link>
           </p>
           <p>
-            <a href="/kyb">{{ $t("nav_feature_kyb") }}</a>
+            <nuxt-link :to="localePath({ name: 'kyb' })">{{ $t("nav_feature_kyb") }}</nuxt-link>
           </p>
           <p>
-            <a href="/biocheck">{{ $t("nav_feature_biocheck") }}</a>
+            <nuxt-link :to="localePath({ name: 'biocheck' })">{{ $t("nav_feature_biocheck") }}</nuxt-link>
           </p>
           <p>
-            <a href="/rules">{{ $t("nav_feature_rules") }}</a>
+            <nuxt-link :to="localePath({ name: 'rules' })">{{ $t("nav_feature_rules") }}</nuxt-link>
           </p>
           <p>
-            <a href="/misconduct" v-html="$t('nav_feature_misconduct')" />
+            <nuxt-link :to="localePath({ name: 'misconduct' })" v-html="$t('nav_feature_misconduct')"></nuxt-link>
           </p>
           <p>
-            <a href="/aml">{{ $t("nav_feature_aml") }}</a>
+            <nuxt-link :to="localePath({ name: 'aml' })">{{ $t("nav_feature_aml") }}</nuxt-link>
           </p>
         </div>
         <div class="footer__links">
           <p>
-            <a href="/developers">{{ $t("global_documentation") }}</a>
+            <nuxt-link :to="localePath({ name: 'developers' })">{{ $t("global_documentation") }}</nuxt-link>
           </p>
           <p>
             <a href="/legal-notice" rel="nofollow">{{

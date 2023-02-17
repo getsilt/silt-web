@@ -6,14 +6,18 @@
     </div>
     <div class="flex-row usecase-wrapper">
       <div class="usecase-titles">
-        <h3
+        <div
           v-for="usecase in usecases"
           :key="`usecase-title-${usecase.title}`"
-          :class="{ active: usecase.title == activeUsecase }"
-          @click="activeUsecase = usecase.title"
+          class="usecase-titles_item"
         >
-          {{ $t(usecase.title) }}
-        </h3>
+          <h3
+            :class="{ active: usecase.title == activeUsecase }"
+            @click="activeUsecase = usecase.title"
+          >
+            {{ $t(usecase.title) }}
+          </h3>
+        </div>
       </div>
       <template v-for="usecase in usecases">
         <div
@@ -108,20 +112,19 @@ export default {
       gsap
         .timeline({
           scrollTrigger: {
-            trigger: "#usecases .features-container",
+            trigger: "#usecases .usecase-titles",
             start: "top 80%",
             scrub: false,
             markers: false,
           },
         })
-        .from("#usecases .features-item", {
+        .from("#usecases .usecase-titles_item", {
           duration: 1,
           scale: 1,
           y: 75,
           rotateY: 0,
           opacity: 0,
           stagger: 0.2,
-          ease: "power2.out",
         });
     },
   },
@@ -132,15 +135,15 @@ export default {
 @import "@/assets/sass/vars.sass"
 .usecase-titles
   flex: 1 1 40%
-  & > *
+  .usecase-titles_item > *
     color: $color-grey-darken-1
     cursor: pointer
     transition: 0.3s ease-in-out
     &:hover
       color: var(--text-secondary)
       transition: 0.3s ease-in-out
-  & > *.active
-    color: var(--text-primary)
+    &.active
+      color: var(--text-primary)
 .usecase-wrapper
   flex-wrap: wrap
   justify-content: center

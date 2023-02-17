@@ -81,9 +81,12 @@
                 </h4>
                 <p v-html="$t('business_solution_kyc_page_content2')" />
                 <p>
-                  <a href="/kyc" class="bold-link with-arrow">
+                  <nuxt-link
+                    :to="localePath({ name: 'kyc' })"
+                    class="bold-link with-arrow"
+                  >
                     {{ $t("business_solution_card_kyc_link") }}
-                  </a>
+                  </nuxt-link>
                 </p>
               </div>
             </div>
@@ -124,7 +127,9 @@
               >
                 <document-select
                   :color="`color: ${color}`"
-                  :buttonStyle="`background-color: ${color}; font-family: Futura-Bold`"
+                  :buttonStyle="
+                    `background-color: ${color}; font-family: Futura-Bold`
+                  "
                   :background="`background-color: ${backgroundColor}`"
                   typography="font-family: Futura-Bold"
                 />
@@ -135,7 +140,9 @@
               >
                 <document-select
                   :color="`color: ${color}`"
-                  :buttonStyle="`background-color: ${color}; font-family: Roboto`"
+                  :buttonStyle="
+                    `background-color: ${color}; font-family: Roboto`
+                  "
                   typography="font-family: Roboto"
                   :background="`background-color: ${backgroundColor}`"
                 />
@@ -146,7 +153,9 @@
               >
                 <document-select
                   :color="`color: ${color}`"
-                  :buttonStyle="`background-color: ${color}; font-family: Comfortaa`"
+                  :buttonStyle="
+                    `background-color: ${color}; font-family: Comfortaa`
+                  "
                   :background="`background-color: ${backgroundColor}`"
                   typography="font-family: Comfortaa"
                 />
@@ -286,6 +295,7 @@
 </template>
 
 <script>
+import gsap from "gsap";
 import VTab from "@/components/VTab.vue";
 import DocumentSelect from "@/components/DocumentSelect.vue";
 import ColorPickerSlider from "@/components/ColorPickerSlider.vue";
@@ -329,10 +339,33 @@ export default {
       ],
     };
   },
+  mounted() {
+    this.startFirstAnimationScene(this);
+  },
   methods: {
     updateColor(event) {
       this.color = `hsl(${event.h}, ${event.s}, ${event.l})`;
       this.backgroundColor = `hsla(${event.h}, ${event.s}, ${event.l})`;
+    },
+    startFirstAnimationScene() {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: "#features .tabs-wrapper",
+            start: "top 80%",
+            scrub: false,
+            markers: false,
+          },
+        })
+        .from("#features .tab", {
+          duration: 0.2,
+          scale: 1,
+          y: 75,
+          rotateY: 0,
+          opacity: 0,
+          stagger: 0.2,
+          ease: "power2.out",
+        });
     },
   },
   props: {

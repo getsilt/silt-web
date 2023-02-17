@@ -1,7 +1,7 @@
 <template>
   <!-- Unique advantage  -->
   <div class="fw-container--dark">
-    <div class="section-headers">
+    <div class="section-headers" id="unique-benefits">
       <span class="tag">{{
         $t("business_highlights_vanguardTech_section")
       }}</span>
@@ -76,24 +76,6 @@ export default {
           opacity: 0,
         });
       }
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: "#features .features-container",
-            start: "top 80%",
-            scrub: false,
-            markers: false,
-          },
-        })
-        .from("#features .features-item", {
-          duration: 0.2,
-          scale: 1,
-          y: 75,
-          rotateY: 0,
-          opacity: 0,
-          stagger: 0.2,
-          ease: "power2.out",
-        });
     },
   },
 };
