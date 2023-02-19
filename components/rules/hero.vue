@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import DemoButtons from "../../components/DemoButtons.vue";
+import DemoButtons from "@/components/DemoButtons.vue";
 export default {
   components: { DemoButtons },
   data() {

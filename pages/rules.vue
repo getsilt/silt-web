@@ -7,10 +7,10 @@
 </template>
 
 <script>
-import DemoButtons from "../components/DemoButtons.vue";
-import Hero from "./rules/hero.vue";
-import Benefits from "./rules/benefits.vue";
-import Solution from "./rules/solution.vue";
+import DemoButtons from "@/components/DemoButtons.vue";
+import Hero from "@/components/rules/hero.vue";
+import Benefits from "@/components/rules/benefits.vue";
+import Solution from "@/components/rules/solution.vue";
 
 export default {
   nuxtI18n: {

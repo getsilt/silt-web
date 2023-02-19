@@ -18,20 +18,11 @@
         />
       </div>
     </div>
-    <!-- CLAIMS -->
     <div class="claim-info">
-      <h1 class="title">
-        <span class="text-gradient-1 title-bold">
-          {{ $t("business_claim_scale") }}
-        </span>
-        <br />
-        <span v-html="$t('business_claim1')" />
-      </h1>
-      <h4 class="subtitle" v-html="$t('business_claim2')" />
-
+      <h1 class="title" v-html="$t('business_claim1')" />
+      <h4 class="subtitle" v-html="$t('business_hero_kyc_subtitle')" />
       <demo-buttons />
     </div>
-    <!-- TODO: Add Vídeo -->
     <div class="claim-side-img screenshots-container">
       <div class="screenshot-container">
         <img
@@ -65,8 +56,7 @@
 </template>
 
 <script>
-import gsap from "gsap";
-import DemoButtons from "../../components/DemoButtons.vue";
+import DemoButtons from "@/components/DemoButtons.vue";
 export default {
   components: { DemoButtons },
   data() {
@@ -81,14 +71,3 @@ export default {
   },
 };
 </script>
-
-<style lang="sass" scoped>
-.scan-icon
-  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%232963FFFF' stroke-width='7' stroke-dasharray='50%25%2c 50%25' stroke-dashoffset='14' stroke-linecap='butt'/%3e%3c/svg%3e")
-  padding: 10px
-  font-size: 25px
-
-.claim-info-wrapper.differences
-  display: flex
-  align-items: center
-</style>

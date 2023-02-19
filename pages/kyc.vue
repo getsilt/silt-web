@@ -9,13 +9,13 @@
 </template>
 
 <script>
-import DemoButtons from "../components/DemoButtons.vue";
-import Hero from "./kyc/hero.vue";
-import Benefits from "./business/benefits.vue";
-import Solution from "./business/solution/index.vue";
-import Integration from "./business/integration.vue";
-import TechFeatures from "./business/tech-features.vue";
-import Usecases from "./business/usecases.vue";
+import DemoButtons from "@/components/DemoButtons.vue";
+import Hero from "@/components/kyc/hero.vue";
+import Benefits from "@/components/business/benefits.vue";
+import Solution from "@/components/business/solution/index.vue";
+import Integration from "@/components/business/integration.vue";
+import TechFeatures from "@/components/business/tech-features.vue";
+import Usecases from "@/components/business/usecases.vue";
 
 export default {
   nuxtI18n: {

@@ -8,10 +8,10 @@
 
 <script>
 import gsap from "gsap";
-import DemoButtons from "../components/DemoButtons.vue";
-import Hero from "./biocheck/hero.vue";
-import Problem from "./biocheck/problem.vue";
-import Solution from "./biocheck/solution.vue";
+import DemoButtons from "@/components/DemoButtons.vue";
+import Hero from "@/components/biocheck/hero.vue";
+import Problem from "@/components/biocheck/problem.vue";
+import Solution from "@/components/biocheck/solution.vue";
 export default {
   components: { DemoButtons, Hero, Problem, Solution },
   head() {
