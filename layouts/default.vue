@@ -170,13 +170,6 @@ export default {
 [dark-theme="true"] .sun-and-moon > .moon > circle
   transform: translateX(-7px)
 
-
-@supports (cx: 1)
-  [dark-theme="true"] .sun-and-moon > .moon > circle
-    cx: 17
-    transform: translateX(0)
-
-
 @media (prefers-reduced-motion: no-preference)
   .sun-and-moon > .sun
     transition: transform .5s var(--ease-elastic-3)
@@ -188,11 +181,6 @@ export default {
 
   .sun-and-moon .moon > circle
     transition: transform .25s ease-out
-
-
-  @supports (cx: 1)
-    .sun-and-moon .moon > circle
-      transition: cx .25s ease-out
 
   [dark-theme="true"] .sun-and-moon > .sun
     transition-timing-function: ease-in-out
