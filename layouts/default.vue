@@ -167,7 +167,7 @@ export default {
   opacity: 0
 
 
-[dark-theme="dark"] .sun-and-moon > .moon > circle
+[dark-theme="true"] .sun-and-moon > .moon > circle
   transform: translateX(-7px)
 
 

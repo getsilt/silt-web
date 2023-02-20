@@ -119,6 +119,11 @@ section
 	background: #fff
 	position: fixed
 	top: 0
+	transition: 0.3s ease-in-out
+
+[dark-theme="true"] section
+	background: $bg-dark
+	transition: 0.3s ease-in-out
 
 
 .header-wrapper
@@ -257,15 +262,9 @@ section
 					padding: $spacing-sm $spacing-md
 
 .header-wrapper.dark
-	background: $bg-dark
-	transition: 0.3s ease-in-out
 	.header-bar
 		color: #fff
 		transition: 0.3s ease-in-out
-	nav
-		background: $bg-dark
-		transition: 0.3s ease-in-out
-
 
 @keyframes opennav
 	0%
