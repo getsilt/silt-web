@@ -31,35 +31,12 @@
 
       <demo-buttons />
     </div>
-    <!-- TODO: Add Vídeo -->
-    <div class="claim-side-img screenshots-container">
-      <div class="screenshot-container">
-        <img
-          class="screenshot login"
-          src="@/assets/img/screenshots/screenshot_documentSelect_es.jpg"
-          :alt="$t('seo_conversionrates_costs')"
-          width="180"
-          height="353"
-        />
-      </div>
-      <div class="screenshot-container">
-        <img
-          class="screenshot take-picture"
-          src="@/assets/img/screenshots/screenshot_selfie_es.jpg"
-          :alt="$t('seo_document_scan')"
-          width="180"
-          height="353"
-        />
-      </div>
-      <div class="screenshot-container">
-        <img
-          class="screenshot complete"
-          src="@/assets/img/screenshots/screenshot_finish_es.jpg"
-          :alt="$t('seo_kyc')"
-          width="180"
-          height="353"
-        />
-      </div>
+    <div class="claim-side-img">
+      <img class="phone-svg" src="@/assets/media/phone.svg" alt="device" />
+      <video class="phone-video" autoplay loop muted>
+        <source src="@/assets/media/sign-up.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
     </div>
   </section>
 </template>
@@ -87,6 +64,19 @@ export default {
   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%232963FFFF' stroke-width='7' stroke-dasharray='50%25%2c 50%25' stroke-dashoffset='14' stroke-linecap='butt'/%3e%3c/svg%3e")
   padding: 10px
   font-size: 25px
+
+.claim-side-img
+  position: relative
+  .phone-svg
+    position: absolute
+    top: -10px
+    left: -11px
+    z-index: 999
+    height: auto
+    width: 274px
+  .phone-video
+    width: 250px
+    border-radius: 30px
 
 .claim-info-wrapper.differences
   display: flex
