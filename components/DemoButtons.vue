@@ -6,9 +6,9 @@
           {{ $t("btn_cta_demo") }}<i class="simple-arrow"></i>
         </button>
       </a>
-      <nuxt-link :to="localePath({ name: 'demo' })">
+      <a target="_blank" href="https://app.meetzy.io/preview/3dfd0d2hgymu">
         <button class="secondary">{{ $t("btn_cta_book_demo") }}</button>
-      </nuxt-link>
+      </a>
     </div>
     <div class="hint_benefit">
       <i class="fad fa-check-circle"></i>{{ $t("global_hint_benefits") }}
