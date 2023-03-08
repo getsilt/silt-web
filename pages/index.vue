@@ -9,13 +9,13 @@
 </template>
 
 <script>
-import DemoButtons from "../../components/DemoButtons.vue";
-import Hero from "./hero.vue";
-import Benefits from "./benefits.vue";
-import Solution from "./solution/index.vue";
-import Integration from "./integration.vue";
-import TechFeatures from "./tech-features.vue";
-import Usecases from "./usecases.vue";
+import DemoButtons from "@/components/DemoButtons.vue";
+import Hero from "@/components/business/hero.vue";
+import Benefits from "@/components/business/benefits.vue";
+import Solution from "@/components/business/solution/index.vue";
+import Integration from "@/components/business/integration.vue";
+import TechFeatures from "@/components/business/tech-features.vue";
+import Usecases from "@/components/business/usecases.vue";
 
 export default {
   nuxtI18n: {
@@ -74,13 +74,6 @@ export default {
   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%232963FFFF' stroke-width='7' stroke-dasharray='50%25%2c 50%25' stroke-dashoffset='14' stroke-linecap='butt'/%3e%3c/svg%3e")
   padding: 10px
   font-size: 25px
-
-.claim-container .claim-side-img.diagram
-  margin: 0
-  padding: 0
-  & > img
-    min-width: 300px
-    max-width: 700px
 
 .claim-info-wrapper.differences
   display: flex

@@ -31,42 +31,19 @@
 
       <demo-buttons />
     </div>
-    <!-- TODO: Add Vídeo -->
-    <div class="claim-side-img screenshots-container">
-      <div class="screenshot-container">
-        <img
-          class="screenshot login"
-          src="@/assets/img/screenshots/screenshot_documentSelect_es.jpg"
-          :alt="$t('seo_conversionrates_costs')"
-          width="180"
-          height="353"
-        />
-      </div>
-      <div class="screenshot-container">
-        <img
-          class="screenshot take-picture"
-          src="@/assets/img/screenshots/screenshot_selfie_es.jpg"
-          :alt="$t('seo_document_scan')"
-          width="180"
-          height="353"
-        />
-      </div>
-      <div class="screenshot-container">
-        <img
-          class="screenshot complete"
-          src="@/assets/img/screenshots/screenshot_finish_es.jpg"
-          :alt="$t('seo_kyc')"
-          width="180"
-          height="353"
-        />
-      </div>
+    <div class="claim-side-img">
+      <img class="phone-svg" src="@/assets/media/phone.svg" alt="device" />
+      <video class="phone-video" autoplay loop muted>
+        <source src="@/assets/media/sign-up.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
     </div>
   </section>
 </template>
 
 <script>
 import gsap from "gsap";
-import DemoButtons from "../../components/DemoButtons.vue";
+import DemoButtons from "@/components/DemoButtons.vue";
 export default {
   components: { DemoButtons },
   data() {
@@ -88,12 +65,18 @@ export default {
   padding: 10px
   font-size: 25px
 
-.claim-container .claim-side-img.diagram
-  margin: 0
-  padding: 0
-  & > img
-    min-width: 300px
-    max-width: 700px
+.claim-side-img
+  position: relative
+  .phone-svg
+    position: absolute
+    top: -10px
+    left: -11px
+    z-index: 999
+    height: auto
+    width: 274px
+  .phone-video
+    width: 250px
+    border-radius: 30px
 
 .claim-info-wrapper.differences
   display: flex

@@ -11,7 +11,7 @@
   </section>
 </template>
 <script>
-import DocumentationSdk from "~/components/DocumentationSdk.vue";
+import DocumentationSdk from "@/components/DocumentationSdk.vue";
 export default {
   components: {
     DocumentationSdk,

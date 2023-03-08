@@ -9,11 +9,11 @@
 
 <script>
 import gsap from "gsap";
-import DemoButtons from "../components/DemoButtons.vue";
-import Hero from "./kyb/hero.vue";
-import Problem from "./kyb/problem.vue";
-import Benefits from "./kyb/benefits.vue";
-import Solution from "./kyb/solution.vue";
+import DemoButtons from "@/components/DemoButtons.vue";
+import Hero from "@/components/kyb/hero.vue";
+import Problem from "@/components/kyb/problem.vue";
+import Benefits from "@/components/kyb/benefits.vue";
+import Solution from "@/components/kyb/solution.vue";
 export default {
   components: { DemoButtons, Hero, Problem, Benefits, Solution },
   nuxtI18n: {

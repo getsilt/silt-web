@@ -84,6 +84,8 @@ section
     .claim-side-img
       margin: auto
       margin-right: $spacing-lg
+      img
+        max-width: 100%
 
 .claim-container
   display: flex
@@ -92,6 +94,9 @@ section
   position: relative
   @media (max-width: 767px)
     position: relative
+
+  .claim-side-img
+    margin: auto
 
   &.left
     .claim-side-img
@@ -131,23 +136,14 @@ section
       font-family: $font-body
       line-height: 2rem
 
-  // .claim-side-img
-  //   display: flex
-  //   flex: 1 1 calc(50% - 60px)
-  //   justify-content: center
-  //   align-items: center
-  //   max-width: 100%
-  //   padding: $spacing-lg
-  //   &>img
-  //     flex: 1 1 auto
-  //     min-width: 200px
-  //     max-width: calc(min(300px, 50vw))
-  //     height: auto
-  //     width: 100%
-
-  @media (max-width:767px)
-    .claim-side-img:not(.screenshots-container)
-      order: -1
+.claim-container .claim-side-img.diagram
+  margin: auto
+  padding: 0
+  & > img
+    width: 100%
+    padding: 20px
+    min-width: 200px
+    max-width: 350px
 
 .highlights-container
   display: flex
@@ -339,7 +335,7 @@ code
       background: var(--bg-main)
       width: 100%
       top: 60px
-      transition: 0.3s
+      transition: 0.3s ease-in-out
     @media (min-width: 768px)
       margin-left: 300px
     &>div

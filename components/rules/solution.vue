@@ -1,6 +1,6 @@
 <template>
-  <div class="fw-container">
-    <section class="container-md">
+  <div class="fw-container--dark">
+    <section class="container-md" id="rules-solution">
       <div class="section-headers">
         <span class="tag">{{ $t("business_solution_section") }}</span>
         <h2>{{ $t("business_solution_rules_page_title") }}</h2>
@@ -19,7 +19,7 @@
           <div class="claim-info top-claim-info">
             <p>{{ $t("business_solution_rules_page_content") }}</p>
             <p class="centered-block integration-link">
-              <demo-buttons />
+              <demo-buttons class="dark"/>
             </p>
           </div>
         </div>
@@ -46,7 +46,7 @@ export default {
       return this.email;
     },
     startFirstAnimationScene: (_this) => {
-      const sections = ["#solution"];
+      const sections = ["#rules-solution"];
       let tm = {};
       for (let section of sections) {
         const tl = gsap.timeline({

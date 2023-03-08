@@ -57,7 +57,7 @@ export default {
   width: calc(100%)
   background-color: rgba(0, 0, 0, 0.7)
   backdrop-filter: blur(5px)
-  color: #666
+  color: #fafafa
   text-align: center
   border-radius: 20px 20px 0 0
   padding: 20px 20px 0px 20px
@@ -73,5 +73,7 @@ export default {
   max-width: 600px
 
   .button
+    background: #fafafa
+    color: #000
     margin-left: 10px
 </style>

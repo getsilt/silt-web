@@ -93,18 +93,19 @@ export default {
     };
   },
   mounted() {
+    this.isDark = localStorage.getItem("dark-theme") === "true";
     this.loadTheme();
   },
   methods: {
     loadTheme() {
       if (this.isDark) {
-        document.firstElementChild.setAttribute("dark-theme", this.isDark);
+        document.firstElementChild.setAttribute("dark-theme", "true");
         document.getElementById("html").classList.add("dark");
         document.getElementById("main-menu").classList.add("dark");
         document.getElementById("header-wrapper").classList.add("dark");
         document.getElementById("body").classList.add("dark");
       } else {
-        document.firstElementChild.setAttribute("dark-theme", this.isDark);
+        document.firstElementChild.setAttribute("dark-theme", "false");
         document.getElementById("html").classList.remove("dark");
         document.getElementById("main-menu").classList.remove("dark");
         document.getElementById("header-wrapper").classList.remove("dark");
@@ -112,10 +113,9 @@ export default {
       }
     },
     toggleTheme() {
-      const isDark = localStorage.getItem("dark");
       this.isDark = !this.isDark;
-      this.loadTheme()
-      localStorage.setItem("dark", this.isDark);
+      localStorage.setItem("dark-theme", this.isDark);
+      this.loadTheme();
     },
   },
 };
@@ -167,15 +167,8 @@ export default {
   opacity: 0
 
 
-[dark-theme="dark"] .sun-and-moon > .moon > circle
+[dark-theme="true"] .sun-and-moon > .moon > circle
   transform: translateX(-7px)
-
-
-@supports (cx: 1)
-  [dark-theme="true"] .sun-and-moon > .moon > circle
-    cx: 17
-    transform: translateX(0)
-
 
 @media (prefers-reduced-motion: no-preference)
   .sun-and-moon > .sun
@@ -188,11 +181,6 @@ export default {
 
   .sun-and-moon .moon > circle
     transition: transform .25s ease-out
-
-
-  @supports (cx: 1)
-    .sun-and-moon .moon > circle
-      transition: cx .25s ease-out
 
   [dark-theme="true"] .sun-and-moon > .sun
     transition-timing-function: ease-in-out

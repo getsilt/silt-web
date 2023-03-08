@@ -7,9 +7,9 @@
 
 <script>
 import gsap from "gsap";
-import DemoButtons from "../components/DemoButtons.vue";
-import Hero from "./misconduct/hero.vue";
-import Solution from "./misconduct/solution.vue";
+import DemoButtons from "@/components/DemoButtons.vue";
+import Hero from "@/components/misconduct/hero.vue";
+import Solution from "@/components/misconduct/solution.vue";
 export default {
   components: { DemoButtons, Hero, Solution },
   head() {

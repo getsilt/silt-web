@@ -18,24 +18,23 @@
         />
       </div>
     </div>
-    <!-- CLAIMS -->
     <div class="claim-info">
-      <h1 class="title" v-html="$t('biocheck_claim1')" />
-      <h4 class="subtitle" v-html="$t('biocheck_claim2')" />
+      <h1 class="title" v-html="$t('business_hero_rules_title')" />
+      <h4 class="subtitle" v-html="$t('business_hero_rules_subtitle')" />
       <demo-buttons />
     </div>
-    <div class="claim-side-img screenshots-container">
+    <div class="claim-side-img">
       <img
-        class="screenshot take-picture"
-        src="@/assets/img/screenshots/screenshot_selfie_es.jpg"
+        src="@/assets/img/illustrations/rules_flow.svg"
         :alt="$t('seo_document_scan')"
+        class="rules-hero-img"
       />
     </div>
   </section>
 </template>
 
 <script>
-import DemoButtons from "../../components/DemoButtons.vue";
+import DemoButtons from "@/components/DemoButtons.vue";
 export default {
   components: { DemoButtons },
   data() {
@@ -52,11 +51,13 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+@import "@/assets/sass/vars.sass"
 
-.claim-container .claim-side-img.diagram
-  margin: 0
-  padding: 0
-  & > img
-    min-width: 300px
-    max-width: 700px
+.rules-hero-img
+  max-width: 100%
+  margin: auto
+
+@media (min-width: 768px)
+  .rules-hero-img
+    max-width: 570px
 </style>

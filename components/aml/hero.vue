@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import DemoButtons from "../../components/DemoButtons.vue";
+import DemoButtons from "@/components/DemoButtons.vue";
 export default {
   components: { DemoButtons },
   data() {
@@ -59,13 +59,3 @@ export default {
   },
 };
 </script>
-
-<style lang="sass" scoped>
-
-.claim-container .claim-side-img.diagram
-  margin: 0
-  padding: 0
-  & > img
-    min-width: 300px
-    max-width: 700px
-</style>

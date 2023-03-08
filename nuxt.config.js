@@ -104,7 +104,15 @@ export default {
       "/privacy",
       "/demo",
       "/en/demo",
-      "/es/demo"
+      "/es/demo",
+      "/aml",
+      "/kyb",
+      "/kyc",
+      "/minimalSDKDoc",
+      "/rules",
+      "/pricing",
+      "/misconduct",
+      "/biocheck"
     ]
   },
 

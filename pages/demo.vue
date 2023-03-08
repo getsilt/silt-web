@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- CLAIMS -->
     <section class="claim-container">
       <div class="claim-info">
         <h2 class="">{{ $t("demo_claim1") }}</h2>
@@ -76,17 +75,17 @@ export default {
       link: [...i18nSeo.link],
     };
   },
+  mounted() {
+    this.meetzy();
+  },
 
-  // TODO: Waiting for Meetzy
-  // created() {
-  //   this.addEventListener(
-  //     "meetzy-meeting-submitted",
-  //     (e) => {
-  //       console.log("Testing onSubmitMeetzyTwo", e.detail);
-  //       gtag_report_conversion();
-  //     },
-  //     false
-  //   );
-  // },
+  methods: {
+    meetzy() {
+      document.dispatchEvent(new CustomEvent("meetzy-refresh", {}));
+      document.addEventListener("meetzy-form-submitted", (e) => {
+        gtag_report_conversion();
+      });
+    },
+  },
 };
 </script>
