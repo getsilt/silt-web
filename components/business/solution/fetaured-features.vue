@@ -4,48 +4,58 @@
     <div
       class="tabs-wrapper tabs-wrapper--carousel tab-md tab-squared vertical text-left"
     >
-      <v-tab
-        activeTabName="digitalID"
-        @onActiveTabChange="featuredTab = $event"
-        :isSelected="featuredTab"
-        :class="{ 'text-gradient-1-child': featuredTab == 'digitalID' }"
-      >
-        <span>{{ $t("business_solution_carrousel_kyc") }}</span>
-      </v-tab>
-      <v-tab
-        v-if="hiddenTab !== 'customize'"
-        activeTabName="customize"
-        @onActiveTabChange="featuredTab = $event"
-        :isSelected="featuredTab"
-        :class="{ 'text-gradient-1-child': featuredTab == 'customize' }"
-      >
-        <span>{{ $t("business_solution_carrousel_customization") }}</span>
-      </v-tab>
-      <v-tab
-        activeTabName="list"
-        @onActiveTabChange="featuredTab = $event"
-        :isSelected="featuredTab"
-        :class="{ 'text-gradient-1-child': featuredTab == 'list' }"
-      >
-        <span>{{ $t("business_solution_carrousel_fraud") }}</span>
-      </v-tab>
-      <v-tab
-        v-if="hiddenTab !== 'kyb'"
-        activeTabName="kyb"
-        @onActiveTabChange="featuredTab = $event"
-        :isSelected="featuredTab"
-        :class="{ 'text-gradient-1-child': featuredTab == 'kyb' }"
-      >
-        <span>{{ $t("nav_feature_kyb") }}</span>
-      </v-tab>
-      <v-tab
-        activeTabName="biocheck"
-        @onActiveTabChange="featuredTab = $event"
-        :isSelected="featuredTab"
-        :class="{ 'text-gradient-1-child': featuredTab == 'biocheck' }"
-      >
-        <span>{{ $t("business_solution_carrousel_biocheck") }}</span>
-      </v-tab>
+      <div class="tab-wrapper">
+        <v-tab
+          activeTabName="digitalID"
+          @onActiveTabChange="featuredTab = $event"
+          :isSelected="featuredTab"
+          :class="{ 'text-gradient-1-child': featuredTab == 'digitalID' }"
+        >
+          <span>{{ $t("business_solution_carrousel_kyc") }}</span>
+        </v-tab>
+      </div>
+      <div class="tab-wrapper">
+        <v-tab
+          v-if="hiddenTab !== 'customize'"
+          activeTabName="customize"
+          @onActiveTabChange="featuredTab = $event"
+          :isSelected="featuredTab"
+          :class="{ 'text-gradient-1-child': featuredTab == 'customize' }"
+        >
+          <span>{{ $t("business_solution_carrousel_customization") }}</span>
+        </v-tab>
+      </div>
+      <div class="tab-wrapper">
+        <v-tab
+          activeTabName="list"
+          @onActiveTabChange="featuredTab = $event"
+          :isSelected="featuredTab"
+          :class="{ 'text-gradient-1-child': featuredTab == 'list' }"
+        >
+          <span>{{ $t("business_solution_carrousel_fraud") }}</span>
+        </v-tab>
+      </div>
+      <div class="tab-wrapper">
+        <v-tab
+          v-if="hiddenTab !== 'kyb'"
+          activeTabName="kyb"
+          @onActiveTabChange="featuredTab = $event"
+          :isSelected="featuredTab"
+          :class="{ 'text-gradient-1-child': featuredTab == 'kyb' }"
+        >
+          <span>{{ $t("nav_feature_kyb") }}</span>
+        </v-tab>
+      </div>
+      <div class="tab-wrapper">
+        <v-tab
+          activeTabName="biocheck"
+          @onActiveTabChange="featuredTab = $event"
+          :isSelected="featuredTab"
+          :class="{ 'text-gradient-1-child': featuredTab == 'biocheck' }"
+        >
+          <span>{{ $t("business_solution_carrousel_biocheck") }}</span>
+        </v-tab>
+      </div>
     </div>
 
     <!-- Carrousel Content-->
@@ -357,8 +367,8 @@ export default {
             markers: false,
           },
         })
-        .from("#features .tab", {
-          duration: 0.2,
+        .from("#features .tab-wrapper", {
+          duration: 1,
           scale: 1,
           y: 75,
           rotateY: 0,
