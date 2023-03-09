@@ -69,13 +69,13 @@ export default {
   position: relative
   .phone-svg
     position: absolute
-    top: -10px
-    left: -11px
+    top: -9px
+    left: -10px
     z-index: 999
     height: auto
-    width: 274px
+    width: 252px
   .phone-video
-    width: 250px
+    width: 230px
     border-radius: 30px
 
 .claim-info-wrapper.differences
