@@ -87,8 +87,8 @@
             </a>
           </p>
           <p>
-            <a href="#" @click.stop="updateLocale('es')">ES</a>
-            <a href="#" @click.stop="updateLocale('en')">EN</a>
+            <nuxt-link :to="switchLocalePath('es')">ES</nuxt-link>
+            <nuxt-link :to="switchLocalePath('en')">EN</nuxt-link>
           </p>
         </div>
       </section>
