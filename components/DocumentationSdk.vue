@@ -1,14 +1,11 @@
 <template>
   <div>
     <h2>SDK Integration</h2>
-    <h3>1. Email us: Get your company app Id</h3>
+    <h3>1. Signup and create a company profile</h3>
     <p>
-      Request your <code>company_app_id</code> to the Silt Team at the email
-      address
-      <a target="_blank" href="mailto:customers@getsilt.com"
-        >customers@getsilt.com</a
-      >. This Id is unique for you, and it will be the same that the one
-      required in the API integration flow.
+      Signup and create an account in our <a target="_blank" href="https://dashboard.getsilt.com/welcome">dashboard page</a>.
+      There, under <b>"Verification Flow Settings"</b> will be able to get your <code>company_app_id</code> and other information and configuration options.
+      You can also create more verification flows under "Company Settings".
     </p>
     <h3>2. Frontend: Add SDK on mobile with company app id</h3>
     <div class="tabs-wrapper">
@@ -216,7 +213,7 @@
     </code>
     <p>You are not required to store any of these, just what suits you best.</p>
     <h3>
-      5. (Optional, for better UX) Backend: Webhook to get notifications after
+      5. (Optional) Backend: Webhook to get notifications after
       user status update
     </h3>
     <p>
@@ -227,9 +224,9 @@
     <p>
       Some cases (less than 5%) require a manual verification. For obvious
       reasons, we cannot verify users instantly this way. We inform the user by
-      email once we have finished the verification verification, but you can
+      email once we have finished the verification, but you can
       also be notified once this happens. When you have changed the status of a
-      document we will make a POST request to the endpoint you provide us. The
+      document we will also make a POST request to the endpoint you provide us. The
       response will return the same response as /status request under <code>user</code> field, the <code>processing_attempt</code> that triggered the webhook, its <code>status</code>.
     </p>
     <code class="code-block"
