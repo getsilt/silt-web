@@ -101,7 +101,6 @@
   </div>
 </template>
 <script>
-import { setCookie } from "../lib/cookies";
 
 export default {
   methods: {
