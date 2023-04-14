@@ -97,7 +97,7 @@ export default {
         defaultLocale: "en",
         baseUrl: "https://getsilt.com",
         parsePages: false,
-        // pages: getRoutesForGenerate()
+        pages: getRoutesForGenerate()
       }
     ],
     "@nuxtjs/router-extras",

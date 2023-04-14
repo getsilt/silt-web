@@ -11,7 +11,7 @@
           />
         </template>
         <li slot="before-nav" class="logo vsm-section vsm-mob-full">
-          <nuxt-link :to="localePath({ name: 'business' })">
+          <nuxt-link :to="localePath({ name: 'index' })">
             <img
               src="@/assets/img/logo/silt_logo_white.svg"
               :alt="$t('silt_name')"
@@ -31,7 +31,7 @@
             <a
               target="blank"
               href="https://blog.getsilt.com"
-              @click="onCloseNav()"
+              @click="closeNav()"
               ><button class="vsm-link">Blog</button>
             </a>
           </li>

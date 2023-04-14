@@ -86,7 +86,7 @@
       <nuxt-link
         class="dropdown-wrap__content"
         :to="localePath({ name: 'pricing' })"
-        @click.native="onCloseNav()"
+        @click.native="$emit('onCloseNav')"
       >
         <h6 class="title_menu">{{ $t("nav_link_pricing") }}</h6>
       </nuxt-link>
@@ -94,14 +94,14 @@
         target="blank"
         class="dropdown-wrap__content"
         href="https://blog.getsilt.com"
-        @click="onCloseNav()"
+        @click="$emit('onCloseNav')"
       >
         Blog
       </a>
       <nuxt-link
         class="dropdown-wrap__content"
         :to="localePath({ name: 'demo' })"
-        @click="onCloseNav()"
+        @click="$emit('onCloseNav')"
       >
         <button class="small">{{ $t("btn_cta_navBar_demo") }}</button>
       </nuxt-link>
