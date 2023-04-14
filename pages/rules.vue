@@ -13,12 +13,6 @@ import Benefits from "@/components/rules/benefits.vue";
 import Solution from "@/components/rules/solution.vue";
 
 export default {
-  nuxtI18n: {
-    paths: {
-      en: "/rules", // -> accessible at / (no prefix since it's the default locale)
-      es: "/rules",
-    },
-  },
   components: {
     DemoButtons,
     Hero,

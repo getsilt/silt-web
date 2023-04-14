@@ -1,29 +1,45 @@
 const routerBase =
   process.env.DEPLOY_ENV === "GH_PAGES"
     ? {
-        router: {
-          base: "/"
-        }
+      router: {
+        base: "/"
       }
+    }
     : {};
+
+import { getRoutesForGenerate, getRoutesForSitemap } from './lib/routes.js'
 
 export default {
   target: 'static',
   /*
    ** Headers of the page
    */
-  head: {
-    title: process.env.npm_package_name || "",
-    meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      {
-        hid: "description",
-        name: "description",
-        content: process.env.npm_package_description || ""
-      }
-    ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+  head() {
+    const i18nHead = this.$nuxtI18nHead
+      ? this.$nuxtI18nHead({ addSeoAttributes: true })
+      : { htmlAttrs: [], meta: [], link: [] }
+    return {
+      htmlAttrs: {
+        ...i18nHead.htmlAttrs
+      },
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Onboarding Automation KYC & KYB'
+        },
+        ...i18nHead.meta
+      ],
+      link: [
+        {
+          hid: 'apple-touch-icon',
+          rel: 'apple-touch-icon',
+          sizes: '180x180',
+          href: '/apple-touch-icon.png'
+        },
+        ...i18nHead.link
+      ]
+    }
   },
   /*
    ** Customize the progress-bar color
@@ -41,13 +57,14 @@ export default {
     { src: "@/plugins/gtag", ssr: false },
     { src: "~/plugins/gsap", ssr: false },
     { src: "~/plugins/jsontree", ssr: false },
-    { src: "@/plugins/stripe-menu"},
+    { src: "@/plugins/stripe-menu" },
     { src: "~/plugins/consentCookies/index.js", ssr: false }
   ],
   /*
    ** Nuxt.js modules
    */
   buildModules: [
+    "nuxt-trailingslash-module",
     [
       "@nuxtjs/i18n",
       {
@@ -61,7 +78,8 @@ export default {
           {
             name: "English",
             code: "en",
-            iso: "en-US"
+            iso: "en-US",
+            isCatchallLocale: true
           }
         ],
         detectBrowserLanguage: {
@@ -76,50 +94,33 @@ export default {
           },
           silentTranslationWarn: false
         },
-        defaultLocale: "es",
+        defaultLocale: "en",
         baseUrl: "https://getsilt.com",
+        parsePages: false,
+        // pages: getRoutesForGenerate()
       }
     ],
     "@nuxtjs/router-extras",
-    "@nuxtjs/sitemap",
     "@nuxtjs/robots",
+    "@nuxtjs/sitemap",
   ],
+
   sitemap: {
-    i18n: true,
-    i18n: {
-      locales: ['en', 'es'],
-      routesNameSeparator: '___'
-    },
     hostname: "https://getsilt.com",
     path: "/sitemap.xml",
-    cacheTime: 1000 * 60 * 60 * 2,
-    trailingSlash: false,
+    routes: getRoutesForSitemap(),
+    exclude: ['/**'],
     gzip: true,
-    exclude: [
-      "/en/cookies",
-      "/en/legal-notice",
-      "/en/privacy",
-      "/cookies",
-      "/legal-notice",
-      "/privacy",
-      "/demo",
-      "/en/demo",
-      "/es/demo",
-      "/aml",
-      "/kyb",
-      "/kyc",
-      "/minimalSDKDoc",
-      "/rules",
-      "/pricing",
-      "/misconduct",
-      "/biocheck"
+    sitemaps: [
+      { path: "/sitemap-en.xml", routes: getRoutesForSitemap(["en"]), exclude: ['/**'], gzip: true},
+      { path: "/sitemap-es.xml", routes: getRoutesForSitemap(["es"]), exclude: ['/**'], gzip: true}
     ]
   },
 
   robots: {
     Sitemap: "https://getsilt.com/sitemap.xml",
     UserAgent: "*",
-    Disallow: ["/cookies", "/legal-notice", "/privacy","/en/cookies", "/en/legal-notice", "/en/privacy", "/demo", "/es/demo", "/en/demo"]
+    Disallow: ["/cookies", "/legal-notice", "/privacy", "/en/cookies", "/en/legal-notice", "/en/privacy", "/demo", "/es/demo", "/en/demo"]
   },
 
   ...routerBase,
@@ -145,7 +146,7 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {},
+    extend(config, ctx) { },
     postcss: {
       // Add plugin names as key and arguments as value
       // Install them before as dependencies with npm or yarn

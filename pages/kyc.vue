@@ -18,12 +18,6 @@ import TechFeatures from "@/components/business/tech-features.vue";
 import Usecases from "@/components/business/usecases.vue";
 
 export default {
-  nuxtI18n: {
-    paths: {
-      en: "/kyc-user-verification", // -> accessible at / (no prefix since it's the default locale)
-      es: "/kyc-verificacion-de-usuarios",
-    },
-  },
   components: {
     DemoButtons,
     Hero,

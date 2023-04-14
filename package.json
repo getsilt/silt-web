@@ -29,6 +29,7 @@
     "imports-loader": "^1.2.0",
     "nodemon": "^2.0.6",
     "nuxt-svg": "^0.1.6",
+    "nuxt-trailingslash-module": "^1.2.0",
     "postcss-hexrgba": "^2.0.1",
     "postcss-nested": "^4.2.3",
     "postcss-responsive-type": "^1.0.0",

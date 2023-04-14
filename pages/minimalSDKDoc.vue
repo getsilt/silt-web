@@ -10,12 +10,6 @@ export default {
     DocumentationSdk,
   },
   layout: 'minimalDoc',
-  nuxtI18n: {
-    paths: {
-      en: "/minimal-sdk-documentation", // -> accessible at /about-us (no prefix since it's the default locale)
-      es: "/minimal-sdk-documentation", // -> accessible at /es/sobre
-    },
-  },
   head() {
     const i18nSeo = this.$nuxtI18nHead();
     return {

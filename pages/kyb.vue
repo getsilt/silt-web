@@ -16,12 +16,6 @@ import Benefits from "@/components/kyb/benefits.vue";
 import Solution from "@/components/kyb/solution.vue";
 export default {
   components: { DemoButtons, Hero, Problem, Benefits, Solution },
-  nuxtI18n: {
-    paths: {
-      en: "/kyb-company-and-freelancer-verification",
-      es: "/kyb-verificacion-de-empresas-y-autonomos",
-    },
-  },
   head() {
     const i18nSeo = this.$nuxtI18nHead();
     return {

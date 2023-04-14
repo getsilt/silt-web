@@ -266,12 +266,6 @@ import DemoButtons from "../components/DemoButtons.vue";
 // var controllerHolder;
 export default {
   components: { DemoButtons },
-  nuxtI18n: {
-    paths: {
-      en: "/pricing", // -> accessible at / (no prefix since it's the default locale)
-      es: "/precios", // -> accessible at /es/sobre
-    },
-  },
   head() {
     const i18nSeo = this.$nuxtI18nHead();
     return {
