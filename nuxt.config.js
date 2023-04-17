@@ -23,6 +23,7 @@ export default {
         ...i18nHead.htmlAttrs
       },
       meta: [
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
         {
           hid: 'description',
           name: 'description',
@@ -112,8 +113,8 @@ export default {
     exclude: ['/**'],
     gzip: true,
     sitemaps: [
-      { path: "/sitemap-en.xml", routes: getRoutesForSitemap(["en"]), exclude: ['/**'], gzip: true},
-      { path: "/sitemap-es.xml", routes: getRoutesForSitemap(["es"]), exclude: ['/**'], gzip: true}
+      { path: "/sitemap-en.xml", routes: getRoutesForSitemap(["en"]), exclude: ['/**'], gzip: true },
+      { path: "/sitemap-es.xml", routes: getRoutesForSitemap(["es"]), exclude: ['/**'], gzip: true }
     ]
   },
 
