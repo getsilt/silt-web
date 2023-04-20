@@ -1,7 +1,7 @@
 <template>
   <div class="fw-container container" id="faq">
     <div class="section-headers">
-      <h1>{{ $t("FAQ_title") }}</h1>
+      <h1>{{ $t("FAQ_title_2") }}</h1>
     </div>
   </div>
 </template>
