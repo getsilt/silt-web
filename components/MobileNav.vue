@@ -90,6 +90,13 @@
       >
         <h6 class="title_menu">{{ $t("nav_link_pricing") }}</h6>
       </nuxt-link>
+      <nuxt-link
+        class="dropdown-wrap__content"
+        :to="localePath({ name: 'faq' })"
+        @click.native="$emit('onCloseNav')"
+      >
+        <h6 class="title_menu">{{ $t("FAQ_title") }}</h6>
+      </nuxt-link>
       <a
         target="blank"
         class="dropdown-wrap__content"
