@@ -31,9 +31,8 @@
         </div>
         <p class="pricing-plan_upto">
           {{
-            $t("business_pricing_between", {
-              amountLow: "50",
-              amountUp: "200",
+            $t("business_pricing_upto", {
+              amount: "200",
             })
           }}
           {{ $t("business_pricing_verificationsMonth") }}
@@ -132,16 +131,97 @@
             </td>
           </tr>
 
+          <!-- START AML -->
           <th colspan="2">
             <h6>{{ $t("business_pricing_PEPAML") }}</h6>
           </th>
 
           <tr>
-            <td>{{ $t("business_pricing_PEPAML") }}</td>
             <td>
-              <b>0,25€</b> <span class="hint"> / {{ $t("global_check") }}</span>
+              {{ $t("business_pricing_upto", { amount: 200 }) }}
+              <span class="hint"
+                >{{ $t("global_check") }} /
+                {{ $t("business_pricing_month") }}</span
+              >
+            </td>
+            <td>
+              <b>0,150€</b>
+              <span class="hint">/ {{ $t("global_check") }}</span>
             </td>
           </tr>
+          <tr>
+            <td>
+              {{
+                $t("business_pricing_between", {
+                  amountLow: "201",
+                  amountUp: "1.000",
+                })
+              }}
+              <span class="hint"
+                >{{ $t("global_check") }} /
+                {{ $t("business_pricing_month") }}</span
+              >
+            </td>
+            <td>
+              <b>0,050€</b>
+              <span class="hint"> / {{ $t("global_check") }}</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              {{
+                $t("business_pricing_between", {
+                  amountLow: "1.001",
+                  amountUp: "5.000",
+                })
+              }}
+              <span class="hint"
+                >{{ $t("global_check") }} /
+                {{ $t("business_pricing_month") }}</span
+              >
+            </td>
+            <td>
+              <b>0,042€</b
+              ><span class="hint"> / {{ $t("global_check") }}</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              {{
+                $t("business_pricing_between", {
+                  amountLow: "5.001",
+                  amountUp: "10.000",
+                })
+              }}
+             <span class="hint"
+                >{{ $t("global_check") }} /
+                {{ $t("business_pricing_month") }}</span
+              >
+            </td>
+            <td>
+              <b>0,036€</b>
+              <span class="hint"> / {{ $t("global_check") }}</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              {{
+                $t("business_pricing_moreThan", {
+                  amount: "10.001",
+                })
+              }}
+              <span class="hint"
+                >{{ $t("global_check") }} /
+                {{ $t("business_pricing_month") }}</span
+              >
+            </td>
+            <td>
+              <b>0,032€</b>
+              <span class="hint"> / {{ $t("global_check") }}</span>
+            </td>
+          </tr>
+
+          <!-- END AML -->
 
           <th colspan="2">
             <h6>{{ $t("nav_feature_biocheck") }}</h6>
