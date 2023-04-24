@@ -22,22 +22,22 @@ export default {
   head() {
     const i18nSeo = this.$nuxtI18nHead();
     return {
-      title: this.$t("nav_feature_rules"),
+      title: this.$t("seo_rules_title"),
       meta: [
         {
           hid: "description",
           name: "description",
-          content: this.$t("business_claim2"),
+          content: this.$t("seo_rules_metadescription"),
         },
         {
           hid: "og:description",
           name: "og:description",
-          content: this.$t("business_claim2"),
+          content: this.$t("seo_rules_metadescription"),
         },
         {
           hid: "og:title",
           name: "og:title",
-          content: this.$t("nav_feature_rules"),
+          content: this.$t("seo_rules_title"),
         },
       ],
     };
@@ -64,5 +64,4 @@ export default {
 .claim-info-wrapper.differences
   display: flex
   align-items: center
-
 </style>
