@@ -30,22 +30,22 @@ export default {
   head() {
     const i18nSeo = this.$nuxtI18nHead();
     return {
-      title: this.$t("nav_feature_kyc"),
+      title: this.$t("seo_kyc_title"),
       meta: [
         {
           hid: "description",
           name: "description",
-          content: this.$t("business_claim2"),
+          content: this.$t("seo_kyc_metadescription"),
         },
         {
           hid: "og:description",
           name: "og:description",
-          content: this.$t("business_claim2"),
+          content: this.$t("seo_kyc_metadescription"),
         },
         {
           hid: "og:title",
           name: "og:title",
-          content: this.$t("nav_feature_kyc"),
+          content: this.$t("seo_kyc_title"),
         },
       ],
     };
@@ -72,5 +72,4 @@ export default {
 .claim-info-wrapper.differences
   display: flex
   align-items: center
-
 </style>
