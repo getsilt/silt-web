@@ -19,22 +19,22 @@ export default {
   head() {
     const i18nSeo = this.$nuxtI18nHead();
     return {
-      title: this.$t("nav_feature_kyb"),
+      title: this.$t("seo_kyb_title"),
       meta: [
         {
           hid: "description",
           name: "description",
-          content: this.$t("kyb_claim2"),
+          content: this.$t("seo_kyb_metadescription"),
         },
         {
           hid: "og:title",
           name: "og:title",
-          content: this.$t("nav_feature_kyb"),
+          content: this.$t("seo_kyb_metadescription"),
         },
         {
           hid: "og:description",
           name: "og:description",
-          content: this.$t("kyb_claim2"),
+          content: this.$t("seo_kyb_title"),
         },
       ],
     };
