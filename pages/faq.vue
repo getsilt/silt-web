@@ -1,9 +1,9 @@
 <template>
-  <div class="fw-container container" id="faq">
+  <section class="claim-container">
     <div class="section-headers">
       <h1>{{ $t("FAQ_title_2") }}</h1>
     </div>
-    <section>
+    <div>
       <h3 class="faq-headers">{{ $t("FAQ_subtitle_general") }}</h3>
       <div class="card">
         <expandable
@@ -36,6 +36,7 @@
         <expandable
           :key="`integrationFAQ-${i}`"
           v-for="(faq, i) of integrationFAQs"
+          :dark="isDark"
         >
           <h6 v-html="$t(faq.title)" slot="title" />
           <div slot="body">
@@ -43,8 +44,8 @@
           </div>
         </expandable>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </template>
 
 <script>
