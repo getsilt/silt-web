@@ -5,45 +5,42 @@
     </div>
     <div>
       <h3 class="faq-headers">{{ $t("FAQ_subtitle_general") }}</h3>
-      <div class="card">
-        <expandable
-          :key="`generalFAQ-${i}`"
-          v-for="(faq, i) of generalFAQs"
-          :dark="isDark"
-        >
-          <h6 v-html="$t(faq.title)" slot="title" />
-          <div slot="body">
-            {{ $t(faq.body) }}
-          </div>
-        </expandable>
-      </div>
+      <expandable
+        class="expandable-faqs"
+        :key="`generalFAQ-${i}`"
+        v-for="(faq, i) of generalFAQs"
+        :dark="isDark"
+      >
+        <h6 v-html="$t(faq.title)" slot="title" />
+        <div slot="body">
+          {{ $t(faq.body) }}
+        </div>
+      </expandable>
       <h3 class="faq-headers">{{ $t("FAQ_subtitle_eID_and_integration") }}</h3>
-      <div class="card">
-        <expandable
-          :key="`eIDFAQ-${i}`"
-          v-for="(faq, i) of eIDFAQs"
-          :dark="isDark"
-        >
-          <h6 v-html="$t(faq.title)" slot="title" />
-          <div slot="body">
-            {{ $t(faq.body) }}
-          </div>
-        </expandable>
-      </div>
+      <expandable
+        class="expandable-faqs"
+        :key="`eIDFAQ-${i}`"
+        v-for="(faq, i) of eIDFAQs"
+        :dark="isDark"
+      >
+        <h6 v-html="$t(faq.title)" slot="title" />
+        <div slot="body">
+          {{ $t(faq.body) }}
+        </div>
+      </expandable>
 
       <h3 class="faq-headers">{{ $t("FAQ_subtitle_integration") }}</h3>
-      <div class="card">
-        <expandable
-          :key="`integrationFAQ-${i}`"
-          v-for="(faq, i) of integrationFAQs"
-          :dark="isDark"
-        >
-          <h6 v-html="$t(faq.title)" slot="title" />
-          <div slot="body">
-            {{ $t(faq.body) }}
-          </div>
-        </expandable>
-      </div>
+      <expandable
+        class="expandable-faqs"
+        :key="`integrationFAQ-${i}`"
+        v-for="(faq, i) of integrationFAQs"
+        :dark="isDark"
+      >
+        <h6 v-html="$t(faq.title)" slot="title" />
+        <div slot="body">
+          {{ $t(faq.body) }}
+        </div>
+      </expandable>
     </div>
   </section>
 </template>
@@ -176,6 +173,6 @@ export default {
 
 .faq-headers
   margin: $spacing-md 0
-.card
-  text-align: left
+.expandable-faqs
+  margin-bottom: $spacing-md
 </style>
