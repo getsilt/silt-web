@@ -150,17 +150,8 @@ export default {
       isDark: false,
     };
   },
-  methods: {
-    getEmail() {
-      return this.email;
-    },
-    getWebsiteTheme() {
-      const websiteTheme = localStorage.getItem("dark-theme");
-      if (websiteTheme === "true") this.isDark = true;
-    },
-  },
   created() {
-    this.getWebsiteTheme();
+    this.isDark = localStorage.getItem("dark-theme") === "true";
   },
 };
 </script>
