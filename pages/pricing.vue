@@ -181,8 +181,7 @@
               >
             </td>
             <td>
-              <b>0,042€</b
-              ><span class="hint"> / {{ $t("global_check") }}</span>
+              <b>0,042€</b><span class="hint"> / {{ $t("global_check") }}</span>
             </td>
           </tr>
           <tr>
@@ -193,7 +192,7 @@
                   amountUp: "10.000",
                 })
               }}
-             <span class="hint"
+              <span class="hint"
                 >{{ $t("global_check") }} /
                 {{ $t("business_pricing_month") }}</span
               >
@@ -352,22 +351,22 @@ export default {
       htmlAttrs: {
         ...i18nSeo.htmlAttrs,
       },
-      title: `${this.$t("nav_link_pricing")}`,
+      title: `${this.$t("seo_pricing_title")}`,
       meta: [
         {
           hid: "og:title",
           name: "og:title",
-          content: this.$t("nav_link_pricing"),
+          content: this.$t("seo_pricing_title"),
         },
         {
           hid: "description",
           name: "description",
-          content: this.$t("business_pricing_content"),
+          content: this.$t("seo_pricing_metadescription"),
         },
         {
           hid: "og:description",
           name: "og:description",
-          content: this.$t("business_pricing_content"),
+          content: this.$t("seo_pricing_metadescription"),
         },
         ...i18nSeo.meta,
       ],
