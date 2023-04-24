@@ -25,17 +25,17 @@ export default {
   head() {
     const i18nSeo = this.$nuxtI18nHead();
     return {
-      title: "SDK Integration with Silt Digital ID & KYC",
+      title: this.$t("seo_developers_title"),
       meta: [
         {
           hid: "description",
           name: "description",
-          content: "Integrate with you app in a few minutes with the SDK.",
+          content: this.$t("seo_developers_metadescription"),
         },
         {
           hid: "og:title",
           name: "og:title",
-          content: "Integrate with you app in a few minutes with the SDK.",
+          content: this.$t("seo_developers_metadescription"),
         },
       ],
     };
