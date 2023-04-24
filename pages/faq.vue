@@ -3,37 +3,47 @@
     <div class="section-headers">
       <h1>{{ $t("FAQ_title_2") }}</h1>
     </div>
-    <h3 class="faq-headers">{{ $t("FAQ_subtitle_general") }}</h3>
-    <div class="card">
-      <expandable :key="`generalFAQ-${i}`" v-for="(faq, i) of generalFAQs">
-        <h6 v-html="$t(faq.title)" slot="title" />
-        <div slot="body">
-          {{ $t(faq.body) }}
-        </div>
-      </expandable>
-    </div>
-    <h3 class="faq-headers">{{ $t("FAQ_subtitle_eID_and_integration") }}</h3>
-    <div class="card">
-      <expandable :key="`eIDFAQ-${i}`" v-for="(faq, i) of eIDFAQs">
-        <h6 v-html="$t(faq.title)" slot="title" />
-        <div slot="body">
-          {{ $t(faq.body) }}
-        </div>
-      </expandable>
-    </div>
+    <section>
+      <h3 class="faq-headers">{{ $t("FAQ_subtitle_general") }}</h3>
+      <div class="card">
+        <expandable
+          :key="`generalFAQ-${i}`"
+          v-for="(faq, i) of generalFAQs"
+          :dark="isDark"
+        >
+          <h6 v-html="$t(faq.title)" slot="title" />
+          <div slot="body">
+            {{ $t(faq.body) }}
+          </div>
+        </expandable>
+      </div>
+      <h3 class="faq-headers">{{ $t("FAQ_subtitle_eID_and_integration") }}</h3>
+      <div class="card">
+        <expandable
+          :key="`eIDFAQ-${i}`"
+          v-for="(faq, i) of eIDFAQs"
+          :dark="isDark"
+        >
+          <h6 v-html="$t(faq.title)" slot="title" />
+          <div slot="body">
+            {{ $t(faq.body) }}
+          </div>
+        </expandable>
+      </div>
 
-    <h3 class="faq-headers">{{ $t("FAQ_subtitle_integration") }}</h3>
-    <div class="card">
-      <expandable
-        :key="`integrationFAQ-${i}`"
-        v-for="(faq, i) of integrationFAQs"
-      >
-        <h6 v-html="$t(faq.title)" slot="title" />
-        <div slot="body">
-          {{ $t(faq.body) }}
-        </div>
-      </expandable>
-    </div>
+      <h3 class="faq-headers">{{ $t("FAQ_subtitle_integration") }}</h3>
+      <div class="card">
+        <expandable
+          :key="`integrationFAQ-${i}`"
+          v-for="(faq, i) of integrationFAQs"
+        >
+          <h6 v-html="$t(faq.title)" slot="title" />
+          <div slot="body">
+            {{ $t(faq.body) }}
+          </div>
+        </expandable>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -42,7 +52,7 @@ import Expandable from "@/components/Expandable.vue";
 export default {
   nuxtI18n: {
     paths: {
-      en: "/faq", // -> accessible at / (no prefix since it's the default locale)
+      en: "/faq",
       es: "/faq",
     },
   },
@@ -139,12 +149,20 @@ export default {
           body: "FAQ_link_clients_CRM_body",
         },
       ],
+      isDark: false,
     };
   },
   methods: {
     getEmail() {
       return this.email;
     },
+    getWebsiteTheme() {
+      const websiteTheme = localStorage.getItem("dark-theme");
+      if (websiteTheme === "true") this.isDark = true;
+    },
+  },
+  created() {
+    this.getWebsiteTheme();
   },
 };
 </script>
@@ -153,10 +171,10 @@ export default {
 @import "@/assets/sass/vars.sass"
 
 .section-headers
-    margin-bottom: 0
+  margin-bottom: 0
 
 .faq-headers
-    margin: $spacing-md 0
+  margin: $spacing-md 0
 .card
-    text-align: left
+  text-align: left
 </style>
