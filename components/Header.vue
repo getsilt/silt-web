@@ -85,6 +85,13 @@ export default {
             to: { name: "pricing" },
           },
         },
+        {
+          title: this.$t("FAQ_title"),
+          element: "router-link",
+          attributes: {
+            to: { name: "faq" },
+          },
+        },
       ],
     };
   },
@@ -96,7 +103,7 @@ export default {
   methods: {
     closeNav() {
       this.$refs["menumov"].closeDropdown();
-	  this.$refs["menu"].closeDropdown()
+      this.$refs["menu"].closeDropdown();
     },
   },
 };
@@ -124,7 +131,6 @@ section
 [dark-theme="true"] section
 	background: $bg-dark
 	transition: 0.3s ease-in-out
-
 
 .header-wrapper
 	margin: 0
