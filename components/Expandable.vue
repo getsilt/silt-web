@@ -52,7 +52,7 @@ export default {
 .expandable
   background: $color-grey-lighten-3
   border-radius: $radius-md
-  border: 3px solid rgba($color-grey-lighten-3, 0.5)
+  border: 3px solid rgba($color-grey-lighten-2, 0.1)
   padding: $spacing-md
   overflow: hidden
   cursor: pointer

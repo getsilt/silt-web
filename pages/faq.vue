@@ -5,48 +5,55 @@
     </div>
     <div>
       <h3 class="faq-headers">{{ $t("FAQ_subtitle_general") }}</h3>
-      <expandable
-        class="expandable-faqs"
-        :key="`generalFAQ-${i}`"
-        v-for="(faq, i) of generalFAQs"
-        :dark="isDark"
-      >
-        <h6 v-html="$t(faq.title)" slot="title" />
-        <div slot="body">
-          {{ $t(faq.body) }}
-        </div>
-      </expandable>
+      <div id="faqs-expandable">
+        <expandable
+          class="expandable-faqs"
+          :key="`generalFAQ-${i}`"
+          v-for="(faq, i) of generalFAQs"
+          :dark="isDark"
+        >
+          <h6 v-html="$t(faq.title)" slot="title" />
+          <div slot="body">
+            {{ $t(faq.body) }}
+          </div>
+        </expandable>
+      </div>
       <h3 class="faq-headers">{{ $t("FAQ_subtitle_eID_and_integration") }}</h3>
-      <expandable
-        class="expandable-faqs"
-        :key="`eIDFAQ-${i}`"
-        v-for="(faq, i) of eIDFAQs"
-        :dark="isDark"
-      >
-        <h6 v-html="$t(faq.title)" slot="title" />
-        <div slot="body">
-          {{ $t(faq.body) }}
-        </div>
-      </expandable>
-
+      <div id="faqs-expandable">
+        <expandable
+          class="expandable-faqs"
+          :key="`eIDFAQ-${i}`"
+          v-for="(faq, i) of eIDFAQs"
+          :dark="isDark"
+        >
+          <h6 v-html="$t(faq.title)" slot="title" />
+          <div slot="body">
+            {{ $t(faq.body) }}
+          </div>
+        </expandable>
+      </div>
       <h3 class="faq-headers">{{ $t("FAQ_subtitle_integration") }}</h3>
-      <expandable
-        class="expandable-faqs"
-        :key="`integrationFAQ-${i}`"
-        v-for="(faq, i) of integrationFAQs"
-        :dark="isDark"
-      >
-        <h6 v-html="$t(faq.title)" slot="title" />
-        <div slot="body">
-          {{ $t(faq.body) }}
-        </div>
-      </expandable>
+      <div id="faqs-expandable">
+        <expandable
+          class="expandable-faqs"
+          :key="`integrationFAQ-${i}`"
+          v-for="(faq, i) of integrationFAQs"
+          :dark="isDark"
+        >
+          <h6 v-html="$t(faq.title)" slot="title" />
+          <div slot="body">
+            {{ $t(faq.body) }}
+          </div>
+        </expandable>
+      </div>
     </div>
   </section>
 </template>
 
 <script>
+import gsap from "gsap";
 import Expandable from "@/components/Expandable.vue";
+
 export default {
   nuxtI18n: {
     paths: {
@@ -152,6 +159,31 @@ export default {
   },
   created() {
     this.isDark = localStorage.getItem("dark-theme") === "true";
+  },
+  mounted() {
+    this.startFirstAnimationScene(this);
+  },
+  methods: {
+    startFirstAnimationScene: (_this) => {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: "#faqs-expandable",
+            start: "top 80%",
+            scrub: false,
+            markers: false,
+          },
+        })
+        .from("#faqs-expandable .expandable-faqs", {
+          duration: 1,
+          scale: 1,
+          y: 75,
+          rotateY: 0,
+          opacity: 0,
+          stagger: 0.2,
+          ease: "power2.out",
+        });
+    },
   },
 };
 </script>
