@@ -98,18 +98,25 @@ export default {
   },
   methods: {
     loadTheme() {
+      const expandables = document.getElementsByClassName("expandable");
       if (this.isDark) {
         document.firstElementChild.setAttribute("dark-theme", "true");
         document.getElementById("html").classList.add("dark");
         document.getElementById("main-menu").classList.add("dark");
         document.getElementById("header-wrapper").classList.add("dark");
         document.getElementById("body").classList.add("dark");
+        for (let i = 0; i < expandables.length; i++) {
+          expandables[i].classList.add("dark");
+        }
       } else {
         document.firstElementChild.setAttribute("dark-theme", "false");
         document.getElementById("html").classList.remove("dark");
         document.getElementById("main-menu").classList.remove("dark");
         document.getElementById("header-wrapper").classList.remove("dark");
         document.getElementById("body").classList.remove("dark");
+        for (let i = 0; i < expandables.length; i++) {
+          expandables[i].classList.remove("dark");
+        }
       }
     },
     toggleTheme() {
@@ -145,27 +152,21 @@ export default {
 .sun-and-moon > :is(.moon, .sun)
   fill: var(--icon-fill)
 
-
 .theme-toggle:is(:hover, :focus-visible) > .sun-and-moon > :is(.moon, .sun)
   fill: var(--icon-fill-hover)
-
 
 .sun-and-moon > .sun-beams
   stroke: var(--icon-fill)
   stroke-width: 2px
 
-
 .theme-toggle:is(:hover, :focus-visible) .sun-and-moon > .sun-beams
   stroke: var(--icon-fill-hover)
-
 
 [dark-theme="true"] .sun-and-moon > .sun
   transform: scale(1.75)
 
-
 [dark-theme="true"] .sun-and-moon > .sun-beams
   opacity: 0
-
 
 [dark-theme="true"] .sun-and-moon > .moon > circle
   transform: translateX(-7px)
@@ -174,10 +175,8 @@ export default {
   .sun-and-moon > .sun
     transition: transform .5s var(--ease-elastic-3)
 
-
   .sun-and-moon > .sun-beams
     transition: transform .5s var(--ease-elastic-4), opacity .5s var(--ease-3)
-
 
   .sun-and-moon .moon > circle
     transition: transform .25s ease-out
@@ -187,11 +186,9 @@ export default {
     transition-duration: .25s
     transform: scale(1.75)
 
-
   [dark-theme="true"] .sun-and-moon > .sun-beams
     transition-duration: .15s
     transform: rotateZ(-25deg)
-
 
   [dark-theme="true"] .sun-and-moon > .moon > circle
     transition-duration: .5s

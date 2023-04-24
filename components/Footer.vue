@@ -3,7 +3,11 @@
     <section class="trust__wrapper">
       <h3>{{ $t("footer_trust") }}</h3>
       <div class="trust__logos">
-        <img src="@/assets/img/logo/tech_bcn.png" alt="" style="height: 100px" />
+        <img
+          src="@/assets/img/logo/tech_bcn.png"
+          alt=""
+          style="height: 100px"
+        />
         <img src="@/assets/img/logo/accio.png" alt="" />
         <img style="height: 100px" src="@/assets/img/logo/aefi.png" alt="" />
       </div>
@@ -21,27 +25,42 @@
         </div>
         <div class="footer__links">
           <p>
-            <nuxt-link :to="localePath({ name: 'kyc' })">{{ $t("nav_feature_kyc") }}</nuxt-link>
+            <nuxt-link :to="localePath({ name: 'kyc' })">{{
+              $t("nav_feature_kyc")
+            }}</nuxt-link>
           </p>
           <p>
-            <nuxt-link :to="localePath({ name: 'kyb' })">{{ $t("nav_feature_kyb") }}</nuxt-link>
+            <nuxt-link :to="localePath({ name: 'kyb' })">{{
+              $t("nav_feature_kyb")
+            }}</nuxt-link>
           </p>
           <p>
-            <nuxt-link :to="localePath({ name: 'biocheck' })">{{ $t("nav_feature_biocheck") }}</nuxt-link>
+            <nuxt-link :to="localePath({ name: 'biocheck' })">{{
+              $t("nav_feature_biocheck")
+            }}</nuxt-link>
           </p>
           <p>
-            <nuxt-link :to="localePath({ name: 'rules' })">{{ $t("nav_feature_rules") }}</nuxt-link>
+            <nuxt-link :to="localePath({ name: 'rules' })">{{
+              $t("nav_feature_rules")
+            }}</nuxt-link>
           </p>
           <p>
-            <nuxt-link :to="localePath({ name: 'misconduct' })" v-html="$t('nav_feature_misconduct')"></nuxt-link>
+            <nuxt-link
+              :to="localePath({ name: 'misconduct' })"
+              v-html="$t('nav_feature_misconduct')"
+            ></nuxt-link>
           </p>
           <p>
-            <nuxt-link :to="localePath({ name: 'aml' })">{{ $t("nav_feature_aml") }}</nuxt-link>
+            <nuxt-link :to="localePath({ name: 'aml' })">{{
+              $t("nav_feature_aml")
+            }}</nuxt-link>
           </p>
         </div>
         <div class="footer__links">
           <p>
-            <nuxt-link :to="localePath({ name: 'developers' })">{{ $t("global_documentation") }}</nuxt-link>
+            <nuxt-link :to="localePath({ name: 'developers' })">{{
+              $t("global_documentation")
+            }}</nuxt-link>
           </p>
           <p>
             <a href="/legal-notice" rel="nofollow">{{
@@ -57,6 +76,11 @@
             <a href="/cookies" rel="nofollow">{{
               $t("global_legal_cookies")
             }}</a>
+          </p>
+          <p>
+            <nuxt-link :to="localePath({ name: 'faq' })">{{
+              $t("FAQ_title")
+            }}</nuxt-link>
           </p>
         </div>
         <div class="footer__info">
@@ -101,7 +125,6 @@
   </div>
 </template>
 <script>
-
 export default {
   methods: {
     updateLocale(locale) {
