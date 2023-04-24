@@ -1,7 +1,7 @@
 <template>
   <div
-    class="expandable dark"
-    :class="{ expanded }"
+    class="expandable"
+    :class="{ expanded, dark }"
     @click="expanded = !expanded"
   >
     <slot v-if="$slots.image" name="image"></slot>
@@ -17,8 +17,11 @@ export default {
   name: "expandable",
   props: {
     expandedProp: {
-      default: false
-    }
+      default: false,
+    },
+    dark: {
+      default: true,
+    },
   },
   data: function () {
     return {
@@ -27,19 +30,20 @@ export default {
   },
   watch: {
     expanded() {
-      this.checkExpanded()
-    }
+      this.checkExpanded();
+    },
   },
   mounted() {
-    this.checkExpanded()
+    this.checkExpanded();
   },
   methods: {
-    checkExpanded(){
-      if(!this.$refs.body) return
-      if(this.expanded) this.$refs.body.style=`max-height: ${this.$refs.body.scrollHeight}px`
-      else this.$refs.body.style=`max-height: 0px`
-    }
-  }
+    checkExpanded() {
+      if (!this.$refs.body) return;
+      if (this.expanded)
+        this.$refs.body.style = `max-height: ${this.$refs.body.scrollHeight}px`;
+      else this.$refs.body.style = `max-height: 0px`;
+    },
+  },
 };
 </script>
 
