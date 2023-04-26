@@ -13,13 +13,7 @@
         </div>
       </div>
       <div class="claim-info right">
-        <div id="meetzy-engine">
-          <component
-            :is="'script'"
-            src="https://engine.meetzy.io/meetzy.js"
-            token="3dfd0d2hgymu"
-          />
-        </div>
+        <div id="meetzy-engine"></div>
       </div>
     </section>
   </div>
@@ -84,6 +78,7 @@ export default {
       document.dispatchEvent(new CustomEvent("meetzy-refresh", {}));
       document.addEventListener("meetzy-form-submitted", (e) => {
         gtag_report_conversion();
+        window.lintrk("track", { conversion_id: 12492010 });
       });
     },
   },
