@@ -4,16 +4,14 @@
       <div class="claim-info">
         <h2 class="">{{ $t("demo_claim1") }}</h2>
         <div class="bullet-wrapper">
-          <i class="color-primary medium bg fad fa-camera"></i>
           <h4 class="subtitle">{{ $t("demo_claim2") }}</h4>
         </div>
         <div class="bullet-wrapper">
-          <i class="color-primary medium bg fad fa-bolt"></i>
           <h4 class="subtitle">{{ $t("demo_claim3") }}</h4>
         </div>
       </div>
       <div class="claim-info right">
-        <div id="meetzy-engine"></div>
+        <div id="meetzy-engine" />
       </div>
     </section>
   </div>
