@@ -28,8 +28,7 @@
         <span v-html="$t('business_claim1')" />
       </h1>
       <h4 class="subtitle" v-html="$t('business_claim2')" />
-
-      <demo-buttons />
+      <demo-buttons/>
     </div>
     <div class="claim-side-img">
       <img class="phone-svg" src="@/assets/media/phone.svg" alt="device" />
@@ -42,7 +41,6 @@
 </template>
 
 <script>
-import gsap from "gsap";
 import DemoButtons from "@/components/DemoButtons.vue";
 export default {
   components: { DemoButtons },
@@ -68,7 +66,7 @@ export default {
 .claim-side-img
   position: relative
   .phone-svg
-    position: absolute
+    position: relative
     top: -9px
     left: -10px
     z-index: 999
@@ -77,6 +75,8 @@ export default {
   .phone-video
     width: 230px
     border-radius: 30px
+    position: absolute
+    left: 0
 
 .claim-info-wrapper.differences
   display: flex

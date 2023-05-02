@@ -1,15 +1,21 @@
 <template>
   <div class="demo__wrapper">
-    <div class="demo_cta__wrapper">
-      <a target="_blank" href="https://dashboard.getsilt.com/welcome">
-        <button class="primary icon">
-          {{ $t("btn_cta_demo") }}<i class="simple-arrow"></i>
-        </button>
-      </a>
-      <a target="_blank" href="https://app.meetzy.io/preview/3dfd0d2hgymu">
-        <button class="secondary">{{ $t("btn_cta_book_demo") }}</button>
-      </a>
-    </div>
+    <div
+      v-if="$route.query['campaign-landing'] === 'true'"
+      id="meetzy-engine"
+    />
+    <template v-else>
+      <div class="demo_cta__wrapper">
+        <a target="_blank" href="https://dashboard.getsilt.com/welcome">
+          <button class="primary icon">
+            {{ $t("btn_cta_demo") }}<i class="simple-arrow"></i>
+          </button>
+        </a>
+        <nuxt-link :to="localePath({ name: 'demo' })">
+          <button class="secondary">{{ $t("btn_cta_book_demo") }}</button>
+        </nuxt-link>
+      </div>
+    </template>
     <div class="hint_benefit">
       <i class="fad fa-check-circle"></i>{{ $t("global_hint_benefits") }}
     </div>
@@ -22,6 +28,20 @@ export default {
     dark: {
       default: false,
     },
+  },
+  methods: {
+    loadMeetzy() {
+      if (this.$route.query["campaign-landing"] === "true") {
+        document.dispatchEvent(new CustomEvent("meetzy-refresh", {}));
+        document.addEventListener("meetzy-form-submitted", (e) => {
+          gtag_report_conversion();
+          window.lintrk("track", { conversion_id: 12492010 });
+        });
+      }
+    },
+  },
+  mounted() {
+    this.loadMeetzy();
   },
 };
 </script>

@@ -65,7 +65,6 @@ export default {
    ** Nuxt.js modules
    */
   buildModules: [
-    "nuxt-trailingslash-module",
     [
       "@nuxtjs/i18n",
       {
@@ -112,6 +111,7 @@ export default {
     routes: getRoutesForSitemap(),
     exclude: ['/**'],
     gzip: true,
+    trailingSlash: true,
     sitemaps: [
       { path: "/sitemap-en.xml", routes: getRoutesForSitemap(["en"]), exclude: ['/**'], gzip: true },
       { path: "/sitemap-es.xml", routes: getRoutesForSitemap(["es"]), exclude: ['/**'], gzip: true }
@@ -126,7 +126,7 @@ export default {
 
   ...routerBase,
   router: {
-    trailingSlash: false,
+    trailingSlash: true,
     middleware: "redirects",
     // extendRoutes(routes, resolve) {
     //   routes.push({

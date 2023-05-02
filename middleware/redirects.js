@@ -1,5 +1,13 @@
 export default function({ app, params, route, redirect }) {
   // hypothetical set of all supported locales
+  if (route.path !== '/' && !route.path.endsWith('/')) {
+    let nextPath = route.path + "/"
+    if(route.fullPath.indexOf('?')>-1){
+      nextPath = route.fullPath.replace("?", "/?")
+    }
+    return redirect("301", nextPath);
+  }
+  
   if (route.path=== "/terms") {
     redirect("301", "/legal-notice");
   }

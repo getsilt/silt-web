@@ -4,22 +4,14 @@
       <div class="claim-info">
         <h2 class="">{{ $t("demo_claim1") }}</h2>
         <div class="bullet-wrapper">
-          <i class="color-primary medium bg fad fa-camera"></i>
           <h4 class="subtitle">{{ $t("demo_claim2") }}</h4>
         </div>
         <div class="bullet-wrapper">
-          <i class="color-primary medium bg fad fa-bolt"></i>
           <h4 class="subtitle">{{ $t("demo_claim3") }}</h4>
         </div>
       </div>
       <div class="claim-info right">
-        <div id="meetzy-engine">
-          <component
-            :is="'script'"
-            src="https://engine.meetzy.io/meetzy.js"
-            token="3dfd0d2hgymu"
-          />
-        </div>
+        <div id="meetzy-engine" />
       </div>
     </section>
   </div>
@@ -84,6 +76,7 @@ export default {
       document.dispatchEvent(new CustomEvent("meetzy-refresh", {}));
       document.addEventListener("meetzy-form-submitted", (e) => {
         gtag_report_conversion();
+        window.lintrk("track", { conversion_id: 12492010 });
       });
     },
   },
