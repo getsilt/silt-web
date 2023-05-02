@@ -54,7 +54,7 @@ export default {
 .claim-side-img
   position: relative
   .phone-svg
-    position: absolute
+    position: relative
     top: -9px
     left: -10px
     z-index: 999
@@ -63,4 +63,6 @@ export default {
   .phone-video
     width: 230px
     border-radius: 30px
+    position: absolute
+    left: 0
 </style>
