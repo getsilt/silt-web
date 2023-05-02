@@ -111,7 +111,7 @@ export default {
     routes: getRoutesForSitemap(),
     exclude: ['/**'],
     gzip: true,
-    trailingSlash: true,
+    trailingSlash: false,
     sitemaps: [
       { path: "/sitemap-en.xml", routes: getRoutesForSitemap(["en"]), exclude: ['/**'], gzip: true },
       { path: "/sitemap-es.xml", routes: getRoutesForSitemap(["es"]), exclude: ['/**'], gzip: true }
@@ -126,7 +126,8 @@ export default {
 
   ...routerBase,
   router: {
-    trailingSlash: true,
+    parsePages: false,
+    trailingSlash: false,
     middleware: "redirects",
     // extendRoutes(routes, resolve) {
     //   routes.push({
