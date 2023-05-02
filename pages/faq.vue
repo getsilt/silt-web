@@ -158,7 +158,9 @@ export default {
     };
   },
   created() {
-    this.isDark = localStorage.getItem("dark-theme") === "true";
+    if (process.client) {
+      this.isDark = localStorage.getItem("dark-theme") === "true";
+    }
   },
   mounted() {
     this.startFirstAnimationScene(this);

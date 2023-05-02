@@ -93,8 +93,10 @@ export default {
     };
   },
   mounted() {
-    this.isDark = localStorage.getItem("dark-theme") === "true";
-    this.loadTheme();
+    if (process.client) {
+      this.isDark = localStorage.getItem("dark-theme") === "true";
+      this.loadTheme();
+    }
   },
   methods: {
     loadTheme() {
@@ -120,9 +122,11 @@ export default {
       }
     },
     toggleTheme() {
-      this.isDark = !this.isDark;
-      localStorage.setItem("dark-theme", this.isDark);
-      this.loadTheme();
+      if (process.client) {
+        this.isDark = !this.isDark;
+        localStorage.setItem("dark-theme", this.isDark);
+        this.loadTheme();
+      }
     },
   },
 };
