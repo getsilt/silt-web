@@ -28,11 +28,7 @@
         <span v-html="$t('business_claim1')" />
       </h1>
       <h4 class="subtitle" v-html="$t('business_claim2')" />
-      <div
-        v-if="$route.query['campaign-landing'] === 'true'"
-        id="meetzy-engine"
-      />
-      <demo-buttons v-else />
+      <demo-buttons/>
     </div>
     <div class="claim-side-img">
       <img class="phone-svg" src="@/assets/media/phone.svg" alt="device" />
@@ -45,7 +41,6 @@
 </template>
 
 <script>
-import gsap from "gsap";
 import DemoButtons from "@/components/DemoButtons.vue";
 export default {
   components: { DemoButtons },
@@ -54,21 +49,9 @@ export default {
       email: "hello@getsilt.com",
     };
   },
-  mounted() {
-    this.meetzy();
-  },
   methods: {
     getEmail() {
       return this.email;
-    },
-    meetzy() {
-      if (this.$route.query["campaign-landing"] === "true") {
-        document.dispatchEvent(new CustomEvent("meetzy-refresh", {}));
-        document.addEventListener("meetzy-form-submitted", (e) => {
-          gtag_report_conversion();
-          window.lintrk("track", { conversion_id: 12492010 });
-        });
-      }
     },
   },
 };

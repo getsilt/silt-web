@@ -25,14 +25,14 @@
 In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
 <script>
 function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
+  var callback = function() {
+    if (typeof url != "undefined") {
       window.location = url;
     }
   };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-352683225/78NdCOjLjcgDENmJlqgB',
-      'event_callback': callback
+  gtag("event", "conversion", {
+    send_to: "AW-352683225/78NdCOjLjcgDENmJlqgB",
+    event_callback: callback,
   });
   return false;
 }
@@ -78,7 +78,7 @@ export default {
           userLang,
           token: token,
         });
-        gtag_report_conversion()
+        gtag_report_conversion();
         this.status = "success";
       } catch (error) {
         this.status = "error";
