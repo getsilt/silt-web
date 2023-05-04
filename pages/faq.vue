@@ -13,9 +13,7 @@
           :dark="isDark"
         >
           <h6 v-html="$t(faq.title)" slot="title" />
-          <div slot="body">
-            {{ $t(faq.body) }}
-          </div>
+          <div slot="body" v-html="$t(faq.body)" />
         </expandable>
       </div>
       <h3 class="faq-headers">{{ $t("FAQ_subtitle_eID_and_integration") }}</h3>
@@ -27,9 +25,7 @@
           :dark="isDark"
         >
           <h6 v-html="$t(faq.title)" slot="title" />
-          <div slot="body">
-            {{ $t(faq.body) }}
-          </div>
+          <div slot="body" v-html="$t(faq.body)" />
         </expandable>
       </div>
       <h3 class="faq-headers">{{ $t("FAQ_subtitle_integration") }}</h3>
@@ -41,9 +37,7 @@
           :dark="isDark"
         >
           <h6 v-html="$t(faq.title)" slot="title" />
-          <div slot="body">
-            {{ $t(faq.body) }}
-          </div>
+          <div slot="body" v-html="$t(faq.body)" />
         </expandable>
       </div>
     </div>
