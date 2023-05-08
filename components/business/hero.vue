@@ -45,12 +45,10 @@
         />
         <div class="video-demo-animation-copies-wrapper">
           <p>{{ $t("video_check_title") }}</p>
-          <div class="video-demo-animation">
-            <p
-              class="video-demo-animation-text"
-              v-html="$t(`${currentVideoVerificationDemoCopy}`)"
-            />
-          </div>
+          <p
+            class="video-demo-animation-text"
+            v-html="$t(`${currentVideoVerificationDemoCopy}`)"
+          />
         </div>
       </div>
     </div>
@@ -76,7 +74,7 @@ export default {
         "video_check_liveness",
         "video_check_glare",
         "video_check_spoof",
-        "video_check_face",
+        "video_check_liveness",
       ],
       videoVerificationDemoHeaders: [
         "video_picture_front",
@@ -146,7 +144,7 @@ export default {
         this.currentVideoVerificationDemoCopyIndex =
           (this.currentVideoVerificationDemoCopyIndex + 1) %
           this.videoVerificationDemoCopies.length;
-      }, 1000);
+      }, 2000);
     },
   },
   mounted() {
@@ -175,42 +173,22 @@ export default {
   h6
     margin-bottom: 0
 
+  @keyframes slide
+    0%
+      transform: translateX(100%)
+      opacity: 0
+    50%
+      transform: translateX(0)
+      opacity: 1
+
   .video-demo-animation-copies-wrapper
     display: flex
-  .video-demo-animation
-    white-space: nowrap
-    overflow: hidden
-    animation: typing 1s steps(30) infinite
-    margin-left: 5px
 
     .video-demo-animation-text
-      display: inline-block
-      vertical-align: middle
-      opacity: 0
-      border-right: 0.07em solid black
-
-    @keyframes typing
-      from
-        width: 0
-      to
-        width: 100%
-
-    @keyframes blink
-      0%
-        border-color: black
-      75%
-        border-color: transparent
-      100%
-        border-color: black
-
-    .video-demo-animation-text
-      animation: fadeIn 1s ease-in-out 2s forwards, blink 0.5s step-end infinite
-
-    @keyframes fadeIn
-      from
-        opacity: 0
-      to
-        opacity: 1
+      margin-left: 8px
+      white-space: nowrap
+      overflow: hidden
+      animation: slide 2s infinite
 
 .claim-side-img
   position: relative
