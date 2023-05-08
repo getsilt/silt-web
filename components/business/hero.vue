@@ -91,8 +91,16 @@ export default {
   },
   watch: {
     startAnimation() {
-      this.startVideoVerificationDemoAnimationHeaders();
-      this.startVideoVerificationDemoAnimationCopies();
+      if (this.startAnimation) {
+        clearInterval(this.intervalIdCopies);
+        clearInterval(this.intervalIdHeaders);
+
+        this.currentVideoVerificationDemoCopyIndex = 0;
+        this.currentVideoVerificationDemoHeaderIndex = 0;
+
+        this.startVideoVerificationDemoAnimationHeaders();
+        this.startVideoVerificationDemoAnimationCopies();
+      }
     },
   },
   computed: {
@@ -146,6 +154,19 @@ export default {
           this.videoVerificationDemoCopies.length;
       }, 2000);
     },
+    restartAnimation() {
+      clearInterval(this.intervalIdAnimation);
+
+      this.intervalIdAnimation = setInterval(() => {
+        setTimeout(() => {
+          this.startAnimation = true;
+          this.startFirstAnimationScene(this);
+        }, 6000);
+        setTimeout(() => {
+          this.startAnimation = false;
+        }, 28000);
+      }, 36000);
+    },
   },
   mounted() {
     setTimeout(() => {
@@ -155,6 +176,7 @@ export default {
     setTimeout(() => {
       this.startAnimation = false;
     }, 28000);
+    this.restartAnimation();
   },
   beforeUnmount() {
     clearInterval(this.intervalIdCopies);
@@ -170,16 +192,25 @@ export default {
   flex-direction: column
   width: 300px
 
-  h6
-    margin-bottom: 0
-
   @keyframes slide
     0%
       transform: translateX(100%)
       opacity: 0
-    50%
+    30%
       transform: translateX(0)
       opacity: 1
+
+  @keyframes header-slide
+    0%
+      transform: translateY(-100%)
+      opacity: 0
+    15%
+      transform: translateY(0)
+      opacity: 1
+
+  h6
+    margin-bottom: 0
+    animation: header-slide 8s infinite
 
   .video-demo-animation-copies-wrapper
     display: flex
