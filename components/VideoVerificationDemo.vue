@@ -15,10 +15,13 @@
         />
         <div class="video-demo-animation-copies-wrapper">
           <p>{{ $t("video_check_title") }}</p>
-          <p
-            class="video-demo-animation-text"
-            v-html="$t(`${currentVideoVerificationDemoCopy}`)"
-          />
+          <TransitionGroup name="offsetY">
+            <p
+              :key="currentVideoVerificationDemoCopy"
+              class="video-demo-animation-text"
+              v-html="$t(`${currentVideoVerificationDemoCopy}`)"
+            />
+          </TransitionGroup>
         </div>
       </div>
     </div>
@@ -161,36 +164,42 @@ export default {
   display: flex
   flex-direction: column
   width: 300px
+  min-height: 150px
   padding: $spacing-md
 
-  @keyframes slide
-    0%
-      transform: translateX(100%)
-      opacity: 0
-    30%
-      transform: translateX(0)
-      opacity: 1
+  .offsetY
+    &-move
+      transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out
 
-  @keyframes header-slide
-    0%
-      transform: translateY(-100%)
+    &-leave-active
+      transition: opacity 0.4s linear, transform 0.4s cubic-bezier(.5, 0, .7, .4)
+      transition-delay: calc(0.1s * (2 - 1))
+
+    &-enter-active
+      transition: opacity 0.5s linear, transform 0.5s cubic-bezier(.5, 1, 1, 1)
+      transition-delay: 1s
+
+    &-enter,
+    &-leave-to
       opacity: 0
-    15%
-      transform: translateY(0)
-      opacity: 1
+
+    &-enter
+      transform: translateY(-0.2em)
+    &-leave-to
+      transform: translateY(-0.2em)
 
   h6
     margin-bottom: 0
-    animation: header-slide 8s infinite
 
   .video-demo-animation-copies-wrapper
     display: flex
+    margin-top: 10px
+
+    p
+      margin: 0
 
     .video-demo-animation-text
-      margin-left: 8px
-      white-space: nowrap
-      overflow: hidden
-      animation: slide 2s infinite
+      margin: 0 8px
 
 .phone-video-wrapper
   position: relative
