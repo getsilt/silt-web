@@ -186,7 +186,7 @@ export default {
     &-enter
       transform: translateX(-0.2em)
     &-leave-to
-      transform: translateX(-0.2em)
+      transform: translateX(1em)
 
   h6
     margin-bottom: 0
