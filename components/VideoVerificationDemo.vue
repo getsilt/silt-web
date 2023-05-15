@@ -15,7 +15,7 @@
         />
         <div class="video-demo-animation-copies-wrapper">
           <p>{{ $t("video_check_title") }}</p>
-          <TransitionGroup name="offsetY">
+          <TransitionGroup name="offsetX">
             <p
               :key="currentVideoVerificationDemoCopy"
               class="video-demo-animation-text"
@@ -105,7 +105,7 @@ export default {
         .from("#video-demo-wrapper .video-demo-copies", {
           duration: 1,
           scale: 1,
-          y: 75,
+          x: 75,
           rotateY: 0,
           opacity: 0,
           stagger: 0.2,
@@ -167,7 +167,7 @@ export default {
   min-height: 150px
   padding: $spacing-md
 
-  .offsetY
+  .offsetX
     &-move
       transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out
 
@@ -184,9 +184,9 @@ export default {
       opacity: 0
 
     &-enter
-      transform: translateY(-0.2em)
+      transform: translateX(-0.2em)
     &-leave-to
-      transform: translateY(-0.2em)
+      transform: translateX(-0.2em)
 
   h6
     margin-bottom: 0
