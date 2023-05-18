@@ -19,7 +19,7 @@
           :to="localePath({ name: 'rules' })"
           @click.native="$emit('onCloseNav')"
         >
-          <i class="fad fa-lg fa-pencil-ruler scan-icon" />
+          <i class="fad fa-lg fa-code-branch fa-rotate-90-custom" />
           <div>
             <h6 class="title_menu">{{ $t("nav_feature_rules") }}</h6>
             <p class="subtitle_menu">
