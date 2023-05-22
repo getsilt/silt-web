@@ -28,7 +28,6 @@ export default {
   components: { VTab, Card },
   data() {
     return {
-      activeCustomizeTab: "default",
       features: [
         { name: "KYC", isActive: false, translationKey: "nav_feature_kyc" },
         { name: "KYB", isActive: false, translationKey: "nav_feature_kyb" },
