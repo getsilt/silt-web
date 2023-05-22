@@ -1,67 +1,24 @@
 <template>
-  <!-- Carrousel Tabs-->
   <div class="cards-wrapper_flex" id="features">
     <div class="tabs-wrapper tab-md tab-squared vertical text-left">
-      <div class="tab-wrapper">
+      <div
+        class="tab-wrapper"
+        v-for="(feature, index) in features"
+        :key="index"
+        @click="updateCalculator(feature.name)"
+      >
         <v-tab
-          activeTabName="KYC"
-          @onActiveTabChange="featuredTab = $event"
-          :isSelected="featuredTab"
+          :activeTabName="feature.name"
+          :class="isFeatureActive(feature.name) ? 'active' : ''"
+          :isSelected="isFeatureActive(feature.name)"
         >
-          <span>{{ $t("nav_feature_kyc") }}</span>
-        </v-tab>
-      </div>
-      <div class="tab-wrapper">
-        <v-tab
-          activeTabName="KYB"
-          @onActiveTabChange="featuredTab = $event"
-          :isSelected="featuredTab"
-        >
-          <span>{{ $t("nav_feature_kyb") }}</span>
-        </v-tab>
-      </div>
-      <div class="tab-wrapper">
-        <v-tab
-          activeTabName="OCR"
-          @onActiveTabChange="featuredTab = $event"
-          :isSelected="featuredTab"
-        >
-          <span>{{ $t("nav_feature_ocr") }}</span>
-        </v-tab>
-      </div>
-      <div class="tab-wrapper">
-        <v-tab
-          activeTabName="PEP"
-          @onActiveTabChange="featuredTab = $event"
-          :isSelected="featuredTab"
-        >
-          <span>{{ $t("nav_feature_pep") }}</span>
-        </v-tab>
-      </div>
-      <div class="tab-wrapper">
-        <v-tab
-          activeTabName="AML"
-          @onActiveTabChange="featuredTab = $event"
-          :isSelected="featuredTab"
-        >
-          <span>{{ $t("nav_feature_aml") }}</span>
-        </v-tab>
-      </div>
-      <div class="tab-wrapper">
-        <v-tab
-          activeTabName="biocheck"
-          @onActiveTabChange="featuredTab = $event"
-          :isSelected="featuredTab"
-        >
-          <span>{{ $t("nav_feature_biocheck") }}</span>
+          <span>{{ $t(feature.translationKey) }}</span>
         </v-tab>
       </div>
     </div>
-
     <div class="cards-carroussel"></div>
   </div>
 </template>
-
 <script>
 import gsap from "gsap";
 import VTab from "@/components/VTab.vue";
@@ -71,12 +28,23 @@ export default {
   components: { VTab, Card },
   data() {
     return {
-      featuredTab: "KYC",
       activeCustomizeTab: "default",
+      features: [
+        { name: "KYC", isActive: false, translationKey: "nav_feature_kyc" },
+        { name: "KYB", isActive: false, translationKey: "nav_feature_kyb" },
+        { name: "OCR", isActive: false, translationKey: "nav_feature_ocr" },
+        { name: "PEP", isActive: false, translationKey: "nav_feature_pep" },
+        { name: "AML", isActive: false, translationKey: "nav_feature_aml" },
+        {
+          name: "biocheck",
+          isActive: false,
+          translationKey: "nav_feature_biocheck",
+        },
+      ],
     };
   },
   mounted() {
-    this.startFirstAnimationScene(this);
+    this.startFirstAnimationScene();
   },
   methods: {
     startFirstAnimationScene() {
@@ -98,6 +66,16 @@ export default {
           stagger: 0.2,
           ease: "power2.out",
         });
+    },
+    updateCalculator(featureName) {
+      const feature = this.features.find((f) => f.name === featureName);
+      if (feature) {
+        feature.isActive = !feature.isActive;
+      }
+    },
+    isFeatureActive(featureName) {
+      const feature = this.features.find((f) => f.name === featureName);
+      return feature ? feature.isActive : false;
     },
   },
 };
