@@ -45,16 +45,39 @@
         <demo-buttons class="vertical" />
       </div>
     </div>
-    <PricingTable />
+    <div class="tabs-wrapper tab-md tab-squared">
+      <div class="tab-wrapper">
+        <v-tab
+          activeTabName="calculator"
+          @onActiveTabChange="activeTabName = $event"
+          :isSelected="activeTabName"
+        >
+          <span>{{ $t("calculator_calculator_tab_title") }}</span>
+        </v-tab>
+      </div>
+      <div class="tab-wrapper">
+        <v-tab
+          activeTabName="pricing"
+          @onActiveTabChange="activeTabName = $event"
+          :isSelected="activeTabName"
+        >
+          <span>{{ $t("calculator_price_list_tab_title") }}</span>
+        </v-tab>
+      </div>
+    </div>
+    <PricingTable v-if="activeTabName === 'pricing'" />
+    <PricingCalculator v-if="activeTabName === 'calculator'" />
   </div>
 </template>
 <script>
 import DemoButtons from "../components/DemoButtons.vue";
+import PricingCalculator from "../components/pricing/PricingCalculator.vue";
+import VTab from "@/components/VTab.vue";
 import PricingTable from "../components/pricing/PricingTable.vue";
 // Animate on scroll
 // var controllerHolder;
 export default {
-  components: { DemoButtons, PricingTable },
+  components: { DemoButtons, PricingTable, PricingCalculator, VTab },
   head() {
     const i18nSeo = this.$nuxtI18nHead();
     return {
@@ -86,6 +109,7 @@ export default {
   data() {
     return {
       email: "hello@getsilt.com",
+      activeTabName: "calculator",
       features: [
         {
           title: "business_highlights_autoverification_title",
@@ -188,4 +212,12 @@ export default {
 .demo_cta__wrapper
   a
     margin: $spacing-sm
+
+.tabs-wrapper
+  justify-content: center
+  margin-bottom: $spacing-lg
+  .tab-wrapper:last-child
+    margin-right: 0
+  .tab-wrapper
+    margin-right: $spacing-md
 </style>
