@@ -16,16 +16,27 @@
         </v-tab>
       </div>
     </div>
-    <div class="cards-carroussel"></div>
+    <div class="cards-carroussel">
+      <div class="card">
+        <PriceCalculator
+          :hasAML="priceCalculatorProps.hasAML"
+          :hasBiocheck="priceCalculatorProps.hasBiocheck"
+          :hasKYB="priceCalculatorProps.hasKYB"
+          :hasKYC="priceCalculatorProps.hasKYC"
+          :hasOCR="priceCalculatorProps.hasOCR"
+          :hasPEP="priceCalculatorProps.hasPEP"
+        />
+      </div>
+    </div>
   </div>
 </template>
 <script>
 import gsap from "gsap";
 import VTab from "@/components/VTab.vue";
-import Card from "@/components/Card.vue";
+import PriceCalculator from "./PriceCalculator.vue";
 
 export default {
-  components: { VTab, Card },
+  components: { VTab, PriceCalculator },
   data() {
     return {
       features: [
@@ -40,6 +51,14 @@ export default {
           translationKey: "nav_feature_biocheck",
         },
       ],
+      priceCalculatorProps: {
+        hasAML: false,
+        hasKYC: false,
+        hasKYB: false,
+        hasOCR: false,
+        hasPEP: false,
+        hasBiocheck: false,
+      },
     };
   },
   mounted() {
@@ -70,6 +89,20 @@ export default {
       const feature = this.features.find((f) => f.name === featureName);
       if (feature) {
         feature.isActive = !feature.isActive;
+
+        const propertyMap = {
+          KYC: "hasKYC",
+          KYB: "hasKYB",
+          OCR: "hasOCR",
+          PEP: "hasPEP",
+          AML: "hasAML",
+          biocheck: "hasBiocheck",
+        };
+
+        if (propertyMap.hasOwnProperty(featureName)) {
+          const property = propertyMap[featureName];
+          this.priceCalculatorProps[property] = feature.isActive;
+        }
       }
     },
     isFeatureActive(featureName) {
@@ -85,12 +118,18 @@ export default {
 
 @media (max-width: 768px)
 
+.cards-wrapper_flex
+  justify-content: center
+  align-items: center
+
 .tabs-wrapper.vertical
-    margin-right: $spacing-md
-    .tab
-        margin-bottom: $spacing-md
+  margin-right: $spacing-md
+  .tab
+    margin-bottom: $spacing-sm
 
 .cards-carroussel
-    flex: 1 1
-    width: -webkit-fill-available
+  flex: 1 1
+  width: -webkit-fill-available
+  .card
+    background: transparent
 </style>
