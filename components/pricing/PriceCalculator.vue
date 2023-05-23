@@ -1,151 +1,181 @@
 <template>
-  <div class="context">
-    <div class="price__wrapper">
-      <div class="card">
-        <table>
-          <tr v-if="hasKYC" class="price__service">
-            <td>{{ $t("price_per_verification_ID") }}</td>
-            <td>
-              {{
-                $t("price_per_verification_prices_1", {
-                  amountLow: priceTableKYC[priceTableKYC.length - 1],
-                  amountUp: priceTableKYC[1],
-                })
-              }}
-            </td>
-          </tr>
-          <tr v-if="hasKYB" class="price__service">
-            <td>{{ $t("price_per_verification_KYB") }}</td>
-            <td>
-              {{
-                $t("price_per_verification_prices_1", {
-                  amountLow: priceTableKYB[priceTableKYB.length - 1],
-                  amountUp: priceTableKYB[1],
-                })
-              }}
-            </td>
-          </tr>
-          <tr v-if="hasOCR" class="price__service">
-            <td>{{ $t("price_per_verification_OCR") }}</td>
-            <td>
-              {{
-                $t("price_per_verification_prices_1", {
-                  amountLow: priceTableOCR[priceTableOCR.length - 1],
-                  amountUp: priceTableOCR[0],
-                })
-              }}
-            </td>
-          </tr>
-          <tr v-if="hasPEP" class="price__service">
-            <td>{{ $t("price_per_verification_PEP") }}</td>
-            <td>
-              {{
-                $t("price_per_verification_prices_1", {
-                  amountLow: priceTableAMLPEP[priceTableAMLPEP.length - 1],
-                  amountUp: priceTableAMLPEP[0],
-                })
-              }}
-            </td>
-          </tr>
-          <tr v-if="hasAML" class="price__service">
-            <td>{{ $t("price_per_verification_AML") }}</td>
-            <td>
-              {{
-                $t("price_per_verification_prices_1", {
-                  amountLow: priceTableAMLPEP[priceTableAMLPEP.length - 1],
-                  amountUp: priceTableAMLPEP[0],
-                })
-              }}
-            </td>
-          </tr>
-          <tr v-if="hasBiocheck" class="price__service">
-            <td>{{ $t("price_per_verification_biocheck") }}</td>
-            <td>
-              {{
-                $t("price_per_verification_prices_1", {
-                  amountLow: priceTableBiocheck[priceTableBiocheck.length - 1],
-                  amountUp: priceTableBiocheck[0],
-                })
-              }}
-            </td>
-          </tr>
-          <tr v-if="totalPrice" class="price__total">
-            <td>{{ $t("price_per_verification_total_description") }}</td>
-            <td>
-              {{
-                $t("price_per_verification_prices_1", {
-                  amountLow: totalPrice.min,
-                  amountUp: totalPrice.max,
-                })
-              }}
-            </td>
-          </tr>
-        </table>
+  <div class="price-grid">
+    <div
+      v-if="hasKYC || hasKYB || hasAML || hasOCR || hasBiocheck"
+      class="card price_card_1"
+    >
+      <div v-if="hasKYC" class="price-card-description">
+        <h6>{{ $t("price_per_verification_KYC") }}</h6>
+        <p>
+          {{
+            $t("price_per_verification_prices_1", {
+              amountLow: formatCurrency(
+                priceTableKYC[priceTableKYC.length - 1]
+              ),
+              amountUp: formatCurrency(priceTableKYC[1]),
+            })
+          }}
+        </p>
       </div>
-      <div class="card">
-        <table>
-          <tr class="price__service">
-            <td>{{ $t("price_per_verification_monthly") }}</td>
-            <td>
-              <v-text-field
-                v-model="priceEstimateVerifications"
-                placeholder="Ex: 3200"
-                class="small text-right"
-              />
-            </td>
-          </tr>
-          <tr v-if="hasKYC" class="price__service">
-            <td>{{ $t("price_per_verification_ID") }}</td>
-            <td>
-              {{
-                $t("price_per_verification_prices_2", {
-                  amount: priceSplit.kyc,
-                })
-              }}
-            </td>
-          </tr>
-          <tr v-if="hasKYB" class="price__service">
-            <td>+ Company/freelance verification (KYB)</td>
-            <td>
-              {{
-                $t("price_per_verification_prices_2", {
-                  amount: priceSplit.kyb,
-                })
-              }}
-            </td>
-          </tr>
-          <tr v-if="hasAML" class="price__service">
-            <td>{{ $t("price_per_verification_AML") }}</td>
-            <td>
-              {{
-                $t("price_per_verification_prices_2", {
-                  amount: priceSplit.aml,
-                })
-              }}
-            </td>
-          </tr>
-          <tr v-if="hasPEP" class="price__service">
-            <td>{{ $t("price_per_verification_PEP") }}</td>
-            <td>
-              {{
-                $t("price_per_verification_prices_2", {
-                  amount: priceSplit.pep,
-                })
-              }}
-            </td>
-          </tr>
-          <tr class="price__total">
-            <td>{{ $t("price_per_verification_total_calculation") }}</td>
-            <td>
-              {{
-                $t("price_per_verification_prices_2", {
-                  amount: priceEstimateCost,
-                })
-              }}
-            </td>
-          </tr>
-        </table>
+      <div v-if="hasKYB" class="price-card-description">
+        <h6>{{ $t("price_per_verification_KYB") }}</h6>
+        <p>
+          {{
+            $t("price_per_verification_prices_1", {
+              amountLow: formatCurrency(
+                priceTableKYB[priceTableKYB.length - 1]
+              ),
+              amountUp: formatCurrency(priceTableKYB[1]),
+            })
+          }}
+        </p>
       </div>
+      <div v-if="hasOCR" class="price-card-description">
+        <h6>{{ $t("price_per_verification_OCR") }}</h6>
+        <p>
+          {{
+            $t("price_per_verification_prices_1", {
+              amountLow: formatCurrency(
+                priceTableOCR[priceTableOCR.length - 1]
+              ),
+              amountUp: formatCurrency(priceTableOCR[1]),
+            })
+          }}
+        </p>
+      </div>
+      <div v-if="hasPEP" class="price-card-description">
+        <h6>{{ $t("price_per_verification_PEP") }}</h6>
+        <p>
+          {{
+            $t("price_per_verification_prices_1", {
+              amountLow: formatCurrency(
+                priceTableAMLPEP[priceTableAMLPEP.length - 1]
+              ),
+              amountUp: formatCurrency(priceTableAMLPEP[1]),
+            })
+          }}
+        </p>
+      </div>
+      <div v-if="hasAML" class="price-card-description">
+        <h6>{{ $t("price_per_verification_AML") }}</h6>
+        <p>
+          {{
+            $t("price_per_verification_prices_1", {
+              amountLow: formatCurrency(
+                priceTableAMLPEP[priceTableAMLPEP.length - 1]
+              ),
+              amountUp: formatCurrency(priceTableAMLPEP[1]),
+            })
+          }}
+        </p>
+      </div>
+      <div v-if="hasBiocheck" class="price-card-description">
+        <h6>{{ $t("price_per_verification_biocheck") }}</h6>
+        <p>
+          {{
+            $t("price_per_verification_prices_1", {
+              amountLow: formatCurrency(
+                priceTableBiocheck[priceTableBiocheck.length - 1]
+              ),
+              amountUp: formatCurrency(priceTableBiocheck[1]),
+            })
+          }}
+        </p>
+      </div>
+    </div>
+    <div v-if="totalPrice" class="card price_card_2">
+      <h6>{{ $t("price_per_verification_total_description") }}</h6>
+      <p>
+        {{
+          $t("price_per_verification_prices_1", {
+            amountLow: totalPrice.min,
+            amountUp: totalPrice.max,
+          })
+        }}
+      </p>
+    </div>
+    <div
+      v-if="hasKYC || hasKYB || hasAML || hasOCR || hasBiocheck"
+      class="card price_card_3"
+    >
+      <div v-if="hasKYC" class="price-card-description">
+        <h6>{{ $t("price_per_verification_KYC") }}</h6>
+        <p>
+          {{
+            $t("price_per_verification_prices_2", {
+              amount: formatCurrency(priceSplit.kyc),
+            })
+          }}
+        </p>
+      </div>
+      <div v-if="hasKYB" class="price-card-description">
+        <h6>{{ $t("price_per_verification_KYB") }}</h6>
+        <p>
+          {{
+            $t("price_per_verification_prices_2", {
+              amount: formatCurrency(priceSplit.kyb),
+            })
+          }}
+        </p>
+      </div>
+      <div v-if="hasOCR" class="price-card-description">
+        <h6>{{ $t("price_per_verification_OCR") }}</h6>
+        <p>
+          {{
+            $t("price_per_verification_prices_2", {
+              amount: formatCurrency(priceSplit.ocr),
+            })
+          }}
+        </p>
+      </div>
+      <div v-if="hasPEP" class="price-card-description">
+        <h6>{{ $t("price_per_verification_PEP") }}</h6>
+        <p>
+          {{
+            $t("price_per_verification_prices_2", {
+              amount: formatCurrency(priceSplit.pep),
+            })
+          }}
+        </p>
+      </div>
+      <div v-if="hasAML" class="price-card-description">
+        <h6>{{ $t("price_per_verification_AML") }}</h6>
+        <p>
+          {{
+            $t("price_per_verification_prices_2", {
+              amount: formatCurrency(priceSplit.aml),
+            })
+          }}
+        </p>
+      </div>
+      <div v-if="hasBiocheck" class="price-card-description">
+        <h6>{{ $t("price_per_verification_biocheck") }}</h6>
+        <p>
+          {{
+            $t("price_per_verification_prices_2", {
+              amount: formatCurrency(priceSplit.biocheck),
+            })
+          }}
+        </p>
+      </div>
+    </div>
+    <div class="card price_card_4">
+      <h6>{{ $t("price_per_verification_total_calculation") }}</h6>
+      <p>
+        {{
+          $t("price_per_verification_prices_2", {
+            amount: priceEstimateCost,
+          })
+        }}
+      </p>
+    </div>
+    <div class="card price_card_5">
+      <h6>{{ $t("price_per_verification_monthly") }}</h6>
+      <input
+        v-model="priceEstimateVerifications"
+        placeholder="Ex: 3200"
+        class="v-input small text-right"
+      />
     </div>
   </div>
 </template>
@@ -189,22 +219,29 @@ export default Vue.extend({
         maxPrice += this.priceTableKYB[0];
         minPrice += this.priceTableKYB[this.priceTableKYB.length - 1];
       }
-      if (this.hasAML) {
-        maxPrice += this.priceAML;
-        minPrice += this.priceAML;
+      if (this.hasAML || this.hasPEP) {
+        maxPrice += this.priceTableAMLPEP[0];
+        minPrice += this.priceTableAMLPEP[this.priceTableAMLPEP.length - 1];
       }
-      if (this.hasPEP) {
-        maxPrice += this.pricePEP;
-        minPrice += this.pricePEP;
+      if (this.hasBiocheck) {
+        maxPrice += this.priceTableBiocheck[0];
+        minPrice += this.priceTableBiocheck[this.priceTableBiocheck.length - 1];
       }
-      return { max: maxPrice, min: minPrice };
+      if (this.hasOCR) {
+        maxPrice += this.priceTableOCR[0];
+        minPrice += this.priceTableOCR[this.priceTableOCR.length - 1];
+      }
+      return {
+        max: this.formatCurrency(maxPrice),
+        min: this.formatCurrency(minPrice),
+      };
     },
 
     priceEstimateCost() {
       if (!this.priceEstimateVerifications) return 0;
       let totalPrice = 0;
       const priceEstimate = this.priceEstimateVerifications || 0;
-      this.priceSplit = { kyc: 0, aml: 0, pep: 0, kyb: 0 };
+      this.priceSplit = { kyc: 0, aml: 0, pep: 0, kyb: 0, ocr: 0, biocheck: 0 };
       if (this.hasKYC) {
         for (let i in this.priceTableKYC) {
           if (this.rangeTableKYC[i] && this.rangeTableKYC[i] < priceEstimate) {
@@ -279,7 +316,18 @@ export default Vue.extend({
         this.priceSplit.pep +
         this.priceSplit.biocheck +
         this.priceSplit.ocr;
-      return totalPrice;
+      return this.formatCurrency(totalPrice);
+    },
+  },
+  methods: {
+    formatCurrency(amount) {
+      const roundedAmount = Number(amount.toFixed(2));
+      const formattedAmount = roundedAmount.toLocaleString("es-ES", {
+        style: "currency",
+        currency: "EUR",
+      });
+
+      return formattedAmount;
     },
   },
 });
@@ -288,32 +336,53 @@ export default Vue.extend({
 <style lang="sass" scoped>
 @import '@/assets/sass/vars.sass'
 
-.price__wrapper
-  align-self: flex-start
-  display: flex
-  flex-wrap: wrap
+.price-grid
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  h6
+    margin-bottom: 0
 
+  .price_card_1
+    grid-column: 3
+    grid-row: 2
+    flex-direction: column
+  .price_card_2
+    grid-column: 3
+    grid-row: 1
+    display: flex
+    p
+      margin: 0
+  .price_card_3
+    grid-column: 2
+    grid-row: 2
+    flex-direction: column
+  .price_card_4
+    grid-column: 2
+    grid-row: 1
+    p
+      margin: 0
+  .price_card_5
+    grid-column: 1
+    grid-row: 1
+    display: flex
+    flex-direction: column
+    h6
+      margin-bottom: $spacing-md
   .card
     text-align: left
-
-  .price__service
-    margin-bottom: $spacing-lg
-
-  &>*
     display: flex
+    justify-content: space-between
+    margin: $spacing-sm
+    .price-card-description
+      display: flex
+      align-items: center
+      justify-content: space-between
+      width: 100%
+      p
+        margin: $spacing-sm 0
 
-    &:first-child
-      margin-right: $spacing-lg
-
-    td:first-child
-      padding-right: $spacing-lg
-
-    td:last-child
-      text-align: right
-
-    .price__total
-      font-family: $font-bold
-
-    .v-input input
-      text-align: right
+@media (max-width: 768px)
+  .price-grid
+    display: flex
+    flex-wrap: wrap
 </style>

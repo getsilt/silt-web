@@ -17,16 +17,14 @@
       </div>
     </div>
     <div class="cards-carroussel">
-      <div class="card">
-        <PriceCalculator
-          :hasAML="priceCalculatorProps.hasAML"
-          :hasBiocheck="priceCalculatorProps.hasBiocheck"
-          :hasKYB="priceCalculatorProps.hasKYB"
-          :hasKYC="priceCalculatorProps.hasKYC"
-          :hasOCR="priceCalculatorProps.hasOCR"
-          :hasPEP="priceCalculatorProps.hasPEP"
-        />
-      </div>
+      <PriceCalculator
+        :hasAML="priceCalculatorProps.hasAML"
+        :hasBiocheck="priceCalculatorProps.hasBiocheck"
+        :hasKYB="priceCalculatorProps.hasKYB"
+        :hasKYC="priceCalculatorProps.hasKYC"
+        :hasOCR="priceCalculatorProps.hasOCR"
+        :hasPEP="priceCalculatorProps.hasPEP"
+      />
     </div>
   </div>
 </template>
@@ -120,10 +118,10 @@ export default {
 
 .cards-wrapper_flex
   justify-content: center
-  align-items: center
+  align-items: flex-start
 
 .tabs-wrapper.vertical
-  margin-right: $spacing-md
+  margin-right: $spacing-lg
   .tab
     margin-bottom: $spacing-sm
 
