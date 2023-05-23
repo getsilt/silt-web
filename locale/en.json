@@ -290,6 +290,7 @@
     "price_per_verification_AML": "+ AML",
     "price_per_verification_ID": "ID user verification (KYC)",
     "price_per_verification_KYB": "+ KYB",
+    "price_per_verification_KYC": "+ KYC",
     "price_per_verification_OCR": "+ OCR",
     "price_per_verification_PEP": "+ PEP",
     "price_per_verification_biocheck": "+ Biometric recheck",
