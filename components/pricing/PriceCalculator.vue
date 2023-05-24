@@ -1,165 +1,16 @@
 <template>
   <div class="price-grid">
-    <div
-      v-if="hasKYC || hasKYB || hasAML || hasOCR || hasBiocheck"
-      class="card price_card_1"
-    >
-      <div v-if="hasKYC" class="price-card-description">
-        <h6>{{ $t("price_per_verification_KYC") }}</h6>
-        <p>
-          {{
-            $t("price_per_verification_prices_1", {
-              amountLow: formatCurrency(
-                priceTableKYC[priceTableKYC.length - 1]
-              ),
-              amountUp: formatCurrency(priceTableKYC[1]),
-            })
-          }}
-        </p>
-      </div>
-      <div v-if="hasKYB" class="price-card-description">
-        <h6>{{ $t("price_per_verification_KYB") }}</h6>
-        <p>
-          {{
-            $t("price_per_verification_prices_1", {
-              amountLow: formatCurrency(
-                priceTableKYB[priceTableKYB.length - 1]
-              ),
-              amountUp: formatCurrency(priceTableKYB[1]),
-            })
-          }}
-        </p>
-      </div>
-      <div v-if="hasOCR" class="price-card-description">
-        <h6>{{ $t("price_per_verification_OCR") }}</h6>
-        <p>
-          {{
-            $t("price_per_verification_prices_1", {
-              amountLow: formatCurrency(
-                priceTableOCR[priceTableOCR.length - 1]
-              ),
-              amountUp: formatCurrency(priceTableOCR[1]),
-            })
-          }}
-        </p>
-      </div>
-      <div v-if="hasPEP" class="price-card-description">
-        <h6>{{ $t("price_per_verification_PEP") }}</h6>
-        <p>
-          {{
-            $t("price_per_verification_prices_1", {
-              amountLow: formatCurrency(
-                priceTableAMLPEP[priceTableAMLPEP.length - 1]
-              ),
-              amountUp: formatCurrency(priceTableAMLPEP[1]),
-            })
-          }}
-        </p>
-      </div>
-      <div v-if="hasAML" class="price-card-description">
-        <h6>{{ $t("price_per_verification_AML") }}</h6>
-        <p>
-          {{
-            $t("price_per_verification_prices_1", {
-              amountLow: formatCurrency(
-                priceTableAMLPEP[priceTableAMLPEP.length - 1]
-              ),
-              amountUp: formatCurrency(priceTableAMLPEP[1]),
-            })
-          }}
-        </p>
-      </div>
-      <div v-if="hasBiocheck" class="price-card-description">
-        <h6>{{ $t("price_per_verification_biocheck") }}</h6>
-        <p>
-          {{
-            $t("price_per_verification_prices_1", {
-              amountLow: formatCurrency(
-                priceTableBiocheck[priceTableBiocheck.length - 1]
-              ),
-              amountUp: formatCurrency(priceTableBiocheck[1]),
-            })
-          }}
-        </p>
-      </div>
+    <div class="card price_card_1">
+      <h6>{{ $t("price_per_verification_monthly") }}</h6>
+      <input
+        v-model="priceEstimateVerifications"
+        placeholder="Ex: 3200"
+        class="v-input"
+        :class="activeInput ? 'active' : ''"
+        @click="activeInput = !activeInput"
+      />
     </div>
-    <div v-if="totalPrice" class="card price_card_2">
-      <h6>{{ $t("price_per_verification_total_description") }}</h6>
-      <p>
-        {{
-          $t("price_per_verification_prices_1", {
-            amountLow: totalPrice.min,
-            amountUp: totalPrice.max,
-          })
-        }}
-      </p>
-    </div>
-    <div
-      v-if="hasKYC || hasKYB || hasAML || hasOCR || hasBiocheck"
-      class="card price_card_3"
-    >
-      <div v-if="hasKYC" class="price-card-description">
-        <h6>{{ $t("price_per_verification_KYC") }}</h6>
-        <p>
-          {{
-            $t("price_per_verification_prices_2", {
-              amount: formatCurrency(priceSplit.kyc),
-            })
-          }}
-        </p>
-      </div>
-      <div v-if="hasKYB" class="price-card-description">
-        <h6>{{ $t("price_per_verification_KYB") }}</h6>
-        <p>
-          {{
-            $t("price_per_verification_prices_2", {
-              amount: formatCurrency(priceSplit.kyb),
-            })
-          }}
-        </p>
-      </div>
-      <div v-if="hasOCR" class="price-card-description">
-        <h6>{{ $t("price_per_verification_OCR") }}</h6>
-        <p>
-          {{
-            $t("price_per_verification_prices_2", {
-              amount: formatCurrency(priceSplit.ocr),
-            })
-          }}
-        </p>
-      </div>
-      <div v-if="hasPEP" class="price-card-description">
-        <h6>{{ $t("price_per_verification_PEP") }}</h6>
-        <p>
-          {{
-            $t("price_per_verification_prices_2", {
-              amount: formatCurrency(priceSplit.pep),
-            })
-          }}
-        </p>
-      </div>
-      <div v-if="hasAML" class="price-card-description">
-        <h6>{{ $t("price_per_verification_AML") }}</h6>
-        <p>
-          {{
-            $t("price_per_verification_prices_2", {
-              amount: formatCurrency(priceSplit.aml),
-            })
-          }}
-        </p>
-      </div>
-      <div v-if="hasBiocheck" class="price-card-description">
-        <h6>{{ $t("price_per_verification_biocheck") }}</h6>
-        <p>
-          {{
-            $t("price_per_verification_prices_2", {
-              amount: formatCurrency(priceSplit.biocheck),
-            })
-          }}
-        </p>
-      </div>
-    </div>
-    <div class="card price_card_4">
+    <div class="card price_card_2">
       <h6>{{ $t("price_per_verification_total_calculation") }}</h6>
       <p>
         {{
@@ -169,13 +20,188 @@
         }}
       </p>
     </div>
-    <div class="card price_card_5">
-      <h6>{{ $t("price_per_verification_monthly") }}</h6>
-      <input
-        v-model="priceEstimateVerifications"
-        placeholder="Ex: 3200"
-        class="v-input small text-right"
-      />
+    <div
+      v-if="hasKYC || hasKYB || hasAML || hasOCR || hasBiocheck"
+      class="card price_card_3"
+    >
+      <TransitionGroup name="offsetX">
+        <div v-if="hasKYC" key="KYC" class="price-card-description">
+          <h6>{{ $t("price_per_verification_KYC") }}</h6>
+          <p>
+            {{
+              $t("price_per_verification_prices_2", {
+                amount: formatCurrency(priceSplit.kyc),
+              })
+            }}
+          </p>
+        </div>
+      </TransitionGroup>
+      <TransitionGroup name="offsetX">
+        <div v-if="hasKYB" key="KYB" class="price-card-description">
+          <h6>{{ $t("price_per_verification_KYB") }}</h6>
+          <p>
+            {{
+              $t("price_per_verification_prices_2", {
+                amount: formatCurrency(priceSplit.kyb),
+              })
+            }}
+          </p>
+        </div>
+      </TransitionGroup>
+      <TransitionGroup name="offsetX">
+        <div v-if="hasOCR" key="OCR" class="price-card-description">
+          <h6>{{ $t("price_per_verification_OCR") }}</h6>
+          <p>
+            {{
+              $t("price_per_verification_prices_2", {
+                amount: formatCurrency(priceSplit.ocr),
+              })
+            }}
+          </p>
+        </div>
+      </TransitionGroup>
+      <TransitionGroup name="offsetY">
+        <div v-if="hasPEP" key="PEP" class="price-card-description">
+          <h6>{{ $t("price_per_verification_PEP") }}</h6>
+          <p>
+            {{
+              $t("price_per_verification_prices_2", {
+                amount: formatCurrency(priceSplit.pep),
+              })
+            }}
+          </p>
+        </div>
+      </TransitionGroup>
+      <TransitionGroup name="offsetY">
+        <div v-if="hasAML" key="AML" class="price-card-description">
+          <h6>{{ $t("price_per_verification_AML") }}</h6>
+          <p>
+            {{
+              $t("price_per_verification_prices_2", {
+                amount: formatCurrency(priceSplit.aml),
+              })
+            }}
+          </p>
+        </div>
+      </TransitionGroup>
+      <TransitionGroup name="offsetY">
+        <div v-if="hasBiocheck" key="BIOCH" class="price-card-description">
+          <h6>{{ $t("price_per_verification_biocheck") }}</h6>
+          <p>
+            {{
+              $t("price_per_verification_prices_2", {
+                amount: formatCurrency(priceSplit.biocheck),
+              })
+            }}
+          </p>
+        </div>
+      </TransitionGroup>
+    </div>
+    <div
+      v-if="hasKYC || hasKYB || hasAML || hasOCR || hasBiocheck"
+      class="card price_card_4"
+    >
+      <TransitionGroup name="offsetX">
+        <div v-if="hasKYC" key="KYC" class="price-card-description">
+          <h6>{{ $t("price_per_verification_KYC") }}</h6>
+          <p>
+            {{
+              $t("price_per_verification_prices_1", {
+                amountLow: formatCurrency(
+                  priceTableKYC[priceTableKYC.length - 1]
+                ),
+                amountUp: formatCurrency(priceTableKYC[1]),
+              })
+            }}
+          </p>
+        </div>
+      </TransitionGroup>
+      <TransitionGroup name="offsetX">
+        <div v-if="hasKYB" key="KYB" class="price-card-description">
+          <h6>{{ $t("price_per_verification_KYB") }}</h6>
+          <p>
+            {{
+              $t("price_per_verification_prices_1", {
+                amountLow: formatCurrency(
+                  priceTableKYB[priceTableKYB.length - 1]
+                ),
+                amountUp: formatCurrency(priceTableKYB[1]),
+              })
+            }}
+          </p>
+        </div>
+      </TransitionGroup>
+      <TransitionGroup name="offsetX">
+        <div v-if="hasOCR" key="OCR" class="price-card-description">
+          <h6>{{ $t("price_per_verification_OCR") }}</h6>
+          <p>
+            {{
+              $t("price_per_verification_prices_1", {
+                amountLow: formatCurrency(
+                  priceTableOCR[priceTableOCR.length - 1]
+                ),
+                amountUp: formatCurrency(priceTableOCR[1]),
+              })
+            }}
+          </p>
+        </div>
+      </TransitionGroup>
+      <TransitionGroup name="offsetY">
+        <div v-if="hasPEP" key="PEP" class="price-card-description">
+          <h6>{{ $t("price_per_verification_PEP") }}</h6>
+          <p>
+            {{
+              $t("price_per_verification_prices_1", {
+                amountLow: formatCurrency(
+                  priceTableAMLPEP[priceTableAMLPEP.length - 1]
+                ),
+                amountUp: formatCurrency(priceTableAMLPEP[1]),
+              })
+            }}
+          </p>
+        </div>
+      </TransitionGroup>
+      <TransitionGroup name="offsetY">
+        <div v-if="hasAML" key="AML" class="price-card-description">
+          <h6>{{ $t("price_per_verification_AML") }}</h6>
+          <p>
+            {{
+              $t("price_per_verification_prices_1", {
+                amountLow: formatCurrency(
+                  priceTableAMLPEP[priceTableAMLPEP.length - 1]
+                ),
+                amountUp: formatCurrency(priceTableAMLPEP[1]),
+              })
+            }}
+          </p>
+        </div>
+      </TransitionGroup>
+      <TransitionGroup name="offsetY">
+        <div v-if="hasBiocheck" key="BIOCH" class="price-card-description">
+          <h6>{{ $t("price_per_verification_biocheck") }}</h6>
+          <p>
+            {{
+              $t("price_per_verification_prices_1", {
+                amountLow: formatCurrency(
+                  priceTableBiocheck[priceTableBiocheck.length - 1]
+                ),
+                amountUp: formatCurrency(priceTableBiocheck[1]),
+              })
+            }}
+          </p>
+        </div>
+      </TransitionGroup>
+    </div>
+    <div v-if="totalPrice" class="card price_card_5">
+      <h6>{{ $t("price_per_verification_total_description") }}</h6>
+      <p>
+        {{
+          $t("price_per_verification_prices_1", {
+            amountLow: totalPrice.min,
+            amountUp: totalPrice.max,
+          })
+        }}
+      </p>
     </div>
   </div>
 </template>
@@ -205,6 +231,7 @@ export default Vue.extend({
       rangeTableBiocheck: [5000, 20000],
       rangeTableOCR: [50, 1000, 5000, 10000, 30000],
       priceSplit: { kyc: 0, aml: 0, pep: 0, kyb: 0, biocheck: 0, ocr: 0 },
+      activeInput: false,
     };
   },
   computed: {
@@ -338,36 +365,42 @@ export default Vue.extend({
 
 .price-grid
   display: grid
-  grid-template-columns: repeat(3, 1fr)
+  grid-template-columns: 25% 35% 1fr
   h6
     margin-bottom: 0
 
-  .price_card_1
-    grid-column: 3
-    grid-row: 2
-    flex-direction: column
-  .price_card_2
+  .price_card_5
     grid-column: 3
     grid-row: 1
     display: flex
     p
       margin: 0
+  .price_card_4
+    grid-column: 3
+    grid-row: 2
+    flex-direction: column
   .price_card_3
     grid-column: 2
     grid-row: 2
     flex-direction: column
-  .price_card_4
+  .price_card_2
     grid-column: 2
     grid-row: 1
     p
       margin: 0
-  .price_card_5
+  .price_card_1
     grid-column: 1
     grid-row: 1
     display: flex
     flex-direction: column
     h6
       margin-bottom: $spacing-md
+    .v-input
+      border: 2px solid #d8d8d8
+      border-radius: 10px
+      font-family: $font-body
+      &.active
+        border: 2px solid #2963ff
   .card
     text-align: left
     display: flex
@@ -381,8 +414,44 @@ export default Vue.extend({
       p
         margin: $spacing-sm 0
 
+.offsetY
+  &-move
+    transition: opacity 0.1s ease-in-out, transform 0.25s ease-in-out
+  &-leave-active
+    transition: opacity 0.2s linear, transform 0.4s cubic-bezier(.5, 0, .7, .4)
+    transition-delay: calc(0.1s * (2 - 1))
+  &-enter-active
+    transition: opacity 0.5s linear, transform 0.5s cubic-bezier(.5, 1, 1, 1)
+    transition-delay: 0.5s
+  &-enter,
+  &-leave-to
+    opacity: 0
+  &-enter
+    transform: translateY(-0.2em)
+  &-leave-to
+    transform: translateY(1em)
+
+.offsetX
+  &-move
+    transition: opacity 0.1s ease-in-out, transform 0.25s ease-in-out
+  &-leave-active
+    transition: opacity 0.2s linear, transform 0.4s cubic-bezier(.5, 0, .7, .4)
+    transition-delay: calc(0.1s * (2 - 1))
+  &-enter-active
+    transition: opacity 0.5s linear, transform 0.5s cubic-bezier(.5, 1, 1, 1)
+    transition-delay: 0.5s
+  &-enter,
+  &-leave-to
+    opacity: 0
+  &-enter
+    transform: translateX(-0.2em)
+  &-leave-to
+    transform: translateX(1em)
+
 @media (max-width: 768px)
   .price-grid
     display: flex
     flex-wrap: wrap
+    .card
+      width: 100%
 </style>
