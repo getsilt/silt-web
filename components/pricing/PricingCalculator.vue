@@ -120,6 +120,5 @@ export default {
 .cards-carroussel
   flex: 1 1
   width: -webkit-fill-available
-  .card
-    background: transparent
+  padding: $spacing-lg
 </style>
