@@ -23,20 +23,15 @@
       <h4 class="subtitle" v-html="$t('business_hero_kyc_subtitle')" />
       <demo-buttons />
     </div>
-    <div class="claim-side-img">
-      <img class="phone-svg" src="@/assets/media/phone.svg" alt="device" />
-      <video class="phone-video" autoplay loop muted>
-        <source src="@/assets/media/sign-up.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    </div>
+    <video-verification-demo class="claim-side-img" />
   </section>
 </template>
 
 <script>
 import DemoButtons from "@/components/DemoButtons.vue";
+import VideoVerificationDemo from "../VideoVerificationDemo.vue";
 export default {
-  components: { DemoButtons },
+  components: { DemoButtons, VideoVerificationDemo },
   data() {
     return {
       email: "hello@getsilt.com",
@@ -52,17 +47,7 @@ export default {
 
 <style lang="sass" scoped>
 .claim-side-img
-  position: relative
-  .phone-svg
-    position: relative
-    top: -9px
-    left: -10px
-    z-index: 999
-    height: auto
-    width: 252px
-  .phone-video
-    width: 230px
-    border-radius: 30px
-    position: absolute
-    left: 0
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
 </style>
