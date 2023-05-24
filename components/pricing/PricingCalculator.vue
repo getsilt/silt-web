@@ -18,12 +18,12 @@
     </div>
     <div class="cards-carroussel">
       <PriceCalculator
-        :hasAML="priceCalculatorProps.hasAML"
-        :hasBiocheck="priceCalculatorProps.hasBiocheck"
-        :hasKYB="priceCalculatorProps.hasKYB"
-        :hasKYC="priceCalculatorProps.hasKYC"
-        :hasOCR="priceCalculatorProps.hasOCR"
-        :hasPEP="priceCalculatorProps.hasPEP"
+        :hasAML="isFeatureActive('AML')"
+        :hasBiocheck="isFeatureActive('biocheck')"
+        :hasKYB="isFeatureActive('KYB')"
+        :hasKYC="isFeatureActive('KYC')"
+        :hasOCR="isFeatureActive('OCR')"
+        :hasPEP="isFeatureActive('PEP')"
       />
     </div>
   </div>
@@ -49,14 +49,6 @@ export default {
           translationKey: "nav_feature_biocheck",
         },
       ],
-      priceCalculatorProps: {
-        hasAML: false,
-        hasKYC: false,
-        hasKYB: false,
-        hasOCR: false,
-        hasPEP: false,
-        hasBiocheck: false,
-      },
     };
   },
   mounted() {
@@ -84,27 +76,27 @@ export default {
         });
     },
     updateCalculator(featureName) {
-      const feature = this.features.find((f) => f.name === featureName);
+      const feature = this.features.find(
+        (feature) => feature.name === featureName
+      );
       if (feature) {
-        feature.isActive = !feature.isActive;
-
-        const propertyMap = {
-          KYC: "hasKYC",
-          KYB: "hasKYB",
-          OCR: "hasOCR",
-          PEP: "hasPEP",
-          AML: "hasAML",
-          biocheck: "hasBiocheck",
-        };
-
-        if (propertyMap.hasOwnProperty(featureName)) {
-          const property = propertyMap[featureName];
-          this.priceCalculatorProps[property] = feature.isActive;
+        if (["KYC", "KYB", "OCR"].includes(featureName)) {
+          this.features.forEach((feature) => {
+            if (
+              feature.name !== featureName &&
+              ["KYC", "KYB", "OCR"].includes(featureName)
+            ) {
+              feature.isActive = false;
+            }
+          });
         }
+        feature.isActive = !feature.isActive;
       }
     },
     isFeatureActive(featureName) {
-      const feature = this.features.find((f) => f.name === featureName);
+      const feature = this.features.find(
+        (feature) => feature.name === featureName
+      );
       return feature ? feature.isActive : false;
     },
   },
