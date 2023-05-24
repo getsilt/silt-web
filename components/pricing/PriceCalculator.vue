@@ -102,7 +102,7 @@
       class="card price_card_4"
     >
       <TransitionGroup name="offsetX">
-        <div v-if="hasKYC" key="KYC" class="price-card-description">
+        <div v-if="hasKYC" key="KYC-2" class="price-card-description">
           <h6>{{ $t("price_per_verification_KYC") }}</h6>
           <p>
             {{
@@ -110,14 +110,14 @@
                 amountLow: formatCurrency(
                   priceTableKYC[priceTableKYC.length - 1]
                 ),
-                amountUp: formatCurrency(priceTableKYC[1]),
+                amountUp: formatCurrency(priceTableKYC[0]),
               })
             }}
           </p>
         </div>
       </TransitionGroup>
       <TransitionGroup name="offsetX">
-        <div v-if="hasKYB" key="KYB" class="price-card-description">
+        <div v-if="hasKYB" key="KYB-2" class="price-card-description">
           <h6>{{ $t("price_per_verification_KYB") }}</h6>
           <p>
             {{
@@ -125,14 +125,14 @@
                 amountLow: formatCurrency(
                   priceTableKYB[priceTableKYB.length - 1]
                 ),
-                amountUp: formatCurrency(priceTableKYB[1]),
+                amountUp: formatCurrency(priceTableKYB[0]),
               })
             }}
           </p>
         </div>
       </TransitionGroup>
       <TransitionGroup name="offsetX">
-        <div v-if="hasOCR" key="OCR" class="price-card-description">
+        <div v-if="hasOCR" key="OCR-2" class="price-card-description">
           <h6>{{ $t("price_per_verification_OCR") }}</h6>
           <p>
             {{
@@ -140,14 +140,14 @@
                 amountLow: formatCurrency(
                   priceTableOCR[priceTableOCR.length - 1]
                 ),
-                amountUp: formatCurrency(priceTableOCR[1]),
+                amountUp: formatCurrency(priceTableOCR[0]),
               })
             }}
           </p>
         </div>
       </TransitionGroup>
       <TransitionGroup name="offsetY">
-        <div v-if="hasPEP" key="PEP" class="price-card-description">
+        <div v-if="hasPEP" key="PEP-2" class="price-card-description">
           <h6>{{ $t("price_per_verification_PEP") }}</h6>
           <p>
             {{
@@ -155,14 +155,14 @@
                 amountLow: formatCurrency(
                   priceTableAMLPEP[priceTableAMLPEP.length - 1]
                 ),
-                amountUp: formatCurrency(priceTableAMLPEP[1]),
+                amountUp: formatCurrency(priceTableAMLPEP[0]),
               })
             }}
           </p>
         </div>
       </TransitionGroup>
       <TransitionGroup name="offsetY">
-        <div v-if="hasAML" key="AML" class="price-card-description">
+        <div v-if="hasAML" key="AML-2" class="price-card-description">
           <h6>{{ $t("price_per_verification_AML") }}</h6>
           <p>
             {{
@@ -170,14 +170,14 @@
                 amountLow: formatCurrency(
                   priceTableAMLPEP[priceTableAMLPEP.length - 1]
                 ),
-                amountUp: formatCurrency(priceTableAMLPEP[1]),
+                amountUp: formatCurrency(priceTableAMLPEP[0]),
               })
             }}
           </p>
         </div>
       </TransitionGroup>
       <TransitionGroup name="offsetY">
-        <div v-if="hasBiocheck" key="BIOCH" class="price-card-description">
+        <div v-if="hasBiocheck" key="BIOCH-2" class="price-card-description">
           <h6>{{ $t("price_per_verification_biocheck") }}</h6>
           <p>
             {{
@@ -185,7 +185,7 @@
                 amountLow: formatCurrency(
                   priceTableBiocheck[priceTableBiocheck.length - 1]
                 ),
-                amountUp: formatCurrency(priceTableBiocheck[1]),
+                amountUp: formatCurrency(priceTableBiocheck[0]),
               })
             }}
           </p>
@@ -221,7 +221,7 @@ export default Vue.extend({
     return {
       priceEstimateVerifications: null,
       priceTableKYB: [2.75, 2.55, 2.35],
-      priceTableKYC: [0, 0.5, 0.4, 0.3, 0.2],
+      priceTableKYC: [0.5, 0.4, 0.3, 0.2],
       priceTableOCR: [0.3, 0.25, 0.2, 0.16, 0.13],
       priceTableAMLPEP: [0.15, 0.05, 0.042, 0.036, 0.032],
       priceTableBiocheck: [0.5, 0.4, 0.35],
@@ -239,14 +239,18 @@ export default Vue.extend({
       let maxPrice = 0;
       let minPrice = 0;
       if (this.hasKYC) {
-        maxPrice += this.priceTableKYC[1];
+        maxPrice += this.priceTableKYC[0];
         minPrice += this.priceTableKYC[this.priceTableKYC.length - 1];
       }
       if (this.hasKYB) {
         maxPrice += this.priceTableKYB[0];
         minPrice += this.priceTableKYB[this.priceTableKYB.length - 1];
       }
-      if (this.hasAML || this.hasPEP) {
+      if (this.hasAML) {
+        maxPrice += this.priceTableAMLPEP[0];
+        minPrice += this.priceTableAMLPEP[this.priceTableAMLPEP.length - 1];
+      }
+      if (this.hasPEP) {
         maxPrice += this.priceTableAMLPEP[0];
         minPrice += this.priceTableAMLPEP[this.priceTableAMLPEP.length - 1];
       }
