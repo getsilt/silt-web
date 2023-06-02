@@ -6,15 +6,23 @@
         :class="{ active: activeSection === 'sdk' }"
         >SDK Integration</a
       >
+      <a
+        @click="activeSection = 'status'"
+        :class="{ active: activeSection === 'status' }"
+        >Get user status info</a
+      >
     </nav>
     <DocumentationSdk v-if="activeSection === 'sdk'" />
+    <DocumentationStatus v-if="activeSection === 'status'" />
   </section>
 </template>
 <script>
 import DocumentationSdk from "@/components/DocumentationSdk.vue";
+import DocumentationStatus from "@/components/DocumentationStatus.vue"
 export default {
   components: {
     DocumentationSdk,
+    DocumentationStatus
   },
   nuxtI18n: {
     paths: {
