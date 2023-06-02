@@ -310,16 +310,16 @@ code
 
 .banner-info, .banner-error, .banner-warning
   padding: 10px 20px
-  background: lighten($color-primary, 35%)
+  background: rgba($color-primary, .1)
   color: $color-primary
   border-radius: $radius-sm
 
 .banner-error
-  background: lighten($color-error, 35%)
+  background: rgba($color-error, .1)
   color: $color-error
 
 .banner-warning
-  background: lighten($color-warning, 45%)
+  background: rgba($color-warning, .1)
   color: $color-warning
 
 .page-side-nav
@@ -355,11 +355,11 @@ code
       transition: 0.3s ease-in-out
       margin-bottom: 10px
       &:hover
-        background: lighten($color-primary, 70%)
+        color: $color-primary
         cursor: pointer
     a.active
-      background: $color-primary
-      color: #fff
+      background: rgba($color-primary, .15)
+      color: $color-primary
 
 nav
   font-family: $font-bold
