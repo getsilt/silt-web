@@ -45,7 +45,7 @@
         <demo-buttons class="vertical" />
       </div>
     </div>
-    <div class="tabs-wrapper tab-md tab-squared">
+    <!-- <div class="tabs-wrapper tab-md tab-squared">
       <div class="tab-wrapper">
         <v-tab
           activeTabName="calculator"
@@ -64,7 +64,7 @@
           <span>{{ $t("calculator_price_list_tab_title") }}</span>
         </v-tab>
       </div>
-    </div>
+    </div> -->
     <PricingTable v-if="activeTabName === 'pricing'" />
     <PricingCalculator v-if="activeTabName === 'calculator'" />
   </div>
@@ -109,7 +109,7 @@ export default {
   data() {
     return {
       email: "hello@getsilt.com",
-      activeTabName: "calculator",
+      activeTabName: "pricing",
       features: [
         {
           title: "business_highlights_autoverification_title",
