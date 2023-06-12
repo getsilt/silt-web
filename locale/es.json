@@ -131,6 +131,7 @@
     "business_pricing_period": "Hasta {amount} meses",
     "business_pricing_startingFrom": "Desde {amount}",
     "business_pricing_title": "Paga solo por los usuarios verificados correctamente, como tendría que ser",
+    "business_pricing_unlimited": "Ilimitado (tarifa plana)",
     "business_pricing_upto": "Hasta {amount}",
     "business_pricing_verificationsMonth": "verificaciones \/ mes",
     "business_solution_aml_page_content": "Te proporcionamos herramientas para que puedas prevenir el fraude y asegurarte que tus usuarios no están marcados como personas sospechosas en listas públicas como la de la Europol, CIA, FBI, etc.",
