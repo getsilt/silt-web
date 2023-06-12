@@ -31,7 +31,6 @@ function gtag_report_conversion(url) {
     }
   };
   gtag("event", "conversion", {
-    send_to: "AW-352683225/78NdCOjLjcgDENmJlqgB",
     event_callback: callback,
   });
   return false;
