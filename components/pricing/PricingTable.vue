@@ -117,7 +117,7 @@
             >
           </td>
           <td>
-            <b>0,050€</b>
+            <b>0,075€</b>
             <span class="hint"> / {{ $t("global_check") }}</span>
           </td>
         </tr>
@@ -135,7 +135,7 @@
             >
           </td>
           <td>
-            <b>0,042€</b><span class="hint"> / {{ $t("global_check") }}</span>
+            <b>0,064€</b><span class="hint"> / {{ $t("global_check") }}</span>
           </td>
         </tr>
         <tr>
@@ -152,15 +152,16 @@
             >
           </td>
           <td>
-            <b>0,036€</b>
+            <b>0,058€</b>
             <span class="hint"> / {{ $t("global_check") }}</span>
           </td>
         </tr>
         <tr>
           <td>
             {{
-              $t("business_pricing_moreThan", {
-                amount: "10.001",
+              $t("business_pricing_between", {
+                amountLow: "10.001",
+                amountUp: "40.000",
               })
             }}
             <span class="hint"
@@ -169,8 +170,35 @@
             >
           </td>
           <td>
-            <b>0,032€</b>
+            <b>0,050€</b>
             <span class="hint"> / {{ $t("global_check") }}</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {{
+              $t("business_pricing_between", {
+                amountLow: "40.001",
+                amountUp: "80.000",
+              })
+            }}
+            <span class="hint"
+              >{{ $t("global_check") }} /
+              {{ $t("business_pricing_month") }}</span
+            >
+          </td>
+          <td>
+            <b>0,042€</b>
+            <span class="hint"> / {{ $t("global_check") }}</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {{ $t("business_pricing_unlimited") }}
+          </td>
+          <td>
+            <b>3.500€</b>
+            <span class="hint"> / {{ $t("business_pricing_month") }}</span>
           </td>
         </tr>
 
@@ -306,26 +334,26 @@ export default {
 <style lang="sass" scoped>
 @import '@/assets/sass/vars.sass'
 .pricing_table__wrapper
-    display: flex
-    flex-direction: column
-    align-items: center
+  display: flex
+  flex-direction: column
+  align-items: center
 .pricing_table__container
-    padding: $spacing-lg
-    background: var(--bg-secondary)
-    border-radius: $radius-lg
-    margin: auto
+  padding: $spacing-lg
+  background: var(--bg-secondary)
+  border-radius: $radius-lg
+  margin: auto
 
 h6
-    margin-bottom: $spacing-sm
+  margin-bottom: $spacing-sm
 table
-    th
-        padding-top: $spacing-sm
-        text-align: left
+  th
+    padding-top: $spacing-sm
+    text-align: left
     th:not(:first-child)
-        padding-top: $spacing-xlg
+      padding-top: $spacing-xlg
     td
-        padding: $spacing-xsm $spacing-md
+      padding: $spacing-xsm $spacing-md
 
     .hint
-        text-transform: lowercase
+      text-transform: lowercase
 </style>
