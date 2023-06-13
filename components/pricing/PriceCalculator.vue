@@ -269,10 +269,19 @@ export default Vue.extend({
     },
 
     priceEstimateCost() {
-      if (!this.priceEstimateVerifications) return 0;
+      if (!this.priceEstimateVerifications) return this.formatCurrency(0);
       let totalPrice = 0;
       const priceEstimate = this.priceEstimateVerifications || 0;
       this.priceSplit = { kyc: 0, aml: 0, pep: 0, kyb: 0, ocr: 0, biocheck: 0 };
+      if (
+        !this.hasKYC &&
+        !this.hasKYB &&
+        !this.hasAML &&
+        !this.hasPEP &&
+        !this.hasBiocheck &&
+        !this.hasOCR
+      )
+        return this.formatCurrency(0);
       if (this.hasKYC) {
         for (let i in this.priceTableKYC) {
           if (this.rangeTableKYC[i] && this.rangeTableKYC[i] < priceEstimate) {
