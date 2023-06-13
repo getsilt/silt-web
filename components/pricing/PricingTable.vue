@@ -117,7 +117,7 @@
             >
           </td>
           <td>
-            <b>0,070€</b>
+            <b>0,075€</b>
             <span class="hint"> / {{ $t("global_check") }}</span>
           </td>
         </tr>
