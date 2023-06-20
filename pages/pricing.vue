@@ -13,7 +13,7 @@
         </div>
         <p class="pricing-plan_upto">
           {{ $t("business_pricing_upto", { amount: 50 }) }}
-          {{ $t("business_pricing_verificationsMonth") }}<br />
+          {{ $t("business_pricing_userVerificationsMonth") }}<br />
           {{ $t("business_pricing_period", { amount: 3 }) }}
         </p>
         <ul class="checklist">
@@ -35,7 +35,7 @@
               amount: "200",
             })
           }}
-          {{ $t("business_pricing_verificationsMonth") }}
+          {{ $t("business_pricing_userVerificationsMonth") }}
         </p>
         <ul class="checklist">
           <li v-for="feature of features" :key="feature.title">

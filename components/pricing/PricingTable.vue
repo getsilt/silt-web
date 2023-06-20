@@ -9,7 +9,7 @@
           <td>
             {{ $t("business_pricing_upto", { amount: 200 }) }}
             <span class="hint">{{
-              $t("business_pricing_verificationsMonth")
+              $t("business_pricing_userVerificationsMonth")
             }}</span>
           </td>
           <td>
@@ -26,12 +26,12 @@
               })
             }}
             <span class="hint">{{
-              $t("business_pricing_verificationsMonth")
+              $t("business_pricing_userVerificationsMonth")
             }}</span>
           </td>
           <td>
             <b>0,5€</b>
-            <span class="hint"> / {{ $t("global_verification") }}</span>
+            <span class="hint"> / {{ $t("global_userVerification") }}</span>
           </td>
         </tr>
         <tr>
@@ -43,12 +43,12 @@
               })
             }}
             <span class="hint">{{
-              $t("business_pricing_verificationsMonth")
+              $t("business_pricing_userVerificationsMonth")
             }}</span>
           </td>
           <td>
             <b>0,4€</b
-            ><span class="hint"> / {{ $t("global_verification") }}</span>
+            ><span class="hint"> / {{ $t("global_userVerification") }}</span>
           </td>
         </tr>
         <tr>
@@ -60,12 +60,12 @@
               })
             }}
             <span class="hint">{{
-              $t("business_pricing_verificationsMonth")
+              $t("business_pricing_userVerificationsMonth")
             }}</span>
           </td>
           <td>
             <b>0,3€</b>
-            <span class="hint"> / {{ $t("global_verification") }}</span>
+            <span class="hint"> / {{ $t("global_userVerification") }}</span>
           </td>
         </tr>
         <tr>
@@ -76,12 +76,12 @@
               })
             }}
             <span class="hint">{{
-              $t("business_pricing_verificationsMonth")
+              $t("business_pricing_userVerificationsMonth")
             }}</span>
           </td>
           <td>
             <b>0,2€</b>
-            <span class="hint"> / {{ $t("global_verification") }}</span>
+            <span class="hint"> / {{ $t("global_userVerification") }}</span>
           </td>
         </tr>
 
