@@ -18,18 +18,6 @@
 </template>
 
 <script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof url != "undefined") {
-      window.location = url;
-    }
-  };
-  gtag("event", "conversion", {
-    send_to: "AW-352683225/78NdCOjLjcgDENmJlqgB",
-    event_callback: callback,
-  });
-  return false;
-}
 
 export default {
   nuxtI18n: {
@@ -76,7 +64,7 @@ export default {
       document.dispatchEvent(new CustomEvent("meetzy-refresh", {}));
       document.addEventListener("meetzy-form-submitted", (e) => {
         gtag_report_conversion();
-        window.lintrk("track", { conversion_id: 12492010 });
+        // window.lintrk('track', { conversion_id: 12272642 });
       });
     },
   },

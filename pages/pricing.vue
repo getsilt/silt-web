@@ -13,7 +13,7 @@
         </div>
         <p class="pricing-plan_upto">
           {{ $t("business_pricing_upto", { amount: 50 }) }}
-          {{ $t("business_pricing_verificationsMonth") }}<br />
+          {{ $t("business_pricing_userVerificationsMonth") }}<br />
           {{ $t("business_pricing_period", { amount: 3 }) }}
         </p>
         <ul class="checklist">
@@ -35,7 +35,7 @@
               amount: "200",
             })
           }}
-          {{ $t("business_pricing_verificationsMonth") }}
+          {{ $t("business_pricing_userVerificationsMonth") }}
         </p>
         <ul class="checklist">
           <li v-for="feature of features" :key="feature.title">
@@ -45,7 +45,7 @@
         <demo-buttons class="vertical" />
       </div>
     </div>
-    <div class="tabs-wrapper tab-md tab-squared">
+    <!-- <div class="tabs-wrapper tab-md tab-squared">
       <div class="tab-wrapper">
         <v-tab
           activeTabName="calculator"
@@ -64,7 +64,7 @@
           <span>{{ $t("calculator_price_list_tab_title") }}</span>
         </v-tab>
       </div>
-    </div>
+    </div> -->
     <PricingTable v-if="activeTabName === 'pricing'" />
     <PricingCalculator v-if="activeTabName === 'calculator'" />
   </div>
@@ -109,7 +109,7 @@ export default {
   data() {
     return {
       email: "hello@getsilt.com",
-      activeTabName: "calculator",
+      activeTabName: "pricing",
       features: [
         {
           title: "business_highlights_autoverification_title",

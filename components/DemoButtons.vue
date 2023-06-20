@@ -37,11 +37,12 @@ export default {
   },
   methods: {
     loadMeetzy() {
+      console.info("hello", gtag_report_conversion)
       if (this.hasMeetzy && !this.hasMeetzyLoaded) {
         document.dispatchEvent(new CustomEvent("meetzy-refresh", {}));
         document.addEventListener("meetzy-form-submitted", (e) => {
           gtag_report_conversion();
-          window.lintrk("track", { conversion_id: 12492010 });
+          // window.lintrk('track', { conversion_id: 12272642 });
         });
         this.hasMeetzyLoaded = true;
       }
