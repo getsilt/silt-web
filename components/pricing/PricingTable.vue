@@ -265,7 +265,7 @@
           </td>
         </tr>
 
-        <th colspan="2">
+        <!-- <th colspan="2">
           <h6>{{ $t("nav_feature_kyb") }}</h6>
         </th>
         <tr>
@@ -315,7 +315,7 @@
               {{ $t("business_pricing_month") }}</span
             >
           </td>
-        </tr>
+        </tr> -->
       </table>
     </div>
   </div>
