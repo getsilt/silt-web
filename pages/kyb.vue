@@ -1,7 +1,6 @@
 <template>
   <div>
     <hero />
-    <problem />
     <benefits />
     <solution />
   </div>
