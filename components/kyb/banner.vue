@@ -57,9 +57,6 @@ export default {
 @import "@/assets/sass/vars.sass"
 .kyb-banner
     background: $color-primary
-
-    section
-        padding: 0
     .kyb-banner-wrapper
         display: flex
         flex-wrap: wrap
