@@ -187,13 +187,13 @@
             <div class="claim-side-img diagram-small" id="diagram">
               <template v-if="$root.$i18n.locale === 'es'">
                 <img
-                  src="@/assets/img/illustrations/silt-workflow-biocheck_es.svg"
+                  src="@/assets/img/illustrations/company_database.svg"
                   :alt="$t('seo_document_scan')"
                 />
               </template>
               <template v-else>
                 <img
-                  src="@/assets/img/illustrations/silt-workflow-biocheck_en.svg"
+                  src="@/assets/img/illustrations/company_database.svg"
                   :alt="$t('seo_document_scan')"
                 />
               </template>
