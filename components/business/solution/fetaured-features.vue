@@ -16,6 +16,17 @@
       </div>
       <div class="tab-wrapper">
         <v-tab
+          v-if="hiddenTab !== 'kyb'"
+          activeTabName="kyb"
+          @onActiveTabChange="featuredTab = $event"
+          :isSelected="featuredTab"
+          :class="{ 'text-gradient-1-child': featuredTab == 'kyb' }"
+        >
+          <span>{{ $t("nav_feature_kyb") }}</span>
+        </v-tab>
+      </div>
+      <div class="tab-wrapper">
+        <v-tab
           v-if="hiddenTab !== 'customize'"
           activeTabName="customize"
           @onActiveTabChange="featuredTab = $event"
@@ -33,17 +44,6 @@
           :class="{ 'text-gradient-1-child': featuredTab == 'list' }"
         >
           <span>{{ $t("business_solution_carrousel_fraud") }}</span>
-        </v-tab>
-      </div>
-      <div class="tab-wrapper">
-        <v-tab
-          v-if="hiddenTab !== 'kyb'"
-          activeTabName="kyb"
-          @onActiveTabChange="featuredTab = $event"
-          :isSelected="featuredTab"
-          :class="{ 'text-gradient-1-child': featuredTab == 'kyb' }"
-        >
-          <span>{{ $t("nav_feature_kyb") }}</span>
         </v-tab>
       </div>
       <div class="tab-wrapper">
@@ -137,9 +137,7 @@
               >
                 <document-select
                   :color="`color: ${color}`"
-                  :buttonStyle="
-                    `background-color: ${color}; font-family: Futura-Bold`
-                  "
+                  :buttonStyle="`background-color: ${color}; font-family: Futura-Bold`"
                   :background="`background-color: ${backgroundColor}`"
                   typography="font-family: Futura-Bold"
                 />
@@ -150,9 +148,7 @@
               >
                 <document-select
                   :color="`color: ${color}`"
-                  :buttonStyle="
-                    `background-color: ${color}; font-family: Roboto`
-                  "
+                  :buttonStyle="`background-color: ${color}; font-family: Roboto`"
                   typography="font-family: Roboto"
                   :background="`background-color: ${backgroundColor}`"
                 />
@@ -163,9 +159,7 @@
               >
                 <document-select
                   :color="`color: ${color}`"
-                  :buttonStyle="
-                    `background-color: ${color}; font-family: Comfortaa`
-                  "
+                  :buttonStyle="`background-color: ${color}; font-family: Comfortaa`"
                   :background="`background-color: ${backgroundColor}`"
                   typography="font-family: Comfortaa"
                 />
@@ -223,40 +217,29 @@
 
       <!-- Slide KYB-->
       <div v-if="featuredTab == 'kyb'" class="card">
-        <div class="claim-wrapper" id="differences">
+        <div class="claim-wrapper">
           <div class="claim-container left">
-            <div class="claim-side-img diagram-small" id="diagram">
-              <!-- TODO: Update kyb_flow_es.png and kyb_flow_en.png -->
-              <template v-if="$root.$i18n.locale === 'es'">
-                <img
-                  class=""
-                  src="@/assets/img/illustrations/kyb_flow_es.svg"
-                  :alt="$t('seo_document_scan')"
-                  width="709"
-                  height="843"
-                />
-              </template>
-              <template v-else>
-                <img
-                  class=""
-                  src="@/assets/img/illustrations/kyb_flow_en.svg"
-                  :alt="$t('seo_document_scan')"
-                  width="709"
-                  height="843"
-                />
-              </template>
+            <div class="claim-side-img custom-requirements-list-wrapper">
+              <ul>
+                <li
+                  v-for="(
+                    customRequirementsCopy, index
+                  ) of customRequirementsCopies"
+                  :key="customRequirementsCopy.title"
+                  class="custom-requirements-list"
+                >
+                  <div class="custom-requirements-list-number">{{ index }}</div>
+                  <span>{{ $t(customRequirementsCopy.title) }}</span>
+                </li>
+              </ul>
             </div>
             <div class="claim-info-wrapper differences">
               <div class="claim-info">
                 <h4 class="title">
-                  {{ $t("kyb_claim1") }}
+                  {{ $t("kyb_solution_carousel_custom_requirements_subtitle") }}
                 </h4>
-                <p>{{ $t("kyb_solution_content1") }}</p>
-                <p>{{ $t("kyb_solution_content2") }}</p>
                 <p>
-                  <a href="/kyb" class="bold-link with-arrow">
-                    {{ $t("business_solution_card_kyb_link") }}
-                  </a>
+                  {{ $t("kyb_solution_carousel_custom_requirements_content") }}
                 </p>
               </div>
             </div>
@@ -347,6 +330,20 @@ export default {
           content: "business_solution_carousel_aml_pep_subtitle",
         },
       ],
+      customRequirementsCopies: [
+        {
+          title: "kyb_solution_carousel_custom_requirements_step_1",
+        },
+        {
+          title: "kyb_solution_carousel_custom_requirements_step_2",
+        },
+        {
+          title: "kyb_solution_carousel_custom_requirements_step_3",
+        },
+        {
+          title: "kyb_solution_carousel_custom_requirements_step_4",
+        },
+      ],
     };
   },
   mounted() {
@@ -418,6 +415,25 @@ export default {
 
 .tabs-wrapper.vertical
   margin-right: $spacing-md
+
+.custom-requirements-list-wrapper
+  text-align: left
+  ul
+    padding: 0
+  .custom-requirements-list
+    display: flex
+    list-style: none
+    margin-bottom: $spacing-xlg
+    .custom-requirements-list-number
+      background-color: rgba(255,255,255,0.2)
+      width: 25px
+      height: 25px
+      border-radius: 50%
+      margin-right: $spacing-sm
+      display: flex
+      justify-content: center
+      align-items: center
+      color: $color-primary
 
 .customize-verification-flow-wrapper
   display: flex
