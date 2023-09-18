@@ -4,7 +4,7 @@
     <section class="container-md" id="howto">
       <div class="section-headers">
         <span class="tag">{{ $t("business_howto_section") }}</span>
-        <h2>{{ $t("business_howto_title") }}</h2>
+        <h2 v-html="$t('business_howto_title')" class="color_blue_text" />
       </div>
       <div class="integration-container">
         <article class="card">
@@ -13,6 +13,7 @@
               <i class="fad fa-link fa-2x"></i>
             </div>
             <h4>Link</h4>
+            <h5>{{ $t("business_howto_title2") }}</h5>
             <p>{{ $t("business_howto_content1") }}</p>
           </div>
         </article>
@@ -22,6 +23,7 @@
               <i class="fad fa-cogs fa-2x"></i>
             </div>
             <h4>SDK</h4>
+            <h5>{{ $t("business_howto_title3") }}</h5>
             <p>{{ $t("business_howto_content2") }}</p>
           </div>
         </article>
@@ -85,18 +87,18 @@ export default {
     margin-right: 0
 
 .integration-link
-    margin-top: $spacing-xlg
-    .with-arrow
-      position: relative
-      &:after, &:before
-        transition: 0.2s ease-in-out
-        opacity: 0
-        transform: translateX(0%)
-        position: absolute
-        right: 0
-        font-family: "Font Awesome 5 Duotone"
-        content: "\f061"
-        color: #2963ff
+  margin-top: $spacing-xlg
+  .with-arrow
+    position: relative
+    &:after, &:before
+      transition: 0.2s ease-in-out
+      opacity: 0
+      transform: translateX(0%)
+      position: absolute
+      right: 0
+      font-family: "Font Awesome 5 Duotone"
+      content: "\f061"
+      color: #2963ff
       &:hover:after
         transition: 0.2s ease-in-out
         opacity: 1
