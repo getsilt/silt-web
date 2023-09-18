@@ -69,7 +69,7 @@
       <!-- Slide Automatic Detection-->
       <div v-if="featuredTab == 'automaticDetection'">
         <div class="claim-wrapper">
-          <div class="list-wrapper pins fraud-grid">
+          <div class="list-wrapper pins grid-section">
             <card
               v-for="automaticCollectionCopy in automaticCollectionCopies"
               :key="automaticCollectionCopy.title"
@@ -124,7 +124,7 @@
       <!-- Slide Automatic Verification-->
       <div v-if="featuredTab == 'automaticVerification'">
         <div class="claim-wrapper">
-          <div class="list-wrapper pins fraud-grid">
+          <div class="list-wrapper pins grid-section">
             <card
               v-for="automaticVerificationCopy in automaticVerificationCopies"
               :key="automaticVerificationCopy.title"
@@ -233,39 +233,39 @@ export default {
       automaticCollectionCopies: [
         {
           title: "kyb_solution_carousel_company_information_title",
-          class: "fraud-card-1",
+          class: "card-card-1",
           content: "kyb_solution_carousel_company_information_content",
         },
         {
           title: "kyb_solution_carousel_financials_title",
-          class: "fraud-card-4",
+          class: "card-card-4",
           content: "kyb_solution_carousel_financials_content",
         },
         {
           title: "kyb_solution_carousel_UBO_discovery_title",
-          class: "fraud-card-2",
+          class: "card-card-2",
           content: "kyb_solution_carousel_UBO_discovery_content",
         },
         {
           title: "kyb_solution_carousel_AI_title",
-          class: "fraud-card-5",
+          class: "card-card-5",
           content: "kyb_solution_carousel_AI_content",
         },
       ],
       automaticVerificationCopies: [
         {
           title: "kyb_solution_carousel_representatives_title",
-          class: "fraud-card-1",
+          class: "card-card-1",
           content: "kyb_solution_carousel_representatives_content",
         },
         {
           title: "kyb_solution_carousel_UBO_verification_title",
-          class: "fraud-card-3",
+          class: "card-card-3",
           content: "kyb_solution_carousel_UBO_verification_content",
         },
         {
           title: "kyb_solution_carousel_safety_title",
-          class: "fraud-card-4",
+          class: "card-card-4",
           content: "kyb_solution_carousel_safety_content",
         },
       ],
@@ -286,27 +286,27 @@ export default {
       frauds: [
         {
           title: "business_solution_carousel_rules_title",
-          class: "fraud-card-1",
+          class: "card-card-1",
           content: "business_solution_carousel_rules_subtitle",
         },
         {
           title: "business_solution_carousel_phone_verification_title",
-          class: "fraud-card-2",
+          class: "card-card-2",
           content: "business_solution_carousel_phone_verification_subtitle",
         },
         {
           title: "business_solution_carousel_misconduct_title",
-          class: "fraud-card-3",
+          class: "card-card-3",
           content: "business_solution_carousel_misconduct_subtitle",
         },
         {
           title: "features_security_expired_documents_title",
-          class: "fraud-card-4",
+          class: "card-card-4",
           content: "business_solution_carousel_expired_documents_subtitle",
         },
         {
           title: "business_solution_carousel_aml_pep_title",
-          class: "fraud-card-5",
+          class: "card-card-5",
           content: "business_solution_carousel_aml_pep_subtitle",
         },
       ],
@@ -352,26 +352,26 @@ export default {
 .bold-link
   color: #fff
 
-.fraud-grid
+.grid-section
   display: grid
-  .fraud-card-1
+  .card-card-1
     grid-column: 1
     grid-row: 1
-  .fraud-card-2
+  .card-card-2
     grid-column: 1
     grid-row: 2
-  .fraud-card-3
+  .card-card-3
     grid-column: 2
     grid-row: 1 / 2
-  .fraud-card-4
+  .card-card-4
     grid-column: 3
     grid-row: 1
-  .fraud-card-5
+  .card-card-5
     grid-column: 3
     grid-row: 2
 
 @media (max-width: 768px)
-  .fraud-grid
+  .grid-section
     display: flex
 
 .custom-requirements-list-wrapper
