@@ -1,10 +1,6 @@
 <template>
   <div class="fw-container--dark">
     <section class="container-md">
-      <div class="section-headers">
-        <span class="tag">{{ $t("business_solution_section") }}</span>
-        <h2>{{ $t("kyb_solution_title") }}</h2>
-      </div>
       <div class="card">
         <div class="article-container claim-container">
           <div class="claim-side-img">
@@ -30,7 +26,7 @@
               <b>{{ $t("kyb_solution_compliant") }}</b>
             </p>
             <p class="centered-block integration-link">
-              <demo-buttons class="dark"/>
+              <demo-buttons class="dark" />
             </p>
           </div>
         </div>

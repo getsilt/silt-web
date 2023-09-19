@@ -31,18 +31,6 @@ export default {
   data() {
     return {
       email: "hello@getsilt.com",
-      uniqueBenefits: [
-        {
-          icon: "fa-calendar-exclamation fa-3x",
-          title: "business_benefits_updatedDocs_title",
-          content: "business_benefits_updatedDocs_content",
-        },
-        {
-          icon: "fa-badge-sheriff fa-3x",
-          title: "business_benefits_list_title",
-          content: "business_benefits_list_content",
-        },
-      ],
     };
   },
   mounted() {

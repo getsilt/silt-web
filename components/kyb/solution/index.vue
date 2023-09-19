@@ -3,7 +3,7 @@
   <div class="fw-container--dark">
     <div class="section-headers">
       <span class="tag">{{ $t("business_solution_section") }}</span>
-      <h2 class="tag" v-html="$t('kyb_solution_title')" />
+      <h2 class="tag lowercase" v-html="$t('kyb_solution_title')" />
       <h2>{{ $t("kyb_solution_subtitle_1") }}</h2>
       <p class="subtitle" v-html="$t('kyb_solution_subtitle_2')" />
     </div>
@@ -30,18 +30,6 @@ export default {
   data() {
     return {
       email: "hello@getsilt.com",
-      uniqueBenefits: [
-        {
-          icon: "fa-calendar-exclamation fa-3x",
-          title: "business_benefits_updatedDocs_title",
-          content: "business_benefits_updatedDocs_content",
-        },
-        {
-          icon: "fa-badge-sheriff fa-3x",
-          title: "business_benefits_list_title",
-          content: "business_benefits_list_content",
-        },
-      ],
     };
   },
   mounted() {
