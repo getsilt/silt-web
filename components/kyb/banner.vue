@@ -7,7 +7,7 @@
           <p class="subtitle">{{ $t("kyb_call_to_action_subtitle") }}</p>
         </div>
         <nuxt-link :to="localePath({ name: 'demo' })">
-          <button class="secondary secondary_banner">
+          <button class="primary">
             {{ $t("btn_cta_book_demo") }}
           </button>
         </nuxt-link>
