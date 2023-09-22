@@ -1,8 +1,8 @@
 <template>
-  <div class="fw-container kyb-banner">
+  <div class="fw-container kyb-banner bg-gradient-1">
     <section>
       <div class="kyb-banner-wrapper">
-        <div class="kyb-banner-cta">
+        <div class="kyb-banner-titles">
           <h3>{{ $t("kyb_call_to_action_title") }}</h3>
           <p class="subtitle">{{ $t("kyb_call_to_action_subtitle") }}</p>
         </div>
@@ -18,9 +18,7 @@
 
 <script>
 import gsap from "gsap";
-import DemoButtons from "../DemoButtons.vue";
 export default {
-  components: { DemoButtons },
   data() {
     return {
       email: "hello@getsilt.com",
@@ -60,13 +58,14 @@ export default {
 <style lang="sass" scoped>
 @import "@/assets/sass/vars.sass"
 .kyb-banner
-  background: $color-primary
+  // background: $color-primary
+  z-index: 1
   .kyb-banner-wrapper
     display: flex
     flex-wrap: wrap
     align-items: center
     justify-content: space-around
-    .kyb-banner-cta
+    .kyb-banner-titles
       color: #fff
       h3
         color: #fff
