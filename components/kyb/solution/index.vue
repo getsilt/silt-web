@@ -1,15 +1,14 @@
 <template>
   <!-- Unique advantage  -->
   <div class="fw-container--dark">
-    <div class="section-headers" id="unique-benefits">
-      <span class="tag">{{
-        $t("business_highlights_vanguardTech_section")
-      }}</span>
-      <h2>{{ $t("business_highlights_vanguardTech_title") }}</h2>
-      <p>{{ $t("business_highlights_vanguardTech_content") }}</p>
+    <div class="section-headers">
+      <span class="tag">{{ $t("business_solution_section") }}</span>
+      <h2 class="tag lowercase" v-html="$t('kyb_solution_title')" />
+      <h2>{{ $t("kyb_solution_subtitle_1") }}</h2>
+      <p class="subtitle" v-html="$t('kyb_solution_subtitle_2')" />
     </div>
     <section class="">
-      <featured-features :hidden-tab="hiddenTab" />
+      <featured-features />
     </section>
   </div>
 </template>
@@ -35,11 +34,6 @@ export default {
   },
   mounted() {
     this.startFirstAnimationScene(this);
-  },
-  props: {
-    hiddenTab: {
-      required: false,
-    },
   },
   methods: {
     getEmail() {
@@ -69,4 +63,6 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped></style>
+<style lang="sass" scoped>
+@import "@/assets/sass/vars.sass"
+</style>

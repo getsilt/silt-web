@@ -19,40 +19,40 @@
       </div>
     </div>
     <div class="claim-info">
-      <h1 class="title" v-html="$t('kyb_claim1')" />
+      <h1 class="title color_blue_text" v-html="$t('kyb_claim1')" />
       <h4 class="subtitle" v-html="$t('kyb_claim2')" />
       <demo-buttons />
     </div>
     <div class="claim-side-img">
-      <div class="dark-illustration">
+      <div class="dark-illustration screenshots-container">
         <template v-if="$root.$i18n.locale === 'es'">
           <img
-            src="@/assets/img/illustrations/kyb_flow_es.svg"
+            class="ubo_diagram_screenshot screenshot"
+            src="@/assets/img/screenshots/screenshot_ubo_diagram.png"
             :alt="$t('seo_document_scan')"
-            width="300"
           />
         </template>
         <template v-else>
           <img
-            src="@/assets/img/illustrations/kyb_flow_en.svg"
+            class="ubo_diagram_screenshot screenshot"
+            src="@/assets/img/screenshots/screenshot_ubo_diagram.png"
             :alt="$t('seo_document_scan')"
-            width="300"
           />
         </template>
       </div>
-      <div class="light-illustration">
+      <div class="light-illustration screenshots-container">
         <template v-if="$root.$i18n.locale === 'es'">
           <img
-            src="@/assets/img/illustrations/kyb_flow_es_light.svg"
+            class="ubo_diagram_screenshot screenshot"
+            src="@/assets/img/screenshots/screenshot_ubo_diagram.png"
             :alt="$t('seo_document_scan')"
-            width="300"
           />
         </template>
         <template v-else>
           <img
-            src="@/assets/img/illustrations/kyb_flow_en_light.svg"
+            class="ubo_diagram_screenshot screenshot"
+            src="@/assets/img/screenshots/screenshot_ubo_diagram.png"
             :alt="$t('seo_document_scan')"
-            width="300"
           />
         </template>
       </div>
@@ -76,3 +76,11 @@ export default {
   },
 };
 </script>
+<style lang="sass" scoped>
+.ubo_diagram_screenshot
+  border-radius: 20px
+  max-width: 450px
+  transform: rotateY(5deg)
+  @media (max-width: 767px)
+    max-width: 300px
+</style>

@@ -1,9 +1,10 @@
 <template>
   <div>
     <hero />
-    <problem />
     <benefits />
     <solution />
+    <banner />
+    <integration />
   </div>
 </template>
 
@@ -13,9 +14,20 @@ import DemoButtons from "@/components/DemoButtons.vue";
 import Hero from "@/components/kyb/hero.vue";
 import Problem from "@/components/kyb/problem.vue";
 import Benefits from "@/components/kyb/benefits.vue";
-import Solution from "@/components/kyb/solution.vue";
+import Solution from "@/components/kyb/solution/index.vue";
+import Integration from "@/components/business/integration.vue";
+import Banner from "@/components/kyb/banner.vue";
+
 export default {
-  components: { DemoButtons, Hero, Problem, Benefits, Solution },
+  components: {
+    DemoButtons,
+    Hero,
+    Problem,
+    Benefits,
+    Solution,
+    Integration,
+    Banner,
+  },
   head() {
     const i18nSeo = this.$nuxtI18nHead();
     return {

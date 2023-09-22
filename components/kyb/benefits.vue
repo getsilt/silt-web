@@ -3,6 +3,8 @@
     <div class="highlights-wrapper">
       <div class="section-headers">
         <span class="tag">{{ $t("business_benefits_section") }}</span>
+        <h2>{{ $t("kyb_benefit_title") }}</h2>
+        <p class="subtitle" v-html="$t('kyb_benefit_subtitle')" />
       </div>
       <div class="list-wrapper pins">
         <card
@@ -31,12 +33,20 @@ export default {
       email: "hello@getsilt.com",
       benefits: [
         {
-          title: "kyb_benefit_scale_title",
-          content: "kyb_benefit_scale_content",
+          title: "kyb_benefit_time_title",
+          content: "kyb_benefit_time_content",
         },
         {
-          title: "kyb_benefit_income_title",
-          content: "kyb_benefit_income_content",
+          title: "kyb_benefit_growth_title",
+          content: "kyb_benefit_growth_content",
+        },
+        {
+          title: "kyb_benefit_security_title",
+          content: "kyb_benefit_security_content",
+        },
+        {
+          title: "kyb_benefit_simplify_title",
+          content: "kyb_benefit_simplify_content",
         },
       ],
     };
