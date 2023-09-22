@@ -380,18 +380,22 @@ export default {
     padding: 0
   .custom-requirements-list
     display: flex
+    align-items: center
     list-style: none
     margin-bottom: $spacing-xlg
+    font-family: $font-bold
     .custom-requirements-list-number
-      background-color: rgba(255,255,255,0.2)
-      width: 25px
-      height: 25px
+      @extend .bg-gradient-1 !optional
+      padding-top: 2px
+      width: 30px
+      height: 30px
       border-radius: 50%
-      margin-right: $spacing-sm
+      margin-right: $spacing-md
       display: flex
       justify-content: center
       align-items: center
-      color: $color-primary
+      color: #fff
+      font-family: $font-bold
 
 .tabs-wrapper.vertical
   margin-right: $spacing-md

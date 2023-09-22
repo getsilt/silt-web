@@ -103,3 +103,29 @@ $box-shadow-1: 2px 6px 20px -6px rgba(0, 0, 0, 0.3)
     --link-secondary: #fff
     --link-inverted: #{$color-grey-darken-2}
     --link-inverted-hover: #000
+
+
+
+.bg-gradient-1
+  transition: 0.3s ease-in-out
+  background: rgb(3,44,157)
+  background: linear-gradient(45deg, rgba(48,50,205,1) 0%, rgba(48,104,255,1) 48%, rgba(108,176,255,1) 100%)
+
+.text-gradient-1, .text-gradient-1-child > *, .text-gradient-2, .text-gradient-2-child > *, .text-gradient-3, .text-gradient-3-child > *, .text-gradient-4, .text-gradient-4-child > *, .text-gradient-5, .text-gradient-5-child > *
+  transition: 0.3s ease-in-out
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+  -moz-background-clip: text
+  -moz-text-fill-color: transparent
+  background-size: 300%
+  background-position: 100%
+  background-repeat: repeat
+  background-image: linear-gradient(45deg, rgba(48,50,205,1) 0%, rgba(48,104,255,1) 70%, rgba(108,176,255,1) 100%)
+
+.bg-gradient-2
+  transition: 0.3s ease-in-out
+  background: rgb(3,44,157)
+  background: linear-gradient(45deg, rgba(48,50,205,1) 0%, rgba(48,104,255,1) 60%, rgb(255, 102, 102) 100%)
+
+.text-gradient-2, .text-gradient-2-child > *
+  background-image: linear-gradient(45deg, rgba(48,50,205,1) 0%, rgba(48,104,255,1) 60%, rgb(255, 102, 102) 100%)
