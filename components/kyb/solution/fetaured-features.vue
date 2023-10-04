@@ -42,7 +42,7 @@
           }}</span>
         </v-tab>
       </div>
-      <!-- <div class="tab-wrapper">
+      <div class="tab-wrapper">
         <v-tab
           activeTabName="LLM"
           @onActiveTabChange="featuredTab = $event"
@@ -51,7 +51,7 @@
         >
           <span>{{ $t("kyb_solution_carousel_LLM_title") }}</span>
         </v-tab>
-      </div> -->
+      </div>
       <div class="tab-wrapper">
         <v-tab
           activeTabName="companyDatabase"
@@ -144,7 +144,7 @@
       <!-- END Slide Automatic Verification-->
 
       <!-- Slide LLM (AI for your KYC)-->
-      <!-- <div v-if="featuredTab == 'LLM'" class="card">
+      <div v-if="featuredTab == 'LLM'" class="card">
         <div class="claim-wrapper">
           <div class="claim-container left">
             <div class="claim-side-img diagram-small" id="diagram">
@@ -177,7 +177,7 @@
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
       <!-- END Slide LLM (AI for your KYC)-->
 
       <!-- Slide Biocheck-->
