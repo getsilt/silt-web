@@ -168,9 +168,14 @@
       provide us.
     </p>
     <p class="banner-info">
+     Possible values for status are <code>SUCCESS | ERROR | VERIFICATION_ERROR | PENDING | RUNNING | MANUAL_REVIEW</code>.
+      Keep in mind that if a <b>manual verification</b> takes place and <code>status</code> has <code>MANUAL_REVIEW</code>, you will have to check also the <code>manual_review_status</code> that may have the following possible values: <code>SUCCESS | ERROR | PENDING</code>
+    </p>
+    <p class="banner-info">
       It is strongly recommended to use the parameter <code>customer_user_id</code> in the url of step 2. 
       This way, you can know to which user of your database refers the notification.
     </p>
+   
     <p>
       Some cases (less than 5%) require a manual verification. For obvious
       reasons, we cannot verify users instantly this way. We inform the user by
@@ -220,7 +225,7 @@ export default {
             driving_license_id: null,
             id: "...",
           },
-          status: "RUNNING",
+          status: "SUCCESS",
           owner_company_app_id: "...",
           identity_document: {
             address: "",
@@ -245,7 +250,7 @@ export default {
               type: "PICTURE_VALIDATION",
               errors: [],
               raw: null,
-              status: "RUNNING",
+              status: "SUCCESS",
               output: {
                 side: "FRONT",
                 is_nie: false,
@@ -261,7 +266,7 @@ export default {
               type: "PICTURE_VALIDATION",
               errors: [],
               raw: null,
-              status: "PENDING",
+              status: "SUCCESS",
               output: {
                 side: "BACK",
                 is_nie: false,
@@ -277,7 +282,7 @@ export default {
               type: "PICTURE_VALIDATION",
               errors: [],
               raw: null,
-              status: "PENDING",
+              status: "SUCCESS",
               output: {
                 side: null,
                 is_nie: null,
@@ -415,7 +420,7 @@ export default {
           },
         },
         token: "...",
-        status: "RUNNING",
+        status: "SUCCESS",
         user_id: "...",
         user_meta: null,
       },

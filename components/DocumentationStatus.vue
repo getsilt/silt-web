@@ -32,10 +32,14 @@
       <code>X-Company-App-Id</code> Header.
     </p>
     <p>
-      Check <code>status: SUCCESS | MANUAL_REVIEW | PENDING | ERROR</code> to
+      Check <code>status</code> to
       know if a user is verified or not. Use the
       <code>national_id | passport | driving_license</code> objects to retreive
       the data extracted from the documents.
+    </p>
+    <p class="banner-info">
+     Possible values for status are <code>SUCCESS | ERROR | VERIFICATION_ERROR | PENDING | RUNNING | MANUAL_REVIEW</code>.
+      Keep in mind that if a <b>manual verification</b> takes place and <code>status</code> has <code>MANUAL_REVIEW</code>, you will have to check also the <code>manual_review_status</code> that may have the following possible values: <code>SUCCESS | ERROR | PENDING</code>
     </p>
     <code class="code-block">
       <tree-view
