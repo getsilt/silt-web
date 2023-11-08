@@ -64,8 +64,7 @@ export default {
       document.dispatchEvent(new CustomEvent("meetzy-refresh", {}));
       document.addEventListener("meetzy-form-submitted", (e) => {
         window.lintrk('track', { conversion_id: 14836770 });
-        console.log("Form successfully submitted")
-        // gtag_report_conversion();
+        gtag_report_conversion();
       });
     },
   },

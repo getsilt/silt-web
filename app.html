@@ -103,12 +103,14 @@
     gtag('config', 'AW-352683225');
     function gtag_report_conversion(url) {
       var callback = function () {
-        if (typeof url != "undefined") {
+        console.log("Report conversion")
+        if (typeof (url) != 'undefined') {
           window.location = url;
         }
       };
-      gtag("event", "conversion", {
-        event_callback: callback,
+      gtag('event', 'conversion', {
+        'send_to': 'AW-352683225/78NdCOjLjcgDENmJlqgB',
+        'event_callback': callback
       });
       return false;
     }
