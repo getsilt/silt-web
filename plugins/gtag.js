@@ -1,10 +1,48 @@
 import Vue from "vue";
-import VueGtag from "vue-gtag";
+// import VueGtag from "vue-gtag";
 
-Vue.use(VueGtag, {
-  config: { id: "G-GEBTCR5Y94" },
-});
+// Vue.use(VueGtag, {
+//   config: { id: "G-GEBTCR5Y94" },
+// });
 
-gtag("set", "linker", {
-  domains: ["getsilt.com", "dashboard.getsilt.com"],
-});
+// gtag("set", "linker", {
+//   domains: ["getsilt.com", "dashboard.getsilt.com"],
+// });
+// import SlackNotify from 'slack-notify';
+// const MY_SLACK_WEBHOOK_URL = 'https://hooks.slack.com/services/RANDOMCHARS';
+// const slack = SlackNotify(MY_SLACK_WEBHOOK_URL);
+// function notifyConversion() {
+//   slack.send({
+//     channel: '#sales-pipeline',
+//     icon_url: 'http://getsilt.com/apple-touch-icon.png',
+//     text: 'Yey! New web conversion',
+//     unfurl_links: 1,
+//     username: 'Web'
+//   });
+// }
+
+export default (context, inject) => {
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'AW-352683225');
+
+  function gtag_report_conversion(url) {
+    console.log("gtag conversion")
+    var callback = function () {
+      console.log("Report conversion")
+      // notifyConversion()
+      if (typeof (url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+      'send_to': 'AW-352683225/78NdCOjLjcgDENmJlqgB',
+      'event_callback': callback
+    });
+    return false;
+  }
+
+  inject("gtag_report_conversion", gtag_report_conversion)
+}
