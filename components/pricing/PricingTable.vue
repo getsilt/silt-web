@@ -13,7 +13,7 @@
             }}</span>
           </td>
           <td>
-            <b>99€</b>
+            <b>199€</b>
             <span class="hint">/ {{ $t("business_pricing_month") }}</span>
           </td>
         </tr>
