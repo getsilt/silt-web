@@ -26,7 +26,7 @@
       <!-- PAYED -->
       <div class="pricing-plan">
         <div class="pricing-plan_price">
-          <h2>99€</h2>
+          <h2>199€</h2>
           <h6>/ {{ $t("business_pricing_month") }}</h6>
         </div>
         <p class="pricing-plan_upto">
