@@ -12,9 +12,7 @@
           <h2>{{ $t("global_free") }}</h2>
         </div>
         <p class="pricing-plan_upto">
-          {{ $t("business_pricing_upto", { amount: 50 }) }}
-          {{ $t("business_pricing_userVerificationsMonth") }}<br />
-          {{ $t("business_pricing_period", { amount: 3 }) }}
+          {{ $t("business_pricing_period", { amount: 1 }) }}
         </p>
         <ul class="checklist">
           <li v-for="feature of features" :key="feature.title">
@@ -26,16 +24,13 @@
       <!-- PAYED -->
       <div class="pricing-plan">
         <div class="pricing-plan_price">
-          <h2>199€</h2>
-          <h6>/ {{ $t("business_pricing_month") }}</h6>
+          <h2>0,50€</h2>
+          <h6>/ {{ $t("global_userVerification") }}</h6>
         </div>
         <p class="pricing-plan_upto">
-          {{
-            $t("business_pricing_upto", {
-              amount: "200",
-            })
-          }}
-          {{ $t("business_pricing_userVerificationsMonth") }}
+          <span> {{ $t("business_pricing_min_quote") }}</span>
+          <b>199€</b>
+          / {{ $t("business_pricing_month") }}
         </p>
         <ul class="checklist">
           <li v-for="feature of features" :key="feature.title">
