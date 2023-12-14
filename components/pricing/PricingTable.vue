@@ -6,17 +6,26 @@
           <h6>{{ $t("nav_feature_kyc") }}</h6>
         </th>
         <tr>
+          <td>{{ $t("business_pricing_min_quote") }}</td>
           <td>
-            {{ $t("business_pricing_upto", { amount: 1000 }) }}
+            <span class="hint"> {{ $t("business_pricing_min") }}</span>
+            <b>199€</b>
+            <span class="hint">/ {{ $t("business_pricing_month") }}</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {{ $t("business_pricing_upto", { amount: "1.000" }) }}
             <span class="hint">{{
               $t("business_pricing_userVerificationsMonth")
             }}</span>
           </td>
           <td>
             <b>0,5€</b>
-            <span class="hint"> {{ $t("business_pricing_min") }}</span>
-            <b>199€</b>
-            <span class="hint">/ {{ $t("business_pricing_month") }}</span>
+            <span class="hint">
+              {{ $t("global_userVerification") }}
+            </span>
+            <br />
           </td>
         </tr>
         <tr>

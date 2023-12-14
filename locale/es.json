@@ -126,6 +126,7 @@
     "business_pricing_between": "Entre {amountLow} y {amountUp}",
     "business_pricing_content": "Paga a mes vencido solo por los usuarios verificados correctamente, independientemente del número de documentos o de intentos.",
     "business_pricing_min": "Min",
+    "business_pricing_min_quote": "Cuota mínima",
     "business_pricing_minimum": "mínimo {amount} \/ mes",
     "business_pricing_month": "Mes",
     "business_pricing_moreThan": "Más de {amount}",

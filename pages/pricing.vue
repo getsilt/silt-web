@@ -12,8 +12,6 @@
           <h2>{{ $t("global_free") }}</h2>
         </div>
         <p class="pricing-plan_upto">
-          {{ $t("business_pricing_upto", { amount: 50 }) }}
-          {{ $t("business_pricing_userVerificationsMonth") }}<br />
           {{ $t("business_pricing_period", { amount: 1 }) }}
         </p>
         <ul class="checklist">
@@ -27,16 +25,10 @@
       <div class="pricing-plan">
         <div class="pricing-plan_price">
           <h2>0,50€</h2>
-          <h6>/ {{ $t("global_verification") }}</h6>
+          <h6>/ {{ $t("global_userVerification") }}</h6>
         </div>
         <p class="pricing-plan_upto">
-          {{
-            $t("business_pricing_upto", {
-              amount: "200",
-            })
-          }}
-          {{ $t("business_pricing_userVerificationsMonth") }}
-          {{ $t("business_pricing_min") }}
+          <span> {{ $t("business_pricing_min_quote") }}</span>
           <b>199€</b>
           / {{ $t("business_pricing_month") }}
         </p>
