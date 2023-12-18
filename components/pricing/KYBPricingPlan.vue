@@ -22,10 +22,13 @@ export default Vue.extend({
     return {
       features: [
         {
-          title: "business_pricing_kyb_check_1",
+          title: "business_pricing_kyb_check_11",
         },
         {
-          title: "business_pricing_kyb_check_2",
+          title: "business_pricing_kyb_check_8",
+        },
+        {
+          title: "kyb_solution_carousel_custom_requirements_title",
         },
         {
           title: "kyb_solution_carousel_LLM_subtitle",
@@ -40,7 +43,10 @@ export default Vue.extend({
           title: "kyb_solution_carousel_custom_requirements_step_4",
         },
         {
-          title: "business_pricing_kyb_check_8",
+          title: "business_pricing_kyb_check_6",
+        },
+        {
+          title: "business_highlights_siltlist_title",
         },
         {
           title: "business_pricing_kyb_check_9",
@@ -49,7 +55,10 @@ export default Vue.extend({
           title: "business_pricing_kyb_check_10",
         },
         {
-          title: "business_pricing_kyb_check_11",
+          title: "business_pricing_kyb_check_1",
+        },
+        {
+          title: "business_pricing_kyb_check_2",
         },
         {
           title: "business_pricing_kyb_check_12",
@@ -58,19 +67,10 @@ export default Vue.extend({
           title: "business_pricing_kyb_check_13",
         },
         {
-          title: "business_highlights_siltlist_title",
-        },
-        {
           title: "business_pricing_kyb_check_3",
         },
         {
-          title: "business_pricing_kyb_check_6",
-        },
-        {
           title: "business_pricing_kyb_check_7",
-        },
-        {
-          title: "kyb_solution_carousel_custom_requirements_title",
         },
       ],
     };
