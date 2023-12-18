@@ -40,16 +40,10 @@ export default Vue.extend({
           title: "kyb_solution_carousel_custom_requirements_step_4",
         },
         {
-          title: "kyb_solution_carousel_custom_requirements_step_1",
-        },
-        {
           title: "kyb_solution_carousel_safety_title",
         },
         {
           title: "business_highlights_siltlist_title",
-        },
-        {
-          title: "kyb_solution_carousel_custom_requirements_title",
         },
         {
           title: "business_pricing_kyb_check_1",
