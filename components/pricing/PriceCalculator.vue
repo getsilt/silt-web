@@ -132,7 +132,7 @@ export default Vue.extend({
       priceTableAMLPEP: [0.15, 0.05, 0.042, 0.036, 0.032],
       rangeTableKYC: [200, 1000, 5000, 10000, 15000, 20000],
       rangeTableAMLPEP: [200, 1000, 5000, 10000],
-      priceSplit: { kyc: 0, aml: 0, pep: 0 },
+      priceSplit: { kyc: 199, aml: 0, pep: 0 },
       activeInput: false,
       features: [
         {
@@ -152,27 +152,6 @@ export default Vue.extend({
     };
   },
   computed: {
-    totalPrice() {
-      let maxPrice = 0;
-      let minPrice = 0;
-      if (this.hasKYC) {
-        maxPrice += this.priceTableKYC[0];
-        minPrice += this.priceTableKYC[this.priceTableKYC.length - 1];
-      }
-      if (this.hasAML) {
-        maxPrice += this.priceTableAMLPEP[0];
-        minPrice += this.priceTableAMLPEP[this.priceTableAMLPEP.length - 1];
-      }
-      if (this.hasPEP) {
-        maxPrice += this.priceTableAMLPEP[0];
-        minPrice += this.priceTableAMLPEP[this.priceTableAMLPEP.length - 1];
-      }
-      return {
-        max: this.formatCurrency(maxPrice),
-        min: this.formatCurrency(minPrice),
-      };
-    },
-
     priceEstimateCost() {
       if (!this.priceEstimateVerifications) return this.formatCurrency(0);
       let totalPrice = 0;
@@ -253,12 +232,12 @@ export default Vue.extend({
     margin-bottom: 0
 
   .price_card_4
-    grid-column: 2
-    grid-row: 2
+    grid-column: 3
+    grid-row: 1
     flex-direction: column
   .price_card_3
-    grid-column: 1
-    grid-row: 2
+    grid-column: 2
+    grid-row: 1
     flex-direction: column
   .price_card_1
     grid-column: 1

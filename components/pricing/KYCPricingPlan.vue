@@ -20,16 +20,7 @@
           <b>{{ $t("global_free") }}</b>
         </p>
       </div>
-      <ul class="pricing-kyc-card-content-list">
-        <li
-          v-for="feature of features"
-          :key="feature.title"
-          class="pricing-kyc-card-content-list-item"
-        >
-          <i class="fad fa-check-circle" />
-          <span>{{ $t(feature.title) }}</span>
-        </li>
-      </ul>
+      <ChecksList :features="features" />
       <DemoButtons />
     </div>
     <div class="tabs-wrapper tab-md tab-squared">
@@ -62,6 +53,7 @@ import PricingTable from "./PricingTable.vue";
 import DemoButtons from "../DemoButtons.vue";
 import VTab from "../VTab.vue";
 import PriceCalculator from "./PriceCalculator.vue";
+import ChecksList from "../ChecksList.vue";
 
 export default Vue.extend({
   name: "KYCPricingPlan",
@@ -102,7 +94,7 @@ export default Vue.extend({
       ],
     };
   },
-  components: { PricingTable, DemoButtons, VTab, PriceCalculator },
+  components: { PricingTable, DemoButtons, VTab, PriceCalculator, ChecksList },
 });
 </script>
 <style lang="sass" scoped>
@@ -124,20 +116,6 @@ export default Vue.extend({
     align-items: flex-end
     h2,h6
       margin-bottom: 0
-  .pricing-kyc-card-content-list
-    list-style: none
-    padding: 0
-    margin: 0
-    display: flex
-    flex-direction: row
-    flex-wrap: wrap
-    column-gap: $spacing-xlg
-    row-gap: $spacing-md
-    justify-content: center
-
-    .pricing-kyc-card-content-list-item
-      i
-        margin-right: $spacing-sm
 .pricing-plans_container
   display: flex
   justify-content: center
