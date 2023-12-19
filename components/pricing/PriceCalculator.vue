@@ -2,6 +2,17 @@
   <div class="price-grid">
     <div class="card price_card_1">
       <h6>{{ $t("price_per_verification_monthly") }}</h6>
+      <div
+        v-for="feature of features"
+        :key="feature.name"
+        class="price-calculator-checks-wrapper"
+      >
+        <PriceCalculatorCheckbox
+          :checkBoxText="feature.translationKey"
+          :isSelected="feature.isActive"
+          @onCheckboxChange="updateCalculator(feature.name)"
+        />
+      </div>
       <input
         v-model="priceEstimateVerifications"
         placeholder="Ex: 3200"
@@ -10,20 +21,7 @@
         @click="activeInput = !activeInput"
       />
     </div>
-    <div class="card price_card_2">
-      <h6>{{ $t("price_per_verification_total_calculation") }}</h6>
-      <p>
-        {{
-          $t("price_per_verification_prices_2", {
-            amount: priceEstimateCost,
-          })
-        }}
-      </p>
-    </div>
-    <div
-      v-if="hasKYC || hasKYB || hasAML || hasOCR || hasBiocheck"
-      class="card price_card_3"
-    >
+    <div v-if="hasKYC || hasAML" class="card price_card_3">
       <TransitionGroup name="offsetX">
         <div v-if="hasKYC" key="KYC" class="price-card-description">
           <h6>{{ $t("price_per_verification_KYC") }}</h6>
@@ -31,30 +29,6 @@
             {{
               $t("price_per_verification_prices_2", {
                 amount: formatCurrency(priceSplit.kyc),
-              })
-            }}
-          </p>
-        </div>
-      </TransitionGroup>
-      <TransitionGroup name="offsetX">
-        <div v-if="hasKYB" key="KYB" class="price-card-description">
-          <h6>{{ $t("price_per_verification_KYB") }}</h6>
-          <p>
-            {{
-              $t("price_per_verification_prices_2", {
-                amount: formatCurrency(priceSplit.kyb),
-              })
-            }}
-          </p>
-        </div>
-      </TransitionGroup>
-      <TransitionGroup name="offsetX">
-        <div v-if="hasOCR" key="OCR" class="price-card-description">
-          <h6>{{ $t("price_per_verification_OCR") }}</h6>
-          <p>
-            {{
-              $t("price_per_verification_prices_2", {
-                amount: formatCurrency(priceSplit.ocr),
               })
             }}
           </p>
@@ -84,23 +58,18 @@
           </p>
         </div>
       </TransitionGroup>
-      <TransitionGroup name="offsetY">
-        <div v-if="hasBiocheck" key="BIOCH" class="price-card-description">
-          <h6>{{ $t("price_per_verification_biocheck") }}</h6>
-          <p>
-            {{
-              $t("price_per_verification_prices_2", {
-                amount: formatCurrency(priceSplit.biocheck),
-              })
-            }}
-          </p>
-        </div>
-      </TransitionGroup>
+      <div class="price-card-description total-monthly-cost-wrapper">
+        <h5>{{ $t("price_per_verification_total_calculation") }}</h5>
+        <h5>
+          {{
+            $t("price_per_verification_prices_2", {
+              amount: priceEstimateCost,
+            })
+          }}
+        </h5>
+      </div>
     </div>
-    <div
-      v-if="hasKYC || hasKYB || hasAML || hasOCR || hasBiocheck"
-      class="card price_card_4"
-    >
+    <div class="card price_card_4">
       <TransitionGroup name="offsetX">
         <div v-if="hasKYC" key="KYC-2" class="price-card-description">
           <h6>{{ $t("price_per_verification_KYC") }}</h6>
@@ -111,36 +80,6 @@
                   priceTableKYC[priceTableKYC.length - 1]
                 ),
                 amountUp: formatCurrency(priceTableKYC[0]),
-              })
-            }}
-          </p>
-        </div>
-      </TransitionGroup>
-      <TransitionGroup name="offsetX">
-        <div v-if="hasKYB" key="KYB-2" class="price-card-description">
-          <h6>{{ $t("price_per_verification_KYB") }}</h6>
-          <p>
-            {{
-              $t("price_per_verification_prices_1", {
-                amountLow: formatCurrency(
-                  priceTableKYB[priceTableKYB.length - 1]
-                ),
-                amountUp: formatCurrency(priceTableKYB[0]),
-              })
-            }}
-          </p>
-        </div>
-      </TransitionGroup>
-      <TransitionGroup name="offsetX">
-        <div v-if="hasOCR" key="OCR-2" class="price-card-description">
-          <h6>{{ $t("price_per_verification_OCR") }}</h6>
-          <p>
-            {{
-              $t("price_per_verification_prices_1", {
-                amountLow: formatCurrency(
-                  priceTableOCR[priceTableOCR.length - 1]
-                ),
-                amountUp: formatCurrency(priceTableOCR[0]),
               })
             }}
           </p>
@@ -176,111 +115,49 @@
           </p>
         </div>
       </TransitionGroup>
-      <TransitionGroup name="offsetY">
-        <div v-if="hasBiocheck" key="BIOCH-2" class="price-card-description">
-          <h6>{{ $t("price_per_verification_biocheck") }}</h6>
-          <p>
-            {{
-              $t("price_per_verification_prices_1", {
-                amountLow: formatCurrency(
-                  priceTableBiocheck[priceTableBiocheck.length - 1]
-                ),
-                amountUp: formatCurrency(priceTableBiocheck[0]),
-              })
-            }}
-          </p>
-        </div>
-      </TransitionGroup>
-    </div>
-    <div v-if="totalPrice" class="card price_card_5">
-      <h6>{{ $t("price_per_verification_total_description") }}</h6>
-      <p>
-        {{
-          $t("price_per_verification_prices_1", {
-            amountLow: totalPrice.min,
-            amountUp: totalPrice.max,
-          })
-        }}
-      </p>
     </div>
   </div>
 </template>
 <script lang="ts">
 import Vue from "vue";
+import PriceCalculatorCheckbox from "./PriceCalculatorCheckbox.vue";
 
 export default Vue.extend({
-  props: {
-    hasKYC: { required: true },
-    hasKYB: { required: true },
-    hasAML: { required: true },
-    hasPEP: { required: true },
-    hasOCR: { required: true },
-    hasBiocheck: { required: true },
-  },
+  components: { PriceCalculatorCheckbox },
+  props: {},
   data() {
     return {
       priceEstimateVerifications: null,
-      priceTableKYB: [2.75, 2.55, 2.35],
-      priceTableKYC: [0.5, 0.4, 0.3, 0.2],
-      priceTableOCR: [0.3, 0.25, 0.2, 0.16, 0.13],
+      priceTableKYC: [0.5, 0.4, 0.3, 0.2, 0.17, 0.15],
       priceTableAMLPEP: [0.15, 0.05, 0.042, 0.036, 0.032],
-      priceTableBiocheck: [0.5, 0.4, 0.35],
-      rangeTableKYB: [500, 1000],
-      rangeTableKYC: [200, 1000, 5000, 10000],
+      rangeTableKYC: [200, 1000, 5000, 10000, 15000, 20000],
       rangeTableAMLPEP: [200, 1000, 5000, 10000],
-      rangeTableBiocheck: [5000, 20000],
-      rangeTableOCR: [50, 1000, 5000, 10000, 30000],
-      priceSplit: { kyc: 0, aml: 0, pep: 0, kyb: 0, biocheck: 0, ocr: 0 },
+      priceSplit: { kyc: 199, aml: 0, pep: 0 },
       activeInput: false,
+      features: [
+        {
+          name: "PEP",
+          isActive: false,
+          translationKey: "business_pricing_add_pep",
+        },
+        {
+          name: "AML",
+          isActive: false,
+          translationKey: "business_pricing_add_aml",
+        },
+      ],
+      hasPEP: false,
+      hasKYC: true,
+      hasAML: false,
     };
   },
   computed: {
-    totalPrice() {
-      let maxPrice = 0;
-      let minPrice = 0;
-      if (this.hasKYC) {
-        maxPrice += this.priceTableKYC[0];
-        minPrice += this.priceTableKYC[this.priceTableKYC.length - 1];
-      }
-      if (this.hasKYB) {
-        maxPrice += this.priceTableKYB[0];
-        minPrice += this.priceTableKYB[this.priceTableKYB.length - 1];
-      }
-      if (this.hasAML) {
-        maxPrice += this.priceTableAMLPEP[0];
-        minPrice += this.priceTableAMLPEP[this.priceTableAMLPEP.length - 1];
-      }
-      if (this.hasPEP) {
-        maxPrice += this.priceTableAMLPEP[0];
-        minPrice += this.priceTableAMLPEP[this.priceTableAMLPEP.length - 1];
-      }
-      if (this.hasBiocheck) {
-        maxPrice += this.priceTableBiocheck[0];
-        minPrice += this.priceTableBiocheck[this.priceTableBiocheck.length - 1];
-      }
-      if (this.hasOCR) {
-        maxPrice += this.priceTableOCR[0];
-        minPrice += this.priceTableOCR[this.priceTableOCR.length - 1];
-      }
-      return {
-        max: this.formatCurrency(maxPrice),
-        min: this.formatCurrency(minPrice),
-      };
-    },
-
     priceEstimateCost() {
       if (!this.priceEstimateVerifications) return this.formatCurrency(0);
       let totalPrice = 0;
       const priceEstimate = this.priceEstimateVerifications || 0;
-      this.priceSplit = { kyc: 0, aml: 0, pep: 0, kyb: 0, ocr: 0, biocheck: 0 };
-      if (
-        !this.hasKYC &&
-        !this.hasKYB &&
-        !this.hasAML &&
-        !this.hasPEP &&
-        !this.hasBiocheck &&
-        !this.hasOCR
-      )
+      this.priceSplit = { kyc: 0, aml: 0, pep: 0 };
+      if (!this.hasKYC && !this.hasAML && !this.hasPEP)
         return this.formatCurrency(0);
       if (this.hasKYC) {
         for (let i in this.priceTableKYC) {
@@ -291,15 +168,6 @@ export default Vue.extend({
           if (this.priceSplit.kyc === 0 || this.priceSplit.kyc < 99) {
             this.priceSplit.kyc = 99;
           }
-          break;
-        }
-      }
-      if (this.hasKYB) {
-        for (let i in this.priceTableKYB) {
-          if (this.rangeTableKYB[i] && this.rangeTableKYB[i] < priceEstimate) {
-            continue;
-          }
-          this.priceSplit.kyb = this.priceTableKYB[i] * priceEstimate;
           break;
         }
       }
@@ -327,35 +195,8 @@ export default Vue.extend({
           break;
         }
       }
-      if (this.hasBiocheck) {
-        for (let i in this.priceTableBiocheck) {
-          if (
-            this.rangeTableBiocheck[i] &&
-            this.rangeTableBiocheck[i] < priceEstimate
-          ) {
-            continue;
-          }
-          this.priceSplit.biocheck +=
-            this.priceTableBiocheck[i] * priceEstimate;
-          break;
-        }
-      }
-      if (this.hasOCR) {
-        for (let i in this.priceTableOCR) {
-          if (this.rangeTableOCR[i] && this.rangeTableOCR[i] < priceEstimate) {
-            continue;
-          }
-          this.priceSplit.ocr += this.priceTableOCR[i] * priceEstimate;
-          break;
-        }
-      }
       totalPrice =
-        this.priceSplit.kyc +
-        this.priceSplit.kyb +
-        this.priceSplit.aml +
-        this.priceSplit.pep +
-        this.priceSplit.biocheck +
-        this.priceSplit.ocr;
+        this.priceSplit.kyc + this.priceSplit.aml + this.priceSplit.pep;
       return this.formatCurrency(totalPrice);
     },
   },
@@ -369,6 +210,14 @@ export default Vue.extend({
 
       return formattedAmount;
     },
+    updateCalculator(featureName) {
+      const feature = this.features.find(
+        (feature) => feature.name === featureName
+      );
+      feature.isActive = !feature.isActive;
+      if (feature.name === "AML") this.hasAML = !this.hasAML;
+      if (feature.name === "PEP") this.hasPEP = !this.hasPEP;
+    },
   },
 });
 </script>
@@ -378,29 +227,18 @@ export default Vue.extend({
 
 .price-grid
   display: grid
-  grid-template-columns: 25% 35% 1fr
-  h6
+  grid-template-columns: 35% 35% 1fr
+  h6, h5
     margin-bottom: 0
 
-  .price_card_5
-    grid-column: 3
-    grid-row: 1
-    display: flex
-    p
-      margin: 0
   .price_card_4
     grid-column: 3
-    grid-row: 2
+    grid-row: 1
     flex-direction: column
   .price_card_3
     grid-column: 2
-    grid-row: 2
-    flex-direction: column
-  .price_card_2
-    grid-column: 2
     grid-row: 1
-    p
-      margin: 0
+    flex-direction: column
   .price_card_1
     grid-column: 1
     grid-row: 1
@@ -414,10 +252,12 @@ export default Vue.extend({
       font-family: $font-body
       &.active
         border: 2px solid #2963ff
+    .price-calculator-checks-wrapper
+      margin-bottom: $spacing-sm
   .card
     text-align: left
     display: flex
-    justify-content: space-between
+    justify-content: flex-start
     margin: $spacing-sm
     .price-card-description
       display: flex
@@ -426,6 +266,8 @@ export default Vue.extend({
       width: 100%
       p
         margin: $spacing-sm 0
+      &.total-monthly-cost-wrapper
+        margin-top: $spacing-md
 
 .offsetY
   &-move
