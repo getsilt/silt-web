@@ -11,7 +11,7 @@
         <img src="@/assets/img/logo/accio.png" alt="" />
         <img style="height: 100px" src="@/assets/img/logo/aefi.png" alt="" />
         <img
-          style="padding: 5px"
+          style="padding: 10px"
           src="@/assets/img/logo/plan_recuperacion.png"
           alt=""
         />
