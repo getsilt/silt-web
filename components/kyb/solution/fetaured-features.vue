@@ -6,6 +6,20 @@
     >
       <div class="tab-wrapper">
         <v-tab
+          activeTabName="customRequirements"
+          @onActiveTabChange="featuredTab = $event"
+          :isSelected="featuredTab"
+          :class="{
+            'text-gradient-1-child': featuredTab == 'customRequirements',
+          }"
+        >
+          <h3 class="seo_header">
+            {{ $t("kyb_solution_carousel_custom_requirements_title") }}
+          </h3>
+        </v-tab>
+      </div>
+      <div class="tab-wrapper">
+        <v-tab
           activeTabName="automaticDetection"
           @onActiveTabChange="featuredTab = $event"
           :isSelected="featuredTab"
@@ -29,20 +43,6 @@
         >
           <h3 class="seo_header">
             {{ $t("kyb_solution_carousel_verification_title") }}
-          </h3>
-        </v-tab>
-      </div>
-      <div class="tab-wrapper">
-        <v-tab
-          activeTabName="customRequirements"
-          @onActiveTabChange="featuredTab = $event"
-          :isSelected="featuredTab"
-          :class="{
-            'text-gradient-1-child': featuredTab == 'customRequirements',
-          }"
-        >
-          <h3 class="seo_header">
-            {{ $t("kyb_solution_carousel_custom_requirements_title") }}
           </h3>
         </v-tab>
       </div>
@@ -109,8 +109,12 @@
                   :key="customRequirementsCopy.title"
                   class="custom-requirements-list"
                 >
-                  <div class="custom-requirements-list-number">{{ index }}</div>
-                  <span>{{ $t(customRequirementsCopy.title) }}</span>
+                  <div class="custom-requirements-list-number">
+                    {{ index + 1 }}
+                  </div>
+                  <h4 class="seo_header">
+                    {{ $t(customRequirementsCopy.title) }}
+                  </h4>
                 </li>
               </ul>
             </div>
@@ -234,7 +238,7 @@ export default {
   components: { VTab, DocumentSelect, ColorPickerSlider, DemoButtons, Card },
   data() {
     return {
-      featuredTab: "automaticDetection",
+      featuredTab: "customRequirements",
       color: "#2963ff",
       backgroundColor: "#2963ff",
       activeCustomizeTab: "default",
@@ -289,6 +293,9 @@ export default {
         },
         {
           title: "kyb_solution_carousel_custom_requirements_step_4",
+        },
+        {
+          title: "kyb_solution_carousel_custom_requirements_step_5",
         },
       ],
       frauds: [

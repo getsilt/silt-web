@@ -236,8 +236,12 @@
                   :key="customRequirementsCopy.title"
                   class="custom-requirements-list"
                 >
-                  <div class="custom-requirements-list-number">{{ index }}</div>
-                  <span>{{ $t(customRequirementsCopy.title) }}</span>
+                  <div class="custom-requirements-list-number">
+                    {{ index + 1 }}
+                  </div>
+                  <h4 class="seo_header">
+                    {{ $t(customRequirementsCopy.title) }}
+                  </h4>
                 </li>
               </ul>
             </div>
@@ -350,6 +354,9 @@ export default {
         },
         {
           title: "kyb_solution_carousel_custom_requirements_step_4",
+        },
+        {
+          title: "kyb_solution_carousel_custom_requirements_step_5",
         },
       ],
     };
