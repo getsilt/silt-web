@@ -98,7 +98,3 @@ export default Vue.extend({
   },
 });
 </script>
-<style lang="sass" scoped>
-.title_menu
-  font-size: 1.1rem
-</style>
