@@ -29,64 +29,65 @@
           <p>{{ $t("footer_silt_what") }}</p>
         </div>
         <div class="footer__links">
-          <p>
-            <nuxt-link :to="localePath({ name: 'kyc' })">{{
-              $t("nav_feature_kyc")
-            }}</nuxt-link>
-          </p>
-          <p>
-            <nuxt-link :to="localePath({ name: 'kyb' })">{{
-              $t("nav_feature_kyb")
-            }}</nuxt-link>
-          </p>
-          <p>
-            <nuxt-link :to="localePath({ name: 'biocheck' })">{{
-              $t("nav_feature_biocheck")
-            }}</nuxt-link>
-          </p>
-          <p>
-            <nuxt-link :to="localePath({ name: 'rules' })">{{
-              $t("nav_feature_rules")
-            }}</nuxt-link>
-          </p>
-          <p>
+          <h6>
+            <nuxt-link :to="localePath({ name: 'kyb' })"
+              >{{ $t("nav_feature_kyb") }}
+            </nuxt-link>
+          </h6>
+          <h6>
+            <nuxt-link :to="localePath({ name: 'kyc' })"
+              >{{ $t("nav_feature_kyc") }}
+            </nuxt-link>
+          </h6>
+          <h6>
+            <nuxt-link :to="localePath({ name: 'biocheck' })"
+              >{{ $t("nav_feature_biocheck") }}
+            </nuxt-link>
+          </h6>
+          <h6>
+            <nuxt-link :to="localePath({ name: 'rules' })"
+              >{{ $t("nav_feature_rules") }}
+            </nuxt-link>
+          </h6>
+          <h6>
             <nuxt-link
               :to="localePath({ name: 'misconduct' })"
               v-html="$t('nav_feature_misconduct')"
-            ></nuxt-link>
-          </p>
-          <p>
-            <nuxt-link :to="localePath({ name: 'aml' })">{{
-              $t("nav_feature_aml")
-            }}</nuxt-link>
-          </p>
+            >
+            </nuxt-link>
+          </h6>
+          <h6>
+            <nuxt-link :to="localePath({ name: 'aml' })"
+              >{{ $t("nav_feature_aml") }}
+            </nuxt-link>
+          </h6>
         </div>
         <div class="footer__links">
-          <p>
-            <nuxt-link :to="localePath({ name: 'developers' })">{{
-              $t("global_documentation")
-            }}</nuxt-link>
-          </p>
-          <p>
+          <h6>
+            <nuxt-link :to="localePath({ name: 'developers' })"
+              >{{ $t("global_documentation") }}
+            </nuxt-link>
+          </h6>
+          <h6>
             <a href="/legal-notice" rel="nofollow">{{
               $t("global_legal_notice")
             }}</a>
-          </p>
-          <p>
+          </h6>
+          <h6>
             <a href="/privacy" rel="nofollow">{{
               $t("global_legal_privacy")
             }}</a>
-          </p>
-          <p>
+          </h6>
+          <h6>
             <a href="/cookies" rel="nofollow">{{
               $t("global_legal_cookies")
             }}</a>
-          </p>
-          <p>
-            <nuxt-link :to="localePath({ name: 'faq' })">{{
-              $t("FAQ_title")
-            }}</nuxt-link>
-          </p>
+          </h6>
+          <h6>
+            <nuxt-link :to="localePath({ name: 'faq' })"
+              >{{ $t("FAQ_title") }}
+            </nuxt-link>
+          </h6>
         </div>
         <div class="footer__info">
           <span class="h6">{{ $t("footer_contact") }}</span>
@@ -96,12 +97,14 @@
               href="https://www.facebook.com/Silt-102186764702659/"
               target="_blank"
               rel="noreferrer"
-              ><img
+            >
+              <img
                 width="20"
                 height="20"
                 src="@/assets/img/icons/social_facebook.svg"
                 alt="Facebook Silt page"
-            /></a>
+              />
+            </a>
             <a
               href="https://linkedin.com/company/silt-verifications"
               target="_blank"
