@@ -22,17 +22,18 @@ export default Vue.extend({
 @import '@/assets/sass/vars.sass'
 
 .content-list
-    list-style: none
-    padding: 0
-    margin: 0
-    display: flex
-    flex-direction: row
-    flex-wrap: wrap
-    column-gap: $spacing-xlg
-    row-gap: $spacing-md
-    justify-content: center
+  list-style: none
+  padding: 0
+  margin: 0
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  column-gap: 120px
+  row-gap: $spacing-md
+  justify-content: center
 
-    .content-list-item
-        i
-            margin-right: $spacing-sm
+  .content-list-item
+    color: #fff
+    i
+      margin-right: $spacing-sm
 </style>

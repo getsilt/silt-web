@@ -91,4 +91,5 @@ export default Vue.extend({
   flex-direction: column
   align-items: center
   gap: $spacing-xlg
+  background: $bg-dark
 </style>
