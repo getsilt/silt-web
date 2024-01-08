@@ -6,7 +6,7 @@
       class="content-list-item"
     >
       <i class="fad fa-check-circle" />
-      <span>{{ $t(feature.title) }}</span>
+      <span v-html="$t(feature.title)" />
     </li>
   </ul>
 </template>

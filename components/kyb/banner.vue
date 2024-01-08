@@ -1,27 +1,45 @@
 <template>
   <div class="fw-container kyb-banner bg-gradient-1">
-    <section>
-      <div class="kyb-banner-wrapper">
-        <div class="kyb-banner-titles">
-          <h3>{{ $t("kyb_call_to_action_title") }}</h3>
-          <p class="subtitle">{{ $t("kyb_call_to_action_subtitle") }}</p>
-        </div>
-        <nuxt-link :to="localePath({ name: 'demo' })">
-          <button class="primary">
-            {{ $t("btn_cta_book_demo") }}
-          </button>
-        </nuxt-link>
-      </div>
-    </section>
+    <div class="kyb-banner-wrapper">
+      <h3>{{ $t("kyb_call_to_action_title") }}</h3>
+      <p class="subtitle">{{ $t("kyb_call_to_action_subtitle") }}</p>
+      <ChecksList :features="features" />
+      <nuxt-link :to="localePath({ name: 'demo' })">
+        <button class="primary">
+          {{ $t("btn_cta_book_demo") }}
+        </button>
+      </nuxt-link>
+    </div>
   </div>
 </template>
 
 <script>
 import gsap from "gsap";
+import ChecksList from "../ChecksList.vue";
 export default {
   data() {
     return {
       email: "hello@getsilt.com",
+      features: [
+        {
+          title: "kyb_call_to_action_check_list_1",
+        },
+        {
+          title: "kyb_call_to_action_check_list_2",
+        },
+        {
+          title: "kyb_call_to_action_check_list_3",
+        },
+        {
+          title: "kyb_call_to_action_check_list_4",
+        },
+        {
+          title: "kyb_call_to_action_check_list_5",
+        },
+        {
+          title: "kyb_call_to_action_check_list_6",
+        },
+      ],
     };
   },
   mounted() {
@@ -52,6 +70,7 @@ export default {
       }
     },
   },
+  components: { ChecksList },
 };
 </script>
 
@@ -62,12 +81,11 @@ export default {
   z-index: 1
   .kyb-banner-wrapper
     display: flex
-    flex-wrap: wrap
+    flex-direction: column
     align-items: center
-    justify-content: space-around
-    .kyb-banner-titles
+    gap: $spacing-md
+    color: #fff
+    h3
       color: #fff
-      h3
-        color: #fff
-        margin-bottom: 0
+      margin-bottom: 0
 </style>
