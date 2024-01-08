@@ -13,7 +13,9 @@
             'text-gradient-1-child': featuredTab == 'automaticDetection',
           }"
         >
-          <span>{{ $t("kyb_solution_carousel_collection_title") }}</span>
+          <h3 class="seo_header">
+            {{ $t("kyb_solution_carousel_collection_title") }}
+          </h3>
         </v-tab>
       </div>
       <div class="tab-wrapper">
@@ -25,7 +27,9 @@
             'text-gradient-1-child': featuredTab == 'automaticVerification',
           }"
         >
-          <span>{{ $t("kyb_solution_carousel_verification_title") }}</span>
+          <h3 class="seo_header">
+            {{ $t("kyb_solution_carousel_verification_title") }}
+          </h3>
         </v-tab>
       </div>
       <div class="tab-wrapper">
@@ -37,9 +41,9 @@
             'text-gradient-1-child': featuredTab == 'customRequirements',
           }"
         >
-          <span>{{
-            $t("kyb_solution_carousel_custom_requirements_title")
-          }}</span>
+          <h3 class="seo_header">
+            {{ $t("kyb_solution_carousel_custom_requirements_title") }}
+          </h3>
         </v-tab>
       </div>
       <div class="tab-wrapper">
@@ -49,7 +53,9 @@
           :isSelected="featuredTab"
           :class="{ 'text-gradient-1-child': featuredTab == 'LLM' }"
         >
-          <span>{{ $t("kyb_solution_carousel_LLM_title") }}</span>
+          <h3 class="seo_header">
+            {{ $t("kyb_solution_carousel_LLM_title") }}
+          </h3>
         </v-tab>
       </div>
       <div class="tab-wrapper">
@@ -59,7 +65,9 @@
           :isSelected="featuredTab"
           :class="{ 'text-gradient-1-child': featuredTab == 'companyDatabase' }"
         >
-          <span>{{ $t("kyb_solution_carousel_database_title") }}</span>
+          <h3 class="seo_header">
+            {{ $t("kyb_solution_carousel_database_title") }}
+          </h3>
         </v-tab>
       </div>
     </div>

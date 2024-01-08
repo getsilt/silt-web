@@ -8,7 +8,7 @@
       <h2>{{ $t("business_highlights_vanguardTech_title") }}</h2>
       <p>{{ $t("business_highlights_vanguardTech_content") }}</p>
     </div>
-    <section class="">
+    <section>
       <featured-features :hidden-tab="hiddenTab" />
     </section>
   </div>
