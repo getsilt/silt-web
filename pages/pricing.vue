@@ -5,7 +5,10 @@
       v-model="showKYCPricing"
       leftCopy="KYC"
       rightCopy="KYB"
-    />
+    >
+      <h2 slot="left-copy-text" class="switch-header-slot">KYC</h2>
+      <h2 slot="right-copy-text" class="switch-header-slot">KYB</h2>
+    </VSwitch>
     <KYCPricingPlan v-if="showKYCPricing" />
     <KYBPricingPlan v-else />
   </div>
@@ -69,4 +72,7 @@ export default {
 .pricing-toggle
   margin: auto
   margin-top: $spacing-xlg
+  .switch-header-slot
+    margin: 0 0 -2px
+    font-size: 1.2rem
 </style>

@@ -5,14 +5,18 @@
       :class="{ active: isEnabled }"
       @click="toggle"
     >
-      <p class="switch-button-label">{{ leftCopy }}</p>
+      <slot name="left-copy-text">
+        {{ leftCopy }}
+      </slot>
     </div>
     <div
       class="switch-button-label-wrapper"
       :class="{ active: !isEnabled }"
       @click="toggle"
     >
-      <p class="switch-button-label">{{ rightCopy }}</p>
+      <slot name="right-copy-text">
+        {{ rightCopy }}
+      </slot>
     </div>
   </div>
 </template>
@@ -40,28 +44,25 @@ export default Vue.extend({
 <style lang="sass" scoped>
 @import '@/assets/sass/vars.sass'
 .switch-button-control
-    display: flex
-    width: fit-content
-    justify-content: space-between
-    background: rgba($color-primary, .2)
-    border-radius: $radius-lg
-    padding: 5px
-    gap: 5px
-    align-items: center
-    .switch-button-label-wrapper
-        transition: 0.3s ease-in-out
-        border-radius: $radius-md
-        padding: $spacing-xsm $spacing-md
-        .switch-button-label
-            font-family: $font-bold
-            margin: 0 0 -2px
-        &:hover
-            cursor: pointer
-            background: $color-primary
-            .switch-button-label
-                color: #fff
-        &.active
-            background: $color-primary
-            .switch-button-label
-                color: #fff
+  display: flex
+  width: fit-content
+  justify-content: space-between
+  background: rgba($color-primary, .2)
+  border-radius: $radius-lg
+  padding: 5px
+  gap: 5px
+  align-items: center
+  .switch-button-label-wrapper
+    transition: 0.3s ease-in-out
+    border-radius: $radius-md
+    padding: $spacing-xsm $spacing-md
+    &:hover
+      cursor: pointer
+      background: $color-primary
+      :first-child
+        color: #fff
+    &.active
+      background: $color-primary
+      :first-child
+        color: #fff
 </style>
