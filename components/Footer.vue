@@ -1,22 +1,5 @@
 <template>
   <div>
-    <section class="trust__wrapper">
-      <h3>{{ $t("footer_trust") }}</h3>
-      <div class="trust__logos">
-        <img
-          src="@/assets/img/logo/tech_bcn.png"
-          alt=""
-          style="height: 100px"
-        />
-        <img src="@/assets/img/logo/accio.png" alt="" />
-        <img style="height: 100px" src="@/assets/img/logo/aefi.png" alt="" />
-        <img
-          style="padding: 10px"
-          src="@/assets/img/logo/plan_recuperacion.png"
-          alt=""
-        />
-      </div>
-    </section>
     <footer>
       <section class="footer__wrapper">
         <div class="footer_logo">
@@ -45,16 +28,15 @@
             </nuxt-link>
           </h6>
           <h6>
-            <nuxt-link :to="localePath({ name: 'rules' })"
-              >{{ $t("nav_feature_rules") }}
+            <nuxt-link :to="localePath({ name: 'rules' })">
+              {{ $t("nav_feature_rules") }}
             </nuxt-link>
           </h6>
           <h6>
             <nuxt-link
               :to="localePath({ name: 'misconduct' })"
               v-html="$t('nav_feature_misconduct')"
-            >
-            </nuxt-link>
+            />
           </h6>
           <h6>
             <nuxt-link :to="localePath({ name: 'aml' })"
@@ -146,36 +128,6 @@ export default {
 </script>
 <style lang="sass" scoped>
 @import "@/assets/sass/vars.sass"
-
-.trust__wrapper
-  text-align: center
-  background: $bg-dark
-  padding: 30px
-  margin: 0
-  h3
-    color: $color-grey-lighten-3
-  .trust__logos
-    display: flex
-    justify-content: center
-    align-items: center
-    flex-wrap: wrap
-    padding: 0px
-    img
-      margin: 10px
-      height: 80px
-      max-height: 60px
-      width: auto
-      background: $color-grey-lighten-3
-      padding: 15px
-      border-radius: $radius-lg
-@media (min-width: 768px)
-  .trust__wrapper
-    .trust__logos
-      img
-        padding: 20px
-        height: 80px
-        max-height: 80px
-        margin: 40px
 
 footer
   margin-top: auto
