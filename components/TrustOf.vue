@@ -19,6 +19,16 @@
           <img src="@/assets/img/logo/glovo.svg.png" alt="" />
         </li>
         <li class="trust__logos_item">
+          <img
+            style="padding: 20px"
+            src="@/assets/img/logo/nester_software.svg"
+            alt=""
+          />
+        </li>
+        <li class="trust__logos_item">
+          <img src="@/assets/img/logo/offugo.png" alt="" />
+        </li>
+        <li class="trust__logos_item">
           <img src="@/assets/img/logo/aefi.png" alt="" />
         </li>
         <li class="trust__logos_item">
@@ -27,12 +37,6 @@
             src="@/assets/img/logo/plan_recuperacion.png"
             alt=""
           />
-        </li>
-        <li class="trust__logos_item">
-          <img src="@/assets/img/logo/nester_software.svg" alt="" />
-        </li>
-        <li class="trust__logos_item">
-          <img src="@/assets/img/logo/offugo.png" alt="" />
         </li>
         <li class="trust__logos_item">
           <img src="@/assets/img/logo/recoletas.svg" alt="" />
@@ -63,6 +67,9 @@ export default {};
 
   100%
     transform: translate(-100%, 0)
+
+.seo_header
+  filter: contrast(5%) grayscale(1)
 
 .trust__wrapper
   text-align: center
@@ -103,7 +110,7 @@ export default {};
       animation-iteration-count: infinite
       .trust__logos_item
         img
-          filter: grayscale(1)
+          filter: contrast(5%) grayscale(1)
           margin: 10px
           height: 80px
           max-height: 60px
