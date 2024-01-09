@@ -3,7 +3,9 @@
     <div v-show="hasMeetzy" id="meetzy-engine" />
     <div v-show="!hasMeetzy" class="demo_cta__wrapper">
       <nuxt-link :to="localePath({ name: 'demo' })">
-        <button class="primary">{{ $t("btn_cta_book_demo") }}</button>
+        <button class="primary icon">
+          {{ $t("btn_cta_book_demo") }}<i class="simple-arrow" />
+        </button>
       </nuxt-link>
     </div>
     <div class="hint_benefit">
