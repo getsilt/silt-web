@@ -13,6 +13,12 @@
           <img src="@/assets/img/logo/accio.png" alt="" />
         </li>
         <li class="trust__logos_item">
+          <img src="@/assets/img/logo/deloitte.svg.png" alt="" />
+        </li>
+        <li class="trust__logos_item">
+          <img src="@/assets/img/logo/glovo.svg.png" alt="" />
+        </li>
+        <li class="trust__logos_item">
           <img src="@/assets/img/logo/aefi.png" alt="" />
         </li>
         <li class="trust__logos_item">
@@ -21,12 +27,6 @@
             src="@/assets/img/logo/plan_recuperacion.png"
             alt=""
           />
-        </li>
-        <li class="trust__logos_item">
-          <img src="@/assets/img/logo/deloitte.svg.png" alt="" />
-        </li>
-        <li class="trust__logos_item">
-          <img src="@/assets/img/logo/glovo.svg.png" alt="" />
         </li>
         <li class="trust__logos_item">
           <img src="@/assets/img/logo/nester_software.svg" alt="" />
