@@ -1,22 +1,5 @@
 <template>
   <div>
-    <section class="trust__wrapper">
-      <h3>{{ $t("footer_trust") }}</h3>
-      <div class="trust__logos">
-        <img
-          src="@/assets/img/logo/tech_bcn.png"
-          alt=""
-          style="height: 100px"
-        />
-        <img src="@/assets/img/logo/accio.png" alt="" />
-        <img style="height: 100px" src="@/assets/img/logo/aefi.png" alt="" />
-        <img
-          style="padding: 10px"
-          src="@/assets/img/logo/plan_recuperacion.png"
-          alt=""
-        />
-      </div>
-    </section>
     <footer>
       <section class="footer__wrapper">
         <div class="footer_logo">
@@ -29,64 +12,64 @@
           <p>{{ $t("footer_silt_what") }}</p>
         </div>
         <div class="footer__links">
-          <p>
-            <nuxt-link :to="localePath({ name: 'kyc' })">{{
-              $t("nav_feature_kyc")
-            }}</nuxt-link>
-          </p>
-          <p>
-            <nuxt-link :to="localePath({ name: 'kyb' })">{{
-              $t("nav_feature_kyb")
-            }}</nuxt-link>
-          </p>
-          <p>
-            <nuxt-link :to="localePath({ name: 'biocheck' })">{{
-              $t("nav_feature_biocheck")
-            }}</nuxt-link>
-          </p>
-          <p>
-            <nuxt-link :to="localePath({ name: 'rules' })">{{
-              $t("nav_feature_rules")
-            }}</nuxt-link>
-          </p>
-          <p>
+          <h6>
+            <nuxt-link :to="localePath({ name: 'kyb' })"
+              >{{ $t("nav_feature_kyb") }}
+            </nuxt-link>
+          </h6>
+          <h6>
+            <nuxt-link :to="localePath({ name: 'kyc' })"
+              >{{ $t("nav_feature_kyc") }}
+            </nuxt-link>
+          </h6>
+          <h6>
+            <nuxt-link :to="localePath({ name: 'biocheck' })"
+              >{{ $t("nav_feature_biocheck") }}
+            </nuxt-link>
+          </h6>
+          <h6>
+            <nuxt-link :to="localePath({ name: 'rules' })">
+              {{ $t("nav_feature_rules") }}
+            </nuxt-link>
+          </h6>
+          <h6>
             <nuxt-link
               :to="localePath({ name: 'misconduct' })"
               v-html="$t('nav_feature_misconduct')"
-            ></nuxt-link>
-          </p>
-          <p>
-            <nuxt-link :to="localePath({ name: 'aml' })">{{
-              $t("nav_feature_aml")
-            }}</nuxt-link>
-          </p>
+            />
+          </h6>
+          <h6>
+            <nuxt-link :to="localePath({ name: 'aml' })"
+              >{{ $t("nav_feature_aml") }}
+            </nuxt-link>
+          </h6>
         </div>
         <div class="footer__links">
-          <p>
-            <nuxt-link :to="localePath({ name: 'developers' })">{{
-              $t("global_documentation")
-            }}</nuxt-link>
-          </p>
-          <p>
+          <h6>
+            <nuxt-link :to="localePath({ name: 'developers' })"
+              >{{ $t("global_documentation") }}
+            </nuxt-link>
+          </h6>
+          <h6>
             <a href="/legal-notice" rel="nofollow">{{
               $t("global_legal_notice")
             }}</a>
-          </p>
-          <p>
+          </h6>
+          <h6>
             <a href="/privacy" rel="nofollow">{{
               $t("global_legal_privacy")
             }}</a>
-          </p>
-          <p>
+          </h6>
+          <h6>
             <a href="/cookies" rel="nofollow">{{
               $t("global_legal_cookies")
             }}</a>
-          </p>
-          <p>
-            <nuxt-link :to="localePath({ name: 'faq' })">{{
-              $t("FAQ_title")
-            }}</nuxt-link>
-          </p>
+          </h6>
+          <h6>
+            <nuxt-link :to="localePath({ name: 'faq' })"
+              >{{ $t("FAQ_title") }}
+            </nuxt-link>
+          </h6>
         </div>
         <div class="footer__info">
           <span class="h6">{{ $t("footer_contact") }}</span>
@@ -96,12 +79,14 @@
               href="https://www.facebook.com/Silt-102186764702659/"
               target="_blank"
               rel="noreferrer"
-              ><img
+            >
+              <img
                 width="20"
                 height="20"
                 src="@/assets/img/icons/social_facebook.svg"
                 alt="Facebook Silt page"
-            /></a>
+              />
+            </a>
             <a
               href="https://linkedin.com/company/silt-verifications"
               target="_blank"
@@ -143,36 +128,6 @@ export default {
 </script>
 <style lang="sass" scoped>
 @import "@/assets/sass/vars.sass"
-
-.trust__wrapper
-  text-align: center
-  background: $bg-dark
-  padding: 30px
-  margin: 0
-  h3
-    color: $color-grey-lighten-3
-  .trust__logos
-    display: flex
-    justify-content: center
-    align-items: center
-    flex-wrap: wrap
-    padding: 0px
-    img
-      margin: 10px
-      height: 80px
-      max-height: 60px
-      width: auto
-      background: $color-grey-lighten-3
-      padding: 15px
-      border-radius: $radius-lg
-@media (min-width: 768px)
-  .trust__wrapper
-    .trust__logos
-      img
-        padding: 20px
-        height: 80px
-        max-height: 80px
-        margin: 40px
 
 footer
   margin-top: auto

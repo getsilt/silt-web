@@ -1,6 +1,7 @@
 <template>
   <div>
     <hero />
+    <TrustOf />
     <benefits />
     <solution />
     <banner />
@@ -17,6 +18,7 @@ import Benefits from "@/components/kyb/benefits.vue";
 import Solution from "@/components/kyb/solution/index.vue";
 import Integration from "@/components/business/integration.vue";
 import Banner from "@/components/kyb/banner.vue";
+import TrustOf from "../components/TrustOf.vue";
 
 export default {
   components: {
@@ -27,6 +29,7 @@ export default {
     Solution,
     Integration,
     Banner,
+    TrustOf,
   },
   head() {
     const i18nSeo = this.$nuxtI18nHead();

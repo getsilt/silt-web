@@ -19,18 +19,20 @@
       </div>
     </div>
     <!-- CLAIMS -->
-    <div class="claim-info">
-      <h1 class="title">
-        <span class="text-gradient-1 title-bold">
-          {{ $t("business_claim_scale") }}
-        </span>
-        <br />
-        <span v-html="$t('business_claim1')" />
-      </h1>
-      <h4 class="subtitle" v-html="$t('business_claim2')" />
-      <demo-buttons />
+    <div class="hero-wrapper">
+      <div class="hero-header_wrapper">
+        <h1 class="title">
+          <span class="text-gradient-1 title-bold">
+            {{ $t("business_claim_scale") }}
+          </span>
+          <br />
+          <span v-html="$t('business_claim1')" />
+        </h1>
+        <h4 class="subtitle" v-html="$t('business_claim2')" />
+        <demo-buttons />
+      </div>
+      <video-verification-demo class="claim-side-img" />
     </div>
-    <video-verification-demo class="claim-side-img" />
   </section>
 </template>
 
@@ -47,4 +49,7 @@ export default {
   display: flex
   flex-wrap: wrap
   justify-content: center
+  margin-left: 38%
+  @media (max-width: 768px)
+    margin: auto
 </style>

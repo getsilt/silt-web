@@ -1,6 +1,7 @@
 <template>
   <div>
     <hero />
+    <TrustOf />
     <benefits />
     <solution hidden-tab="customize" />
     <integration />
@@ -16,6 +17,7 @@ import Solution from "@/components/business/solution/index.vue";
 import Integration from "@/components/business/integration.vue";
 import TechFeatures from "@/components/business/tech-features.vue";
 import Usecases from "@/components/business/usecases.vue";
+import TrustOf from "../components/TrustOf.vue";
 
 export default {
   components: {
@@ -26,6 +28,7 @@ export default {
     Integration,
     TechFeatures,
     Usecases,
+    TrustOf,
   },
   head() {
     const i18nSeo = this.$nuxtI18nHead();

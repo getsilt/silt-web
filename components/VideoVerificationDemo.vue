@@ -206,7 +206,6 @@ export default {
   .phone-svg
     position: relative
     top: -9px
-    left: -10px
     z-index: 999
     height: auto
     width: 252px
@@ -214,7 +213,7 @@ export default {
     width: 230px
     border-radius: 30px
     position: absolute
-    left: 0
+    left: 10px
 
 .claim-info-wrapper.differences
   display: flex

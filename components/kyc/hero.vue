@@ -18,12 +18,14 @@
         />
       </div>
     </div>
-    <div class="claim-info">
-      <h1 class="title" v-html="$t('business_hero_kyc_title')" />
-      <h4 class="subtitle" v-html="$t('business_hero_kyc_subtitle')" />
-      <demo-buttons />
+    <div class="hero-wrapper">
+      <div class="hero-header_wrapper">
+        <h1 class="title" v-html="$t('business_hero_kyc_title')" />
+        <h4 class="subtitle" v-html="$t('business_hero_kyc_subtitle')" />
+        <demo-buttons />
+      </div>
+      <video-verification-demo class="claim-side-img" />
     </div>
-    <video-verification-demo class="claim-side-img" />
   </section>
 </template>
 
@@ -50,4 +52,7 @@ export default {
   display: flex
   flex-wrap: wrap
   justify-content: center
+  margin-left: 38%
+  @media (max-width: 768px)
+    margin: auto
 </style>
