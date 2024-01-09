@@ -1,6 +1,6 @@
 <template>
   <section class="trust__wrapper">
-    <h6>{{ $t("footer_trust") }}</h6>
+    <h6 class="seo_header">{{ $t("footer_trust") }}</h6>
     <div class="trust__logos">
       <ul class="trust__logos_list">
         <li class="trust__logos_item">
@@ -103,7 +103,7 @@ export default {};
       animation-iteration-count: infinite
       .trust__logos_item
         img
-          filter: brightness(0.5) grayscale(1)
+          filter: grayscale(1)
           margin: 10px
           height: 80px
           max-height: 60px

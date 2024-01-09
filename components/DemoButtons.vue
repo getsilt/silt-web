@@ -2,13 +2,8 @@
   <div class="demo__wrapper">
     <div v-show="hasMeetzy" id="meetzy-engine" />
     <div v-show="!hasMeetzy" class="demo_cta__wrapper">
-      <a target="_blank" href="https://dashboard.getsilt.com/welcome">
-        <button class="primary icon">
-          {{ $t("btn_cta_demo") }}<i class="simple-arrow"></i>
-        </button>
-      </a>
       <nuxt-link :to="localePath({ name: 'demo' })">
-        <button class="secondary">{{ $t("btn_cta_book_demo") }}</button>
+        <button class="primary">{{ $t("btn_cta_book_demo") }}</button>
       </nuxt-link>
     </div>
     <div class="hint_benefit">
@@ -41,7 +36,7 @@ export default {
         document.dispatchEvent(new CustomEvent("meetzy-refresh", {}));
         document.addEventListener("meetzy-form-submitted", (e) => {
           this.$gtag_report_conversion();
-          window.lintrk('track', { conversion_id: 14836770 });
+          window.lintrk("track", { conversion_id: 14836770 });
         });
         this.hasMeetzyLoaded = true;
       }
