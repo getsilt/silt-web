@@ -18,12 +18,14 @@
         />
       </div>
     </div>
-    <div class="claim-info">
-      <h1 class="title" v-html="$t('business_hero_kyc_title')" />
-      <h4 class="subtitle" v-html="$t('business_hero_kyc_subtitle')" />
-      <demo-buttons />
+    <div class="hero-wrapper">
+      <div class="hero-header_wrapper">
+        <h1 class="title" v-html="$t('business_hero_kyc_title')" />
+        <h4 class="subtitle" v-html="$t('business_hero_kyc_subtitle')" />
+        <demo-buttons />
+      </div>
+      <video-verification-demo class="claim-side-img" />
     </div>
-    <video-verification-demo class="claim-side-img" />
   </section>
 </template>
 

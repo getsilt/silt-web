@@ -136,6 +136,19 @@ section
       font-family: $font-body
       line-height: 2rem
 
+.hero-wrapper
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  max-width: 70%
+  margin: auto
+  @media (max-width: 768px)
+    max-width: 100%
+  .hero-header_wrapper
+    margin-bottom: $spacing-xlg
+
+
 .claim-container .claim-side-img.diagram
   margin: auto
   padding: 0
