@@ -1,6 +1,6 @@
 <template>
   <section class="trust__wrapper">
-    <h3>{{ $t("footer_trust") }}</h3>
+    <h6>{{ $t("footer_trust") }}</h6>
     <div class="trust__logos">
       <ul class="trust__logos_list">
         <li class="trust__logos_item">
@@ -50,71 +50,63 @@ export default {};
 @import "@/assets/sass/vars.sass"
 
 @keyframes slide-then-hide
-    0%
-        transform: translate(0, 0)
+  0%
+    transform: translate(0, 0)
 
-    100%
-        display: none
-        transform: translate(-100%, 0)
+  100%
+    display: none
+    transform: translate(-100%, 0)
 
 @keyframes slide
-    0%
-        transform: translate(0, 0)
+  0%
+    transform: translate(0, 0)
 
-    100%
-        transform: translate(-100%, 0)
+  100%
+    transform: translate(-100%, 0)
 
 .trust__wrapper
-    text-align: center
-    padding: 30px
-    margin: 0
-    .trust__logos
-        display: flex
-        width: 100%
-        height: 100%
-        max-width: 100%
-        max-height: 100%
-        place-items: center
-        margin: 0px
-        padding: 10px
-        list-style-type: none
-        opacity: 1
-        mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 12.5%, rgb(0, 0, 0) 87.5%, rgba(0, 0, 0, 0) 100%)
-        overflow: hidden
-        .trust__logos_list
-            display: flex
-            width: 100%
-            height: 100%
-            max-width: 100%
-            max-height: 100%
-            place-items: center
-            margin: 0
-            padding: 0
-            list-style-type: none
-            text-indent: none
-            gap: 48px
-            position: relative
-            flex-direction: row
-            will-change: transform
-            transform: translateX(0px)
-            animation-name: slide
-            animation-duration: 40s
-            animation-timing-function: linear
-            animation-iteration-count: infinite
-            .trust__logos_item
-                img
-                    filter: grayscale(1)
-                    margin: 10px
-                    height: 80px
-                    max-height: 60px
-                    width: auto
-                    padding: 15px
-    @media (min-width: 768px)
-    .trust__wrapper
-        .trust__logos
-            img
-                padding: 20px
-                height: 80px
-                max-height: 80px
-                margin: 40px
+  text-align: center
+  padding: 30px
+  margin: auto
+  .trust__logos
+    display: flex
+    width: 100%
+    height: 100%
+    max-width: 100%
+    max-height: 100%
+    place-items: center
+    margin: 0px
+    padding: 10px
+    list-style-type: none
+    opacity: 1
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 12.5%, rgb(0, 0, 0) 87.5%, rgba(0, 0, 0, 0) 100%)
+    overflow: hidden
+    .trust__logos_list
+      display: flex
+      width: 100%
+      height: 100%
+      max-width: 100%
+      max-height: 100%
+      place-items: center
+      margin: 0
+      padding: 0
+      list-style-type: none
+      text-indent: none
+      gap: 48px
+      position: relative
+      flex-direction: row
+      will-change: transform
+      transform: translateX(0px)
+      animation-name: slide
+      animation-duration: 40s
+      animation-timing-function: linear
+      animation-iteration-count: infinite
+      .trust__logos_item
+        img
+          filter: brightness(0.5) grayscale(1)
+          margin: 10px
+          height: 80px
+          max-height: 60px
+          width: auto
+          padding: 15px
 </style>
