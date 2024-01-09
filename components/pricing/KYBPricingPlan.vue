@@ -6,15 +6,14 @@
     </div>
     <div class="card">
       <ChecksList :features="features" />
-      <nuxt-link :to="localePath({ name: 'demo' })">
-        <button class="primary">{{ $t("btn_cta_book_demo") }}</button>
-      </nuxt-link>
+      <DemoButtons />
     </div>
   </div>
 </template>
 <script>
 import Vue from "vue";
 import ChecksList from "../ChecksList.vue";
+import DemoButtons from "../DemoButtons.vue";
 
 export default Vue.extend({
   name: "KYBPricingPlan",
@@ -75,7 +74,7 @@ export default Vue.extend({
       ],
     };
   },
-  components: { ChecksList },
+  components: { ChecksList, DemoButtons },
 });
 </script>
 <style lang="sass" scoped>
@@ -91,4 +90,5 @@ export default Vue.extend({
   flex-direction: column
   align-items: center
   gap: $spacing-xlg
+  background: $bg-dark
 </style>

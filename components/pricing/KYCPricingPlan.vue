@@ -5,7 +5,7 @@
       <p>{{ $t("business_pricing_content") }}</p>
     </div>
     <div class="card">
-      <div>
+      <div class="card-header">
         <div class="pricing-plan_price">
           <h2>0,50€</h2>
           <h6>/ {{ $t("global_userVerification") }}</h6>
@@ -110,12 +110,16 @@ export default Vue.extend({
   flex-direction: column
   align-items: center
   gap: $spacing-xlg
+  background: $bg-dark
+  .card-header
+    color: #fff
   .pricing-plan_price
     display: flex
     justify-content: center
     align-items: flex-end
     h2,h6
       margin-bottom: 0
+      color: #fff
 .pricing-plans_container
   display: flex
   justify-content: center

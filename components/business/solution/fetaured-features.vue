@@ -11,7 +11,9 @@
           :isSelected="featuredTab"
           :class="{ 'text-gradient-1-child': featuredTab == 'digitalID' }"
         >
-          <span>{{ $t("business_solution_carrousel_kyc") }}</span>
+          <h3 class="seo_header">
+            {{ $t("business_solution_carrousel_kyc") }}
+          </h3>
         </v-tab>
       </div>
       <div class="tab-wrapper">
@@ -22,7 +24,7 @@
           :isSelected="featuredTab"
           :class="{ 'text-gradient-1-child': featuredTab == 'kyb' }"
         >
-          <span>{{ $t("nav_feature_kyb") }}</span>
+          <h3 class="seo_header">{{ $t("nav_feature_kyb") }}</h3>
         </v-tab>
       </div>
       <div class="tab-wrapper">
@@ -33,7 +35,9 @@
           :isSelected="featuredTab"
           :class="{ 'text-gradient-1-child': featuredTab == 'customize' }"
         >
-          <span>{{ $t("business_solution_carrousel_customization") }}</span>
+          <h3 class="seo_header">
+            {{ $t("business_solution_carrousel_customization") }}
+          </h3>
         </v-tab>
       </div>
       <div class="tab-wrapper">
@@ -43,7 +47,9 @@
           :isSelected="featuredTab"
           :class="{ 'text-gradient-1-child': featuredTab == 'list' }"
         >
-          <span>{{ $t("business_solution_carrousel_fraud") }}</span>
+          <h3 class="seo_header">
+            {{ $t("business_solution_carrousel_fraud") }}
+          </h3>
         </v-tab>
       </div>
       <div class="tab-wrapper">
@@ -53,7 +59,9 @@
           :isSelected="featuredTab"
           :class="{ 'text-gradient-1-child': featuredTab == 'biocheck' }"
         >
-          <span>{{ $t("business_solution_carrousel_biocheck") }}</span>
+          <h3 class="seo_header">
+            {{ $t("business_solution_carrousel_biocheck") }}
+          </h3>
         </v-tab>
       </div>
     </div>
@@ -228,8 +236,12 @@
                   :key="customRequirementsCopy.title"
                   class="custom-requirements-list"
                 >
-                  <div class="custom-requirements-list-number">{{ index }}</div>
-                  <span>{{ $t(customRequirementsCopy.title) }}</span>
+                  <div class="custom-requirements-list-number">
+                    {{ index + 1 }}
+                  </div>
+                  <h4 class="seo_header">
+                    {{ $t(customRequirementsCopy.title) }}
+                  </h4>
                 </li>
               </ul>
             </div>
@@ -342,6 +354,9 @@ export default {
         },
         {
           title: "kyb_solution_carousel_custom_requirements_step_4",
+        },
+        {
+          title: "kyb_solution_carousel_custom_requirements_step_5",
         },
       ],
     };
