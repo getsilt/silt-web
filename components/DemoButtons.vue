@@ -3,14 +3,15 @@
     <div v-show="hasMeetzy" id="meetzy-engine" />
     <div v-show="!hasMeetzy" class="demo_cta__wrapper">
       <nuxt-link :to="localePath({ name: 'demo' })">
-        <button class="primary icon">
-          {{ $t("btn_cta_book_demo") }}<i class="simple-arrow" />
+        <button class="primary" :class="{ light: dark }">
+          {{ $t("btn_cta_book_demo") }}
+          <div class="arrow"></div>
         </button>
       </nuxt-link>
     </div>
-    <div class="hint_benefit">
+    <!-- <div class="hint_benefit">
       <i class="fad fa-check-circle"></i>{{ $t("global_hint_benefits") }}
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -83,6 +84,31 @@ export default {
     border-color: $color-grey-lighten-3
     &:hover:not(.vsm-link):not(:disabled):not(.accent):not(.translucid):not(.secondary)
       background: #fff
+
+button.primary
+  .arrow
+    display: block
+    width: 0
+    height: 20px
+    transition: 0.3s ease-in-out
+    &:after, &:before
+      transition: 0.2s ease-in-out
+      opacity: 0
+      transform: translateX(-50%)
+      position: absolute
+      right: 20px
+      font-family: 'Font Awesome 5 Duotone'
+    &:after
+      content: '\f061'
+    &:before
+      content: '\10f061'
+  &:not(.deactivated):hover .arrow
+    width: 30px
+    transition: 0.3s ease-in-out
+    &:after, &:before
+      transition: 0.2s ease-in-out
+      opacity: 1
+      transform: translateX(0%)
 
   button.secondary
     border-color: $bg-dark-lighten-2

@@ -4,9 +4,9 @@
       <h1 class="h2" v-html="$t('kyb_claim1')"></h1>
       <p v-html="$t('kyb_claim2')" />
     </div>
-    <div class="card">
+    <div class="card highlight-container">
       <ChecksList :features="features" />
-      <DemoButtons />
+      <DemoButtons :dark="true"/>
     </div>
   </div>
 </template>
@@ -16,6 +16,7 @@ import ChecksList from "../ChecksList.vue";
 import DemoButtons from "../DemoButtons.vue";
 
 export default Vue.extend({
+  components: { ChecksList, DemoButtons },
   name: "KYBPricingPlan",
   data() {
     return {
@@ -74,7 +75,6 @@ export default Vue.extend({
       ],
     };
   },
-  components: { ChecksList, DemoButtons },
 });
 </script>
 <style lang="sass" scoped>
@@ -90,5 +90,4 @@ export default Vue.extend({
   flex-direction: column
   align-items: center
   gap: $spacing-xlg
-  background: $bg-dark
 </style>

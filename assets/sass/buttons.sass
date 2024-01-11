@@ -3,13 +3,14 @@ button, .button
   padding: $padding-4-md
   border-radius: $radius-md
   font-family: $font-bold
-  border: 2px solid
+  border: 3px solid
+  background-clip: padding-box
   outline: none
   font-size: 1.2rem
   cursor: pointer
   transition: 0.3s
   background-color: var(--bg-primary)
-  border-color: var(--bg-primary)
+  border-color: rgba($bg-dark, 0.2)
   color: var(--text-primary-inverted)
   white-space: nowrap
   text-decoration: none
@@ -19,8 +20,12 @@ button, .button
   text-decoration: none
   box-shadow: 5px 5px 5px var(--color-primary)
   position: relative
-
-  &.primary, &.shadowed      
+  transition: all .3s ease-in-out
+  &.light
+    border-color: $color-grey-lighten-1
+    color: $color-grey-darken-3
+    background: $color-grey-lighten-3
+  &.primary, &.shadowed
     &:before
       transition: all .3s ease-in-out
       content: ""
@@ -37,12 +42,14 @@ button, .button
     &:hover
       &:before
         transition: all .3s ease-in-out
-        filter: blur(15px)
+        filter: blur(10px)
+        transform: scale(1.10)
 
   &:hover
-    transition: 0.3s
-  &:hover:not(.vsm-link):not(:disabled):not(.accent):not(.translucid):not(.secondary)
+    transition: all .3s ease-in-out
+  &:hover:not(.vsm-link):not(:disabled):not(.accent):not(.translucid):not(.secondary):not(.light)
     background-color: var(--bg-primary)
+    border-color: rgba($color-grey-darken-3, 0.5)
 
   &.demo-button
     color: #fff
@@ -93,7 +100,6 @@ a
   &:hover
     transition: 0.3s
     border-color: inherit
-
 
 button.icon
   i
