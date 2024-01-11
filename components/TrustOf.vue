@@ -75,6 +75,7 @@ export default {};
   text-align: center
   padding: 30px
   margin: auto
+  margin-top: -80px
   .trust__logos
     display: flex
     width: 100%
