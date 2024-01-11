@@ -166,6 +166,8 @@ export default {
   width: 300px
   min-height: 150px
   padding: $spacing-md
+  align-items: flex-start
+  text-align: left
 
   .offsetX
     &-move
