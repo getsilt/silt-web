@@ -1,5 +1,5 @@
 <template>
-  <section class="claim-container">
+  <section class="hero claim-container">
     <div class="bg-shadow__wrapper">
       <div class="bg-shadow__container">
         <img

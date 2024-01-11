@@ -44,15 +44,20 @@
             </nuxt-link>
           </li>
           <!-- TODO: Update using new copies -->
-          <a
+          <nuxt-link :to="localePath({ name: 'demo' })">
+            <button class="primary icon demo-button small">
+              {{ $t("btn_cta_book_demo") }}<i class="simple-arrow" />
+            </button>
+          </nuxt-link>
+          <!-- <a
             href="https://dashboard.getsilt.com/welcome"
             rel="nofollow"
             target="_blank"
           >
-            <button class="demo-button small secondary icon">
+            <button class="demo-button small primary icon">
               {{ $t("btn_cta_navBar_demo") }}<i class="simple-arrow"></i>
             </button>
-          </a>
+          </a> -->
           <!--Display mobile menu-->
           <vsm-mob ref="menumov">
             <mobile-nav @onCloseNav="closeNav()" />

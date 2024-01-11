@@ -108,7 +108,7 @@
       </section>
       <p class="copyright">
         <i18n path="footer_copyright">
-          <span slot="year">2023</span>
+          <span slot="year">2024</span>
         </i18n>
       </p>
     </footer>

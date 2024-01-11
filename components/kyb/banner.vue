@@ -1,22 +1,20 @@
 <template>
   <div class="fw-container kyb-banner bg-gradient-1">
-    <div class="kyb-banner-wrapper">
+    <div class="kyb-banner-wrapper highlight-container">
       <h3>{{ $t("kyb_call_to_action_title") }}</h3>
       <p class="subtitle">{{ $t("kyb_call_to_action_subtitle") }}</p>
       <ChecksList :features="features" />
-      <nuxt-link :to="localePath({ name: 'demo' })">
-        <button class="primary">
-          {{ $t("btn_cta_book_demo") }}
-        </button>
-      </nuxt-link>
+      <DemoButtons :dark="true"/>
     </div>
   </div>
 </template>
 
 <script>
+import DemoButtons from "../DemoButtons.vue";
 import gsap from "gsap";
 import ChecksList from "../ChecksList.vue";
 export default {
+  components: { ChecksList, DemoButtons },
   data() {
     return {
       email: "hello@getsilt.com",
@@ -70,7 +68,6 @@ export default {
       }
     },
   },
-  components: { ChecksList },
 };
 </script>
 
@@ -84,8 +81,4 @@ export default {
     flex-direction: column
     align-items: center
     gap: $spacing-md
-    color: #fff
-    h3
-      color: #fff
-      margin-bottom: 0
 </style>

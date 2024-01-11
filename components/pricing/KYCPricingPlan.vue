@@ -4,7 +4,7 @@
       <h1 class="h2">{{ $t("business_pricing_title") }}</h1>
       <p>{{ $t("business_pricing_content") }}</p>
     </div>
-    <div class="card">
+    <div class="card highlight-container">
       <div class="card-header">
         <div class="pricing-plan_price">
           <h2>0,50€</h2>
@@ -21,7 +21,7 @@
         </p>
       </div>
       <ChecksList :features="features" />
-      <DemoButtons />
+      <DemoButtons :dark="true"/>
     </div>
     <div class="tabs-wrapper tab-md tab-squared">
       <div class="tab-wrapper">
@@ -110,13 +110,15 @@ export default Vue.extend({
   flex-direction: column
   align-items: center
   gap: $spacing-xlg
-  background: $bg-dark
   .card-header
     color: #fff
   .pricing-plan_price
     display: flex
     justify-content: center
     align-items: flex-end
+    h2
+      font-size: 4rem
+
     h2,h6
       margin-bottom: 0
       color: #fff
