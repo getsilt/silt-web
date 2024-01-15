@@ -45,11 +45,13 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+@import "@/assets/sass/vars.sass"
 .claim-side-img
   display: flex
   flex-wrap: wrap
   justify-content: center
-  margin-left: 38%
   @media (max-width: 768px)
     margin: auto
+    margin-bottom: $spacing-xlg
+    flex-direction: column
 </style>

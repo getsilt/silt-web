@@ -163,11 +163,12 @@ export default {
 .video-demo-animation-wrapper
   display: flex
   flex-direction: column
-  width: 300px
+  width: 325px
   min-height: 150px
   padding: $spacing-md
   align-items: flex-start
   text-align: left
+  margin-right: -325px
 
   .offsetX
     &-move

@@ -4,7 +4,7 @@
       <h3>{{ $t("kyb_call_to_action_title") }}</h3>
       <p class="subtitle">{{ $t("kyb_call_to_action_subtitle") }}</p>
       <ChecksList :features="features" />
-      <DemoButtons :dark="true"/>
+      <DemoButtons :dark="true" />
     </div>
   </div>
 </template>
@@ -77,6 +77,7 @@ export default {
   // background: $color-primary
   z-index: 1
   .kyb-banner-wrapper
+    padding: $spacing-xlg
     display: flex
     flex-direction: column
     align-items: center

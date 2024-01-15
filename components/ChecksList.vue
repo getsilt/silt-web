@@ -31,6 +31,9 @@ export default Vue.extend({
   column-gap: 120px
   row-gap: $spacing-md
   justify-content: center
+  @media (max-width: 768px)
+    justify-content: flex-start
+    text-align: left
 
   .content-list-item
     color: #fff
