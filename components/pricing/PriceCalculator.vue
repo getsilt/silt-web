@@ -21,14 +21,16 @@
         @click="activeInput = !activeInput"
       />
     </div>
-    <div v-if="hasKYC || hasAML" class="card price_card_3">
+    <div v-if="hasKYC || hasAML" class="card price_card_2">
       <TransitionGroup name="offsetX">
         <div v-if="hasKYC" key="KYC" class="price-card-description">
           <h6>{{ $t("price_per_verification_KYC") }}</h6>
           <p>
             {{
               $t("price_per_verification_prices_2", {
-                amount: formatCurrency(priceSplit.kyc),
+                amount: formatCurrency(
+                  priceEstimateVerifications ? priceSplit.kyc : 199
+                ),
               })
             }}
           </p>
@@ -40,7 +42,9 @@
           <p>
             {{
               $t("price_per_verification_prices_2", {
-                amount: formatCurrency(priceSplit.pep),
+                amount: formatCurrency(
+                  priceEstimateVerifications ? priceSplit.pep : 0
+                ),
               })
             }}
           </p>
@@ -52,7 +56,9 @@
           <p>
             {{
               $t("price_per_verification_prices_2", {
-                amount: formatCurrency(priceSplit.aml),
+                amount: formatCurrency(
+                  priceEstimateVerifications ? priceSplit.aml : 0
+                ),
               })
             }}
           </p>
@@ -63,13 +69,15 @@
         <h5>
           {{
             $t("price_per_verification_prices_2", {
-              amount: priceEstimateCost,
+              amount: priceEstimateVerifications
+                ? priceEstimateCost
+                : "199,00 €",
             })
           }}
         </h5>
       </div>
     </div>
-    <div class="card price_card_4">
+    <div class="card price_card_3">
       <TransitionGroup name="offsetX">
         <div v-if="hasKYC" key="KYC-2" class="price-card-description">
           <h6>{{ $t("price_per_verification_KYC") }}</h6>
@@ -153,7 +161,6 @@ export default Vue.extend({
   },
   computed: {
     priceEstimateCost() {
-      if (!this.priceEstimateVerifications) return this.formatCurrency(0);
       let totalPrice = 0;
       const priceEstimate = this.priceEstimateVerifications || 0;
       this.priceSplit = { kyc: 0, aml: 0, pep: 0 };
@@ -166,7 +173,7 @@ export default Vue.extend({
           }
           this.priceSplit.kyc = this.priceTableKYC[i] * priceEstimate;
           if (this.priceSplit.kyc === 0 || this.priceSplit.kyc < 99) {
-            this.priceSplit.kyc = 99;
+            this.priceSplit.kyc = 199;
           }
           break;
         }
@@ -231,7 +238,7 @@ export default Vue.extend({
   h6, h5
     margin-bottom: 0
 
-  .price_card_4
+  .price_card_2
     grid-column: 3
     grid-row: 1
     flex-direction: column
