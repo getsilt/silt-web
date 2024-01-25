@@ -65,9 +65,8 @@
         <tr>
           <td>
             {{
-              $t("business_pricing_between", {
-                amountLow: "10.001",
-                amountUp: "15.000",
+              $t("business_pricing_moreThan", {
+                amount: "10.001"
               })
             }}
             <span class="hint">{{
@@ -76,39 +75,6 @@
           </td>
           <td>
             <b>0,2€</b>
-            <span class="hint"> / {{ $t("global_userVerification") }}</span>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            {{
-              $t("business_pricing_between", {
-                amountLow: "15.001",
-                amountUp: "20.000",
-              })
-            }}
-            <span class="hint">{{
-              $t("business_pricing_userVerificationsMonth")
-            }}</span>
-          </td>
-          <td>
-            <b>0,17€</b>
-            <span class="hint"> / {{ $t("global_userVerification") }}</span>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            {{
-              $t("business_pricing_moreThan", {
-                amount: "20.001",
-              })
-            }}
-            <span class="hint">{{
-              $t("business_pricing_userVerificationsMonth")
-            }}</span>
-          </td>
-          <td>
-            <b>0,15€</b>
             <span class="hint"> / {{ $t("global_userVerification") }}</span>
           </td>
         </tr>
