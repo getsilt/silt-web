@@ -81,7 +81,7 @@
           </div>
         </nuxt-link>
       </div>
-      <DemoButtons class="products-demo-buttons" />
+      <DemoButtons class="products-demo-buttons" :dark="true" />
     </section>
   </div>
 </template>
