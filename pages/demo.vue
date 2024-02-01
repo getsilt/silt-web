@@ -69,7 +69,7 @@ export default {
   align-items: flex-start
   position: relative
   .calendly-inline-widget
-    min-width: 320px
+    min-width: 460px
     height: 700px
 </style>
 
