@@ -1,5 +1,10 @@
 <template>
   <div>
+    <script
+      type="text/javascript"
+      src="https://assets.calendly.com/assets/external/widget.js"
+      async
+    ></script>
     <section class="claim-container">
       <div class="claim-info">
         <h2 class="">{{ $t("demo_claim1") }}</h2>
