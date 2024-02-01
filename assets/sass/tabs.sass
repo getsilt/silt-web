@@ -23,12 +23,19 @@
     .tab
       border-radius: $radius-md
 
-  &.tabs-wrapper--carousel
+  &.tabs-wrapper--background
     margin: auto
     margin-bottom: $spacing-md
     gap: $spacing-sm
+    background: rgba($color-primary, .2)
+    border-radius: $radius-lg
+    padding: 5px
+    .tab
+      border-radius: $radius-lg
+      padding: $spacing-xsm $spacing-md
     @media(max-width: 768px)
       flex-direction: column
+      background: none
       .tab-wrapper
         width: 100%
 
