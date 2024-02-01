@@ -19,7 +19,7 @@
           <div class="claim-info top-claim-info">
             <p>{{ $t("business_solution_rules_page_content") }}</p>
             <p class="centered-block integration-link">
-              <demo-buttons class="dark"/>
+              <demo-buttons class="dark" />
             </p>
           </div>
         </div>
@@ -71,27 +71,20 @@ export default {
 
 <style lang="sass" scoped>
 @import "@/assets/sass/vars.sass"
-.integration-container
-  display: flex
-  &>*
-    flex: 1 1 50%
-    margin-right: $spacing-md
-  &>*:last-child
-    margin-right: 0
 
 .integration-link
-    margin-top: $spacing-xlg
-    .with-arrow
-      position: relative
-      &:after, &:before
-        transition: 0.2s ease-in-out
-        opacity: 0
-        transform: translateX(0%)
-        position: absolute
-        right: 0
-        font-family: "Font Awesome 5 Duotone"
-        content: "\f061"
-        color: #2963ff
+  margin-top: $spacing-xlg
+  .with-arrow
+    position: relative
+    &:after, &:before
+      transition: 0.2s ease-in-out
+      opacity: 0
+      transform: translateX(0%)
+      position: absolute
+      right: 0
+      font-family: "Font Awesome 5 Duotone"
+      content: "\f061"
+      color: #2963ff
       &:hover:after
         transition: 0.2s ease-in-out
         opacity: 1
