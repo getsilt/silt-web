@@ -136,6 +136,8 @@ export default {
   gap: $spacing-md
 
   .card
+    font-family: $font-body
+    color: #fff
     &:hover
       cursor: pointer
 
