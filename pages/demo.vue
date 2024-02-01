@@ -11,14 +11,16 @@
         </div>
       </div>
       <div class="claim-info right">
-        <div id="meetzy-engine" />
+        <div
+          class="calendly-inline-widget"
+          data-url="https://calendly.com/andrea-silt?hide_landing_page_details=1&hide_gdpr_banner=1"
+        />
       </div>
     </section>
   </div>
 </template>
 
 <script>
-
 export default {
   nuxtI18n: {
     paths: {
@@ -55,18 +57,19 @@ export default {
       link: [...i18nSeo.link],
     };
   },
-  mounted() {
-    this.meetzy();
-  },
+  mounted() {},
 
-  methods: {
-    meetzy() {
-      document.dispatchEvent(new CustomEvent("meetzy-refresh", {}));
-      document.addEventListener("meetzy-form-submitted", (e) => {
-        window.lintrk('track', { conversion_id: 14836770 });
-        this.$gtag_report_conversion();
-      });
-    },
-  },
+  methods: {},
 };
 </script>
+<style lang="sass" scoped>
+@import "@/assets/sass/vars.sass"
+
+.claim-container
+  align-items: flex-start
+  position: relative
+  .calendly-inline-widget
+    min-width: 320px
+    height: 700px
+</style>
+
