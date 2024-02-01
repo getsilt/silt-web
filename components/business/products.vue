@@ -18,7 +18,7 @@
               </div>
               <h4>{{ $t("solutions_kyb_title") }}</h4>
               <p>{{ $t("solutions_kyb_body") }}</p>
-              <ChecksList :features="features" />
+              <ChecksList :features="KYBFeatures" />
               <h6 class="link">
                 <a href="/legal-notice" rel="nofollow">
                   {{ $t("solutions_kyb_link") }}
@@ -38,7 +38,7 @@
               </div>
               <h4>{{ $t("solutions_kyc_title") }}</h4>
               <p>{{ $t("solutions_kyc_body") }}</p>
-              <ChecksList :features="features" />
+              <ChecksList :features="KYCFeatures" />
               <h6 class="link">
                 <a href="/legal-notice" rel="nofollow">
                   {{ $t("solutions_kyc_link") }}
@@ -74,7 +74,7 @@ export default {
   components: { DemoButtons, ChecksList },
   data() {
     return {
-      features: [
+      KYBFeatures: [
         {
           title: "solutions_kyb_body_list_kyb",
         },
@@ -95,6 +95,26 @@ export default {
         },
         {
           title: "solutions_kyb_body_list_kyc",
+        },
+      ],
+      KYCFeatures: [
+        {
+          title: "solutions_kyc_body_list_kyc",
+        },
+        {
+          title: "solutions_body_list_aml",
+        },
+        {
+          title: "solutions_body_list_pep",
+        },
+        {
+          title: "solutions_body_list_proof_of_address",
+        },
+        {
+          title: "solutions_body_list_misconduct_list",
+        },
+        {
+          title: "solutions_body_list_rules",
         },
       ],
     };

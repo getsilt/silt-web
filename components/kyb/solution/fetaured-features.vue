@@ -1,17 +1,12 @@
 <template>
   <!-- Carrousel Tabs-->
   <div class="cards-wrapper_flex" id="features">
-    <div
-      class="tabs-wrapper tabs-wrapper--carousel tab-md tab-squared vertical text-left"
-    >
+    <div class="tabs-wrapper tabs-wrapper--carousel tab-squared text-left">
       <div class="tab-wrapper">
         <v-tab
           activeTabName="customRequirements"
           @onActiveTabChange="featuredTab = $event"
           :isSelected="featuredTab"
-          :class="{
-            'text-gradient-1-child': featuredTab == 'customRequirements',
-          }"
         >
           <h3 class="seo_header">
             {{ $t("kyb_solution_carousel_custom_requirements_title") }}
@@ -23,9 +18,6 @@
           activeTabName="automaticDetection"
           @onActiveTabChange="featuredTab = $event"
           :isSelected="featuredTab"
-          :class="{
-            'text-gradient-1-child': featuredTab == 'automaticDetection',
-          }"
         >
           <h3 class="seo_header">
             {{ $t("kyb_solution_carousel_collection_title") }}
@@ -37,9 +29,6 @@
           activeTabName="automaticVerification"
           @onActiveTabChange="featuredTab = $event"
           :isSelected="featuredTab"
-          :class="{
-            'text-gradient-1-child': featuredTab == 'automaticVerification',
-          }"
         >
           <h3 class="seo_header">
             {{ $t("kyb_solution_carousel_verification_title") }}
@@ -51,7 +40,6 @@
           activeTabName="LLM"
           @onActiveTabChange="featuredTab = $event"
           :isSelected="featuredTab"
-          :class="{ 'text-gradient-1-child': featuredTab == 'LLM' }"
         >
           <h3 class="seo_header">
             {{ $t("kyb_solution_carousel_LLM_title") }}
@@ -63,7 +51,6 @@
           activeTabName="companyDatabase"
           @onActiveTabChange="featuredTab = $event"
           :isSelected="featuredTab"
-          :class="{ 'text-gradient-1-child': featuredTab == 'companyDatabase' }"
         >
           <h3 class="seo_header">
             {{ $t("kyb_solution_carousel_database_title") }}
@@ -460,8 +447,4 @@ export default {
     height: auto
 .claim-info-wrapper.differences
   padding-bottom: 0
-.tabs-wrapper--carousel
-  margin-bottom: $spacing-md
-  .tab.active
-    background: transparent !important
 </style>

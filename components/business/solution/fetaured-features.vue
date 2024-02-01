@@ -1,15 +1,12 @@
 <template>
   <!-- Carrousel Tabs-->
   <div class="cards-wrapper_flex" id="features">
-    <div
-      class="tabs-wrapper tabs-wrapper--carousel tab-md tab-squared vertical text-left"
-    >
+    <div class="tabs-wrapper tabs-wrapper--carousel tab-squared text-left">
       <div class="tab-wrapper">
         <v-tab
           activeTabName="digitalID"
           @onActiveTabChange="featuredTab = $event"
           :isSelected="featuredTab"
-          :class="{ 'text-gradient-1-child': featuredTab == 'digitalID' }"
         >
           <h3 class="seo_header">
             {{ $t("business_solution_carrousel_kyc") }}
@@ -22,7 +19,6 @@
           activeTabName="kyb"
           @onActiveTabChange="featuredTab = $event"
           :isSelected="featuredTab"
-          :class="{ 'text-gradient-1-child': featuredTab == 'kyb' }"
         >
           <h3 class="seo_header">{{ $t("nav_feature_kyb") }}</h3>
         </v-tab>
@@ -33,7 +29,6 @@
           activeTabName="customize"
           @onActiveTabChange="featuredTab = $event"
           :isSelected="featuredTab"
-          :class="{ 'text-gradient-1-child': featuredTab == 'customize' }"
         >
           <h3 class="seo_header">
             {{ $t("business_solution_carrousel_customization") }}
@@ -45,7 +40,6 @@
           activeTabName="list"
           @onActiveTabChange="featuredTab = $event"
           :isSelected="featuredTab"
-          :class="{ 'text-gradient-1-child': featuredTab == 'list' }"
         >
           <h3 class="seo_header">
             {{ $t("business_solution_carrousel_fraud") }}
@@ -57,7 +51,6 @@
           activeTabName="biocheck"
           @onActiveTabChange="featuredTab = $event"
           :isSelected="featuredTab"
-          :class="{ 'text-gradient-1-child': featuredTab == 'biocheck' }"
         >
           <h3 class="seo_header">
             {{ $t("business_solution_carrousel_biocheck") }}
@@ -495,8 +488,4 @@ export default {
     height: auto
 .claim-info-wrapper.differences
   padding-bottom: 0
-.tabs-wrapper--carousel
-  margin-bottom: $spacing-md
-  .tab.active
-    background: transparent !important
 </style>
