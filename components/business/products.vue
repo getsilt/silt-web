@@ -7,7 +7,10 @@
       </div>
       <div class="products-container">
         <div class="products-wrapper">
-          <article class="card bg-gradient-2 transparent">
+          <nuxt-link
+            :to="localePath({ name: 'kyb' })"
+            class="card bg-gradient-2 transparent"
+          >
             <div class="article-container">
               <div class="article-header-wrapper">
                 <h3 class="text-gradient-2">{{ $t("kyb_title") }}</h3>
@@ -23,8 +26,11 @@
                 <i class="fad fa-arrow-right" />
               </h6>
             </div>
-          </article>
-          <article class="card bg-gradient-2 transparent">
+          </nuxt-link>
+          <nuxt-link
+            :to="localePath({ name: 'kyc' })"
+            class="card bg-gradient-2 transparent"
+          >
             <div class="article-container">
               <div class="article-header-wrapper">
                 <h3 class="text-gradient-2">{{ $t("kyc_title") }}</h3>
@@ -40,9 +46,9 @@
                 <i class="fad fa-arrow-right" />
               </h6>
             </div>
-          </article>
+          </nuxt-link>
         </div>
-        <article class="card">
+        <nuxt-link :to="localePath({ name: 'kyb' })" class="card">
           <div class="article-container">
             <h3 class="text-gradient-2">{{ $t("cdp_title") }}</h3>
             <p>{{ $t("solutions_cdp_body") }}</p>
@@ -53,7 +59,7 @@
               <i class="fad fa-arrow-right" />
             </h6>
           </div>
-        </article>
+        </nuxt-link>
       </div>
       <DemoButtons class="products-demo-buttons" />
     </section>
