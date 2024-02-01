@@ -334,7 +334,7 @@ export default {
             markers: false,
           },
         })
-        .from("#features .tab-wrapper", {
+        .from("#features .tabs-wrapper", {
           duration: 1,
           scale: 1,
           y: 75,
