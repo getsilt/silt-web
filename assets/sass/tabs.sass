@@ -33,11 +33,12 @@
     .tab
       border-radius: $radius-lg
       padding: $spacing-xsm $spacing-md
-    @media(max-width: 768px)
-      flex-direction: column
-      background: none
-      .tab-wrapper
-        width: 100%
+    &.list
+      @media(max-width: 768px)
+        flex-direction: column
+        background: none
+        .tab-wrapper
+          width: 100%
 
   &.vertical
     flex-direction: column

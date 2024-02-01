@@ -1,7 +1,9 @@
 <template>
   <!-- Carrousel Tabs-->
   <div class="cards-wrapper_flex" id="features">
-    <div class="tabs-wrapper tabs-wrapper--background tab-squared text-left">
+    <div
+      class="tabs-wrapper tabs-wrapper--background list tab-squared text-left"
+    >
       <div class="tab-wrapper">
         <v-tab
           activeTabName="digitalID"
