@@ -75,7 +75,8 @@ export default {
   position: relative
   .calendly-inline-widget
     min-width: 460px
-    height: 700px
+    height: 900px
+
     @media(max-width: 768px)
       min-width: 350px
 </style>
