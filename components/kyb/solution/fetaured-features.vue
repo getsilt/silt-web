@@ -432,7 +432,8 @@ export default {
 
 .cards-carroussel
   flex: 1 1
-  width: -webkit-fill-available
+  max-width: 1000px
+  margin: auto
 .claim-container .claim-side-img.diagram
   margin: 0
   padding: 0
