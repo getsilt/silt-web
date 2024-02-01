@@ -18,7 +18,7 @@
       <div class="claim-info right">
         <div
           class="calendly-inline-widget"
-          data-url="https://calendly.com/andrea-silt?hide_landing_page_details=1&hide_gdpr_banner=1"
+          data-url="https://calendly.com/andrea-silt/andrea-call?hide_landing_page_details=1&hide_gdpr_banner=1"
         />
       </div>
     </section>
