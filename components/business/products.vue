@@ -1,6 +1,6 @@
 <template>
   <div class="fw-container--dark">
-    <section class="container-md" id="howto">
+    <section class="container" id="howto">
       <div class="section-headers">
         <span class="tag">{{ $t("business_howto_section") }}</span>
         <h2 v-html="$t('business_howto_title')" class="color_blue_text" />
@@ -9,16 +9,26 @@
         <div class="products-wrapper">
           <nuxt-link
             :to="localePath({ name: 'kyb' })"
-            class="card bg-gradient-2 transparent"
+            class="card bg-gradient-3"
+            :class="{ active: activeFeature === 'KYB' }"
           >
-            <div class="article-container">
+            <div class="article-container" @mouseover="activeFeature = 'KYB'">
               <div class="article-header-wrapper">
                 <h3 class="text-gradient-2">{{ $t("kyb_title") }}</h3>
                 <i class="fad fa-lg fa-arrow-right" />
               </div>
-              <h4>{{ $t("solutions_kyb_title") }}</h4>
-              <p>{{ $t("solutions_kyb_body") }}</p>
-              <ChecksList :features="KYBFeatures" />
+              <div class="solutions-body-wrapper">
+                <h3>{{ $t("solutions_kyb_title") }}</h3>
+                <div class="solutions-body-wrapper__checklist">
+                  <p>{{ $t("solutions_kyb_body") }}</p>
+                  <Transition name="offsetX">
+                    <ChecksList
+                      v-if="activeFeature === 'KYB'"
+                      :features="KYBFeatures"
+                    />
+                  </Transition>
+                </div>
+              </div>
               <h6 class="link">
                 <a href="/legal-notice" rel="nofollow">
                   {{ $t("solutions_kyb_link") }}
@@ -29,16 +39,26 @@
           </nuxt-link>
           <nuxt-link
             :to="localePath({ name: 'kyc' })"
-            class="card bg-gradient-2 transparent"
+            class="card bg-gradient-3"
+            :class="{ active: activeFeature === 'KYC' }"
           >
-            <div class="article-container">
+            <div class="article-container" @mouseover="activeFeature = 'KYC'">
               <div class="article-header-wrapper">
                 <h3 class="text-gradient-2">{{ $t("kyc_title") }}</h3>
                 <i class="fad fa-lg fa-arrow-right" />
               </div>
-              <h4>{{ $t("solutions_kyc_title") }}</h4>
-              <p>{{ $t("solutions_kyc_body") }}</p>
-              <ChecksList :features="KYCFeatures" />
+              <div class="solutions-body-wrapper">
+                <h3>{{ $t("solutions_kyc_title") }}</h3>
+                <div class="solutions-body-wrapper__checklist">
+                  <p>{{ $t("solutions_kyc_body") }}</p>
+                  <Transition name="offsetX">
+                    <ChecksList
+                      v-if="activeFeature === 'KYC'"
+                      :features="KYCFeatures"
+                    />
+                  </Transition>
+                </div>
+              </div>
               <h6 class="link">
                 <a href="/legal-notice" rel="nofollow">
                   {{ $t("solutions_kyc_link") }}
@@ -74,6 +94,7 @@ export default {
   components: { DemoButtons, ChecksList },
   data() {
     return {
+      activeFeature: "KYB",
       KYBFeatures: [
         {
           title: "solutions_kyb_body_list_kyb",
@@ -149,25 +170,66 @@ export default {
 
 <style lang="sass" scoped>
 @import "@/assets/sass/vars.sass"
-
+.offsetX
+  &-move
+    transition: opacity 0.1s ease-in-out, transform 0.25s ease-in-out
+  &-leave-active
+    transition: opacity 0.2s linear, transform 0.2s cubic-bezier(.5, 0, .7, .4)
+    transition-delay: 0s
+  &-enter-active
+    transition: opacity 0.5s linear, transform 0.5s cubic-bezier(.5, 1, 1, 1)
+    transition-delay: 0.2s
+  &-enter,
+  &-leave-to
+    opacity: 0
+  &-enter
+    transform: translateX(200px)
+  &-leave-to
+    transform: translateX(200px)
 .products-container
   display: flex
   flex-direction: column
   gap: $spacing-md
-
   .card
     font-family: $font-body
     color: #fff
+    display: flex
+    flex-direction: column
+    overflow-x: hidden
     &:hover
       cursor: pointer
+    .solutions-body-wrapper
+      color: $bg-dark-lighten-2
+      margin-bottom: $spacing-md
+      h3
+        color: $bg-dark-lighten-1
+      p
+        max-width: 350px
+        flex: 0 0 auto
+      .solutions-body-wrapper__checklist
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+
+        .content-list
+          flex: 0 0 auto
+          display: flex
+          flex-direction: column
+          gap: $spacing-sm
+          background: $color-grey-darken-3
+          padding: $spacing-md
+          border-radius: $radius-md
 
   .article-container
     text-align: left
-    h3,h4, h6
+    flex: 1 1 auto
+    display: flex
+    flex-direction: column
+    h3,h3, h6
       margin-bottom: $spacing-xsm
 
     .link
-      margin-top: $spacing-md
+      margin-top: auto
       a
         color: $color-primary
       i
@@ -184,26 +246,24 @@ export default {
           display: initial
     .text-gradient-2
       width: fit-content
-    .content-list
-      display: none
-      justify-content: flex-start
   .products-wrapper
     display: flex
     flex-direction: row
     gap: $spacing-md
     @media (max-width:768px)
       flex-direction: column
-      .content-list
-        display: initial
+      .card
+        .solutions-body-wrapper
+          .solutions-body-wrapper__checklist
+            flex-direction: column
+            .content-list
+              opacity: 1
     &>*
       flex: 1 1 20%
     .card
       transition: 0.3s ease-in-out
-      height: fit-content
-      &:hover
+      &.active
         flex-grow: 2
-        .content-list
-          display: initial
         i
           display: initial
 
