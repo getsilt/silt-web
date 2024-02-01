@@ -27,7 +27,10 @@
     margin: auto
     margin-bottom: $spacing-md
     gap: $spacing-sm
-    flex-wrap: wrap
+    @media(max-width: 768px)
+      flex-direction: column
+      .tab-wrapper
+        width: 100%
 
   &.vertical
     flex-direction: column

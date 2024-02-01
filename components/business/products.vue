@@ -85,7 +85,7 @@ export default {
           title: "solutions_kyb_body_list_ubo_verification",
         },
         {
-          title: "solutions_kyb_body_list_aml",
+          title: "solutions_body_list_aml",
         },
         {
           title: "solutions_kyb_body_list_government_info",
@@ -94,7 +94,7 @@ export default {
           title: "solutions_kyb_body_list_cdp",
         },
         {
-          title: "solutions_kyb_body_list_kyc",
+          title: "solutions_kyc_body_list_kyc",
         },
       ],
       KYCFeatures: [
