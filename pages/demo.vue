@@ -1,5 +1,10 @@
 <template>
   <div>
+    <script
+      type="text/javascript"
+      src="https://assets.calendly.com/assets/external/widget.js"
+      async
+    ></script>
     <section class="claim-container">
       <div class="claim-info">
         <h2 class="">{{ $t("demo_claim1") }}</h2>
@@ -11,14 +16,16 @@
         </div>
       </div>
       <div class="claim-info right">
-        <div id="meetzy-engine" />
+        <div
+          class="calendly-inline-widget"
+          data-url="https://calendly.com/andrea-silt/andrea-call?hide_landing_page_details=1&hide_gdpr_banner=1"
+        />
       </div>
     </section>
   </div>
 </template>
 
 <script>
-
 export default {
   nuxtI18n: {
     paths: {
@@ -55,18 +62,21 @@ export default {
       link: [...i18nSeo.link],
     };
   },
-  mounted() {
-    this.meetzy();
-  },
+  mounted() {},
 
-  methods: {
-    meetzy() {
-      document.dispatchEvent(new CustomEvent("meetzy-refresh", {}));
-      document.addEventListener("meetzy-form-submitted", (e) => {
-        window.lintrk('track', { conversion_id: 14836770 });
-        this.$gtag_report_conversion();
-      });
-    },
-  },
+  methods: {},
 };
 </script>
+<style lang="sass" scoped>
+@import "@/assets/sass/vars.sass"
+
+.claim-container
+  align-items: flex-start
+  position: relative
+  .calendly-inline-widget
+    min-width: 460px
+    height: 700px
+    @media(max-width: 768px)
+      min-width: 350px
+</style>
+
