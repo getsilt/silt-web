@@ -7,7 +7,7 @@
       </div>
       <div class="products-container">
         <div class="products-wrapper">
-          <article class="card bg-gradient-3">
+          <article class="card bg-gradient-2 transparent">
             <div class="article-container">
               <div class="article-header-wrapper">
                 <h3 class="text-gradient-2">{{ $t("kyb_title") }}</h3>
@@ -24,7 +24,7 @@
               </h6>
             </div>
           </article>
-          <article class="card bg-gradient-3">
+          <article class="card bg-gradient-2 transparent">
             <div class="article-container">
               <div class="article-header-wrapper">
                 <h3 class="text-gradient-2">{{ $t("kyc_title") }}</h3>
