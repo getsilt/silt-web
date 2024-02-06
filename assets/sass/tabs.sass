@@ -23,6 +23,23 @@
     .tab
       border-radius: $radius-md
 
+  &.tabs-wrapper--background
+    margin: auto
+    margin-bottom: $spacing-md
+    gap: $spacing-sm
+    background: rgba($color-primary, .2)
+    border-radius: $radius-lg
+    padding: 5px
+    .tab
+      border-radius: $radius-lg
+      padding: $spacing-xsm $spacing-md
+    &.list
+      @media(max-width: 768px)
+        flex-direction: column
+        background: none
+        .tab-wrapper
+          width: 100%
+
   &.vertical
     flex-direction: column
     justify-content: center
@@ -47,9 +64,6 @@
         margin-right: $spacing-md
       &:not(:last-child)
         margin-right: 0px
-  &.text-left
-    .tab
-      text-align: left
 // .tabs-wrapper-bussiness
 //   display: flex
 //   margin-bottom: $spacing-sm

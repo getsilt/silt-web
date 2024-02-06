@@ -1,27 +1,38 @@
 <template>
   <div class="fw-container container" id="pricing">
-    <VSwitch
-      class="pricing-toggle"
-      v-model="showKYCPricing"
-      leftCopy="KYC"
-      rightCopy="KYB"
-    >
-      <h2 slot="left-copy-text" class="switch-header-slot seo_header">KYC</h2>
-      <h2 slot="right-copy-text" class="switch-header-slot seo_header">KYB</h2>
-    </VSwitch>
-    <KYCPricingPlan v-if="showKYCPricing" />
+    <div class="tabs-wrapper tabs-wrapper--background">
+      <div class="tab-wrapper">
+        <v-tab
+          activeTabName="KYC"
+          @onActiveTabChange="featuredTab = $event"
+          :isSelected="featuredTab"
+        >
+          <h2 class="seo_header">KYC</h2>
+        </v-tab>
+      </div>
+      <div class="tab-wrapper">
+        <v-tab
+          activeTabName="KYB"
+          @onActiveTabChange="featuredTab = $event"
+          :isSelected="featuredTab"
+        >
+          <h2 class="seo_header">KYB</h2>
+        </v-tab>
+      </div>
+    </div>
+    <KYCPricingPlan v-if="featuredTab === 'KYC'" />
     <KYBPricingPlan v-else />
   </div>
 </template>
 <script>
-import VSwitch from "@/components/VSwitch.vue";
+import VTab from "@/components/VTab.vue";
 import KYCPricingPlan from "../components/pricing/KYCPricingPlan.vue";
 import KYBPricingPlan from "../components/pricing/KYBPricingPlan.vue";
 // Animate on scroll
 // var controllerHolder;
 export default {
   components: {
-    VSwitch,
+    VTab,
     KYCPricingPlan,
     KYBPricingPlan,
   },
@@ -56,7 +67,7 @@ export default {
   data() {
     return {
       email: "hello@getsilt.com",
-      showKYCPricing: true,
+      featuredTab: "KYC",
     };
   },
   methods: {
@@ -69,9 +80,14 @@ export default {
 <style lang="sass" scoped>
 @import '@/assets/sass/vars.sass'
 
-.pricing-toggle
+.tabs-wrapper
   margin: auto
   margin-top: $spacing-xlg
-  .switch-header-slot
-    margin: 0 0 -2px
+  width: fit-content
+  .tab.active,:hover
+    background: $color-primary
+    border-radius: $radius-md
+    .seo_header
+      color: #fff
+      border-radius: $radius-md
 </style>
