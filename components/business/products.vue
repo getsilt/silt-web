@@ -22,10 +22,10 @@
                 <div class="solutions-body-wrapper__checklist">
                   <p>{{ $t("solutions_kyb_body") }}</p>
                   <Transition name="offsetX">
-                    <ChecksList
+                    <!-- <ChecksList
                       v-if="activeFeature === 'KYB'"
                       :features="KYBFeatures"
-                    />
+                    /> -->
                   </Transition>
                 </div>
               </div>
@@ -52,10 +52,10 @@
                 <div class="solutions-body-wrapper__checklist">
                   <p>{{ $t("solutions_kyc_body") }}</p>
                   <Transition name="offsetX">
-                    <ChecksList
+                    <!-- <ChecksList
                       v-if="activeFeature === 'KYC'"
                       :features="KYCFeatures"
-                    />
+                    /> -->
                   </Transition>
                 </div>
               </div>
