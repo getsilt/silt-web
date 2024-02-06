@@ -10,18 +10,20 @@
           <h2>0,50€</h2>
           <h6>/ {{ $t("global_userVerification") }}</h6>
         </div>
-        <p class="pricing-plan_upto">
-          {{ $t("business_pricing_min_quote") }}
-          <b>199€</b>
-          / {{ $t("business_pricing_month") }}
-        </p>
-        <p>
-          {{ $t("global_amount_month", { amount: 1 }) }}
-          <b>{{ $t("global_free") }}</b>
-        </p>
+        <div>
+          <p class="pricing-plan_upto">
+            {{ $t("business_pricing_min_quote") }}
+            <b>199€</b>
+            / {{ $t("business_pricing_month") }}
+          </p>
+          <p>
+            {{ $t("global_amount_month", { amount: 1 }) }}
+            <b>{{ $t("global_free") }}</b>
+          </p>
+        </div>
       </div>
       <ChecksList :features="features" />
-      <DemoButtons :dark="true"/>
+      <DemoButtons :dark="true" />
     </div>
     <div class="tabs-wrapper tab-md tab-squared">
       <div class="tab-wrapper">
@@ -112,10 +114,18 @@ export default Vue.extend({
   gap: $spacing-xlg
   .card-header
     color: #fff
+    text-align: left
+    padding: $spacing-md
+    border-radius: $radius-md
+    display: flex
+    gap: $spacing-xlg
+    align-items: center
+    flex-wrap: wrap
   .pricing-plan_price
     display: flex
-    justify-content: center
+    justify-content: flex-start
     align-items: flex-end
+    flex-direction: column
     h2
       font-size: 4rem
 

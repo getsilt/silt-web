@@ -24,6 +24,7 @@
           </card>
         </div>
       </div>
+      <DemoButtons class="benefits-demo-buttons" />
     </div>
   </section>
 </template>
@@ -31,9 +32,10 @@
 <script>
 import gsap from "gsap";
 import Card from "@/components/Card.vue";
+import DemoButtons from "../DemoButtons.vue";
 
 export default {
-  components: { Card },
+  components: { Card, DemoButtons },
   data() {
     return {
       email: "hello@getsilt.com",
@@ -93,4 +95,7 @@ export default {
 .article-icon-container
   margin-top: $spacing-sm
   margin-bottom: $spacing-lg
+
+.benefits-demo-buttons
+  margin: $spacing-md 0
 </style>
