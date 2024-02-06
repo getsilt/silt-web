@@ -7,8 +7,8 @@
       </div>
       <div class="products-container">
         <div class="products-wrapper">
-          <nuxt-link
-            :to="localePath({ name: 'kyb' })"
+          <article
+            @click="$router.push({ name: 'kyb' })"
             class="card bg-gradient-3"
             :class="{ active: activeFeature === 'KYB' }"
           >
@@ -30,15 +30,15 @@
                 </div>
               </div>
               <h6 class="link">
-                <a href="/legal-notice" rel="nofollow">
+                <a href="/kyb" rel="nofollow">
                   {{ $t("solutions_kyb_link") }}
                 </a>
                 <i class="fad fa-arrow-right" />
               </h6>
             </div>
-          </nuxt-link>
-          <nuxt-link
-            :to="localePath({ name: 'kyc' })"
+          </article>
+          <article
+            @click="$router.push({ name: 'kyc' })"
             class="card bg-gradient-3"
             :class="{ active: activeFeature === 'KYC' }"
           >
@@ -60,26 +60,26 @@
                 </div>
               </div>
               <h6 class="link">
-                <a href="/legal-notice" rel="nofollow">
+                <a href="/kyc" rel="nofollow">
                   {{ $t("solutions_kyc_link") }}
                 </a>
                 <i class="fad fa-arrow-right" />
               </h6>
             </div>
-          </nuxt-link>
+          </article>
         </div>
-        <nuxt-link :to="localePath({ name: 'kyb' })" class="card">
+        <article @click="$router.push({ name: 'kyb' })" class="card">
           <div class="article-container">
             <h3 class="text-gradient-2">{{ $t("cdp_title") }}</h3>
             <p>{{ $t("solutions_cdp_body") }}</p>
             <h6 class="link">
-              <a href="/legal-notice" rel="nofollow">
+              <a href="/kyb" rel="nofollow">
                 {{ $t("solutions_cdp_link") }}
               </a>
               <i class="fad fa-arrow-right" />
             </h6>
           </div>
-        </nuxt-link>
+        </article>
       </div>
       <DemoButtons class="products-demo-buttons" :dark="true" />
     </section>
