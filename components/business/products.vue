@@ -68,12 +68,12 @@
             </div>
           </article>
         </div>
-        <article @click="$router.push({ name: 'kyb' })" class="card">
+        <article @click="$router.push({ name: 'demo' })" class="card">
           <div class="article-container">
             <h3 class="text-gradient-2">{{ $t("cdp_title") }}</h3>
             <p>{{ $t("solutions_cdp_body") }}</p>
             <h6 class="link">
-              <a href="/kyb" rel="nofollow">
+              <a href="/demo" rel="nofollow">
                 {{ $t("solutions_cdp_link") }}
               </a>
               <i class="fad fa-arrow-right" />
