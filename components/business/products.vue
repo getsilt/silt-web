@@ -2,8 +2,8 @@
   <div class="fw-container--dark">
     <section class="container" id="howto">
       <div class="section-headers">
-        <span class="tag">{{ $t("business_howto_section") }}</span>
-        <h2 v-html="$t('business_howto_title')" class="color_blue_text" />
+        <span class="tag">{{ $t("business_solutions_section") }}</span>
+        <h2 v-html="$t('solutions_title')" class="color_blue_text" />
       </div>
       <div class="products-container">
         <div class="products-wrapper">
@@ -61,6 +61,7 @@
         <article @click="$router.push({ name: 'demo' })" class="card dark">
           <div class="article-container">
             <h3 class="text-gradient-2">{{ $t("cdp_title") }}</h3>
+            <h2>{{ $t("solutions_kyb_body_list_cdp") }}</h2>
             <p>{{ $t("solutions_cdp_body") }}</p>
             <h6 class="link">
               <a href="/demo">
@@ -194,9 +195,9 @@ export default {
         transition: 0.3s ease-in-out
         content: ''
         position: absolute
-        height: 80%
+        height: 100%
         width: 100%
-        transform: scale(0.92)
+        transform: scale(0.94)
         background: $linear-gradient-1
         filter: blur(50px)
         z-index: -1
@@ -211,7 +212,7 @@ export default {
         background: $color-accent
         filter: blur(50px)
         z-index: -1
-        animation: linear pulse 7s infinite
+        animation: linear pulse 5s infinite
         animation-play-state: paused
       .article-container
         background: #ffffffdd
@@ -311,13 +312,13 @@ export default {
 
 @keyframes pulse
   0%
-    transform: translateY(5%) translateX(0)
+    transform: translateY(7%) translateX(0)
   50%
-    transform: translateY(85%) translateX(-5%)
+    transform: translateY(85%) translateX(-10%)
   75%
-    transform: translateY(50%) translateX(-7%)
+    transform: translateY(50%) translateX(-15%)
   100%
-    transform: translateY(5%) translateX(0)
+    transform: translateY(7%) translateX(0)
 
 @keyframes offsetX
   0%
