@@ -9,7 +9,7 @@
         <div class="products-wrapper">
           <article
             @click="$router.push({ name: 'kyb' })"
-            class="card bg-gradient-3"
+            class="card"
             :class="{ active: activeFeature === 'KYB' }"
           >
             <div class="article-container" @mouseover="activeFeature = 'KYB'">
@@ -18,19 +18,14 @@
                 <i class="fad fa-lg fa-arrow-right" />
               </div>
               <div class="solutions-body-wrapper">
-                <h3>{{ $t("solutions_kyb_title") }}</h3>
+                <h2>{{ $t("solutions_kyb_title") }}</h2>
                 <div class="solutions-body-wrapper__checklist">
                   <p>{{ $t("solutions_kyb_body") }}</p>
-                  <Transition name="offsetX">
-                    <ChecksList
-                      v-if="activeFeature === 'KYB'"
-                      :features="KYBFeatures"
-                    />
-                  </Transition>
+                  <ChecksList :features="KYBFeatures" />
                 </div>
               </div>
               <h6 class="link">
-                <a href="/kyb" rel="nofollow">
+                <a href="/kyb">
                   {{ $t("solutions_kyb_link") }}
                 </a>
                 <i class="fad fa-arrow-right" />
@@ -39,7 +34,7 @@
           </article>
           <article
             @click="$router.push({ name: 'kyc' })"
-            class="card bg-gradient-3"
+            class="card"
             :class="{ active: activeFeature === 'KYC' }"
           >
             <div class="article-container" @mouseover="activeFeature = 'KYC'">
@@ -48,19 +43,14 @@
                 <i class="fad fa-lg fa-arrow-right" />
               </div>
               <div class="solutions-body-wrapper">
-                <h3>{{ $t("solutions_kyc_title") }}</h3>
+                <h2>{{ $t("solutions_kyc_title") }}</h2>
                 <div class="solutions-body-wrapper__checklist">
                   <p>{{ $t("solutions_kyc_body") }}</p>
-                  <Transition name="offsetX">
-                    <ChecksList
-                      v-if="activeFeature === 'KYC'"
-                      :features="KYCFeatures"
-                    />
-                  </Transition>
+                  <ChecksList :features="KYCFeatures" />
                 </div>
               </div>
               <h6 class="link">
-                <a href="/kyc" rel="nofollow">
+                <a href="/kyc">
                   {{ $t("solutions_kyc_link") }}
                 </a>
                 <i class="fad fa-arrow-right" />
@@ -68,12 +58,12 @@
             </div>
           </article>
         </div>
-        <article @click="$router.push({ name: 'demo' })" class="card">
+        <article @click="$router.push({ name: 'demo' })" class="card dark">
           <div class="article-container">
             <h3 class="text-gradient-2">{{ $t("cdp_title") }}</h3>
             <p>{{ $t("solutions_cdp_body") }}</p>
             <h6 class="link">
-              <a href="/demo" rel="nofollow">
+              <a href="/demo">
                 {{ $t("solutions_cdp_link") }}
               </a>
               <i class="fad fa-arrow-right" />
@@ -170,39 +160,81 @@ export default {
 
 <style lang="sass" scoped>
 @import "@/assets/sass/vars.sass"
-.offsetX
-  &-move
-    transition: opacity 0.1s ease-in-out, transform 0.25s ease-in-out
-  &-leave-active
-    transition: opacity 0.2s linear, transform 0.2s cubic-bezier(.5, 0, .7, .4)
-    transition-delay: 0s
-  &-enter-active
-    transition: opacity 0.5s linear, transform 0.5s cubic-bezier(.5, 1, 1, 1)
-    transition-delay: 0.2s
-  &-enter,
-  &-leave-to
-    opacity: 0
-  &-enter
-    transform: translateX(200px)
-  &-leave-to
-    transform: translateX(200px)
+
 .products-container
   display: flex
   flex-direction: column
   gap: $spacing-md
   .card
+    background: $linear-gradient-2
     font-family: $font-body
     color: #fff
     display: flex
     flex-direction: column
-    overflow-x: hidden
-    &:hover
-      cursor: pointer
+    transition: 0.3s ease-in-out
+    padding: 0
+    cursor: pointer
+    .article-container
+      padding: $spacing-xlg
+      background-clip: padding-box
+      border-radius: $radius-lg
+      border: 3px solid rgba(0,0,0,0.4)
+      position: relative
+      transition: 0.3s ease-in-out
+      overflow-x: hidden
+    &.dark
+      .article-container
+        background: $bg-dark-lighten-2
+        background-clip: padding-box
+        border: 3px solid rgba(0,0,0,0.7)
+
+
+    &:not(.dark)
+      &:before
+        transition: 0.3s ease-in-out
+        content: ''
+        position: absolute
+        height: 80%
+        width: 100%
+        transform: scale(0.92)
+        background: $linear-gradient-1
+        filter: blur(50px)
+        z-index: -1
+      &:after
+        content: ''
+        position: absolute
+        right: 0
+        top: 0
+        height: 300px
+        width: 300px
+        transform: scale(0.92)
+        background: $color-accent
+        filter: blur(50px)
+        z-index: -1
+        animation: linear pulse 7s infinite
+        animation-play-state: paused
+      .article-container
+        background: #ffffffdd
+        background-clip: padding-box
+
+      &:hover
+        transition: 0.3s ease-in-out
+        &:before
+          transition: 0.3s ease-in-out
+          transform: scale(0.98)
+        &:after
+          animation-play-state: running
+        .article-container
+          transition: 0.3s ease-in-out
+          background: #ffffffee
+          background-clip: padding-box
+
     .solutions-body-wrapper
       color: $bg-dark-lighten-2
       margin-bottom: $spacing-md
-      h3
+      h2
         color: $bg-dark-lighten-1
+        margin-bottom: 0
       p
         max-width: 350px
         flex: 0 0 auto
@@ -218,14 +250,18 @@ export default {
           gap: $spacing-sm
           background: $color-grey-darken-3
           padding: $spacing-md
-          border-radius: $radius-md
+          border-radius: $radius-lg 0 0 $radius-lg
+          transform: translateX(200px)
+          opacity: 0
+          padding-right: 80px
+          animation: ease-in-out offsetXOut 0.5s backwards
 
   .article-container
     text-align: left
     flex: 1 1 auto
     display: flex
     flex-direction: column
-    h3,h3, h6
+    h2,h3,h6
       margin-bottom: $spacing-xsm
 
     .link
@@ -257,6 +293,7 @@ export default {
           .solutions-body-wrapper__checklist
             flex-direction: column
             .content-list
+              transform: translateX(200px)
               opacity: 1
     &>*
       flex: 1 1 20%
@@ -266,7 +303,41 @@ export default {
         flex-grow: 2
         i
           display: initial
-
+        .content-list
+          animation: ease-in-out offsetX 0.5s forwards
 .products-demo-buttons
   margin: $spacing-md 0 0
+
+
+@keyframes pulse
+  0%
+    transform: translateY(5%) translateX(0)
+  50%
+    transform: translateY(85%) translateX(-5%)
+  75%
+    transform: translateY(50%) translateX(-7%)
+  100%
+    transform: translateY(5%) translateX(0)
+
+@keyframes offsetX
+  0%
+    transform: translateX(200px)
+    opacity: 0
+  50%
+    transform: translateX(60px)
+    opacity: 1
+  70%
+    transform: translateX(87px)
+    opacity: 1
+  100%
+    transform: translateX(83px)
+    opacity: 1
+  
+@keyframes offsetXOut
+  0%
+    transform: translateX(83px)
+    opacity: 1
+  100%
+    transform: translateX(200px)
+    opacity: 0
 </style>
