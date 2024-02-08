@@ -294,7 +294,7 @@ export default {
           .solutions-body-wrapper__checklist
             flex-direction: column
             .content-list
-              transform: translateX(200px)
+              transform: translateX(83px)
               opacity: 1
     &>*
       flex: 1 1 20%
