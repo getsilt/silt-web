@@ -189,7 +189,6 @@ export default {
         background-clip: padding-box
         border: 3px solid rgba(0,0,0,0.7)
 
-
     &:not(.dark)
       &:before
         transition: 0.3s ease-in-out
@@ -197,10 +196,15 @@ export default {
         position: absolute
         height: 100%
         width: 100%
-        transform: scale(0.94)
-        background: $linear-gradient-1
+        transform: scale(0.93)
+        background: $linear-gradient-2
         filter: blur(50px)
         z-index: -1
+        background-size: 1000px
+        animation: linear pulseShadow 15s infinite
+      &:last-child
+        &:before
+          animation: linear pulseShadow2 15s infinite 
       &:after
         content: ''
         position: absolute
@@ -309,6 +313,25 @@ export default {
 .products-demo-buttons
   margin: $spacing-md 0 0
 
+@keyframes pulseShadow
+  0%
+    background-position: 0px 0px
+  33%
+    background-position: 1000px 0px
+  66%
+    background-position: 200px 1000px
+  100%
+    background-position: 0px 0px
+
+@keyframes pulseShadow2
+  0%
+    background-position: 0px 0px
+  33%
+    background-position: 200px 1000px
+  66%
+    background-position: 1000px 200px
+  100%
+    background-position: 0px 0px
 
 @keyframes pulse
   0%
