@@ -58,7 +58,7 @@
             }}</span>
           </td>
           <td>
-            <b>0,3€</b
+            <b>0,35€</b
             ><span class="hint"> / {{ $t("global_userVerification") }}</span>
           </td>
         </tr>
@@ -74,7 +74,7 @@
             }}</span>
           </td>
           <td>
-            <b>0,2€</b>
+            <b>0,3€</b>
             <span class="hint"> / {{ $t("global_userVerification") }}</span>
           </td>
         </tr>
