@@ -19,7 +19,7 @@
           >
             <div class="article-container" slot="body">
               <h1 class="colored">{{ benefit.kpi }}</h1>
-              <h4 class="colored" v-html="$t(`${benefit.title}`)" />
+              <h4 class="colored">{{ $t(`${benefit.title}`) }}</h4>
               <p>{{ $t(benefit.content) }}</p>
             </div>
           </card>
