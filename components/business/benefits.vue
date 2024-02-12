@@ -44,22 +44,22 @@ export default {
         {
           title: "business_benefits_cac_title",
           content: "business_benefits_cac_body",
-          kpi: "+60%"
+          kpi: "+60%",
         },
         {
           title: "business_benefits_onboarding_title",
           content: "business_benefits_onboarding_body",
-          kpi:"92%" 
+          kpi: "92%",
         },
         {
           title: "business_benefits_costs_title",
           content: "business_benefits_costs_content",
-          kpi: "56%"
+          kpi: "56%",
         },
         {
           title: "business_benefits_fraud_title",
           content: "business_benefits_fraud_body",
-          kpi: "99%"
+          kpi: "99%",
         },
       ],
     };
