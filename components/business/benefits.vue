@@ -18,7 +18,8 @@
             class="card--w-sm"
           >
             <div class="article-container" slot="body">
-              <h2 class="color_blue_text" ><b>{{ $t(`${benefit.title}`) }}</b></h2>
+              <h1 class="colored">{{ benefit.kpi }}</h1>
+              <h4 class="colored">{{ $t(`${benefit.title}`) }}</h4>
               <p>{{ $t(benefit.content) }}</p>
             </div>
           </card>
@@ -43,18 +44,22 @@ export default {
         {
           title: "business_benefits_cac_title",
           content: "business_benefits_cac_body",
+          kpi: "+60%"
         },
         {
           title: "business_benefits_onboarding_title",
           content: "business_benefits_onboarding_body",
+          kpi:"92%" 
         },
         {
           title: "business_benefits_costs_title",
           content: "business_benefits_costs_content",
+          kpi: "56%"
         },
         {
           title: "business_benefits_fraud_title",
           content: "business_benefits_fraud_body",
+          kpi: "99%"
         },
       ],
     };
@@ -95,7 +100,21 @@ export default {
 .article-icon-container
   margin-top: $spacing-sm
   margin-bottom: $spacing-lg
+.article-container
+  h1
+    margin-bottom: $spacing-sm
 
 .benefits-demo-buttons
   margin: $spacing-md 0
+
+.colored
+  transition: 0.3s ease-in-out
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+  -moz-background-clip: text
+  -moz-text-fill-color: transparent
+  background-size: 300%
+  background-position: 100%
+  background-repeat: repeat
+  background-image: linear-gradient(45deg, rgba(48,50,205,1) 0%, rgba(48,104,255,1) 70%, rgba(108,176,255,1) 100%)
 </style>
