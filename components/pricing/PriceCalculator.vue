@@ -136,7 +136,7 @@ export default Vue.extend({
   data() {
     return {
       priceEstimateVerifications: null,
-      priceTableKYC: [0.5, 0.4, 0.3, 0.2, 0.17, 0.15],
+      priceTableKYC: [0.5, 0.4, 0.35, 0.3],
       priceTableAMLPEP: [0.15, 0.075, 0.064, 0.058, 0.05, 0.042],
       rangeTableKYC: [1000, 5000, 10000, 15000, 20000],
       rangeTableAMLPEP: [200, 1000, 5000, 10000, 40000],
