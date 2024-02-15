@@ -240,6 +240,7 @@ export default {
       h2
         color: $bg-dark-lighten-1
         margin-bottom: 0
+        max-width: 400px
       p
         max-width: 350px
         flex: 0 0 auto
