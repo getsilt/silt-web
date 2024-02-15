@@ -101,8 +101,18 @@
             </a>
           </p>
           <p>
-            <nuxt-link :to="switchLocalePath('es')">ES</nuxt-link>
-            <nuxt-link :to="switchLocalePath('en')">EN</nuxt-link>
+            <nuxt-link
+              class="locale-link"
+              :class="{ active: $i18n.locale === 'es' }"
+              :to="switchLocalePath('es')"
+              >ES</nuxt-link
+            >
+            <nuxt-link
+              class="locale-link"
+              :class="{ active: $i18n.locale === 'en' }"
+              :to="switchLocalePath('en')"
+              >EN</nuxt-link
+            >
           </p>
         </div>
       </section>
@@ -140,10 +150,16 @@ footer
     color: #ffffffcc
     &:hover
       color: #ffffffee
+      text-decoration: underline
+    &.locale-link
+      color: #ffffff77
+      &.active
+        color: #ffffff
   .h6
     color: #ffffffcc
 p
   margin: 10px 0
+
 p.copyright
   font-size: 14px
   text-align: center
