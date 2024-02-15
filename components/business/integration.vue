@@ -4,7 +4,7 @@
     <section class="container-md" id="howto">
       <div class="section-headers">
         <span class="tag">{{ $t("business_howto_section") }}</span>
-        <h2 v-html="$t('business_howto_title')" class="color_blue_text" />
+        <h2 v-html="$t('business_howto_title')" class="color_primary_text" />
       </div>
       <div class="integration-container">
         <article class="card">

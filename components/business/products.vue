@@ -3,7 +3,7 @@
     <section class="container" id="howto">
       <div class="section-headers">
         <span class="tag">{{ $t("business_solutions_section") }}</span>
-        <h2 v-html="$t('solutions_title')" class="color_blue_text" />
+        <h2 v-html="$t('solutions_title')" class="color_accent_text" />
       </div>
       <div class="products-container">
         <div class="products-wrapper">
@@ -167,7 +167,7 @@ export default {
   flex-direction: column
   gap: $spacing-md
   .card
-    background: $linear-gradient-2
+    background: $linear-gradient-accent
     font-family: $font-body
     color: #fff
     display: flex
@@ -197,7 +197,7 @@ export default {
         height: 100%
         width: 100%
         transform: scale(0.93)
-        background: $linear-gradient-2
+        background: $linear-gradient-accent
         filter: blur(50px)
         z-index: -1
         background-size: 1000px
@@ -254,13 +254,28 @@ export default {
           display: flex
           flex-direction: column
           gap: $spacing-sm
-          background: $color-grey-darken-3
+          background: $linear-gradient-accent
           padding: $spacing-md
           border-radius: $radius-lg 0 0 $radius-lg
           transform: translateX(200px)
           opacity: 0
           padding-right: 80px
           animation: ease-in-out offsetXOut 0.5s backwards
+          position: relative
+          overflow: hidden
+          &:before
+            left: 0
+            top: 0
+            content: ""
+            position: absolute
+            z-index: -1
+            height: 100%
+            width: 100%
+            background: rgba($color-grey-darken-3, 0.7)
+            border: 3px solid rgba($color-grey-darken-3, 0.4)
+            background-clip: padding-box
+            border-radius: $radius-lg $radius-lg
+            
 
   .article-container
     text-align: left

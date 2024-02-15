@@ -12,6 +12,7 @@
             :style="clientImage.style"
             :src="require(`@/assets/img/logo/${clientImage.src}`)"
             :alt="clientImage.alt"
+            height="40px"
           />
         </li>
       </ul>

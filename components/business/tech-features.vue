@@ -32,7 +32,7 @@
             <h6
               v-html="$t(feature.title)"
               slot="title"
-              class="feature_ux_title color_blue_text"
+              class="feature_ux_title color_primary_text"
             />
             <div slot="body">
               {{ $t(feature.body) }}
