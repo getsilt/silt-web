@@ -100,9 +100,18 @@
         <h6 class="title_menu">{{ $t("FAQ_title") }}</h6>
       </nuxt-link>
       <a
+        v-if="$i18n.locale === 'es'"
         target="blank"
         class="dropdown-wrap__content"
         href="https://blog.getsilt.com"
+        @click="$emit('onCloseNav')"
+      >
+        Blog
+      </a>
+      <a v-else
+        target="blank"
+        class="dropdown-wrap__content"
+        href="https://blog.getsilt.com/en/"
         @click="$emit('onCloseNav')"
       >
         Blog

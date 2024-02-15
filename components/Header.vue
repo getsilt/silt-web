@@ -29,8 +29,16 @@
         <template slot="after-nav">
           <li class="vsm-section vsm-section_menu vsm-mob-hide">
             <a
+              v-if="$i18n.locale === 'es'"
               target="blank"
               href="https://blog.getsilt.com"
+              @click="closeNav()"
+              ><button class="vsm-link">Blog</button>
+            </a>
+            <a
+              v-else
+              target="blank"
+              href="https://blog.getsilt.com/en/"
               @click="closeNav()"
               ><button class="vsm-link">Blog</button>
             </a>
