@@ -32,7 +32,7 @@
               <router-link
                 :key="`feature-tags-${tag}`"
                 :to="{ name: featureTags[tag].route }"
-                v-html="$t(`${featureTags[tag].title}`)"
+                v-html="`${featureTags[tag].title}`"
               >
               </router-link>
             </template>

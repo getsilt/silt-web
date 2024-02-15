@@ -10,7 +10,7 @@
     <div class="video-demo-animation-wrapper" id="video-demo-wrapper">
       <div v-show="startAnimation" class="video-demo-copies">
         <h6
-          class="color_blue_text"
+          class="color_primary_text"
           v-html="$t(`${currentVideoVerificationDemoHeader}`)"
         />
         <div class="video-demo-animation-copies-wrapper">

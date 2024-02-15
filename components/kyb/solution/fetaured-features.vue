@@ -73,7 +73,7 @@
               <div class="article-container" slot="body">
                 <h5
                   v-html="$t(`${automaticCollectionCopy.title}`)"
-                  class="color_blue_text"
+                  class="color_primary_text"
                 />
                 <p>{{ $t(automaticCollectionCopy.content) }}</p>
               </div>
@@ -132,7 +132,7 @@
               <div class="article-container" slot="body">
                 <h5
                   v-html="$t(`${automaticVerificationCopy.title}`)"
-                  class="color_blue_text"
+                  class="color_primary_text"
                 />
                 <p>{{ $t(automaticVerificationCopy.content) }}</p>
               </div>

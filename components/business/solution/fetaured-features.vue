@@ -116,7 +116,7 @@
               :class="fraud.class"
             >
               <div class="article-container" slot="body">
-                <h5 v-html="$t(`${fraud.title}`)" class="color_blue_text" />
+                <h5 v-html="$t(`${fraud.title}`)" class="color_primary_text" />
                 <p>{{ $t(fraud.content) }}</p>
               </div>
             </card>
