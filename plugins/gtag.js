@@ -41,6 +41,12 @@ export default (context, inject) => {
       'send_to': 'AW-352683225/78NdCOjLjcgDENmJlqgB',
       'event_callback': callback
     });
+
+    gtag('event', 'conversion_event_book_appointment', {
+      'event_callback': callback,
+      'event_timeout': 2000,
+      // <event_parameters>
+    });
     return false;
   }
 
