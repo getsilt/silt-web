@@ -9,9 +9,6 @@
         </button>
       </nuxt-link>
     </div>
-    <!-- <div class="hint_benefit">
-      <i class="fad fa-check-circle"></i>{{ $t("global_hint_benefits") }}
-    </div> -->
   </div>
 </template>
 

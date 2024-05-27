@@ -26,6 +26,13 @@
 </template>
 
 <script>
+function isCalendlyEvent(e) {
+  return (
+    e.origin === "https://calendly.com" &&
+    e.data.event &&
+    e.data.event.indexOf("calendly.") === 0
+  );
+}
 export default {
   nuxtI18n: {
     paths: {
@@ -62,7 +69,13 @@ export default {
       link: [...i18nSeo.link],
     };
   },
-  mounted() {},
+  mounted() {
+    window.addEventListener("message", (e) => {
+      if (isCalendlyEvent(e) && e.data.event === "calendly.event_scheduled") {
+        this.$gtag_report_conversion();
+      }
+    });
+  },
 
   methods: {},
 };
@@ -80,4 +93,3 @@ export default {
     @media(max-width: 768px)
       min-width: 350px
 </style>
-

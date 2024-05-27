@@ -8,9 +8,6 @@
         name="email"
         v-model="email"
       />
-      <!-- <button :disabled="status === 'loading'">
-            {{ $t("btn_cta_demo") }}
-          </button> -->
       <button :disabled="status === 'loading'" @click="onSubmit($event)">
         {{ $t(`email_send`) }}
       </button>
@@ -20,11 +17,7 @@
     }}</span>
   </div>
 </template>
-
-<!-- Event snippet for Formulario Demo conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
 <script>
-
 import EmailApi from "@/lib/emailService";
 export default {
   data() {
@@ -51,12 +44,6 @@ export default {
       });
     },
     async submitForm(e, token) {
-      //6Lfx2FgaAAAAAPiGduuGdvK9Ea2u5wonpACVBwEx
-      // const formElem = document.querySelector('form');
-      // const formData = new FormData()
-      // console.log(e.formData)
-      // console.dir(formElem)
-      // console.log(formData)
       var userLang = navigator.language || navigator.userLanguage;
       this.status = "loading";
       try {
@@ -67,7 +54,7 @@ export default {
           token: token,
         });
         this.$gtag_report_conversion();
-        window.lintrk('track', { conversion_id: 14836770 });
+        window.lintrk("track", { conversion_id: 14836770 });
         this.status = "success";
       } catch (error) {
         this.status = "error";
