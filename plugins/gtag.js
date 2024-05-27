@@ -30,6 +30,7 @@ export default (context, inject) => {
 
   function gtag_report_conversion(url) {
     var callback = function () {
+      console.log("Report conversion")
       if (typeof (url) != 'undefined') {
         window.location = url;
       }
