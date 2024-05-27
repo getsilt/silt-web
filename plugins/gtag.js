@@ -21,32 +21,33 @@ import Vue from "vue";
 //   });
 // }
 
-export default (context, inject) => {
-  window.dataLayer = window.dataLayer || [];
+export default ({ app }, inject) => {
+  if (process.client) {
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'AW-352683225');
 
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
-  gtag('config', 'AW-352683225');
-
-  function gtag_report_conversion(url) {
-    var callback = function () {
-      console.log("Report conversion")
-      if (typeof (url) != 'undefined') {
-        window.location = url;
-      }
-    };
-    gtag('event', 'conversion', {
-      'send_to': 'AW-352683225/78NdCOjLjcgDENmJlqgB',
-      'event_callback': callback
-    });
-
-    gtag('event', 'conversion_event_book_appointment', {
-      'event_callback': callback,
-      'event_timeout': 2000,
-      // <event_parameters>
-    });
-    return false;
+    function gtag_report_conversion(url) {
+      const callback = () => {
+        console.log("Report conversion");
+        if (typeof url !== 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+        'send_to': 'AW-352683225/78NdCOjLjcgDENmJlqgB',
+        'event_callback': callback
+      });
+      gtag('event', 'conversion_event_book_appointment', {
+        'event_callback': callback,
+        'event_timeout': 2000
+      });
+      return false;
+    }
+    inject("gtag_report_conversion", gtag_report_conversion);
   }
+};
 
-  inject("gtag_report_conversion", gtag_report_conversion)
-}

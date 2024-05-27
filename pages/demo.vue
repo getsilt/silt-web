@@ -70,12 +70,14 @@ export default {
     };
   },
   mounted() {
-    window.addEventListener("message", function (e) {
-      if (isCalendlyEvent(e)) {
-        if (e.data.event === "calendly.event_scheduled")
-          this.$nuxt.$options.$gtag_report_conversion();
-      }
-    });
+    if (process.client) {
+      window.addEventListener("message", (e) => {
+        if (isCalendlyEvent(e)) {
+          if (e.data.event === "calendly.event_scheduled")
+            this.$gtag_report_conversion();
+        }
+      });
+    }
   },
 
   methods: {},
