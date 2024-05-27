@@ -72,7 +72,8 @@ export default {
   mounted() {
     window.addEventListener("message", function (e) {
       if (isCalendlyEvent(e)) {
-        this.$nuxt.$options.$gtag_report_conversion();
+        if (e.data.event === "calendly.event_scheduled")
+          this.$nuxt.$options.$gtag_report_conversion();
       }
     });
   },
