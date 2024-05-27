@@ -78,7 +78,7 @@ export default {
         /* Example to get the payload of the event */
         console.log("Event details:", e.data.payload);
         // if(e.data.event === "calendly.event_scheduled") 
-          this.gtag_report_conversion();
+          this.$gtag_report_conversion();
       }
     });
   },
