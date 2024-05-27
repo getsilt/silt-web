@@ -70,13 +70,11 @@ export default {
     };
   },
   mounted() {
-    if (process.client) {
-      window.addEventListener("message", (e) => {
-        if (isCalendlyEvent(e) && e.data.event === "calendly.event_scheduled") {
-          this.$gtag_report_conversion();
-        }
-      });
-    }
+    window.addEventListener("message", (e) => {
+      if (isCalendlyEvent(e) && e.data.event === "calendly.event_scheduled") {
+        this.$gtag_report_conversion();
+      }
+    });
   },
 
   methods: {},

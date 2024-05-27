@@ -53,7 +53,7 @@ export default {
           userLang,
           token: token,
         });
-        if (process.client) this.$gtag_report_conversion();
+        this.$gtag_report_conversion();
         window.lintrk("track", { conversion_id: 14836770 });
         this.status = "success";
       } catch (error) {
