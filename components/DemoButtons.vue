@@ -35,7 +35,7 @@ export default {
       if (this.hasMeetzy && !this.hasMeetzyLoaded) {
         document.dispatchEvent(new CustomEvent("meetzy-refresh", {}));
         document.addEventListener("meetzy-form-submitted", (e) => {
-          this.$gtag_report_conversion();
+          this.$nuxt.$options.$gtag_report_conversion();
           window.lintrk("track", { conversion_id: 14836770 });
         });
         this.hasMeetzyLoaded = true;

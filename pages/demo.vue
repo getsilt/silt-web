@@ -70,15 +70,9 @@ export default {
     };
   },
   mounted() {
-    window.addEventListener("message", function(e) {
+    window.addEventListener("message", function (e) {
       if (isCalendlyEvent(e)) {
-        /* Example to get the name of the event */
-        console.log("Event name:", e.data.event);
-
-        /* Example to get the payload of the event */
-        console.log("Event details:", e.data.payload);
-        // if(e.data.event === "calendly.event_scheduled") 
-          this.$gtag_report_conversion();
+        this.$nuxt.$options.$gtag_report_conversion();
       }
     });
   },

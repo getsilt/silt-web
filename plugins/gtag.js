@@ -29,10 +29,7 @@ export default (context, inject) => {
   gtag('config', 'AW-352683225');
 
   function gtag_report_conversion(url) {
-    console.log("gtag conversion")
     var callback = function () {
-      console.log("Report conversion")
-      // notifyConversion()
       if (typeof (url) != 'undefined') {
         window.location = url;
       }
