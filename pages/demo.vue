@@ -7,13 +7,20 @@
     ></script>
     <section class="claim-container">
       <div class="claim-info">
-        <h2 class="">{{ $t("demo_claim1") }}</h2>
-        <div class="bullet-wrapper">
-          <h4 class="subtitle">{{ $t("demo_claim2") }}</h4>
-        </div>
-        <div class="bullet-wrapper">
-          <h4 class="subtitle">{{ $t("demo_claim3") }}</h4>
-        </div>
+        <h2>{{ $t("demo_title") }}</h2>
+        <h3>{{ $t("demo_kyb_title") }}</h3>
+        <h4 class="subtitle">{{ $t("demo_kyb_subtitle") }}</h4>
+        <b>{{ $t("demo_kyb_claim_title") }}</b>
+        <ol>
+          <li v-for="claim of kybClaimsList" :key="claim" v-html="$t(claim)" />
+        </ol>
+        <h3>{{ $t("demo_kyc_title") }}</h3>
+        <h4 class="subtitle subtitle__kyc-demo">
+          {{ $t("demo_kyc_subtitle") }}
+        </h4>
+        <ul>
+          <li v-for="claim of kycClaimsList" :key="claim" v-html="$t(claim)" />
+        </ul>
       </div>
       <div class="claim-info right">
         <div
@@ -47,26 +54,40 @@ export default {
       htmlAttrs: {
         ...i18nSeo.htmlAttrs,
       },
-      title: `${this.$t("demo_claim1")} | Silt Digital ID & KYC`,
+      title: `${this.$t("demo_title")} | Silt Digital ID & KYC`,
       meta: [
         {
           hid: "og:title",
           name: "og:title",
-          content: this.$t("demo_claim1"),
+          content: this.$t("demo_title"),
         },
         {
           hid: "description",
           name: "description",
-          content: this.$t("demo_claim2"),
+          content: this.$t("demo_kyb_subtitle"),
         },
         {
           hid: "og:description",
           name: "og:description",
-          content: this.$t("demo_claim2"),
+          content: this.$t("demo_kyb_subtitle"),
         },
         ...i18nSeo.meta,
       ],
       link: [...i18nSeo.link],
+    };
+  },
+  data() {
+    return {
+      kybClaimsList: [
+        "demo_kyb_claim_1",
+        "demo_kyb_claim_2",
+        "demo_kyb_claim_3",
+      ],
+      kycClaimsList: [
+        "demo_kyc_claim_1",
+        "demo_kyc_claim_2",
+        "demo_kyc_claim_3",
+      ],
     };
   },
   mounted() {
@@ -86,6 +107,11 @@ export default {
 .claim-container
   align-items: flex-start
   position: relative
+  .subtitle
+    margin: 0 0 $spacing-md
+    &__kyc-demo
+      margin-bottom: 0
+
   .calendly-inline-widget
     min-width: 460px
     height: 900px
