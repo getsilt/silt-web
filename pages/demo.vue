@@ -9,13 +9,13 @@
       <div class="claim-info">
         <h2>{{ $t("demo_title") }}</h2>
         <h3>{{ $t("demo_kyb_title") }}</h3>
-        <h4 class="subtitle">{{ $t("demo_kyb_subtitle") }}</h4>
+        <h4>{{ $t("demo_kyb_subtitle") }}</h4>
         <b>{{ $t("demo_kyb_claim_title") }}</b>
         <ol>
           <li v-for="claim of kybClaimsList" :key="claim" v-html="$t(claim)" />
         </ol>
         <h3>{{ $t("demo_kyc_title") }}</h3>
-        <h4 class="subtitle subtitle__kyc-demo">
+        <h4 class="subtitle__kyc-demo">
           {{ $t("demo_kyc_subtitle") }}
         </h4>
         <ul>
