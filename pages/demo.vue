@@ -8,16 +8,28 @@
     <section class="claim-container">
       <div class="claim-info">
         <h2>{{ $t("demo_title") }}</h2>
-        <h3>{{ $t("demo_kyb_title") }}</h3>
-        <h4>{{ $t("demo_kyb_subtitle") }}</h4>
+        <div>
+          <h3>
+            <span class="text-gradient-1 title-bold">
+              {{ $t("demo_kyb_title") }}
+            </span>
+            <span>
+              {{ $t("demo_kyb_subtitle") }}
+            </span>
+          </h3>
+        </div>
         <b>{{ $t("demo_kyb_claim_title") }}</b>
         <ol>
           <li v-for="claim of kybClaimsList" :key="claim" v-html="$t(claim)" />
         </ol>
-        <h3>{{ $t("demo_kyc_title") }}</h3>
-        <h4 class="subtitle__kyc-demo">
-          {{ $t("demo_kyc_subtitle") }}
-        </h4>
+        <h3>
+          <span class="text-gradient-1 title-bold">
+            {{ $t("demo_kyc_title") }}
+          </span>
+          <span>
+            {{ $t("demo_kyc_subtitle") }}
+          </span>
+        </h3>
         <ul>
           <li v-for="claim of kycClaimsList" :key="claim" v-html="$t(claim)" />
         </ul>
