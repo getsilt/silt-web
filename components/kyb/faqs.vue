@@ -1,16 +1,18 @@
 <template>
   <section>
-    <h3 class="faq-headers">{{ $t("FAQ_subtitle_general") }}</h3>
-    <div id="kyb-faqs-expandable" class="flex-col kyb-faqs-expandible">
-      <Expandable
-        v-for="(faq, i) of generalFAQs"
-        :key="`generalFAQ-${i}`"
-        class="expandable-kyb-faqs"
-        :dark="isDark"
-      >
-        <h2 v-html="$t(faq.title)" slot="title" />
-        <div slot="body" v-html="$t(faq.body)" />
-      </Expandable>
+    <div class="kyb-faqs">
+      <h3 class="faq-header">{{ $t("FAQ_subtitle_general") }}</h3>
+      <div id="kyb-faqs-expandable" class="flex-col kyb-faqs-expandible">
+        <Expandable
+          v-for="(faq, i) of generalFAQs"
+          :key="`generalFAQ-${i}`"
+          class="expandable-kyb-faqs"
+          :dark="isDark"
+        >
+          <h2 v-html="$t(faq.title)" slot="title" />
+          <div slot="body" v-html="$t(faq.body)" />
+        </Expandable>
+      </div>
     </div>
   </section>
 </template>
@@ -98,6 +100,12 @@ export default {
 
 <style lang="sass" scoped>
 @import "@/assets/sass/vars.sass"
+
+.kyb-faqs
+    max-width: 600px
+    margin: auto
+    .faq-header
+        text-align: center
 
 .kyb-faqs-expandible
     gap: $spacing-md
