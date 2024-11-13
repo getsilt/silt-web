@@ -63,6 +63,7 @@ export default {
           body: "FAQ_kyb_why_silts_kyb_body",
         },
       ],
+      isDark: false,
     };
   },
   created() {
@@ -102,16 +103,16 @@ export default {
 @import "@/assets/sass/vars.sass"
 
 .kyb-faqs
-    max-width: 600px
-    margin: auto
-    .faq-header
-        text-align: center
+  max-width: 600px
+  margin: auto
+  .faq-header
+    text-align: center
 
 .kyb-faqs-expandible
-    gap: $spacing-md
+  gap: $spacing-md
 
-    h2
-        font-size: 1.2rem
-        @media (min-width:768px)
-            font-size: 1.1rem
+  h2
+    font-size: 1.2rem
+    @media (min-width:768px)
+      font-size: 1.1rem
 </style>

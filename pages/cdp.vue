@@ -8,7 +8,6 @@
 </template>
 
 <script>
-import gsap from "gsap";
 import Hero from "@/components/cdp/hero.vue";
 import TrustOf from "../components/TrustOf.vue";
 import Benefits from "../components/cdp/benefits.vue";
@@ -51,32 +50,9 @@ export default {
       email: "hello@getsilt.com",
     };
   },
-  mounted() {
-    this.startFirstAnimationScene(this);
-  },
   methods: {
     getEmail() {
       return this.email;
-    },
-    startFirstAnimationScene: (_this) => {
-      const sections = ["#problem", "#solution", "#benefits"];
-      let tm = {};
-      for (let section of sections) {
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: section,
-            start: "top 80%",
-            scrub: false,
-            markers: false,
-          },
-        });
-        tl.from(section, {
-          duration: 1,
-          scale: 1,
-          y: 100,
-          opacity: 0,
-        });
-      }
     },
   },
 };
