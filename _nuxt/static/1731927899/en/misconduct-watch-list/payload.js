@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/en/misconduct-watch-list", {data:[{}],fetch:{},mutations:void 0});

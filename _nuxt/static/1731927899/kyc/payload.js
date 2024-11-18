@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/kyc", {data:[{}],fetch:{},mutations:void 0});

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/kyb", {data:[{}],fetch:{},mutations:void 0});
