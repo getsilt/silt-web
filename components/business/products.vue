@@ -58,13 +58,13 @@
             </div>
           </article>
         </div>
-        <article @click="$router.push({ name: 'demo' })" class="card dark">
+        <article @click="$router.push({ name: 'cdp' })" class="card dark">
           <div class="article-container">
             <h3 class="text-gradient-2">{{ $t("cdp_title") }}</h3>
             <h2>{{ $t("solutions_kyb_body_list_cdp") }}</h2>
             <p>{{ $t("solutions_cdp_body") }}</p>
             <h6 class="link">
-              <a href="/demo">
+              <a href="/cdp">
                 {{ $t("solutions_cdp_link") }}
               </a>
               <i class="fad fa-arrow-right" />
@@ -204,7 +204,7 @@ export default {
         animation: linear pulseShadow 15s infinite
       &:last-child
         &:before
-          animation: linear pulseShadow2 15s infinite 
+          animation: linear pulseShadow2 15s infinite
       &:after
         content: ''
         position: absolute
@@ -275,7 +275,6 @@ export default {
             border: 3px solid rgba($color-grey-darken-3, 0.4)
             background-clip: padding-box
             border-radius: $radius-lg $radius-lg
-            
 
   .article-container
     text-align: left
@@ -372,7 +371,7 @@ export default {
   100%
     transform: translateX(83px)
     opacity: 1
-  
+
 @keyframes offsetXOut
   0%
     transform: translateX(83px)
