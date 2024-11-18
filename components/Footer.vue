@@ -23,6 +23,11 @@
             </nuxt-link>
           </h6>
           <h6>
+            <nuxt-link :to="localePath({ name: 'cdp' })">
+              {{ $t("nav_feature_cdp") }}
+            </nuxt-link>
+          </h6>
+          <h6>
             <nuxt-link :to="localePath({ name: 'biocheck' })"
               >{{ $t("nav_feature_biocheck") }}
             </nuxt-link>

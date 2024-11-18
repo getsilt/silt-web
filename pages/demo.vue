@@ -33,6 +33,17 @@
         <ul>
           <li v-for="claim of kycClaimsList" :key="claim" v-html="$t(claim)" />
         </ul>
+        <h3>
+          <span class="text-gradient-1 title-bold">
+            {{ $t("demo_cdp_title") }}
+          </span>
+          <span>
+            {{ $t("demo_cdp_subtitle") }}
+          </span>
+        </h3>
+        <ul>
+          <li v-for="claim of cdpClaimsList" :key="claim" v-html="$t(claim)" />
+        </ul>
       </div>
       <div class="claim-info right">
         <div
@@ -99,6 +110,11 @@ export default {
         "demo_kyc_claim_1",
         "demo_kyc_claim_2",
         "demo_kyc_claim_3",
+      ],
+      cdpClaimsList: [
+        "demo_cdp_claim_1",
+        "demo_cdp_claim_2",
+        "demo_cdp_claim_3",
       ],
     };
   },

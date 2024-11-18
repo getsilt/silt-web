@@ -1,22 +1,24 @@
 <template>
   <section class="fw-container">
-    <div class="highlights-wrapper">
-      <div class="section-headers">
-        <span class="tag">{{ $t("business_benefits_section") }}</span>
-        <h2>{{ $t("kyb_benefit_title") }}</h2>
-        <p class="subtitle" v-html="$t('kyb_benefit_subtitle')" />
-      </div>
-      <div class="list-wrapper pins">
-        <card
-          v-for="benefit in benefits"
-          :key="benefit.title"
-          class="card--w-sm"
-        >
-          <div class="article-container" slot="body">
-            <h4 v-html="$t(`${benefit.title}`)" class="color_primary_text" />
-            <p>{{ $t(benefit.content) }}</p>
-          </div>
-        </card>
+    <div id="benefits">
+      <div class="highlights-wrapper">
+        <div class="section-headers">
+          <span class="tag">{{ $t("business_benefits_section") }}</span>
+          <h2>{{ $t("kyb_benefit_title") }}</h2>
+          <p class="subtitle" v-html="$t('kyb_benefit_subtitle')" />
+        </div>
+        <div class="list-wrapper pins">
+          <card
+            v-for="benefit in benefits"
+            :key="benefit.title"
+            class="card--w-sm"
+          >
+            <div class="article-container" slot="body">
+              <h4 v-html="$t(`${benefit.title}`)" class="color_primary_text" />
+              <p>{{ $t(benefit.content) }}</p>
+            </div>
+          </card>
+        </div>
       </div>
     </div>
   </section>

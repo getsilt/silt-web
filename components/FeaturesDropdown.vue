@@ -34,6 +34,19 @@
       <div class="dropdown-wrap">
         <nuxt-link
           class="dropdown-wrap__content type1"
+          :to="localePath({ name: 'cdp' })"
+          @click.native="closeNav()"
+        >
+          <i class="fad fa-lg fa-file-invoice" />
+          <div>
+            <h3 class="title_menu">{{ $t("nav_feature_cdp") }}</h3>
+            <p class="subtitle_menu">
+              {{ $t("product_subtitle_cdp") }}
+            </p>
+          </div>
+        </nuxt-link>
+        <nuxt-link
+          class="dropdown-wrap__content type1"
           :to="localePath({ name: 'rules' })"
           @click.native="closeNav()"
         >

@@ -41,6 +41,7 @@ export default {
           alt: "deloitte.svg",
           style: "",
         },
+        { src: "haddock.svg", alt: "haddock", style: "padding: 17px" },
         {
           src: "glovo.svg.png",
           alt: "glovo.svg",
