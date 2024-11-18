@@ -35,20 +35,16 @@ export default {
       email: "hello@getsilt.com",
       benefits: [
         {
-          title: "cdp_benefit_time_title",
-          content: "cdp_benefit_time_body",
+          title: "cdp_benefit_title1",
+          content: "cdp_benefit_description1",
         },
         {
-          title: "cdp_benefit_growth_title",
-          content: "cdp_benefit_growth_body",
+          title: "cdp_benefit_title2",
+          content: "cdp_benefit_description2",
         },
         {
-          title: "cdp_benefit_precision_title",
-          content: "cdp_benefit_precision_body",
-        },
-        {
-          title: "cdp_benefit_satisfaction_title",
-          content: "cdp_benefit_satisfaction_body",
+          title: "cdp_benefit_title3",
+          content: "cdp_benefit_description3",
         },
       ],
     };
