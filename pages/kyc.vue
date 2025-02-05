@@ -6,6 +6,7 @@
     <solution hidden-tab="kyb" />
     <tech-features />
     <integration />
+    <Faqs />
   </div>
 </template>
 
@@ -18,6 +19,7 @@ import Integration from "@/components/business/integration.vue";
 import TechFeatures from "@/components/business/tech-features.vue";
 import Usecases from "@/components/business/usecases.vue";
 import TrustOf from "../components/TrustOf.vue";
+import Faqs from "../components/kyc/faqs.vue";
 
 export default {
   components: {
@@ -29,6 +31,7 @@ export default {
     TechFeatures,
     Usecases,
     TrustOf,
+    Faqs,
   },
   head() {
     const i18nSeo = this.$nuxtI18nHead();

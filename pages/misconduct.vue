@@ -2,6 +2,7 @@
   <div>
     <hero />
     <solution />
+    <Faqs />
   </div>
 </template>
 
@@ -10,8 +11,9 @@ import gsap from "gsap";
 import DemoButtons from "@/components/DemoButtons.vue";
 import Hero from "@/components/misconduct/hero.vue";
 import Solution from "@/components/misconduct/solution.vue";
+import Faqs from "../components/misconduct/faqs.vue";
 export default {
-  components: { DemoButtons, Hero, Solution },
+  components: { DemoButtons, Hero, Solution, Faqs },
   head() {
     const i18nSeo = this.$nuxtI18nHead();
     return {
