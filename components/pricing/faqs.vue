@@ -1,5 +1,5 @@
 <template>
-  <FaqsList :faqsList="generalFAQs" />
+  <FaqsList :faqsList="pricingFAQs" />
 </template>
 
 <script>
@@ -9,7 +9,7 @@ export default {
   components: { FaqsList },
   data() {
     return {
-      generalFAQs: [
+      pricingFAQs: [
         {
           title: "faq_pricing_free_trial_question",
           body: "faq_pricing_free_trial_answer",

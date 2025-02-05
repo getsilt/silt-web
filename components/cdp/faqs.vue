@@ -1,5 +1,5 @@
 <template>
-  <FaqsList :faqsList="generalFAQs" />
+  <FaqsList :faqsList="cdpFAQs" />
 </template>
 
 <script>
@@ -9,7 +9,7 @@ export default {
   components: { FaqsList },
   data() {
     return {
-      generalFAQs: [
+      cdpFAQs: [
         {
           title: "faq_cdp_what_is_cdp_question",
           body: "faq_cdp_what_is_cdp_answer",

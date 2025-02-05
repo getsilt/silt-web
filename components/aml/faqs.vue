@@ -1,5 +1,5 @@
 <template>
-  <FaqsList :faqsList="generalFAQs" />
+  <FaqsList :faqsList="amlFAQs" />
 </template>
 
 <script>
@@ -9,7 +9,7 @@ export default {
   components: { FaqsList },
   data() {
     return {
-      generalFAQs: [
+      amlFAQs: [
         {
           title: "faq_aml_check_recurrent_question",
           body: "faq_aml_check_recurrent_answer",

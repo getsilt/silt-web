@@ -1,5 +1,5 @@
 <template>
-  <FaqsList :faqsList="generalFAQs" />
+  <FaqsList :faqsList="rulesFAQs" />
 </template>
 
 <script>
@@ -9,7 +9,7 @@ export default {
   components: { FaqsList },
   data() {
     return {
-      generalFAQs: [
+      rulesFAQs: [
         {
           title: "faq_rules_implement_new_rule_question",
           body: "faq_rules_implement_new_rule_answer",

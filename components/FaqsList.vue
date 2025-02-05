@@ -1,8 +1,8 @@
 <template>
   <section>
     <div class="faqs">
-      <h3 class="faq-header">{{ $t("FAQ_subtitle_general") }}</h3>
-      <div id="faqs-expandable" class="flex-col faqs-expandible">
+      <h3 class="faq-header">{{ $t(headerCopy) }}</h3>
+      <div :id="`faqs-expandable-${_uid}`" class="flex-col faqs-expandible">
         <Expandable
           v-for="(faq, i) of faqsList"
           :key="`generalFAQ-${i}`"
@@ -23,7 +23,14 @@ import Expandable from "./Expandable.vue";
 
 export default {
   components: { Expandable },
-  props: { faqsList: { required: true, type: Array } },
+  props: {
+    faqsList: { required: true, type: Array },
+    headerCopy: {
+      required: false,
+      type: String,
+      default: "FAQ_subtitle_general",
+    },
+  },
   data() {
     return {
       isDark: false,
@@ -38,17 +45,19 @@ export default {
     this.startFirstAnimationScene(this);
   },
   methods: {
-    startFirstAnimationScene: (_this) => {
+    startFirstAnimationScene() {
+      const triggerId = `#faqs-expandable-${this._uid}`;
+
       gsap
         .timeline({
           scrollTrigger: {
-            trigger: "#faqs-expandable",
+            trigger: triggerId,
             start: "top 80%",
             scrub: false,
             markers: false,
           },
         })
-        .from("#faqs-expandable .expandable-faqs", {
+        .from(`${triggerId} .expandable-faqs`, {
           duration: 1,
           scale: 1,
           y: 75,
@@ -66,16 +75,16 @@ export default {
 @import "@/assets/sass/vars.sass"
 
 .faqs
-    max-width: 600px
-    margin: auto
+  max-width: 600px
+  margin: auto
 .faq-header
-    text-align: center
+  text-align: center
 
 .faqs-expandible
-    gap: $spacing-md
+  gap: $spacing-md
 
 h2
-    font-size: 1.2rem
-    @media (min-width:768px)
-        font-size: 1.1rem
+  font-size: 1.2rem
+  @media (min-width:768px)
+    font-size: 1.1rem
 </style>

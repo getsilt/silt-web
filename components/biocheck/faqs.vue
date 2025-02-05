@@ -1,5 +1,5 @@
 <template>
-  <FaqsList :faqsList="generalFAQs" />
+  <FaqsList :faqsList="biocheckFAQs" />
 </template>
 
 <script>
@@ -9,7 +9,7 @@ export default {
   components: { FaqsList },
   data() {
     return {
-      generalFAQs: [
+      biocheckFAQs: [
         {
           title: "faq_biometric_recheck_what_is_it_question",
           body: "faq_biometric_recheck_what_is_it_answer",

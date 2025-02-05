@@ -1,5 +1,5 @@
 <template>
-  <FaqsList :faqsList="generalFAQs" />
+  <FaqsList :faqsList="kybFAQs" />
 </template>
 
 <script>
@@ -9,7 +9,7 @@ export default {
   components: { FaqsList },
   data() {
     return {
-      generalFAQs: [
+      kybFAQs: [
         {
           title: "FAQ_kyb_what_is_kyb_title",
           body: "FAQ_kyb_what_is_kyb_body",

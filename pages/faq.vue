@@ -1,52 +1,26 @@
 <template>
-  <section class="claim-container">
+  <section>
     <div class="section-headers">
       <h1>{{ $t("FAQ_title_2") }}</h1>
     </div>
-    <div>
-      <h3 class="faq-headers">{{ $t("FAQ_subtitle_general") }}</h3>
-      <div id="faqs-expandable">
-        <expandable
-          class="expandable-faqs"
-          :key="`generalFAQ-${i}`"
-          v-for="(faq, i) of generalFAQs"
-          :dark="isDark"
-        >
-          <h6 v-html="$t(faq.title)" slot="title" />
-          <div slot="body" v-html="$t(faq.body)" />
-        </expandable>
-      </div>
-      <h3 class="faq-headers">{{ $t("FAQ_subtitle_eID_and_integration") }}</h3>
-      <div id="faqs-expandable">
-        <expandable
-          class="expandable-faqs"
-          :key="`eIDFAQ-${i}`"
-          v-for="(faq, i) of eIDFAQs"
-          :dark="isDark"
-        >
-          <h6 v-html="$t(faq.title)" slot="title" />
-          <div slot="body" v-html="$t(faq.body)" />
-        </expandable>
-      </div>
-      <h3 class="faq-headers">{{ $t("FAQ_subtitle_integration") }}</h3>
-      <div id="faqs-expandable">
-        <expandable
-          class="expandable-faqs"
-          :key="`integrationFAQ-${i}`"
-          v-for="(faq, i) of integrationFAQs"
-          :dark="isDark"
-        >
-          <h6 v-html="$t(faq.title)" slot="title" />
-          <div slot="body" v-html="$t(faq.body)" />
-        </expandable>
-      </div>
+    <div class="faqs-list-wrapper">
+      <FaqsList :faqsList="generalFAQs" :animated="false" />
+      <FaqsList
+        :faqsList="eIDFAQs"
+        headerCopy="FAQ_subtitle_eID_and_integration"
+        :animated="false"
+      />
+      <FaqsList
+        :faqsList="integrationFAQs"
+        headerCopy="FAQ_subtitle_integration"
+        :animated="false"
+      />
     </div>
   </section>
 </template>
 
 <script>
-import gsap from "gsap";
-import Expandable from "@/components/Expandable.vue";
+import FaqsList from "../components/FaqsList.vue";
 
 export default {
   nuxtI18n: {
@@ -78,7 +52,7 @@ export default {
       ],
     };
   },
-  components: { Expandable },
+  components: { FaqsList },
   data() {
     return {
       email: "hello@getsilt.com",
@@ -148,38 +122,7 @@ export default {
           body: "FAQ_link_clients_CRM_body",
         },
       ],
-      isDark: false,
     };
-  },
-  created() {
-    if (process.client) {
-      this.isDark = localStorage.getItem("dark-theme") === "true";
-    }
-  },
-  mounted() {
-    this.startFirstAnimationScene(this);
-  },
-  methods: {
-    startFirstAnimationScene: (_this) => {
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: "#faqs-expandable",
-            start: "top 80%",
-            scrub: false,
-            markers: false,
-          },
-        })
-        .from("#faqs-expandable .expandable-faqs", {
-          duration: 1,
-          scale: 1,
-          y: 75,
-          rotateY: 0,
-          opacity: 0,
-          stagger: 0.2,
-          ease: "power2.out",
-        });
-    },
   },
 };
 </script>
@@ -190,8 +133,10 @@ export default {
 .section-headers
   margin-bottom: 0
 
-.faq-headers
-  margin: $spacing-md 0
-.expandable-faqs
-  margin-bottom: $spacing-md
+.faqs-list-wrapper
+  display: flex
+  justify-content: center
+  flex-direction: column
+  section
+    margin: 0
 </style>
