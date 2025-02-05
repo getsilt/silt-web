@@ -1,5 +1,5 @@
 <template>
-  <div class="fw-container container" id="pricing">
+  <div class="container" id="pricing">
     <div class="tabs-wrapper tabs-wrapper--background">
       <div class="tab-wrapper">
         <v-tab
@@ -22,12 +22,14 @@
     </div>
     <KYCPricingPlan v-if="featuredTab === 'KYC'" />
     <KYBPricingPlan v-else />
+    <Faqs v-if="featuredTab === 'KYC'" />
   </div>
 </template>
 <script>
 import VTab from "@/components/VTab.vue";
 import KYCPricingPlan from "../components/pricing/KYCPricingPlan.vue";
 import KYBPricingPlan from "../components/pricing/KYBPricingPlan.vue";
+import Faqs from "../components/pricing/faqs.vue";
 // Animate on scroll
 // var controllerHolder;
 export default {
@@ -35,6 +37,7 @@ export default {
     VTab,
     KYCPricingPlan,
     KYBPricingPlan,
+    Faqs,
   },
   head() {
     const i18nSeo = this.$nuxtI18nHead();
