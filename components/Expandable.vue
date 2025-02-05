@@ -66,7 +66,7 @@ export default {
   & >:first-child:before
     content: '+'
     display: inline-block
-    margin-right: $spacing-md
+    margin-right: $spacing-sm
     flex: 0 0 auto
     text-transform: none
     font-size: 1.5em

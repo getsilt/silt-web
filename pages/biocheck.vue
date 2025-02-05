@@ -3,6 +3,7 @@
     <hero />
     <problem />
     <solution />
+    <Faqs />
   </div>
 </template>
 
@@ -12,8 +13,10 @@ import DemoButtons from "@/components/DemoButtons.vue";
 import Hero from "@/components/biocheck/hero.vue";
 import Problem from "@/components/biocheck/problem.vue";
 import Solution from "@/components/biocheck/solution.vue";
+import Faqs from "../components/biocheck/faqs.vue";
+
 export default {
-  components: { DemoButtons, Hero, Problem, Solution },
+  components: { DemoButtons, Hero, Problem, Solution, Faqs },
   head() {
     const i18nSeo = this.$nuxtI18nHead();
     return {

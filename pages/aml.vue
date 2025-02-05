@@ -3,6 +3,7 @@
     <hero />
     <benefits />
     <solution />
+    <Faqs />
   </div>
 </template>
 
@@ -11,6 +12,7 @@ import DemoButtons from "@/components/DemoButtons.vue";
 import Hero from "@/components/aml/hero.vue";
 import Benefits from "@/components/aml/benefits.vue";
 import Solution from "@/components/aml/solution.vue";
+import Faqs from "../components/aml/faqs.vue";
 
 export default {
   nuxtI18n: {
@@ -24,6 +26,7 @@ export default {
     Hero,
     Benefits,
     Solution,
+    Faqs,
   },
   head() {
     const i18nSeo = this.$nuxtI18nHead();
