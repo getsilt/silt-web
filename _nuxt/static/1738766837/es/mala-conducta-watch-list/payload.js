@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/es/mala-conducta-watch-list", {data:[{}],fetch:{},mutations:void 0});

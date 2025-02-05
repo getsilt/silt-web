@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/en/kyb-company-and-freelancer-verification", {data:[{}],fetch:{},mutations:void 0});
