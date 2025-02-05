@@ -3,6 +3,7 @@
     <hero />
     <benefits />
     <solution />
+    <Faqs />
   </div>
 </template>
 
@@ -11,6 +12,7 @@ import DemoButtons from "@/components/DemoButtons.vue";
 import Hero from "@/components/rules/hero.vue";
 import Benefits from "@/components/rules/benefits.vue";
 import Solution from "@/components/rules/solution.vue";
+import Faqs from "../components/rules/faqs.vue";
 
 export default {
   components: {
@@ -18,6 +20,7 @@ export default {
     Hero,
     Benefits,
     Solution,
+    Faqs,
   },
   head() {
     const i18nSeo = this.$nuxtI18nHead();

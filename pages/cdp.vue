@@ -4,6 +4,7 @@
     <TrustOf />
     <Benefits />
     <Solution />
+    <Faqs />
   </div>
 </template>
 
@@ -13,6 +14,7 @@ import TrustOf from "../components/TrustOf.vue";
 import Benefits from "../components/cdp/benefits.vue";
 import Solution from "../components/cdp/solution.vue";
 import DemoButtons from "../components/DemoButtons.vue";
+import Faqs from "../components/cdp/faqs.vue";
 
 export default {
   components: {
@@ -21,6 +23,7 @@ export default {
     Benefits,
     Solution,
     DemoButtons,
+    Faqs,
   },
   head() {
     const i18nSeo = this.$nuxtI18nHead();
