@@ -167,22 +167,36 @@
       notify you to your Backend with a webhook pointing to the endpoint you
       provide us.
     </p>
+    <p>
+      The body of the response of thw webhook will return the same response as <code>/status</code> request under <code>user</code> attribute, 
+      and the <code>processing_attempt</code> that triggered the webhook.
+    </p>
     <p class="banner-info">
-     Possible values for status are <code>SUCCESS | ERROR | VERIFICATION_ERROR | PENDING | RUNNING | MANUAL_REVIEW</code>.
-      Keep in mind that if a <b>manual verification</b> takes place and <code>status</code> has <code>MANUAL_REVIEW</code>, you will have to check also the <code>manual_review_status</code> that may have the following possible values: <code>SUCCESS | ERROR | PENDING</code>
+      The most important check you must do is the <code>user.status</code> of the <code>user</code> object.
+      This status may have the following possible FINAL values: <code>SUCCESS | ERROR | MANUAL_REVIEW</code>.
+      On top of that, you will receive other status, like PENDING, but you can ignore them because you should receive another webhook with a final status.
+      This <code>user.status</code> is computed based on the combination of status of all requirements you have set for that verification flow.
+      If a user has a SUCCESS status in all verifications required by the verification flow, then the user will have a SUCCESS status.
+      If a user has a MANUAL_REVIEW or ERROR status in any of the verifications required by the verification flow, then the user will have a MANUAL_REVIEW or ERROR status.
     </p>
     <p class="banner-info">
       It is strongly recommended to use the parameter <code>customer_user_id</code> in the url of step 2. 
       This way, you can know to which user of your database refers the notification.
     </p>
-   
+    <p>
+      You will receive all the verified information of the user in every webhook, inside user.
+      What triggers the emission of the webhook, will be each processing attempt of a verification.
+      That's why you will receive also the information of that processing attempt information, with its
+      status.
+      Possible values for <code>processing_attempt.status</code> are <code>SUCCESS | ERROR | VERIFICATION_ERROR | PENDING | RUNNING | MANUAL_REVIEW</code>. 
+      Keep in mind that if a <b>manual verification</b> takes place and <code>status</code> has <code>MANUAL_REVIEW</code>, you will have to check also the <code>manual_review_status</code> that may have the following possible values: <code>SUCCESS | ERROR | PENDING</code>
+    </p>
     <p>
       Some cases (less than 5%) require a manual verification. For obvious
       reasons, we cannot verify users instantly this way. We inform the user by
-      email once we have finished the verification, but you can
+      email (if provided) once we have finished the verification, but you can
       also be notified once this happens. When you have changed the status of a
-      document we will also make a POST request to the endpoint you provide us. The
-      response will return the same response as /status request under <code>user</code> field, the <code>processing_attempt</code> that triggered the webhook, its <code>status</code>.
+      document we will also make a POST request to the endpoint you provide us.
     </p>
     <code class="code-block"
       ><tree-view
