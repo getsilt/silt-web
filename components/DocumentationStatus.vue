@@ -31,14 +31,22 @@
       <br /><br />Don't forget that you should still use the
       <code>X-Company-App-Id</code> Header.
     </p>
-    <p>
-      Check <code>status</code> to
-      know if a user is verified or not. Use the
-      <code>national_id | passport | driving_license</code> objects to retreive
-      the data extracted from the documents.
-    </p>
     <p class="banner-info">
-     Possible values for status are <code>SUCCESS | ERROR | VERIFICATION_ERROR | PENDING | RUNNING | MANUAL_REVIEW</code>.
+      The most important check you must do is the <code>user.status</code> of the <code>user</code> object.
+      This status may have the following possible FINAL values: <code>SUCCESS | ERROR | MANUAL_REVIEW</code>.
+      On top of that, you will receive other status, like PENDING, but you can ignore them because you should receive another webhook with a final status.
+      This <code>user.status</code> is computed based on the combination of status of all requirements you have set for that verification flow.
+      If a user has a SUCCESS status in all verifications required by the verification flow, then the user will have a SUCCESS status.
+      If a user has a MANUAL_REVIEW or ERROR status in any of the verifications required by the verification flow, then the user will have a MANUAL_REVIEW or ERROR status.
+    </p>
+    <p>
+      Use the <code>national_id | passport | driving_license</code> objects to retreive
+      the data extracted from the verified documents.
+    </p>
+    <p>
+      Ideally, you should only check <code>user.status</code>. But if for some reason you want to check the status of each processing_atempt,
+      keep in mind that they work slightly different.
+      Possible values for status of processing attempts are <code>SUCCESS | ERROR | VERIFICATION_ERROR | PENDING | RUNNING | MANUAL_REVIEW</code>.
       Keep in mind that if a <b>manual verification</b> takes place and <code>status</code> has <code>MANUAL_REVIEW</code>, you will have to check also the <code>manual_review_status</code> that may have the following possible values: <code>SUCCESS | ERROR | PENDING</code>
     </p>
     <code class="code-block">
