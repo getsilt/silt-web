@@ -313,13 +313,15 @@ html.dark
     color: lighten($color-primary, 40%)
 
 code
-  background: var(--bg-secondary)
-  color: lighten($color-primary, 10%)
+  font-family: monospace
+  background: rgba($color-primary, 10%)
+  color: #ff8e33
+  font-size: 13px
   padding: 0 5px
   border-radius: 5px
   display: inline-block
   b
-    color: $color-primary
+    font-family: monospace
 
   &.code-block
     padding: 25px
@@ -573,7 +575,7 @@ body.dark
 .highlight-container
   color: #fff
   &, &.card
-    @extend .bg-gradient-1 
+    @extend .bg-gradient-1
   h3
     color: #fff
     margin-bottom: 0
