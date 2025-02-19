@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/es/kyb-verificacion-de-empresas-y-autonomos", {data:[{}],fetch:{},mutations:void 0});

@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /cookies
+Disallow: /legal-notice
+Disallow: /privacy
+Disallow: /en/cookies
+Disallow: /en/legal-notice
+Disallow: /en/privacy
+Disallow: /demo
+Disallow: /es/demo
+Disallow: /en/demo
+Sitemap: https://getsilt.com/sitemap.xml
