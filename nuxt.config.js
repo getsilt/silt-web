@@ -73,12 +73,12 @@ export default {
           {
             name: "Español",
             code: "es",
-            iso: "es-ES"
+            iso: "es"
           },
           {
             name: "English",
             code: "en",
-            iso: "en-US",
+            iso: "en",
             isCatchallLocale: true
           }
         ],
