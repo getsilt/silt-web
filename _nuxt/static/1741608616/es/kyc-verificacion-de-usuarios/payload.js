@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/es/kyc-verificacion-de-usuarios", {data:[{}],fetch:{},mutations:void 0});
