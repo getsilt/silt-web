@@ -2,7 +2,7 @@
   <div class="fw-container--dark">
     <div class="section-headers">
       <span class="tag">{{ $t("features_title") }}</span>
-      <h2 v-html="$t('features_subtitle')" class="features_subtitle" />
+      <h2 v-html="$t('kycpage_why_silt_h2')" class="features_subtitle" />
     </div>
     <!-- TECH FEATURES -->
     <section class="tech-features_wrapper" id="techfeatures">

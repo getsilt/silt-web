@@ -21,13 +21,10 @@
     <!-- CLAIMS -->
     <div class="hero-wrapper">
       <div class="hero-header_wrapper">
-        <h1 class="title">
-          <span class="text-gradient-1 title-bold">
-            {{ $t("business_claim_scale") }}
-          </span>
-          <br />
-          <span v-html="$t('business_claim1')" />
-        </h1>
+        <h1
+          class="title title-bold color_primary_text"
+          v-html="$t('homepage_title_h1')"
+        />
         <h4 class="subtitle" v-html="$t('business_claim2')" />
         <demo-buttons />
       </div>

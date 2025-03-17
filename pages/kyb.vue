@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import gsap from "gsap";
 import DemoButtons from "@/components/DemoButtons.vue";
 import Hero from "@/components/kyb/hero.vue";
 import Problem from "@/components/kyb/problem.vue";

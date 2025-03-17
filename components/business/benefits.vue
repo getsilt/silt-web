@@ -5,7 +5,7 @@
       <div class="highlights-wrapper">
         <div class="section-headers">
           <span class="tag">{{ $t("business_benefits_section") }}</span>
-          <h2>{{ $t("business_benefits_title") }}</h2>
+          <h2>{{ $t("homepage_benefits_h2") }}</h2>
           <p
             class="subtitle"
             v-html="$t('business_benefits_landing_subtitle')"
@@ -18,7 +18,9 @@
             class="card--w-sm"
           >
             <div class="article-container" slot="body">
-              <h1 class="colored">{{ benefit.kpi }}</h1>
+              <span class="colored article-container-kpi">
+                {{ benefit.kpi }}
+              </span>
               <h4 class="colored">{{ $t(`${benefit.title}`) }}</h4>
               <p>{{ $t(benefit.content) }}</p>
             </div>
@@ -101,7 +103,9 @@ export default {
   margin-top: $spacing-sm
   margin-bottom: $spacing-lg
 .article-container
-  h1
+  &-kpi
+    font-size: 3.2rem
+    font-family: $font-bold
     margin-bottom: $spacing-sm
 
 .benefits-demo-buttons

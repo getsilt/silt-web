@@ -4,8 +4,8 @@
       <div class="highlights-wrapper">
         <div class="section-headers">
           <span class="tag">{{ $t("business_benefits_section") }}</span>
-          <h2 v-html="$t('cdp_benefit_title')" />
-          <p class="subtitle" v-html="$t('cdp_benefit_subtitle')" />
+          <h2 v-html="$t('cdppage_benefits_h2')" />
+          <h3 class="subtitle" v-html="$t('cdppage_benefits_h3')" />
         </div>
         <div class="list-wrapper pins">
           <card
