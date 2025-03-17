@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/misconduct", {data:[{}],fetch:{},mutations:void 0});

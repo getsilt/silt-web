@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/en/complex-document-processing", {data:[{}],fetch:{},mutations:void 0});

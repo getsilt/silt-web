@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/minimalSDKDoc", {data:[{}],fetch:{},mutations:void 0});

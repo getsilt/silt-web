@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/en/minimal-sdk-documentation", {data:[{}],fetch:{},mutations:void 0});
