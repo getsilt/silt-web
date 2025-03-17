@@ -5,17 +5,17 @@
         <span class="tag">{{ $t("business_solution_section") }}</span>
         <h2>
           <span class="text-gradient-1 title-bold">
-            {{ $t("cdp_solution_title") }}
+            {{ $t("cdppage_solution_h2") }}
           </span>
         </h2>
-        <p class="subtitle" v-html="$t('cdp_solution_subtitle')" />
+        <h3 class="subtitle" v-html="$t('cdppage_solution_h3')" />
         <Card class="card">
           <div class="article-container solution_wrapper" slot="body">
             <div>
-              <h2 class="color_accent_text"><b>99%</b></h2>
-              <h3 class="color_accent_text">
+              <span class="color_accent_text"><b>99%</b></span>
+              <span class="color_accent_text">
                 <b>{{ $t("global_accuracy") }}</b>
-              </h3>
+              </span>
             </div>
             <span>
               {{ $t("cdp_solution_accuracy_body") }}
@@ -74,11 +74,13 @@ export default {
 <style lang="sass" scoped>
 @import "@/assets/sass/vars.sass"
 
-h2,h3
-  margin-bottom: 0
-
 .card
   margin-bottom: $spacing-xlg
+
+.color_accent_text
+  font-size: 2rem
+  font-family: $font-bold
+  margin-bottom: $spacing-sm
 
 .solution_wrapper
   display: flex

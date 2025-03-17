@@ -20,7 +20,7 @@
     </div>
     <div class="hero-wrapper">
       <div class="hero-header_wrapper">
-        <h1 class="title color_primary_text" v-html="$t('cdp_claim1')" />
+        <h1 class="title color_primary_text" v-html="$t('cpdpage_title_h1')" />
         <h4 class="subtitle" v-html="$t('cdp_claim2')" />
         <demo-buttons />
       </div>
