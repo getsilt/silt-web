@@ -3,12 +3,8 @@
   <div class="fw-container--dark">
     <div class="section-headers">
       <span class="tag">{{ $t("business_solution_section") }}</span>
-      <h2>
-        <span class="text-gradient-1 title-bold">
-          {{ $t("kyb_solution_title") }}
-        </span>
-        <br />
-        {{ $t("kyb_solution_subtitle_1") }}
+      <h2 class="text-gradient-1 title-bold">
+        {{ $t("kybpage_solution_h2") }}
       </h2>
       <p class="subtitle" v-html="$t('kyb_solution_subtitle_2')" />
     </div>

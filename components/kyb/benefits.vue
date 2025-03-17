@@ -4,7 +4,7 @@
       <div class="highlights-wrapper">
         <div class="section-headers">
           <span class="tag">{{ $t("business_benefits_section") }}</span>
-          <h2>{{ $t("kyb_benefit_title") }}</h2>
+          <h2>{{ $t("kybpage_benefits_h2") }}</h2>
           <p class="subtitle" v-html="$t('kyb_benefit_subtitle')" />
         </div>
         <div class="list-wrapper pins">

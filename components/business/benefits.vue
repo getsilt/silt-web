@@ -5,7 +5,7 @@
       <div class="highlights-wrapper">
         <div class="section-headers">
           <span class="tag">{{ $t("business_benefits_section") }}</span>
-          <h2>{{ $t("business_benefits_title") }}</h2>
+          <h2>{{ $t("kycpage_benefits_h2") }}</h2>
           <p
             class="subtitle"
             v-html="$t('business_benefits_landing_subtitle')"
