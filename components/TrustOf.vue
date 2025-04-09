@@ -9,6 +9,7 @@
           :key="clientImage.scr"
         >
           <img
+            :id="clientImage.id"
             :style="clientImage.style"
             :src="require(`@/assets/img/logo/${clientImage.src}`)"
             :alt="clientImage.alt"
@@ -26,9 +27,21 @@ export default {
     return {
       clientsImages: [
         {
-          src: "gobierno_de_españa.svg.png",
+          src: "gobierno_de_españa.png",
           alt: "gobierno_de_españa",
-          style: "filter: contrast(100%) grayscale(1)",
+          id: "gobierno_de_españa",
+          style: "filter: contrast(100%) grayscale(1); padding: 10px",
+        },
+        {
+          src: "plan_recuperacion.png",
+          alt: "plan_recuperacion",
+          style: "padding: 10px",
+        },
+        {
+          src: "financiado_europa.webp",
+          alt: "financiado_europa",
+          id: "financiado_europa",
+          style: "filter: contrast(100%) grayscale(1); padding: 10px",
         },
         {
           src: "tech_bcn.png",
@@ -41,7 +54,7 @@ export default {
           alt: "deloitte.svg",
           style: "",
         },
-        { src: "haddock.svg", alt: "haddock", style: "padding: 17px" },
+        { src: "haddock.svg", alt: "haddock", style: "padding: 17px", id: "haddock", style: "filter: contrast(100%) grayscale(1);"},
         {
           src: "glovo.svg.png",
           alt: "glovo.svg",
@@ -54,11 +67,6 @@ export default {
         },
         { src: "offugo.png", alt: "offugo", style: "" },
         { src: "aefi.png", alt: "aefi", style: "" },
-        {
-          src: "plan_recuperacion.png",
-          alt: "plan_recuperacion",
-          style: "padding: 10px",
-        },
         {
           src: "recoletas.svg",
           alt: "recoletas",
@@ -134,4 +142,11 @@ export default {
           max-height: 60px
           width: auto
           padding: 15px
+          transition: 0.3s ease-in-out
+          &:hover
+            transition: 0.3s ease-in-out
+            filter: contrast(100%) grayscale(0)
+          &#gobierno_de_españa:hover, &#financiado_europa:hover
+            filter: contrast(100%) grayscale(0) !important
+          
 </style>
