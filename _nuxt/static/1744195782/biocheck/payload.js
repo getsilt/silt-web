@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/biocheck", {data:[{}],fetch:{},mutations:void 0});
